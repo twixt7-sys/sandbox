@@ -199,19 +199,49 @@
 ## Platform metadata
 
 ### Youtube
-- **title:** Your worldbuilding is probably missing this #worldbuilding
-- **description:** Lore is what happened. A living world is what it changed. One broken bridge, three centuries of consequences: trade, power, culture and a festival.
+- **title:** 1,000 years of lore and it still feels empty
+- **titleAlternate:** Why your fantasy world feels empty
+- **description:** Lore is what happened. A living world is what it changed.
 
-Episode 1 of 50 in Worldbuilding, from the ground up: short lessons for fantasy writers, novelists and TTRPG creators.
-- **hashtags:** #worldbuilding #fantasywriting #writingtips #dnd #shorts
-- **pinnedComment:** What's one event in your world's history that people still feel today? Describe the consequence, not the event. I'll pick a few for future episodes.
+Say a war destroyed the only bridge across a river. Centuries later, merchants still pay the ferry toll, the ferry family rules the valley, and kids on each bank grow up with different accents. Every spring, both banks float lanterns where the bridge once stood. That is the difference between history and worldbuilding.
+
+Episode 1 of 50 in Worldbuilding, from the ground up: short lessons for fantasy writers, novelists and tabletop RPG creators.
+
+#worldbuilding #fantasywriting #writingtips
+- **hashtagsNote:** YouTube shows up to 3 description hashtags above the title, so the 3 that matter come first. More than 60 and all are ignored.
+- **pinnedComment:** What's one event in your world's history that people still feel today? Tell me the consequence, not the event.
+- **uploadSettings:** AI use: Yes (see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
 
 ### Tiktok
 - **caption:** A thousand years of lore can still feel empty. Here's the fix: give history consequences. #worldbuilding #fantasywriting #writingtok #dnd #ttrpg
 - **pinnedComment:** Your turn: name one old war, disaster or treaty in your world. What do ordinary people still pay, avoid or celebrate because of it?
 
 ### Facebook
-- **caption:** Your fantasy world can have a thousand years of history and still feel empty. The difference between lore and a living world is consequence. Episode 1 of 50. #worldbuilding #fantasywriting #writingcommunity
-- **pinnedComment:** Writers and GMs: what's a tradition in your world that only exists because something went wrong?
+- **caption:** Your fantasy world can have a thousand years of history and still feel empty.
+
+History only matters when it changes how people live. Break one bridge and a whole valley's trade, power and culture bend around it.
+
+Writers and GMs: what's a tradition in your world that only exists because something went wrong?
+
+Episode 1 of 50. Follow for the rest.
+
+#worldbuilding #fantasywriting #writingcommunity
+- **pinnedComment:** If the bridge were rebuilt tomorrow, who in this valley would try to stop it?
+- **uploadSettings:** Turn on the AI label when posting (see docs/DISTRIBUTION.md).
 
 **followUpQuestion:** If the bridge were rebuilt tomorrow, who in this valley would try to stop it?
+
+### Instagram
+- **caption:** A thousand years of lore can still feel empty.
+
+Lore is what happened. A living world is what it changed.
+
+One broken bridge and suddenly there are ferry tolls, a ruling family, two accents and a spring festival.
+
+What's one event in your world that people still feel today? Tell me the consequence, not the event.
+
+Follow for 49 more worldbuilding lessons.
+
+#worldbuilding #fantasywriting #writingcommunity #worldbuildingtips #ttrpg
+- **pinnedComment:** Your turn: name one war, disaster or treaty in your world. What do ordinary people still pay, avoid or celebrate because of it?
+- **uploadSettings:** Turn on the AI label in the post's advanced settings (see docs/DISTRIBUTION.md).

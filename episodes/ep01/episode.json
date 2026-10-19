@@ -1,0 +1,206 @@
+{
+  "id": "ep01",
+  "number": 1,
+  "title": "Your Worldbuilding Is Probably Missing This",
+  "lesson": "History becomes worldbuilding when it leaves consequences in the present.",
+
+  "voice": {
+    "provider": "kokoro",
+    "kokoro": { "voice": "af_heart", "lang": "a", "speed": 1.0 },
+    "elevenlabs": {
+      "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+      "model": "eleven_multilingual_v2",
+      "settings": { "stability": 0.55, "similarity_boost": 0.75, "style": 0.15, "use_speaker_boost": true }
+    },
+    "direction": "Warm, articulate storyteller explaining an idea to a friend. Confident, unhurried, no trailer-voice. Lean on 'thousand', 'empty', 'changes', 'still', 'rules', 'lanterns'. Let the room breathe after 'empty' and after 'once stood'."
+  },
+
+  "timing": { "leadIn": 0.25, "tail": 1.5, "shotLead": 0.12 },
+
+  "captionReplace": { "forty-nine": "49" },
+
+  "lines": [
+    { "id": "L1", "shot": "hook",     "text": "Your fantasy world can have a thousand years of history,", "pauseAfter": 0.22, "emphasis": ["thousand"] },
+    { "id": "L2", "shot": "hook",     "text": "and still feel completely empty.", "pauseAfter": 0.7, "emphasis": ["empty"] },
+    { "id": "L3", "shot": "thesis",   "text": "History only matters when it changes how people live.", "pauseAfter": 0.45, "emphasis": ["changes", "live"] },
+    { "id": "L4", "shot": "lore",     "text": "Say a war destroyed the only bridge across a river.", "pauseAfter": 0.4, "emphasis": ["bridge"] },
+    { "id": "L5", "shot": "map",      "text": "Centuries later, merchants still pay the ferry toll.", "pauseAfter": 0.22, "emphasis": ["toll"] },
+    { "id": "L6", "shot": "map",      "text": "The ferry family rules the valley.", "pauseAfter": 0.22, "emphasis": ["rules"] },
+    { "id": "L7", "shot": "map",      "text": "Kids on each bank grow up with different accents.", "pauseAfter": 0.45, "emphasis": ["accents"] },
+    { "id": "L8", "shot": "lanterns", "text": "Every spring, both banks float lanterns where the bridge once stood.", "pauseAfter": 0.75, "emphasis": ["lanterns"] },
+    { "id": "L9", "shot": "cta",      "text": "Follow for forty-nine more lessons on building worlds that feel real.", "pauseAfter": 0, "emphasis": ["real"] }
+  ],
+
+  "shots": [
+    {
+      "id": "hook",
+      "scene": "valley",
+      "purpose": "Pattern interrupt. Beauty that is hollow: lots of lore, nothing alive. Sets up the loop with the ending.",
+      "visual": "A vast mountain valley at blue hour, a silver river winding into fog, a lone ruined watchtower on a ridge. Not a soul, not a light, not a road.",
+      "camera": "Slow push-in (scale 1.00 to 1.08) with layered parallax; mountains drift slower than foreground ridges.",
+      "layers": { "foreground": "dark pine ridge silhouette, lower-left", "midground": "river bend catching cold sky light, ruined tower on a spur", "background": "four receding mountain ranges dissolving into fog, pale dawn glow behind the far peaks" },
+      "lighting": "Blue hour, low cold key from behind the far range, thick valley fog, palette slate/teal with a faint amber rim on the horizon. Rule of thirds: horizon at upper third, river leads the eye from lower right to center.",
+      "imagePrompt": "Ultra-wide establishing shot of an immense uninhabited mountain valley at blue hour, a silver river winding from the lower right into dense valley fog, a single ruined stone watchtower on a distant ridge, four receding mountain ranges fading into mist, faint amber glow behind the farthest peaks, dark pine ridge silhouette in the lower-left foreground, vertical 9:16 composition with horizon on the upper third, empty, silent, no people, no roads, no lights",
+      "videoPrompt": "Slow forward dolly over the valley, fog drifting gently right to left, river surface shimmering subtly, no camera shake, no new objects appearing, 5 seconds",
+      "graphics": [
+        { "type": "yearCounter", "from": 1, "to": 1000, "start": { "line": "L1", "word": "thousand" }, "end": { "line": "L1", "word": "history" }, "labels": ["The First Crowning", "The Long Winter", "The Sundering", "Age of Ash", "The Treaty of Salt", "Fall of the Ninth House"] },
+        { "type": "oversizedWord", "text": "empty.", "start": { "line": "L2", "word": "empty", "offset": -0.15 } }
+      ],
+      "onScreenText": "Year 1 → Year 1000 counter with lore names flickering past; then oversized serif 'empty.'",
+      "transition": "Fog swells over the frame on 'empty'; camera continues drifting down into the thesis shot (match-dissolve through fog).",
+      "sfx": [
+        { "sound": "wind", "from": { "shot": "hook" }, "to": { "shot": "map" }, "gain": -24 },
+        { "sound": "ticks", "from": { "line": "L1", "word": "thousand" }, "to": { "line": "L1", "word": "history", "offset": 0.4 }, "gain": -24 },
+        { "sound": "swell", "at": { "line": "L2", "word": "empty" }, "gain": -16 }
+      ],
+      "music": "Low D-minor drone, sparse. Music thins to almost nothing under 'empty'."
+    },
+    {
+      "id": "thesis",
+      "scene": "valleyLow",
+      "transitionIn": {"type": "fog", "duration": 0.7},
+      "captions": false,
+      "purpose": "State the lesson plainly so beginners have the rule before the example.",
+      "visual": "Same valley from river level: water in foreground, fog bank in mid, mountains behind.",
+      "camera": "Slow lateral drift right-to-left with gentle rise; type sits in the empty sky.",
+      "layers": { "foreground": "dark river water with reflected sky", "midground": "reed banks and a fog bank", "background": "the same mountain ranges, higher contrast" },
+      "lighting": "Slightly warmer than the hook, dawn breaking: amber rim on ridgelines. Upper half kept clean for type.",
+      "imagePrompt": "Low-angle view from the surface of a calm river in the same uninhabited mountain valley at early dawn, dark glassy water in the foreground reflecting a pale sky, reeds and a long fog bank in the midground, layered mountain ranges behind with warm amber rim light on the ridgelines, generous empty sky in the upper half, vertical 9:16",
+      "videoPrompt": "Very slow lateral drift right to left at water level, fog bank moving slowly, gentle ripples, no birds, no people, 4 seconds",
+      "graphics": [
+        { "type": "statement", "lines": ["History only matters", "when it *changes*", "how people live."], "start": { "line": "L3", "word": "history" } }
+      ],
+      "onScreenText": "Three-line serif statement; 'changes' in amber italic.",
+      "transition": "Hard editorial cut on 'Say' with a low impact hit, to the ruined bridge.",
+      "sfx": [ { "sound": "water", "from": { "shot": "thesis" }, "to": { "shot": "map" }, "gain": -28 } ],
+      "music": "Chord opens to B-flat major 7: first hint of warmth."
+    },
+    {
+      "id": "lore",
+      "scene": "bridge",
+      "transitionIn": {"type": "cut"},
+      "purpose": "The concrete example, stated as plain lore: an event in the past.",
+      "visual": "A great stone bridge with its central span broken away, two lonely halves reaching toward each other over the river.",
+      "camera": "Slow push-in toward the gap, then the camera tilts up and the image flattens into a map (rise-to-top-down transition).",
+      "layers": { "foreground": "fallen masonry in the shallows", "midground": "the broken bridge: four arches, central two missing", "background": "fog, mountains, pale sky" },
+      "lighting": "Cold dawn backlight, river mist, stone in deep slate with amber rim. Gap centered in frame.",
+      "imagePrompt": "A massive ancient stone arch bridge spanning a wide river in the same mountain valley, its central span collapsed long ago leaving two broken halves reaching toward each other across the gap, moss and ivy on weathered stone, fallen masonry blocks in the shallow water below, river mist, cold dawn backlight with warm amber rim light on the stone edges, the gap centered in a vertical 9:16 frame, melancholy, quiet, no people",
+      "videoPrompt": "Slow push-in toward the broken central gap of the bridge, mist flowing under the arches, water moving downstream, camera steady, structure remains rigid and unchanged, 4 seconds",
+      "graphics": [
+        { "type": "tag", "kicker": "LORE", "text": "A war broke the only bridge", "start": { "line": "L4", "word": "war" } },
+        { "type": "dateLabel", "text": "300 years ago", "start": { "line": "L4", "word": "bridge" } }
+      ],
+      "onScreenText": "Chip 'LORE' + 'A war broke the only bridge'; small dated label '300 years ago' pinned to the gap.",
+      "transition": "Push into the gap, white-blue fog flash, map draws itself from the river line (the river is the shared element).",
+      "sfx": [
+        { "sound": "impact", "at": { "line": "L4", "word": "say", "offset": -0.05 }, "gain": -14 },
+        { "sound": "rumble", "at": { "line": "L4", "word": "destroyed" }, "gain": -18 },
+        { "sound": "whoosh", "at": { "shot": "map", "offset": -0.35 }, "gain": -18 }
+      ],
+      "music": "G minor add9, tension; low pedal."
+    },
+    {
+      "id": "map",
+      "scene": "map",
+      "transitionIn": {"type": "flash", "duration": 0.45},
+      "purpose": "Core insight: one past event produces present-day trade, power and culture. The repeated 'still' makes the past present.",
+      "visual": "Dark parchment map of the valley. The river divides East and West banks. Broken bridge marked. Each consequence draws on as it's spoken.",
+      "camera": "Map slowly scales 1.06 to 1.0 and pans to the region being discussed. No spinning, no 3D tilt.",
+      "layers": { "foreground": "labels and icons", "midground": "routes, river, regions", "background": "parchment texture and vignette" },
+      "lighting": "Ink-and-ember palette: parchment lines on near-black slate, amber for new consequences, rust for the war.",
+      "plate": false,
+      "imagePrompt": "Optional texture plate (not used while plate=false; the map is vector): top-down hand-painted antique map texture of a river valley, aged dark parchment, subtle ink washes, no labels, no text, no compass rose, vertical 9:16",
+      "videoPrompt": "",
+      "graphics": [
+        { "type": "mapBase", "start": { "shot": "map" } },
+        { "type": "ferryRoute", "label": "Ferry toll", "start": { "line": "L5", "word": "merchants" }, "icon": { "line": "L5", "word": "toll" } },
+        { "type": "power", "label": "Ferry family", "start": { "line": "L6", "word": "ferry" } },
+        { "type": "accents", "labels": ["West bank", "East bank"], "start": { "line": "L7", "word": "kids" } },
+        { "type": "ledger", "items": ["Trade", "Power", "Culture"], "beats": [ { "line": "L5", "word": "toll" }, { "line": "L6", "word": "rules" }, { "line": "L7", "word": "accents" } ] }
+      ],
+      "onScreenText": "Labels 'Ferry toll', 'Ferry family', 'West bank / East bank'; a ledger at top ticks Trade → Power → Culture.",
+      "transition": "Map ink fades back to darkness while the river line glows and becomes the lantern-lit river (match on the river).",
+      "sfx": [
+        { "sound": "paper", "at": { "shot": "map", "offset": 0.05 }, "gain": -20 },
+        { "sound": "coin", "at": { "line": "L5", "word": "toll" }, "gain": -16 },
+        { "sound": "drum", "at": { "line": "L6", "word": "rules" }, "gain": -14 },
+        { "sound": "ink", "at": { "line": "L5", "word": "merchants" }, "gain": -24 },
+        { "sound": "ink", "at": { "line": "L7", "word": "kids" }, "gain": -24 }
+      ],
+      "music": "Lift: soft pulse at 70 bpm and plucked arpeggios enter. Dm-Bb-F-C."
+    },
+    {
+      "id": "lanterns",
+      "scene": "lanterns",
+      "transitionIn": {"type": "dissolve", "duration": 0.7},
+      "purpose": "Emotional payoff: the same broken bridge, now a living tradition. Answers the hook: the world is no longer empty.",
+      "visual": "Night. The two broken halves of the bridge in silhouette. Hundreds of paper lanterns floating on the river toward the gap; tiny figures on both banks.",
+      "camera": "Slow crane up and back to reveal the lantern river; lanterns drift toward the gap.",
+      "layers": { "foreground": "a few close lanterns, soft bokeh", "midground": "river of lanterns and the broken piers", "background": "dark mountains under a deep blue night sky, faint stars" },
+      "lighting": "Warm amber lantern light against deep blue night; reflections on the water carry the light to the bottom of frame.",
+      "imagePrompt": "Night scene in the same mountain valley, the same ancient stone bridge with its collapsed central span in dark silhouette, hundreds of warm paper lanterns floating on the river and drifting toward the gap, tiny silhouetted townsfolk holding lanterns on both riverbanks, warm amber lantern glow reflected on dark water, deep blue night sky with faint stars above layered mountains, gentle haze, vertical 9:16, hopeful and quiet",
+      "videoPrompt": "Slow crane up and back, lanterns drifting downstream toward the gap with gentle bobbing, reflections rippling, figures mostly still, no fireworks, no sudden motion, 5 seconds",
+      "graphics": [
+        { "type": "tag", "kicker": "LIVING WORLD", "text": "The lost crossing, remembered", "start": { "line": "L8", "word": "lanterns" } },
+        { "type": "oversizedWord", "text": "not empty.", "start": { "line": "L8", "word": "stood", "offset": 0.45 } }
+      ],
+      "onScreenText": "Tag 'LIVING WORLD'; after the line, oversized 'not empty.' answers the hook.",
+      "transition": "Lanterns blur upward into bokeh; series card resolves over them.",
+      "sfx": [
+        { "sound": "water", "from": { "shot": "lanterns" }, "to": { "shot": "cta" }, "gain": -26 },
+        { "sound": "chimes", "at": { "line": "L8", "word": "lanterns" }, "gain": -20 }
+      ],
+      "music": "Brightest moment: F major add9 to C/E with bell plucks."
+    },
+    {
+      "id": "cta",
+      "scene": "endcard",
+      "transitionIn": {"type": "dissolve", "duration": 0.9},
+      "captions": false,
+      "purpose": "Series promise + follow CTA; final frame fades into blue-hour fog to loop into the hook.",
+      "visual": "Lantern bokeh behind the series title lockup.",
+      "camera": "Static; bokeh drifts upward slowly.",
+      "layers": { "foreground": "title lockup", "midground": "soft bokeh", "background": "deep blue gradient fading toward the hook's fog" },
+      "lighting": "Low-key, warm lantern bokeh, fades to blue fog at the end.",
+      "imagePrompt": "",
+      "videoPrompt": "",
+      "graphics": [
+        { "type": "endcard", "series": "Worldbuilding", "subtitle": "from the ground up", "episode": "Episode 01 / 50", "cta": "Follow for 49 more lessons", "ctaSub": "on building worlds that feel real.", "start": { "shot": "cta" } }
+      ],
+      "onScreenText": "WORLDBUILDING — from the ground up — Episode 01 / 50 — Follow for 49 more lessons",
+      "transition": "Fade to the hook's first frame colour (blue fog) for a seamless loop.",
+      "sfx": [ { "sound": "chimes", "at": { "line": "L9", "word": "real" }, "gain": -24 } ],
+      "music": "Resolves to D major; fades fully before the last frame."
+    }
+  ],
+
+  "music": {
+    "key": "D minor",
+    "sections": {
+      "hook":     { "chords": [["D2","A2","D3","F3","A3"]], "level": 0.55, "dark": true },
+      "thesis":   { "chords": [["Bb1","F2","D3","A3","C4"]], "level": 0.6 },
+      "lore":     { "chords": [["G1","D2","Bb2","A3","D4"]], "level": 0.6 },
+      "map":      { "chords": [["D2","A2","F3","A3"], ["Bb1","F2","D3","F3"], ["F2","C3","A3","C4"], ["C2","G2","E3","G3"]], "level": 0.75, "pulse": 70, "arp": true },
+      "lanterns": { "chords": [["F2","C3","G3","A3","C4"], ["E2","C3","G3","C4","E4"]], "level": 0.85, "bells": true },
+      "cta":      { "chords": [["Bb1","F2","D3","F3"], ["D2","A2","F#3","A3","D4"]], "level": 0.7, "bells": true }
+    }
+  },
+
+  "metadata": {
+    "youtube": {
+      "title": "Your worldbuilding is probably missing this #worldbuilding",
+      "description": "Lore is what happened. A living world is what it changed. One broken bridge, three centuries of consequences: trade, power, culture and a festival.\n\nEpisode 1 of 50 in Worldbuilding, from the ground up: short lessons for fantasy writers, novelists and TTRPG creators.",
+      "hashtags": ["#worldbuilding", "#fantasywriting", "#writingtips", "#dnd", "#shorts"],
+      "pinnedComment": "What's one event in your world's history that people still feel today? Describe the consequence, not the event. I'll pick a few for future episodes."
+    },
+    "tiktok": {
+      "caption": "A thousand years of lore can still feel empty. Here's the fix: give history consequences. #worldbuilding #fantasywriting #writingtok #dnd #ttrpg",
+      "pinnedComment": "Your turn: name one old war, disaster or treaty in your world. What do ordinary people still pay, avoid or celebrate because of it?"
+    },
+    "facebook": {
+      "caption": "Your fantasy world can have a thousand years of history and still feel empty. The difference between lore and a living world is consequence. Episode 1 of 50. #worldbuilding #fantasywriting #writingcommunity",
+      "pinnedComment": "Writers and GMs: what's a tradition in your world that only exists because something went wrong?"
+    },
+    "followUpQuestion": "If the bridge were rebuilt tomorrow, who in this valley would try to stop it?"
+  }
+}

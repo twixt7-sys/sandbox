@@ -1,0 +1,35 @@
+{
+  "name": "Worldbuilding, from the ground up",
+  "handleCta": "Follow for more",
+  "totalEpisodes": 50,
+  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "palette": {
+    "night": "#0b1216",
+    "slate": "#16222a",
+    "fog": "#9fb1b8",
+    "mist": "#d6dfe0",
+    "parchment": "#efe6d2",
+    "ink": "#1c1a17",
+    "amber": "#e9a94b",
+    "ember": "#f4c46e",
+    "rust": "#b9543a"
+  },
+  "type": {
+    "display": "Cormorant Garamond",
+    "ui": "Inter"
+  },
+  "safeArea": {
+    "top": 230,
+    "bottom": 560,
+    "left": 90,
+    "right": 160,
+    "captionCenterY": 1250
+  },
+  "visualStyleSuffix": "cinematic fantasy documentary still, painterly realism, atmospheric perspective, volumetric light through fog, muted teal-slate shadows with warm amber highlights, restrained saturation, 35mm anamorphic look, soft film grain, believable medieval-era architecture and materials, no text, no letters, no logos, no watermark, no signage",
+  "negativePrompt": "text, lettering, captions, watermark, logo, signature, glowing runes, neon, oversaturated, fantasy clichés like floating islands or dragons, extra limbs, malformed architecture, duplicated structures, cartoon, cel shading, lens flare overload",
+  "audio": {
+    "targetLufs": -14,
+    "truePeak": -1.5,
+    "musicUnderVoiceDb": -20
+  }
+}

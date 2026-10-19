@@ -1,0 +1,47 @@
+# Cost per episode
+
+Prices are published list prices checked on 2026-10-19 (see [RESEARCH.md](RESEARCH.md)). PHP uses **₱61.8 = $1**, the most recent rate I could find (ECB/Bank of Portugal cross rate, 19 Aug 2026). That rate is an assumption, so check today's rate before budgeting. "Estimate" means I applied published unit prices to this episode's measured usage. It is not a quote.
+
+Episode 01 usage: 30.4 s, ~430 narration characters, 4 plate shots (the map is vector graphics), 2 hero clips (hook ≈ 7 s, lanterns ≈ 6 s).
+
+## Primary architecture (Runway + ElevenLabs + Remotion on GitHub Actions)
+
+| Item | Unit price (published) | Estimate per episode | With one retry per asset |
+|---|---|---|---|
+| Image drafts (`gen4_image_turbo`, 4) | $0.02 each | $0.08 | $0.08 |
+| Final stills (`gen4_image` 1080p, 4) | $0.08 each | $0.32 | $0.64 |
+| Hero clips (`gen4_turbo`, 13 s) | $0.05/s | $0.65 | $1.30 |
+| Narration (ElevenLabs Multilingual v2, 3 takes) | $0.08 / 1K chars | $0.10 | $0.10 |
+| Music + SFX | synthesized in code | $0.00 | $0.00 |
+| Render (GitHub Actions, public repo) | free standard runners | $0.00 | $0.00 |
+| Storage (≈15 MB; R2 free tier 10 GB) | $0.015/GB-mo past free tier | $0.00 | $0.00 |
+| **Total** | | **≈ $1.15 (₱71)** | **≈ $2.12 (₱131)** |
+
+Fixed monthly costs:
+
+| Item | Monthly cost | Notes |
+|---|---|---|
+| ElevenLabs Starter | $6 (₱371) | Lowest tier with commercial rights. Alternatively, Runway resells `eleven_multilingual_v2` at $0.01 per 50 chars (≈$0.09/take) on the same Runway bill. Confirm the commercial terms in Runway's ToS before relying on that. |
+| Runway API | prepaid credits | I could not verify a minimum top-up from the docs. Check the developer portal. |
+| Remotion | $0 | Free for individuals and companies of 3 or fewer people. |
+| GitHub | $0 | Public repo. A private repo uses the free-minute quota (estimate: 6–10 min per render). |
+| Claude Pro | already paid | Writing, code and orchestration only. No third-party credits included. |
+
+**50 episodes:** an estimated $58–106 in usage, plus $6/month for ElevenLabs.
+
+## Alternatives
+
+| Option | Per-episode | Monthly | Comment |
+|---|---|---|---|
+| **Zero-cost fallback** (Kokoro + procedural scenes + synth score + GH Actions) | $0 | $0 | Used for this render. |
+| Figma `generate_image` for stills | Figma AI credits (cost per image unpublished) | inside your Starter plan (500 credits/mo, 150/day) | No new bill; good for drafts and stills. |
+| Creatomate instead of Remotion | 19 credits per 30 s 1080×1920@30 render | Essential plan (docs mention $54; third-party lists conflict) | Adds a fixed fee; less custom motion design. |
+| Remotion Lambda instead of GH Actions | ≈ $0.01 AWS compute (scaled from Remotion's $0.017 / 1-min example) | $0 | Worth it only if you need parallel renders at scale. |
+| Veo 3.1 Fast (no audio) instead of gen4_turbo | $0.10/s → $1.30 for 13 s | — | Try on one hero shot if gen4_turbo motion is weak. |
+
+## Cost controls built in
+
+- `pipeline/plates.py` is a dry run by default and prints an estimate. It spends money only with `--yes`.
+- The map is vector graphics, so it never needs generation.
+- Clips are only for the hook and payoff; every other shot uses a still with a restrained camera move.
+- `--only <shot>` regenerates a single failed shot instead of the whole set.

@@ -1,0 +1,6 @@
+kokoro==0.9.4
+soundfile>=0.12
+numpy>=1.26
+scipy>=1.11
+pyloudnorm==0.2.0
+torch==2.14.1

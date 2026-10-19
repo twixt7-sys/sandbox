@@ -81,11 +81,11 @@ const OversizedWord: React.FC<GraphicProps> = ({g, t, span}) => {
 			<div
 				style={{
 					position: 'absolute',
-					top: 640,
+					top: g.y ?? 640,
 					fontFamily: fonts.display,
 					fontStyle: 'italic',
 					fontWeight: 500,
-					fontSize: 230,
+					fontSize: g.size ?? 230,
 					letterSpacing: `${lerp(-0.04, 0.0, reveal)}em`,
 					color: palette.parchment,
 					WebkitMaskImage: `linear-gradient(to top, #000 ${reveal * 120 - 20}%, transparent ${reveal * 120}%)`,

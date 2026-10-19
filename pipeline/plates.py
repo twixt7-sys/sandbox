@@ -5,7 +5,8 @@ Dry-run by default: prints what would be generated and the estimated cost, spend
   python pipeline/plates.py ep01                      # quote only
   python pipeline/plates.py ep01 --yes                # generate stills (Runway gen4_image, ~$0.08 each)
   python pipeline/plates.py ep01 --yes --video hook,lanterns   # + 5 s gen4_turbo clips for those shots
-  python pipeline/plates.py ep01 --register           # you dropped PNG/MP4 files in public/<ep>/plates/ by hand
+  python pipeline/plates.py ep01 --register           # you dropped PNG/JPG/MP4 files in episodes/<ep>/plates/ by hand
+                                                      # (e.g. stills made with Figma generate_image or any other tool)
 
 Needs RUNWAYML_API_SECRET for generation. Writes episodes/<ep>/plates.json (shot id -> file).
 Shots without a plate keep their procedural scene, so partial plates are fine.
@@ -69,13 +70,13 @@ def main():
     ap.add_argument("--yes", action="store_true", help="actually call the paid API")
     ap.add_argument("--video", default="", help="comma-separated shot ids to animate with image-to-video")
     ap.add_argument("--only", default="", help="comma-separated shot ids to (re)generate")
-    ap.add_argument("--register", action="store_true", help="index files already in public/<ep>/plates/")
+    ap.add_argument("--register", action="store_true", help="index files already in episodes/<ep>/plates/")
     args = ap.parse_args()
 
     ep = load_episode(args.episode)
     series = load_series()
-    pdir = out_dir(ep["id"]) / "plates"
-    pdir.mkdir(exist_ok=True)
+    pdir = ROOT / "episodes" / ep["id"] / "plates"  # committed with the episode; build.sh copies to public/
+    pdir.mkdir(parents=True, exist_ok=True)
     manifest_path = ROOT / "episodes" / ep["id"] / "plates.json"
     manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
 

@@ -27,7 +27,7 @@
     { "id": "L5", "shot": "map",      "text": "Centuries later, merchants still pay the ferry toll.", "pauseAfter": 0.22, "emphasis": ["toll"] },
     { "id": "L6", "shot": "map",      "text": "The ferry family rules the valley.", "pauseAfter": 0.22, "emphasis": ["rules"] },
     { "id": "L7", "shot": "map",      "text": "Kids on each bank grow up with different accents.", "pauseAfter": 0.45, "emphasis": ["accents"] },
-    { "id": "L8", "shot": "lanterns", "text": "Every spring, both banks float lanterns where the bridge once stood.", "pauseAfter": 0.75, "emphasis": ["lanterns"] },
+    { "id": "L8", "shot": "lanterns", "text": "Every spring, both banks float lanterns where the bridge once stood.", "pauseAfter": 1.15, "emphasis": ["lanterns"] },
     { "id": "L9", "shot": "cta",      "text": "Follow for forty-nine more lessons on building worlds that feel real.", "pauseAfter": 0, "emphasis": ["real"] }
   ],
 
@@ -35,6 +35,7 @@
     {
       "id": "hook",
       "scene": "valley",
+      "plateMotion": "push", "plateScrim": 0.5,
       "purpose": "Pattern interrupt. Beauty that is hollow: lots of lore, nothing alive. Sets up the loop with the ending.",
       "visual": "A vast mountain valley at blue hour, a silver river winding into fog, a lone ruined watchtower on a ridge. Not a soul, not a light, not a road.",
       "camera": "Slow push-in (scale 1.00 to 1.08) with layered parallax; mountains drift slower than foreground ridges.",
@@ -44,7 +45,7 @@
       "videoPrompt": "Slow forward dolly over the valley, fog drifting gently right to left, river surface shimmering subtly, no camera shake, no new objects appearing, 5 seconds",
       "graphics": [
         { "type": "yearCounter", "from": 1, "to": 1000, "start": { "line": "L1", "word": "thousand" }, "end": { "line": "L1", "word": "history" }, "labels": ["The First Crowning", "The Long Winter", "The Sundering", "Age of Ash", "The Treaty of Salt", "Fall of the Ninth House"] },
-        { "type": "oversizedWord", "text": "empty.", "start": { "line": "L2", "word": "empty", "offset": -0.15 } }
+        { "type": "oversizedWord", "text": "empty.", "y": 330, "start": { "line": "L2", "word": "empty", "offset": -0.15 } }
       ],
       "onScreenText": "Year 1 → Year 1000 counter with lore names flickering past; then oversized serif 'empty.'",
       "transition": "Fog swells over the frame on 'empty'; camera continues drifting down into the thesis shot (match-dissolve through fog).",
@@ -58,6 +59,7 @@
     {
       "id": "thesis",
       "scene": "valleyLow",
+      "plateMotion": "driftL", "plateScrim": 0.75,
       "transitionIn": {"type": "fog", "duration": 0.7},
       "captions": false,
       "purpose": "State the lesson plainly so beginners have the rule before the example.",
@@ -78,6 +80,7 @@
     {
       "id": "lore",
       "scene": "bridge",
+      "plateMotion": "push", "plateScrim": 0.7,
       "transitionIn": {"type": "cut"},
       "purpose": "The concrete example, stated as plain lore: an event in the past.",
       "visual": "A great stone bridge with its central span broken away, two lonely halves reaching toward each other over the river.",
@@ -88,7 +91,7 @@
       "videoPrompt": "Slow push-in toward the broken central gap of the bridge, mist flowing under the arches, water moving downstream, camera steady, structure remains rigid and unchanged, 4 seconds",
       "graphics": [
         { "type": "tag", "kicker": "LORE", "text": "A war broke the only bridge", "start": { "line": "L4", "word": "war" } },
-        { "type": "dateLabel", "text": "300 years ago", "start": { "line": "L4", "word": "bridge" } }
+        { "type": "dateLabel", "text": "300 years ago", "at": [528, 1080], "start": { "line": "L4", "word": "bridge" } }
       ],
       "onScreenText": "Chip 'LORE' + 'A war broke the only bridge'; small dated label '300 years ago' pinned to the gap.",
       "transition": "Push into the gap, white-blue fog flash, map draws itself from the river line (the river is the shared element).",
@@ -132,6 +135,7 @@
     {
       "id": "lanterns",
       "scene": "lanterns",
+      "plateMotion": "pull", "plateScrim": 0.35,
       "transitionIn": {"type": "dissolve", "duration": 0.7},
       "purpose": "Emotional payoff: the same broken bridge, now a living tradition. Answers the hook: the world is no longer empty.",
       "visual": "Night. The two broken halves of the bridge in silhouette. Hundreds of paper lanterns floating on the river toward the gap; tiny figures on both banks.",
@@ -142,7 +146,7 @@
       "videoPrompt": "Slow crane up and back, lanterns drifting downstream toward the gap with gentle bobbing, reflections rippling, figures mostly still, no fireworks, no sudden motion, 5 seconds",
       "graphics": [
         { "type": "tag", "kicker": "LIVING WORLD", "text": "The lost crossing, remembered", "start": { "line": "L8", "word": "lanterns" } },
-        { "type": "oversizedWord", "text": "not empty.", "start": { "line": "L8", "word": "stood", "offset": 0.45 } }
+        { "type": "oversizedWord", "text": "not empty.", "y": 400, "size": 180, "start": { "line": "L8", "word": "stood", "offset": 0.15 } }
       ],
       "onScreenText": "Tag 'LIVING WORLD'; after the line, oversized 'not empty.' answers the hook.",
       "transition": "Lanterns blur upward into bokeh; series card resolves over them.",
@@ -155,7 +159,7 @@
     {
       "id": "cta",
       "scene": "endcard",
-      "transitionIn": {"type": "dissolve", "duration": 0.9},
+      "transitionIn": {"type": "dissolve", "duration": 0.6},
       "captions": false,
       "purpose": "Series promise + follow CTA; final frame fades into blue-hour fog to loop into the hook.",
       "visual": "Lantern bokeh behind the series title lockup.",

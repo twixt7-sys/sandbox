@@ -35,7 +35,9 @@ Sources: [Runway pricing](https://docs.dev.runwayml.com/guides/pricing/) · [Run
 **Primary architecture (paid quality, ~$1–2 per episode):**
 Claude writes `episode.json` → Runway `gen4_image` plates (4 stills) + `gen4_turbo` image-to-video for the 2 hero shots → ElevenLabs narration with timestamps → synthesized score/SFX (or ElevenLabs Music) → Remotion composition → **GitHub Actions** render → QA → MP4 artifact (later R2).
 
-**Fallback architecture (zero cost, used for this first render):**
+**What Episode 01 shipped with:** the fallback stack plus 4 AI stills from Figma `generate_image`, paid with your existing Figma AI credits. Moving to Runway later only changes where the stills (and optional hero clips) come from. Nothing else in the pipeline changes.
+
+**Fallback architecture (zero cost):**
 Same pipeline with Kokoro TTS, procedural "matte painting" scenes drawn in code, synthesized score, GitHub Actions or Claude cloud render.
 
 Why: one config file drives everything; the expensive parts (AI plates and clips) are optional and replace backgrounds per shot, so a failed generation never blocks an episode. Rendering on GitHub Actions removes Lambda/AWS setup and the fixed monthly fee of a template service. Nothing heavy runs on your laptop.

@@ -51,14 +51,14 @@ const TransitionFx: React.FC<{type: string; at: number; dur: number}> = ({type, 
 };
 
 /** Last 0.6 s cross-fades into the hook's first frame so the Short loops seamlessly. */
-const LoopTail: React.FC<{duration: number; hook: Shot}> = ({duration, hook}) => {
+const LoopTail: React.FC<{duration: number; hook: Shot; plate?: string; episodeId: string}> = ({duration, hook, plate, episodeId}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const o = interpolate(frame / fps, [duration - 0.65, duration - 0.05], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
 	if (o <= 0) return null;
 	return (
 		<AbsoluteFill style={{opacity: o}}>
-			<Valley progress={0} t={0} shot={hook} />
+			{plate ? <PlateScene progress={0} t={0} shot={hook} src={`${episodeId}/${plate}`} /> : <Valley progress={0} t={0} shot={hook} />}
 		</AbsoluteFill>
 	);
 };
@@ -91,7 +91,7 @@ export const EpisodeComposition: React.FC<EpisodeProps> = ({episodeId, episode, 
 				<Grade />
 				<Vignette />
 				<Captions timing={timing} episode={episode} t={t} centerY={series.safeArea.captionCenterY} />
-				<LoopTail duration={timing.duration} hook={episode.shots[0]} />
+				<LoopTail duration={timing.duration} hook={episode.shots[0]} plate={plates[episode.shots[0].id]} episodeId={episodeId} />
 				<Grain />
 				<Audio src={staticFile(`${episodeId}/mix.wav`)} />
 			</AbsoluteFill>

@@ -2,19 +2,19 @@
 
 **Series:** Worldbuilding, from the ground up · Episode 01  
 **Lesson:** History becomes worldbuilding when it leaves consequences in the present.  
-**Measured runtime:** 30.36 s · 79 spoken words · voice `kokoro`
+**Measured runtime:** 30.76 s · 79 spoken words · voice `kokoro`
 
 ## Narration (exactly as spoken)
 
 - `0:00.25–0:03.31` Your fantasy world can have a thousand years of history,
 - `0:03.53–0:05.31` and still feel completely empty.
 - `0:06.01–0:09.00` History only matters when it changes how people live.
-- `0:09.45–0:12.23` Say a war destroyed the only bridge across a river.
-- `0:12.63–0:15.53` Centuries later, merchants still pay the ferry toll.
-- `0:15.75–0:17.54` The ferry family rules the valley.
-- `0:17.76–0:20.24` Kids on each bank grow up with different accents.
-- `0:20.69–0:24.17` Every spring, both banks float lanterns where the bridge once stood.
-- `0:24.92–0:28.86` Follow for forty-nine more lessons on building worlds that feel real.
+- `0:09.45–0:12.24` Say a war destroyed the only bridge across a river.
+- `0:12.64–0:15.53` Centuries later, merchants still pay the ferry toll.
+- `0:15.75–0:17.55` The ferry family rules the valley.
+- `0:17.77–0:20.25` Kids on each bank grow up with different accents.
+- `0:20.70–0:24.17` Every spring, both banks float lanterns where the bridge once stood.
+- `0:25.32–0:29.26` Follow for forty-nine more lessons on building worlds that feel real.
 
 **Voice direction:** Warm, articulate storyteller explaining an idea to a friend. Confident, unhurried, no trailer-voice. Lean on 'thousand', 'empty', 'changes', 'still', 'rules', 'lanterns'. Let the room breathe after 'empty' and after 'once stood'.
 
@@ -84,7 +84,7 @@
 
 **Sound:** water (-28 dB). Music: Chord opens to B-flat major 7: first hint of warmth.
 
-### 3. `lore` · 0:09.33 → 0:12.51 (3.2 s)
+### 3. `lore` · 0:09.33 → 0:12.52 (3.2 s)
 
 **Purpose:** The concrete example, stated as plain lore: an event in the past.
 
@@ -116,7 +116,7 @@
 
 **Sound:** impact (-14 dB); rumble (-18 dB); whoosh (-18 dB). Music: G minor add9, tension; low pedal.
 
-### 4. `map` · 0:12.51 → 0:20.57 (8.1 s)
+### 4. `map` · 0:12.52 → 0:20.57 (8.1 s)
 
 **Purpose:** Core insight: one past event produces present-day trade, power and culture. The repeated 'still' makes the past present.
 
@@ -140,7 +140,7 @@
 
 **Sound:** paper (-20 dB); coin (-16 dB); drum (-14 dB); ink (-24 dB); ink (-24 dB). Music: Lift: soft pulse at 70 bpm and plucked arpeggios enter. Dm-Bb-F-C.
 
-### 5. `lanterns` · 0:20.57 → 0:24.80 (4.2 s)
+### 5. `lanterns` · 0:20.57 → 0:25.20 (4.6 s)
 
 **Purpose:** Emotional payoff: the same broken bridge, now a living tradition. Answers the hook: the world is no longer empty.
 
@@ -172,7 +172,7 @@
 
 **Sound:** water (-26 dB); chimes (-20 dB). Music: Brightest moment: F major add9 to C/E with bell plucks.
 
-### 6. `cta` · 0:24.80 → 0:30.36 (5.6 s)
+### 6. `cta` · 0:25.20 → 0:30.76 (5.6 s)
 
 **Purpose:** Series promise + follow CTA; final frame fades into blue-hour fog to loop into the hook.
 

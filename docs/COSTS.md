@@ -29,11 +29,20 @@ Fixed monthly costs:
 
 **50 episodes:** an estimated $58–106 in usage, plus $6/month for ElevenLabs.
 
+## What Episode 01 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 4 background stills | Figma `generate_image` (`gemini-3.1-flash-lite-image`), 768×1376, upscaled to 1080×1920. 4 generations, no retries. | $0 (Figma AI credits on your Starter plan; Figma doesn't show per-call credit use through this connector, so check Settings → AI credits) |
+| Narration | Kokoro-82M on CPU | $0 |
+| Score + SFX | synthesized in code | $0 |
+| Render + QA | Claude cloud container and GitHub Actions (public repo) | $0 |
+
 ## Alternatives
 
 | Option | Per-episode | Monthly | Comment |
 |---|---|---|---|
-| **Zero-cost fallback** (Kokoro + procedural scenes + synth score + GH Actions) | $0 | $0 | Used for this render. |
+| **Zero-cost fallback** (Kokoro + procedural scenes + synth score + GH Actions) | $0 | $0 | Episode 01 first render; still the fallback for any shot without a plate. |
 | Figma `generate_image` for stills | Figma AI credits (cost per image unpublished) | inside your Starter plan (500 credits/mo, 150/day) | No new bill; good for drafts and stills. |
 | Creatomate instead of Remotion | 19 credits per 30 s 1080×1920@30 render | Essential plan (docs mention $54; third-party lists conflict) | Adds a fixed fee; less custom motion design. |
 | Remotion Lambda instead of GH Actions | ≈ $0.01 AWS compute (scaled from Remotion's $0.017 / 1-min example) | $0 | Worth it only if you need parallel renders at scale. |

@@ -31,8 +31,11 @@ export const SCENES: Record<string, React.FC<SceneProps>> = {
  * AI-generated still (or a frame-accurate clip) used as the background plate.
  * Camera motion is a restrained push/drift so generated detail never has to move.
  */
-export const PlateScene: React.FC<SceneProps & {src: string; motion?: 'push' | 'pull' | 'driftL' | 'driftR'}> = ({progress, src, motion = 'push'}) => {
+export const PlateScene: React.FC<SceneProps & {src: string}> = ({progress, src, shot}) => {
 	const p = progress;
+	const motion: 'push' | 'pull' | 'driftL' | 'driftR' = shot.plateMotion ?? 'push';
+	// Generated skies are often bright: darken the top so parchment type stays legible.
+	const scrim = shot.plateScrim ?? 0.5;
 	const m = {
 		push: {s: lerp(1.0, 1.08, p), x: 0, y: lerp(0, -20, p)},
 		pull: {s: lerp(1.1, 1.0, p), x: 0, y: lerp(-20, 0, p)},
@@ -50,6 +53,7 @@ export const PlateScene: React.FC<SceneProps & {src: string; motion?: 'push' | '
 				)}
 			</AbsoluteFill>
 			<FogBank y={1500} opacity={0.12} seed={40} drift={0.5} />
+			<AbsoluteFill style={{background: `linear-gradient(180deg, rgba(8,13,16,${scrim}) 0%, rgba(8,13,16,${scrim * 0.75}) 30%, rgba(8,13,16,0) 52%)`}} />
 		</AbsoluteFill>
 	);
 };

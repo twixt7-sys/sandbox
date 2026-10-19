@@ -44,7 +44,10 @@ Docs: [research and stack decision](docs/RESEARCH.md) · [costs](docs/COSTS.md) 
    - **lines**: 8–10 short spoken lines, 60–75 words. Map each to a shot id and set `pauseAfter` and `emphasis`.
    - **shots**: 5–6 shots. Each needs a `scene` (an existing procedural scene, or any scene plus a plate), an `imagePrompt` and a `videoPrompt`. Graphics cues reference spoken words, e.g. `{"line":"L4","word":"bridge"}`, so timing stays in sync automatically.
    - **metadata** for the three platforms.
-3. Optional AI plates: `python pipeline/plates.py ep02` (quote only), then `--yes --video hook,payoff`.
+3. Optional AI plates. There are two routes:
+   - **Figma (in-plan credits):** ask Claude to generate each shot's `imagePrompt` with Figma `generate_image`, save the files as `episodes/ep02/plates/<shot>.jpg`, then run `python pipeline/plates.py ep02 --register`.
+   - **Runway (API key):** run `python pipeline/plates.py ep02` for a quote only, then `--yes --video hook,payoff`.
+   Plates are committed with the episode. A shot without a plate falls back to its procedural scene.
 4. Push. The workflow narrates, scores, mixes, renders and QA-checks the episode. Review the MP4 and contact sheet.
 5. To fix something, edit the JSON and push again. To retime, adjust `pauseAfter`. To re-roll one plate, use `plates.py ep02 --yes --only lore`.
 

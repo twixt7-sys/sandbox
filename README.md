@@ -37,10 +37,10 @@ Docs: [research and stack decision](docs/RESEARCH.md) · [costs](docs/COSTS.md) 
 2. When the run finishes, open it and download the **`<ep>-render`** artifact. It contains `out/<ep>.mp4`, the QA JSON and a contact sheet.
 3. Optional secrets (Settings → Secrets and variables → Actions): `ELEVENLABS_API_KEY`, `RUNWAYML_API_SECRET`.
 
-## Producing Episode 02
+## Producing the next episode (EP03 onward)
 
-1. Ask Claude: *"Write ep02 for Worldcraft Shorts: topic X, hook Y. Copy episodes/ep01/episode.json's structure."*
-2. Claude creates `episodes/ep02/episode.json`:
+1. Ask Claude: *"Write ep03 for Worldcraft Shorts: topic X, hook Y. Copy episodes/ep02/episode.json's structure."* Claude asks before spending Figma credits (CLAUDE.md).
+2. Claude creates `episodes/ep03/episode.json`:
    - **lines**: 8–10 short spoken lines, 60–75 words. Map each to a shot id and set `pauseAfter` and `emphasis`.
    - **shots**: 5–6 shots. Each needs a `scene` (an existing procedural scene, or any scene plus a plate), an `imagePrompt` and a `videoPrompt`. Graphics cues reference spoken words, e.g. `{"line":"L4","word":"bridge"}`, so timing stays in sync automatically.
    - **metadata** for the three platforms.
@@ -52,6 +52,25 @@ Docs: [research and stack decision](docs/RESEARCH.md) · [costs](docs/COSTS.md) 
 5. To fix something, edit the JSON and push again. To retime, adjust `pauseAfter`. To re-roll one plate, use `plates.py ep02 --yes --only lore`.
 
 New *kinds* of visuals, such as a new diagram type, are added once as a component in `src/graphics` or `src/scenes` and reused in every later episode.
+
+### Reusable building blocks (as of EP02)
+
+| Where | Name | Use |
+|---|---|---|
+| shot | `plateFrom: "<shot>"` | Reuse another shot's plate (e.g. the same landscape by night) |
+| shot | `plateMotion` | `push`, `pull`, `driftL`, `driftR`, `descend`, `still` |
+| graphic | `"local": true` | Pin a graphic to the plate so it moves with the camera |
+| graphic | `sunCycle` | Code-drawn sun: `vanish` / `night` / `return`, with darkness spreading from it and an optional warm `glow` point |
+| graphic | `celestialClock` | 24-hour dial with a one-hour dark sector, orbiting sun, night counter |
+| graphic | `gates` | Carved doors swinging open on a cue (reveal transition) |
+| graphic | `ringGlow` | Traces and lights a ring in the plate |
+| graphic | `consequenceTree` | Premise → 3 consequences (plate medallions) → sum |
+| graphic | `method` | "Don't" cloud struck out → "Start with …" word-synced |
+| graphic | `ctaCard` | Full logo + episode + large CTA + pill (spoken CTA shown verbatim) |
+| graphic | `endcard`, `tag`, `oversizedWord`, `statement`, `yearCounter`, `dateLabel`, `ledger` | From EP01 |
+| scene | `nightSky` | Midnight backdrop for diagrams |
+| sfx | `shimmer`, `tonalDrop`, `doors`, `ritualBell`, `sunrise` (hits); `clock`, `cave`, `market` (beds) | Plus EP01's `wind`, `water`, `ticks`, `swell`, `impact`, `rumble`, `whoosh`, `paper`, `ink`, `coin`, `drum`, `chimes` |
+| music | `drone`, `events: [{"type":"duck","at":cue,…}]` | Root drone and cue-timed music ducks (no more per-episode hacks in `score.py`) |
 
 ## Local / Claude-session commands
 

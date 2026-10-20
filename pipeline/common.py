@@ -28,7 +28,7 @@ def norm(word: str) -> str:
 
 
 def resolve_cue(cue: dict, timing: dict) -> float:
-    """Resolve {"line","word","offset"} or {"shot","offset"} to seconds."""
+    """Resolve {"line","word","nth","offset"} or {"shot","offset"} to seconds (nth: 1-based repeat of the word)."""
     offset = cue.get("offset", 0.0)
     if "shot" in cue:
         shot = next(s for s in timing["shots"] if s["id"] == cue["shot"])
@@ -37,7 +37,7 @@ def resolve_cue(cue: dict, timing: dict) -> float:
     if "word" not in cue:
         return line["start"] + offset
     target = norm(cue["word"])
-    for w in line["words"]:
-        if norm(w["text"]) == target:
-            return w["start"] + offset
+    hits = [w for w in line["words"] if norm(w["text"]) == target]
+    if len(hits) >= cue.get("nth", 1):
+        return hits[cue.get("nth", 1) - 1]["start"] + offset
     raise KeyError(f"word {cue['word']!r} not found in line {cue['line']}")

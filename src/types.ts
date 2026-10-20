@@ -1,4 +1,4 @@
-export type Cue = {line?: string; word?: string; shot?: string; offset?: number};
+export type Cue = {line?: string; word?: string; nth?: number; shot?: string; offset?: number};
 
 export type Word = {text: string; start: number; end: number};
 export type TimedLine = {id: string; shot: string; text: string; start: number; end: number; words: Word[]; emphasis: string[]};

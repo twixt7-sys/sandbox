@@ -114,6 +114,26 @@ def place(buf, clip, t, gain=1.0):
 
 # ---------------------------------------------------------------- music
 
+def events_gain(events, timing, n):
+    """Per-sample music gain from `music.events` cues.
+
+    {"type": "duck", "at": cue, "pre": 0.3, "dur": 1.5, "gain": 0.35}: dip to `gain` from `pre` s before the cue,
+    hold, and recover over the last 0.6 s of `dur` (e.g. let a silence or a sound-design hit land).
+    """
+    g = np.ones(n)
+    for ev in events:
+        if ev.get("type", "duck") != "duck":
+            raise KeyError(f"unknown music event {ev['type']!r}")
+        at = resolve_cue(ev["at"], timing)
+        a = max(0, int((at - ev.get("pre", 0.3)) * SR))
+        b = min(n, int((at + ev.get("dur", 1.5) - ev.get("pre", 0.3)) * SR))
+        if b - a < int(0.9 * SR):
+            continue
+        depth = ev.get("gain", 0.35)
+        g[a:b] = np.minimum(g[a:b], np.interp(np.arange(a, b), [a, a + 0.3 * SR, b - 0.6 * SR, b], [1, depth, depth, 1]))
+    return g
+
+
 def build_music(ep, timing):
     total = timing["duration"]
     n = int(total * SR)
@@ -154,18 +174,12 @@ def build_music(ep, timing):
 
     # Sub drone under everything except the final second (so the loop point is clean).
     t = np.arange(n) / SR
-    drone = np.sin(2 * np.pi * hz("D1") * t) * 0.10 + np.sin(2 * np.pi * hz("A1") * t) * 0.05
+    root, fifth = ep["music"].get("drone", ["D1", "A1"])
+    drone = np.sin(2 * np.pi * hz(root) * t) * 0.10 + np.sin(2 * np.pi * hz(fifth) * t) * 0.05
     music += np.stack([drone, drone], axis=1) * env(n, 2.0, 2.0)[:, None]
 
     music = reverb(music, wet=0.42)
-
-    # Duck the music under the hook's "empty." moment so the silence lands.
-    hook_empty = resolve_cue({"line": "L2", "word": "empty"}, timing) if any(l["id"] == "L2" for l in timing["lines"]) else None
-    if hook_empty:
-        g = np.ones(n)
-        a, b = int((hook_empty - 0.3) * SR), int((hook_empty + 1.2) * SR)
-        g[a:b] = np.interp(np.arange(a, b), [a, a + 0.3 * SR, b - 0.6 * SR, b], [1, 0.35, 0.35, 1])
-        music *= g[:, None]
+    music *= events_gain(ep["music"].get("events", []), timing, n)[:, None]
 
     # Fade out fully before the end so the loop restarts from silence.
     fade = int(1.8 * SR)
@@ -194,7 +208,40 @@ def stereo(sig, width=0.0):
 def sfx_bed(kind, dur):
     n = int(dur * SR)
     t = np.arange(n) / SR
-    if kind == "wind":
+    if kind == "clock":
+        # Steady escapement tick-tock, one per half second (a predictable rhythm, not a countdown).
+        sig = np.zeros(n)
+        m = int(0.025 * SR)
+        for k, t0 in enumerate(np.arange(0.05, dur - 0.1, 0.5)):
+            i = int(t0 * SR)
+            click = bp(noise(m), 1800 if k % 2 else 2600, 6500) * np.exp(-np.arange(m) / SR * 260)
+            sig[i:i + m] += click[: len(sig[i:i + m])]
+        return stereo(sig / (np.abs(sig).max() + 1e-9), 0.2) * env(n, 0.02, 0.3)[:, None]
+    if kind == "cave":
+        # Cavern room tone: low rumble, slow airflow, sparse water drips with a long tail.
+        sig = lp(pink(n), 260, 2) * (0.7 + 0.3 * np.sin(2 * np.pi * 0.07 * t)) * 1.4
+        sig += bp(noise(n), 400, 1200) * 0.08 * (0.5 + 0.5 * np.sin(2 * np.pi * 0.13 * t + 2))
+        for d in RNG.uniform(0.3, max(0.4, dur - 0.5), max(1, int(dur / 1.3))):
+            i = int(d * SR)
+            m = int(0.35 * SR)
+            tt = np.arange(m) / SR
+            f = RNG.uniform(1100, 1900) * (1 + 0.6 * np.exp(-tt * 40))
+            drip = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-tt * 18) * 0.35
+            sig[i:i + m] += drip[: len(sig[i:i + m])]
+    elif kind == "market":
+        # Restrained market activity: an unintelligible murmur (formant-filtered noise bursts) + wood and pottery knocks.
+        murmur = np.zeros(n)
+        for lo, hi, rate in ((300, 900, 3.1), (500, 1500, 4.3), (250, 700, 2.4)):
+            syll = np.clip(lp(noise(n), rate, 1) * 9, 0, 1) ** 1.5
+            murmur += bp(noise(n), lo, hi) * syll
+        sig = murmur * 0.8 + lp(pink(n), 400) * 0.25
+        for d in RNG.uniform(0.2, max(0.3, dur - 0.4), max(2, int(dur * 1.6))):
+            i = int(d * SR)
+            m = int(0.12 * SR)
+            tt = np.arange(m) / SR
+            knock = np.sin(2 * np.pi * RNG.uniform(180, 520) * tt) * np.exp(-tt * 45) * RNG.uniform(0.2, 0.5)
+            sig[i:i + m] += knock[: len(sig[i:i + m])]
+    elif kind == "wind":
         sig = bp(pink(n), 180, 1400) * (0.6 + 0.4 * np.sin(2 * np.pi * 0.11 * t + 1.3)) * (0.8 + 0.2 * np.sin(2 * np.pi * 0.37 * t))
     else:  # water
         burble = bp(noise(n), 500, 2600) * (0.5 + 0.5 * np.abs(lp(noise(n), 6, 1)) * 8).clip(0, 1.4)
@@ -252,6 +299,49 @@ def sfx_hit(kind, dur=None):
         return stereo(sig * 0.6, 0.3)
     if kind == "drum":
         return drum(2.0, 62) * 1.2
+    if kind == "shimmer":
+        # Celestial shimmer: rising cluster of high partials with slow beating, bright air on top.
+        n = int(1.6 * SR)
+        t = np.arange(n) / SR
+        e = np.minimum(1, t / 0.35) * np.exp(-np.maximum(0, t - 0.35) * 2.6)
+        sig = sum(np.sin(2 * np.pi * f * (1 + 0.04 * t) * t + RNG.uniform(0, 6.28)) / (k + 1)
+                  for k, f in enumerate((1568, 2093, 2349, 3136, 3520, 4186)))
+        sig = sig * e + hp(noise(n), 6000) * e * 0.15
+        return stereo(sig, 0.8)
+    if kind == "tonalDrop":
+        # Low atmospheric tonal shift: a sub tone gliding down a fourth, with a soft filtered body.
+        n = int(3.2 * SR)
+        t = np.arange(n) / SR
+        f = 98 * 2 ** (-5 / 12 * np.minimum(1, t / 1.2))
+        body = np.sin(2 * np.pi * np.cumsum(f) / SR) + 0.4 * np.sin(2 * np.pi * np.cumsum(f * 2) / SR)
+        e = np.minimum(1, t / 0.08) * np.exp(-t * 0.9)
+        sig = body * e + lp(noise(n), 300) * e * 0.4
+        return stereo(sig, 0.5)
+    if kind == "doors":
+        # Heavy stone doors: low grinding friction that swells and settles, ending in a soft thud.
+        n = int(2.0 * SR)
+        t = np.arange(n) / SR
+        grind = bp(noise(n), 80, 700) * (np.abs(lp(noise(n), 18, 1)) * 10).clip(0, 1.2)
+        e = np.interp(t, [0, 0.3, 1.2, 1.5], [0, 1, 0.8, 0])
+        thud = np.sin(2 * np.pi * 52 * t) * np.exp(-np.maximum(0, t - 1.35) * 9) * (t > 1.35)
+        return stereo(grind * e + thud * 0.8, 0.6)
+    if kind == "ritualBell":
+        # Temple bell: inharmonic partials, long decay.
+        n = int(5.0 * SR)
+        t = np.arange(n) / SR
+        f0 = 207.65  # G#3
+        sig = sum(a * np.sin(2 * np.pi * f0 * r * t) * np.exp(-d * t)
+                  for r, a, d in [(0.5, 0.6, 0.6), (1.0, 1.0, 0.8), (1.19, 0.5, 1.1), (1.56, 0.4, 1.5), (2.0, 0.35, 1.8), (2.74, 0.2, 2.6), (3.76, 0.1, 3.5)])
+        sig *= np.minimum(1, t / 0.003)
+        return stereo(sig, 0.4)
+    if kind == "sunrise":
+        # Sunrise swell: a major chord blooming out of noise, peaking at about 2 s.
+        n = int(4.0 * SR)
+        t = np.arange(n) / SR
+        e = np.minimum(1, t / 2.0) ** 2 * np.exp(-np.maximum(0, t - 2.0) * 1.4)
+        tone = sum(np.sin(2 * np.pi * hz(nm) * t) for nm in ("C4", "E4", "G4", "C5")) / 4
+        sig = tone * e + bp(noise(n), 1500, 7000) * e * 0.12
+        return stereo(sig, 0.7)
     if kind == "chimes":
         out = np.zeros((int(3.6 * SR), 2))
         for i, note in enumerate(["A5", "C6", "E6", "G5"]):

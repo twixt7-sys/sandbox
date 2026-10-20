@@ -13,6 +13,7 @@ export const useTiming = () => {
 const norm = (w: string) => w.toLowerCase().replace(/[^a-z0-9']/g, '');
 
 /** Absolute seconds for a cue (same semantics as pipeline/common.py:resolve_cue). */
+/** `nth` (1-based) picks a repeated word, e.g. the second "start" in a line. */
 export const cueTime = (timing: Timing, cue: Cue | undefined, fallback = 0): number => {
 	if (!cue) return fallback;
 	const offset = cue.offset ?? 0;
@@ -24,7 +25,7 @@ export const cueTime = (timing: Timing, cue: Cue | undefined, fallback = 0): num
 	const line = timing.lines.find((l) => l.id === cue.line);
 	if (!line) throw new Error(`Unknown line cue ${cue.line}`);
 	if (!cue.word) return line.start + offset;
-	const w = line.words.find((x) => norm(x.text) === norm(cue.word!));
+	const w = line.words.filter((x) => norm(x.text) === norm(cue.word!))[(cue.nth ?? 1) - 1];
 	if (!w) throw new Error(`Word "${cue.word}" not in ${cue.line}`);
 	return w.start + offset;
 };

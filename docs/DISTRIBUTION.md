@@ -58,6 +58,57 @@ Source of truth: `episodes/ep01/episode.json` → `metadata`. Limits below were 
 
 (TikTok copy is unchanged in `episode.json`.)
 
+## Episode 02 captions (ready to paste)
+
+Source of truth: `episodes/ep02/episode.json` → `metadata`. Brief: YouTube Shorts, TikTok, Facebook Reels. The AI label goes on for all three.
+
+### YouTube Shorts
+- **Title** (72/100 chars; the hook comes first): `What if the sun vanished for one hour every night? A worldbuilding trick`
+- **Alternate title for an A/B test** (58 chars): `One impossible rule can build a whole fantasy civilization`
+- **Description:**
+
+> Don't start your world with a hundred facts. Start with one impossible question.
+>
+> What if the sun disappeared for exactly one hour every night? Cities move underground, merchants run a market that only exists in the dark, and whole religions grow around the missing sun. One rule, and you get architecture, economy and culture for free.
+>
+> Episode 2 of 50 in Worldbuilding, from the ground up: short lessons for fantasy writers, novelists and tabletop RPG creators.
+>
+> #worldbuilding #fantasywriting #writingtips
+
+- **Pinned comment:** Your turn: what's your impossible worldbuilding question? Give the rule in one line, then one thing that changes because of it.
+- **Upload settings:** AI use: Yes. Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (185 chars; the hook is the first 50): `What if the sun vanished for one hour every night? One impossible rule = a whole civilization. Drop your own impossible question 👇 #worldbuilding #fantasywriting #writingtok #dnd #ttrpg`
+- **Pinned comment:** Comment your impossible question as a rule plus one consequence. Example: 'Rain falls upward on holy days, so roofs are built on the ground.'
+- **Upload settings:** turn on "AI-generated content" under More options.
+
+### Facebook Reels
+- **Caption** (short, 3 hashtags):
+
+> What if the sun disappeared for exactly one hour every night?
+>
+> Underground cities. A market that only exists in the dark. A faith built around the missing sun. One impossible rule shaped a whole civilization.
+>
+> Writers and GMs: what's your impossible worldbuilding question?
+>
+> Episode 2 of 50.
+>
+> #worldbuilding #fantasywriting #writingcommunity
+
+- **Pinned comment:** Give us your impossible rule, and tell us one thing ordinary people would do differently because of it.
+- **Upload settings:** turn on the AI label.
+
+The pinned comments ask for a rule plus a consequence. That invites original answers that use the lesson, instead of "nice video" replies.
+
+### Experiments to try from EP02 onward (hypotheses, not promises)
+
+| # | Variable | A (EP02) | B | Primary metric |
+|---|---|---|---|---|
+| 4 | Speed of the payoff | Rule explained first; the underground city at 9 s | Cold-open on the gates opening (0–1.5 s), then the question | YouTube "viewed vs swiped away", TikTok 2-s retention |
+| 5 | Subtitle emphasis | Amber on 2–3 key words per line | Kinetic one-word captions on the hook, phrase captions after | Average % viewed; rewatches |
+| 6 | Hook delivery | Narrated question over the vanishing sun | On-screen text only for the first 1.5 s, voice joins on "every night" | 3-second views / swipe-away |
+
 ## Research notes behind the captions (checked 2026-10-19)
 
 Official sources first; blog figures are marked and should be treated as estimates.

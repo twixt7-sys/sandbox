@@ -38,6 +38,20 @@ Fixed monthly costs:
 | Score + SFX | synthesized in code | $0 |
 | Render + QA | Claude cloud container and GitHub Actions (public repo) | $0 |
 
+## What Episode 02 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 4 background stills (hook landscape, cavern city, night market, sun ritual) | Figma `generate_image` (`gemini-3.1-flash-lite-image`), 768×1376, lanczos-upscaled to 1080×1920. 4 generations, no re-rolls (7 were approved). | $0 cash: Figma AI credits on your Starter plan. The connector doesn't report credits per call, so check Settings → AI credits. |
+| 3 "extra" shots (clock, lesson diagram, method card) | Remotion code: night grade over the hook plate, plus a star/astrolabe scene | $0 |
+| Sun vanish/return, gates opening, ring glow | Remotion code over the stills (no image-to-video available) | $0 |
+| Narration | Kokoro-82M on CPU, 74 words, 29.9 s | $0 |
+| Score + SFX (new: shimmer, tonal drop, clock, cave, market, stone doors, temple bell, sunrise) | synthesized in `pipeline/score.py` | $0 |
+| Render + QA | Claude cloud container (and GitHub Actions on push, public repo) | $0 |
+| **Total** | | **$0 cash (≈ ₱0)** plus 4 Figma AI credits' worth of image generation |
+
+If you move EP03 to the paid primary stack, the estimate is the same as the table above: about **$1.15 (₱71)** per episode, or about **$2.12 (₱131)** with one retry per asset, plus $6 (₱371) a month for ElevenLabs Starter. The exchange rate is ₱61.8 = $1 (Aug 2026), so check today's rate.
+
 ## Alternatives
 
 | Option | Per-episode | Monthly | Comment |

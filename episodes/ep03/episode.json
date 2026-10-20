@@ -1,0 +1,799 @@
+{
+ "id": "ep03",
+ "number": 3,
+ "title": "Give Your World a Problem Nobody Can Ignore",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "Warm, articulate, confident. Slightly urgent on the hook, clear and measured on the three groups, reflective on the lesson, conversational on the CTA. No trailer voice."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "Your fantasy kingdom becomes believable when its people can't all get what they want.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "can't",
+    "all"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "hook",
+   "text": "Imagine a kingdom running out of water.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "running",
+    "out",
+    "water"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "farms",
+   "text": "Farmers need it for food, or the kingdom starves.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "food",
+    "starves"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "machines",
+   "text": "Merchants need it to run the city's machines.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "machines"
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "council",
+   "text": "And the crown decides who gets what's left.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "what's",
+    "left"
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "allocation",
+   "text": "More for the fields means the workshops go dark.",
+   "pauseAfter": 0.75,
+   "emphasis": [
+    "go",
+    "dark"
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "lesson",
+   "text": "Every choice hurts someone.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "every",
+    "choice",
+    "hurts",
+    "someone"
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "lesson",
+   "text": "That's how a world gets conflict without a villain.",
+   "pauseAfter": 0.5,
+   "emphasis": [
+    "without",
+    "villain"
+   ]
+  },
+  {
+   "id": "L9",
+   "shot": "cta",
+   "text": "What's one problem your fictional world can't escape? Comment below.",
+   "pauseAfter": 0,
+   "emphasis": [
+    "escape"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.12,
+     "y": -120
+    }
+   },
+   "plateScrim": 0.4,
+   "purpose": "Problem first, readable with the sound off: a colossal reservoir is almost empty, and a gauge drains from 100% to 12% past dated water marks.",
+   "visual": "High view over a vast stepped stone basin inside a sandstone city. Only a small luminous blue pool remains at the bottom. A code-drawn level gauge drains while 'Two years ago', 'Last spring' and 'Today' marks light up.",
+   "camera": "Slow push toward the remaining water (scale 1.00 to 1.12, frame rises 120 px so the pool moves toward centre).",
+   "layers": {
+    "foreground": "cracked rim stones",
+    "midground": "dry terraces, old sluice towers far above the water",
+    "background": "domed sandstone city, bleached dusty sky"
+   },
+   "lighting": "Harsh midday sun, dust haze, warm sandstone; the cool blue pool is the only cold colour in frame. Top scrim keeps the corner logo legible on the pale sky.",
+   "imagePrompt": "A colossal ancient stone reservoir, a vast circular basin carved into sandstone and lined with stepped terraces, seen from a high vantage on its rim. The water has fallen dramatically: only a small pool of strangely luminous pale-blue water remains at the very bottom. Pale horizontal water-stain lines mark the old water levels high on the dry terraced walls, with old carved sluice gates far above the waterline. A walled sandstone city with domes and towers surrounds the rim. Harsh midday sun, bleached hot dusty sky in the upper third, faint blue reflections from the magical water, no people in the foreground",
+   "videoPrompt": "(Not used: no image-to-video available. Motion is a Remotion push plus a code-drawn level gauge.) Slow push toward the remaining pool, dust drifting across the terraces, pool shimmering faintly, 7 seconds",
+   "graphics": [
+    {
+     "type": "levelGauge",
+     "label": "Reservoir",
+     "x": 820,
+     "top": 440,
+     "height": 540,
+     "from": 100,
+     "to": 12,
+     "start": {
+      "line": "L1",
+      "word": "your"
+     },
+     "end": {
+      "line": "L2",
+      "word": "water",
+      "offset": 0.4
+     },
+     "marks": [
+      {
+       "at": 80,
+       "label": "Two years ago"
+      },
+      {
+       "at": 45,
+       "label": "Last spring"
+      },
+      {
+       "at": 12,
+       "label": "Today"
+      }
+     ]
+    }
+   ],
+   "onScreenText": "Gauge 'RESERVOIR 100% → 12%' with dated marks; captions emphasise 'can't all', 'running out of water'.",
+   "transition": "Cut on 'Farmers' along the dry canal that leads from this reservoir.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "machines"
+     },
+     "gain": -25
+    },
+    {
+     "sound": "water",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "farms"
+     },
+     "gain": -33
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L2",
+      "word": "water",
+      "offset": -0.6
+     },
+     "gain": -21
+    }
+   ],
+   "music": "Sparse D-minor drone, high and dry."
+  },
+  {
+   "id": "farms",
+   "scene": "nightSky",
+   "plateMotion": "driftL",
+   "plateScrim": 0.55,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Need 1, sympathetic: farmers need the water for food.",
+   "visual": "Cracked field, wilting grain; one farmer kneels with dry soil in his hands, the other holds withered stalks; a stone canal with a thin trickle leads back to the dam.",
+   "camera": "Lateral drift right to left (x +30 to -30 at 1.06), the canal carrying the eye to the dam.",
+   "layers": {
+    "foreground": "cracked earth and dead stalks",
+    "midground": "two farmers",
+    "background": "near-empty canal and the dam"
+   },
+   "lighting": "Flat harsh light, heat haze, ochre and pale sky.",
+   "imagePrompt": "A wide field of deeply cracked dry earth with rows of wilting, yellowing grain crops under a pale, harsh, dusty sky. In the midground two farmers in simple undyed linen and wide-brimmed straw hats: one kneels and holds a handful of dry soil, the other stands holding a few withered stalks, both looking toward the horizon. Behind them a long stone irrigation canal carries only a thin trickle of water back toward a distant enormous stone dam wall. Figures at a modest distance, natural poses and hands",
+   "videoPrompt": "(Not used.) Slow lateral move, dust lifting off the cracked soil, stalks stirring in hot wind, 3 seconds",
+   "graphics": [
+    {
+     "type": "tag",
+     "kicker": "Farmers",
+     "text": "No water, no harvest",
+     "start": {
+      "line": "L3",
+      "word": "farmers",
+      "offset": 0.1
+     }
+    }
+   ],
+   "onScreenText": "Chip 'FARMERS' + 'No water, no harvest'.",
+   "transition": "Hard cut on 'Merchants' to blue light (cold contrast against the dry field).",
+   "sfx": [],
+   "music": "Bb under the line: a little warmth for the farmers."
+  },
+  {
+   "id": "machines",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.2,
+     "x": -24,
+     "y": 175
+    },
+    "to": {
+     "s": 1.2,
+     "x": 24,
+     "y": 160
+    }
+   },
+   "plateScrim": 0.6,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Need 2, equally sympathetic: merchants and workers depend on water-powered machinery; the power falters.",
+   "visual": "Sandstone machine district with blue-glowing conduits, stone gears and a great water wheel. A merchant in a blue coat and two workers look up; on 'machines' the light stutters and settles dimmer.",
+   "camera": "Gentle lateral drift at 1.2 scale, framed so the figures sit below the caption band.",
+   "layers": {
+    "foreground": "workbenches and tools",
+    "midground": "merchant and two workers",
+    "background": "water wheel, gears, glowing conduits"
+   },
+   "lighting": "Warm stone in haze against cool blue magical light; brown-out flicker on the cue.",
+   "imagePrompt": "An enchanted industrial district in a sandstone city: enormous carved stone gear mechanisms, a tall wooden and bronze water wheel, and thick stone conduits inlaid with luminous cool-blue glowing water that powers workshops and civic machinery. The blue glow is uneven and dimming in places. In the midground a merchant in a rich deep-blue coat and two workers in leather aprons stand on a stone walkway looking up at a large conduit with concern. Practical, lived-in workshops, crates, tools. Figures at a modest distance, natural hands",
+   "videoPrompt": "(Not used.) Slow lateral move, water wheel turning slowly, blue conduits flickering and dimming, workers looking up, 3 seconds",
+   "graphics": [
+    {
+     "type": "flicker",
+     "start": {
+      "line": "L4",
+      "word": "machines",
+      "offset": 0.05
+     },
+     "settle": 0.22
+    },
+    {
+     "type": "tag",
+     "kicker": "Merchants",
+     "text": "No water, no work",
+     "start": {
+      "line": "L4",
+      "word": "merchants",
+      "offset": 0.1
+     }
+    }
+   ],
+   "onScreenText": "Chip 'MERCHANTS' + 'No water, no work'.",
+   "transition": "Cut on 'And' to the council chamber.",
+   "sfx": [
+    {
+     "sound": "hum",
+     "from": {
+      "shot": "machines"
+     },
+     "to": {
+      "shot": "council"
+     },
+     "gain": -22
+    },
+    {
+     "sound": "powerDown",
+     "at": {
+      "line": "L4",
+      "word": "machines",
+      "offset": 0.05
+     },
+     "gain": -15
+    }
+   ],
+   "music": "G minor, pulse 76 bpm enters: pressure."
+  },
+  {
+   "id": "council",
+   "scene": "nightSky",
+   "plateMotion": "push",
+   "plateScrim": 0.5,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "The decision-maker: the crown must allocate what's left, with farmers on one side of the table and merchants on the other.",
+   "visual": "Sandstone council chamber, shafts of dusty light. A relief map of the reservoir, farms and city on a stone table; earth-robed farmers stand left, blue-coated merchants right, the ruler at the head.",
+   "camera": "Slow push toward the ruler and the map.",
+   "layers": {
+    "foreground": "stone table and the relief map",
+    "midground": "two factions on opposite sides",
+    "background": "ruler, three arched windows"
+   },
+   "lighting": "Muted gold light shafts, deep blue-coated merchants against earth-toned farmers.",
+   "imagePrompt": "A monumental sandstone council chamber with tall arched windows letting in shafts of dusty golden light. In the center a large stone table holding a physical carved relief model of a landscape: a circular reservoir basin, a river channel, terraced farm fields, and a cluster of city buildings, with no writing. Around the table five leaders stand apart on opposing sides: two figures in plain earth-toned farm robes, two merchants in rich deep-blue coats, and at the head a ruler in muted gold and sandstone robes with a simple circlet. Tense, still body language, no exaggerated expressions",
+   "videoPrompt": "(Not used.) Slow push toward the head of the table, dust drifting in the light shafts, figures still, 2.5 seconds",
+   "graphics": [
+    {
+     "type": "tag",
+     "kicker": "The crown",
+     "text": "Keep the peace with what's left",
+     "start": {
+      "line": "L5",
+      "word": "crown",
+      "offset": 0.05
+     }
+    }
+   ],
+   "onScreenText": "Chip 'THE CROWN' + 'Keep the peace with what's left'.",
+   "transition": "Dissolve to the allocation map (the table map becomes a diagram).",
+   "sfx": [
+    {
+     "sound": "room",
+     "from": {
+      "shot": "council"
+     },
+     "to": {
+      "shot": "lesson"
+     },
+     "gain": -27
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L5",
+      "word": "crown"
+     },
+     "gain": -19
+    }
+   ],
+   "music": "A7: unresolved dominant, the question hangs."
+  },
+  {
+   "id": "allocation",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.45
+   },
+   "purpose": "The trade-off made visible: one supply, two channels. More to the farms starves the workshops; swinging it back starves the fields.",
+   "visual": "Midnight backdrop. The reservoir (12% left) feeds two channels whose width and flow follow the share. FARMS and WORKSHOPS medallions (from the plates) show percentages; the starved one goes grey and dark, its gear stops or its wheat dims.",
+   "camera": "Static.",
+   "layers": {
+    "foreground": "labels and percentages",
+    "midground": "channels and medallions",
+    "background": "star field and astrolabe"
+   },
+   "lighting": "Cool blue water on deep blue; amber for the side that is winning.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "plate": false,
+   "graphics": [
+    {
+     "type": "allocation",
+     "kicker": "Who gets what's left?",
+     "remaining": 0.12,
+     "initial": 0.5,
+     "shifts": [
+      {
+       "at": {
+        "line": "L6",
+        "word": "fields"
+       },
+       "left": 0.8
+      },
+      {
+       "at": {
+        "line": "L6",
+        "word": "dark.",
+        "offset": 0.55
+       },
+       "left": 0.2
+      }
+     ],
+     "leftLabel": "Farms",
+     "rightLabel": "Workshops",
+     "leftImg": "ep03/plates/farms.jpg",
+     "rightImg": "ep03/plates/machines.jpg",
+     "pos_wheat": "50% 70%",
+     "pos_gear": "60% 30%"
+    }
+   ],
+   "onScreenText": "'WHO GETS WHAT'S LEFT?', Reservoir, FARMS 50% → 80% → 20%, WORKSHOPS 50% → 20% → 80%.",
+   "transition": "Cut to three bands of the crisis (reservoir, farms, machines).",
+   "sfx": [
+    {
+     "sound": "water",
+     "from": {
+      "shot": "allocation"
+     },
+     "to": {
+      "shot": "lesson"
+     },
+     "gain": -31
+    },
+    {
+     "sound": "whoosh",
+     "at": {
+      "line": "L6",
+      "word": "fields",
+      "offset": -0.2
+     },
+     "gain": -21
+    },
+    {
+     "sound": "tonalDrop",
+     "at": {
+      "line": "L6",
+      "word": "dark."
+     },
+     "gain": -15
+    },
+    {
+     "sound": "whoosh",
+     "at": {
+      "line": "L6",
+      "word": "dark.",
+      "offset": 0.4
+     },
+     "gain": -23
+    }
+   ],
+   "music": "Bb to A with arpeggios at 84 bpm: the tension peak."
+  },
+  {
+   "id": "lesson",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "State the principle: different needs make impossible choices, and that makes a living world, no villain required.",
+   "visual": "Three dimmed bands (reservoir, farms, machines) stacked like a triptych; DIFFERENT NEEDS ↓ IMPOSSIBLE CHOICES ↓ A LIVING WORLD lands line by line.",
+   "camera": "Bands drift slowly in alternating directions.",
+   "layers": {
+    "foreground": "lesson stack",
+    "midground": "band dividers",
+    "background": "three plates"
+   },
+   "lighting": "Plates dimmed to 38% under deep blue so the type leads.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "plate": false,
+   "graphics": [
+    {
+     "type": "plateBands",
+     "dim": 0.64,
+     "bands": [
+      {
+       "src": "ep03/plates/hook.jpg",
+       "pos": "50% 75%"
+      },
+      {
+       "src": "ep03/plates/farms.jpg",
+       "pos": "50% 55%"
+      },
+      {
+       "src": "ep03/plates/machines.jpg",
+       "pos": "50% 30%"
+      }
+     ]
+    },
+    {
+     "type": "lessonStack",
+     "top": 390,
+     "items": [
+      {
+       "text": "DIFFERENT NEEDS",
+       "at": {
+        "line": "L7",
+        "word": "every"
+       }
+      },
+      {
+       "text": "IMPOSSIBLE CHOICES",
+       "at": {
+        "line": "L7",
+        "word": "hurts"
+       }
+      },
+      {
+       "text": "A living world",
+       "at": {
+        "line": "L8",
+        "word": "conflict"
+       }
+      }
+     ]
+    }
+   ],
+   "onScreenText": "DIFFERENT NEEDS ↓ IMPOSSIBLE CHOICES ↓ A living world.",
+   "transition": "Dissolve to the reservoir at dusk.",
+   "sfx": [
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L7",
+      "word": "every"
+     },
+     "gain": -17
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L7",
+      "word": "hurts"
+     },
+     "gain": -18
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L8",
+      "word": "conflict"
+     },
+     "gain": -22
+    }
+   ],
+   "music": "Resolves to F major then C: the idea lands (slight sonic resolution)."
+  },
+  {
+   "id": "cta",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "plateMotion": "pull",
+   "plateScrim": 0.3,
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "captions": false,
+   "hideLogoBug": true,
+   "purpose": "CTA over the same reservoir at dusk; city lights wake and the last of the water glows. Ends on the opening frame for a loop.",
+   "visual": "The opening reservoir, now at dusk: deep blue sky with a warm band at the horizon, city windows lighting up, the remaining pool glowing. Full logo, Episode 03 / 50, the CTA in large serif type, 'Comment below' pill.",
+   "camera": "Slow pull-back (1.10 to 1.00) ending on the hook's first framing.",
+   "layers": {
+    "foreground": "logo and CTA type",
+    "midground": "dry terraces, city lights",
+    "background": "dusk sky"
+   },
+   "lighting": "Dusk grade in code; the last 0.6 s cross-fades into the harsh-noon first frame.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "duskGrade",
+     "local": true,
+     "pool": [
+      540,
+      1460,
+      190,
+      100
+     ]
+    },
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L9",
+      "word": "what's"
+     },
+     "episode": "Episode 03 / 50",
+     "title": "Give your world a problem nobody can ignore",
+     "kicker": "Your turn",
+     "lines": [
+      "What's one problem",
+      "*your fictional world*",
+      "can't escape?"
+     ],
+     "button": "Comment below"
+    }
+   ],
+   "onScreenText": "Full logo, 'EPISODE 03 / 50', title, 'YOUR TURN', 'What's one problem your fictional world can't escape?', pill 'Comment below'.",
+   "transition": "Cross-fade into the hook's first frame (same reservoir, noon) for a seamless loop.",
+   "sfx": [
+    {
+     "sound": "swell",
+     "at": {
+      "shot": "cta",
+      "offset": -0.3
+     },
+     "gain": -24
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L9",
+      "word": "escape?",
+      "offset": 0.2
+     },
+     "gain": -24
+    }
+   ],
+   "music": "Bb to D major: open, unresolved-but-warm ending; fades fully before the last frame."
+  }
+ ],
+ "lesson": "A believable society is a collection of competing needs: give its people a shared problem they can't all win.",
+ "captionReplace": {},
+ "music": {
+  "key": "D minor, resolving to D major",
+  "drone": [
+   "D1",
+   "A1"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L7",
+     "word": "every"
+    },
+    "pre": 0.15,
+    "dur": 1.4,
+    "gain": 0.45
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "D3",
+      "F3",
+      "A3",
+      "E4"
+     ]
+    ],
+    "level": 0.5,
+    "dark": true
+   },
+   "farms": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "F3"
+     ]
+    ],
+    "level": 0.55
+   },
+   "machines": {
+    "chords": [
+     [
+      "G1",
+      "D2",
+      "Bb2",
+      "D3",
+      "G3"
+     ]
+    ],
+    "level": 0.65,
+    "pulse": 76
+   },
+   "council": {
+    "chords": [
+     [
+      "A1",
+      "E2",
+      "C#3",
+      "G3"
+     ]
+    ],
+    "level": 0.7,
+    "pulse": 76
+   },
+   "allocation": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "A3"
+     ],
+     [
+      "A1",
+      "E2",
+      "C#3",
+      "E3",
+      "G3"
+     ]
+    ],
+    "level": 0.78,
+    "pulse": 84,
+    "arp": true
+   },
+   "lesson": {
+    "chords": [
+     [
+      "F2",
+      "C3",
+      "A3",
+      "C4"
+     ],
+     [
+      "C2",
+      "G2",
+      "E3",
+      "G3"
+     ]
+    ],
+    "level": 0.72,
+    "bells": true
+   },
+   "cta": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "F3"
+     ],
+     [
+      "D2",
+      "A2",
+      "F#3",
+      "A3",
+      "D4"
+     ]
+    ],
+    "level": 0.65,
+    "bells": true
+   }
+  }
+ },
+ "metadata": {
+  "youtube": {
+   "title": "Your fantasy kingdom feels fake until its people can't all win",
+   "titleAlternate": "The worldbuilding trick: give your kingdom a problem nobody can ignore",
+   "description": "A believable world isn't a collection of things. It's a collection of competing needs.\n\nImagine a kingdom running out of water. Farmers need it for food. Merchants need it to run the city's machines. The crown has to decide who gets what's left, and every choice hurts someone. That's conflict without a villain.\n\nEpisode 3 of 50 in Worldbuilding, from the ground up: short lessons for fantasy writers, novelists and tabletop RPG creators.\n\n#worldbuilding #fantasywriting #writingtips",
+   "pinnedComment": "Your turn: what's one problem your world can't escape? Name the shortage, then the two groups who need it for different reasons.",
+   "uploadSettings": "AI use: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "Your kingdom feels real when its people can't all win. One shrinking reservoir, three groups, zero villains. What's your world's unescapable problem? 👇 #worldbuilding #fantasywriting #writingtok #dnd #ttrpg",
+   "pinnedComment": "Drop a problem your world can't escape, plus who wants the fix to go which way. Best ones might end up in a future episode.",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "Your fantasy kingdom becomes believable when its people can't all get what they want.\n\nFarmers need the water for food. Merchants need it for the machines. The crown has to choose. Every choice hurts someone, and nobody has to be the villain.\n\nWriters and GMs: what's one problem your world can't escape?\n\nEpisode 3 of 50.\n\n#worldbuilding #fantasywriting #writingcommunity",
+   "pinnedComment": "Give us one shortage in your world and two groups who need it for different, good reasons.",
+   "uploadSettings": "Turn on the AI label when posting (see docs/DISTRIBUTION.md)."
+  },
+  "followUpQuestion": "If you were the crown, who would you give the water to, and who would you lose?"
+ }
+}

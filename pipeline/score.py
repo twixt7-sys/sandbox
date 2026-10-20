@@ -241,6 +241,20 @@ def sfx_bed(kind, dur):
             tt = np.arange(m) / SR
             knock = np.sin(2 * np.pi * RNG.uniform(180, 520) * tt) * np.exp(-tt * 45) * RNG.uniform(0.2, 0.5)
             sig[i:i + m] += knock[: len(sig[i:i + m])]
+    elif kind == "hum":
+        # Enchanted machinery: mains-like hum with harmonics, slow wobble, and irregular gear clanks.
+        wob = 1 + 0.01 * np.sin(2 * np.pi * 0.3 * t)
+        sig = sum(a * np.sin(2 * np.pi * 55 * k * np.cumsum(wob) / SR) for k, a in ((1, 1.0), (2, 0.6), (3, 0.35), (5, 0.15)))
+        sig = sig * 0.5 + bp(noise(n), 900, 3000) * 0.05
+        for d in np.arange(0.4, max(0.5, dur - 0.3), 0.9):
+            i = int((d + RNG.uniform(-0.15, 0.15)) * SR)
+            m = int(0.09 * SR)
+            tt = np.arange(m) / SR
+            clank = sum(np.sin(2 * np.pi * f * tt) for f in (620, 1130, 1810)) * np.exp(-tt * 40) * 0.25
+            sig[max(0, i):i + m] += clank[: len(sig[max(0, i):i + m])]
+    elif kind == "room":
+        # Large stone room tone: low filtered air with a slow swell, very little detail.
+        sig = lp(pink(n), 500, 2) * (0.8 + 0.2 * np.sin(2 * np.pi * 0.09 * t)) + bp(noise(n), 2000, 5000) * 0.02
     elif kind == "wind":
         sig = bp(pink(n), 180, 1400) * (0.6 + 0.4 * np.sin(2 * np.pi * 0.11 * t + 1.3)) * (0.8 + 0.2 * np.sin(2 * np.pi * 0.37 * t))
     else:  # water
@@ -299,6 +313,17 @@ def sfx_hit(kind, dur=None):
         return stereo(sig * 0.6, 0.3)
     if kind == "drum":
         return drum(2.0, 62) * 1.2
+    if kind == "powerDown":
+        # Machinery losing power: hum pitch sags and stutters out.
+        n = int(1.8 * SR)
+        t = np.arange(n) / SR
+        f = 110 * (1 - 0.45 * np.minimum(1, t / 1.2))
+        sig = np.sin(2 * np.pi * np.cumsum(f) / SR) + 0.5 * np.sin(2 * np.pi * np.cumsum(f * 2) / SR)
+        gate = np.ones(n)
+        for a, b in ((0.0, 0.07), (0.14, 0.21), (0.31, 0.38), (0.62, 0.69)):
+            gate[int(a * SR):int(b * SR)] = 0.15
+        e = np.exp(-t * 1.4) * np.minimum(1, t / 0.01)
+        return stereo(sig * gate * e, 0.4)
     if kind == "shimmer":
         # Celestial shimmer: rising cluster of high partials with slow beating, bright air on top.
         n = int(1.6 * SR)

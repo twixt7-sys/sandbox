@@ -52,6 +52,19 @@ Fixed monthly costs:
 
 If you move EP03 to the paid primary stack, the estimate is the same as the table above: about **$1.15 (₱71)** per episode, or about **$2.12 (₱131)** with one retry per asset, plus $6 (₱371) a month for ElevenLabs Starter. The exchange rate is ₱61.8 = $1 (Aug 2026), so check today's rate.
 
+## What Episode 03 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 4 stills (reservoir, farms, machine district, council) | Figma `generate_image` (`gemini-3.1-flash-lite-image`), 768×1376, lanczos-upscaled. 4 generations, no re-rolls (7 approved). | $0 cash (Figma AI credits; check Settings → AI credits) |
+| Gauge, brown-out, allocation map, lesson stack, dusk grade | Remotion code | $0 |
+| Narration | Kokoro-82M, 78 words, 29.1 s | $0 |
+| Score + SFX (new: machine hum, room tone, power-down) | `pipeline/score.py` | $0 |
+| Render + QA | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)** plus 4 Figma image generations |
+
+The paid primary stack (Runway stills and clips + ElevenLabs) would still cost about **$1.15 (₱71)** per episode, or **$2.12 (₱131)** with one retry per asset, plus $6 (₱371) a month for ElevenLabs Starter, at ₱61.8 = $1 (Aug 2026 rate).
+
 ## Alternatives
 
 | Option | Per-episode | Monthly | Comment |

@@ -58,6 +58,57 @@ Source of truth: `episodes/ep01/episode.json` → `metadata`. Limits below were 
 
 (TikTok copy is unchanged in `episode.json`.)
 
+## Episode 03 captions (ready to paste)
+
+Source of truth: `episodes/ep03/episode.json` → `metadata`. The AI label goes on for all three platforms.
+
+### YouTube Shorts
+- **Title** (62/100 chars): `Your fantasy kingdom feels fake until its people can't all win`
+- **Alternate title** (70 chars): `The worldbuilding trick: give your kingdom a problem nobody can ignore`
+- **Description:**
+
+> A believable world isn't a collection of things. It's a collection of competing needs.
+>
+> Imagine a kingdom running out of water. Farmers need it for food. Merchants need it to run the city's machines. The crown has to decide who gets what's left, and every choice hurts someone. That's conflict without a villain.
+>
+> Episode 3 of 50 in Worldbuilding, from the ground up: short lessons for fantasy writers, novelists and tabletop RPG creators.
+>
+> #worldbuilding #fantasywriting #writingtips
+
+- **Pinned comment:** Your turn: what's one problem your world can't escape? Name the shortage, then the two groups who need it for different reasons.
+- **Upload settings:** AI use: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (206 chars): `Your kingdom feels real when its people can't all win. One shrinking reservoir, three groups, zero villains. What's your world's unescapable problem? 👇 #worldbuilding #fantasywriting #writingtok #dnd #ttrpg`
+- **Pinned comment:** Drop a problem your world can't escape, plus who wants the fix to go which way. Best ones might end up in a future episode.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> Your fantasy kingdom becomes believable when its people can't all get what they want.
+>
+> Farmers need the water for food. Merchants need it for the machines. The crown has to choose. Every choice hurts someone, and nobody has to be the villain.
+>
+> Writers and GMs: what's one problem your world can't escape?
+>
+> Episode 3 of 50.
+>
+> #worldbuilding #fantasywriting #writingcommunity
+
+- **Pinned comment:** Give us one shortage in your world and two groups who need it for different, good reasons.
+- **Upload settings:** Turn on the AI label when posting (see docs/DISTRIBUTION.md).
+
+### Experiments to try from EP03 onward (hypotheses, not promises)
+
+| # | Variable | A (EP03) | B | Primary metric |
+|---|---|---|---|---|
+| 7 | Hook wording | Principle first ("…can't all get what they want") over the draining reservoir | Crisis first ("This kingdom has 12% of its water left.") then the principle | YouTube "viewed vs swiped away", TikTok 2-s retention |
+| 8 | Timing of the shortage reveal | Gauge drains across the whole hook (0–7 s) | Gauge starts at 12% on frame 0 | Average % viewed |
+| 9 | Subtitle emphasis | Amber on the stakes words ("can't all", "go dark") | Amber only on the lesson words ("every choice hurts someone") | Rewatches; shares and saves |
+
+Measure average watch duration, completion rate (watched full video), rewatches where shown, shares, saves and follows from the video, at 48 h and 7 days.
+
 ## Episode 02 captions (ready to paste)
 
 Source of truth: `episodes/ep02/episode.json` → `metadata`. Brief: YouTube Shorts, TikTok, Facebook Reels. The AI label goes on for all three.

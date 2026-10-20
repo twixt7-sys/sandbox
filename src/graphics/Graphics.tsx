@@ -5,6 +5,7 @@ import {cueTime, ease, lerp, useTiming} from '../lib/timing';
 import {fonts, palette} from '../theme';
 import type {Graphic, Shot, TimedShot} from '../types';
 import {CELESTIAL} from './Celestial';
+import {CRISIS} from './Crisis';
 
 export type GraphicProps = {g: Graphic; t: number; shot: Shot; span: TimedShot};
 
@@ -274,4 +275,5 @@ export const GRAPHICS: Record<string, React.FC<GraphicProps>> = {
 	ledger: Ledger,
 	endcard: Endcard,
 	...CELESTIAL,
+	...CRISIS,
 };

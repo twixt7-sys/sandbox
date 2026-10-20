@@ -39,8 +39,8 @@ Docs: [research and stack decision](docs/RESEARCH.md) · [costs](docs/COSTS.md) 
 
 ## Producing the next episode (EP03 onward)
 
-1. Ask Claude: *"Write ep03 for Worldcraft Shorts: topic X, hook Y. Copy episodes/ep02/episode.json's structure."* Claude asks before spending Figma credits (CLAUDE.md).
-2. Claude creates `episodes/ep03/episode.json`:
+1. Ask Claude: *"Write ep04 for Worldcraft Shorts: topic X, hook Y. Copy episodes/ep03/episode.json's structure."* Claude asks before spending Figma credits (CLAUDE.md).
+2. Claude creates `episodes/ep04/episode.json`:
    - **lines**: 8–10 short spoken lines, 60–75 words. Map each to a shot id and set `pauseAfter` and `emphasis`.
    - **shots**: 5–6 shots. Each needs a `scene` (an existing procedural scene, or any scene plus a plate), an `imagePrompt` and a `videoPrompt`. Graphics cues reference spoken words, e.g. `{"line":"L4","word":"bridge"}`, so timing stays in sync automatically.
    - **metadata** for the three platforms.
@@ -53,12 +53,13 @@ Docs: [research and stack decision](docs/RESEARCH.md) · [costs](docs/COSTS.md) 
 
 New *kinds* of visuals, such as a new diagram type, are added once as a component in `src/graphics` or `src/scenes` and reused in every later episode.
 
-### Reusable building blocks (as of EP02)
+### Reusable building blocks (as of EP03)
 
 | Where | Name | Use |
 |---|---|---|
 | shot | `plateFrom: "<shot>"` | Reuse another shot's plate (e.g. the same landscape by night) |
 | shot | `plateMotion` | `push`, `pull`, `driftL`, `driftR`, `descend`, `still` |
+| shot | `plateFrame: {from:{s,x,y}, to:{s,x,y}}` | Custom camera move, e.g. to keep faces below the caption band |
 | graphic | `"local": true` | Pin a graphic to the plate so it moves with the camera |
 | graphic | `sunCycle` | Code-drawn sun: `vanish` / `night` / `return`, with darkness spreading from it and an optional warm `glow` point |
 | graphic | `celestialClock` | 24-hour dial with a one-hour dark sector, orbiting sun, night counter |
@@ -66,10 +67,16 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | graphic | `ringGlow` | Traces and lights a ring in the plate |
 | graphic | `consequenceTree` | Premise → 3 consequences (plate medallions) → sum |
 | graphic | `method` | "Don't" cloud struck out → "Start with …" word-synced |
+| graphic | `levelGauge` | Draining gauge with dated marks (resource running out) |
+| graphic | `flicker` | Brown-out stutter that settles dimmer |
+| graphic | `allocation` | One supply split between two needs; channel width, percentages and medallion brightness follow the share |
+| graphic | `plateBands` + `lessonStack` | Three dimmed plate strips behind a stacked, arrowed lesson |
+| graphic | `duskGrade` | Turns a daytime plate into dusk with city lights and a glowing pool |
 | graphic | `ctaCard` | Full logo + episode + large CTA + pill (spoken CTA shown verbatim) |
 | graphic | `endcard`, `tag`, `oversizedWord`, `statement`, `yearCounter`, `dateLabel`, `ledger` | From EP01 |
 | scene | `nightSky` | Midnight backdrop for diagrams |
-| sfx | `shimmer`, `tonalDrop`, `doors`, `ritualBell`, `sunrise` (hits); `clock`, `cave`, `market` (beds) | Plus EP01's `wind`, `water`, `ticks`, `swell`, `impact`, `rumble`, `whoosh`, `paper`, `ink`, `coin`, `drum`, `chimes` |
+| sfx | `shimmer`, `tonalDrop`, `doors`, `ritualBell`, `sunrise`, `powerDown` (hits); `clock`, `cave`, `market`, `hum`, `room` (beds) | Plus EP01's `wind`, `water`, `ticks`, `swell`, `impact`, `rumble`, `whoosh`, `paper`, `ink`, `coin`, `drum`, `chimes` |
+| cue | `nth` | Pick a repeated word: `{"line":"L8","word":"start","nth":2}` |
 | music | `drone`, `events: [{"type":"duck","at":cue,…}]` | Root drone and cue-timed music ducks (no more per-episode hacks in `score.py`) |
 
 ## Local / Claude-session commands

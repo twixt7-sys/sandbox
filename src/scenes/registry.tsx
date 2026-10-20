@@ -38,7 +38,7 @@ export const PlateScene: React.FC<SceneProps & {src: string; children?: React.Re
 	const motion: 'push' | 'pull' | 'driftL' | 'driftR' | 'descend' | 'still' = shot.plateMotion ?? 'push';
 	// Generated skies are often bright: darken the top so parchment type stays legible.
 	const scrim = shot.plateScrim ?? 0.5;
-	const m = {
+	let m = {
 		push: {s: lerp(1.0, 1.08, p), x: 0, y: lerp(0, -20, p)},
 		pull: {s: lerp(1.1, 1.0, p), x: 0, y: lerp(-20, 0, p)},
 		driftL: {s: 1.06, x: lerp(30, -30, p), y: 0},
@@ -47,6 +47,13 @@ export const PlateScene: React.FC<SceneProps & {src: string; children?: React.Re
 		descend: {s: lerp(1.2, 1.16, p), x: 0, y: lerp(150, -150, p)},
 		still: {s: 1.0, x: 0, y: 0},
 	}[motion];
+	// `plateFrame` overrides the preset: {from: {s, x, y}, to: {s, x, y}} (e.g. keep faces clear of the caption band).
+	const f = shot.plateFrame;
+	if (f) {
+		m.s = lerp(f.from.s ?? 1, f.to.s ?? 1, p);
+		m.x = lerp(f.from.x ?? 0, f.to.x ?? 0, p);
+		m.y = lerp(f.from.y ?? 0, f.to.y ?? 0, p);
+	}
 	return (
 		<AbsoluteFill style={{backgroundColor: '#0b1216'}}>
 			<AbsoluteFill style={{transform: `translate(${m.x}px, ${m.y}px) scale(${m.s})`}}>

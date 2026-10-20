@@ -1,8 +1,13 @@
 {
-  "name": "Worldbuilding, from the ground up",
+  "name": "Worldcraft Shorts",
+  "tagline": "Worldbuilding, from the ground up",
   "handleCta": "Follow for more",
   "totalEpisodes": 50,
-  "format": { "width": 1080, "height": 1920, "fps": 30 },
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
   "palette": {
     "night": "#0b1216",
     "slate": "#16222a",
@@ -31,5 +36,17 @@
     "targetLufs": -14,
     "truePeak": -1.5,
     "musicUnderVoiceDb": -20
+  },
+  "brand": {
+    "logo": "brand/logo.png",
+    "logoAspect": 0.885,
+    "note": "Series default: the logo appears on every episode as a corner logo and in the end card. Use the file unaltered (white brackets + grey T); it is designed for the dark series palette.",
+    "bug": {
+      "enabled": true,
+      "x": 90,
+      "y": 236,
+      "height": 66,
+      "opacity": 0.88
+    }
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, Easing, interpolate} from 'remotion';
+import {Logo, useBrand} from '../brand/Logo';
 import {cueTime, ease, lerp, useTiming} from '../lib/timing';
 import {fonts, palette} from '../theme';
 import type {Graphic, Shot, TimedShot} from '../types';
@@ -148,7 +149,8 @@ const Tag: React.FC<GraphicProps> = ({g, t, span}) => {
 	const o = out(t, span.end, 0.3);
 	return (
 		<AbsoluteFill style={{opacity: o}}>
-			<div style={{position: 'absolute', top: 290, left: 90}}>
+			{/* Starts below the corner logo (top-left, y 236–302). */}
+			<div style={{position: 'absolute', top: g.top ?? 336, left: 90}}>
 				<div
 					style={{
 						...kickerStyle,
@@ -215,6 +217,7 @@ const Ledger: React.FC<GraphicProps> = ({g, t, span}) => {
 /** Series lockup + CTA. Spoken CTA is shown verbatim here, so captions are off for this shot. */
 const Endcard: React.FC<GraphicProps> = ({g, t, span}) => {
 	const timing = useTiming();
+	const brand = useBrand();
 	const t0 = cueTime(timing, g.start);
 	const cta = timing.lines.find((l) => l.shot === 'cta');
 	const a = ease(t, t0 + 0.1, 0.9);
@@ -224,6 +227,12 @@ const Endcard: React.FC<GraphicProps> = ({g, t, span}) => {
 	const fade = out(t, span.end - 0.55, 0.5);
 	return (
 		<AbsoluteFill style={{opacity: fade, alignItems: 'center'}}>
+			{/* Full logo replaces the corner logo here (the shot sets hideLogoBug). */}
+			{brand && (
+				<div style={{position: 'absolute', top: 290, width: '100%', display: 'flex', justifyContent: 'center', opacity: a, transform: `translateY(${(1 - a) * 12}px)`}}>
+					<Logo brand={brand} height={150} />
+				</div>
+			)}
 			<div style={{position: 'absolute', top: 470, width: '100%', textAlign: 'center', color: palette.parchment}}>
 				<div style={{...kickerStyle, fontSize: 24, color: palette.amber, opacity: b}}>{g.episode}</div>
 				<div style={{marginTop: 26, fontFamily: fonts.display, fontWeight: 600, fontSize: 104, letterSpacing: `${lerp(0.02, 0.06, a)}em`, opacity: a, textShadow: '0 6px 40px rgba(0,0,0,0.5)'}}>

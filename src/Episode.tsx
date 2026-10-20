@@ -1,5 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, Audio, interpolate, Sequence, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {BrandContext, LogoBug} from './brand/Logo';
 import {Captions} from './captions/Captions';
 import {Grade, Grain, Vignette} from './fx/Fx';
 import {GRAPHICS} from './graphics/Graphics';
@@ -70,6 +71,7 @@ export const EpisodeComposition: React.FC<EpisodeProps> = ({episodeId, episode, 
 	const t = frame / fps;
 	return (
 		<TimingContext.Provider value={timing}>
+			<BrandContext.Provider value={series.brand}>
 			<AbsoluteFill style={{backgroundColor: '#05080a'}}>
 				{episode.shots.map((shot) => {
 					const span = timing.shots.find((s) => s.id === shot.id)!;
@@ -91,10 +93,23 @@ export const EpisodeComposition: React.FC<EpisodeProps> = ({episodeId, episode, 
 				<Grade />
 				<Vignette />
 				<Captions timing={timing} episode={episode} t={t} centerY={series.safeArea.captionCenterY} />
+				{series.brand && (
+					<LogoBug
+						brand={series.brand}
+						t={t}
+						hidden={episode.shots
+							.filter((s) => s.hideLogoBug)
+							.map((s) => {
+								const span = timing.shots.find((x) => x.id === s.id)!;
+								return [span.start, span.end + 1] as [number, number];
+							})}
+					/>
+				)}
 				<LoopTail duration={timing.duration} hook={episode.shots[0]} plate={plates[episode.shots[0].id]} episodeId={episodeId} />
 				<Grain />
 				<Audio src={staticFile(`${episodeId}/mix.wav`)} />
 			</AbsoluteFill>
+			</BrandContext.Provider>
 		</TimingContext.Provider>
 	);
 };

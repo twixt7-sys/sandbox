@@ -14,6 +14,8 @@ export type Shot = {
 	scene: string;
 	transitionIn?: Transition;
 	captions?: boolean;
+	/** Hide the corner logo for this shot (e.g. when the end card shows the full logo). */
+	hideLogoBug?: boolean;
 	graphics: Graphic[];
 	[key: string]: any;
 };
@@ -27,8 +29,16 @@ export type Episode = {
 	shots: Shot[];
 };
 
+export type Brand = {
+	logo: string;
+	logoAspect: number;
+	bug: {enabled: boolean; x: number; y: number; height: number; opacity: number};
+};
+
 export type Series = {
 	name: string;
+	tagline?: string;
+	brand?: Brand;
 	totalEpisodes: number;
 	format: {width: number; height: number; fps: number};
 	palette: Record<string, string>;

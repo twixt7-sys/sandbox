@@ -561,7 +561,8 @@
           "gain": -24
         }
       ],
-      "music": "Resolves to D major; fades fully before the last frame."
+      "music": "Resolves to D major; fades fully before the last frame.",
+      "hideLogoBug": true
     }
   ],
   "music": {

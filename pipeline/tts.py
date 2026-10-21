@@ -21,7 +21,7 @@ import numpy as np
 import soundfile as sf
 from scipy.signal import resample_poly
 
-from common import SR, load_episode, out_dir
+from common import SR, load_episode, out_dir, resolve_cue
 
 TRIM_DB = -42.0
 PAD_IN, PAD_OUT = 0.03, 0.07
@@ -145,10 +145,14 @@ def main():
     total = len(narration) / SR
 
     # Shots start a beat before their first line so the picture cuts ahead of the voice.
+    # `startAt` (a word cue) cuts mid-line instead, e.g. from the wide town to a close-up on "to make it believable".
     shots = []
     for s in ep["shots"]:
         first = next((l for l in timed_lines if l["shot"] == s["id"]), None)
-        start = 0.0 if not shots else max(0.0, first["start"] - tm["shotLead"])
+        if s.get("startAt"):
+            start = max(0.0, resolve_cue(s["startAt"], {"lines": timed_lines, "shots": []}) - tm["shotLead"])
+        else:
+            start = 0.0 if not shots else max(0.0, first["start"] - tm["shotLead"])
         shots.append({"id": s["id"], "start": round(start, 3)})
     for i, s in enumerate(shots):
         s["end"] = shots[i + 1]["start"] if i + 1 < len(shots) else round(total, 3)

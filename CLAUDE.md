@@ -10,6 +10,9 @@ These apply to every episode and every session working in this repo.
 - Keep top-left editorial elements (tags, chips) at y ≥ 336 so they clear the corner logo.
 - Series name: **Worldcraft Shorts**. Tagline: "Worldbuilding, from the ground up".
 
+## Series style (keep consistent from episode 01 to 50)
+- Read `docs/STYLE.md` before designing any episode, and follow its palette, type, layout, story shape, motion, sound, CTA card and delivery rules. Reuse the existing components (`src/graphics/*`, `src/scenes/*`) and add new ones only for genuinely new kinds of visuals.
+
 ## Production conventions
 - One episode = one folder `episodes/epNN/` with `episode.json` (script, shots, cues, prompts, metadata), `plates/` and `plates.json`. Generated audio and timing go to `public/epNN/` (gitignored; `pipeline/build.sh epNN` rebuilds them).
 - Stills: Figma `generate_image` with the user's Figma AI credits (approved for Episode 01; confirm before using them for a new episode), saved as `episodes/epNN/plates/<shot>.jpg` at 1080×1920, then `python pipeline/plates.py epNN --register`. Never ask a model to render readable text; all typography is added in Remotion.

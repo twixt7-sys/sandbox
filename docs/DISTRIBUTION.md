@@ -160,6 +160,82 @@ The pinned comments ask for a rule plus a consequence. That invites original ans
 | 5 | Subtitle emphasis | Amber on 2–3 key words per line | Kinetic one-word captions on the hook, phrase captions after | Average % viewed; rewatches |
 | 6 | Hook delivery | Narrated question over the vanishing sun | On-screen text only for the first 1.5 s, voice joins on "every night" | 3-second views / swipe-away |
 
+## Episode 05 captions (ready to paste)
+
+Source of truth: `episodes/ep05/episode.json` → `metadata`. Brief: YouTube Shorts, TikTok, Facebook Reels and Instagram Reels. The AI label goes on for all four. Hashtags are the brief's five (Instagram allows at most 5). Cover: `episodes/ep05/Worldcraft_Short_E05_cover.jpg`. Subtitles: `episodes/ep05/ep05.srt`.
+
+### YouTube Shorts
+- **Title** (62/100 chars): `Build Your World Backward: The Secret to Ancient Civilizations`
+- **Alternate title** (58 chars): `Want an ancient civilization? Start by imagining its ruins`
+- **Description:**
+
+> Want a believable ancient civilization? Don't start with its founding. Start with what it left behind.
+>
+> A shattered monument can reveal ambition. A forgotten machine can expose lost technology. An ancient symbol can uncover what a civilization believed.
+>
+> The ruins are clues. Your job is to discover the story behind them.
+>
+> What would your world's oldest ruin look like? Tell us in the comments.
+>
+> Episode 5 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists and tabletop RPG creators.
+>
+> #Worldbuilding #WritingTips #FantasyWriting #CreativeWriting #WorldcraftShorts
+
+- **Pinned comment:** Your turn: describe your world's oldest ruin in one sentence. Then tell us what it reveals: an achievement, a belief, or the mistake that ended them.
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (266 chars): `Want a believable ancient civilization? Start with its ruins, then work backward. A broken tower, a dead machine, a faded symbol: every clue is a story. What's your world's oldest ruin? 👇 #Worldbuilding #WritingTips #FantasyWriting #CreativeWriting #WorldcraftShorts`
+- **Pinned comment:** Drop your world's oldest ruin in one line. We'll guess what killed the civilization that built it.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> Want a believable ancient civilization? Don't start with its founding. Start with what it left behind.
+>
+> A shattered monument can reveal ambition. A forgotten machine can expose lost technology. An ancient symbol can uncover what a civilization believed.
+>
+> The ruins are clues. Your job is to discover the story behind them.
+>
+> What would your world's oldest ruin look like? Tell us in the comments.
+>
+> Episode 5 of 50.
+>
+> #Worldbuilding #WritingTips #FantasyWriting #CreativeWriting #WorldcraftShorts
+
+- **Pinned comment:** One sentence: what is your world's oldest ruin, and what does it give away about the people who built it?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption** (hook in the first 47 characters, before the "more" cut-off):
+
+> Start your ancient civilization with its ruins.
+>
+> Want a believable ancient civilization? Don't start with its founding. Start with what it left behind.
+>
+> A shattered monument can reveal ambition. A forgotten machine can expose lost technology. An ancient symbol can uncover what a civilization believed.
+>
+> The ruins are clues. Your job is to discover the story behind them.
+>
+> What would your world's oldest ruin look like? Tell us in the comments.
+>
+> Episode 5 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #WritingTips #FantasyWriting #CreativeWriting #WorldcraftShorts
+
+- **Pinned comment:** What's your world's oldest ruin? Best answers might inspire a future episode.
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit). Upload the SRT or use Instagram's auto-captions only if you turn the burned-in captions off; the video already has them.
+
+### Experiments to try from EP05 onward (hypotheses, not promises)
+
+| # | Variable | A (EP05) | B | Primary metric |
+|---|---|---|---|---|
+| 10 | Title on frame 0 | Title fades in over the first 0.6 s (clean ruin on frame 0, seamless loop) | "BUILD YOUR WORLD backward." fully visible on frame 0 | YouTube "viewed vs swiped away", TikTok 2-s retention |
+| 11 | CTA shape | Open question ("What would your world's oldest ruin look like?") | Constrained prompt ("Describe your oldest ruin in 5 words") | Comments per 1,000 views |
+
+Measure average watch duration, completion rate, rewatches, shares, saves, comments and follows from the video, at 48 h and 7 days.
+
 ## Research notes behind the captions (checked 2026-10-19)
 
 Official sources first; blog figures are marked and should be treated as estimates.

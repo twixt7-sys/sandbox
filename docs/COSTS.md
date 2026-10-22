@@ -65,6 +65,20 @@ If you move EP03 to the paid primary stack, the estimate is the same as the tabl
 
 The paid primary stack (Runway stills and clips + ElevenLabs) would still cost about **$1.15 (₱71)** per episode, or **$2.12 (₱131)** with one retry per asset, plus $6 (₱371) a month for ElevenLabs Starter, at ₱61.8 = $1 (Aug 2026 rate).
 
+## What Episode 05 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 5 stills (city and gateway, tower, machine chamber, symbol passage, broken aqueduct) | Figma `generate_image` (`gemini-3.1-flash-lite-image`), 768×1376, lanczos-upscaled. 5 generations, no re-rolls (8 approved). The reconstruction and CTA shots reuse the city plate. | $0 cash (Figma AI credits; check Settings → AI credits) |
+| Title, survey rings, dust in the sunbeam, aqueduct clue line, amber reconstruction lines, "Don't → Build backward" card, ember dusk | Remotion code (`src/graphics/Ruins.tsx`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 73 words, 29.9 s | $0 |
+| Score + SFX (new: stone shift, mechanism resonance, rebuild) | `pipeline/score.py` | $0 |
+| Subtitles | `pipeline/srt.py` from the word timings | $0 |
+| Render, QA, delivery encode | Claude cloud container (render ≈ 4 min) | $0 |
+| **Total** | | **$0 cash (₱0)** plus 5 Figma image generations |
+
+No Runway, ElevenLabs or Creatomate key was configured, and no AWS service was used. The paid primary stack would still cost about **$1.15 (₱71)** per episode, or **$2.12 (₱131)** with one retry per asset, plus $6 (₱371) a month for ElevenLabs Starter, at ₱61.8 = $1 (Aug 2026 rate).
+
 ## Alternatives
 
 | Option | Per-episode | Monthly | Comment |

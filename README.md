@@ -78,6 +78,14 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | sfx | `shimmer`, `tonalDrop`, `doors`, `ritualBell`, `sunrise`, `powerDown` (hits); `clock`, `cave`, `market`, `hum`, `room` (beds) | Plus EP01's `wind`, `water`, `ticks`, `swell`, `impact`, `rumble`, `whoosh`, `paper`, `ink`, `coin`, `drum`, `chimes` |
 | cue | `nth` | Pick a repeated word: `{"line":"L8","word":"start","nth":2}` |
 | music | `drone`, `events: [{"type":"duck","at":cue,…}]` | Root drone and cue-timed music ducks (no more per-episode hacks in `score.py`) |
+| graphic | `titleLockup` | Hook title: amber caps kicker + one large serif italic word (EP05) |
+| graphic | `evidenceRing` | Thin survey ring with ticks marking a clue on the plate (`local`) |
+| graphic | `dustBeam` | Dust motes drifting inside a light beam polygon (`local`) |
+| graphic | `ghostLines` | SVG line drawing over a plate, drawn path by path between two cues: reconstruction of ruins, a missing span (`local`; `dash`, `color`, `width`, `instant`) |
+| graphic | `reverseCard` | "Don't …" struck in rust → method kicker → large serif payoff line |
+| graphic | `emberDusk` | Dusk grade without city lights (for ruins) |
+| sfx | `stoneShift`, `resonance`, `rebuild` (hits) | EP05: stone settling, dormant bronze mechanism, reconstruction lines drawing in |
+| tool | `pipeline/srt.py epNN` | SRT from the word timings, same grouping as the burned-in captions, paired into 2-line cues |
 
 ## Local / Claude-session commands
 

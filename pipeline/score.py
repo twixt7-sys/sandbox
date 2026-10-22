@@ -372,6 +372,33 @@ def sfx_hit(kind, dur=None):
         for i, note in enumerate(["A5", "C6", "E6", "G5"]):
             place(out, bell(hz(note)), i * 0.33, 0.5)
         return out
+    if kind == "stoneShift":
+        # Distant stone settling: a short low grind, then a few small crumbles trickling down.
+        n = int(2.0 * SR)
+        t = np.arange(n) / SR
+        grind = bp(noise(n), 70, 500) * (np.abs(lp(noise(n), 14, 1)) * 9).clip(0, 1.1) * np.interp(t, [0, 0.15, 0.7, 1.0], [0, 1, 0.6, 0])
+        grains = np.zeros(n)
+        for g in RNG.uniform(0.35, 1.6, 10):
+            i = int(g * SR)
+            m = int(0.05 * SR)
+            grains[i:i + m] += bp(noise(m), 900, 4000) * np.exp(-np.arange(m) / SR * 70) * RNG.uniform(0.1, 0.35)
+        return stereo(grind + grains, 0.6)
+    if kind == "resonance":
+        # Dormant mechanism: faint inharmonic bronze resonance with slow beating, struck softly.
+        n = int(3.4 * SR)
+        t = np.arange(n) / SR
+        sig = sum(a * np.sin(2 * np.pi * f * t) * np.exp(-d * t) for f, a, d in [(146.8, 1.0, 0.9), (148.1, 0.8, 0.9), (403, 0.35, 1.6), (689, 0.2, 2.4), (1012, 0.1, 3.2)])
+        sig *= np.minimum(1, t / 0.04)
+        sig += bp(noise(n), 1500, 5000) * np.exp(-t * 12) * 0.08
+        return stereo(sig, 0.5)
+    if kind == "rebuild":
+        # Reconstruction lines drawing in: a soft rising fifth with fine "drafting" grains on top.
+        n = int(3.0 * SR)
+        t = np.arange(n) / SR
+        e = np.minimum(1, t / 1.4) ** 2 * np.exp(-np.maximum(0, t - 1.6) * 1.8)
+        tone = sum(np.sin(2 * np.pi * hz(nm) * (1 + 0.01 * t) * t) for nm in ("E4", "B4", "E5")) / 3
+        scratch = hp(noise(n), 3500) * (np.abs(lp(noise(n), 25, 1)) * 10).clip(0, 1) * 0.12
+        return stereo((tone + scratch) * e, 0.7)
     raise KeyError(kind)
 
 

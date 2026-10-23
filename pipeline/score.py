@@ -255,6 +255,31 @@ def sfx_bed(kind, dur):
     elif kind == "room":
         # Large stone room tone: low filtered air with a slow swell, very little detail.
         sig = lp(pink(n), 500, 2) * (0.8 + 0.2 * np.sin(2 * np.pi * 0.09 * t)) + bp(noise(n), 2000, 5000) * 0.02
+    elif kind == "rain":
+        # Steady rain: soft broadband hiss with slow gusts, plus sparse close drops on stone and wood.
+        # Opens as "first rain" (sparse drops) and fills in over the first ~3 s.
+        build = np.clip(t / 3.0, 0.15, 1.0)
+        hiss = bp(pink(n), 900, 7000) * (0.75 + 0.25 * np.sin(2 * np.pi * 0.08 * t + 0.7)) * build
+        sig = hiss * 0.5 + lp(pink(n), 300) * 0.15 * build
+        for d in np.sort(RNG.uniform(0.05, max(0.1, dur - 0.1), int(dur * 9))):
+            i = int(d * SR)
+            m = int(0.04 * SR)
+            tt = np.arange(m) / SR
+            tap = bp(noise(m), RNG.uniform(1800, 4200), 9000) * np.exp(-tt * RNG.uniform(140, 260)) * RNG.uniform(0.15, 0.6)
+            sig[i:i + m] += tap[: len(sig[i:i + m])]
+    elif kind == "footsteps":
+        # Unhurried footsteps on wet stone: a soft heel thud plus a short wet slap, ~1.8 steps a second.
+        sig = np.zeros(n)
+        for k, d in enumerate(np.arange(0.1, max(0.2, dur - 0.2), 0.56)):
+            i = int((d + RNG.uniform(-0.03, 0.03)) * SR)
+            m = int(0.16 * SR)
+            tt = np.arange(m) / SR
+            heel = lp(noise(m), 260) * np.exp(-tt * 38) * 1.4
+            slap = bp(noise(m), 1200, 5000) * np.exp(-np.maximum(0, tt - 0.025) * 70) * (tt > 0.02) * 0.5
+            step = (heel + slap) * (0.8 if k % 2 else 1.0)
+            sig[i:i + m] += step[: len(sig[i:i + m])]
+        sig = sig / (np.abs(sig).max() + 1e-9)
+        return stereo(sig, 0.3) * env(n, 0.05, 0.3)[:, None]
     elif kind == "wind":
         sig = bp(pink(n), 180, 1400) * (0.6 + 0.4 * np.sin(2 * np.pi * 0.11 * t + 1.3)) * (0.8 + 0.2 * np.sin(2 * np.pi * 0.37 * t))
     else:  # water
@@ -367,6 +392,23 @@ def sfx_hit(kind, dur=None):
         tone = sum(np.sin(2 * np.pi * hz(nm) * t) for nm in ("C4", "E4", "G4", "C5")) / 4
         sig = tone * e + bp(noise(n), 1500, 7000) * e * 0.12
         return stereo(sig, 0.7)
+    if kind == "bowlKnock":
+        # Wooden bowl set down upside down on stone: hollow wood resonance + a dull contact click.
+        n = int(0.9 * SR)
+        t = np.arange(n) / SR
+        body = sum(a * np.sin(2 * np.pi * f * t) * np.exp(-t * d) for f, a, d in [(210, 1.0, 22), (480, 0.6, 30), (930, 0.3, 45), (1650, 0.15, 60)])
+        click = bp(noise(n), 1500, 6000) * np.exp(-t * 300) * 0.6
+        sig = (body + click) * np.minimum(1, t / 0.001)
+        return stereo(sig, 0.2)
+    if kind == "ladle":
+        # Ladle pour: a short liquid stream (modulated band noise) settling into a ceramic bowl, with a soft clink.
+        n = int(1.4 * SR)
+        t = np.arange(n) / SR
+        e = np.interp(t, [0, 0.08, 0.7, 1.1], [0, 1, 0.7, 0])
+        gurgle = 0.6 + 0.4 * np.sin(2 * np.pi * (9 + 6 * np.sin(2 * np.pi * 1.3 * t)) * t)
+        stream = bp(noise(n), 400, 2600) * gurgle * e
+        clink = sum(np.sin(2 * np.pi * f * t) for f in (2900, 4300)) * np.exp(-t * 25) * 0.12
+        return stereo(stream + clink, 0.5)
     if kind == "chimes":
         out = np.zeros((int(3.6 * SR), 2))
         for i, note in enumerate(["A5", "C6", "E6", "G5"]):

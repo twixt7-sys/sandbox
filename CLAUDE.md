@@ -19,4 +19,5 @@ These apply to every episode and every session working in this repo.
 - Render with `--gl=angle` (set in `remotion.config.ts`); it's ~8× faster than swangle on CPU-only machines.
 - Every render must pass `python pipeline/qa.py out/epNN.mp4 --sheet out/epNN_sheet.jpg`, and the contact sheet must be visually inspected before delivery.
 - Don't spend money (Runway, ElevenLabs, AWS) without the user's approval. `plates.py` is a dry run unless `--yes`.
+- Every episode's browser-preview Artifact has a **Download MP4 button** by default: declare `capabilities: {downloads: true}` and call `claude.use("downloads").save({filename, data})` on click (a plain `<a download>` is inert in artifacts). A page file can't exceed 15 MB, so publish a two-pass near-master copy (about `-b:v 3300k`, under 15 MB) as `epNN_download.mp4`, keep the lighter CRF-26 copy for the player, and say that the untouched master goes through SendUserFile. Never overwrite another episode's page.
 - Platform metadata lives in `episode.json → metadata`. Research notes and AI-disclosure guidance: `docs/DISTRIBUTION.md`. Turn the AI label on for all platforms.

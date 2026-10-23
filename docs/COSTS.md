@@ -65,6 +65,19 @@ If you move EP03 to the paid primary stack, the estimate is the same as the tabl
 
 The paid primary stack (Runway stills and clips + ElevenLabs) would still cost about **$1.15 (₱71)** per episode, or **$2.12 (₱131)** with one retry per asset, plus $6 (₱371) a month for ElevenLabs Starter, at ₱61.8 = $1 (Aug 2026 rate).
 
+## What Episode 04 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 5 stills (Bellweather wide, doorstep bowl, child at the doorstep, broth stall, rainy street) | Figma `generate_image` (`gemini-3.1-flash-lite-image`), 768×1376, lanczos-upscaled to 1080×1920. 5 generations, no re-rolls (8 approved). | $0 cash (Figma AI credits; check Settings → AI credits) |
+| 4 extra shots (cut-in on the bowl, greeting reframe, lesson chain, CTA) | Reframes of the same plates plus Remotion code: rain, steam, bowl-flip diagram, detail chain | $0 |
+| Narration | Kokoro-82M, 76 words, 29.8 s | $0 |
+| Score + SFX (new: rain bed, wet-stone footsteps, wooden bowl knock, ladle pour) | `pipeline/score.py` | $0 |
+| Render + QA | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)** plus 5 Figma image generations |
+
+On the paid primary stack (Runway stills and clips + ElevenLabs), EP04 would cost about **$1.25 (₱77)**, or **$2.30 (₱142)** with one retry per asset, because it has one more still than EP01. ElevenLabs Starter adds $6 (₱371) a month. Rate: ₱61.8 = $1 (Aug 2026).
+
 ## What Episode 05 actually used
 
 | Item | Used | Cash cost |

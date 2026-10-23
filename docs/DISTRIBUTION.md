@@ -58,6 +58,57 @@ Source of truth: `episodes/ep01/episode.json` → `metadata`. Limits below were 
 
 (TikTok copy is unchanged in `episode.json`.)
 
+## Episode 04 captions (ready to paste)
+
+Source of truth: `episodes/ep04/episode.json` → `metadata`. The AI label goes on for all three platforms.
+
+### YouTube Shorts
+- **Title** (51/100 chars, front-loaded): `The one detail that makes a fantasy world feel real`
+- **Alternate title** (60 chars): `You don't need a whole kingdom to make your world believable`
+- **Description** (first 3 hashtags show above the title):
+
+> You don't need to describe an entire kingdom. Show what people eat, how they greet strangers, and what they do when it rains.
+>
+> In one mountain town, everyone turns their doorstep bowl upside down when the first rain falls, and children learn it before they can read. Food hints at climate. Greetings hint at culture. Habits hint at history. One ordinary detail implies a whole world beyond the frame.
+>
+> Episode 4 of 50 in Worldbuilding, from the ground up: short lessons for fantasy writers, novelists and tabletop RPG creators.
+>
+> #worldbuilding #fantasywriting #writingtips
+
+- **Pinned comment:** Your turn: what's one small, ordinary thing people in your world do without thinking? A meal, a greeting, a habit when it rains. One detail is enough.
+- **Upload settings:** AI use: Yes (AI-generated stills and synthetic narration). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (hook first, 4 hashtags): `You don't need a whole kingdom. You need one ordinary detail. 🌧️ #worldbuilding #fantasywriting #writingtok #ttrpg`
+- **Pinned comment:** Drop one small, everyday detail from your world: what people eat, how they greet strangers, or what they do when it rains.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> You don't need to describe an entire kingdom to make it believable.
+>
+> In one mountain town, everyone turns their doorstep bowl upside down when the first rain falls. Children learn it before they can read. That one habit says more about the place than a page of history.
+>
+> Writers and GMs: what's one ordinary detail from your world?
+>
+> Episode 4 of 50.
+>
+> #worldbuilding #fantasywriting #writingcommunity
+
+- **Pinned comment:** Tell us one small, ordinary detail from your world, and what it quietly says about the place.
+- **Upload settings:** Turn on the AI label when posting.
+
+### Experiments to try from EP04 onward (hypotheses, not promises)
+
+| # | Variable | A (EP04) | B | Primary metric |
+|---|---|---|---|---|
+| 10 | Opening | Grand town wide for 2.5 s, then cut to the bowl | Open on the bowl in close-up, then reveal the town | YouTube "viewed vs swiped away", TikTok 2-s retention |
+| 11 | Wide-to-detail speed | Cut on "to make it believable" (≈2.5 s) | Cut on "kingdom" (≈1.9 s) | Average % viewed |
+| 12 | Subtitle emphasis | Amber on the example words ("what people eat", "greet", "upside down") | Amber only on the lesson words ("ordinary details", "beyond") | Rewatches; shares and saves |
+
+Measure average watch duration, completion rate, rewatches where shown, shares, saves and follows from the video, at 48 h and 7 days. These are hypotheses to test, not predictions.
+
 ## Episode 03 captions (ready to paste)
 
 Source of truth: `episodes/ep03/episode.json` → `metadata`. The AI label goes on for all three platforms.

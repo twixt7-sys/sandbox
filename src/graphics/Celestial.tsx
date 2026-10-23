@@ -500,7 +500,7 @@ export const CtaCard: React.FC<GraphicProps> = ({g, t, span}) => {
 				{lines.map((ln, i) => {
 					const p = ease(t, tCta - 0.1 + i * 0.25, 0.6);
 					return (
-						<div key={i} style={{fontFamily: fonts.display, fontWeight: 600, fontSize: 92, lineHeight: 1.08, color: ln.startsWith('*') ? palette.ember : palette.parchment, fontStyle: ln.startsWith('*') ? 'italic' : undefined, opacity: p, transform: `translateY(${(1 - p) * 18}px)`, textShadow: '0 4px 34px rgba(0,0,0,0.75)'}}>
+						<div key={i} style={{fontFamily: fonts.display, fontWeight: 600, fontSize: g.size ?? 92, lineHeight: 1.08, color: ln.startsWith('*') ? palette.ember : palette.parchment, fontStyle: ln.startsWith('*') ? 'italic' : undefined, opacity: p, transform: `translateY(${(1 - p) * 18}px)`, textShadow: '0 4px 34px rgba(0,0,0,0.75)'}}>
 							{ln.replace(/\*/g, '')}
 						</div>
 					);
@@ -508,8 +508,16 @@ export const CtaCard: React.FC<GraphicProps> = ({g, t, span}) => {
 			</div>
 			<div style={{position: 'absolute', top: 1180, width: '100%', display: 'flex', justifyContent: 'center', opacity: b}}>
 				<div style={{display: 'flex', alignItems: 'center', gap: 18, fontFamily: fonts.ui, fontWeight: 700, fontSize: 36, color: '#151a1d', background: palette.amber, padding: '18px 36px 16px', borderRadius: 999, transform: `scale(${0.96 + 0.04 * b})`}}>
-					<svg width={38} height={38} viewBox="0 0 24 24" fill="none" stroke="#151a1d" strokeWidth={2.4} strokeLinejoin="round">
-						<path d="M4 5h16v11H9l-5 4z" />
+					<svg width={38} height={38} viewBox="0 0 24 24" fill="none" stroke="#151a1d" strokeWidth={2.4} strokeLinejoin="round" strokeLinecap="round">
+						{/* `icon: "follow"` swaps the comment bubble for a follow (person +) mark. */}
+						{g.icon === 'follow' ? (
+							<>
+								<circle cx={9} cy={8} r={4} />
+								<path d="M2 20c0-4 3-6 7-6s7 2 7 6M19 7v6M16 10h6" />
+							</>
+						) : (
+							<path d="M4 5h16v11H9l-5 4z" />
+						)}
 					</svg>
 					{g.button ?? 'Comment below'}
 				</div>

@@ -73,6 +73,13 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | graphic | `plateBands` + `lessonStack` | Three dimmed plate strips behind a stacked, arrowed lesson |
 | graphic | `duskGrade` | Turns a daytime plate into dusk with city lights and a glowing pool |
 | graphic | `ctaCard` | Full logo + episode + large CTA + pill (spoken CTA shown verbatim) |
+| shot | `startAt: cue` | Cut to a shot mid-line (EP04: town wide → bowl on "to make it believable") |
+| graphic | `rain` | Drawn rain streaks (`density`, `opacity`) + optional ripple `splashes: [x0,y0,x1,y1]` |
+| graphic | `steam` | Soft rising steam at a plate point (use `local: true`) |
+| graphic | `bowlFlip` | Line-art badge: object flips on a cue, rain glances off (makes a custom readable) |
+| graphic | `detailChain` | Rows of medallion + detail → arrow → implication, word-synced (FOOD → climate …) |
+| graphic | `ctaCard` options | `size` (CTA line size), `icon: "follow"` |
+| sfx | `rain`, `footsteps` (beds); `bowlKnock`, `ladle` (hits) | EP04; `market` doubles as quiet market ambience |
 | graphic | `endcard`, `tag`, `oversizedWord`, `statement`, `yearCounter`, `dateLabel`, `ledger` | From EP01 |
 | scene | `nightSky` | Midnight backdrop for diagrams |
 | sfx | `shimmer`, `tonalDrop`, `doors`, `ritualBell`, `sunrise`, `powerDown` (hits); `clock`, `cave`, `market`, `hum`, `room` (beds) | Plus EP01's `wind`, `water`, `ticks`, `swell`, `impact`, `rumble`, `whoosh`, `paper`, `ink`, `coin`, `drum`, `chimes` |

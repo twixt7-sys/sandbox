@@ -5,6 +5,7 @@ import {cueTime, ease, lerp, useTiming} from '../lib/timing';
 import {fonts, palette} from '../theme';
 import type {Graphic, Shot, TimedShot} from '../types';
 import {CELESTIAL} from './Celestial';
+import {CLIMATE} from './Climate';
 import {CRISIS} from './Crisis';
 import {RUINS} from './Ruins';
 import {SURVEY} from './Survey';
@@ -284,4 +285,5 @@ export const GRAPHICS: Record<string, React.FC<GraphicProps>> = {
 	...WEATHER,
 	...TERRAIN,
 	...SURVEY,
+	...CLIMATE,
 };

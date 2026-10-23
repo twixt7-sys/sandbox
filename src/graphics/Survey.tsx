@@ -39,13 +39,52 @@ const Icon: React.FC<{name: string; c: string; fill: number}> = ({name, c, fill}
 					<circle cx={24} cy={24} r={6} {...f(0.9)} />
 				</g>
 			);
+		case 'clothing':
+			// Hooded coat (EP09).
+			return (
+				<g {...st}>
+					<path d="M17 12 C17 6 31 6 31 12 L38 18 L42 40 H6 L10 18 Z" {...f()} />
+					<path d="M18 13 C20 20 28 20 30 13" />
+					<path d="M24 20 V40" />
+				</g>
+			);
+		case 'housing':
+			// Dome half sunk below a ground line, smoke vent (EP09).
+			return (
+				<g {...st}>
+					<path d="M6 34 H42" />
+					<path d="M10 34 C10 20 38 20 38 34" {...f()} />
+					<path d="M21 34 V29 H27 V34" />
+					<path d="M30 22 V15 M29 10 C31 8 29 6 31 4" />
+				</g>
+			);
+		case 'food':
+			// Fish hung on a rack (EP09).
+			return (
+				<g {...st}>
+					<path d="M6 8 H42" />
+					<path d="M16 8 V14 M32 8 V14" />
+					<path d="M16 14 C10 22 12 32 16 38 C20 32 22 22 16 14 Z" {...f()} />
+					<path d="M32 14 C26 22 28 32 32 38 C36 32 38 22 32 14 Z" {...f()} />
+					<path d="M13 42 L16 38 L19 42 M29 42 L32 38 L35 42" />
+				</g>
+			);
+		case 'festival':
+			// The returning sun on the horizon (EP09).
+			return (
+				<g {...st}>
+					<path d="M4 34 H44" />
+					<path d="M13 34 A11 11 0 0 1 35 34" {...f(0.5)} />
+					<path d="M24 12 V17 M9 19 L12.5 22.5 M39 19 L35.5 22.5 M4 28 H8 M40 28 H44" />
+				</g>
+			);
 		default:
 			return <circle cx={24} cy={24} r={10} {...st} {...f()} />;
 	}
 };
 
 /**
- * Reason tally: `items: [{icon, label, at: Cue}]` in a centred row at `top` (default 336). Slots show dim from `start`
+ * Reason tally: `items: [{icon, label, at: Cue}]` in a centred row at `top` (default 336), `gap` px apart (default 150; wider for long labels). Slots show dim from `start`
  * (or the shot start); each fills on its cue. `sumAt` + `sum` draws a bracket and a payoff line beneath (*word* = ember italic).
  * Repeat the same graphic on consecutive shots with the same cues: state is computed from episode time, so it carries over.
  */
@@ -56,7 +95,7 @@ export const ReasonTally: React.FC<GraphicProps> = ({g, t, span}) => {
 	const show = g.instant ? 1 : ease(t, t0, 0.5);
 	const o = g.persist ? 1 : out(t, span.end + 0.1, 0.3);
 	const top = g.top ?? 336;
-	const gap = 150;
+	const gap = g.gap ?? 150;
 	const x0 = W / 2 - ((items.length - 1) * gap) / 2;
 	const tSum = g.sumAt ? cueTime(timing, g.sumAt) : 1e9;
 	const sum = ease(t, tSum, 0.7);

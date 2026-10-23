@@ -26,6 +26,9 @@ import type {SceneProps} from './registry';
  *   wash    {at, r, color?}                                  expanding influence
  *   label   {at, text, size?, color?, serif?, anchor?, rot?} map lettering
  *   key     {at, rows: [{text, symbol: arrow|cut|coin, color?, at: Cue}]} map legend; each row lights on its cue
+ *   dunes   {box: [x0,y0,x1,y1], count?, seed?, avoid?}      desert crescents (EP08)
+ *   well    {at, size?, color?}                              oasis well (water-blue ring + core; pulses)
+ *   lock    {at, size?}                                      padlock snapping shut (put it beside a well)
  *   gorge   {pts, width?, seed?}                             chasm with cliff hachures on both rims (draws west→east; EP10)
  *   bridge  {at, len?, angle?}                               single stone span across a gorge or river (EP10's chokepoint)
  * Show entries: "id" (already there) or {id, at: Cue, dur?, until?: Cue, pulse?: Cue}.
@@ -434,6 +437,52 @@ const Feature: React.FC<{f: AtlasFeature; p: number; pulse: number; t: number; t
 				>
 					{f.text}
 				</text>
+			);
+		}
+		case 'dunes': {
+			const r = rng(f.seed ?? 31);
+			const [x0, y0, x1, y1] = f.box;
+			const ds = Array.from({length: f.count ?? 60}, () => ({x: lerp(x0, x1, r()), y: lerp(y0, y1, r()), w: 26 + r() * 34, k: r()}));
+			const avoid: [number, number, number][] = f.avoid ?? [];
+			return (
+				<g fill="none" strokeLinecap="round">
+					{ds
+						.filter((q) => !avoid.some(([ax, ay, ar]) => Math.hypot(q.x - ax, q.y - ay) < ar))
+						.map((q, i) => {
+							const o = Math.max(0, Math.min(1, (p - q.k * 0.6) / 0.4));
+							const h = q.w * 0.42;
+							return (
+								<g key={i} opacity={o}>
+									<path d={`M${q.x - q.w},${q.y} Q${q.x - q.w * 0.2},${q.y - h} ${q.x + q.w * 0.15},${q.y - h * 0.9} Q${q.x + q.w * 0.5},${q.y - h * 0.5} ${q.x + q.w},${q.y}`} stroke={palette.ember} strokeOpacity={0.3} strokeWidth={1.6} />
+									<path d={`M${q.x + q.w * 0.15},${q.y - h * 0.9} Q${q.x + q.w * 0.1},${q.y - h * 0.3} ${q.x + q.w * 0.35},${q.y}`} stroke={palette.ember} strokeOpacity={0.18} strokeWidth={1.2} />
+								</g>
+							);
+						})}
+				</g>
+			);
+		}
+		case 'well': {
+			// Oasis well: a water-blue ring with a bright core; pulses when its cue hits.
+			const wc = f.color ?? '#7fd3ec';
+			const s = interpolate(p, [0, 0.6, 1], [0.3, 1.15, 1]) * (f.size ?? 1) * (1 + 0.25 * pulse);
+			return (
+				<g opacity={Math.min(1, p * 2.5)} transform={`translate(${f.at[0]} ${f.at[1]}) scale(${s})`}>
+					<circle r={26} fill={wc} opacity={0.14 + 0.06 * Math.sin((t - t0) * 2.4)} />
+					<circle r={15} fill="#0f2a33" stroke={wc} strokeWidth={3.5} />
+					<circle r={6} fill={wc} style={{filter: `drop-shadow(0 0 6px ${wc})`}} />
+				</g>
+			);
+		}
+		case 'lock': {
+			// Padlock snapping onto a well (amber body, shackle closes as it lands).
+			const s = interpolate(p, [0, 0.5, 1], [0.4, 1.2, 1]) * (1 + 0.2 * pulse);
+			const shut = interpolate(p, [0.4, 1], [10, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+			return (
+				<g opacity={Math.min(1, p * 3)} transform={`translate(${f.at[0]} ${f.at[1]}) scale(${s * (f.size ?? 1)})`}>
+					<path d={`M-9,${-4 - shut} L-9,${-14 - shut} A9,9 0 0 1 9,${-14 - shut} L9,-4`} fill="none" stroke={palette.parchment} strokeWidth={4} strokeLinecap="round" />
+					<rect x={-14} y={-6} width={28} height={22} rx={4} fill={palette.amber} stroke="#7a5418" strokeWidth={2} />
+					<circle cx={0} cy={4} r={3} fill="#5c3d10" />
+				</g>
 			);
 		}
 		default:

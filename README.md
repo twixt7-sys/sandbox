@@ -103,6 +103,9 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | graphic | `pullBack` | The previous shot's picture (`src`) starts full-frame at its last framing (`from: {s,x,y}`) and shrinks into a framed inset at `to: [cx,cy,w]` on the new shot, holds, fades: a "zoom out to the system" cut (EP08: cup → cistern, caravan photo → its map route) |
 | scene | `atlas` kinds `dunes`, `well`, `lock` | Desert crescents (`box`, `avoid`), oasis wells (water-blue, pulse), padlocks that snap shut beside a feature (EP08); key threads are thin `route`s |
 | sfx | `drop`, `lock` (hits) | EP08: a drop of water into a full cup; an iron padlock snapping shut |
+| graphic | `callout` | Field-guide label pinned to a plate point (`local`): ring, elbow leader, caps `label` + italic `note`; `side`, `reach`, `rise`, `start`/`end` (EP09: annotating how a costume, house or store answers the weather) |
+| graphic | `reasonTally` icons `clothing`, `housing`, `food`, `festival`; `gap` | EP09 climate layers; `gap: 196` fits long labels |
+| sfx | `hearth`, `procession` (beds); `strike` (hit) | EP09: fire crackle in a winter camp; hide drums, steps on snow and bells; a wrong idea struck out (`reverseCard`) |
 | tool | `pipeline/srt.py epNN` | SRT from the word timings, same grouping as the burned-in captions, paired into 2-line cues |
 | atlas | `gorge` `{pts, width?}`, `bridge` `{at, len?, angle?}` | A chasm with cliff hachures that draws west→east, and a single stone span across it that pulses (EP10's chokepoint) |
 | atlas | `town` `palace: true`, `cut` `size` | Domed palace glyph for a capital; a larger ✕ for a crossing being shut |

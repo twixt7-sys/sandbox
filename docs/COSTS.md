@@ -128,6 +128,16 @@ On the paid primary stack: about **$1.15 (₱73)**, or **$2.12 (₱134)** with o
 | Score + SFX (new: drop, lock) | `pipeline/score.py` | $0 |
 | Render, QA, encodes | Claude cloud container (render ≈ 4.5 min) | $0 |
 | **Total** | | **$0 cash (₱0)** plus 4 Figma image generations |
+## What Episode 09 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 4 stills (traveller in desert robes in a blizzard, the same framing in Haskari furs, the sunken winter camp with fish racks, the sunrise migration) | Figma `generate_image` (`gemini-3.1-flash-lite-image`), 768×1376, lanczos-upscaled. **5 generations** (6 approved): the first migration plate read too close to a real reindeer-herding people's dress and tents and had faces in the caption band, so it was re-rolled once. The strike, food, lesson and CTA shots reuse plates | $0 cash (Figma AI credits) |
+| Callouts, reason tally (new climate icons), reverse card, rust strike, route line, smoke, snowfall | Remotion code (new `src/graphics/Climate.tsx`; `reasonTally`, `reverseCard`, `ghostLines`, `steam`, `snowfall`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 76 words, 30.3 s | $0 |
+| Score + SFX (new: hearth, procession, strike) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container (render ≈ 3.5 min) | $0 |
+| **Total** | | **$0 cash (₱0)** plus 5 Figma image generations |
 
 On the paid primary stack: about **$1.15 (₱73)**, or **$2.12 (₱134)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
 

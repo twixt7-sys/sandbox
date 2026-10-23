@@ -539,6 +539,73 @@ Source of truth: `episodes/ep08/episode.json` → `metadata`. The AI label goes 
 - **Pinned comment:** What's scarce on your map, and which family, guild or god holds the keys?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
 
+## Episode 09 captions (ready to paste)
+
+Source of truth: `episodes/ep09/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep09/Worldcraft_Short_E09_cover.jpg`. Subtitles: `episodes/ep09/ep09.srt`. `#FantasyCulture` replaces `#FantasyMap` for this episode (no map in it).
+
+### YouTube Shorts
+- **Title** (55/100 chars): `Your Climate Should Affect Your Culture (Worldbuilding)`
+- **Alternate title** (47 chars): `Why are your ice people dressed for the desert?`
+- **Description:**
+
+> Why would people living in a frozen wasteland dress like desert nomads?
+>
+> They wouldn't. Let the climate design your culture: wind shapes the clothing, cold shapes the houses, a short summer shapes the food, and the returning sun shapes the festivals. The Haskari layer hooded furs, sink their homes half underground, smoke and freeze every catch, and turn their spring migration into the biggest celebration of the year.
+>
+> Let the weather shape your people, and they'll feel like they belong in their world.
+>
+> Share this with a friend creating a fantasy civilization.
+>
+> Episode 9 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyCulture #WorldcraftShorts
+
+- **Pinned comment:** Your turn: pick the climate of one people in your world (monsoon, desert, tundra, floating islands…) and tell us one custom it forced on them that outsiders find strange.
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (247 chars): `Frozen wasteland, desert robes? Let the cold design them: furs, sunken homes, smoked fish, a sunrise festival. Share this with a friend creating a fantasy civilization 🧭 #Worldbuilding #FantasyWriting #WritingTips #FantasyCulture #WorldcraftShorts`
+- **Pinned comment:** What's the weather like where your fictional people live? Tell us and we'll guess one custom it gave them.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> Why would people living in a frozen wasteland dress like desert nomads?
+>
+> They wouldn't. Let the climate design your culture: wind shapes the clothing, cold shapes the houses, a short summer shapes the food, and the returning sun shapes the festivals. The Haskari layer hooded furs, sink their homes half underground, smoke and freeze every catch, and turn their spring migration into the biggest celebration of the year.
+>
+> Let the weather shape your people, and they'll feel like they belong in their world.
+>
+> Share this with a friend creating a fantasy civilization.
+>
+> Episode 9 of 50.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyCulture #WorldcraftShorts
+
+- **Pinned comment:** Which climate would you build a culture around, and what's the first thing it would change: clothes, homes, food or festivals?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Ice people in desert robes? Never.
+>
+> Why would people living in a frozen wasteland dress like desert nomads?
+>
+> They wouldn't. Let the climate design your culture: wind shapes the clothing, cold shapes the houses, a short summer shapes the food, and the returning sun shapes the festivals. The Haskari layer hooded furs, sink their homes half underground, smoke and freeze every catch, and turn their spring migration into the biggest celebration of the year.
+>
+> Let the weather shape your people, and they'll feel like they belong in their world.
+>
+> Share this with a friend creating a fantasy civilization.
+>
+> Episode 9 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyCulture #WorldcraftShorts
+
+- **Pinned comment:** Tag the friend who's building a fantasy civilization, and tell them which climate to start with.
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
 ## Episode 10 captions (ready to paste)
 
 Source of truth: `episodes/ep10/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep10/Worldcraft_Short_E10_cover.jpg`. Subtitles: `episodes/ep10/ep10.srt`.

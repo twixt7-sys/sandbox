@@ -1,0 +1,1390 @@
+{
+ "id": "ep09",
+ "number": 9,
+ "title": "Your Climate Should Affect Your Culture",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "A field naturalist with a dry smile. A genuinely puzzled question on the hook ('dress like desert nomads?'), a flat, amused 'They wouldn't.', then the method. Four short cause-and-effect findings, each with the cause slightly stressed ('Wind bites', 'Heat leaks', 'Summer is short', 'When the sun returns'), warmth and lift on 'festival', settled and practical on the lesson, conversational on the share CTA. No trailer voice."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "Why would people living in a frozen wasteland dress like desert nomads?",
+   "pauseAfter": 0.7,
+   "emphasis": [
+    "frozen",
+    "desert"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "strike",
+   "text": "They wouldn't. Let the cold design them.",
+   "pauseAfter": 0.7,
+   "emphasis": [
+    "wouldn't.",
+    "cold"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "furs",
+   "text": "Wind bites, so the Haskari layer hooded furs.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "wind",
+    "furs."
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "camp",
+   "text": "Heat leaks, so homes sink underground.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "heat",
+    "underground."
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "food",
+   "text": "Summer is short, so every catch is smoked and frozen.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "short,",
+    "frozen."
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "migrate",
+   "text": "When the sun returns, they migrate, and the journey is a festival.",
+   "pauseAfter": 0.8,
+   "emphasis": [
+    "sun",
+    "festival."
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "lesson",
+   "text": "Let the weather shape your people, and they'll feel like they belong.",
+   "pauseAfter": 0.8,
+   "emphasis": [
+    "weather",
+    "belong."
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "cta",
+   "text": "Share this with a friend creating a fantasy civilization.",
+   "pauseAfter": 0.0,
+   "emphasis": [
+    "share"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.05,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.5,
+   "purpose": "Stop the scroll on the wrong image the hook describes: a lone traveller in thin desert robes and sandals in a polar blizzard.",
+   "visual": "Wind-scoured ice plain in a blizzard; a figure in flowing sand-coloured robes, head wrap and sandals stands in the middle, robes plastered by the wind. Title 'FROZEN WASTELAND / desert robes?'",
+   "camera": "Slow push (1.00 to 1.05) on the figure.",
+   "layers": {
+    "foreground": "drifting snow (code)",
+    "midground": "the robed figure on the ice",
+    "background": "pressure ridges, ice cliffs, storm sky"
+   },
+   "lighting": "Cold blue storm light; the robe is the only warm tone. Top scrim for the title.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. A vast frozen wasteland of wind-scoured blue ice and snow under a heavy grey-blue sky in a fierce blizzard, snow streaming sideways from left to right. In the exact centre of the frame, at a modest distance, a single lone traveller stands facing the camera, full figure visible from head to feet, small against the landscape: dressed completely wrong for the cold, in thin, loose, flowing pale sand-coloured desert robes and a light linen head wrap that whips in the wind, bare forearms, open leather sandals on bare feet in the snow, a light gauze veil across the lower face, the face in shadow. The thin robes are plastered against the body by the wind. Low pressure ridges of ice and a distant line of dark ice cliffs on the horizon in the middle of the frame, empty pale sky in the upper third. The figure's head sits in the upper-middle of the frame, feet in the lower-middle. Cold blue light, muted palette, the sand-coloured robe the only warm tone. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used: no image-to-video available. Motion is a Remotion push plus code snowfall.) Robes whipping in a blizzard, snow streaming sideways, 4 seconds",
+   "graphics": [
+    {
+     "type": "snowfall",
+     "density": 0.7,
+     "wind": 420,
+     "opacity": 0.75
+    },
+    {
+     "type": "titleLockup",
+     "kicker": "Frozen wasteland",
+     "text": "desert robes?",
+     "y": 360,
+     "size": 150,
+     "start": {
+      "line": "L1",
+      "word": "why",
+      "offset": 0.1
+     },
+     "end": {
+      "line": "L1",
+      "word": "nomads?",
+      "offset": 0.6
+     }
+    }
+   ],
+   "onScreenText": "Title 'FROZEN WASTELAND' (amber kicker) + 'desert robes?' (ember serif italic).",
+   "transition": "Hard cut on 'They' (same plate, the strike).",
+   "sfx": [
+    {
+     "sound": "blizzard",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "furs",
+      "offset": 0.4
+     },
+     "gain": -27
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L1",
+      "word": "nomads?",
+      "offset": -0.9
+     },
+     "gain": -23
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L1",
+      "word": "nomads?"
+     },
+     "gain": -22
+    }
+   ],
+   "music": "E minor add9, sparse and cold: a question that sounds wrong."
+  },
+  {
+   "id": "strike",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "plateFrame": {
+    "from": {
+     "s": 1.05,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.6,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Strike the wrong costume out, then give the method: let the climate design the people.",
+   "visual": "Same robed figure; 'DON'T / Dress for the wrong world' is struck in rust, a rust X crosses the robes, then 'LET THE COLD / design them.' replaces it.",
+   "camera": "Push continues (1.05 to 1.08).",
+   "layers": {
+    "foreground": "reverse card and rust X",
+    "midground": "robed figure",
+    "background": "storm"
+   },
+   "lighting": "Plate dimmed a little more under the type.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "snowfall",
+     "density": 0.7,
+     "wind": 420,
+     "opacity": 0.75
+    },
+    {
+     "type": "ghostLines",
+     "local": true,
+     "color": "#b9543a",
+     "width": 9,
+     "opacity": 0.9,
+     "start": {
+      "line": "L2",
+      "word": "wouldn't.",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L2",
+      "word": "wouldn't.",
+      "offset": 0.25
+     },
+     "shapes": [
+      {
+       "d": "M405,840 L695,1390"
+      },
+      {
+       "d": "M695,840 L405,1390"
+      }
+     ]
+    },
+    {
+     "type": "reverseCard",
+     "top": 380,
+     "dont": {
+      "line": "L2",
+      "word": "they",
+      "offset": -0.1
+     },
+     "dontText": "Dress for the wrong world",
+     "strike": {
+      "line": "L2",
+      "word": "wouldn't.",
+      "offset": -0.05
+     },
+     "startAt": {
+      "line": "L2",
+      "word": "let",
+      "offset": -0.05
+     },
+     "doKicker": "Let the cold",
+     "doAt": {
+      "line": "L2",
+      "word": "design",
+      "offset": -0.05
+     },
+     "doText": "*design* them.",
+     "size": 124
+    }
+   ],
+   "onScreenText": "'DON'T' + 'Dress for the wrong world' (struck in rust) → 'LET THE COLD' + 'design them.'",
+   "transition": "Dissolve (0.5 s) on 'Wind' into the same framing, the figure now in furs: the costume rebuilt.",
+   "sfx": [
+    {
+     "sound": "strike",
+     "at": {
+      "line": "L2",
+      "word": "wouldn't.",
+      "offset": -0.05
+     },
+     "gain": -17
+    },
+    {
+     "sound": "paper",
+     "at": {
+      "line": "L2",
+      "word": "design",
+      "offset": -0.1
+     },
+     "gain": -27
+    },
+    {
+     "sound": "whoosh",
+     "at": {
+      "line": "L3",
+      "word": "wind",
+      "offset": -0.45
+     },
+     "gain": -28
+    }
+   ],
+   "music": "C major 7 over the drone, held: the turn."
+  },
+  {
+   "id": "furs",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.05,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.5
+   },
+   "purpose": "Layer 1, clothing: the same storm, the same stance, rebuilt by the cold. Field-guide callouts name each layer.",
+   "visual": "A Haskari in a long layered fur coat over felt, deep fur-ruffed hood, sash, mittens and bound boots, standing where the robed figure stood. Callouts: LAYERS (fur over felt), HOOD (wind-proof), MITTS (sealed). The tally appears; CLOTHING fills.",
+   "camera": "Slow push (1.00 to 1.05), matching the hook's framing.",
+   "layers": {
+    "foreground": "callouts and snow",
+    "midground": "the fur-clad Haskari",
+    "background": "ice ridges and cliffs"
+   },
+   "lighting": "Same cold storm light; warm browns in the fur.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. A vast frozen wasteland of wind-scoured blue ice and snow under a heavy grey-blue sky in a fierce blizzard, snow streaming sideways from left to right. In the exact centre of the frame, at a modest distance, a single person stands facing the camera, full figure visible from head to feet, standing steady and warm against the storm: dressed perfectly for the cold in an original northern costume, a long thick layered coat of dark brown and grey fur with an inner layer of quilted felt showing at the cuffs and hem, a deep fur-ruffed hood pulled forward so the face is almost hidden in shadow, a wide wrapped woollen sash around the waist with simple bone toggles, heavy fur mittens, tall soft fur-lined boots bound with leather cords, a carved wooden snow visor hanging at the chest. Low pressure ridges of ice and a distant line of dark ice cliffs on the horizon on the right in the middle of the frame, empty sky in the upper third. The figure's head sits in the upper-middle of the frame, around one third from the top, feet in the lower-middle. Cold blue light, muted palette, warm browns in the fur. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.) Fur ruff stirring in a blizzard, the figure standing steady, 3 seconds",
+   "graphics": [
+    {
+     "type": "snowfall",
+     "density": 0.7,
+     "wind": 420,
+     "opacity": 0.75
+    },
+    {
+     "type": "callout",
+     "local": true,
+     "at": [
+      470,
+      900
+     ],
+     "side": "left",
+     "rise": -40,
+     "reach": 70,
+     "label": "Layers",
+     "note": "fur over felt",
+     "start": {
+      "line": "L3",
+      "word": "layer",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "callout",
+     "local": true,
+     "at": [
+      600,
+      640
+     ],
+     "side": "right",
+     "rise": -60,
+     "reach": 80,
+     "label": "Hood",
+     "note": "wind-proof",
+     "start": {
+      "line": "L3",
+      "word": "hooded",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "callout",
+     "local": true,
+     "at": [
+      665,
+      1060
+     ],
+     "side": "right",
+     "rise": -60,
+     "reach": 60,
+     "label": "Mitts",
+     "note": "sealed",
+     "start": {
+      "line": "L3",
+      "word": "furs.",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "reasonTally",
+     "items": [
+      {
+       "icon": "clothing",
+       "label": "Clothing",
+       "at": {
+        "line": "L3",
+        "word": "layer",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "housing",
+       "label": "Housing",
+       "at": {
+        "line": "L4",
+        "word": "homes",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "food",
+       "label": "Food",
+       "at": {
+        "line": "L5",
+        "word": "smoked",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "festival",
+       "label": "Festival",
+       "at": {
+        "line": "L6",
+        "word": "festival.",
+        "offset": -0.1
+       }
+      }
+     ],
+     "instant": false,
+     "gap": 196,
+     "start": {
+      "line": "L3",
+      "word": "wind",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Callouts LAYERS / fur over felt, HOOD / wind-proof, MITTS / sealed; tally slots CLOTHING, HOUSING, FOOD, FESTIVAL (CLOTHING ✓).",
+   "transition": "Hard cut on 'Heat' to the winter camp.",
+   "sfx": [
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L3",
+      "word": "layer",
+      "offset": -0.1
+     },
+     "gain": -26
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L3",
+      "word": "layer",
+      "offset": -0.05
+     },
+     "gain": -19
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L3",
+      "word": "hooded",
+      "offset": -0.1
+     },
+     "gain": -26
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L3",
+      "word": "furs.",
+      "offset": -0.1
+     },
+     "gain": -26
+    }
+   ],
+   "music": "A minor, a 68 bpm pulse enters: building the people."
+  },
+  {
+   "id": "camp",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.06,
+     "y": -40
+    },
+    "to": {
+     "s": 1.1,
+     "y": -60
+    }
+   },
+   "plateScrim": 0.45,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Layer 2, housing: homes sunk half into the ground keep the heat in and the wind off.",
+   "visual": "Blue-dusk shore camp: low stone-and-turf domes half buried in drifts, fire-lit entrance tunnels, smoke from the vents. A dashed ground line runs across the nearest dome; callout HALF SUNK / below the wind. HOUSING fills.",
+   "camera": "Slow push (1.06 to 1.10), frame raised so the workers' hoods sit above the caption band.",
+   "layers": {
+    "foreground": "fish racks and fire (seen next)",
+    "midground": "the sunken homes",
+    "background": "frozen sea, ice cliffs"
+   },
+   "lighting": "Blue dusk with warm doorways.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. A small winter settlement on a snowy shore at blue dusk, seen from a slightly raised angle. Upper-middle of the frame: four or five low rounded homes sunk half into the ground, only their domed roofs of stacked stone, turf and snow rising above the drifts, each with a short stone chimney vent breathing pale smoke, and a low sunken entrance tunnel glowing with warm orange firelight. Lower half of the frame, in the foreground on the left: tall wooden drying racks hung with rows of split silver fish being smoked over a smouldering fire pit, thick grey smoke curling up through the racks; on the right, a dug pit lined with blocks of ice where wrapped bundles of fish are stored. Two small figures in long hooded fur coats work at the racks, seen from behind or in profile, faces hidden by hoods. A frozen grey sea and pale ice cliffs on the horizon, deep blue sky with a thin band of pale light. Cold blue light with warm firelight accents. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.) Smoke drifting from the dome vents, doorway fires flickering, 3 seconds",
+   "graphics": [
+    {
+     "type": "steam",
+     "local": true,
+     "x": 358,
+     "y": 612,
+     "width": 70,
+     "height": 230,
+     "opacity": 0.35,
+     "puffs": 5
+    },
+    {
+     "type": "steam",
+     "local": true,
+     "x": 597,
+     "y": 582,
+     "width": 70,
+     "height": 230,
+     "opacity": 0.35,
+     "puffs": 5
+    },
+    {
+     "type": "steam",
+     "local": true,
+     "x": 893,
+     "y": 562,
+     "width": 70,
+     "height": 230,
+     "opacity": 0.35,
+     "puffs": 5
+    },
+    {
+     "type": "steam",
+     "local": true,
+     "x": 745,
+     "y": 628,
+     "width": 70,
+     "height": 230,
+     "opacity": 0.35,
+     "puffs": 5
+    },
+    {
+     "type": "ghostLines",
+     "local": true,
+     "dash": "14 9",
+     "width": 5,
+     "start": {
+      "line": "L4",
+      "word": "homes",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L4",
+      "word": "sink",
+      "offset": 0.3
+     },
+     "shapes": [
+      {
+       "d": "M470,812 L930,812"
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "local": true,
+     "at": [
+      560,
+      800
+     ],
+     "side": "left",
+     "rise": -150,
+     "reach": 90,
+     "label": "Half sunk",
+     "note": "below the wind",
+     "start": {
+      "line": "L4",
+      "word": "sink",
+      "offset": -0.05
+     }
+    },
+    {
+     "type": "reasonTally",
+     "items": [
+      {
+       "icon": "clothing",
+       "label": "Clothing",
+       "at": {
+        "line": "L3",
+        "word": "layer",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "housing",
+       "label": "Housing",
+       "at": {
+        "line": "L4",
+        "word": "homes",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "food",
+       "label": "Food",
+       "at": {
+        "line": "L5",
+        "word": "smoked",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "festival",
+       "label": "Festival",
+       "at": {
+        "line": "L6",
+        "word": "festival.",
+        "offset": -0.1
+       }
+      }
+     ],
+     "instant": true,
+     "gap": 196
+    }
+   ],
+   "onScreenText": "Amber dashed ground line; callout HALF SUNK / below the wind; tally HOUSING ✓.",
+   "transition": "Hard cut (punch-in) on 'Summer' to the fish racks in the same camp.",
+   "sfx": [
+    {
+     "sound": "hearth",
+     "from": {
+      "shot": "camp"
+     },
+     "to": {
+      "shot": "migrate",
+      "offset": 0.3
+     },
+     "gain": -27
+    },
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "camp"
+     },
+     "to": {
+      "shot": "migrate",
+      "offset": 0.3
+     },
+     "gain": -33
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L4",
+      "word": "homes",
+      "offset": -0.05
+     },
+     "gain": -19
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L4",
+      "word": "sink",
+      "offset": -0.05
+     },
+     "gain": -26
+    }
+   ],
+   "music": "F major 7 over the pulse: shelter."
+  },
+  {
+   "id": "food",
+   "scene": "nightSky",
+   "plateFrom": "camp",
+   "plateFrame": {
+    "from": {
+     "s": 1.16,
+     "y": -150
+    },
+    "to": {
+     "s": 1.2,
+     "y": -170
+    }
+   },
+   "plateScrim": 0.4,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Layer 3, food preservation: a short summer means everything caught is smoked or frozen for the long dark.",
+   "visual": "Closer on the racks of split fish over a smoking fire pit and the ice-block pit of wrapped bundles. Callouts SMOKED / over the fire and FROZEN / in ice pits. FOOD fills.",
+   "camera": "Punch-in and slow push (1.16 to 1.20), frame raised 150–170 px so the workers' hoods clear the caption band.",
+   "layers": {
+    "foreground": "fire smoke (code)",
+    "midground": "racks, two workers, ice pit",
+    "background": "sunken homes"
+   },
+   "lighting": "Firelight and grey smoke against blue snow.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "steam",
+     "local": true,
+     "x": 310,
+     "y": 1360,
+     "width": 170,
+     "height": 420,
+     "opacity": 0.45,
+     "puffs": 7
+    },
+    {
+     "type": "callout",
+     "local": true,
+     "at": [
+      430,
+      1110
+     ],
+     "side": "right",
+     "rise": -80,
+     "reach": 110,
+     "label": "Smoked",
+     "note": "over the fire",
+     "start": {
+      "line": "L5",
+      "word": "smoked",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "callout",
+     "local": true,
+     "at": [
+      900,
+      1330
+     ],
+     "side": "left",
+     "rise": -110,
+     "reach": 60,
+     "label": "Frozen",
+     "note": "in ice pits",
+     "start": {
+      "line": "L5",
+      "word": "frozen.",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "reasonTally",
+     "items": [
+      {
+       "icon": "clothing",
+       "label": "Clothing",
+       "at": {
+        "line": "L3",
+        "word": "layer",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "housing",
+       "label": "Housing",
+       "at": {
+        "line": "L4",
+        "word": "homes",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "food",
+       "label": "Food",
+       "at": {
+        "line": "L5",
+        "word": "smoked",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "festival",
+       "label": "Festival",
+       "at": {
+        "line": "L6",
+        "word": "festival.",
+        "offset": -0.1
+       }
+      }
+     ],
+     "instant": true,
+     "gap": 196
+    }
+   ],
+   "onScreenText": "Callouts SMOKED / over the fire, FROZEN / in ice pits; tally FOOD ✓.",
+   "transition": "Hard cut on 'When' to the sunrise procession.",
+   "sfx": [
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L5",
+      "word": "smoked",
+      "offset": -0.05
+     },
+     "gain": -19
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L5",
+      "word": "smoked",
+      "offset": -0.1
+     },
+     "gain": -26
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L5",
+      "word": "frozen.",
+      "offset": -0.1
+     },
+     "gain": -26
+    }
+   ],
+   "music": "D minor over the pulse: the long dark ahead."
+  },
+  {
+   "id": "migrate",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.08,
+     "y": 0
+    },
+    "to": {
+     "s": 1.0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Layer 4, seasonal migration as festival: when the sun returns, the whole people moves, and the move is the celebration.",
+   "visual": "First sunrise after the polar night: a ribboned procession of Haskari, sledges and shaggy horned herd beasts winds toward the sun. An amber dashed route traces the S-curve toward the sun; callout FESTIVAL / the move itself. FESTIVAL fills.",
+   "camera": "Slow pull back (1.08 to 1.00) to the full route.",
+   "layers": {
+    "foreground": "last sledge and two walkers from behind",
+    "midground": "the winding column",
+    "background": "golden hills and the sun"
+   },
+   "lighting": "Warm low sun, long blue shadows: the first warm image of the episode.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. The first sunrise after the long polar night: a low golden sun just above the horizon in the upper middle of the frame, flooding a vast open snowfield with warm light and long blue shadows. A long festive procession walks AWAY from the camera toward the sun: it starts at the bottom centre of the frame and winds up the snowfield in a gentle S-curve into the far distance. Everyone is seen from behind, hoods up, no faces visible. They wear long plain dark-brown fur coats with wide saffron-yellow felt sashes and long red ribbons streaming from tall carved bone poles. Low wide wooden sledges piled with rolled hides and bundles are pulled by huge shaggy dark-grey fantasy beasts like woolly oxen with long downward-curving horns and thick fringes of hair to the snow. A few people carry big round hide drums on their backs. Foreground bottom centre: the last sledge and two walkers seen from behind at a modest distance. No tents. Background: distant low snowy hills turning gold, pale clear sky in the upper third. Joyful, warm golden light against cold blue snow. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original fantasy clothing and animals. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.) Procession walking toward the sunrise, ribbons streaming, 4 seconds",
+   "graphics": [
+    {
+     "type": "ghostLines",
+     "local": true,
+     "dash": "16 10",
+     "width": 5,
+     "start": {
+      "line": "L6",
+      "word": "migrate,",
+      "offset": -0.2
+     },
+     "end": {
+      "line": "L6",
+      "word": "journey",
+      "offset": 0.2
+     },
+     "shapes": [
+      {
+       "d": "M520,1900 C515,1700 505,1500 520,1300 C535,1120 545,1000 575,880 C600,790 640,720 690,650 C700,610 640,585 560,570 C470,555 390,550 400,540 C430,525 560,522 610,515"
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "local": true,
+     "at": [
+      645,
+      1030
+     ],
+     "side": "left",
+     "rise": -90,
+     "reach": 70,
+     "label": "Festival",
+     "note": "the move itself",
+     "start": {
+      "line": "L6",
+      "word": "festival.",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "reasonTally",
+     "items": [
+      {
+       "icon": "clothing",
+       "label": "Clothing",
+       "at": {
+        "line": "L3",
+        "word": "layer",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "housing",
+       "label": "Housing",
+       "at": {
+        "line": "L4",
+        "word": "homes",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "food",
+       "label": "Food",
+       "at": {
+        "line": "L5",
+        "word": "smoked",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "festival",
+       "label": "Festival",
+       "at": {
+        "line": "L6",
+        "word": "festival.",
+        "offset": -0.1
+       }
+      }
+     ],
+     "instant": true,
+     "gap": 196
+    }
+   ],
+   "onScreenText": "Amber dashed route along the procession; callout FESTIVAL / the move itself; tally FESTIVAL ✓.",
+   "transition": "Dissolve (0.6 s) back to the fur-clad Haskari in the storm.",
+   "sfx": [
+    {
+     "sound": "procession",
+     "from": {
+      "shot": "migrate"
+     },
+     "to": {
+      "shot": "lesson",
+      "offset": 0.5
+     },
+     "gain": -25
+    },
+    {
+     "sound": "shimmer",
+     "at": {
+      "line": "L6",
+      "word": "sun",
+      "offset": -0.2
+     },
+     "gain": -25
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L6",
+      "word": "migrate,",
+      "offset": -0.2
+     },
+     "gain": -26
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L6",
+      "word": "festival.",
+      "offset": -0.1
+     },
+     "gain": -19
+    }
+   ],
+   "music": "G to D major, 76 bpm with arpeggios: the sun comes back."
+  },
+  {
+   "id": "lesson",
+   "scene": "nightSky",
+   "plateFrom": "furs",
+   "plateFrame": {
+    "from": {
+     "s": 1.1,
+     "y": 80
+    },
+    "to": {
+     "s": 1.13,
+     "y": 95
+    }
+   },
+   "plateScrim": 0.72,
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "purpose": "Lesson: four layers, one cause. The tally sums to the instruction over the person the cold designed.",
+   "visual": "Back on the Haskari in the storm, plate dimmed at the top. The tally bracket closes under the four icons and the line lands: LET THE WEATHER / shape your people.",
+   "camera": "Gentle push (1.10 to 1.13), frame lowered so the hood sits under the type.",
+   "layers": {
+    "foreground": "tally and lesson type",
+    "midground": "the Haskari",
+    "background": "storm"
+   },
+   "lighting": "Plate dimmed under the type; snow lighter.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "snowfall",
+     "density": 0.5,
+     "wind": 300,
+     "opacity": 0.6
+    },
+    {
+     "type": "reasonTally",
+     "items": [
+      {
+       "icon": "clothing",
+       "label": "Clothing",
+       "at": {
+        "line": "L3",
+        "word": "layer",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "housing",
+       "label": "Housing",
+       "at": {
+        "line": "L4",
+        "word": "homes",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "food",
+       "label": "Food",
+       "at": {
+        "line": "L5",
+        "word": "smoked",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "festival",
+       "label": "Festival",
+       "at": {
+        "line": "L6",
+        "word": "festival.",
+        "offset": -0.1
+       }
+      }
+     ],
+     "instant": true,
+     "gap": 196,
+     "sumAt": {
+      "line": "L7",
+      "word": "weather",
+      "offset": -0.1
+     },
+     "sumKicker": "Let the weather",
+     "sum": "*shape* your people.",
+     "size": 92
+    }
+   ],
+   "onScreenText": "Tally bracket → 'LET THE WEATHER' + 'shape your people.'",
+   "transition": "Hard cut on 'Share' to the CTA on the same plate.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "lesson"
+     },
+     "to": {
+      "shot": "cta",
+      "offset": 3.5
+     },
+     "gain": -33
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L7",
+      "word": "shape",
+      "offset": -0.05
+     },
+     "gain": -20
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L7",
+      "word": "belong.",
+      "offset": -0.1
+     },
+     "gain": -25
+    }
+   ],
+   "music": "E major with bells: the answer."
+  },
+  {
+   "id": "cta",
+   "scene": "nightSky",
+   "plateFrom": "furs",
+   "plateFrame": {
+    "from": {
+     "s": 1.13,
+     "y": 95
+    },
+    "to": {
+     "s": 1.05,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.55,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "captions": false,
+   "hideLogoBug": true,
+   "purpose": "Share CTA over the opening framing, now with the person the climate designed; the loop returns to the robed traveller and the question.",
+   "visual": "The Haskari in the easing storm. Full logo, Episode 09 / 50, the CTA in large serif type, 'Share this' pill with a paper-plane icon.",
+   "camera": "Pulls back toward the hook's first framing (1.13 to 1.05).",
+   "layers": {
+    "foreground": "logo and CTA type",
+    "midground": "the Haskari",
+    "background": "storm sky"
+   },
+   "lighting": "Dimmed for type; last 0.6 s cross-fades to the robed figure, so the loop re-asks the hook.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "snowfall",
+     "density": 0.4,
+     "wind": 240,
+     "opacity": 0.55
+    },
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L8",
+      "word": "share"
+     },
+     "episode": "Episode 09 / 50",
+     "title": "Your climate should affect your culture.",
+     "kicker": "Pass it on",
+     "lines": [
+      "Share this with",
+      "*a friend creating*",
+      "a fantasy civilization."
+     ],
+     "size": 84,
+     "button": "Share this",
+     "icon": "share"
+    }
+   ],
+   "onScreenText": "Full logo, 'EPISODE 09 / 50', title, 'PASS IT ON', 'Share this with a friend creating a fantasy civilization.', pill 'Share this'.",
+   "transition": "Cross-fade into the hook's first frame for a seamless loop.",
+   "sfx": [
+    {
+     "sound": "swell",
+     "at": {
+      "shot": "cta",
+      "offset": -0.3
+     },
+     "gain": -25
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L8",
+      "word": "civilization.",
+      "offset": 0.2
+     },
+     "gain": -24
+    }
+   ],
+   "music": "A to E major, warm; fades fully before the last frame."
+  }
+ ],
+ "lesson": "Climate is a cause, and culture is the answer: clothing, housing, food preservation and seasonal festivals should each be a response to the weather. When people visibly adapt to their environment, the culture feels believable.",
+ "captionReplace": {},
+ "music": {
+  "key": "E minor, resolving to E major",
+  "drone": [
+   "E2",
+   "B2"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L2",
+     "word": "wouldn't."
+    },
+    "pre": 0.15,
+    "dur": 0.9,
+    "gain": 0.45
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L7",
+     "word": "weather"
+    },
+    "pre": 0.15,
+    "dur": 1.2,
+    "gain": 0.5
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "E2",
+      "B2",
+      "G3",
+      "B3",
+      "F#4"
+     ]
+    ],
+    "level": 0.48,
+    "dark": true
+   },
+   "strike": {
+    "chords": [
+     [
+      "C2",
+      "G2",
+      "E3",
+      "B3"
+     ]
+    ],
+    "level": 0.45,
+    "dark": true
+   },
+   "furs": {
+    "chords": [
+     [
+      "A1",
+      "E2",
+      "C3",
+      "E3",
+      "A3"
+     ]
+    ],
+    "level": 0.56,
+    "pulse": 68
+   },
+   "camp": {
+    "chords": [
+     [
+      "F2",
+      "C3",
+      "A3",
+      "E4"
+     ]
+    ],
+    "level": 0.6,
+    "pulse": 68
+   },
+   "food": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F3",
+      "A3"
+     ]
+    ],
+    "level": 0.62,
+    "pulse": 68
+   },
+   "migrate": {
+    "chords": [
+     [
+      "G1",
+      "D2",
+      "B2",
+      "D3",
+      "G3"
+     ],
+     [
+      "D2",
+      "A2",
+      "F#3",
+      "A3",
+      "D4"
+     ]
+    ],
+    "level": 0.68,
+    "pulse": 76,
+    "arp": true
+   },
+   "lesson": {
+    "chords": [
+     [
+      "E2",
+      "B2",
+      "G#3",
+      "B3",
+      "E4"
+     ]
+    ],
+    "level": 0.68,
+    "bells": true
+   },
+   "cta": {
+    "chords": [
+     [
+      "A1",
+      "E2",
+      "C#3",
+      "E3",
+      "A3"
+     ],
+     [
+      "E2",
+      "B2",
+      "G#3",
+      "B3",
+      "E4"
+     ]
+    ],
+    "level": 0.58,
+    "bells": true
+   }
+  }
+ },
+ "metadata": {
+  "youtube": {
+   "title": "Your Climate Should Affect Your Culture (Worldbuilding)",
+   "titleAlternate": "Why are your ice people dressed for the desert?",
+   "description": "Why would people living in a frozen wasteland dress like desert nomads?\n\nThey wouldn't. Let the climate design your culture: wind shapes the clothing, cold shapes the houses, a short summer shapes the food, and the returning sun shapes the festivals. The Haskari layer hooded furs, sink their homes half underground, smoke and freeze every catch, and turn their spring migration into the biggest celebration of the year.\n\nLet the weather shape your people, and they'll feel like they belong in their world.\n\nShare this with a friend creating a fantasy civilization.\n\nEpisode 9 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyCulture #WorldcraftShorts",
+   "pinnedComment": "Your turn: pick the climate of one people in your world (monsoon, desert, tundra, floating islands…) and tell us one custom it forced on them that outsiders find strange.",
+   "uploadSettings": "Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "Frozen wasteland, desert robes? Let the cold design them: furs, sunken homes, smoked fish, a sunrise festival. Share this with a friend creating a fantasy civilization 🧭 #Worldbuilding #FantasyWriting #WritingTips #FantasyCulture #WorldcraftShorts",
+   "pinnedComment": "What's the weather like where your fictional people live? Tell us and we'll guess one custom it gave them.",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "Why would people living in a frozen wasteland dress like desert nomads?\n\nThey wouldn't. Let the climate design your culture: wind shapes the clothing, cold shapes the houses, a short summer shapes the food, and the returning sun shapes the festivals. The Haskari layer hooded furs, sink their homes half underground, smoke and freeze every catch, and turn their spring migration into the biggest celebration of the year.\n\nLet the weather shape your people, and they'll feel like they belong in their world.\n\nShare this with a friend creating a fantasy civilization.\n\nEpisode 9 of 50.\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyCulture #WorldcraftShorts",
+   "pinnedComment": "Which climate would you build a culture around, and what's the first thing it would change: clothes, homes, food or festivals?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "Ice people in desert robes? Never.\n\nWhy would people living in a frozen wasteland dress like desert nomads?\n\nThey wouldn't. Let the climate design your culture: wind shapes the clothing, cold shapes the houses, a short summer shapes the food, and the returning sun shapes the festivals. The Haskari layer hooded furs, sink their homes half underground, smoke and freeze every catch, and turn their spring migration into the biggest celebration of the year.\n\nLet the weather shape your people, and they'll feel like they belong in their world.\n\nShare this with a friend creating a fantasy civilization.\n\nEpisode 9 of 50 · Worldcraft Shorts\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyCulture #WorldcraftShorts",
+   "hookCheck": "First 35 characters: 'Ice people in desert robes? Never.'",
+   "pinnedComment": "Tag the friend who's building a fantasy civilization, and tell them which climate to start with.",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  },
+  "cover": "Worldcraft_Short_E09_cover.jpg: the robed traveller in the blizzard with 'FROZEN WASTELAND / desert robes?' in Cormorant Garamond over the storm sky, corner logo.",
+  "followUpQuestion": "Pick one people in your world: what does their weather force on their clothing, their houses, their food and their calendar?"
+ }
+}

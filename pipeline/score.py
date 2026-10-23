@@ -309,6 +309,40 @@ def sfx_bed(kind, dur):
             tt = np.arange(m) / SR
             creak = np.sin(2 * np.pi * np.cumsum(220 + 60 * np.sin(2 * np.pi * 9 * tt)) / SR) * bp(noise(m), 200, 1200) * np.interp(tt, [0, 0.1, 0.35], [0, 1, 0]) * 0.5
             sig[i:i + m] += creak[: len(sig[i:i + m])]
+    elif kind == "hearth":
+        # Winter hearth (EP09): a low fire roar with irregular wood crackles and pops, under faint outside wind.
+        sig = lp(pink(n), 300, 2) * (0.7 + 0.3 * np.sin(2 * np.pi * 0.21 * t)) * 0.9
+        sig += bp(pink(n), 200, 900) * 0.25
+        for d in np.sort(RNG.uniform(0.05, max(0.1, dur - 0.1), int(dur * 7))):
+            i = int(d * SR)
+            m = int(0.03 * SR)
+            tt = np.arange(m) / SR
+            pop = bp(noise(m), RNG.uniform(1500, 3500), 9000) * np.exp(-tt * RNG.uniform(150, 400)) * RNG.uniform(0.3, 1.0)
+            sig[i:i + m] += pop[: len(sig[i:i + m])]
+    elif kind == "procession":
+        # Spring procession (EP09): slow round hide drums two to a bar, crunching steps on snow, distant bells.
+        sig = lp(pink(n), 500) * 0.06
+        for k, d in enumerate(np.arange(0.1, max(0.2, dur - 0.2), 0.43)):
+            i = int((d + RNG.uniform(-0.02, 0.02)) * SR)
+            m = int(0.5 * SR)
+            tt = np.arange(m) / SR
+            f0 = 82 if k % 2 == 0 else 98
+            boom = np.sin(2 * np.pi * np.cumsum(f0 * (1 + 0.5 * np.exp(-tt * 25))) / SR) * np.exp(-tt * 7) * (1.0 if k % 2 == 0 else 0.6)
+            skin = bp(noise(m), 300, 1500) * np.exp(-tt * 45) * 0.3
+            sig[i:i + m] += (boom + skin)[: len(sig[i:i + m])]
+        for d in np.arange(0.3, max(0.4, dur - 0.2), 0.62):
+            i = int((d + RNG.uniform(-0.05, 0.05)) * SR)
+            m = int(0.12 * SR)
+            tt = np.arange(m) / SR
+            crunch = bp(noise(m), 1500, 6000) * np.exp(-tt * 30) * 0.18
+            sig[i:i + m] += crunch[: len(sig[i:i + m])]
+        for d in RNG.uniform(0.3, max(0.4, dur - 0.6), max(2, int(dur * 1.2))):
+            i = int(d * SR)
+            m = int(0.9 * SR)
+            tt = np.arange(m) / SR
+            f = RNG.choice([1568.0, 1760.0, 2349.0])
+            ting = (np.sin(2 * np.pi * f * tt) + 0.4 * np.sin(2 * np.pi * f * 2.76 * tt)) * np.exp(-tt * 6) * 0.08
+            sig[i:i + m] += ting[: len(sig[i:i + m])]
     elif kind == "wind":
         sig = bp(pink(n), 180, 1400) * (0.6 + 0.4 * np.sin(2 * np.pi * 0.11 * t + 1.3)) * (0.8 + 0.2 * np.sin(2 * np.pi * 0.37 * t))
     else:  # water
@@ -526,6 +560,13 @@ def sfx_hit(kind, dur=None):
             ring = sum(w * np.sin(2 * np.pi * fr * tt) for fr, w in ((2350, 1.0), (3710, 0.6), (5280, 0.3))) * np.exp(-tt * 45)
             out[i:] += (ring * 0.5 + bp(noise(m), 2500, 8000) * np.exp(-tt * 160)) * a
         return stereo(out, 0.2)
+    if kind == "strike":
+        # A wrong idea struck out (EP09 reverseCard): a fast dry pen scratch with a low muted thud.
+        n = int(0.8 * SR)
+        t = np.arange(n) / SR
+        scratch = bp(noise(n), 1800, 7000) * np.interp(t, [0, 0.02, 0.22, 0.3], [0, 1, 0.7, 0]) * 0.6
+        thud = np.sin(2 * np.pi * np.cumsum(70 * (1 + 0.8 * np.exp(-t * 30))) / SR) * np.exp(-t * 16) * 0.8
+        return stereo(scratch + thud, 0.25)
     if kind == "gateSlam":
         # A bridge gate shut for good (EP10): a short chain rattle running down, then a deep timber-and-iron boom.
         n = int(2.4 * SR)

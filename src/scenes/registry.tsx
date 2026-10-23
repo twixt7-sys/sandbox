@@ -3,6 +3,7 @@ import {AbsoluteFill, Img, OffthreadVideo, staticFile} from 'remotion';
 import {FogBank} from '../fx/Fx';
 import {lerp} from '../lib/timing';
 import type {Shot} from '../types';
+import {AtlasScene} from './Atlas';
 import {Bridge} from './Bridge';
 import {EndCard} from './EndCard';
 import {LanternRiver} from './Lanterns';
@@ -24,6 +25,7 @@ export const SCENES: Record<string, React.FC<SceneProps>> = {
 	valleyLow: ValleyLow,
 	bridge: Bridge,
 	map: MapScene,
+	atlas: AtlasScene,
 	lanterns: LanternRiver,
 	endcard: EndCard,
 	nightSky: NightSky,

@@ -280,6 +280,35 @@ def sfx_bed(kind, dur):
             sig[i:i + m] += step[: len(sig[i:i + m])]
         sig = sig / (np.abs(sig).max() + 1e-9)
         return stereo(sig, 0.3) * env(n, 0.05, 0.3)[:, None]
+    elif kind == "blizzard":
+        # High-altitude blizzard: wind roar with whistling gusts and a fine icy hiss (EP06 snow).
+        gust = (0.55 + 0.45 * np.sin(2 * np.pi * 0.17 * t + 0.4)) * (0.8 + 0.2 * np.sin(2 * np.pi * 0.53 * t))
+        roar = bp(pink(n), 120, 900) * gust
+        whistle = bp(noise(n), 700, 1100) * gust ** 3 * 0.5
+        hiss = bp(noise(n), 4000, 11000) * gust * 0.12
+        sig = roar + whistle + hiss
+    elif kind == "caravan":
+        # Pack animals on a stone road: slow hoof clops, small harness bells, creaking cart wood.
+        sig = lp(pink(n), 400) * 0.08
+        for d in np.arange(0.1, max(0.2, dur - 0.2), 0.42):
+            i = int((d + RNG.uniform(-0.05, 0.05)) * SR)
+            m = int(0.09 * SR)
+            tt = np.arange(m) / SR
+            clop = bp(noise(m), 400, 2500) * np.exp(-tt * 55) * RNG.uniform(0.4, 0.8)
+            sig[i:i + m] += clop[: len(sig[i:i + m])]
+        for d in RNG.uniform(0.2, max(0.3, dur - 0.5), max(2, int(dur * 1.6))):
+            i = int(d * SR)
+            m = int(0.8 * SR)
+            tt = np.arange(m) / SR
+            f = RNG.choice([1760.0, 2093.0, 2349.0])
+            ting = (np.sin(2 * np.pi * f * tt) + 0.4 * np.sin(2 * np.pi * f * 2.76 * tt)) * np.exp(-tt * 7) * 0.12
+            sig[i:i + m] += ting[: len(sig[i:i + m])]
+        for d in RNG.uniform(0.3, max(0.4, dur - 0.6), max(1, int(dur / 1.5))):
+            i = int(d * SR)
+            m = int(0.35 * SR)
+            tt = np.arange(m) / SR
+            creak = np.sin(2 * np.pi * np.cumsum(220 + 60 * np.sin(2 * np.pi * 9 * tt)) / SR) * bp(noise(m), 200, 1200) * np.interp(tt, [0, 0.1, 0.35], [0, 1, 0]) * 0.5
+            sig[i:i + m] += creak[: len(sig[i:i + m])]
     elif kind == "wind":
         sig = bp(pink(n), 180, 1400) * (0.6 + 0.4 * np.sin(2 * np.pi * 0.11 * t + 1.3)) * (0.8 + 0.2 * np.sin(2 * np.pi * 0.37 * t))
     else:  # water
@@ -441,6 +470,27 @@ def sfx_hit(kind, dur=None):
         tone = sum(np.sin(2 * np.pi * hz(nm) * (1 + 0.01 * t) * t) for nm in ("E4", "B4", "E5")) / 3
         scratch = hp(noise(n), 3500) * (np.abs(lp(noise(n), 25, 1)) * 10).clip(0, 1) * 0.12
         return stereo((tone + scratch) * e, 0.7)
+    if kind == "warHorn":
+        # Distant war horn, half lost in the wind: a low brassy fifth that sags at the end.
+        n = int(2.6 * SR)
+        t = np.arange(n) / SR
+        f = 98 * (1 - 0.04 * np.clip((t - 1.4) / 0.8, 0, 1))
+        ph = 2 * np.pi * np.cumsum(f) / SR
+        tone = sum(a * np.sin(k * ph) for k, a in [(1, 1), (2, 0.6), (3, 0.45), (4, 0.25), (5, 0.15), (1.5, 0.35)])
+        e = np.interp(t, [0, 0.35, 1.6, 2.4], [0, 1, 0.8, 0])
+        return stereo(lp(tone * e, 1400), 0.3)
+    if kind == "mountainRise":
+        # A range drawing onto the map: a deep tectonic swell with gravel grains, rising then settling.
+        n = int(2.6 * SR)
+        t = np.arange(n) / SR
+        e = np.minimum(1, t / 1.1) ** 2 * np.exp(-np.maximum(0, t - 1.2) * 2.2)
+        body = lp(noise(n), 120, 4) * 3 + np.sin(2 * np.pi * np.cumsum(36 + 10 * np.minimum(1, t / 1.2)) / SR) * 0.6
+        grains = np.zeros(n)
+        for g in RNG.uniform(0.2, 1.6, 18):
+            i = int(g * SR)
+            m = int(0.05 * SR)
+            grains[i:i + m] += bp(noise(m), 700, 3500) * np.exp(-np.arange(m) / SR * 70) * RNG.uniform(0.1, 0.4)
+        return stereo(body * e + grains * 0.7, 0.6)
     raise KeyError(kind)
 
 

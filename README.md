@@ -92,6 +92,10 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | graphic | `reverseCard` | "Don't …" struck in rust → method kicker → large serif payoff line |
 | graphic | `emberDusk` | Dusk grade without city lights (for ruins) |
 | sfx | `stoneShift`, `resonance`, `rebuild` (hits) | EP05: stone settling, dormant bronze mechanism, reconstruction lines drawing in |
+| scene | `atlas` | Data-driven fantasy map (EP06): define `episode.atlas.features` once (`range`, `river`, `region`, `fields`, `town`, `route` with `flow`, `arrow` with `stop`, `cut`, `pattern`, `gate`, `coin`, `wash`, `label`, `key`), then each shot lists `atlas.show` entries with `at`/`dur`/`until`/`pulse` cues so the map builds up across shots |
+| graphic | `snowfall` | Wind-driven snow in three depth layers (`density`, `wind`, `opacity`) |
+| graphic | `ctaCard` `icon: "share"` | Paper-plane pill for share CTAs (EP06) |
+| sfx | `blizzard`, `caravan` (beds); `warHorn`, `mountainRise` (hits) | EP06 |
 | tool | `pipeline/srt.py epNN` | SRT from the word timings, same grouping as the burned-in captions, paired into 2-line cues |
 
 ## Local / Claude-session commands

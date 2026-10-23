@@ -27,6 +27,8 @@ export type Episode = {
 	captionReplace?: Record<string, string>;
 	lines: {id: string; shot: string; text: string; emphasis?: string[]}[];
 	shots: Shot[];
+	/** Shared map for `atlas` shots (src/scenes/Atlas.tsx). */
+	atlas?: {features: {id: string; kind: string; [k: string]: any}[]};
 };
 
 export type Brand = {

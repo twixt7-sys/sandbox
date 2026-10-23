@@ -509,8 +509,10 @@ export const CtaCard: React.FC<GraphicProps> = ({g, t, span}) => {
 			<div style={{position: 'absolute', top: 1180, width: '100%', display: 'flex', justifyContent: 'center', opacity: b}}>
 				<div style={{display: 'flex', alignItems: 'center', gap: 18, fontFamily: fonts.ui, fontWeight: 700, fontSize: 36, color: '#151a1d', background: palette.amber, padding: '18px 36px 16px', borderRadius: 999, transform: `scale(${0.96 + 0.04 * b})`}}>
 					<svg width={38} height={38} viewBox="0 0 24 24" fill="none" stroke="#151a1d" strokeWidth={2.4} strokeLinejoin="round" strokeLinecap="round">
-						{/* `icon: "follow"` swaps the comment bubble for a follow (person +) mark. */}
-						{g.icon === 'follow' ? (
+						{/* `icon: "follow"` swaps the comment bubble for a follow (person +) mark; `"share"` for a paper plane. */}
+						{g.icon === 'share' ? (
+							<path d="M21 3 3 10.5l7 2.8M21 3l-7.5 18-3.5-7.7M21 3 10 13.3" />
+						) : g.icon === 'follow' ? (
 							<>
 								<circle cx={9} cy={8} r={4} />
 								<path d="M2 20c0-4 3-6 7-6s7 2 7 6M19 7v6M16 10h6" />

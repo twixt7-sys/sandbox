@@ -10,6 +10,7 @@ Every episode, from 01 to 50, follows this guide so the series reads as one show
 1. **Hook, 0–4 s:** the strongest line over the most striking image. No intro, greeting or logo animation; the corner logo is already there.
 2. **Example:** one original fantasy scenario, shown as cause and effect over 2–4 shots, each with a tag naming what it demonstrates.
 3. **Lesson:** a clean diagram or stack on a dark background (`nightSky` scene or dimmed `plateBands`). Spell the principle out in on-screen words.
+   EP06 varied this: the lesson was the map's own key (`atlas` scene), lit row by row on the same map the example built. Maps are the default way to explain any geography mechanism in Arc 2.
 4. **CTA:** return to the opening image in a changed state (EP02: the sun returns; EP03: the same reservoir at dusk), show `ctaCard`, and cross-fade the last 0.6 s into the first frame so the video loops.
 
 ## Look

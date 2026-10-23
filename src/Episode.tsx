@@ -5,6 +5,7 @@ import {Captions} from './captions/Captions';
 import {Grade, Grain, Vignette} from './fx/Fx';
 import {GRAPHICS} from './graphics/Graphics';
 import {TimingContext} from './lib/timing';
+import {AtlasContext} from './scenes/Atlas';
 import {PlateScene, SCENES} from './scenes/registry';
 import {Valley} from './scenes/Valley';
 import type {EpisodeProps, Graphic, Plates, Shot, TimedShot} from './types';
@@ -92,6 +93,7 @@ export const EpisodeComposition: React.FC<EpisodeProps> = ({episodeId, episode, 
 	return (
 		<TimingContext.Provider value={timing}>
 			<BrandContext.Provider value={series.brand}>
+			<AtlasContext.Provider value={episode.atlas}>
 			<AbsoluteFill style={{backgroundColor: '#05080a'}}>
 				{episode.shots.map((shot) => {
 					const span = timing.shots.find((s) => s.id === shot.id)!;
@@ -129,6 +131,7 @@ export const EpisodeComposition: React.FC<EpisodeProps> = ({episodeId, episode, 
 				<Grain />
 				<Audio src={staticFile(`${episodeId}/mix.wav`)} />
 			</AbsoluteFill>
+			</AtlasContext.Provider>
 			</BrandContext.Provider>
 		</TimingContext.Provider>
 	);

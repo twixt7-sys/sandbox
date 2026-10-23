@@ -337,3 +337,70 @@ Run each for at least 6 episodes per variant, alternating, with topics of simila
 | Meta Business Suite (Reels) | 3-second views, average watch time, reach, follows, shares, saves |
 
 Log each episode's numbers at 48 h and 7 days in one sheet, with the variant labels. Don't judge a variant from a single episode.
+
+## Episode 06 captions (ready to paste)
+
+Source of truth: `episodes/ep06/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep06/Worldcraft_Short_E06_cover.jpg`. Subtitles: `episodes/ep06/ep06.srt`. Hashtags: `#FantasyMap` replaces `#CreativeWriting` for this geography episode (still 5 in total).
+
+### YouTube Shorts
+- **Title** (57/100 chars): `Mountains Can Change the Fate of Kingdoms (Worldbuilding)`
+- **Alternate title** (51 chars): `How a mountain range turns a kingdom into an empire`
+- **Description:**
+
+> A mountain range can decide which kingdom becomes an empire.
+>
+> Mountains slow invaders, so a sheltered kingdom can spend on farms instead of walls. They cut valleys off from each other, so neighbours grow apart and never unite. And they force trade onto a few roads, so whoever guards those roads gets paid.
+>
+> Geography creates power long before an army marches. Draw the range first, then ask what it does to everyone on either side.
+>
+> Send this to someone drawing a fantasy map.
+>
+> Episode 6 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts
+
+- **Pinned comment:** Your turn: what's the biggest mountain range, desert, sea or wall on your map, and who does it protect, cut off, or make rich?
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (255 chars): `One mountain range can turn a kingdom into an empire: it stops invaders, splits rivals apart, and forces every caravan onto your roads. Send this to someone drawing a fantasy map 🗺️ #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts`
+- **Pinned comment:** Name one mountain or barrier on your map. We'll tell you who it secretly makes powerful.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> A mountain range can decide which kingdom becomes an empire.
+>
+> Mountains slow invaders, so a sheltered kingdom can spend on farms instead of walls. They cut valleys off from each other, so neighbours grow apart and never unite. And they force trade onto a few roads, so whoever guards those roads gets paid.
+>
+> Geography creates power long before an army marches. Draw the range first, then ask what it does to everyone on either side.
+>
+> Send this to someone drawing a fantasy map.
+>
+> Episode 6 of 50.
+>
+> #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts
+
+- **Pinned comment:** What's the one mountain range or barrier on your map, and which side of it is winning because of it?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> One mountain range can make an empire.
+>
+> A mountain range can decide which kingdom becomes an empire.
+>
+> Mountains slow invaders, so a sheltered kingdom can spend on farms instead of walls. They cut valleys off from each other, so neighbours grow apart and never unite. And they force trade onto a few roads, so whoever guards those roads gets paid.
+>
+> Geography creates power long before an army marches. Draw the range first, then ask what it does to everyone on either side.
+>
+> Send this to someone drawing a fantasy map.
+>
+> Episode 6 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts
+
+- **Pinned comment:** Which barrier on your map does the most work: mountains, desert, sea or wall?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

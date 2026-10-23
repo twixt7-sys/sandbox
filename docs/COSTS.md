@@ -92,6 +92,19 @@ On the paid primary stack (Runway stills and clips + ElevenLabs), EP04 would cos
 
 No Runway, ElevenLabs or Creatomate key was configured, and no AWS service was used. The paid primary stack would still cost about **$1.15 (₱71)** per episode, or **$2.12 (₱131)** with one retry per asset, plus $6 (₱371) a month for ElevenLabs Starter, at ₱61.8 = $1 (Aug 2026 rate).
 
+## What Episode 06 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 4 stills (golden kingdom under the range, army stalled in a blizzard, ridge between two valleys, caravan at a toll waystation) | Figma `generate_image` (`gemini-3.1-flash-lite-image`), 768×1376, lanczos-upscaled. 4 generations, no re-rolls (6 approved). The CTA reuses the hook plate | $0 cash (Figma AI credits) |
+| Two animated map shots, skyline trace, snowfall, ridge line, road line, map key | Remotion code (new `atlas` scene, `src/graphics/Terrain.tsx`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 76 words, 30.7 s | $0 |
+| Score + SFX (new: blizzard, caravan, war horn, mountain rise) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container (render ≈ 3 min) | $0 |
+| **Total** | | **$0 cash (₱0)** plus 4 Figma image generations |
+
+Rate update: the BSP reference rate was **₱63.35 = $1 on 22 Oct 2026** (used for EP06 onward). At that rate the paid primary stack is about **$1.15 (₱73)** per episode, or **$2.12 (₱134)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter.
+
 ## Alternatives
 
 | Option | Per-episode | Monthly | Comment |

@@ -472,6 +472,73 @@ Source of truth: `episodes/ep07/episode.json` → `metadata`. The AI label goes 
 - **Pinned comment:** Where's the strangest city on your map, and what's its reason to exist?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
 
+## Episode 08 captions (ready to paste)
+
+Source of truth: `episodes/ep08/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep08/Worldcraft_Short_E08_cover.jpg`. Subtitles: `episodes/ep08/ep08.srt`.
+
+### YouTube Shorts
+- **Title** (56/100 chars): `What If Water Were Worth More Than Gold? (Worldbuilding)`
+- **Alternate title** (40 chars): `Whoever holds the water rules the desert`
+- **Description:**
+
+> How does a civilization survive where water is worth more than gold?
+>
+> Make one thing scarce and watch it rewrite everything: houses turn inward to save every drop, rations become law, roads bend from well to well instead of running straight. Then ask the real question: who holds the wells?
+>
+> Whoever controls the scarce thing controls the region, no army needed.
+>
+> Follow for more ways to turn geography into storytelling.
+>
+> Episode 8 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts
+
+- **Pinned comment:** Your turn: what's scarce in your world (water, salt, iron, magic, daylight), and who controls it? Tell us the one rule people have to live by because of it.
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (249 chars): `In a desert, water is power: houses turn inward, rations become law, roads bend well to well. And whoever holds the wells rules. What's scarce in YOUR world? Follow for more 👇 #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts`
+- **Pinned comment:** Name one scarce thing in your world and we'll tell you who'd end up ruling because of it.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> How does a civilization survive where water is worth more than gold?
+>
+> Make one thing scarce and watch it rewrite everything: houses turn inward to save every drop, rations become law, roads bend from well to well instead of running straight. Then ask the real question: who holds the wells?
+>
+> Whoever controls the scarce thing controls the region, no army needed.
+>
+> Follow for more ways to turn geography into storytelling.
+>
+> Episode 8 of 50.
+>
+> #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts
+
+- **Pinned comment:** What's the scarcest thing in your world, and who holds it?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Water, worth more than gold.
+>
+> How does a civilization survive where water is worth more than gold?
+>
+> Make one thing scarce and watch it rewrite everything: houses turn inward to save every drop, rations become law, roads bend from well to well instead of running straight. Then ask the real question: who holds the wells?
+>
+> Whoever controls the scarce thing controls the region, no army needed.
+>
+> Follow for more ways to turn geography into storytelling.
+>
+> Episode 8 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts
+
+- **Pinned comment:** What's scarce on your map, and which family, guild or god holds the keys?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
 ## Episode 09 captions (ready to paste)
 
 Source of truth: `episodes/ep09/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep09/Worldcraft_Short_E09_cover.jpg`. Subtitles: `episodes/ep09/ep09.srt`. `#FantasyCulture` replaces `#FantasyMap` for this episode (no map in it).

@@ -16,17 +16,20 @@ import type {SceneProps} from './registry';
  *   river   {pts, width?}                                    smooth river (draws from source)
  *   region  {d, color, opacity?}                             tinted territory
  *   fields  {box: [x0,y0,x1,y1], count?, seed?, avoid?: [[x,y,r]]} farm plots
- *   town    {at, size?, capital?}                            settlement glyph
+ *   town    {at, size?, capital?, palace?}                   settlement glyph (`palace`: domed palace instead of houses)
  *   route   {pts, color?, dash?, flow?, width?}              road; `flow` sends caravan dots toward the end
  *   arrow   {pts, color?, stop?}                             movement arrow; `stop` ends it in a barred halt + snow
- *   cut     {at}                                             rust ✕ (a link that never forms)
+ *   cut     {at, size?}                                      rust ✕ (a link that never forms, a crossing shut)
  *   pattern {at, kind: wave|zig|dots, color?, w?}            culture marker (an accent, a weave)
  *   gate    {at}                                             small tower on a road
  *   coin    {at}                                             toll coin
  *   wash    {at, r, color?}                                  expanding influence
  *   label   {at, text, size?, color?, serif?, anchor?, rot?} map lettering
  *   key     {at, rows: [{text, symbol: arrow|cut|coin, color?, at: Cue}]} map legend; each row lights on its cue
+ *   gorge   {pts, width?, seed?}                             chasm with cliff hachures on both rims (draws west→east; EP10)
+ *   bridge  {at, len?, angle?}                               single stone span across a gorge or river (EP10's chokepoint)
  * Show entries: "id" (already there) or {id, at: Cue, dur?, until?: Cue, pulse?: Cue}.
+ * Shot zoom: {from, to, origin?, at?: Cue, dur?}; with `at` the move runs on that cue, otherwise it eases over the whole shot.
  */
 
 type Pt = [number, number];
@@ -127,9 +130,27 @@ const Mountain: React.FC<{k: Peak; p: number}> = ({k, p}) => {
 	);
 };
 
-const Town: React.FC<{at: Pt; size?: number; capital?: boolean}> = ({at, size = 1, capital}) => (
+/** Domed palace silhouette (EP10's capital): a terrace and three domes with spires. */
+const Palace: React.FC = () => (
+	<g fill={palette.parchment}>
+		<rect x={-26} y={2} width={52} height={14} opacity={0.88} />
+		<rect x={-18} y={-8} width={36} height={12} opacity={0.88} />
+		{[[-13, -8, 7], [0, -10, 10], [13, -8, 7]].map(([x, y, r], i) => (
+			<g key={i}>
+				<path d={`M${x - r},${y} A${r},${r} 0 0 1 ${x + r},${y} Z`} fill={palette.amber} />
+				<line x1={x} y1={y - r} x2={x} y2={y - r - 6} stroke={palette.amber} strokeWidth={1.6} />
+			</g>
+		))}
+		{[-22, 22].map((x) => (
+			<rect key={x} x={x - 2} y={-16} width={4} height={20} opacity={0.88} />
+		))}
+	</g>
+);
+
+const Town: React.FC<{at: Pt; size?: number; capital?: boolean; palace?: boolean}> = ({at, size = 1, capital, palace}) => (
 	<g transform={`translate(${at[0]} ${at[1]}) scale(${size})`} fill={palette.parchment}>
-		{[
+		{palace && <Palace />}
+		{!palace && [
 			[-16, -4, 12], [0, -12, 16], [16, -2, 11], [-4, 9, 11], [11, 10, 9],
 		].map(([dx, dy, s], i) => (
 			<rect key={i} x={dx - s / 2} y={dy - s / 2} width={s} height={s} opacity={0.88} />
@@ -247,7 +268,7 @@ const Feature: React.FC<{f: AtlasFeature; p: number; pulse: number; t: number; t
 		case 'town':
 			return (
 				<g opacity={p}>
-					<Town at={f.at} size={f.size} capital={f.capital} />
+					<Town at={f.at} size={f.size} capital={f.capital} palace={f.palace} />
 				</g>
 			);
 		case 'route': {
@@ -290,7 +311,7 @@ const Feature: React.FC<{f: AtlasFeature; p: number; pulse: number; t: number; t
 		case 'cut': {
 			const s = interpolate(p, [0, 0.6, 1], [0.4, 1.2, 1]);
 			return (
-				<g transform={`translate(${f.at[0]} ${f.at[1]}) scale(${s * (1 + 0.25 * pulse)})`} opacity={Math.min(1, p * 3)} stroke={palette.rust} strokeWidth={6} strokeLinecap="round">
+				<g transform={`translate(${f.at[0]} ${f.at[1]}) scale(${s * (1 + 0.25 * pulse) * (f.size ?? 1)})`} opacity={Math.min(1, p * 3)} stroke={palette.rust} strokeWidth={6} strokeLinecap="round" style={{filter: 'drop-shadow(0 0 6px rgba(0,0,0,0.9))'}}>
 					<line x1={-14} y1={-14} x2={14} y2={14} />
 					<line x1={14} y1={-14} x2={-14} y2={14} />
 				</g>
@@ -347,6 +368,51 @@ const Feature: React.FC<{f: AtlasFeature; p: number; pulse: number; t: number; t
 						const q = Math.max(0, Math.min(1, p * 1.3 - k * 0.15));
 						return <circle key={k} cx={f.at[0]} cy={f.at[1]} r={60 + (f.r * 0.85 - 60) * q} fill="none" stroke={c} strokeOpacity={0.4 * q * (1 - k * 0.25) * (1 - 0.6 * q)} strokeWidth={1.6} />;
 					})}
+				</g>
+			);
+		}
+		case 'gorge': {
+			const pts: Pt[] = f.pts;
+			const d = smoothPath(pts);
+			const w = f.width ?? 40;
+			const r = rng(f.seed ?? 31);
+			const ticks = Array.from({length: 90}, (_, i) => ({u: (i + r() * 0.6) / 90, side: i % 2 ? 1 : -1, len: 8 + r() * 12}));
+			return (
+				<g>
+					<path d={d} fill="none" stroke={palette.parchment} strokeOpacity={0.55} strokeWidth={w + 7} strokeLinecap="round" {...pathLen1(p)} />
+					<path d={d} fill="none" stroke="#070b0e" strokeWidth={w} strokeLinecap="round" {...pathLen1(p)} />
+					<g opacity={0.3}>
+						<DrawnPath d={d} p={p} stroke={palette.fog} width={2} dash="10 14" />
+					</g>
+					{ticks
+						.filter((k) => k.u < p)
+						.map((k, i) => {
+							const {p: q, a} = along(pts, k.u);
+							const nx = -Math.sin(a) * k.side;
+							const ny = Math.cos(a) * k.side;
+							const x0 = q[0] + nx * (w / 2 + 3);
+							const y0 = q[1] + ny * (w / 2 + 3);
+							return <line key={i} x1={x0} y1={y0} x2={x0 + nx * k.len} y2={y0 + ny * k.len} stroke={palette.parchment} strokeOpacity={0.4} strokeWidth={1.4} />;
+						})}
+				</g>
+			);
+		}
+		case 'bridge': {
+			const len = f.len ?? 70;
+			const s = interpolate(p, [0, 0.6, 1], [0.3, 1.15, 1]);
+			return (
+				<g opacity={Math.min(1, p * 2.5)} transform={`translate(${f.at[0]} ${f.at[1]}) rotate(${f.angle ?? 0}) scale(${s})`}>
+					<circle r={len * 0.75} fill="none" stroke={palette.ember} strokeOpacity={0.55 * pulse} strokeWidth={3} />
+					<rect x={-9} y={-len / 2} width={18} height={len} fill="#2a2420" stroke={palette.ember} strokeWidth={2.5 + 2 * pulse} style={{filter: `drop-shadow(0 0 ${4 + 10 * pulse}px ${palette.amber})`}} />
+					{[-1, 1].map((e) => (
+						<g key={e}>
+							<line x1={-14} y1={(e * len) / 2} x2={14} y2={(e * len) / 2} stroke={palette.ember} strokeWidth={4} strokeLinecap="round" />
+							<line x1={-9} y1={(e * len) / 2 - e * 4} x2={9} y2={(e * len) / 2 - e * 4} stroke={palette.ember} strokeOpacity={0.5} strokeWidth={1.5} />
+						</g>
+					))}
+					{[-0.18, 0.18].map((u) => (
+						<line key={u} x1={-5} y1={u * len} x2={5} y2={u * len} stroke={palette.ember} strokeOpacity={0.6} strokeWidth={1.5} />
+					))}
 				</g>
 			);
 		}
@@ -413,7 +479,9 @@ export const AtlasScene: React.FC<SceneProps> = ({progress, t, shot}) => {
 	const byId = new Map(atlas.features.map((f) => [f.id, f]));
 	const show: ShowEntry[] = cfg.show ?? [];
 	const zf = cfg.zoom ?? {from: 1.06, to: 1.0};
-	const zoom = lerp(zf.from, zf.to, interpolate(progress, [0, 1], [0, 1], {easing: Easing.out(Easing.quad)}));
+	// `zoom.at` + `dur`: a timed camera move on a cue (EP10's pull-back) instead of easing over the whole shot.
+	const zp = zf.at ? ease(t, cueTime(timing, zf.at), zf.dur ?? 1.6, Easing.inOut(Easing.cubic)) : interpolate(progress, [0, 1], [0, 1], {easing: Easing.out(Easing.quad)});
+	const zoom = lerp(zf.from, zf.to, zp);
 	const base = ease(t, span.start - 0.3, 0.6);
 
 	const items = show.map((e) => {

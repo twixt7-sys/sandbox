@@ -190,7 +190,7 @@ export const PlateBands: React.FC<GraphicProps> = ({g, t, span}) => {
 	);
 };
 
-/** Stacked lesson lines joined by down-arrows; each lands on its cue. The last line is the payoff (amber, larger). */
+/** Stacked lesson lines joined by down-arrows; each lands on its cue. The last line is the payoff (amber, larger). `size`/`restSize` shrink long lines. */
 export const LessonStack: React.FC<GraphicProps> = ({g, t, span}) => {
 	const timing = useTiming();
 	const items: {text: string; at: any}[] = g.items;
@@ -213,7 +213,7 @@ export const LessonStack: React.FC<GraphicProps> = ({g, t, span}) => {
 								style={{
 									fontFamily: fonts.display,
 									fontWeight: 700,
-									fontSize: last ? 104 : 84,
+									fontSize: last ? (g.size ?? 104) : (g.restSize ?? 84),
 									letterSpacing: '0.05em',
 									color: last ? palette.ember : palette.parchment,
 									fontStyle: last ? 'italic' : undefined,

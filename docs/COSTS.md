@@ -118,6 +118,19 @@ Rate update: the BSP reference rate was **₱63.35 = $1 on 22 Oct 2026** (used f
 
 On the paid primary stack: about **$1.15 (₱73)**, or **$2.12 (₱134)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
+## What Episode 10 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 3 stills (the palace city of Solenne, the Kestrel bridge over its gorge, the bridge gate shut at night) | Figma `generate_image` (`gemini-3.1-flash-lite-image`), 768×1376, lanczos-upscaled. 3 generations, no re-rolls (6 approved). The CTA reuses the palace plate; the three map shots are code | $0 cash (Figma AI credits) |
+| Realm map, zoom and pull-back, gorge and bridge, closing ✕ and darkening, flow lines, lesson stack, dusk lights | Remotion code (`atlas` scene with new `gorge`, `bridge`, `palace` glyph and cue-timed zoom; `ghostLines`, `lessonStack`, `duskGrade`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 75 words, 30.0 s | $0 |
+| Score + SFX (new: gateSlam) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)** plus 3 Figma image generations |
+
+On the paid primary stack, with 3 stills instead of 4: about **$1.05 (₱67)**, or **$1.94 (₱123)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
 ## Alternatives
 
 | Option | Per-episode | Monthly | Comment |

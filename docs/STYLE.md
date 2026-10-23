@@ -11,6 +11,7 @@ Every episode, from 01 to 50, follows this guide so the series reads as one show
 2. **Example:** one original fantasy scenario, shown as cause and effect over 2–4 shots, each with a tag naming what it demonstrates.
 3. **Lesson:** a clean diagram or stack on a dark background (`nightSky` scene or dimmed `plateBands`). Spell the principle out in on-screen words.
    EP07 varied it again: the example was surveyed on the plate itself (the empty valley), a running `reasonTally` counted the reasons, and the overlap dissolved into the finished city.
+   EP10 varied it again: the hook shows the obvious answer (the palace), the map zooms in on it and then pulls back until the real key (one bridge) appears, and the lesson sits over the consequence (the gate shut at night).
    EP06 varied this: the lesson was the map's own key (`atlas` scene), lit row by row on the same map the example built. Maps are the default way to explain any geography mechanism in Arc 2.
 4. **CTA:** return to the opening image in a changed state (EP02: the sun returns; EP03: the same reservoir at dusk), show `ctaCard`, and cross-fade the last 0.6 s into the first frame so the video loops.
 
@@ -29,6 +30,7 @@ Every episode, from 01 to 50, follows this guide so the series reads as one show
 
 ## Motion
 - Camera: slow `push`/`pull`/`drift`/`descend` only (≤ 12 % scale over a shot). No spins, shakes, whip-pans or glitch effects.
+  Exception (EP10): a map may pull back from a close-up (up to 2.5×) to the whole map once, on a spoken cue like "Pull back", when the reveal *is* the story. Use `atlas` `zoom.at` so the move lands on the word and takes about 2 s.
 - Magic and effects are drawn in code over the plate and pinned to it (`"local": true`), so they move with the camera.
 - Text enters with a soft rise and fade or a mask reveal (≤ 0.6 s) and leaves with a short fade. One idea on screen at a time.
 - Transitions: hard cut on a spoken word by default. Use dissolves (0.35–0.6 s) into diagrams and the CTA, and `fog`/`flash` only when the story motivates them.
@@ -45,5 +47,6 @@ Every episode, from 01 to 50, follows this guide so the series reads as one show
 ## Delivery (every episode)
 - Run `python pipeline/qa.py out/epNN.mp4 --sheet out/epNN_sheet.jpg`, inspect the sheet plus extra frames at every graphic beat, and fix and re-render before delivering.
 - Hand the user both `epNN.mp4` (master) and `epNN_compat.mp4` (H.264 Main, CRF 20, `+faststart`) with `SendUserFile`, plus a private preview Artifact page. The video goes in the asset store (`capabilities: {assets: {}}`, upload with `asset: true`, then `src="/_blob/<id>"`), never as a plain page file.
+- `duskGrade` always draws a reflecting pool. When the plate has no water there (EP10's plaza), move it off-frame (`pool: [540, 2400, 10, 5]`).
 - Encode the player and download copies with the master's audio copied (`-c:a copy`). Re-encoding AAC at 128k pushed EP07's true peak to 0.0 dB and failed QA.
 - No public GitHub Release unless the user says yes for that episode (they said no for EP03).

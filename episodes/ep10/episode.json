@@ -1,0 +1,1655 @@
+{
+ "id": "ep10",
+ "number": 10,
+ "title": "The Most Important Place on Your Map",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "Knowing documentary narrator pointing past the obvious. Even and slightly wry on the hook, a little grand on 'the palace in Solenne', then a turn on 'Pull back' as if leaning over the map; brisk on the three flows, a quiet drop on 'starves in nine days', the lesson laid down plainly, warm and curious on the CTA. No trailer voice."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "The most important location in your world might not be a capital.",
+   "pauseAfter": 0.8,
+   "emphasis": [
+    "important",
+    "capital"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "crown",
+   "text": "Everyone looks at the palace in Solenne.",
+   "pauseAfter": 0.55,
+   "emphasis": [
+    "palace",
+    "Solenne"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "pullback",
+   "text": "Pull back. Every road in the realm crosses one gorge, at one bridge: the Kestrel.",
+   "pauseAfter": 0.7,
+   "emphasis": [
+    "every",
+    "one",
+    "Kestrel"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "bridge",
+   "text": "Grain rolls south. Soldiers march north. Every cart pays the bridge.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "grain",
+    "soldiers",
+    "pays"
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "closed",
+   "text": "Close it, and the capital starves in nine days.",
+   "pauseAfter": 0.8,
+   "emphasis": [
+    "close",
+    "starves",
+    "nine"
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "lesson",
+   "text": "A palace gives the orders. Whoever holds the crossing decides if they arrive.",
+   "pauseAfter": 0.8,
+   "emphasis": [
+    "orders",
+    "crossing",
+    "arrive"
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "cta",
+   "text": "What location would every kingdom fight to control?",
+   "pauseAfter": 0,
+   "emphasis": [
+    "every",
+    "control"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.06,
+     "y": -20
+    }
+   },
+   "plateScrim": 0.5,
+   "purpose": "Stop the scroll on the obvious answer: a gilded palace over a rich capital, ringed like a target, while the line says it might not matter most.",
+   "visual": "A palace of cream stone with three gilded domes crowning a hill over a terracotta city; a grand stair to a crowded plaza. A survey ring closes on the palace; 'THE MOST IMPORTANT PLACE / isn't the palace.' over the sky.",
+   "camera": "Slow push (1.00 to 1.06), frame rises 20 px.",
+   "layers": {
+    "foreground": "plaza and roofs",
+    "midground": "stair and palace",
+    "background": "river plain and golden sky"
+   },
+   "lighting": "Warm late-afternoon sun, golden domes; top scrim for the title.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. A magnificent royal palace crowning a hill in the middle of the frame, above a sprawling capital city, seen from a distance at warm late afternoon. The palace: pale cream stone, tiers of colonnaded terraces, slender towers and three great gilded domes catching the sun, long banners of plain deep red cloth. Below and around it in the lower third: a dense city of terracotta roofs, stone streets, gardens and a broad ceremonial stairway rising to the palace gates, tiny crowds in the plaza far below. Upper third: a clear pale golden sky with a few soft clouds and open space above the domes. A sense of wealth, ceremony and obvious power. Figures tiny, faces not visible. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used: no image-to-video available. Motion is a Remotion push.) Slow push toward the palace, banners stirring, 4 seconds",
+   "graphics": [
+    {
+     "type": "titleLockup",
+     "kicker": "The most important place",
+     "text": "isn't the palace.",
+     "y": 330,
+     "size": 116,
+     "start": {
+      "line": "L1",
+      "word": "might",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L1",
+      "word": "capital.",
+      "offset": 0.75
+     }
+    },
+    {
+     "type": "evidenceRing",
+     "local": true,
+     "at": [
+      540,
+      800
+     ],
+     "r": 190,
+     "start": {
+      "line": "L1",
+      "word": "capital.",
+      "offset": -0.2
+     }
+    }
+   ],
+   "onScreenText": "Kicker 'THE MOST IMPORTANT PLACE' + 'isn't the palace.' (ember serif italic); amber survey ring on the palace.",
+   "transition": "Dissolve (0.4 s) into the map, zoomed tight on the capital.",
+   "sfx": [
+    {
+     "sound": "market",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "crown",
+      "offset": 0.4
+     },
+     "gain": -31
+    },
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "crown",
+      "offset": 0.4
+     },
+     "gain": -29
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L1",
+      "word": "capital.",
+      "offset": -0.9
+     },
+     "gain": -22
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L1",
+      "word": "capital."
+     },
+     "gain": -20
+    }
+   ],
+   "music": "A minor add9, open: the obvious answer, questioned."
+  },
+  {
+   "id": "crown",
+   "scene": "atlas",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.4
+   },
+   "atlas": {
+    "zoom": {
+     "from": 2.5,
+     "to": 2.35,
+     "origin": "46.8% 60.3%"
+    },
+    "show": [
+     {
+      "id": "crownland",
+      "at": {
+       "shot": "crown",
+       "offset": -0.3
+      },
+      "dur": 0.6
+     },
+     {
+      "id": "hillsS",
+      "at": {
+       "shot": "crown",
+       "offset": -0.2
+      },
+      "dur": 0.9
+     },
+     {
+      "id": "hillsS2",
+      "at": {
+       "shot": "crown",
+       "offset": -0.1
+      },
+      "dur": 0.9
+     },
+     {
+      "id": "crown",
+      "at": {
+       "line": "L2",
+       "word": "palace",
+       "offset": -0.1
+      },
+      "dur": 1.6
+     },
+     {
+      "id": "solenne",
+      "at": {
+       "shot": "crown",
+       "offset": -0.1
+      },
+      "dur": 0.5
+     },
+     {
+      "id": "lblSolenne",
+      "at": {
+       "line": "L2",
+       "word": "solenne.",
+       "offset": -0.1
+      },
+      "dur": 0.5
+     }
+    ]
+   },
+   "purpose": "Name the capital and put it on the map, so close that it fills the world: everything seems to radiate from the palace.",
+   "visual": "Parchment map, zoomed tight: Solenne's capital glyph among dry hills, an amber wash of influence spreading from it; 'Solenne' lettered in ember italic.",
+   "camera": "Map held tight (2.50 to 2.35) on the capital.",
+   "layers": {
+    "foreground": "lettering",
+    "midground": "capital glyph, influence wash",
+    "background": "parchment, hills"
+   },
+   "lighting": "Dark parchment; amber for the crown's reach.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [],
+   "onScreenText": "Map lettering 'Solenne' (ember serif italic).",
+   "transition": "Continuous: the same map pulls back on 'Pull back'.",
+   "sfx": [
+    {
+     "sound": "paper",
+     "at": {
+      "shot": "crown",
+      "offset": -0.2
+     },
+     "gain": -26
+    },
+    {
+     "sound": "shimmer",
+     "at": {
+      "line": "L2",
+      "word": "palace",
+      "offset": -0.2
+     },
+     "gain": -26
+    }
+   ],
+   "music": "F major add9: the grandeur everyone sees."
+  },
+  {
+   "id": "pullback",
+   "scene": "atlas",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "atlas": {
+    "zoom": {
+     "from": 2.35,
+     "to": 1.0,
+     "origin": "46.8% 60.3%",
+     "at": {
+      "line": "L3",
+      "word": "pull",
+      "offset": -0.05
+     },
+     "dur": 1.9
+    },
+    "show": [
+     {
+      "id": "north",
+      "at": {
+       "line": "L3",
+       "word": "pull",
+       "offset": 0.25
+      },
+      "dur": 0.9
+     },
+     {
+      "id": "fields",
+      "at": {
+       "line": "L3",
+       "word": "pull",
+       "offset": 0.3
+      },
+      "dur": 0.9
+     },
+     {
+      "id": "townA",
+      "at": {
+       "line": "L3",
+       "word": "pull",
+       "offset": 0.35
+      },
+      "dur": 0.9
+     },
+     {
+      "id": "townB",
+      "at": {
+       "line": "L3",
+       "word": "pull",
+       "offset": 0.4
+      },
+      "dur": 0.9
+     },
+     {
+      "id": "townC",
+      "at": {
+       "line": "L3",
+       "word": "pull",
+       "offset": 0.45
+      },
+      "dur": 0.9
+     },
+     {
+      "id": "crownland"
+     },
+     {
+      "id": "hillsS"
+     },
+     {
+      "id": "hillsS2"
+     },
+     {
+      "id": "hillsW",
+      "at": {
+       "line": "L3",
+       "word": "pull",
+       "offset": 0.3
+      },
+      "dur": 1.0
+     },
+     {
+      "id": "hillsE",
+      "at": {
+       "line": "L3",
+       "word": "pull",
+       "offset": 0.3
+      },
+      "dur": 1.0
+     },
+     {
+      "id": "gorge",
+      "at": {
+       "line": "L3",
+       "word": "crosses",
+       "offset": -0.1
+      },
+      "dur": 1.1,
+      "pulse": {
+       "line": "L3",
+       "word": "gorge,"
+      }
+     },
+     {
+      "id": "roadW",
+      "at": {
+       "line": "L3",
+       "word": "road",
+       "offset": -0.15
+      },
+      "dur": 1.1
+     },
+     {
+      "id": "roadA",
+      "at": {
+       "line": "L3",
+       "word": "road",
+       "offset": -0.07
+      },
+      "dur": 1.1
+     },
+     {
+      "id": "roadB",
+      "at": {
+       "line": "L3",
+       "word": "road",
+       "offset": 0.01
+      },
+      "dur": 1.1
+     },
+     {
+      "id": "roadC",
+      "at": {
+       "line": "L3",
+       "word": "road",
+       "offset": 0.09
+      },
+      "dur": 1.1
+     },
+     {
+      "id": "roadE",
+      "at": {
+       "line": "L3",
+       "word": "road",
+       "offset": 0.17
+      },
+      "dur": 1.1
+     },
+     {
+      "id": "trunk",
+      "at": {
+       "line": "L3",
+       "word": "bridge:",
+       "offset": 0.1
+      },
+      "dur": 0.8
+     },
+     {
+      "id": "crown",
+      "until": {
+       "line": "L3",
+       "word": "every",
+       "offset": 0.1
+      }
+     },
+     "solenne",
+     "lblSolenne",
+     {
+      "id": "hold",
+      "at": {
+       "line": "L3",
+       "word": "kestrel.",
+       "offset": -0.1
+      },
+      "dur": 2.0
+     },
+     {
+      "id": "kestrel",
+      "at": {
+       "line": "L3",
+       "word": "bridge:",
+       "offset": -0.08
+      },
+      "dur": 0.5,
+      "pulse": {
+       "line": "L3",
+       "word": "kestrel."
+      }
+     },
+     {
+      "id": "lblKestrel",
+      "at": {
+       "line": "L3",
+       "word": "kestrel.",
+       "offset": -0.05
+      },
+      "dur": 0.5
+     }
+    ]
+   },
+   "purpose": "The reveal: pull back until the real key appears. Every road in the realm funnels to one bridge over one gorge, and the influence moves from the palace to the bridge.",
+   "visual": "The map pulls back from Solenne to the whole realm: the farm country and towns of the north, a gorge cutting west to east, five roads converging on a single bridge, one road on to the capital. The palace's wash fades; the bridge lights and a wash spreads from it. 'The Kestrel' lettered beside it.",
+   "camera": "Pull back on 'Pull back' (2.35 to 1.00 in 1.9 s).",
+   "layers": {
+    "foreground": "lettering, bridge glyph",
+    "midground": "roads with moving caravan dots, gorge",
+    "background": "parchment, fields, hills"
+   },
+   "lighting": "Amber roads and bridge; the gorge is the darkest thing on the map.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [],
+   "onScreenText": "Map lettering 'The Kestrel' (ember serif italic).",
+   "transition": "Hard cut on 'Grain' to the bridge itself.",
+   "sfx": [
+    {
+     "sound": "whoosh",
+     "at": {
+      "line": "L3",
+      "word": "pull",
+      "offset": -0.1
+     },
+     "gain": -25
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L3",
+      "word": "road",
+      "offset": -0.1
+     },
+     "gain": -25
+    },
+    {
+     "sound": "mountainRise",
+     "at": {
+      "line": "L3",
+      "word": "crosses",
+      "offset": -0.4
+     },
+     "gain": -21
+    },
+    {
+     "sound": "stoneShift",
+     "at": {
+      "line": "L3",
+      "word": "bridge:",
+      "offset": -0.05
+     },
+     "gain": -22
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L3",
+      "word": "kestrel."
+     },
+     "gain": -19
+    }
+   ],
+   "music": "D minor with a 68 bpm pulse, turning to E major on the bridge: the answer is somewhere else."
+  },
+  {
+   "id": "bridge",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.06,
+     "y": -30
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "Show the dependence: what flows across it, both ways, and who pays.",
+   "visual": "A narrow ancient stone bridge over a sheer gorge, grain carts and mules crossing toward a squat gatehouse, a column of soldiers waiting. An amber dashed line runs down the deck on 'Grain', a rust one back up it on 'Soldiers'; a survey ring closes on the gatehouse on 'pays'.",
+   "camera": "Slow push (1.00 to 1.06), frame rises 30 px.",
+   "layers": {
+    "foreground": "gatehouse and soldiers",
+    "midground": "the bridge and its traffic",
+    "background": "far rim, road into the hills"
+   },
+   "lighting": "Warm late-morning light, deep blue shadow in the chasm.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. A single narrow ancient stone bridge spanning a sheer, impossibly deep rocky gorge, seen from slightly above and to one side. The bridge crosses the frame in the middle third; at its near end on the lower right stands a squat fortified stone gatehouse with an open arched gate and a small toll table. Ox carts piled with grain sacks, pack mules and travellers in hooded cloaks cross in both directions in single file; a small column of soldiers with spears waits its turn. Far below, mist and a thin glint at the bottom of the chasm. Cliffs of dark grey rock with clinging pines on both sides. Upper third: the far rim of the gorge with a road climbing away into hazy hills under a pale sky. Warm late-morning light, long shadows across the gorge. Figures small, faces not visible. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.) Carts creaking across the bridge, mist moving in the gorge, 4 seconds",
+   "graphics": [
+    {
+     "type": "tag",
+     "kicker": "The Kestrel",
+     "text": "Everything crosses here.",
+     "start": {
+      "line": "L4",
+      "word": "grain",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "ghostLines",
+     "local": true,
+     "dash": "18 12",
+     "width": 7,
+     "start": {
+      "line": "L4",
+      "word": "grain",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L4",
+      "word": "south.",
+      "offset": 0.2
+     },
+     "shapes": [
+      {
+       "d": "M197,648 L282,753 L382,868 L502,978 L637,1123"
+      }
+     ]
+    },
+    {
+     "type": "ghostLines",
+     "local": true,
+     "color": "#d0663f",
+     "dash": "18 12",
+     "width": 7,
+     "start": {
+      "line": "L4",
+      "word": "soldiers",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L4",
+      "word": "north.",
+      "offset": 0.2
+     },
+     "shapes": [
+      {
+       "d": "M722,1063 L582,923 L462,808 L357,693 L272,583"
+      }
+     ]
+    },
+    {
+     "type": "evidenceRing",
+     "local": true,
+     "at": [
+      845,
+      1085
+     ],
+     "r": 120,
+     "start": {
+      "line": "L4",
+      "word": "pays",
+      "offset": -0.3
+     }
+    }
+   ],
+   "onScreenText": "Chip 'THE KESTREL' + 'Everything crosses here.'; amber and rust dashed lines on the deck; survey ring on the gatehouse.",
+   "transition": "Dissolve (0.4 s) back to the map.",
+   "sfx": [
+    {
+     "sound": "caravan",
+     "from": {
+      "shot": "bridge"
+     },
+     "to": {
+      "shot": "closed",
+      "offset": 0.2
+     },
+     "gain": -24
+    },
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "bridge"
+     },
+     "to": {
+      "shot": "closed",
+      "offset": 0.2
+     },
+     "gain": -29
+    },
+    {
+     "sound": "warHorn",
+     "at": {
+      "line": "L4",
+      "word": "soldiers",
+      "offset": -0.3
+     },
+     "gain": -29
+    },
+    {
+     "sound": "coin",
+     "at": {
+      "line": "L4",
+      "word": "pays",
+      "offset": -0.05
+     },
+     "gain": -21
+    }
+   ],
+   "music": "C major, 76 bpm with arpeggios: everything flowing through one point."
+  },
+  {
+   "id": "closed",
+   "scene": "atlas",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.4
+   },
+   "atlas": {
+    "zoom": {
+     "from": 1.0,
+     "to": 1.04,
+     "origin": "50% 45%"
+    },
+    "show": [
+     {
+      "id": "north"
+     },
+     {
+      "id": "fields"
+     },
+     {
+      "id": "townA"
+     },
+     {
+      "id": "townB"
+     },
+     {
+      "id": "townC"
+     },
+     {
+      "id": "crownland"
+     },
+     {
+      "id": "hillsW"
+     },
+     {
+      "id": "hillsE"
+     },
+     {
+      "id": "hillsS"
+     },
+     {
+      "id": "hillsS2"
+     },
+     {
+      "id": "gorge"
+     },
+     {
+      "id": "roadW"
+     },
+     {
+      "id": "roadA"
+     },
+     {
+      "id": "roadB"
+     },
+     {
+      "id": "roadC"
+     },
+     {
+      "id": "roadE"
+     },
+     {
+      "id": "trunk",
+      "until": {
+       "line": "L5",
+       "word": "close",
+       "offset": 0.25
+      }
+     },
+     "solenne",
+     {
+      "id": "hold",
+      "until": {
+       "line": "L5",
+       "word": "close",
+       "offset": 0.1
+      }
+     },
+     {
+      "id": "kestrel",
+      "pulse": {
+       "line": "L5",
+       "word": "close"
+      }
+     },
+     {
+      "id": "dark",
+      "at": {
+       "line": "L5",
+       "word": "capital",
+       "offset": -0.1
+      },
+      "dur": 1.6
+     },
+     "lblSolenne",
+     "lblKestrel",
+     {
+      "id": "shut",
+      "at": {
+       "line": "L5",
+       "word": "close",
+       "offset": -0.02
+      },
+      "dur": 0.45
+     },
+     {
+      "id": "lblDays",
+      "at": {
+       "line": "L5",
+       "word": "nine",
+       "offset": -0.05
+      },
+      "dur": 0.5
+     }
+    ]
+   },
+   "purpose": "What happens when it closes: the flow stops at the gorge and the capital side of the map goes dark.",
+   "visual": "The full map again. A rust ✕ slams onto the bridge; the road to Solenne fades while the caravans pile up on the far side; the whole south, palace included, darkens. 'Nine days.' in rust beside the capital.",
+   "camera": "Gentle push (1.00 to 1.04).",
+   "layers": {
+    "foreground": "✕, 'Nine days.'",
+    "midground": "roads, dimming south",
+    "background": "parchment map"
+   },
+   "lighting": "The south falls into shadow; only the north stays lit.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [],
+   "onScreenText": "Rust ✕ on the Kestrel; rust serif italic 'Nine days.' beside Solenne.",
+   "transition": "Hard cut on 'A palace' to the shut gate at night.",
+   "sfx": [
+    {
+     "sound": "gateSlam",
+     "at": {
+      "line": "L5",
+      "word": "close",
+      "offset": -0.42
+     },
+     "gain": -16
+    },
+    {
+     "sound": "powerDown",
+     "at": {
+      "line": "L5",
+      "word": "capital",
+      "offset": -0.1
+     },
+     "gain": -23
+    },
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "closed",
+      "offset": 0.3
+     },
+     "to": {
+      "shot": "lesson",
+      "offset": 0.3
+     },
+     "gain": -28
+    }
+   ],
+   "music": "F minor, dark, no pulse: everything stops."
+  },
+  {
+   "id": "lesson",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.05,
+     "y": -10
+    },
+    "to": {
+     "s": 1.0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.62,
+   "purpose": "Spell the rule out over the consequence: the palace commands, the crossing decides.",
+   "visual": "Night at the Kestrel: the gate shut and the portcullis down, a lone keeper with a lantern before it, a line of stalled carts with small lanterns behind. 'The palace gives orders.' then an arrow down to 'The crossing decides.'",
+   "camera": "Slow pull back (1.05 to 1.00).",
+   "layers": {
+    "foreground": "stalled carts and lanterns",
+    "midground": "keeper at the shut gate",
+    "background": "gatehouse tower, night sky"
+   },
+   "lighting": "Cold blue moonlight, warm torches; heavy scrim for the lesson type.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. Night at the end of a narrow stone bridge over a deep dark gorge. In the middle of the frame, a fortified stone gatehouse with its heavy iron-banded wooden gate shut and a lowered portcullis, two small torches burning beside it. A lone gatekeeper in a long dark cloak stands in front of the closed gate, seen from behind, holding up a lantern. In the lower third, a long line of covered ox carts and waiting travellers stretches back along the road into the darkness, stopped, their small lanterns glowing. Upper third: deep blue night sky with thin cloud and a faint moon over the far cliffs. Cold blue moonlight with warm torch and lantern light. Tense, quiet mood. Figures small to medium, faces not visible. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.) Torches flickering, lantern swaying, 4 seconds",
+   "graphics": [
+    {
+     "type": "lessonStack",
+     "top": 390,
+     "size": 92,
+     "restSize": 70,
+     "items": [
+      {
+       "text": "The palace gives orders.",
+       "at": {
+        "line": "L6",
+        "word": "palace",
+        "offset": -0.1
+       }
+      },
+      {
+       "text": "The crossing decides.",
+       "at": {
+        "line": "L6",
+        "word": "crossing",
+        "offset": -0.1
+       }
+      }
+     ]
+    }
+   ],
+   "onScreenText": "'The palace gives orders.' ↓ 'The crossing decides.' (ember serif italic).",
+   "transition": "Dissolve (0.6 s) to the palace at dusk.",
+   "sfx": [
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L6",
+      "word": "crossing",
+      "offset": -0.05
+     },
+     "gain": -19
+    },
+    {
+     "sound": "paper",
+     "at": {
+      "line": "L6",
+      "word": "palace",
+      "offset": -0.1
+     },
+     "gain": -28
+    }
+   ],
+   "music": "A major with bells: the rule."
+  },
+  {
+   "id": "cta",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "plateFrame": {
+    "from": {
+     "s": 1.03,
+     "y": -10
+    },
+    "to": {
+     "s": 1.0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.35,
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "captions": false,
+   "hideLogoBug": true,
+   "purpose": "Comment CTA over the opening palace, now at dusk: the same grandeur, seen differently. Ends on the opening frame for a loop.",
+   "visual": "The palace city at dusk, windows lit. Full logo, Episode 10 / 50, the CTA in large serif type, a 'Comment below' pill.",
+   "camera": "Settles to the hook's first framing (1.03 to 1.00).",
+   "layers": {
+    "foreground": "logo and CTA type",
+    "midground": "palace with lit windows",
+    "background": "dusk sky"
+   },
+   "lighting": "Dusk grade in code with city lights; the last 0.6 s cross-fades into the golden first frame.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "duskGrade",
+     "local": true,
+     "lights": [
+      120,
+      620,
+      960,
+      1880
+     ],
+     "pool": [
+      540,
+      2400,
+      10,
+      5
+     ]
+    },
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L7",
+      "word": "what"
+     },
+     "episode": "Episode 10 / 50",
+     "title": "The most important place on your map",
+     "kicker": "Your turn",
+     "lines": [
+      "What location would",
+      "*every kingdom*",
+      "fight to control?"
+     ],
+     "button": "Comment below"
+    }
+   ],
+   "onScreenText": "Full logo, 'EPISODE 10 / 50', title, 'YOUR TURN', 'What location would every kingdom fight to control?', pill 'Comment below'.",
+   "transition": "Cross-fade into the hook's first frame for a seamless loop.",
+   "sfx": [
+    {
+     "sound": "swell",
+     "at": {
+      "shot": "cta",
+      "offset": -0.3
+     },
+     "gain": -25
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L7",
+      "word": "control?",
+      "offset": 0.2
+     },
+     "gain": -24
+    }
+   ],
+   "music": "D to A major, warm; fades fully before the last frame."
+  }
+ ],
+ "atlas": {
+  "features": [
+   {
+    "id": "north",
+    "kind": "region",
+    "d": "M76,334 L1004,334 L1004,700 L880,690 L720,716 L540,700 L360,712 L200,690 L76,708 Z",
+    "color": "#e9a94b",
+    "opacity": 0.08
+   },
+   {
+    "id": "fields",
+    "kind": "fields",
+    "box": [
+     100,
+     372,
+     990,
+     660
+    ],
+    "count": 84,
+    "seed": 41,
+    "avoid": [
+     [
+      230,
+      465,
+      75
+     ],
+     [
+      520,
+      415,
+      75
+     ],
+     [
+      820,
+      485,
+      75
+     ],
+     [
+      540,
+      640,
+      45
+     ],
+     [
+      300,
+      570,
+      40
+     ],
+     [
+      700,
+      600,
+      40
+     ]
+    ]
+   },
+   {
+    "id": "crownland",
+    "kind": "region",
+    "d": "M76,770 L1004,770 L1004,1186 L76,1186 Z",
+    "color": "#c79a6a",
+    "opacity": 0.06
+   },
+   {
+    "id": "hillsW",
+    "kind": "range",
+    "pts": [
+     [
+      90,
+      1120
+     ],
+     [
+      200,
+      1100
+     ],
+     [
+      330,
+      1128
+     ]
+    ],
+    "rows": 2,
+    "scale": 0.75,
+    "seed": 13
+   },
+   {
+    "id": "hillsE",
+    "kind": "range",
+    "pts": [
+     [
+      690,
+      1120
+     ],
+     [
+      820,
+      1095
+     ],
+     [
+      990,
+      1115
+     ]
+    ],
+    "rows": 2,
+    "scale": 0.75,
+    "seed": 17
+   },
+   {
+    "id": "hillsS",
+    "kind": "range",
+    "pts": [
+     [
+      130,
+      905
+     ],
+     [
+      240,
+      886
+     ],
+     [
+      350,
+      906
+     ]
+    ],
+    "rows": 1,
+    "scale": 0.7,
+    "seed": 23
+   },
+   {
+    "id": "hillsS2",
+    "kind": "range",
+    "pts": [
+     [
+      740,
+      915
+     ],
+     [
+      850,
+      896
+     ],
+     [
+      960,
+      916
+     ]
+    ],
+    "rows": 1,
+    "scale": 0.7,
+    "seed": 29
+   },
+   {
+    "id": "gorge",
+    "kind": "gorge",
+    "pts": [
+     [
+      40,
+      735
+     ],
+     [
+      200,
+      712
+     ],
+     [
+      360,
+      738
+     ],
+     [
+      540,
+      722
+     ],
+     [
+      720,
+      742
+     ],
+     [
+      880,
+      716
+     ],
+     [
+      1040,
+      735
+     ]
+    ],
+    "width": 40
+   },
+   {
+    "id": "roadA",
+    "kind": "route",
+    "pts": [
+     [
+      230,
+      480
+     ],
+     [
+      300,
+      565
+     ],
+     [
+      430,
+      640
+     ],
+     [
+      536,
+      684
+     ]
+    ],
+    "flow": true
+   },
+   {
+    "id": "roadB",
+    "kind": "route",
+    "pts": [
+     [
+      520,
+      440
+     ],
+     [
+      528,
+      560
+     ],
+     [
+      538,
+      684
+     ]
+    ],
+    "flow": true
+   },
+   {
+    "id": "roadC",
+    "kind": "route",
+    "pts": [
+     [
+      820,
+      500
+     ],
+     [
+      730,
+      585
+     ],
+     [
+      620,
+      650
+     ],
+     [
+      544,
+      684
+     ]
+    ],
+    "flow": true
+   },
+   {
+    "id": "roadW",
+    "kind": "route",
+    "pts": [
+     [
+      76,
+      640
+     ],
+     [
+      250,
+      662
+     ],
+     [
+      440,
+      676
+     ],
+     [
+      534,
+      688
+     ]
+    ],
+    "flow": true
+   },
+   {
+    "id": "roadE",
+    "kind": "route",
+    "pts": [
+     [
+      1004,
+      650
+     ],
+     [
+      820,
+      668
+     ],
+     [
+      640,
+      680
+     ],
+     [
+      546,
+      688
+     ]
+    ],
+    "flow": true
+   },
+   {
+    "id": "trunk",
+    "kind": "route",
+    "pts": [
+     [
+      540,
+      684
+     ],
+     [
+      540,
+      722
+     ],
+     [
+      540,
+      762
+     ],
+     [
+      532,
+      860
+     ],
+     [
+      522,
+      950
+     ]
+    ],
+    "flow": true,
+    "width": 6
+   },
+   {
+    "id": "townA",
+    "kind": "town",
+    "at": [
+     230,
+     465
+    ],
+    "size": 0.75
+   },
+   {
+    "id": "townB",
+    "kind": "town",
+    "at": [
+     520,
+     415
+    ],
+    "size": 0.75
+   },
+   {
+    "id": "townC",
+    "kind": "town",
+    "at": [
+     820,
+     485
+    ],
+    "size": 0.75
+   },
+   {
+    "id": "crown",
+    "kind": "wash",
+    "at": [
+     520,
+     1000
+    ],
+    "r": 330
+   },
+   {
+    "id": "solenne",
+    "kind": "town",
+    "at": [
+     520,
+     1000
+    ],
+    "size": 1.3,
+    "capital": true,
+    "palace": true
+   },
+   {
+    "id": "kestrel",
+    "kind": "bridge",
+    "at": [
+     540,
+     722
+    ],
+    "len": 76
+   },
+   {
+    "id": "hold",
+    "kind": "wash",
+    "at": [
+     540,
+     722
+    ],
+    "r": 420
+   },
+   {
+    "id": "dark",
+    "kind": "region",
+    "d": "M76,752 L1004,752 L1004,1186 L76,1186 Z",
+    "color": "#020407",
+    "opacity": 0.62
+   },
+   {
+    "id": "shut",
+    "kind": "cut",
+    "at": [
+     540,
+     722
+    ],
+    "size": 1.9
+   },
+   {
+    "id": "lblSolenne",
+    "kind": "label",
+    "at": [
+     520,
+     1098
+    ],
+    "text": "Solenne",
+    "serif": true,
+    "size": 60,
+    "color": "#f4c46e"
+   },
+   {
+    "id": "lblKestrel",
+    "kind": "label",
+    "at": [
+     582,
+     800
+    ],
+    "text": "The Kestrel",
+    "serif": true,
+    "size": 54,
+    "color": "#f4c46e",
+    "anchor": "start"
+   },
+   {
+    "id": "lblDays",
+    "kind": "label",
+    "at": [
+     790,
+     1012
+    ],
+    "text": "Nine days.",
+    "serif": true,
+    "size": 58,
+    "color": "#d0663f"
+   }
+  ]
+ },
+ "lesson": "Power sits where everyone has to pass. A palace gives orders, but a pass, a bridge or a harbour that the whole realm depends on decides whether anything arrives. Find that place on your map, and you've found your real centre of power.",
+ "captionReplace": {},
+ "music": {
+  "key": "A minor, resolving to A major",
+  "drone": [
+   "A1",
+   "E2"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L5",
+     "word": "starves"
+    },
+    "pre": 0.15,
+    "dur": 1.2,
+    "gain": 0.5
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L6",
+     "word": "crossing"
+    },
+    "pre": 0.15,
+    "dur": 1.1,
+    "gain": 0.5
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "A1",
+      "E2",
+      "C3",
+      "E3",
+      "B3"
+     ]
+    ],
+    "level": 0.5
+   },
+   "crown": {
+    "chords": [
+     [
+      "F2",
+      "C3",
+      "A3",
+      "C4",
+      "G4"
+     ]
+    ],
+    "level": 0.54,
+    "bells": true
+   },
+   "pullback": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F3",
+      "A3",
+      "C4"
+     ],
+     [
+      "E2",
+      "B2",
+      "G#3",
+      "B3",
+      "E4"
+     ]
+    ],
+    "level": 0.6,
+    "pulse": 68
+   },
+   "bridge": {
+    "chords": [
+     [
+      "C2",
+      "G2",
+      "E3",
+      "G3",
+      "C4"
+     ]
+    ],
+    "level": 0.66,
+    "pulse": 76,
+    "arp": true
+   },
+   "closed": {
+    "chords": [
+     [
+      "F1",
+      "C2",
+      "Ab2",
+      "C3",
+      "F3"
+     ]
+    ],
+    "level": 0.55,
+    "dark": true
+   },
+   "lesson": {
+    "chords": [
+     [
+      "A1",
+      "E2",
+      "C#3",
+      "E3",
+      "A3"
+     ]
+    ],
+    "level": 0.66,
+    "bells": true
+   },
+   "cta": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F#3",
+      "A3",
+      "D4"
+     ],
+     [
+      "A1",
+      "E2",
+      "C#3",
+      "E3",
+      "A3"
+     ]
+    ],
+    "level": 0.6,
+    "bells": true
+   }
+  }
+ },
+ "metadata": {
+  "youtube": {
+   "title": "The Most Important Place on Your Map (Worldbuilding)",
+   "titleAlternate": "Why one bridge can matter more than a palace",
+   "description": "The most important location in your world might not be a capital.\n\nA palace gives the orders, but a narrow pass, a single bridge or a natural harbour decides whether those orders, the grain and the soldiers ever arrive. If every road funnels through one place, whoever holds that place holds the realm, and closing it can starve a capital in days.\n\nFind the spot everyone depends on, and you have found where your world's real power sits.\n\nWhat location would every kingdom fight to control? Tell us in the comments.\n\nEpisode 10 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.\n\n#Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts",
+   "pinnedComment": "Your turn: what's the one pass, bridge, harbour or crossing on your map that every kingdom would fight for, and what flows through it?",
+   "uploadSettings": "Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "Your capital isn't the most important place on your map. The bridge everything crosses is. Close it and the palace starves 🗺️ What location would every kingdom fight to control? #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts",
+   "pinnedComment": "Drop your map's chokepoint: pass, bridge, strait or harbour. We'll tell you who should be fighting over it.",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "The most important location in your world might not be a capital.\n\nA palace gives the orders, but a narrow pass, a single bridge or a natural harbour decides whether those orders, the grain and the soldiers ever arrive. If every road funnels through one place, whoever holds that place holds the realm, and closing it can starve a capital in days.\n\nFind the spot everyone depends on, and you have found where your world's real power sits.\n\nWhat location would every kingdom fight to control? Tell us in the comments.\n\nEpisode 10 of 50.\n\n#Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts",
+   "pinnedComment": "Which single place on your map could bring a capital to its knees if someone closed it?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "One bridge can outrank a palace.\n\nThe most important location in your world might not be a capital.\n\nA palace gives the orders, but a narrow pass, a single bridge or a natural harbour decides whether those orders, the grain and the soldiers ever arrive. If every road funnels through one place, whoever holds that place holds the realm, and closing it can starve a capital in days.\n\nFind the spot everyone depends on, and you have found where your world's real power sits.\n\nWhat location would every kingdom fight to control? Tell us in the comments.\n\nEpisode 10 of 50 · Worldcraft Shorts\n\n#Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts",
+   "hookCheck": "First 32 characters: 'One bridge can outrank a palace.'",
+   "pinnedComment": "Pass, bridge, harbour or strait: which chokepoint runs your world?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  },
+  "cover": "Worldcraft_Short_E10_cover.jpg: the gilded palace over the capital with the survey ring and 'THE MOST IMPORTANT PLACE / isn't the palace.' in the sky, corner logo.",
+  "followUpQuestion": "Look at your own map: if one place closed tomorrow, which city would starve first?"
+ }
+}

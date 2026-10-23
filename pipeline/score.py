@@ -505,6 +505,21 @@ def sfx_hit(kind, dur=None):
         thump = np.sin(2 * np.pi * np.cumsum(90 * (1 + 0.6 * np.exp(-t * 30))) / SR) * np.exp(-t * 14)
         crunch = bp(noise(n), 700, 3500) * np.exp(-t * 40) * 0.4
         return stereo(thump + crunch, 0.2)
+    if kind == "gateSlam":
+        # A bridge gate shut for good (EP10): a short chain rattle running down, then a deep timber-and-iron boom.
+        n = int(2.4 * SR)
+        t = np.arange(n) / SR
+        chain = np.zeros(n)
+        for k in range(14):
+            i = int((0.02 + k * 0.026 * (1 - k / 30)) * SR)
+            m = int(0.04 * SR)
+            chain[i:i + m] += bp(noise(m), 2200, 7000) * np.exp(-np.arange(m) / SR * 90) * RNG.uniform(0.25, 0.5)
+        hit = 0.42
+        th = np.clip(t - hit, 0, None)
+        boom = np.sin(2 * np.pi * np.cumsum(48 * (1 + 0.8 * np.exp(-th * 25))) / SR) * np.exp(-th * 4.5) * (t >= hit)
+        clang = (np.sin(2 * np.pi * 311 * th) + 0.6 * np.sin(2 * np.pi * 467 * th)) * np.exp(-th * 9) * 0.25 * (t >= hit)
+        crack = bp(noise(n), 300, 2500) * np.exp(-th * 35) * 0.7 * (t >= hit)
+        return stereo(chain + boom + clang + crack, 0.4)
     raise KeyError(kind)
 
 

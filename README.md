@@ -101,6 +101,11 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | graphic | `duskGrade` `lights` | `[x0,y0,x1,y1]` band for the city windows |
 | sfx | `tally`, `stake` (hits) | EP07: a reason checked off; a survey stake driven into turf |
 | tool | `pipeline/srt.py epNN` | SRT from the word timings, same grouping as the burned-in captions, paired into 2-line cues |
+| atlas | `gorge` `{pts, width?}`, `bridge` `{at, len?, angle?}` | A chasm with cliff hachures that draws west→east, and a single stone span across it that pulses (EP10's chokepoint) |
+| atlas | `town` `palace: true`, `cut` `size` | Domed palace glyph for a capital; a larger ✕ for a crossing being shut |
+| atlas | shot `zoom: {from, to, origin, at, dur}` | Cue-timed camera move on the map: EP10 holds 2.5× on the capital, then pulls back to 1× on "Pull back" |
+| graphic | `lessonStack` `size`, `restSize` | Smaller type for longer lesson lines |
+| sfx | `gateSlam` (hit) | EP10: a chain run down, then a deep timber-and-iron boom as a gate shuts |
 
 ## Local / Claude-session commands
 

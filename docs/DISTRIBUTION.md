@@ -471,3 +471,70 @@ Source of truth: `episodes/ep07/episode.json` → `metadata`. The AI label goes 
 
 - **Pinned comment:** Where's the strangest city on your map, and what's its reason to exist?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 10 captions (ready to paste)
+
+Source of truth: `episodes/ep10/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep10/Worldcraft_Short_E10_cover.jpg`. Subtitles: `episodes/ep10/ep10.srt`.
+
+### YouTube Shorts
+- **Title** (52/100 chars): `The Most Important Place on Your Map (Worldbuilding)`
+- **Alternate title** (44 chars): `Why one bridge can matter more than a palace`
+- **Description:**
+
+> The most important location in your world might not be a capital.
+>
+> A palace gives the orders, but a narrow pass, a single bridge or a natural harbour decides whether those orders, the grain and the soldiers ever arrive. If every road funnels through one place, whoever holds that place holds the realm, and closing it can starve a capital in days.
+>
+> Find the spot everyone depends on, and you have found where your world's real power sits.
+>
+> What location would every kingdom fight to control? Tell us in the comments.
+>
+> Episode 10 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts
+
+- **Pinned comment:** Your turn: what's the one pass, bridge, harbour or crossing on your map that every kingdom would fight for, and what flows through it?
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (251 chars): `Your capital isn't the most important place on your map. The bridge everything crosses is. Close it and the palace starves 🗺️ What location would every kingdom fight to control? #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts`
+- **Pinned comment:** Drop your map's chokepoint: pass, bridge, strait or harbour. We'll tell you who should be fighting over it.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> The most important location in your world might not be a capital.
+>
+> A palace gives the orders, but a narrow pass, a single bridge or a natural harbour decides whether those orders, the grain and the soldiers ever arrive. If every road funnels through one place, whoever holds that place holds the realm, and closing it can starve a capital in days.
+>
+> Find the spot everyone depends on, and you have found where your world's real power sits.
+>
+> What location would every kingdom fight to control? Tell us in the comments.
+>
+> Episode 10 of 50.
+>
+> #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts
+
+- **Pinned comment:** Which single place on your map could bring a capital to its knees if someone closed it?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> One bridge can outrank a palace.
+>
+> The most important location in your world might not be a capital.
+>
+> A palace gives the orders, but a narrow pass, a single bridge or a natural harbour decides whether those orders, the grain and the soldiers ever arrive. If every road funnels through one place, whoever holds that place holds the realm, and closing it can starve a capital in days.
+>
+> Find the spot everyone depends on, and you have found where your world's real power sits.
+>
+> What location would every kingdom fight to control? Tell us in the comments.
+>
+> Episode 10 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts
+
+- **Pinned comment:** Pass, bridge, harbour or strait: which chokepoint runs your world?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

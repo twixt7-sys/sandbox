@@ -105,6 +105,19 @@ No Runway, ElevenLabs or Creatomate key was configured, and no AWS service was u
 
 Rate update: the BSP reference rate was **₱63.35 = $1 on 22 Oct 2026** (used for EP06 onward). At that rate the paid primary stack is about **$1.15 (₱73)** per episode, or **$2.12 (₱134)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter.
 
+## What Episode 07 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 4 stills (Ostral in its river bend, the empty valley, the citadel wall, the riverside market) | Figma `generate_image` (`gemini-3.1-flash-lite-image`), 768×1376, lanczos-upscaled. 4 generations, no re-rolls (6 approved). The survey, overlap, reveal and CTA shots reuse plates | $0 cash (Figma AI credits) |
+| Survey overlay, reason tally, survey pin and overlap glow, sightlines, road lines, dusk lights | Remotion code (`src/graphics/Survey.tsx`, `ghostLines`, `duskGrade`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 77 words, 29.7 s | $0 |
+| Score + SFX (new: tally, stake) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)** plus 4 Figma image generations |
+
+On the paid primary stack: about **$1.15 (₱73)**, or **$2.12 (₱134)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
 ## Alternatives
 
 | Option | Per-episode | Monthly | Comment |

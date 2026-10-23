@@ -96,6 +96,10 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | graphic | `snowfall` | Wind-driven snow in three depth layers (`density`, `wind`, `opacity`) |
 | graphic | `ctaCard` `icon: "share"` | Paper-plane pill for share CTAs (EP06) |
 | sfx | `blizzard`, `caravan` (beds); `warHorn`, `mountainRise` (hits) | EP06 |
+| graphic | `reasonTally` | Row of icon slots across the top (`items: [{icon, label, at}]`; icons `water`, `soil`, `defence`, `trade`) that fill on cues and carry across shots; `sumAt` + `sumKicker` + `sum` closes a bracket into the lesson line (EP07) |
+| graphic | `surveyPin` | Survey stake dropped on a plate point (`local`): `ask` "?" badge, `glowAt` converging rings + glow, `fadeAt`, `stake: false` for glow only |
+| graphic | `duskGrade` `lights` | `[x0,y0,x1,y1]` band for the city windows |
+| sfx | `tally`, `stake` (hits) | EP07: a reason checked off; a survey stake driven into turf |
 | tool | `pipeline/srt.py epNN` | SRT from the word timings, same grouping as the burned-in captions, paired into 2-line cues |
 
 ## Local / Claude-session commands

@@ -1,0 +1,1431 @@
+{
+ "id": "ep07",
+ "number": 7,
+ "title": "Why Are Your Cities Built There?",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "A curious surveyor thinking out loud. Assured, slightly wry on the hook ('without a reason'), a real question on 'Why here?', then four short, ticked-off findings with a small lift on each, a beat of discovery on 'the same spot', warm and practical on the advice, conversational on the CTA. No trailer voice."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "Nobody builds a great city in the middle of nowhere without a reason.",
+   "pauseAfter": 0.8,
+   "emphasis": [
+    "nowhere",
+    "reason"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "empty",
+   "text": "Before Ostral, this valley was empty. Why here?",
+   "pauseAfter": 0.7,
+   "emphasis": [
+    "Ostral",
+    "empty",
+    "here"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "survey",
+   "text": "Fresh water at the river bend.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "water",
+    "bend"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "survey",
+   "text": "Soil the spring floods renew.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "soil",
+    "floods"
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "citadel",
+   "text": "A hill no army can take by surprise.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "hill",
+    "surprise"
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "market",
+   "text": "And two trade roads meeting right below.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "trade",
+    "roads"
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "overlap",
+   "text": "Every reason lands on the same spot.",
+   "pauseAfter": 0.8,
+   "emphasis": [
+    "same",
+    "spot"
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "reveal",
+   "text": "Give every city a reason to exist, and your map tells its own history.",
+   "pauseAfter": 0.8,
+   "emphasis": [
+    "reason",
+    "history"
+   ]
+  },
+  {
+   "id": "L9",
+   "shot": "cta",
+   "text": "Comment the most unusual place you'd build a city.",
+   "pauseAfter": 0,
+   "emphasis": [
+    "unusual",
+    "city"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.08,
+     "y": -30
+    },
+    "to": {
+     "s": 1.0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.55,
+   "purpose": "Stop the scroll on the finished answer: a great city wrapped in a river bend, crowned by a citadel, with roads meeting at its bridge. The title says there's a reason.",
+   "visual": "Golden aerial of Ostral: citadel on a rock inside a river bend, roofs spilling to the water, docks, a bridge where two roads meet. Title 'NO GREAT CITY / by accident.'",
+   "camera": "Slow pull back (1.08 to 1.00) to reveal the whole bend.",
+   "layers": {
+    "foreground": "grassy hillside",
+    "midground": "the city, river and bridge",
+    "background": "floodplain fields, blue hills, sky"
+   },
+   "lighting": "Warm late sun, haze; top scrim for the title.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. A great medieval-fantasy city seen from a high hillside vantage at golden late afternoon, in a broad green river valley. A wide calm river enters from the lower left, sweeps in a big bend around the centre of the frame and leaves toward the upper right. Inside the bend, in the exact centre of the frame, rises a solitary steep rocky hill crowned by a pale stone citadel with round towers; the city's terracotta roofs and stone walls cover the hill and spill down to the riverbank, with docks, moored boats, a long stone bridge and a busy riverside market square at the foot of the hill. Two dusty roads come from far away, one from the left and one from the right, and meet at the bridge below the hill. Flat green floodplain fields and orchards line the river. Distant blue hills on the horizon, open pale sky in the upper third. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used: no image-to-video available. Motion is a Remotion pull-back.) Slow aerial pull-back over the river city, boats drifting, 4 seconds",
+   "graphics": [
+    {
+     "type": "titleLockup",
+     "kicker": "No great city",
+     "text": "by accident.",
+     "y": 350,
+     "size": 150,
+     "start": {
+      "line": "L1",
+      "word": "nobody",
+      "offset": 0.1
+     },
+     "end": {
+      "line": "L1",
+      "word": "reason.",
+      "offset": 0.7
+     }
+    }
+   ],
+   "onScreenText": "Title 'NO GREAT CITY' (amber kicker) + 'by accident.' (ember serif italic).",
+   "transition": "Hard cut on 'Before' to the same valley, empty.",
+   "sfx": [
+    {
+     "sound": "market",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "empty",
+      "offset": 0.2
+     },
+     "gain": -31
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L1",
+      "word": "reason.",
+      "offset": -0.9
+     },
+     "gain": -22
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L1",
+      "word": "reason."
+     },
+     "gain": -20
+    }
+   ],
+   "music": "D minor add9, open: a confident question."
+  },
+  {
+   "id": "empty",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.04,
+     "y": -10
+    }
+   },
+   "plateScrim": 0.5,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "The same kind of valley before the city: wild meadow, a river loop, a lone limestone hill. A surveyor's stake drops on the hill and asks the episode's question.",
+   "visual": "Untouched valley: river loops around a lone white-cliffed hill; two faint paths meet at a gravel bar below it. A survey stake drops onto the hilltop with a '?' badge; four empty slots appear across the top.",
+   "camera": "Near-still push (1.00 to 1.04).",
+   "layers": {
+    "foreground": "rocky grass slope",
+    "midground": "the hill inside the river loop, gravel bar",
+    "background": "meadows, blue hills"
+   },
+   "lighting": "Same golden hour as the hook, so the cut reads as the same place, centuries earlier.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. An untouched, completely uninhabited broad green river valley seen from a high grassy hillside vantage at golden late afternoon, long before any town existed. A wide calm river flows from the distance at the top centre, curves down the left side of the frame, then sweeps around in a big loop across the lower middle of the frame and out to the right edge. Inside this river loop, in the exact centre of the frame, rises a solitary steep rocky hill of pale grey limestone cliffs with grass and a few trees on its flat top. Wide flat floodplain meadows of lush green grass and wildflowers line both riverbanks, wet and fertile. Two faint narrow dirt footpaths come from the left and right edges of the valley and meet at a shallow gravel bar in the river just below the hill. No buildings, no walls, no bridge, no fields, no people, wild grassland and scattered trees only. Distant blue hills on the horizon, open pale sky in the upper third. Foreground: grassy hillside with rocks. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.) Wind moving through the meadow grass, river glinting, 3.5 seconds",
+   "graphics": [
+    {
+     "type": "surveyPin",
+     "local": true,
+     "at": [
+      548,
+      755
+     ],
+     "start": {
+      "line": "L2",
+      "word": "why",
+      "offset": -0.15
+     },
+     "ask": {
+      "line": "L2",
+      "word": "here?",
+      "offset": -0.05
+     }
+    },
+    {
+     "type": "reasonTally",
+     "items": [
+      {
+       "icon": "water",
+       "label": "Water",
+       "at": {
+        "line": "L3",
+        "word": "water",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "soil",
+       "label": "Soil",
+       "at": {
+        "line": "L4",
+        "word": "soil",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "defence",
+       "label": "Defense",
+       "at": {
+        "line": "L5",
+        "word": "hill",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "trade",
+       "label": "Trade",
+       "at": {
+        "line": "L6",
+        "word": "trade",
+        "offset": -0.05
+       }
+      }
+     ],
+     "instant": false,
+     "start": {
+      "line": "L2",
+      "word": "why",
+      "offset": 0.1
+     }
+    }
+   ],
+   "onScreenText": "Survey stake with a '?' badge on the hilltop; four empty slots: WATER, SOIL, DEFENSE, TRADE.",
+   "transition": "Continuous: same plate, the survey begins.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "empty"
+     },
+     "to": {
+      "shot": "citadel",
+      "offset": 0.3
+     },
+     "gain": -27
+    },
+    {
+     "sound": "stake",
+     "at": {
+      "line": "L2",
+      "word": "why",
+      "offset": 0.25
+     },
+     "gain": -18
+    }
+   ],
+   "music": "B-flat major 7, sparse: before anything existed."
+  },
+  {
+   "id": "survey",
+   "scene": "nightSky",
+   "plateFrom": "empty",
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": -10
+    },
+    "to": {
+     "s": 1.08,
+     "y": -20
+    }
+   },
+   "plateScrim": 0.5,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Reasons 1 and 2 surveyed on the empty valley itself: the river (water) and the flood-renewed meadows (soil).",
+   "visual": "A translucent water-blue band traces the whole river loop; dashed ember outlines hatch the floodplain meadows. The WATER and SOIL slots fill.",
+   "camera": "Push (1.04 to 1.08), continuous with the previous shot.",
+   "layers": {
+    "foreground": "survey overlay",
+    "midground": "river loop and meadows",
+    "background": "hills"
+   },
+   "lighting": "Same plate; overlay colours from the series palette plus the water motif.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "ghostLines",
+     "local": true,
+     "color": "#7fd3ec",
+     "width": 46,
+     "opacity": 0.38,
+     "shapes": [
+      {
+       "d": "M714,536 C600,545 471,557 471,557 C360,572 243,593 243,593 C170,610 114,643 114,643 C100,665 129,693 129,693 C190,720 257,736 257,736 C320,760 343,779 343,779 C340,805 314,829 314,829 C250,860 186,893 186,893 C120,925 100,957 100,957 C95,990 114,1014 114,1014 C160,1045 229,1057 229,1057 C320,1078 400,1086 400,1086 C500,1098 600,1100 600,1100 C700,1095 800,1079 800,1079 C900,1060 971,1029 971,1029 C1020,990 1043,943 1043,943 C1060,900 1064,871 1064,871 L1080,843"
+      }
+     ],
+     "start": {
+      "line": "L3",
+      "word": "water",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L3",
+      "word": "bend.",
+      "offset": 0.4
+     }
+    },
+    {
+     "type": "ghostLines",
+     "local": true,
+     "color": "#7fd3ec",
+     "width": 3,
+     "shapes": [
+      {
+       "d": "M714,536 C600,545 471,557 471,557 C360,572 243,593 243,593 C170,610 114,643 114,643 C100,665 129,693 129,693 C190,720 257,736 257,736 C320,760 343,779 343,779 C340,805 314,829 314,829 C250,860 186,893 186,893 C120,925 100,957 100,957 C95,990 114,1014 114,1014 C160,1045 229,1057 229,1057 C320,1078 400,1086 400,1086 C500,1098 600,1100 600,1100 C700,1095 800,1079 800,1079 C900,1060 971,1029 971,1029 C1020,990 1043,943 1043,943 C1060,900 1064,871 1064,871 L1080,843"
+      }
+     ],
+     "start": {
+      "line": "L3",
+      "word": "water",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L3",
+      "word": "bend.",
+      "offset": 0.4
+     }
+    },
+    {
+     "type": "ghostLines",
+     "local": true,
+     "color": "#f4c46e",
+     "dash": "10 8",
+     "width": 2.5,
+     "fill": 0.22,
+     "shapes": [
+      {
+       "d": "M229,614 L714,557 L1080,543 L1080,814 L857,786 L743,757 L640,700 L429,686 L300,650 Z"
+      },
+      {
+       "d": "M343,960 C360,1040 470,1068 600,1072 C760,1070 900,1030 960,960 C930,900 860,880 760,880 L700,905 L560,930 L430,930 Z"
+      },
+      {
+       "d": "M0,771 L157,757 L286,829 L157,900 L57,1000 L0,1029 Z"
+      }
+     ],
+     "start": {
+      "line": "L4",
+      "word": "soil",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L4",
+      "word": "renew.",
+      "offset": 0.2
+     }
+    },
+    {
+     "type": "surveyPin",
+     "local": true,
+     "at": [
+      548,
+      755
+     ],
+     "start": {
+      "shot": "survey",
+      "offset": -5
+     }
+    },
+    {
+     "type": "reasonTally",
+     "items": [
+      {
+       "icon": "water",
+       "label": "Water",
+       "at": {
+        "line": "L3",
+        "word": "water",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "soil",
+       "label": "Soil",
+       "at": {
+        "line": "L4",
+        "word": "soil",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "defence",
+       "label": "Defense",
+       "at": {
+        "line": "L5",
+        "word": "hill",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "trade",
+       "label": "Trade",
+       "at": {
+        "line": "L6",
+        "word": "trade",
+        "offset": -0.05
+       }
+      }
+     ],
+     "instant": true
+    }
+   ],
+   "onScreenText": "Water-blue river band; ember-dashed floodplain; tally: WATER ✓, SOIL ✓.",
+   "transition": "Hard cut on 'A' up onto the citadel wall.",
+   "sfx": [
+    {
+     "sound": "water",
+     "from": {
+      "shot": "survey"
+     },
+     "to": {
+      "shot": "citadel",
+      "offset": 0.2
+     },
+     "gain": -29
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L3",
+      "word": "water",
+      "offset": -0.15
+     },
+     "gain": -25
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L3",
+      "word": "water",
+      "offset": -0.05
+     },
+     "gain": -19
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L4",
+      "word": "soil",
+      "offset": -0.1
+     },
+     "gain": -25
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L4",
+      "word": "soil",
+      "offset": -0.05
+     },
+     "gain": -19
+    }
+   ],
+   "music": "F major, 70 bpm pulse enters: the survey."
+  },
+  {
+   "id": "citadel",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.18,
+     "y": -150
+    },
+    "to": {
+     "s": 1.22,
+     "y": -200
+    }
+   },
+   "plateScrim": 0.45,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Reason 3, defense: from the hilltop you see an army hours before it arrives, and the cliffs do the rest.",
+   "visual": "Guards on the citadel wall above a sheer cliff look out over open valley; amber sightlines fan from the tower to the far road. DEFENSE fills.",
+   "camera": "Slow push (1.18 to 1.22), frame raised 150–200 px so the guards' heads sit above the caption band.",
+   "layers": {
+    "foreground": "battlements and two guards seen from behind",
+    "midground": "cliff and towers",
+    "background": "open valley and the long road"
+   },
+   "lighting": "Golden side light, long view into haze.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. On the battlements of a pale limestone citadel with round towers and terracotta-roofed turrets, built on the top of a sheer rocky cliff. Upper half: from the wall walk, a vast open green river valley spreads below in every direction, flat floodplain and a winding river, with a long empty road visible for miles to the distant blue hills, nowhere for an army to hide. Lower half: the crenellated stone wall in the foreground, the cliff dropping steeply away, and two guards in simple blue-grey tunics and steel caps seen from behind at a modest distance, one pointing toward the horizon. Golden late-afternoon light, a long view, haze in the distance, swallows in the air. Faces not visible. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.) Swallows wheeling over the battlements, banner-less wind on the wall, 3 seconds",
+   "graphics": [
+    {
+     "type": "ghostLines",
+     "local": true,
+     "dash": "14 10",
+     "width": 5,
+     "start": {
+      "line": "L5",
+      "word": "hill"
+     },
+     "end": {
+      "line": "L5",
+      "word": "surprise.",
+      "offset": 0.2
+     },
+     "shapes": [
+      {
+       "d": "M534,575 L700,430"
+      },
+      {
+       "d": "M534,575 L860,470"
+      },
+      {
+       "d": "M534,575 L900,640"
+      },
+      {
+       "d": "M534,575 L880,860"
+      }
+     ]
+    },
+    {
+     "type": "reasonTally",
+     "items": [
+      {
+       "icon": "water",
+       "label": "Water",
+       "at": {
+        "line": "L3",
+        "word": "water",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "soil",
+       "label": "Soil",
+       "at": {
+        "line": "L4",
+        "word": "soil",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "defence",
+       "label": "Defense",
+       "at": {
+        "line": "L5",
+        "word": "hill",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "trade",
+       "label": "Trade",
+       "at": {
+        "line": "L6",
+        "word": "trade",
+        "offset": -0.05
+       }
+      }
+     ],
+     "instant": true
+    }
+   ],
+   "onScreenText": "Amber sightlines from the tower across the valley; tally: DEFENSE ✓.",
+   "transition": "Hard cut on 'And' down to the market.",
+   "sfx": [
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L5",
+      "word": "hill",
+      "offset": -0.05
+     },
+     "gain": -19
+    },
+    {
+     "sound": "whoosh",
+     "at": {
+      "line": "L5",
+      "word": "surprise.",
+      "offset": -0.3
+     },
+     "gain": -28
+    }
+   ],
+   "music": "G minor over the pulse: vigilance."
+  },
+  {
+   "id": "market",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": -40
+    },
+    "to": {
+     "s": 1.06,
+     "y": -90
+    }
+   },
+   "plateScrim": 0.45,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Reason 4, trade: two long-distance roads meet below the hill, so carts, mules and boats all stop here.",
+   "visual": "Riverside market at the hill's foot: ox carts from one road, mule trains from the other, boats unloading at the quay. Two amber road lines converge on the square; a survey ring closes where they meet. TRADE fills.",
+   "camera": "Slow push (1.00 to 1.06).",
+   "layers": {
+    "foreground": "carts and laden mules",
+    "midground": "stalls and quay",
+    "background": "houses climbing to the citadel"
+   },
+   "lighting": "Warm dusty late light; river glare on the right.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. A busy riverside market square at the foot of a rocky hill in a medieval-fantasy city, seen from a slightly raised angle at golden late afternoon. Two roads enter the square from opposite sides: from the left a line of ox carts loaded with grain sacks and timber, from the right a line of pack mules with bales of cloth and casks, both converging on the crowded square. In the middle, canvas-awninged stalls with baskets of fish, bread, pottery and spices, traders bargaining. On the right, a stone quay on the wide calm river with flat-bottomed river boats unloading cargo by rope and pulley. Behind and above, terracotta-roofed houses climb the steep limestone hill to a pale stone citadel with round towers. Warm dusty light, people small to medium, faces not visible or turned away. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.) Carts and mules plodding into the square, awnings stirring, 3 seconds",
+   "graphics": [
+    {
+     "type": "ghostLines",
+     "local": true,
+     "dash": "16 10",
+     "width": 5,
+     "start": {
+      "line": "L6",
+      "word": "trade",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L6",
+      "word": "meeting",
+      "offset": 0.2
+     },
+     "shapes": [
+      {
+       "d": "M127,1828 L155,1406 L239,1125 L400,1010"
+      },
+      {
+       "d": "M787,1828 L675,1476 L633,1265 L520,1040"
+      }
+     ]
+    },
+    {
+     "type": "evidenceRing",
+     "local": true,
+     "at": [
+      455,
+      1010
+     ],
+     "r": 95,
+     "start": {
+      "line": "L6",
+      "word": "below.",
+      "offset": -0.3
+     }
+    },
+    {
+     "type": "reasonTally",
+     "items": [
+      {
+       "icon": "water",
+       "label": "Water",
+       "at": {
+        "line": "L3",
+        "word": "water",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "soil",
+       "label": "Soil",
+       "at": {
+        "line": "L4",
+        "word": "soil",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "defence",
+       "label": "Defense",
+       "at": {
+        "line": "L5",
+        "word": "hill",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "trade",
+       "label": "Trade",
+       "at": {
+        "line": "L6",
+        "word": "trade",
+        "offset": -0.05
+       }
+      }
+     ],
+     "instant": true
+    }
+   ],
+   "onScreenText": "Two amber road lines converging; survey ring on the square; tally: TRADE ✓.",
+   "transition": "Hard cut on 'Every' back to the empty valley.",
+   "sfx": [
+    {
+     "sound": "market",
+     "from": {
+      "shot": "market"
+     },
+     "to": {
+      "shot": "overlap",
+      "offset": 0.2
+     },
+     "gain": -25
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L6",
+      "word": "trade",
+      "offset": -0.05
+     },
+     "gain": -19
+    },
+    {
+     "sound": "coin",
+     "at": {
+      "line": "L6",
+      "word": "below.",
+      "offset": -0.1
+     },
+     "gain": -24
+    }
+   ],
+   "music": "C major, 76 bpm with arpeggios: commerce."
+  },
+  {
+   "id": "overlap",
+   "scene": "nightSky",
+   "plateFrom": "empty",
+   "plateFrame": {
+    "from": {
+     "s": 1.08,
+     "y": -20
+    },
+    "to": {
+     "s": 1.0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.5,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "The payoff, shown not told: all four survey layers on one plate overlap on a single point, the hill, and it lights up.",
+   "visual": "Back on the empty valley: water band and soil hatch already there; a defense ring draws round the hill; both paths draw to the gravel bar below it; rings converge on the hilltop stake and a warm glow blooms.",
+   "camera": "Pull back (1.08 to 1.00) to the full valley, ending on the hook's framing.",
+   "layers": {
+    "foreground": "all four survey layers",
+    "midground": "hill, river, paths",
+    "background": "meadow and hills"
+   },
+   "lighting": "Plate darkens slightly so the glow reads.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "ghostLines",
+     "local": true,
+     "color": "#7fd3ec",
+     "width": 46,
+     "opacity": 0.38,
+     "shapes": [
+      {
+       "d": "M714,536 C600,545 471,557 471,557 C360,572 243,593 243,593 C170,610 114,643 114,643 C100,665 129,693 129,693 C190,720 257,736 257,736 C320,760 343,779 343,779 C340,805 314,829 314,829 C250,860 186,893 186,893 C120,925 100,957 100,957 C95,990 114,1014 114,1014 C160,1045 229,1057 229,1057 C320,1078 400,1086 400,1086 C500,1098 600,1100 600,1100 C700,1095 800,1079 800,1079 C900,1060 971,1029 971,1029 C1020,990 1043,943 1043,943 C1060,900 1064,871 1064,871 L1080,843"
+      }
+     ],
+     "instant": true
+    },
+    {
+     "type": "ghostLines",
+     "local": true,
+     "color": "#7fd3ec",
+     "width": 3,
+     "shapes": [
+      {
+       "d": "M714,536 C600,545 471,557 471,557 C360,572 243,593 243,593 C170,610 114,643 114,643 C100,665 129,693 129,693 C190,720 257,736 257,736 C320,760 343,779 343,779 C340,805 314,829 314,829 C250,860 186,893 186,893 C120,925 100,957 100,957 C95,990 114,1014 114,1014 C160,1045 229,1057 229,1057 C320,1078 400,1086 400,1086 C500,1098 600,1100 600,1100 C700,1095 800,1079 800,1079 C900,1060 971,1029 971,1029 C1020,990 1043,943 1043,943 C1060,900 1064,871 1064,871 L1080,843"
+      }
+     ],
+     "instant": true
+    },
+    {
+     "type": "ghostLines",
+     "local": true,
+     "color": "#f4c46e",
+     "dash": "10 8",
+     "width": 2.5,
+     "fill": 0.22,
+     "shapes": [
+      {
+       "d": "M229,614 L714,557 L1080,543 L1080,814 L857,786 L743,757 L640,700 L429,686 L300,650 Z"
+      },
+      {
+       "d": "M343,960 C360,1040 470,1068 600,1072 C760,1070 900,1030 960,960 C930,900 860,880 760,880 L700,905 L560,930 L430,930 Z"
+      },
+      {
+       "d": "M0,771 L157,757 L286,829 L157,900 L57,1000 L0,1029 Z"
+      }
+     ],
+     "instant": true
+    },
+    {
+     "type": "ghostLines",
+     "local": true,
+     "color": "#efe6d2",
+     "width": 3.5,
+     "fill": 0.04,
+     "start": {
+      "line": "L7",
+      "word": "every",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L7",
+      "word": "reason",
+      "offset": 0.2
+     },
+     "shapes": [
+      {
+       "d": "M548,580 A175,175 0 1,1 547.9,580 Z"
+      }
+     ]
+    },
+    {
+     "type": "ghostLines",
+     "local": true,
+     "dash": "16 10",
+     "width": 5,
+     "start": {
+      "line": "L7",
+      "word": "reason",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L7",
+      "word": "lands",
+      "offset": 0.2
+     },
+     "shapes": [
+      {
+       "d": "M57,1486 C110,1400 171,1314 171,1314 C250,1275 329,1243 329,1243 C380,1220 429,1200 429,1200 C470,1180 514,1157 514,1157"
+      },
+      {
+       "d": "M1080,1114 C960,1150 857,1186 857,1186 C770,1200 686,1214 686,1214 C620,1205 560,1190 560,1190 C535,1175 514,1157 514,1157"
+      }
+     ]
+    },
+    {
+     "type": "surveyPin",
+     "local": true,
+     "at": [
+      548,
+      755
+     ],
+     "start": {
+      "shot": "overlap",
+      "offset": -5
+     },
+     "glowAt": {
+      "line": "L7",
+      "word": "same",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "reasonTally",
+     "items": [
+      {
+       "icon": "water",
+       "label": "Water",
+       "at": {
+        "line": "L3",
+        "word": "water",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "soil",
+       "label": "Soil",
+       "at": {
+        "line": "L4",
+        "word": "soil",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "defence",
+       "label": "Defense",
+       "at": {
+        "line": "L5",
+        "word": "hill",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "trade",
+       "label": "Trade",
+       "at": {
+        "line": "L6",
+        "word": "trade",
+        "offset": -0.05
+       }
+      }
+     ],
+     "instant": true
+    }
+   ],
+   "onScreenText": "All four layers on the valley; converging rings and glow on the hilltop.",
+   "transition": "Dissolve (0.8 s) from the glowing empty hill to the city standing on it.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "overlap"
+     },
+     "to": {
+      "shot": "reveal",
+      "offset": 0.6
+     },
+     "gain": -28
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L7",
+      "word": "every",
+      "offset": -0.1
+     },
+     "gain": -26
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L7",
+      "word": "same",
+      "offset": -0.9
+     },
+     "gain": -21
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L7",
+      "word": "spot."
+     },
+     "gain": -23
+    }
+   ],
+   "music": "B-flat to A major: the dominant, holding its breath."
+  },
+  {
+   "id": "reveal",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.05,
+     "y": -20
+    }
+   },
+   "plateScrim": 0.72,
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.8
+   },
+   "purpose": "Reveal and lesson: the city now stands exactly where the reasons overlapped; the four icons sum to one instruction.",
+   "visual": "Dissolve to Ostral; the glow fades on the citadel. The tally bracket closes under the four icons and the line lands: GIVE EVERY CITY / a reason to exist.",
+   "camera": "Gentle push (1.00 to 1.05).",
+   "layers": {
+    "foreground": "tally and lesson type",
+    "midground": "city on the hill",
+    "background": "valley and sky"
+   },
+   "lighting": "Plate dimmed at the top under the type.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "surveyPin",
+     "local": true,
+     "at": [
+      522,
+      712
+     ],
+     "start": {
+      "shot": "reveal",
+      "offset": -8
+     },
+     "glowAt": {
+      "shot": "reveal",
+      "offset": -1.4
+     },
+     "fadeAt": {
+      "line": "L8",
+      "word": "give",
+      "offset": 0.2
+     },
+     "stake": false,
+     "color": "#f4c46e"
+    },
+    {
+     "type": "reasonTally",
+     "items": [
+      {
+       "icon": "water",
+       "label": "Water",
+       "at": {
+        "line": "L3",
+        "word": "water",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "soil",
+       "label": "Soil",
+       "at": {
+        "line": "L4",
+        "word": "soil",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "defence",
+       "label": "Defense",
+       "at": {
+        "line": "L5",
+        "word": "hill",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "trade",
+       "label": "Trade",
+       "at": {
+        "line": "L6",
+        "word": "trade",
+        "offset": -0.05
+       }
+      }
+     ],
+     "instant": true,
+     "sumAt": {
+      "line": "L8",
+      "word": "reason",
+      "offset": -0.1
+     },
+     "sumKicker": "Give every city",
+     "sum": "*a reason* to exist.",
+     "size": 92
+    }
+   ],
+   "onScreenText": "Tally bracket → 'GIVE EVERY CITY' + 'a reason to exist.'",
+   "transition": "Dissolve (0.6 s) to the city at dusk.",
+   "sfx": [
+    {
+     "sound": "shimmer",
+     "at": {
+      "shot": "reveal",
+      "offset": -0.5
+     },
+     "gain": -24
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L8",
+      "word": "exist,",
+      "offset": -0.05
+     },
+     "gain": -19
+    },
+    {
+     "sound": "paper",
+     "at": {
+      "line": "L8",
+      "word": "map",
+      "offset": -0.1
+     },
+     "gain": -27
+    }
+   ],
+   "music": "D major with bells: the answer."
+  },
+  {
+   "id": "cta",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "plateFrame": {
+    "from": {
+     "s": 1.03,
+     "y": -20
+    },
+    "to": {
+     "s": 1.08,
+     "y": -30
+    }
+   },
+   "plateScrim": 0.35,
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "captions": false,
+   "hideLogoBug": true,
+   "purpose": "Comment CTA over Ostral at dusk with its windows lighting up; ends on the hook's first frame for a loop.",
+   "visual": "The city at dusk, windows lit, the river glowing. Full logo, Episode 07 / 50, the CTA in large serif type, 'Comment below' pill.",
+   "camera": "Settles toward the hook's first framing (1.03 to 1.08, matching its start).",
+   "layers": {
+    "foreground": "logo and CTA type",
+    "midground": "city lights",
+    "background": "dusk sky"
+   },
+   "lighting": "Dusk grade with city lights in code; last 0.6 s cross-fades to the golden first frame.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "duskGrade",
+     "local": true,
+     "lights": [
+      100,
+      650,
+      1060,
+      1180
+     ],
+     "pool": [
+      600,
+      1300,
+      380,
+      70
+     ]
+    },
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L9",
+      "word": "comment"
+     },
+     "episode": "Episode 07 / 50",
+     "title": "Why are your cities built there?",
+     "kicker": "Your turn",
+     "lines": [
+      "Comment the most",
+      "*unusual place*",
+      "you'd build a city."
+     ],
+     "button": "Comment below"
+    }
+   ],
+   "onScreenText": "Full logo, 'EPISODE 07 / 50', title, 'YOUR TURN', 'Comment the most unusual place you'd build a city.', pill 'Comment below'.",
+   "transition": "Cross-fade into the hook's first frame for a seamless loop.",
+   "sfx": [
+    {
+     "sound": "swell",
+     "at": {
+      "shot": "cta",
+      "offset": -0.3
+     },
+     "gain": -25
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L9",
+      "word": "city.",
+      "offset": 0.2
+     },
+     "gain": -24
+    }
+   ],
+   "music": "G to D major, warm; fades fully before the last frame."
+  }
+ ],
+ "lesson": "A city exists because several reasons overlap on one spot (water, soil, defense, trade). Give every settlement on your map its reasons, and the map starts explaining its own history.",
+ "captionReplace": {},
+ "music": {
+  "key": "D minor, resolving to D major",
+  "drone": [
+   "D2",
+   "A2"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L7",
+     "word": "same"
+    },
+    "pre": 0.15,
+    "dur": 1.1,
+    "gain": 0.5
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L8",
+     "word": "reason"
+    },
+    "pre": 0.15,
+    "dur": 1.2,
+    "gain": 0.5
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F3",
+      "A3",
+      "E4"
+     ]
+    ],
+    "level": 0.5
+   },
+   "empty": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "F3",
+      "A3"
+     ]
+    ],
+    "level": 0.48,
+    "dark": true
+   },
+   "survey": {
+    "chords": [
+     [
+      "F2",
+      "C3",
+      "A3",
+      "C4"
+     ]
+    ],
+    "level": 0.58,
+    "pulse": 70
+   },
+   "citadel": {
+    "chords": [
+     [
+      "G1",
+      "D2",
+      "Bb2",
+      "D3",
+      "G3"
+     ]
+    ],
+    "level": 0.62,
+    "pulse": 70
+   },
+   "market": {
+    "chords": [
+     [
+      "C2",
+      "G2",
+      "E3",
+      "G3",
+      "C4"
+     ]
+    ],
+    "level": 0.66,
+    "pulse": 76,
+    "arp": true
+   },
+   "overlap": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "F3"
+     ],
+     [
+      "A1",
+      "E2",
+      "C#3",
+      "E3",
+      "A3"
+     ]
+    ],
+    "level": 0.7
+   },
+   "reveal": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F#3",
+      "A3",
+      "D4"
+     ]
+    ],
+    "level": 0.7,
+    "bells": true
+   },
+   "cta": {
+    "chords": [
+     [
+      "G1",
+      "D2",
+      "B2",
+      "D3",
+      "G3"
+     ],
+     [
+      "D2",
+      "A2",
+      "F#3",
+      "A3",
+      "D4"
+     ]
+    ],
+    "level": 0.6,
+    "bells": true
+   }
+  }
+ },
+ "metadata": {
+  "youtube": {
+   "title": "Why Are Your Cities Built There? (Worldbuilding)",
+   "titleAlternate": "No great city is built in the middle of nowhere",
+   "description": "Nobody builds a great city in the middle of nowhere without a reason.\n\nCities grow where several reasons overlap: fresh water, fertile soil, defensible ground, and the roads where trade already meets. Before you drop a capital on your map, ask what put it there.\n\nGive every settlement a reason to exist, and your map starts telling its own history.\n\nComment the most unusual place you'd build a city.\n\nEpisode 7 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.\n\n#Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts",
+   "pinnedComment": "Your turn: name the strangest place you'd put a city (a glacier, a sinkhole, a dragon's back) and give us the one reason people would still live there.",
+   "uploadSettings": "Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "Every great city sits where the reasons overlap: water, soil, defense, trade. So why is YOUR capital there? Comment the most unusual place you'd build a city 👇 #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts",
+   "pinnedComment": "Drop the weirdest city location you can think of. We'll find the reason it would survive.",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "Nobody builds a great city in the middle of nowhere without a reason.\n\nCities grow where several reasons overlap: fresh water, fertile soil, defensible ground, and the roads where trade already meets. Before you drop a capital on your map, ask what put it there.\n\nGive every settlement a reason to exist, and your map starts telling its own history.\n\nComment the most unusual place you'd build a city.\n\nEpisode 7 of 50.\n\n#Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts",
+   "pinnedComment": "What's the most unusual place you'd build a city, and what keeps people there?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "No great city is built by accident.\n\nNobody builds a great city in the middle of nowhere without a reason.\n\nCities grow where several reasons overlap: fresh water, fertile soil, defensible ground, and the roads where trade already meets. Before you drop a capital on your map, ask what put it there.\n\nGive every settlement a reason to exist, and your map starts telling its own history.\n\nComment the most unusual place you'd build a city.\n\nEpisode 7 of 50 · Worldcraft Shorts\n\n#Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts",
+   "hookCheck": "First 35 characters: 'No great city is built by accident.'",
+   "pinnedComment": "Where's the strangest city on your map, and what's its reason to exist?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  },
+  "cover": "Worldcraft_Short_E07_cover.jpg: Ostral in its river bend with 'NO GREAT CITY / by accident.' in Cormorant Garamond over the sky, corner logo.",
+  "followUpQuestion": "Pick your world's capital: which of the four reasons (water, soil, defense, trade) is it missing, and what does that cost its people?"
+ }
+}

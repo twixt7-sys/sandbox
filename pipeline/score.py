@@ -491,6 +491,20 @@ def sfx_hit(kind, dur=None):
             m = int(0.05 * SR)
             grains[i:i + m] += bp(noise(m), 700, 3500) * np.exp(-np.arange(m) / SR * 70) * RNG.uniform(0.1, 0.4)
         return stereo(body * e + grains * 0.7, 0.6)
+    if kind == "tally":
+        # A reason checked off: a dry wooden tick and a soft high bell a fifth above (EP07 tally icons).
+        n = int(1.6 * SR)
+        t = np.arange(n) / SR
+        tick = bp(noise(n), 900, 4000) * np.exp(-t * 90) * 0.8
+        ring = (np.sin(2 * np.pi * 1318.5 * t) + 0.5 * np.sin(2 * np.pi * 1975.5 * t)) * np.exp(-t * 3.2) * 0.35
+        return stereo(tick + ring * np.minimum(1, t / 0.004), 0.3)
+    if kind == "stake":
+        # A survey stake driven into turf: a soft low thump with a little earth crunch.
+        n = int(0.9 * SR)
+        t = np.arange(n) / SR
+        thump = np.sin(2 * np.pi * np.cumsum(90 * (1 + 0.6 * np.exp(-t * 30))) / SR) * np.exp(-t * 14)
+        crunch = bp(noise(n), 700, 3500) * np.exp(-t * 40) * 0.4
+        return stereo(thump + crunch, 0.2)
     raise KeyError(kind)
 
 

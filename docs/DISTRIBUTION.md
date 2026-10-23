@@ -404,3 +404,70 @@ Source of truth: `episodes/ep06/episode.json` → `metadata`. The AI label goes 
 
 - **Pinned comment:** Which barrier on your map does the most work: mountains, desert, sea or wall?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 07 captions (ready to paste)
+
+Source of truth: `episodes/ep07/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep07/Worldcraft_Short_E07_cover.jpg`. Subtitles: `episodes/ep07/ep07.srt`.
+
+### YouTube Shorts
+- **Title** (48/100 chars): `Why Are Your Cities Built There? (Worldbuilding)`
+- **Alternate title** (47 chars): `No great city is built in the middle of nowhere`
+- **Description:**
+
+> Nobody builds a great city in the middle of nowhere without a reason.
+>
+> Cities grow where several reasons overlap: fresh water, fertile soil, defensible ground, and the roads where trade already meets. Before you drop a capital on your map, ask what put it there.
+>
+> Give every settlement a reason to exist, and your map starts telling its own history.
+>
+> Comment the most unusual place you'd build a city.
+>
+> Episode 7 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts
+
+- **Pinned comment:** Your turn: name the strangest place you'd put a city (a glacier, a sinkhole, a dragon's back) and give us the one reason people would still live there.
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (233 chars): `Every great city sits where the reasons overlap: water, soil, defense, trade. So why is YOUR capital there? Comment the most unusual place you'd build a city 👇 #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts`
+- **Pinned comment:** Drop the weirdest city location you can think of. We'll find the reason it would survive.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> Nobody builds a great city in the middle of nowhere without a reason.
+>
+> Cities grow where several reasons overlap: fresh water, fertile soil, defensible ground, and the roads where trade already meets. Before you drop a capital on your map, ask what put it there.
+>
+> Give every settlement a reason to exist, and your map starts telling its own history.
+>
+> Comment the most unusual place you'd build a city.
+>
+> Episode 7 of 50.
+>
+> #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts
+
+- **Pinned comment:** What's the most unusual place you'd build a city, and what keeps people there?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> No great city is built by accident.
+>
+> Nobody builds a great city in the middle of nowhere without a reason.
+>
+> Cities grow where several reasons overlap: fresh water, fertile soil, defensible ground, and the roads where trade already meets. Before you drop a capital on your map, ask what put it there.
+>
+> Give every settlement a reason to exist, and your map starts telling its own history.
+>
+> Comment the most unusual place you'd build a city.
+>
+> Episode 7 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts
+
+- **Pinned comment:** Where's the strangest city on your map, and what's its reason to exist?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

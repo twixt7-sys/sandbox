@@ -246,12 +246,16 @@ export const DuskGrade: React.FC<GraphicProps> = ({g, t, span}) => {
 	const p = g.instant ? 1 : ease(t, span.start, 1.6);
 	const [px, py, prx, pry] = g.pool ?? [540, 1460, 170, 90];
 	const lit = ease(t, span.start + 0.5, 1.5);
+	// Window band: map the seeded lights into [x0,y0,x1,y1] (default band y 440–770, full width).
+	const [lx0, ly0, lx1, ly1] = g.lights ?? [0, 440, W, 770];
+	const lx = (x: number) => lx0 + (x / W) * (lx1 - lx0);
+	const ly = (y: number) => ly0 + ((y - 440) / 330) * (ly1 - ly0);
 	return (
 		<AbsoluteFill style={{opacity: p}}>
 			<AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(10,18,44,0.78) 0%, rgba(40,34,70,0.55) 16%, rgba(214,120,60,0.32) 24%, rgba(10,16,32,0.6) 32%, rgba(6,10,22,0.72) 100%)'}} />
 			<svg width={W} height={H} style={{position: 'absolute', inset: 0}}>
 				{LIGHTS.map((l, i) => (
-					<circle key={i} cx={l.x} cy={l.y} r={l.s} fill="#ffcf7a" opacity={lit * (0.55 + 0.45 * Math.sin(t * 1.3 + l.ph)) * (i / LIGHTS.length < lit ? 1 : 0)} style={{filter: 'drop-shadow(0 0 4px rgba(255,190,100,0.9))'}} />
+					<circle key={i} cx={lx(l.x)} cy={ly(l.y)} r={l.s} fill="#ffcf7a" opacity={lit * (0.55 + 0.45 * Math.sin(t * 1.3 + l.ph)) * (i / LIGHTS.length < lit ? 1 : 0)} style={{filter: 'drop-shadow(0 0 4px rgba(255,190,100,0.9))'}} />
 				))}
 			</svg>
 			<AbsoluteFill style={{background: `radial-gradient(ellipse ${prx}px ${pry}px at ${px}px ${py}px, rgba(160,226,246,0.6) 0%, rgba(90,180,220,0.25) 55%, rgba(60,140,200,0) 100%)`}} />

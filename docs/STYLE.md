@@ -10,6 +10,7 @@ Every episode, from 01 to 50, follows this guide so the series reads as one show
 1. **Hook, 0–4 s:** the strongest line over the most striking image. No intro, greeting or logo animation; the corner logo is already there.
 2. **Example:** one original fantasy scenario, shown as cause and effect over 2–4 shots, each with a tag naming what it demonstrates.
 3. **Lesson:** a clean diagram or stack on a dark background (`nightSky` scene or dimmed `plateBands`). Spell the principle out in on-screen words.
+   EP07 varied it again: the example was surveyed on the plate itself (the empty valley), a running `reasonTally` counted the reasons, and the overlap dissolved into the finished city.
    EP06 varied this: the lesson was the map's own key (`atlas` scene), lit row by row on the same map the example built. Maps are the default way to explain any geography mechanism in Arc 2.
 4. **CTA:** return to the opening image in a changed state (EP02: the sun returns; EP03: the same reservoir at dusk), show `ctaCard`, and cross-fade the last 0.6 s into the first frame so the video loops.
 
@@ -44,4 +45,5 @@ Every episode, from 01 to 50, follows this guide so the series reads as one show
 ## Delivery (every episode)
 - Run `python pipeline/qa.py out/epNN.mp4 --sheet out/epNN_sheet.jpg`, inspect the sheet plus extra frames at every graphic beat, and fix and re-render before delivering.
 - Hand the user both `epNN.mp4` (master) and `epNN_compat.mp4` (H.264 Main, CRF 20, `+faststart`) with `SendUserFile`, plus a private preview Artifact page. The video goes in the asset store (`capabilities: {assets: {}}`, upload with `asset: true`, then `src="/_blob/<id>"`), never as a plain page file.
+- Encode the player and download copies with the master's audio copied (`-c:a copy`). Re-encoding AAC at 128k pushed EP07's true peak to 0.0 dB and failed QA.
 - No public GitHub Release unless the user says yes for that episode (they said no for EP03).

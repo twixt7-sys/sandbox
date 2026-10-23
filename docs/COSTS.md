@@ -118,6 +118,19 @@ Rate update: the BSP reference rate was **₱63.35 = $1 on 22 Oct 2026** (used f
 
 On the paid primary stack: about **$1.15 (₱73)**, or **$2.12 (₱134)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
+## What Episode 08 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 4 stills (the cup beside gold coins, the courtyard house, the locked water stand, the caravan in the dunes) | Figma `generate_image` (`gemini-3.1-flash-lite-image`), 768×1376, lanczos-upscaled. 4 generations, no re-rolls (6 approved). The cup shot, lesson and CTA reuse the cup plate; the map is all code | $0 cash (Figma AI credits) |
+| Pull-back insets, desert map (dunes, wells, padlocks, key threads, control wash), spout lines, rings, dusk lights | Remotion code (new `pullBack` in `src/graphics/Scale.tsx`; new atlas kinds `dunes`, `well`, `lock`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 77 words, 30.7 s | $0 |
+| Score + SFX (new: drop, lock) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container (render ≈ 4.5 min) | $0 |
+| **Total** | | **$0 cash (₱0)** plus 4 Figma image generations |
+
+On the paid primary stack: about **$1.15 (₱73)**, or **$2.12 (₱134)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
 ## Alternatives
 
 | Option | Per-episode | Monthly | Comment |

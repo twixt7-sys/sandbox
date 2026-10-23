@@ -1,0 +1,2027 @@
+{
+ "id": "ep08",
+ "number": 8,
+ "title": "What If a Desert Had No Water?",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "A calm guide stepping back from one cup to the whole desert. Hushed and curious on the hook ('worth more than gold'), matter-of-fact on the price, then three quick, dry observations (houses, rations, roads), a low reveal on 'One family holds the keys', a beat of quiet menace on 'never needed an army', warm and practical on the lesson, conversational on the CTA. No trailer voice."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "How does a civilization survive where water is worth more than gold?",
+   "pauseAfter": 0.7,
+   "emphasis": [
+    "water",
+    "gold"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "cup",
+   "text": "In Sarrun, one cup is a day's wage.",
+   "pauseAfter": 0.55,
+   "emphasis": [
+    "Sarrun",
+    "cup",
+    "wage"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "house",
+   "text": "Houses turn inward, catching every drop of dew.",
+   "pauseAfter": 0.5,
+   "emphasis": [
+    "inward",
+    "dew"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "law",
+   "text": "Rations are measured. Spilling is a crime.",
+   "pauseAfter": 0.5,
+   "emphasis": [
+    "measured",
+    "crime"
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "caravan",
+   "text": "Roads bend from well to well, never straight.",
+   "pauseAfter": 0.55,
+   "emphasis": [
+    "well",
+    "straight"
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "map",
+   "text": "And every well is locked. One family holds the keys.",
+   "pauseAfter": 0.55,
+   "emphasis": [
+    "locked",
+    "family",
+    "keys"
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "map",
+   "text": "They never needed an army.",
+   "pauseAfter": 0.75,
+   "emphasis": [
+    "never",
+    "army"
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "lesson",
+   "text": "Make anything scarce, and whoever holds it rules the region.",
+   "pauseAfter": 0.7,
+   "emphasis": [
+    "scarce",
+    "rules"
+   ]
+  },
+  {
+   "id": "L9",
+   "shot": "cta",
+   "text": "Follow for more ways to turn geography into storytelling.",
+   "pauseAfter": 0,
+   "emphasis": [
+    "geography",
+    "storytelling"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.12,
+     "y": 40
+    },
+    "to": {
+     "s": 1.06,
+     "y": 20
+    }
+   },
+   "plateScrim": 0.6,
+   "purpose": "Stop the scroll on the whole episode in one object: a single cup of water on a desert ledge, with gold coins tossed beside it like small change.",
+   "visual": "Close-up: a clay cup filled to the brim on sun-baked sandstone, five gold coins scattered in the dust beside it, a mud-brick city out of focus behind. Title 'WATER, WORTH MORE / than gold.'",
+   "camera": "Slow pull back (1.12 to 1.06): the first step of the episode-long pull-back.",
+   "layers": {
+    "foreground": "cup and coins on the ledge",
+    "midground": "blurred flat roofs and streets",
+    "background": "pale dunes, white-hot sky"
+   },
+   "lighting": "Harsh late desert sun from the left, long cup shadow; top scrim for the title.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. Close-up of a single small unglazed clay cup filled to the brim with clear, glistening water, standing on a weathered sandstone ledge in the exact centre of the frame. Beside the cup, a small careless scatter of five old gold coins lies in the sand dust, catching the light, clearly worth less than the water. A few drops of condensation run down the cup. Behind, softly out of focus, a sun-bleached desert city of flat-roofed mud-brick houses and pale dunes under a hazy white-gold sky. Harsh late-afternoon desert sunlight from the left, long shadow of the cup across the ledge, heat shimmer. The upper third of the frame is calm hazy sky with nothing in it. Shallow depth of field. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used: no image-to-video available. Motion is a Remotion pull-back.) Heat shimmer over the cup, a drop sliding down its side, 4 seconds",
+   "graphics": [
+    {
+     "type": "titleLockup",
+     "kicker": "Water, worth more",
+     "text": "than gold.",
+     "y": 350,
+     "size": 150,
+     "start": {
+      "line": "L1",
+      "word": "how",
+      "offset": 0.1
+     },
+     "end": {
+      "line": "L1",
+      "word": "gold?",
+      "offset": 0.7
+     }
+    }
+   ],
+   "onScreenText": "Title 'WATER, WORTH MORE' (amber kicker) + 'than gold.' (ember serif italic).",
+   "transition": "Hard cut on 'In' (same plate, the pull-back continues).",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "house",
+      "offset": 0.3
+     },
+     "gain": -28
+    },
+    {
+     "sound": "drop",
+     "at": {
+      "line": "L1",
+      "word": "water",
+      "offset": -0.05
+     },
+     "gain": -20
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L1",
+      "word": "gold?",
+      "offset": -0.9
+     },
+     "gain": -23
+    },
+    {
+     "sound": "coin",
+     "at": {
+      "line": "L1",
+      "word": "gold?"
+     },
+     "gain": -22
+    }
+   ],
+   "music": "E minor add9, open and dry: a question in the heat."
+  },
+  {
+   "id": "cup",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "plateFrame": {
+    "from": {
+     "s": 1.06,
+     "y": 20
+    },
+    "to": {
+     "s": 1.0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.5,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Name the place and put a price on the cup: in Sarrun, one cup costs a day's work.",
+   "visual": "Same cup; an ember survey ring closes around it while the coins sit outside the ring. Tag: SARRUN / one cup, one day's wage.",
+   "camera": "Pull back continues (1.06 to 1.00).",
+   "layers": {
+    "foreground": "ring around the cup",
+    "midground": "coins",
+    "background": "the city"
+   },
+   "lighting": "Same as the hook.",
+   "graphics": [
+    {
+     "type": "evidenceRing",
+     "local": true,
+     "at": [
+      540,
+      1000
+     ],
+     "r": 205,
+     "color": "#f4c46e",
+     "start": {
+      "line": "L2",
+      "word": "cup",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "tag",
+     "kicker": "Sarrun",
+     "text": "one cup, one day's wage",
+     "start": {
+      "line": "L2",
+      "word": "sarrun,",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Tag 'SARRUN' + 'one cup, one day's wage'; ember ring around the cup.",
+   "transition": "Hard cut on 'Houses': the cup shrinks into the cistern of a courtyard house.",
+   "sfx": [
+    {
+     "sound": "drop",
+     "at": {
+      "line": "L2",
+      "word": "cup",
+      "offset": -0.05
+     },
+     "gain": -20
+    },
+    {
+     "sound": "coin",
+     "at": {
+      "line": "L2",
+      "word": "wage.",
+      "offset": -0.05
+     },
+     "gain": -25
+    }
+   ],
+   "music": "C major 7, sparse: the price of a cup."
+  },
+  {
+   "id": "house",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.05,
+     "y": -30
+    }
+   },
+   "plateScrim": 0.5,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Architecture: scarcity turns every house inward. Roofs slope to a cistern, walls have no outside windows, nets catch the dew.",
+   "visual": "Bird's-eye view of a windowless mud-brick courtyard house; the cup from the hook shrinks into its cistern. Water-blue dashed lines run from every roof spout to the cistern.",
+   "camera": "Slow push (1.00 to 1.05).",
+   "layers": {
+    "foreground": "roof edges and spouts",
+    "midground": "the courtyard and cistern",
+    "background": "neighbouring roofs, wind tower, open sand"
+   },
+   "lighting": "Low golden morning light, long shadows.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. A high bird's-eye view looking down into a desert courtyard house built to waste no water. Thick windowless outer walls of tan mud brick face the empty sand outside; everything turns inward to a small shaded square courtyard in the centre of the frame. In the middle of the courtyard, a round stone cistern mouth with a wooden lid. Flat roofs slope gently inward toward the courtyard with clay gutters and spouts all pointing to the cistern. A tall square wind tower rises at one corner. Fine pale nets are stretched on wooden frames on the roof to catch dew. A potted fig tree and a few herbs in the courtyard shade; one small figure in a pale robe, seen from above at a modest distance, lifting the cistern lid. Neighbouring flat-roofed houses of the same kind fill the edges of the frame. Early morning low golden light, long soft shadows, dust haze. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.) Dew nets stirring, a figure lifting the cistern lid, 3 seconds",
+   "graphics": [
+    {
+     "type": "ghostLines",
+     "local": true,
+     "color": "#7fd3ec",
+     "dash": "12 9",
+     "width": 5,
+     "shapes": [
+      {
+       "d": "M310,815 L492,1091"
+      },
+      {
+       "d": "M530,745 L530,1080"
+      },
+      {
+       "d": "M720,820 L565,1089"
+      },
+      {
+       "d": "M960,975 L595,1124"
+      },
+      {
+       "d": "M285,1090 L462,1133"
+      },
+      {
+       "d": "M915,1195 L600,1158"
+      },
+      {
+       "d": "M472,1082 L492,1091 L491,1070"
+      },
+      {
+       "d": "M519,1062 L530,1080 L541,1062"
+      },
+      {
+       "d": "M564,1068 L565,1089 L583,1079"
+      },
+      {
+       "d": "M607,1107 L595,1124 L616,1127"
+      },
+      {
+       "d": "M442,1140 L462,1133 L447,1118"
+      },
+      {
+       "d": "M619,1149 L600,1158 L616,1171"
+      }
+     ],
+     "start": {
+      "line": "L3",
+      "word": "inward,",
+      "offset": -0.2
+     },
+     "end": {
+      "line": "L3",
+      "word": "dew.",
+      "offset": 0.1
+     }
+    },
+    {
+     "type": "evidenceRing",
+     "local": true,
+     "at": [
+      530,
+      1150
+     ],
+     "r": 62,
+     "color": "#7fd3ec",
+     "start": {
+      "line": "L3",
+      "word": "drop",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "pullBack",
+     "src": "ep08/plates/hook.jpg",
+     "from": {
+      "s": 1.0,
+      "y": 0
+     },
+     "to": [
+      530,
+      1146,
+      92
+     ],
+     "dur": 0.75,
+     "hold": 0.35
+    },
+    {
+     "type": "tag",
+     "kicker": "Architecture",
+     "text": "turned inward",
+     "start": {
+      "line": "L3",
+      "word": "houses",
+      "offset": 0.3
+     }
+    }
+   ],
+   "onScreenText": "Tag 'ARCHITECTURE' + 'turned inward'; water-blue lines from every spout to the cistern.",
+   "transition": "Hard cut on 'Rations' down into the street.",
+   "sfx": [
+    {
+     "sound": "whoosh",
+     "at": {
+      "shot": "house",
+      "offset": -0.05
+     },
+     "gain": -27
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L3",
+      "word": "inward,",
+      "offset": -0.2
+     },
+     "gain": -26
+    },
+    {
+     "sound": "drop",
+     "at": {
+      "line": "L3",
+      "word": "dew.",
+      "offset": -0.05
+     },
+     "gain": -20
+    }
+   ],
+   "music": "A minor over a 66 bpm pulse: the system begins."
+  },
+  {
+   "id": "law",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.02,
+     "y": -10
+    },
+    "to": {
+     "s": 1.07,
+     "y": -40
+    }
+   },
+   "plateScrim": 0.5,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Law: water is rationed by measure at a locked public spout, and wasting it is a crime.",
+   "visual": "Narrow street; a guard pours one exact ration from a bronze ladle at a padlocked spout while a queue waits with jars. Ember ring on the ladle; rust kicker.",
+   "camera": "Slow push (1.02 to 1.07).",
+   "layers": {
+    "foreground": "stone basin and paving",
+    "midground": "guard, ladle, queue",
+    "background": "awnings and the bright end of the street"
+   },
+   "lighting": "Hard midday light, deep blue shadows.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. A public water stand in a narrow sun-baked desert street of a mud-brick city. In the centre of the frame, a heavy carved stone basin set into a wall, with a single bronze spout locked by an iron bar and a big padlock. A stern guard in a dark indigo robe and turban stands beside it holding a bronze measuring ladle over a clay jar, pouring one exact ration. A quiet line of townspeople in pale dusty robes waits with clay jars and waterskins along the wall, seen from behind or in profile at a modest distance, faces shaded. On the dry paving stones in the foreground a single small dark splash of spilled water. Harsh midday light, deep blue shadows, dust in the air, awnings of faded cloth overhead. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.) The ladle tipping a thin stream into the jar, the queue shuffling forward, 3 seconds",
+   "graphics": [
+    {
+     "type": "evidenceRing",
+     "local": true,
+     "at": [
+      440,
+      895
+     ],
+     "r": 92,
+     "color": "#f4c46e",
+     "start": {
+      "line": "L4",
+      "word": "measured.",
+      "offset": -0.25
+     }
+    },
+    {
+     "type": "tag",
+     "kicker": "Law",
+     "text": "every drop counted",
+     "start": {
+      "line": "L4",
+      "word": "rations",
+      "offset": 0.1
+     }
+    }
+   ],
+   "onScreenText": "Tag 'LAW' + 'every drop counted'; ember ring on the measuring ladle.",
+   "transition": "Hard cut on 'Roads' up to the dunes.",
+   "sfx": [
+    {
+     "sound": "market",
+     "from": {
+      "shot": "law"
+     },
+     "to": {
+      "shot": "caravan",
+      "offset": 0.2
+     },
+     "gain": -31
+    },
+    {
+     "sound": "ladle",
+     "at": {
+      "line": "L4",
+      "word": "measured.",
+      "offset": -0.2
+     },
+     "gain": -21
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L4",
+      "word": "crime."
+     },
+     "gain": -20
+    }
+   ],
+   "music": "F major 7 over the pulse: order."
+  },
+  {
+   "id": "caravan",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": -30
+    },
+    "to": {
+     "s": 1.08,
+     "y": -60
+    }
+   },
+   "plateScrim": 0.5,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Transport: routes are set by water, not distance. The caravan bends from well to well; the straight line would kill it.",
+   "visual": "Aerial dunes; an amber dashed route traces the caravan's bending path through the oasis wells, water rings mark the wells, and a rust dashed straight line is struck out.",
+   "camera": "Slow push (1.04 to 1.08), frame raised so the lower well stays above the platform buttons.",
+   "layers": {
+    "foreground": "the lower oasis",
+    "midground": "caravan curve, middle well",
+    "background": "far well, dune sea, haze"
+   },
+   "lighting": "Late golden light, long blue dune shadows.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. A high aerial view over an immense rolling sea of pale golden sand dunes at late afternoon. A long camel caravan of small figures winds through the dunes along a wandering, zig-zagging path that clearly bends from one tiny oasis well to the next: three small round stone well-heads, each with a little ring of palms, placed at different points down the frame, the first at the bottom, one in the middle left, one in the upper right. The caravan is between the bottom well and the middle one, following the curve. Nothing else but sand between the wells. Long blue shadows on the dune ridges, warm haze toward the horizon, open pale sky in the upper fifth of the frame. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.) The caravan plodding along the curve, sand blowing off the ridges, 3 seconds",
+   "graphics": [
+    {
+     "type": "ghostLines",
+     "local": true,
+     "dash": "16 10",
+     "width": 5,
+     "shapes": [
+      {
+       "d": "M560,1560 C560,1450 600,1360 700,1290 C800,1220 800,1120 700,1080 C600,1040 470,1050 380,990 C330,955 300,920 285,885"
+      },
+      {
+       "d": "M300,850 C380,810 470,790 560,765 C680,735 780,690 845,655"
+      }
+     ],
+     "start": {
+      "line": "L5",
+      "word": "roads",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L5",
+      "word": "well",
+      "offset": 0.25,
+      "nth": 2
+     }
+    },
+    {
+     "type": "evidenceRing",
+     "local": true,
+     "at": [
+      272,
+      872
+     ],
+     "r": 62,
+     "color": "#7fd3ec",
+     "start": {
+      "line": "L5",
+      "word": "well",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "evidenceRing",
+     "local": true,
+     "at": [
+      862,
+      640
+     ],
+     "r": 58,
+     "color": "#7fd3ec",
+     "start": {
+      "line": "L5",
+      "word": "well",
+      "offset": -0.1,
+      "nth": 2
+     }
+    },
+    {
+     "type": "ghostLines",
+     "local": true,
+     "color": "#b9543a",
+     "dash": "8 10",
+     "width": 4,
+     "opacity": 0.85,
+     "shapes": [
+      {
+       "d": "M560,1540 L845,680"
+      }
+     ],
+     "start": {
+      "line": "L5",
+      "word": "never",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L5",
+      "word": "straight.",
+      "offset": -0.05
+     }
+    },
+    {
+     "type": "ghostLines",
+     "local": true,
+     "color": "#b9543a",
+     "width": 6,
+     "shapes": [
+      {
+       "d": "M682,1086 L722,1126"
+      },
+      {
+       "d": "M722,1086 L682,1126"
+      }
+     ],
+     "start": {
+      "line": "L5",
+      "word": "straight."
+     },
+     "end": {
+      "line": "L5",
+      "word": "straight.",
+      "offset": 0.25
+     }
+    },
+    {
+     "type": "tag",
+     "kicker": "Roads",
+     "text": "well to well",
+     "start": {
+      "line": "L5",
+      "word": "roads",
+      "offset": 0.2
+     }
+    }
+   ],
+   "onScreenText": "Tag 'ROADS' + 'well to well'; amber route through water-ringed wells; rust straight line struck out.",
+   "transition": "Hard cut on 'And': the dune photo shrinks onto its route on the region map.",
+   "sfx": [
+    {
+     "sound": "caravan",
+     "from": {
+      "shot": "caravan"
+     },
+     "to": {
+      "shot": "map",
+      "offset": 0.6
+     },
+     "gain": -27
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L5",
+      "word": "roads",
+      "offset": -0.1
+     },
+     "gain": -26
+    },
+    {
+     "sound": "drop",
+     "at": {
+      "line": "L5",
+      "word": "well",
+      "offset": -0.05
+     },
+     "gain": -22
+    },
+    {
+     "sound": "drop",
+     "at": {
+      "line": "L5",
+      "word": "well",
+      "offset": -0.05,
+      "nth": 2
+     },
+     "gain": -22
+    },
+    {
+     "sound": "whoosh",
+     "at": {
+      "line": "L5",
+      "word": "straight.",
+      "offset": -0.2
+     },
+     "gain": -28
+    }
+   ],
+   "music": "D minor 9, pulse 72 bpm: the long road."
+  },
+  {
+   "id": "map",
+   "scene": "atlas",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Power, the full pull-back: the region as a system of wells, every one locked and tethered to one family in Sarrun. Its control spreads over the whole map without a single army.",
+   "visual": "The caravan photo shrinks onto its route on a desert map. Dunes, eight wells linked by caravan routes, Sarrun in the middle; padlocks snap onto every well; ember threads run from each well to the city; then Sarrun's amber wash floods the region.",
+   "camera": "Map zoom eases out (1.08 to 1.00).",
+   "layers": {
+    "foreground": "locks and threads",
+    "midground": "wells, routes, Sarrun",
+    "background": "dune hatching on paper"
+   },
+   "lighting": "Series map look: parchment ink on dark paper.",
+   "atlas": {
+    "zoom": {
+     "from": 1.08,
+     "to": 1.0,
+     "origin": "50% 40%"
+    },
+    "show": [
+     {
+      "id": "dunes",
+      "at": {
+       "shot": "map",
+       "offset": -0.1
+      },
+      "dur": 1.2
+     },
+     {
+      "id": "rA",
+      "at": {
+       "shot": "map",
+       "offset": 0.15
+      },
+      "dur": 0.9
+     },
+     {
+      "id": "rB",
+      "at": {
+       "shot": "map",
+       "offset": 0.35
+      },
+      "dur": 0.9
+     },
+     {
+      "id": "rC",
+      "at": {
+       "shot": "map",
+       "offset": 0.55
+      },
+      "dur": 0.9
+     },
+     {
+      "id": "rD",
+      "at": {
+       "shot": "map",
+       "offset": 0.75
+      },
+      "dur": 0.9
+     },
+     {
+      "id": "w5",
+      "at": {
+       "shot": "map",
+       "offset": 0.1
+      },
+      "dur": 0.5,
+      "pulse": {
+       "line": "L7",
+       "word": "never",
+       "offset": 0.1
+      }
+     },
+     {
+      "id": "w1",
+      "at": {
+       "shot": "map",
+       "offset": 0.2
+      },
+      "dur": 0.5,
+      "pulse": {
+       "line": "L7",
+       "word": "never",
+       "offset": 0.1
+      }
+     },
+     {
+      "id": "w2",
+      "at": {
+       "shot": "map",
+       "offset": 0.30000000000000004
+      },
+      "dur": 0.5,
+      "pulse": {
+       "line": "L7",
+       "word": "never",
+       "offset": 0.1
+      }
+     },
+     {
+      "id": "w3",
+      "at": {
+       "shot": "map",
+       "offset": 0.4
+      },
+      "dur": 0.5,
+      "pulse": {
+       "line": "L7",
+       "word": "never",
+       "offset": 0.1
+      }
+     },
+     {
+      "id": "w4",
+      "at": {
+       "shot": "map",
+       "offset": 0.5
+      },
+      "dur": 0.5,
+      "pulse": {
+       "line": "L7",
+       "word": "never",
+       "offset": 0.1
+      }
+     },
+     {
+      "id": "w8",
+      "at": {
+       "shot": "map",
+       "offset": 0.6
+      },
+      "dur": 0.5,
+      "pulse": {
+       "line": "L7",
+       "word": "never",
+       "offset": 0.1
+      }
+     },
+     {
+      "id": "w7",
+      "at": {
+       "shot": "map",
+       "offset": 0.7000000000000001
+      },
+      "dur": 0.5,
+      "pulse": {
+       "line": "L7",
+       "word": "never",
+       "offset": 0.1
+      }
+     },
+     {
+      "id": "w6",
+      "at": {
+       "shot": "map",
+       "offset": 0.8
+      },
+      "dur": 0.5,
+      "pulse": {
+       "line": "L7",
+       "word": "never",
+       "offset": 0.1
+      }
+     },
+     {
+      "id": "control",
+      "at": {
+       "line": "L7",
+       "word": "never",
+       "offset": -0.1
+      },
+      "dur": 1.6
+     },
+     {
+      "id": "sarrun",
+      "at": {
+       "shot": "map",
+       "offset": 0.5
+      },
+      "dur": 0.5,
+      "pulse": {
+       "line": "L6",
+       "word": "family",
+       "offset": -0.05
+      }
+     },
+     {
+      "id": "lblSarrun",
+      "at": {
+       "shot": "map",
+       "offset": 0.7
+      },
+      "dur": 0.5
+     },
+     {
+      "id": "lockw5",
+      "at": {
+       "line": "L6",
+       "word": "locked.",
+       "offset": -0.25
+      },
+      "dur": 0.35
+     },
+     {
+      "id": "lockw1",
+      "at": {
+       "line": "L6",
+       "word": "locked.",
+       "offset": -0.18
+      },
+      "dur": 0.35
+     },
+     {
+      "id": "lockw2",
+      "at": {
+       "line": "L6",
+       "word": "locked.",
+       "offset": -0.10999999999999999
+      },
+      "dur": 0.35
+     },
+     {
+      "id": "lockw3",
+      "at": {
+       "line": "L6",
+       "word": "locked.",
+       "offset": -0.03999999999999998
+      },
+      "dur": 0.35
+     },
+     {
+      "id": "lockw4",
+      "at": {
+       "line": "L6",
+       "word": "locked.",
+       "offset": 0.030000000000000027
+      },
+      "dur": 0.35
+     },
+     {
+      "id": "lockw8",
+      "at": {
+       "line": "L6",
+       "word": "locked.",
+       "offset": 0.10000000000000003
+      },
+      "dur": 0.35
+     },
+     {
+      "id": "lockw7",
+      "at": {
+       "line": "L6",
+       "word": "locked.",
+       "offset": 0.17000000000000004
+      },
+      "dur": 0.35
+     },
+     {
+      "id": "lockw6",
+      "at": {
+       "line": "L6",
+       "word": "locked.",
+       "offset": 0.24000000000000005
+      },
+      "dur": 0.35
+     },
+     {
+      "id": "keyw5",
+      "at": {
+       "line": "L6",
+       "word": "holds",
+       "offset": -0.1
+      },
+      "dur": 0.7
+     },
+     {
+      "id": "keyw1",
+      "at": {
+       "line": "L6",
+       "word": "holds",
+       "offset": -0.060000000000000005
+      },
+      "dur": 0.7
+     },
+     {
+      "id": "keyw2",
+      "at": {
+       "line": "L6",
+       "word": "holds",
+       "offset": -0.020000000000000004
+      },
+      "dur": 0.7
+     },
+     {
+      "id": "keyw3",
+      "at": {
+       "line": "L6",
+       "word": "holds",
+       "offset": 0.01999999999999999
+      },
+      "dur": 0.7
+     },
+     {
+      "id": "keyw4",
+      "at": {
+       "line": "L6",
+       "word": "holds",
+       "offset": 0.06
+      },
+      "dur": 0.7
+     },
+     {
+      "id": "keyw8",
+      "at": {
+       "line": "L6",
+       "word": "holds",
+       "offset": 0.1
+      },
+      "dur": 0.7
+     },
+     {
+      "id": "keyw7",
+      "at": {
+       "line": "L6",
+       "word": "holds",
+       "offset": 0.13999999999999999
+      },
+      "dur": 0.7
+     },
+     {
+      "id": "keyw6",
+      "at": {
+       "line": "L6",
+       "word": "holds",
+       "offset": 0.18000000000000002
+      },
+      "dur": 0.7
+     }
+    ]
+   },
+   "graphics": [
+    {
+     "type": "pullBack",
+     "src": "ep08/plates/caravan.jpg",
+     "from": {
+      "s": 1.08,
+      "y": -60
+     },
+     "to": [
+      212,
+      860,
+      120
+     ],
+     "dur": 0.8,
+     "hold": 0.4
+    }
+   ],
+   "onScreenText": "Map label 'Sarrun'; padlocks on all eight wells; threads to the city; amber control wash.",
+   "transition": "Dissolve (0.6 s) back to the cup.",
+   "sfx": [
+    {
+     "sound": "whoosh",
+     "at": {
+      "shot": "map",
+      "offset": -0.05
+     },
+     "gain": -26
+    },
+    {
+     "sound": "lock",
+     "at": {
+      "line": "L6",
+      "word": "locked.",
+      "offset": -0.25
+     },
+     "gain": -19
+    },
+    {
+     "sound": "lock",
+     "at": {
+      "line": "L6",
+      "word": "locked.",
+      "offset": -0.04
+     },
+     "gain": -21
+    },
+    {
+     "sound": "lock",
+     "at": {
+      "line": "L6",
+      "word": "locked.",
+      "offset": 0.17
+     },
+     "gain": -22
+    },
+    {
+     "sound": "lock",
+     "at": {
+      "line": "L6",
+      "word": "locked.",
+      "offset": 0.31
+     },
+     "gain": -23
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L6",
+      "word": "keys."
+     },
+     "gain": -19
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L7",
+      "word": "army.",
+      "offset": -1.0
+     },
+     "gain": -21
+    },
+    {
+     "sound": "tonalDrop",
+     "at": {
+      "line": "L7",
+      "word": "army."
+     },
+     "gain": -22
+    }
+   ],
+   "music": "C to B major (the dominant): control tightening, holding its breath."
+  },
+  {
+   "id": "lesson",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.05,
+     "y": 10
+    }
+   },
+   "plateScrim": 0.75,
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "purpose": "The lesson, back where it started: the whole system was inside one cup. Make anything scarce and power gathers around whoever holds it.",
+   "visual": "Dissolve back to the cup; the water glows ember. Lesson lockup: MAKE ANYTHING SCARCE / whoever holds it, rules.",
+   "camera": "Gentle push (1.00 to 1.05).",
+   "layers": {
+    "foreground": "lesson type",
+    "midground": "the glowing cup",
+    "background": "the city"
+   },
+   "lighting": "Plate dimmed under the type.",
+   "graphics": [
+    {
+     "type": "surveyPin",
+     "local": true,
+     "at": [
+      540,
+      880
+     ],
+     "stake": false,
+     "color": "#f4c46e",
+     "start": {
+      "shot": "lesson",
+      "offset": -8
+     },
+     "glowAt": {
+      "shot": "lesson",
+      "offset": -0.3
+     },
+     "fadeAt": {
+      "line": "L9",
+      "word": "follow",
+      "offset": -0.6
+     }
+    },
+    {
+     "type": "titleLockup",
+     "kicker": "Make anything scarce",
+     "text": "whoever holds it, rules.",
+     "y": 360,
+     "size": 104,
+     "start": {
+      "line": "L8",
+      "word": "make",
+      "offset": -0.05
+     },
+     "end": {
+      "shot": "cta",
+      "offset": 0.2
+     }
+    }
+   ],
+   "onScreenText": "'MAKE ANYTHING SCARCE' (amber kicker) + 'whoever holds it, rules.' (ember serif italic).",
+   "transition": "Dissolve (0.6 s) to the same cup at dusk.",
+   "sfx": [
+    {
+     "sound": "shimmer",
+     "at": {
+      "shot": "lesson",
+      "offset": -0.5
+     },
+     "gain": -24
+    },
+    {
+     "sound": "drop",
+     "at": {
+      "line": "L8",
+      "word": "scarce,",
+      "offset": -0.05
+     },
+     "gain": -21
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L8",
+      "word": "region.",
+      "offset": -0.1
+     },
+     "gain": -24
+    }
+   ],
+   "music": "E major with bells: the answer."
+  },
+  {
+   "id": "cta",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "plateFrame": {
+    "from": {
+     "s": 1.05,
+     "y": 10
+    },
+    "to": {
+     "s": 1.12,
+     "y": 40
+    }
+   },
+   "plateScrim": 0.35,
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "captions": false,
+   "hideLogoBug": true,
+   "purpose": "Follow CTA over the same cup at dusk, the city lighting up behind it; ends on the hook's first frame for a loop.",
+   "visual": "The cup at dusk, its water catching the last light, windows lit in the city behind. Full logo, Episode 08 / 50, the CTA in large serif type, 'Follow' pill.",
+   "camera": "Settles back toward the hook's first framing (1.05 to 1.12).",
+   "layers": {
+    "foreground": "logo and CTA type",
+    "midground": "the cup",
+    "background": "city lights"
+   },
+   "lighting": "Dusk grade with city lights in code; last 0.6 s cross-fades to the sunlit first frame.",
+   "graphics": [
+    {
+     "type": "duskGrade",
+     "local": true,
+     "lights": [
+      0,
+      470,
+      1080,
+      800
+     ],
+     "pool": [
+      540,
+      868,
+      150,
+      26
+     ]
+    },
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L9",
+      "word": "follow"
+     },
+     "episode": "Episode 08 / 50",
+     "title": "What if a desert had no water?",
+     "kicker": "Keep building",
+     "icon": "follow",
+     "lines": [
+      "Follow for more ways",
+      "*to turn geography*",
+      "into storytelling."
+     ],
+     "button": "Follow"
+    }
+   ],
+   "onScreenText": "Full logo, 'EPISODE 08 / 50', title, 'KEEP BUILDING', 'Follow for more ways to turn geography into storytelling.', pill 'Follow'.",
+   "transition": "Cross-fade into the hook's first frame for a seamless loop.",
+   "captionsNote": "off (text is on screen verbatim)",
+   "sfx": [
+    {
+     "sound": "swell",
+     "at": {
+      "shot": "cta",
+      "offset": -0.3
+     },
+     "gain": -25
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L9",
+      "word": "storytelling.",
+      "offset": 0.2
+     },
+     "gain": -24
+    }
+   ],
+   "music": "A to E major, warm; fades fully before the last frame."
+  }
+ ],
+ "atlas": {
+  "features": [
+   {
+    "id": "dunes",
+    "kind": "dunes",
+    "box": [
+     90,
+     360,
+     990,
+     1170
+    ],
+    "count": 110,
+    "seed": 8,
+    "avoid": [
+     [
+      540,
+      770,
+      95
+     ],
+     [
+      250,
+      470,
+      48
+     ],
+     [
+      470,
+      420,
+      48
+     ],
+     [
+      820,
+      445,
+      48
+     ],
+     [
+      905,
+      700,
+      48
+     ],
+     [
+      200,
+      765,
+      48
+     ],
+     [
+      300,
+      1045,
+      48
+     ],
+     [
+      600,
+      1085,
+      48
+     ],
+     [
+      870,
+      1005,
+      48
+     ]
+    ]
+   },
+   {
+    "id": "rA",
+    "kind": "route",
+    "pts": [
+     [
+      300,
+      1045
+     ],
+     [
+      235,
+      925
+     ],
+     [
+      200,
+      765
+     ],
+     [
+      232,
+      600
+     ],
+     [
+      250,
+      470
+     ]
+    ],
+    "dash": "10 9",
+    "width": 3.5,
+    "flow": true
+   },
+   {
+    "id": "rB",
+    "kind": "route",
+    "pts": [
+     [
+      250,
+      470
+     ],
+     [
+      355,
+      405
+     ],
+     [
+      470,
+      420
+     ],
+     [
+      650,
+      480
+     ],
+     [
+      820,
+      445
+     ]
+    ],
+    "dash": "10 9",
+    "width": 3.5,
+    "flow": true
+   },
+   {
+    "id": "rC",
+    "kind": "route",
+    "pts": [
+     [
+      820,
+      445
+     ],
+     [
+      890,
+      565
+     ],
+     [
+      905,
+      700
+     ],
+     [
+      935,
+      860
+     ],
+     [
+      870,
+      1005
+     ]
+    ],
+    "dash": "10 9",
+    "width": 3.5,
+    "flow": true
+   },
+   {
+    "id": "rD",
+    "kind": "route",
+    "pts": [
+     [
+      870,
+      1005
+     ],
+     [
+      745,
+      1070
+     ],
+     [
+      600,
+      1085
+     ],
+     [
+      450,
+      1100
+     ],
+     [
+      300,
+      1045
+     ]
+    ],
+    "dash": "10 9",
+    "width": 3.5,
+    "flow": true
+   },
+   {
+    "id": "sarrun",
+    "kind": "town",
+    "at": [
+     540,
+     770
+    ],
+    "size": 1.2,
+    "capital": true
+   },
+   {
+    "id": "lblSarrun",
+    "kind": "label",
+    "at": [
+     540,
+     875
+    ],
+    "text": "Sarrun",
+    "serif": true,
+    "size": 60,
+    "color": "#f4c46e"
+   },
+   {
+    "id": "control",
+    "kind": "wash",
+    "at": [
+     540,
+     770
+    ],
+    "r": 640,
+    "color": "#e9a94b"
+   },
+   {
+    "id": "w1",
+    "kind": "well",
+    "at": [
+     250,
+     470
+    ]
+   },
+   {
+    "id": "lockw1",
+    "kind": "lock",
+    "at": [
+     276,
+     440
+    ],
+    "size": 1.0
+   },
+   {
+    "id": "keyw1",
+    "kind": "route",
+    "pts": [
+     [
+      271,
+      492
+     ],
+     [
+      491,
+      720
+     ]
+    ],
+    "color": "#f4c46e",
+    "dash": "3 9",
+    "width": 3
+   },
+   {
+    "id": "w2",
+    "kind": "well",
+    "at": [
+     470,
+     420
+    ]
+   },
+   {
+    "id": "lockw2",
+    "kind": "lock",
+    "at": [
+     496,
+     390
+    ],
+    "size": 1.0
+   },
+   {
+    "id": "keyw2",
+    "kind": "route",
+    "pts": [
+     [
+      476,
+      449
+     ],
+     [
+      526,
+      701
+     ]
+    ],
+    "color": "#f4c46e",
+    "dash": "3 9",
+    "width": 3
+   },
+   {
+    "id": "w3",
+    "kind": "well",
+    "at": [
+     820,
+     445
+    ]
+   },
+   {
+    "id": "lockw3",
+    "kind": "lock",
+    "at": [
+     846,
+     415
+    ],
+    "size": 1.0
+   },
+   {
+    "id": "keyw3",
+    "kind": "route",
+    "pts": [
+     [
+      800,
+      468
+     ],
+     [
+      586,
+      717
+     ]
+    ],
+    "color": "#f4c46e",
+    "dash": "3 9",
+    "width": 3
+   },
+   {
+    "id": "w4",
+    "kind": "well",
+    "at": [
+     905,
+     700
+    ]
+   },
+   {
+    "id": "lockw4",
+    "kind": "lock",
+    "at": [
+     931,
+     670
+    ],
+    "size": 1.0
+   },
+   {
+    "id": "keyw4",
+    "kind": "route",
+    "pts": [
+     [
+      876,
+      706
+     ],
+     [
+      609,
+      757
+     ]
+    ],
+    "color": "#f4c46e",
+    "dash": "3 9",
+    "width": 3
+   },
+   {
+    "id": "w5",
+    "kind": "well",
+    "at": [
+     200,
+     765
+    ]
+   },
+   {
+    "id": "lockw5",
+    "kind": "lock",
+    "at": [
+     226,
+     735
+    ],
+    "size": 1.0
+   },
+   {
+    "id": "keyw5",
+    "kind": "route",
+    "pts": [
+     [
+      230,
+      765
+     ],
+     [
+      470,
+      769
+     ]
+    ],
+    "color": "#f4c46e",
+    "dash": "3 9",
+    "width": 3
+   },
+   {
+    "id": "w6",
+    "kind": "well",
+    "at": [
+     300,
+     1045
+    ]
+   },
+   {
+    "id": "lockw6",
+    "kind": "lock",
+    "at": [
+     326,
+     1015
+    ],
+    "size": 1.0
+   },
+   {
+    "id": "keyw6",
+    "kind": "route",
+    "pts": [
+     [
+      320,
+      1022
+     ],
+     [
+      494,
+      823
+     ]
+    ],
+    "color": "#f4c46e",
+    "dash": "3 9",
+    "width": 3
+   },
+   {
+    "id": "w7",
+    "kind": "well",
+    "at": [
+     600,
+     1085
+    ]
+   },
+   {
+    "id": "lockw7",
+    "kind": "lock",
+    "at": [
+     626,
+     1055
+    ],
+    "size": 1.0
+   },
+   {
+    "id": "keyw7",
+    "kind": "route",
+    "pts": [
+     [
+      594,
+      1056
+     ],
+     [
+      553,
+      839
+     ]
+    ],
+    "color": "#f4c46e",
+    "dash": "3 9",
+    "width": 3
+   },
+   {
+    "id": "w8",
+    "kind": "well",
+    "at": [
+     870,
+     1005
+    ]
+   },
+   {
+    "id": "lockw8",
+    "kind": "lock",
+    "at": [
+     896,
+     975
+    ],
+    "size": 1.0
+   },
+   {
+    "id": "keyw8",
+    "kind": "route",
+    "pts": [
+     [
+      846,
+      988
+     ],
+     [
+      597,
+      811
+     ]
+    ],
+    "color": "#f4c46e",
+    "dash": "3 9",
+    "width": 3
+   }
+  ]
+ },
+ "lesson": "Scarcity reorganizes a whole society (houses, laws, roads) around one resource, and power gathers around whoever controls it. Make something scarce in your world, then decide who holds it.",
+ "captionReplace": {},
+ "music": {
+  "key": "E minor, resolving to E major",
+  "drone": [
+   "E2",
+   "B2"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L6",
+     "word": "one"
+    },
+    "pre": 0.15,
+    "dur": 1.4,
+    "gain": 0.55
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L7",
+     "word": "never"
+    },
+    "pre": 0.15,
+    "dur": 1.2,
+    "gain": 0.5
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L8",
+     "word": "whoever"
+    },
+    "pre": 0.15,
+    "dur": 1.2,
+    "gain": 0.55
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "E2",
+      "B2",
+      "G3",
+      "B3",
+      "F#4"
+     ]
+    ],
+    "level": 0.5
+   },
+   "cup": {
+    "chords": [
+     [
+      "C2",
+      "G2",
+      "E3",
+      "G3",
+      "B3"
+     ]
+    ],
+    "level": 0.48,
+    "dark": true
+   },
+   "house": {
+    "chords": [
+     [
+      "A1",
+      "E2",
+      "C3",
+      "E3",
+      "A3"
+     ]
+    ],
+    "level": 0.58,
+    "pulse": 66
+   },
+   "law": {
+    "chords": [
+     [
+      "F2",
+      "C3",
+      "A3",
+      "E4"
+     ]
+    ],
+    "level": 0.62,
+    "pulse": 66
+   },
+   "caravan": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F3",
+      "A3",
+      "E4"
+     ]
+    ],
+    "level": 0.64,
+    "pulse": 72,
+    "arp": true
+   },
+   "map": {
+    "chords": [
+     [
+      "C2",
+      "G2",
+      "E3",
+      "G3"
+     ],
+     [
+      "B1",
+      "F#2",
+      "D#3",
+      "F#3",
+      "B3"
+     ]
+    ],
+    "level": 0.7
+   },
+   "lesson": {
+    "chords": [
+     [
+      "E2",
+      "B2",
+      "G#3",
+      "B3",
+      "E4"
+     ]
+    ],
+    "level": 0.7,
+    "bells": true
+   },
+   "cta": {
+    "chords": [
+     [
+      "A1",
+      "E2",
+      "C#3",
+      "E3",
+      "A3"
+     ],
+     [
+      "E2",
+      "B2",
+      "G#3",
+      "B3",
+      "E4"
+     ]
+    ],
+    "level": 0.6,
+    "bells": true
+   }
+  }
+ },
+ "metadata": {
+  "youtube": {
+   "title": "What If Water Were Worth More Than Gold? (Worldbuilding)",
+   "titleAlternate": "Whoever holds the water rules the desert",
+   "description": "How does a civilization survive where water is worth more than gold?\n\nMake one thing scarce and watch it rewrite everything: houses turn inward to save every drop, rations become law, roads bend from well to well instead of running straight. Then ask the real question: who holds the wells?\n\nWhoever controls the scarce thing controls the region, no army needed.\n\nFollow for more ways to turn geography into storytelling.\n\nEpisode 8 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.\n\n#Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts",
+   "pinnedComment": "Your turn: what's scarce in your world (water, salt, iron, magic, daylight), and who controls it? Tell us the one rule people have to live by because of it.",
+   "uploadSettings": "Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "In a desert, water is power: houses turn inward, rations become law, roads bend well to well. And whoever holds the wells rules. What's scarce in YOUR world? Follow for more 👇 #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts",
+   "pinnedComment": "Name one scarce thing in your world and we'll tell you who'd end up ruling because of it.",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "How does a civilization survive where water is worth more than gold?\n\nMake one thing scarce and watch it rewrite everything: houses turn inward to save every drop, rations become law, roads bend from well to well instead of running straight. Then ask the real question: who holds the wells?\n\nWhoever controls the scarce thing controls the region, no army needed.\n\nFollow for more ways to turn geography into storytelling.\n\nEpisode 8 of 50.\n\n#Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts",
+   "pinnedComment": "What's the scarcest thing in your world, and who holds it?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "Water, worth more than gold.\n\nHow does a civilization survive where water is worth more than gold?\n\nMake one thing scarce and watch it rewrite everything: houses turn inward to save every drop, rations become law, roads bend from well to well instead of running straight. Then ask the real question: who holds the wells?\n\nWhoever controls the scarce thing controls the region, no army needed.\n\nFollow for more ways to turn geography into storytelling.\n\nEpisode 8 of 50 · Worldcraft Shorts\n\n#Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts",
+   "hookCheck": "First 28 characters: 'Water, worth more than gold.'",
+   "pinnedComment": "What's scarce on your map, and which family, guild or god holds the keys?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  },
+  "cover": "Worldcraft_Short_E08_cover.jpg: the clay cup beside scattered gold coins with 'WATER, WORTH MORE / than gold.' in Cormorant Garamond over the sky, corner logo.",
+  "followUpQuestion": "Pick one resource your world runs short of: which house, law and road does that scarcity create, and who holds the keys?"
+ }
+}

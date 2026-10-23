@@ -7,6 +7,7 @@ import type {Graphic, Shot, TimedShot} from '../types';
 import {CELESTIAL} from './Celestial';
 import {CRISIS} from './Crisis';
 import {RUINS} from './Ruins';
+import {SCALE} from './Scale';
 import {SURVEY} from './Survey';
 import {TERRAIN} from './Terrain';
 import {WEATHER} from './Weather';
@@ -284,4 +285,5 @@ export const GRAPHICS: Record<string, React.FC<GraphicProps>> = {
 	...WEATHER,
 	...TERRAIN,
 	...SURVEY,
+	...SCALE,
 };

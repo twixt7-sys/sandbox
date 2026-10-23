@@ -11,6 +11,7 @@ Every episode, from 01 to 50, follows this guide so the series reads as one show
 2. **Example:** one original fantasy scenario, shown as cause and effect over 2–4 shots, each with a tag naming what it demonstrates.
 3. **Lesson:** a clean diagram or stack on a dark background (`nightSky` scene or dimmed `plateBands`). Spell the principle out in on-screen words.
    EP07 varied it again: the example was surveyed on the plate itself (the empty valley), a running `reasonTally` counted the reasons, and the overlap dissolved into the finished city.
+   EP08 varied it again as a pull-back: one object (a cup of water) first, then each shot steps out a scale (house → street → road → region map), with `pullBack` shrinking the previous picture into its place in the next one. The lesson returned to the opening object.
    EP06 varied this: the lesson was the map's own key (`atlas` scene), lit row by row on the same map the example built. Maps are the default way to explain any geography mechanism in Arc 2.
 4. **CTA:** return to the opening image in a changed state (EP02: the sun returns; EP03: the same reservoir at dusk), show `ctaCard`, and cross-fade the last 0.6 s into the first frame so the video loops.
 

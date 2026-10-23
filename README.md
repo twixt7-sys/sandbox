@@ -100,6 +100,9 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | graphic | `surveyPin` | Survey stake dropped on a plate point (`local`): `ask` "?" badge, `glowAt` converging rings + glow, `fadeAt`, `stake: false` for glow only |
 | graphic | `duskGrade` `lights` | `[x0,y0,x1,y1]` band for the city windows |
 | sfx | `tally`, `stake` (hits) | EP07: a reason checked off; a survey stake driven into turf |
+| graphic | `pullBack` | The previous shot's picture (`src`) starts full-frame at its last framing (`from: {s,x,y}`) and shrinks into a framed inset at `to: [cx,cy,w]` on the new shot, holds, fades: a "zoom out to the system" cut (EP08: cup → cistern, caravan photo → its map route) |
+| scene | `atlas` kinds `dunes`, `well`, `lock` | Desert crescents (`box`, `avoid`), oasis wells (water-blue, pulse), padlocks that snap shut beside a feature (EP08); key threads are thin `route`s |
+| sfx | `drop`, `lock` (hits) | EP08: a drop of water into a full cup; an iron padlock snapping shut |
 | tool | `pipeline/srt.py epNN` | SRT from the word timings, same grouping as the burned-in captions, paired into 2-line cues |
 
 ## Local / Claude-session commands

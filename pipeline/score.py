@@ -505,6 +505,27 @@ def sfx_hit(kind, dur=None):
         thump = np.sin(2 * np.pi * np.cumsum(90 * (1 + 0.6 * np.exp(-t * 30))) / SR) * np.exp(-t * 14)
         crunch = bp(noise(n), 700, 3500) * np.exp(-t * 40) * 0.4
         return stereo(thump + crunch, 0.2)
+    if kind == "drop":
+        # One drop of water into a full cup: a short rising "plink" with a soft wet tail (EP08 water motif).
+        n = int(1.2 * SR)
+        t = np.arange(n) / SR
+        f = 900 * (1 + 1.4 * (1 - np.exp(-t * 60)))
+        plink = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t * 28) * np.minimum(1, t / 0.002)
+        tail = bp(noise(n), 1200, 5000) * np.exp(-t * 22) * 0.12
+        return stereo(plink + tail, 0.3)
+    if kind == "lock":
+        # An iron padlock snapping shut: a dull body knock and two bright metallic clicks (EP08 wells).
+        n = int(0.9 * SR)
+        t = np.arange(n) / SR
+        knock = np.sin(2 * np.pi * 180 * t) * np.exp(-t * 35) * 0.6
+        out = knock.copy()
+        for at, a in ((0.0, 1.0), (0.055, 0.7)):
+            i = int(at * SR)
+            m = n - i
+            tt = np.arange(m) / SR
+            ring = sum(w * np.sin(2 * np.pi * fr * tt) for fr, w in ((2350, 1.0), (3710, 0.6), (5280, 0.3))) * np.exp(-tt * 45)
+            out[i:] += (ring * 0.5 + bp(noise(m), 2500, 8000) * np.exp(-tt * 160)) * a
+        return stereo(out, 0.2)
     raise KeyError(kind)
 
 

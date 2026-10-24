@@ -672,3 +672,71 @@ Source of truth: `episodes/ep10/episode.json` → `metadata`. The AI label goes 
 
 - **Pinned comment:** Pass, bridge, harbour or strait: which chokepoint runs your world?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 12 captions (ready to paste)
+
+Source of truth: `episodes/ep12/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep12/Worldcraft_Short_E12_cover.jpg`. Subtitles: `episodes/ep12/ep12.srt`.
+
+### YouTube Shorts
+- **Title** (54/100 chars): `Invent a Tradition With a Dark History (Worldbuilding)`
+- **Alternate title** (35 chars): `This festival began as a punishment`
+- **Description:**
+
+> What if a kingdom's most beloved festival began as a punishment?
+>
+> On Bellnight, the town of Dunmere camps outside its own walls: bells, bonfires, a cheer when the gates open at dawn. Three hundred years ago, a king locked the town out for one winter night. The bells were how people found each other in the snow, the fires kept them alive, and the cheer at dawn was a head count.
+>
+> The custom survived. The reason was forgotten. Give your traditions two meanings, the one they began with and the one people celebrate now, and let your characters know only one.
+>
+> Invent a tradition and tell us how it began, in the comments.
+>
+> Episode 12 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, game designers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #WritingCommunity #WorldcraftShorts
+
+- **Pinned comment:** Your turn: name a tradition in your world, what people think it's for today, and what it was really for when it began.
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (260 chars): `Their favourite festival began as a punishment. The bells found the lost, the fires kept them alive, the dawn cheer was a head count 🕯️ Invent a tradition and tell us how it began. #Worldbuilding #FantasyWriting #WritingTips #WritingCommunity #WorldcraftShorts`
+- **Pinned comment:** Drop a tradition from your world: what it means now, and how it began. Best dark origins get a reply.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> What if a kingdom's most beloved festival began as a punishment?
+>
+> On Bellnight, the town of Dunmere camps outside its own walls: bells, bonfires, a cheer when the gates open at dawn. Three hundred years ago, a king locked the town out for one winter night. The bells were how people found each other in the snow, the fires kept them alive, and the cheer at dawn was a head count.
+>
+> The custom survived. The reason was forgotten. Give your traditions two meanings, the one they began with and the one people celebrate now, and let your characters know only one.
+>
+> Invent a tradition and tell us how it began, in the comments.
+>
+> Episode 12 of 50.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #WritingCommunity #WorldcraftShorts
+
+- **Pinned comment:** What's a tradition in your world whose original reason nobody remembers?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> The best festival began as a punishment.
+>
+> What if a kingdom's most beloved festival began as a punishment?
+>
+> On Bellnight, the town of Dunmere camps outside its own walls: bells, bonfires, a cheer when the gates open at dawn. Three hundred years ago, a king locked the town out for one winter night. The bells were how people found each other in the snow, the fires kept them alive, and the cheer at dawn was a head count.
+>
+> The custom survived. The reason was forgotten. Give your traditions two meanings, the one they began with and the one people celebrate now, and let your characters know only one.
+>
+> Invent a tradition and tell us how it began, in the comments.
+>
+> Episode 12 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyWriting #WritingTips #WritingCommunity #WorldcraftShorts
+
+- **Hook check:** First 40 characters: 'The best festival began as a punishment.'
+- **Pinned comment:** Now vs then: give us one custom and its forgotten reason.
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

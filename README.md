@@ -112,6 +112,10 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | atlas | shot `zoom: {from, to, origin, at, dur}` | Cue-timed camera move on the map: EP10 holds 2.5× on the capital, then pulls back to 1× on "Pull back" |
 | graphic | `lessonStack` `size`, `restSize` | Smaller type for longer lesson lines |
 | sfx | `gateSlam` (hit) | EP10: a chain run down, then a deep timber-and-iron boom as a gate shuts |
+| graphic | `eraShift` | The matching plate from another century (`src`) laid over the shot's plate and dissolved on cues (`from`, `keys: [{at, to, dur}]`), softening and tinting mid-fade so it reads as time passing (`local`; EP12 festival ↔ punishment) |
+| graphic | `originLedger` | Two-column NOW / THEN card: each `row` (`icon` `bell`/`fire`/`dawn`, `now`, `then`, `nowAt`, `thenAt`) writes its modern custom, then links it to its original purpose in ember; carries across shots (EP12) |
+| graphic | `headCount` | Rows of small hooded figures lit one by one from `start` over `dur`; the last `missing` stay as dashed empty outlines (absence, never harm) (EP12) |
+| sfx | `timeFold`, `headCount` (hits) | EP12: a reversed bell swelling out of a gust as centuries fold; a quick roll of soft wooden taps |
 
 ## Local / Claude-session commands
 

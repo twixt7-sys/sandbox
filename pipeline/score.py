@@ -582,6 +582,30 @@ def sfx_hit(kind, dur=None):
         clang = (np.sin(2 * np.pi * 311 * th) + 0.6 * np.sin(2 * np.pi * 467 * th)) * np.exp(-th * 9) * 0.25 * (t >= hit)
         crack = bp(noise(n), 300, 2500) * np.exp(-th * 35) * 0.7 * (t >= hit)
         return stereo(chain + boom + clang + crack, 0.4)
+    if kind == "timeFold":
+        # Centuries folding (EP12 eraShift): a bell played backwards swells up out of a cold wind gust, then a soft low settle.
+        n = int(2.2 * SR)
+        t = np.arange(n) / SR
+        m = int(1.5 * SR)
+        tt = np.arange(m) / SR
+        b = sum(a * np.sin(2 * np.pi * 523.25 * r * tt) * np.exp(-tt * d) for r, a, d in [(1, 1, 2.2), (2.76, 0.5, 3.5), (5.4, 0.25, 6)])
+        sig = np.zeros(n)
+        sig[:m] += b[::-1] * 0.6
+        gust = bp(noise(n), 400, 2500) * np.interp(t, [0, 1.3, 1.6, 2.2], [0, 0.5, 0.15, 0])
+        th = np.clip(t - 1.5, 0, None)
+        settle = np.sin(2 * np.pi * 55 * th) * np.exp(-th * 5) * 0.7 * (t >= 1.5)
+        return stereo(sig + gust + settle, 0.6)
+    if kind == "headCount":
+        # A quiet roll-call (EP12): twenty soft wooden taps accelerating slightly over 1.1 s, like a staff counting heads.
+        n = int(1.6 * SR)
+        out = np.zeros(n)
+        for k in range(20):
+            i = int((k / 19) ** 0.92 * 1.1 * SR)
+            m = int(0.05 * SR)
+            tt = np.arange(m) / SR
+            tap = (np.sin(2 * np.pi * 820 * tt) * 0.5 + bp(noise(m), 900, 3000)) * np.exp(-tt * 90) * (0.5 + 0.2 * (k % 2))
+            out[i:i + m] += tap[: len(out[i:i + m])]
+        return stereo(out, 0.3)
     raise KeyError(kind)
 
 

@@ -112,6 +112,11 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | atlas | shot `zoom: {from, to, origin, at, dur}` | Cue-timed camera move on the map: EP10 holds 2.5× on the capital, then pulls back to 1× on "Pull back" |
 | graphic | `lessonStack` `size`, `restSize` | Smaller type for longer lesson lines |
 | sfx | `gateSlam` (hit) | EP10: a chain run down, then a deep timber-and-iron boom as a gate shuts |
+| graphic | `splitFrame` | Screen split along a drawn amber seam (a border), a plate in each half with its own `from`/`to` framing, `focus` dimming, and a label block per half: caps `kicker`, serif `text`, rust `stamp`, italic `heard` (EP13: the same gift on both sides of a border; one exchange as each side heard it). Use `local: true` on a `plateMotion: "still"` shot so the loop tail redraws it |
+| graphic | `mirrorLedger` | Two culture columns under a dashed seam; rows (`label`, `cells`, `at`) light on cues, an arrow from each side meets in a rust spark at `clashAt`, then a two-line `sum` (EP13: rule / reason → "The conflict writes itself.") |
+| graphic | `callout` `side: "up"`, `dx` | Leader straight up from the point, then sideways; the label is centred above it, for notes too wide for either side |
+| captions | captions-off shots | A caption group no longer holds into a shot with `captions: false` |
+| sfx | `giftSet`, `seam` (hits) | EP13: a glazed ceramic lid settling on its box (the gift's signature); a soft air sweep and tap as a split frame draws across |
 
 ## Local / Claude-session commands
 

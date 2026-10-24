@@ -16,12 +16,14 @@ const out = (t: number, end: number, dur = 0.35) => 1 - ease(t, end - dur, dur, 
 /**
  * Callout: `at: [x, y]`, `label`, optional `note` (serif italic), `side: "left" | "right"` (default right),
  * `reach` (horizontal leader length, default 150), `rise` (vertical offset of the label, default -60), `start` cue,
- * optional `end` cue (else the shot end). `color` defaults to amber.
+ * optional `end` cue (else the shot end). `color` defaults to amber. `side: "up"` runs the leader straight up by
+ * `-rise`, then `dx` sideways, and centres the label above its end (EP13: a note too wide for either side).
  */
 export const Callout: React.FC<GraphicProps> = ({g, t, span}) => {
 	const timing = useTiming();
 	const [x, y] = g.at;
 	const c = g.color ?? palette.amber;
+	const up = g.side === 'up';
 	const dir = g.side === 'left' ? -1 : 1;
 	const reach = g.reach ?? 150;
 	const rise = g.rise ?? -60;
@@ -31,9 +33,9 @@ export const Callout: React.FC<GraphicProps> = ({g, t, span}) => {
 	const lead = ease(t, t0 + 0.1, 0.35);
 	const txt = ease(t, t0 + 0.3, 0.4);
 	const o = out(t, tEnd, 0.3);
-	const ex = x + dir * 40;
+	const ex = up ? x : x + dir * 40;
 	const ey = y + rise;
-	const lx = ex + dir * reach;
+	const lx = up ? x + (g.dx ?? 0) : ex + dir * reach;
 	const len = Math.hypot(ex - x, ey - y) || 1;
 	const sx = x + ((ex - x) / len) * 20;
 	const sy = y + ((ey - y) / len) * 20;
@@ -55,12 +57,10 @@ export const Callout: React.FC<GraphicProps> = ({g, t, span}) => {
 			<div
 				style={{
 					position: 'absolute',
-					top: ey - 48,
-					...(dir > 0 ? {left: lx + 14} : {right: W - lx + 14}),
-					textAlign: dir > 0 ? 'left' : 'right',
+					...(up ? {bottom: H - ey + 12, left: lx, textAlign: 'center'} : {top: ey - 48, ...(dir > 0 ? {left: lx + 14} : {right: W - lx + 14}), textAlign: dir > 0 ? 'left' : 'right'}),
 					whiteSpace: 'nowrap',
 					opacity: txt,
-					transform: `translateX(${(1 - txt) * dir * 12}px)`,
+					transform: up ? `translate(-50%, ${(1 - txt) * 12}px)` : `translateX(${(1 - txt) * dir * 12}px)`,
 				}}
 			>
 				<div style={{...kicker, fontSize: 28, color: c, textShadow: '0 2px 12px rgba(0,0,0,0.9)'}}>{g.label}</div>

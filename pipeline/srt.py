@@ -46,9 +46,12 @@ def groups(timing: dict, ep: dict, burned_only: bool) -> list[dict]:
             if re.search(r"[.,;:!?]$", w["text"]) and i < len(line["words"]) - 1:
                 flush()
         flush()
+    # Like the burned-in captions, a group never holds into a captions-off shot.
+    off_starts = [s["start"] for s in timing["shots"] if s["id"] in off]
     for i, g in enumerate(out):
         nxt = out[i + 1] if i + 1 < len(out) else None
         g["hold"] = nxt["start"] - 0.03 if nxt and nxt["start"] - g["end"] < 0.6 else g["end"] + 0.35
+        g["hold"] = min([g["hold"]] + [s for s in off_starts if s > g["start"]])
         g["start"] = max(0.0, g["start"] - 0.08)
     return out
 

@@ -582,6 +582,24 @@ def sfx_hit(kind, dur=None):
         clang = (np.sin(2 * np.pi * 311 * th) + 0.6 * np.sin(2 * np.pi * 467 * th)) * np.exp(-th * 9) * 0.25 * (t >= hit)
         crack = bp(noise(n), 300, 2500) * np.exp(-th * 35) * 0.7 * (t >= hit)
         return stereo(chain + boom + clang + crack, 0.4)
+    if kind == "giftSet":
+        # The gift offered (EP13 signature): a glazed ceramic lid settling on its box, a soft bright ring and a cloth brush.
+        n = int(1.6 * SR)
+        t = np.arange(n) / SR
+        ring = sum(a * np.sin(2 * np.pi * f * t) * np.exp(-t * d) for f, a, d in [(1240, 1.0, 6), (2010, 0.55, 8), (3170, 0.3, 11), (4630, 0.15, 15)])
+        settle = np.zeros(n)
+        for at, a in ((0.0, 1.0), (0.07, 0.45), (0.12, 0.25)):
+            i = int(at * SR)
+            settle[i:] += ring[: n - i] * a
+        brush = bp(noise(n), 600, 3000) * np.interp(t, [0, 0.05, 0.25], [0.3, 0.15, 0])
+        return stereo(settle * 0.35 * np.minimum(1, t / 0.002) + brush, 0.35)
+    if kind == "seam":
+        # A split frame drawn across like a border (EP13): a soft rising air sweep that ends in a low muted tap.
+        n = int(1.1 * SR)
+        t = np.arange(n) / SR
+        sweep = bp(noise(n), 500, 4000) * np.interp(t, [0, 0.3, 0.38, 0.6], [0, 0.6, 0.2, 0])
+        tap = np.sin(2 * np.pi * 110 * np.clip(t - 0.32, 0, None)) * np.exp(-np.clip(t - 0.32, 0, None) * 18) * (t >= 0.32) * 0.7
+        return stereo(sweep + tap, 0.6)
     raise KeyError(kind)
 
 

@@ -34,11 +34,13 @@ export const buildGroups = (timing: Timing, episode: Episode): Group[] => {
 		});
 		flush();
 	}
-	// Each group holds until the next begins (or briefly after its last word).
+	// Each group holds until the next begins (or briefly after its last word), but never into a captions-off shot.
+	const offStarts = timing.shots.filter((s) => off.has(s.id)).map((s) => s.start);
 	return groups.map((g, i) => {
 		const next = groups[i + 1];
 		const hold = next && next.start - g.end < 0.6 ? next.start - 0.03 : g.end + 0.35;
-		return {...g, start: g.start - 0.08, end: hold};
+		const cut = Math.min(...offStarts.filter((s) => s > g.start));
+		return {...g, start: g.start - 0.08, end: Math.min(hold, cut)};
 	});
 };
 

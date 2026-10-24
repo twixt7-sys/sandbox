@@ -110,7 +110,8 @@
     "type": "duck",
     "at": {
      "line": "L1",
-     "word": "is."
+     "word": "is.",
+     "nth": 2
     },
     "pre": 0.15,
     "dur": 0.9,
@@ -298,6 +299,7 @@
          {
           "line": "L1",
           "word": "is.",
+          "nth": 2,
           "offset": 0.25
          },
          1
@@ -367,6 +369,7 @@
        "stampAt": {
         "line": "L1",
         "word": "is.",
+        "nth": 2,
         "offset": -0.05
        },
        "labelY": 990
@@ -420,6 +423,7 @@
      "at": {
       "line": "L1",
       "word": "is.",
+      "nth": 2,
       "offset": -0.05
      },
      "gain": -19

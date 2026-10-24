@@ -127,7 +127,7 @@ export const EpisodeComposition: React.FC<EpisodeProps> = ({episodeId, episode, 
 							})}
 					/>
 				)}
-				<LoopTail duration={timing.duration} hook={episode.shots[0]} span={timing.shots[0]} plate={plates[episode.shots[0].id]} episodeId={episodeId} />
+				<LoopTail duration={timing.duration} hook={episode.shots[0]} span={timing.shots[0]} plate={plateFor(plates, episode.shots[0])} episodeId={episodeId} />
 				<Grain />
 				<Audio src={staticFile(`${episodeId}/mix.wav`)} />
 			</AbsoluteFill>

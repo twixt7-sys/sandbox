@@ -154,6 +154,19 @@ On the paid primary stack: about **$1.15 (₱73)**, or **$2.12 (₱134)** with o
 
 On the paid primary stack, with 3 stills instead of 4: about **$1.05 (₱67)**, or **$1.94 (₱123)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
+## What Episode 12 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 4 stills: two matched then/now pairs (Bellnight outside the walls of Dunmere and the same gate barred in a blizzard; the bonfire ring and the same ring huddled at a dying fire) | Figma `generate_image` (`gemini-3.1-flash-lite-image`), 768×1376, lanczos-upscaled. 4 generations, no re-rolls (6 approved). The festival, count, lesson and CTA shots reuse them | $0 cash (Figma AI credits) |
+| Era dissolves, origin ledger, head count, title, tag, lesson stack, snow, CTA card | Remotion code (new `eraShift`, `originLedger`, `headCount`; existing `titleLockup`, `tag`, `lessonStack`, `snowfall`, `ctaCard`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 78 words, 30.6 s | $0 |
+| Score + SFX (new: timeFold, headCount) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)** plus 4 Figma image generations |
+
+On the paid primary stack: about **$1.15 (₱73)**, or **$2.12 (₱134)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
 ## What Episode 13 actually used
 
 | Item | Used | Cash cost |

@@ -12,6 +12,7 @@ import {RUINS} from './Ruins';
 import {SCALE} from './Scale';
 import {SURVEY} from './Survey';
 import {TERRAIN} from './Terrain';
+import {TRADITION} from './Tradition';
 import {WEATHER} from './Weather';
 
 export type GraphicProps = {g: Graphic; t: number; shot: Shot; span: TimedShot};
@@ -289,5 +290,6 @@ export const GRAPHICS: Record<string, React.FC<GraphicProps>> = {
 	...SURVEY,
 	...SCALE,
 	...CLIMATE,
+	...TRADITION,
 	...CULTURE,
 };

@@ -112,9 +112,13 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | atlas | shot `zoom: {from, to, origin, at, dur}` | Cue-timed camera move on the map: EP10 holds 2.5× on the capital, then pulls back to 1× on "Pull back" |
 | graphic | `lessonStack` `size`, `restSize` | Smaller type for longer lesson lines |
 | sfx | `gateSlam` (hit) | EP10: a chain run down, then a deep timber-and-iron boom as a gate shuts |
+| graphic | `eraShift` | The matching plate from another century (`src`) laid over the shot's plate and dissolved on cues (`from`, `keys: [{at, to, dur}]`), softening and tinting mid-fade so it reads as time passing (`local`; EP12 festival ↔ punishment) |
+| graphic | `originLedger` | Two-column NOW / THEN card: each `row` (`icon` `bell`/`fire`/`dawn`, `now`, `then`, `nowAt`, `thenAt`) writes its modern custom, then links it to its original purpose in ember; carries across shots (EP12) |
+| graphic | `headCount` | Rows of small hooded figures lit one by one from `start` over `dur`; the last `missing` stay as dashed empty outlines (absence, never harm) (EP12) |
+| sfx | `timeFold`, `headCount` (hits) | EP12: a reversed bell swelling out of a gust as centuries fold; a quick roll of soft wooden taps |
 | graphic | `splitFrame` | Screen split along a drawn amber seam (a border), a plate in each half with its own `from`/`to` framing, `focus` dimming, and a label block per half: caps `kicker`, serif `text`, rust `stamp`, italic `heard` (EP13: the same gift on both sides of a border; one exchange as each side heard it). Use `local: true` on a `plateMotion: "still"` shot so the loop tail redraws it |
 | graphic | `mirrorLedger` | Two culture columns under a dashed seam; rows (`label`, `cells`, `at`) light on cues, an arrow from each side meets in a rust spark at `clashAt`, then a two-line `sum` (EP13: rule / reason → "The conflict writes itself.") |
-| graphic | `callout` `side: "up"`, `dx` | Leader straight up from the point, then sideways; the label is centred above it, for notes too wide for either side |
+| graphic | `callout` `side: "up"`, `dx`, `backdrop` | Leader straight up from the point, then sideways; the label is centred above it, for notes too wide for either side. `backdrop: true` adds a soft dark glow behind the label on bright plates |
 | captions | captions-off shots | A caption group no longer holds into a shot with `captions: false` |
 | sfx | `giftSet`, `seam` (hits) | EP13: a glazed ceramic lid settling on its box (the gift's signature); a soft air sweep and tap as a split frame draws across |
 

@@ -672,3 +672,70 @@ Source of truth: `episodes/ep10/episode.json` → `metadata`. The AI label goes 
 
 - **Pinned comment:** Pass, bridge, harbour or strait: which chokepoint runs your world?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 13 captions (ready to paste)
+
+Source of truth: `episodes/ep13/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep13/Worldcraft_Short_E13_cover.jpg`. Subtitles: `episodes/ep13/ep13.srt`.
+
+### YouTube Shorts
+- **Title** (62/100 chars): `Refusing a Gift Is an Insult. Unless It Isn’t. (Worldbuilding)`
+- **Alternate title** (39 chars): `How to write cultural taboos that clash`
+- **Description:**
+
+> In one kingdom, refusing a gift is an insult. In another, accepting it is.
+>
+> Believable cultural differences come from rules with reasons. In the hill country of Adren, a gift binds two families, so refusing one says you'll never need them. Across the river in Vesk, a gift is a debt, so accepting one says you can be bought. Put an Adren envoy and a Vesk magistrate on the same bridge and both of them do the polite thing, and both walk away insulted.
+>
+> Respect, honesty, privacy, hospitality and loyalty can all work like this. Write the rule and the reason behind it, and the conflict writes itself.
+>
+> Share this with a writer who wants believable cultural differences.
+>
+> Episode 13 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyCultures #WorldcraftShorts
+
+- **Pinned comment:** Your turn: give one of your cultures a rule about gifts, greetings or questions, and the reason behind it. What would a polite visitor get wrong?
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (268 chars): `In one kingdom refusing a gift is an insult. Across the river, accepting it is 🎁 Write the rule AND the reason, and your cultures will clash on their own. Share with a writer who needs this #Worldbuilding #FantasyWriting #WritingTips #FantasyCultures #WorldcraftShorts`
+- **Pinned comment:** Drop one taboo from your world and its reason. We'll tell you who'd break it by accident.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> In one kingdom, refusing a gift is an insult. In another, accepting it is.
+>
+> Believable cultural differences come from rules with reasons. In the hill country of Adren, a gift binds two families, so refusing one says you'll never need them. Across the river in Vesk, a gift is a debt, so accepting one says you can be bought. Put an Adren envoy and a Vesk magistrate on the same bridge and both of them do the polite thing, and both walk away insulted.
+>
+> Respect, honesty, privacy, hospitality and loyalty can all work like this. Write the rule and the reason behind it, and the conflict writes itself.
+>
+> Share this with a writer who wants believable cultural differences.
+>
+> Episode 13 of 50.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyCultures #WorldcraftShorts
+
+- **Pinned comment:** What's a polite act in one of your cultures that would offend its neighbours?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Same gift. Opposite insult.
+>
+> In one kingdom, refusing a gift is an insult. In another, accepting it is.
+>
+> Believable cultural differences come from rules with reasons. In the hill country of Adren, a gift binds two families, so refusing one says you'll never need them. Across the river in Vesk, a gift is a debt, so accepting one says you can be bought. Put an Adren envoy and a Vesk magistrate on the same bridge and both of them do the polite thing, and both walk away insulted.
+>
+> Respect, honesty, privacy, hospitality and loyalty can all work like this. Write the rule and the reason behind it, and the conflict writes itself.
+>
+> Share this with a writer who wants believable cultural differences.
+>
+> Episode 13 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyCultures #WorldcraftShorts
+
+- **Pinned comment:** Gift, greeting, question or silence: which act means opposite things in your world?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

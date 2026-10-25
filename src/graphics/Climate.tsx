@@ -17,7 +17,8 @@ const out = (t: number, end: number, dur = 0.35) => 1 - ease(t, end - dur, dur, 
  * Callout: `at: [x, y]`, `label`, optional `note` (serif italic), `side: "left" | "right"` (default right),
  * `reach` (horizontal leader length, default 150), `rise` (vertical offset of the label, default -60), `start` cue,
  * optional `end` cue (else the shot end). `color` defaults to amber. `side: "up"` runs the leader straight up by
- * `-rise`, then `dx` sideways, and centres the label above its end (EP13: a note too wide for either side).
+ * `-rise`, then `dx` sideways, and centres the label above its end (EP13: a note too wide for either side). `backdrop: true`
+ * puts a soft dark glow behind the label for bright plates (a window, a sky).
  */
 export const Callout: React.FC<GraphicProps> = ({g, t, span}) => {
 	const timing = useTiming();
@@ -61,6 +62,7 @@ export const Callout: React.FC<GraphicProps> = ({g, t, span}) => {
 					whiteSpace: 'nowrap',
 					opacity: txt,
 					transform: up ? `translate(-50%, ${(1 - txt) * 12}px)` : `translateX(${(1 - txt) * dir * 12}px)`,
+					...(g.backdrop ? {background: 'radial-gradient(ellipse at 50% 55%, rgba(6,10,13,0.62) 0%, rgba(6,10,13,0.45) 55%, rgba(6,10,13,0) 75%)', padding: '18px 40px 10px', margin: '0 -40px'} : {}),
 				}}
 			>
 				<div style={{...kicker, fontSize: 28, color: c, textShadow: '0 2px 12px rgba(0,0,0,0.9)'}}>{g.label}</div>

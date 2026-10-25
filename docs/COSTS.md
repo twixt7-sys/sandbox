@@ -154,6 +154,19 @@ On the paid primary stack: about **$1.15 (₱73)**, or **$2.12 (₱134)** with o
 
 On the paid primary stack, with 3 stills instead of 4: about **$1.05 (₱67)**, or **$1.94 (₱123)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
+## What Episode 13 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 3 stills (the Adren hill doorway, the Vesk magistrate's hall, the border bridge) | Figma `generate_image` (`gemini-3.1-flash-lite-image`), 768×1376, lanczos-upscaled. 4 generations of the 6 approved: the first Vesk plate was re-rolled because its window showed a recognisably real city and its host read as a stereotype. The hook, the two-sided replay and the CTA reuse these plates | $0 cash (Figma AI credits) |
+| Split frames, labels and stamps, callouts, mirror ledger, dusk grade | Remotion code (new `splitFrame` and `mirrorLedger`; `callout` `side: "up"` and `backdrop`; `tag`, `emberDusk`, `ctaCard`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 77 words, 30.9 s | $0 |
+| Score + SFX (new: giftSet, seam) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)** plus 4 Figma image generations |
+
+On the paid primary stack, with 3 stills plus one re-roll (4 images): about **$1.15 (₱73)**, or **$2.12 (₱134)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
 ## Alternatives
 
 | Option | Per-episode | Monthly | Comment |

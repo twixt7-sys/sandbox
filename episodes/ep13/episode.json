@@ -329,11 +329,11 @@
        "src": "ep13/plates/vesk.jpg",
        "from": {
         "s": 1.0,
-        "y": 112
+        "y": 175
        },
        "to": {
-        "s": 1.04,
-        "y": 100
+        "s": 1.03,
+        "y": 168
        },
        "focus": [
         [
@@ -372,7 +372,9 @@
         "nth": 2,
         "offset": -0.05
        },
-       "labelY": 990
+       "labelY": 990,
+       "align": "right",
+       "labelX": 920
       }
      ]
     }
@@ -483,6 +485,7 @@
      "dx": 110,
      "label": "The reason",
      "note": "Hill winters are shared.",
+     "backdrop": true,
      "start": {
       "line": "L2",
       "word": "refusing",
@@ -542,12 +545,12 @@
    "plateMotion": "push",
    "plateFrame": {
     "from": {
-     "s": 1.06,
-     "y": 40
+     "s": 1.22,
+     "y": 210
     },
     "to": {
-     "s": 1.1,
-     "y": 40
+     "s": 1.26,
+     "y": 225
     }
    },
    "plateScrim": 0.45,
@@ -580,14 +583,15 @@
      "type": "callout",
      "local": true,
      "at": [
-      485,
-      990
+      520,
+      942
      ],
      "side": "up",
-     "rise": -400,
-     "dx": 0,
+     "rise": -418,
+     "dx": 120,
      "label": "The reason",
      "note": "Debts get called in.",
+     "backdrop": true,
      "start": {
       "line": "L3",
       "word": "accepting",

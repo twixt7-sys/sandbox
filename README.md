@@ -112,10 +112,6 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | atlas | shot `zoom: {from, to, origin, at, dur}` | Cue-timed camera move on the map: EP10 holds 2.5× on the capital, then pulls back to 1× on "Pull back" |
 | graphic | `lessonStack` `size`, `restSize` | Smaller type for longer lesson lines |
 | sfx | `gateSlam` (hit) | EP10: a chain run down, then a deep timber-and-iron boom as a gate shuts |
-| shot | `plateLook: {from, to?, at?, dur?}` | Grade a plate (`cold`, `warm` or any CSS filter) and wipe a second grade across it left to right on a cue, with an amber seam: the same scene re-read (EP11: a visitor's cold read → an insider's warm one) |
-| graphic | `shroud` | Code-drawn linen-wrapped body on a bier (`at`, `length`, `height`, `head`, `sprigs`; `local`), for when the image model won't paint one (EP11) |
-| sfx | `relook` (hit) | EP11: a swept breath blooming into a warm triad, on a perspective flip |
-| tool | `pipeline/local_stills.py epNN shots --seeds …` / `--pick seed` | Free local stills (SDXL-Lightning, CPU, about 2.5 min each) from each shot's `sdxlPrompt`, when Figma credits run out |
 | graphic | `eraShift` | The matching plate from another century (`src`) laid over the shot's plate and dissolved on cues (`from`, `keys: [{at, to, dur}]`), softening and tinting mid-fade so it reads as time passing (`local`; EP12 festival ↔ punishment) |
 | graphic | `originLedger` | Two-column NOW / THEN card: each `row` (`icon` `bell`/`fire`/`dawn`, `now`, `then`, `nowAt`, `thenAt`) writes its modern custom, then links it to its original purpose in ember; carries across shots (EP12) |
 | graphic | `headCount` | Rows of small hooded figures lit one by one from `start` over `dur`; the last `missing` stay as dashed empty outlines (absence, never harm) (EP12) |
@@ -125,6 +121,14 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | graphic | `callout` `side: "up"`, `dx`, `backdrop` | Leader straight up from the point, then sideways; the label is centred above it, for notes too wide for either side. `backdrop: true` adds a soft dark glow behind the label on bright plates |
 | captions | captions-off shots | A caption group no longer holds into a shot with `captions: false` |
 | sfx | `giftSet`, `seam` (hits) | EP13: a glazed ceramic lid settling on its box (the gift's signature); a soft air sweep and tap as a split frame draws across |
+| shot | `plateLook: {from, to?, at?, dur?}` | Grade a plate (`cold`, `warm` or any CSS filter) and wipe a second grade across it left to right on a cue, with an amber seam: the same scene re-read (EP11: a visitor's cold read → an insider's warm one) |
+| graphic | `shroud` | Code-drawn linen-wrapped body on a bier (`at`, `length`, `height`, `head`, `sprigs`; `local`), for when the image model won't paint one (EP11) |
+| sfx | `relook` (hit) | EP11: a swept breath blooming into a warm triad, on a perspective flip |
+| tool | `pipeline/local_stills.py epNN shots --seeds …` / `--pick seed` | Free local stills (SDXL-Lightning, CPU, about 2.5 min each) from each shot's `sdxlPrompt`, when Figma credits run out |
+| graphic | `verdictScale` | A drawn balance weighing two moral systems (`pans` labels, `tilts: [[cue, deg]]`, per-pan `words` replaced on cues, `glowAt` when it comes level); repeat it across shots with matching states so one scale tips one way, then the other (EP14: FREEDOM / DUTY) |
+| graphic | `callout` `then: {label, note, color, at}` | Re-captions the same point on a cue: the first note is struck through and drops away, the leader turns the new colour (EP14: "Hero." → "Traitor.") |
+| sfx | `scaleTip` (hit) | EP14: a wooden creak, two chain chinks and a soft knock as the verdict scale settles |
+| graphic file | `src/graphics/Rites.tsx` | EP11's `shroud`, moved out of `Culture.tsx` when EP11 and EP13 (both had added a `Culture.tsx`) were merged |
 | graphic | `inferChain` | An evidence chain inked onto the plate (`local`): a pen loop round the clue (`at`, `loop`), a leader to a text block (`box`, `align`), then `seen` (caps) → `means` (italic, `meansAt`) → ∴ `value` in an ember seal (`valueAt`); `backdrop`. Seal-only mode (just `value`) pins a value to a point on a wide plate (EP15: a habit read into values) |
 | graphic | `bench` | Code-drawn plain timber bench (`at`, `length`, `tone: "day" \| "dusk"`, `cups`; `local`), for objects the image model won't put where the story needs them (EP15) |
 | sfx | `benchSet`, `inferSeal` (hits) | EP15: a bench scraped and set down on cobbles; a pen tick and a warm rising fifth as a value is inferred |

@@ -655,6 +655,18 @@ def sfx_hit(kind, dur=None):
             tone = (np.sin(2 * np.pi * f * th) + 0.35 * np.sin(2 * np.pi * 2 * f * th) + 0.12 * np.sin(2 * np.pi * 3.01 * f * th)) * np.exp(-th * 3.2)
             out += tone * np.minimum(1, th / 0.004) * 0.3 * (t >= at)
         return stereo(out, 0.35)
+    if kind == "scaleTip":
+        # A verdict scale tipping (EP14 signature): a short wooden creak, two chain chinks, then a soft knock as the pan settles.
+        n = int(1.4 * SR)
+        t = np.arange(n) / SR
+        creak = bp(noise(n), 300, 1400) * (0.6 + 0.4 * np.sin(2 * np.pi * 38 * t)) * np.interp(t, [0, 0.05, 0.35, 0.5], [0, 0.35, 0.25, 0])
+        chink = np.zeros(n)
+        for at, a in ((0.08, 1.0), (0.21, 0.6)):
+            th = np.clip(t - at, 0, None)
+            chink += a * (t >= at) * sum(b * np.sin(2 * np.pi * f * th) * np.exp(-th * d) for f, b, d in [(2890, 1.0, 26), (4410, 0.5, 34), (6120, 0.25, 42)])
+        th = np.clip(t - 0.42, 0, None)
+        knock = np.sin(2 * np.pi * 150 * th) * np.exp(-th * 22) * (t >= 0.42)
+        return stereo(creak + chink * 0.22 + knock * 0.6, 0.4)
     raise KeyError(kind)
 
 

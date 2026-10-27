@@ -20,7 +20,7 @@
   - EP04: food, greetings, the rain bowl; "small details make settings feel inhabited". EP15 uses none of those; it is a dispute custom, read for values rather than texture.
   - EP11: a funeral misread by a visitor. EP15 has no outsider and no misreading; the viewer is the one inferring.
   - EP13: a gift, and two cultures colliding. EP15 has one culture and no collision.
-  - EP14 (a moral dilemma, being made in parallel): not pushed when this was written, so I couldn't read its brief. EP15 stays on custom and values, not right and wrong.
+  - EP14 (a moral dilemma, made in parallel): only its work-in-progress script was pushed by the end of this session (Mira breaks an oath; freedom vs duty, on a verdict scale). EP15 has no dilemma, no verdict and no right or wrong, only a custom and the values it implies.
 - **Real-culture check:** many real societies have community mediation customs. The shared-bench rule, the name and the clothing are invented. The SDXL plates read as a generic old European town (plaster, shutters, terracotta), not a specific people. See section 6 for this as a compromise.
 
 ### How EP15 varies the series rhythm
@@ -54,7 +54,8 @@ New in this episode:
 - `inferChain` (`src/graphics/Everyday.tsx`): an evidence chain inked onto the plate. A pen loop round the clue, a leader, then *seen* → *means* → ∴ *value* in an ember seal, with an optional backdrop. Seal-only mode pins a value to a point on a wide plate.
 - `bench` (same file): a code-drawn timber bench (day or dusk, optional cups). In 9 street and bench candidates over three prompts, SDXL never put a bench in the middle of the road.
 - `benchSet` and `inferSeal` SFX.
-- Merged in from EP11: `plateLook`, `shroud`, `relook` and `local_stills.py`. `shroud` now lives in `src/graphics/Culture.tsx` beside `splitFrame` and `mirrorLedger`.
+- Merged in from EP11: `plateLook`, `shroud`, `relook` and `local_stills.py`.
+- Merged in from EP14 (work in progress, commit `f74cf79`): `verdictScale`, the `callout` `then` re-caption, `scaleTip`, and its script. Both branches had merged EP11, so I adopted EP14's layout: `shroud` in `src/graphics/Rites.tsx`. After the merge, `tsc` passes, an ep14 still renders (procedural backdrop: no plates pushed yet), and an EP15 frame is pixel-identical to the pre-merge render.
 
 ## 3. Narration (77 words, measured 30.33 s)
 
@@ -149,7 +150,7 @@ Also track how many comments give a habit *and* a value it implies. That shows t
 
 ## 11. How to produce EP16 ("Who Really Rules Your Kingdom?", opens Arc 4: Kingdoms and Power)
 
-1. Branch `claude/worldcraft-ep16` from `claude/worldcraft-ep15` (which has EP11–EP13 and EP15, and EP14 if it was pushed in time; check `git log` for the EP14 merge and merge `claude/worldcraft-ep14` first if it's missing). Read:
+1. Branch `claude/worldcraft-ep16` from `claude/worldcraft-ep15`. It has EP01–EP13, EP15, and EP14 **only as its work-in-progress commit `f74cf79`**. Merge `claude/worldcraft-ep14` again first to pick up the finished EP14, using the same keep-both rules. Read:
    - `CLAUDE.md`, `docs/STYLE.md`, `docs/SERIES_PLAN.md`;
    - this brief and the EP10 brief (EP10's map zoom and palace are the nearest earlier power story).
 2. **Stills:** Figma credits reset on **1 Nov 2026**. If it's on or after that date and you want Figma's better invented costumes, ask with AskUserQuestion first (about 4 images, up to 6). Otherwise use `python pipeline/local_stills.py ep16 <shots> --seeds 11 23`, then `--pick`, then `plates.py --register`, with no Remotion running while it does. Expect SDXL to ignore key objects; budget a third prompt round and draw small props in code.

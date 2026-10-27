@@ -93,9 +93,9 @@ Motif: no new colour. Amber ink marks the evidence and ember seals mark the infe
 
 ## 6. Final video and verification
 
-- `out/ep15.mp4` (master) and `out/ep15_compat.mp4` (H.264 Main, CRF 20, `+faststart`): sent with SendUserFile.
-- `ep15_download.mp4` (two-pass 3300k) and `ep15_player.mp4` (CRF 26), both with the master's audio copied: used on the preview page.
-- `qa.py` results for every file are in section 6a below.
+- `out/ep15.mp4` (master, 34.5 MB) and `out/ep15_compat.mp4` (H.264 Main, CRF 20, `+faststart`, 19.9 MB): sent with SendUserFile.
+- `ep15_download.mp4` (two-pass 3300k, 13.5 MB) and `ep15_player.mp4` (CRF 26, 6.6 MB), both with the master's audio copied: used on the preview page.
+- `qa.py` **passed** on all four local files: 1080×1920, 30 fps, 30.34 s, −14.0 LUFS, true peak −1.5 dB (the compat copy, whose AAC is re-encoded, measures −14.1 LUFS and −1.3 dB). The download copy published on the preview page was read back and QA'd as well (see the page's Checks).
 - Fixes made after inspecting the beat frames and the contact sheet:
   - none of the wide street shots had the bench (it was in the story, not in the plate), so I added the code `bench` to the hook, the pull-back, the lesson and the CTA;
   - the agree callout ran off the left edge, so it's shorter ("sit until it's settled") and centred above the pair;
@@ -111,10 +111,6 @@ Motif: no new colour. Amber ink marks the evidence and ember seals mark the infe
   - During the pull-back's first ~0.3 s, the full-frame bench picture covers the corner logo before it shrinks. This is how `pullBack` worked in EP08.
   - The street bench sits at y ≈ 1480, in the bottom zone that platforms overlay. It's decorative, and the seal and leader that name it sit higher.
 - **Not verifiable by me:** how the narration and mix sound, including the new `benchSet` and `inferSeal`. Please give it one listen.
-
-### 6a. QA results
-
-See the run log at the end of this file (appended after the encodes).
 
 ## 7. Reusable components added
 

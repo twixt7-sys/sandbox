@@ -1,0 +1,980 @@
+{
+ "id": "ep11",
+ "number": 11,
+ "title": "Culture Is More Than Clothing",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "A warm, wry cultural guide. Plain and certain on the hook, a little doubtful on 'Cruel?', then a gentle reset on 'Look again'. Affection and a smile on 'funniest failure', quiet conviction on 'A good life leaves good stories', warmth on 'The whole street raised him'. Clear and unhurried on the lesson list, friendly on the follow CTA. No trailer voice."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "Giving every nation a different outfit doesn't give them different cultures.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "outfit",
+    "cultures."
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "visitor",
+   "text": "At a Varenni funeral, a visitor sees everyone laughing. Cruel?",
+   "pauseAfter": 0.55,
+   "emphasis": [
+    "laughing.",
+    "cruel?"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "again",
+   "text": "Look again, as a Varenni.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "again,"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "stories",
+   "text": "Each mourner tells his funniest failure. A good life leaves good stories.",
+   "pauseAfter": 0.55,
+   "emphasis": [
+    "funniest",
+    "stories."
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "street",
+   "text": "The neighbours sit closest. The whole street raised him.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "neighbours",
+    "street"
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "lesson",
+   "text": "An outfit is the surface. Culture is what people laugh at, who's family, and what makes someone good.",
+   "pauseAfter": 0.7,
+   "emphasis": [
+    "surface.",
+    "good."
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "cta",
+   "text": "Follow if you want your fictional nations to feel genuinely different.",
+   "pauseAfter": 0.0,
+   "emphasis": [
+    "follow"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.17,
+     "y": 160
+    },
+    "to": {
+     "s": 1.21,
+     "y": 150
+    }
+   },
+   "plateScrim": 0.55,
+   "purpose": "Stop the scroll on the thing the lesson dismisses: a magnificent costume with nobody inside it.",
+   "visual": "A dim tailor's workshop; on a headless dress form, an ornate invented costume (teal coat, saffron robe, copper collar and discs) in a shaft of window light. 'A NEW OUTFIT / isn't a culture.'",
+   "camera": "Slow push (1.00 to 1.06).",
+   "layers": {
+    "foreground": "title",
+    "midground": "the empty costume",
+    "background": "shelves of cloth in shadow"
+   },
+   "lighting": "One warm shaft of window light; the rest in shadow. Top scrim for the title.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits were exhausted.) Vertical 9:16 cinematic fantasy documentary still. A dim, empty tailor's workshop at dusk. In the centre, a headless wooden dress form displays an ornate ceremonial costume with nobody inside it: a deep teal layered wool coat over a pleated saffron robe, a tall hammered copper collar, sleeves banded with small copper discs, a rust and cream sash. One shaft of warm window light from the left; dark shelves of cloth behind. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.) Dust drifting in the window light, 4 seconds",
+   "graphics": [
+    {
+     "type": "dustBeam",
+     "local": true,
+     "poly": [
+      [
+       330,
+       360
+      ],
+      [
+       780,
+       360
+      ],
+      [
+       860,
+       1700
+      ],
+      [
+       250,
+       1700
+      ]
+     ],
+     "opacity": 0.5
+    },
+    {
+     "type": "titleLockup",
+     "kicker": "A new outfit",
+     "text": "isn't a culture.",
+     "y": 330,
+     "size": 124,
+     "start": {
+      "line": "L1",
+      "word": "giving",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L1",
+      "word": "cultures.",
+      "offset": 0.6
+     }
+    }
+   ],
+   "onScreenText": "Kicker 'A NEW OUTFIT' + 'isn't a culture.' (ember serif italic).",
+   "transition": "Hard cut on 'At' to the funeral, in the visitor's cold grade.",
+   "sfx": [
+    {
+     "sound": "room",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "visitor",
+      "offset": 0.3
+     },
+     "gain": -30
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L1",
+      "word": "cultures.",
+      "offset": -0.9
+     },
+     "gain": -23
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L1",
+      "word": "cultures."
+     },
+     "gain": -21
+    }
+   ],
+   "music": "D minor add9, sparse: something fine but empty.",
+   "sdxlPrompt": "cinematic fantasy documentary still, dim empty tailor's workshop at dusk, in the centre a headless wooden dress form displays an ornate ceremonial costume with nobody inside, deep teal layered wool coat over pleated saffron robe, tall hammered copper collar, sleeves banded with small copper discs, rust and cream sash, one shaft of warm window light from the left, dark shelves of cloth"
+  },
+  {
+   "id": "visitor",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateLook": {
+    "from": "cold"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 30
+    },
+    "to": {
+     "s": 1.07,
+     "y": 50
+    }
+   },
+   "plateScrim": 0.5,
+   "purpose": "The everyday moment as an outsider reads it: laughter at a funeral looks cruel.",
+   "visual": "The Varenni funeral courtyard, drained to a cold, grey grade; a cloaked visitor watches from the gate. Tag WHAT A VISITOR SEES / Laughter at a funeral. A rust callout on the laughing mourners: VISITOR'S VERDICT / cruel?",
+   "camera": "Slow push (1.00 to 1.05) over the visitor's shoulder.",
+   "layers": {
+    "foreground": "the visitor from behind",
+    "midground": "mourners around the bier",
+    "background": "courtyard walls and lamps"
+   },
+   "lighting": "Code grade: desaturated, cool, slightly dark (plateLook 'cold').",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits were exhausted.) Vertical 9:16 cinematic fantasy documentary still. An evening funeral in a lamp-lit stone courtyard of an invented town. A body wrapped in pale linen lies on a low wooden bier covered in herbs and small clay oil lamps. Neighbours sit close around it on cushions, laughing warmly; an old man stands telling a story with open hands. Faces in soft shadow. A lone cloaked traveller is seen from behind in the lower foreground. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.) Lamp flames flickering, mourners laughing, 4 seconds",
+   "graphics": [
+    {
+     "type": "shroud",
+     "local": true,
+     "at": [
+      580,
+      1452
+     ],
+     "length": 300,
+     "height": 56,
+     "head": "left"
+    },
+    {
+     "type": "tag",
+     "kicker": "What a visitor sees",
+     "text": "Laughter at a funeral.",
+     "start": {
+      "line": "L2",
+      "word": "visitor",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "callout",
+     "local": true,
+     "color": "#b9543a",
+     "at": [
+      670,
+      1375
+     ],
+     "side": "left",
+     "rise": -405,
+     "reach": 60,
+     "label": "Visitor's verdict",
+     "note": "cruel?",
+     "start": {
+      "line": "L2",
+      "word": "cruel?",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Tag 'WHAT A VISITOR SEES' + 'Laughter at a funeral.'; rust callout VISITOR'S VERDICT / cruel?",
+   "transition": "Hard cut on 'Look' to the same frame; the warm insider grade wipes across on 'again'.",
+   "sfx": [
+    {
+     "sound": "hearth",
+     "from": {
+      "shot": "visitor"
+     },
+     "to": {
+      "shot": "street",
+      "offset": 3.0
+     },
+     "gain": -30
+    },
+    {
+     "sound": "market",
+     "from": {
+      "shot": "visitor"
+     },
+     "to": {
+      "shot": "street",
+      "offset": 3.0
+     },
+     "gain": -35
+    },
+    {
+     "sound": "strike",
+     "at": {
+      "line": "L2",
+      "word": "cruel?",
+      "offset": -0.05
+     },
+     "gain": -22
+    }
+   ],
+   "music": "B-flat major 7 over the drone, hesitant.",
+   "sdxlPrompt": "a night funeral wake in a lantern-lit stone courtyard, wide view, in the centre a body fully wrapped in a white linen shroud lies on a low wooden bier strewn with flowers and candles, a full circle of villagers sits on cushions close around the bier, laughing together, an old man stands beside the bier telling a funny story with raised hands, a cloaked traveller seen from behind in the bottom foreground watches"
+  },
+  {
+   "id": "again",
+   "scene": "nightSky",
+   "plateFrom": "visitor",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateLook": {
+    "from": "cold",
+    "to": "warm",
+    "at": {
+     "line": "L3",
+     "word": "again,",
+     "offset": -0.1
+    },
+    "dur": 1.0
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.07,
+     "y": 50
+    },
+    "to": {
+     "s": 1.08,
+     "y": 50
+    }
+   },
+   "plateScrim": 0.5,
+   "purpose": "The turn: the same scene, re-read from inside. Nothing in the picture changes except the light it is read in.",
+   "visual": "Same frame; an amber seam sweeps left to right and the warm, full-colour grade replaces the grey. Tag WHAT A VARENNI SEES / A send-off.",
+   "camera": "Push continues (1.05 to 1.07).",
+   "layers": {
+    "foreground": "the seam of the wipe",
+    "midground": "mourners",
+    "background": "courtyard"
+   },
+   "lighting": "Cold to warm (plateLook wipe).",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "shroud",
+     "local": true,
+     "at": [
+      580,
+      1452
+     ],
+     "length": 300,
+     "height": 56,
+     "head": "left"
+    },
+    {
+     "type": "tag",
+     "kicker": "What a Varenni sees",
+     "text": "A send-off.",
+     "start": {
+      "line": "L3",
+      "word": "again,",
+      "offset": 0.2
+     }
+    }
+   ],
+   "onScreenText": "Tag 'WHAT A VARENNI SEES' + 'A send-off.'",
+   "transition": "Hard cut (punch-in) on 'Each' to the storyteller.",
+   "sfx": [
+    {
+     "sound": "relook",
+     "at": {
+      "line": "L3",
+      "word": "again,",
+      "offset": -0.35
+     },
+     "gain": -20
+    }
+   ],
+   "music": "F major add9: the light changes."
+  },
+  {
+   "id": "stories",
+   "scene": "nightSky",
+   "plateFrom": "visitor",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateLook": {
+    "from": "warm"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.14,
+     "x": -45,
+     "y": 20
+    },
+    "to": {
+     "s": 1.18,
+     "x": -50,
+     "y": 20
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "Layers 1 and 2, humour and the idea of a good person: the laughter is the eulogy.",
+   "visual": "Punch-in on the standing storyteller and the bier. Callouts STORY / his funniest failure (on the storyteller) and A GOOD LIFE / leaves good stories (on the bier).",
+   "camera": "Punch-in and slow push (1.20 to 1.24).",
+   "layers": {
+    "foreground": "lamps on the bier",
+    "midground": "storyteller and listeners",
+    "background": "courtyard wall"
+   },
+   "lighting": "Warm lamp light.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "shroud",
+     "local": true,
+     "at": [
+      580,
+      1452
+     ],
+     "length": 300,
+     "height": 56,
+     "head": "left"
+    },
+    {
+     "type": "callout",
+     "local": true,
+     "at": [
+      870,
+      1290
+     ],
+     "side": "left",
+     "rise": -280,
+     "reach": 40,
+     "label": "Humour",
+     "note": "his funniest failure",
+     "start": {
+      "line": "L4",
+      "word": "funniest",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L4",
+      "word": "good",
+      "offset": -0.1,
+      "nth": 1
+     }
+    },
+    {
+     "type": "callout",
+     "local": true,
+     "at": [
+      660,
+      1430
+     ],
+     "side": "left",
+     "rise": -420,
+     "reach": 40,
+     "label": "A good person",
+     "note": "leaves good stories",
+     "start": {
+      "line": "L4",
+      "word": "life",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Callouts HUMOUR / his funniest failure, A GOOD PERSON / leaves good stories.",
+   "transition": "Hard cut on 'The' to the circle of mourners.",
+   "sfx": [
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L4",
+      "word": "funniest",
+      "offset": -0.15
+     },
+     "gain": -25
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L4",
+      "word": "life",
+      "offset": -0.1
+     },
+     "gain": -25
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L4",
+      "word": "stories.",
+      "offset": -0.1
+     },
+     "gain": -29
+    }
+   ],
+   "music": "D minor 9 with a 70 bpm pulse: the stories."
+  },
+  {
+   "id": "street",
+   "scene": "nightSky",
+   "plateFrom": "visitor",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateLook": {
+    "from": "warm"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.1,
+     "y": 40
+    },
+    "to": {
+     "s": 1.04,
+     "y": 30
+    }
+   },
+   "plateScrim": 0.5,
+   "purpose": "Layer 3, family structure: the closest seats belong to the neighbours, because the street raised him.",
+   "visual": "Slow pull back to the whole circle. An amber dashed ring traces the front row around the bier; callout FAMILY / the whole street.",
+   "camera": "Slow pull back (1.10 to 1.04).",
+   "layers": {
+    "foreground": "the ring",
+    "midground": "front row of neighbours",
+    "background": "courtyard"
+   },
+   "lighting": "Warm lamp light.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "shroud",
+     "local": true,
+     "at": [
+      580,
+      1452
+     ],
+     "length": 300,
+     "height": 56,
+     "head": "left"
+    },
+    {
+     "type": "ghostLines",
+     "local": true,
+     "dash": "14 9",
+     "width": 5,
+     "start": {
+      "line": "L5",
+      "word": "neighbours",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L5",
+      "word": "closest.",
+      "offset": 0.3
+     },
+     "shapes": [
+      {
+       "d": "M265,1478 A320,95 0 1,0 905,1478 A320,95 0 1,0 265,1478"
+      }
+     ]
+    },
+    {
+     "type": "callout",
+     "local": true,
+     "at": [
+      880,
+      1300
+     ],
+     "side": "left",
+     "rise": -300,
+     "reach": 40,
+     "label": "Family",
+     "note": "the whole street",
+     "start": {
+      "line": "L5",
+      "word": "street",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Amber dashed ring round the front row; callout FAMILY / the whole street.",
+   "transition": "Dissolve (0.5 s) to the empty costume, dimmed under the lesson.",
+   "sfx": [
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L5",
+      "word": "neighbours",
+      "offset": -0.15
+     },
+     "gain": -25
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L5",
+      "word": "street",
+      "offset": -0.1
+     },
+     "gain": -25
+    }
+   ],
+   "music": "G minor to B-flat major over the pulse: belonging."
+  },
+  {
+   "id": "lesson",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.5
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.19,
+     "y": 140
+    },
+    "to": {
+     "s": 1.22,
+     "y": 160
+    }
+   },
+   "plateScrim": 0.8,
+   "plateLook": {
+    "from": "saturate(0.2) brightness(0.42) contrast(1.05)"
+   },
+   "purpose": "Lesson, peeled from the outside in: the outfit is the surface; under it sit humour, family and goodness.",
+   "visual": "The empty costume, dimmed and greyed. A stack lands line by line, each joined by an arrow downward: 'An outfit is the surface.' then 'What they laugh at.' then 'Who counts as family.' then 'What makes someone good.' (payoff, ember italic).",
+   "camera": "Gentle push (1.08 to 1.12), frame lowered so the costume sits under the type.",
+   "layers": {
+    "foreground": "lesson stack",
+    "midground": "the empty costume",
+    "background": "dark workshop"
+   },
+   "lighting": "Plate cold-graded and dimmed under the type.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "lessonStack",
+     "top": 380,
+     "size": 84,
+     "restSize": 64,
+     "items": [
+      {
+       "text": "An outfit is the surface.",
+       "at": {
+        "line": "L6",
+        "word": "outfit",
+        "offset": -0.1
+       }
+      },
+      {
+       "text": "What they laugh at.",
+       "at": {
+        "line": "L6",
+        "word": "laugh",
+        "offset": -0.1
+       }
+      },
+      {
+       "text": "Who counts as family.",
+       "at": {
+        "line": "L6",
+        "word": "who's",
+        "offset": -0.1
+       }
+      },
+      {
+       "text": "What makes someone good.",
+       "at": {
+        "line": "L6",
+        "word": "makes",
+        "offset": -0.1
+       }
+      }
+     ]
+    }
+   ],
+   "onScreenText": "'An outfit is the surface.' then 'What they laugh at.', 'Who counts as family.', 'What makes someone good.' (ember serif italic).",
+   "transition": "Dissolve (0.6 s) to the same costume, now worn.",
+   "sfx": [
+    {
+     "sound": "paper",
+     "at": {
+      "line": "L6",
+      "word": "outfit",
+      "offset": -0.1
+     },
+     "gain": -28
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L6",
+      "word": "laugh",
+      "offset": -0.1
+     },
+     "gain": -22
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L6",
+      "word": "who's",
+      "offset": -0.1
+     },
+     "gain": -22
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L6",
+      "word": "makes",
+      "offset": -0.05
+     },
+     "gain": -20
+    }
+   ],
+   "music": "D major with bells: the answer."
+  },
+  {
+   "id": "cta",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.32,
+     "x": 165,
+     "y": -130
+    },
+    "to": {
+     "s": 1.3,
+     "x": 160,
+     "y": -120
+    }
+   },
+   "plateScrim": 0.3,
+   "captions": false,
+   "hideLogoBug": true,
+   "purpose": "Follow CTA over the opening image in a changed state: the same costume, now with a person and a culture inside it. Loops back to the empty one.",
+   "visual": "The workshop; a laughing elder wears the costume, a child holding her hand. Full logo, Episode 11 / 50, the CTA in large serif, a 'Follow' pill.",
+   "camera": "Settles (1.05 to 1.00).",
+   "layers": {
+    "foreground": "logo and CTA type",
+    "midground": "the elder in the costume",
+    "background": "workshop"
+   },
+   "lighting": "Warm window light; the last 0.6 s cross-fades to the empty costume.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits were exhausted.) Vertical 9:16 cinematic fantasy documentary still. A dim tailor's workshop at dusk. In the centre, a grey-haired elder woman stands laughing warmly, wearing the same ornate ceremonial costume: a deep teal layered wool coat over a pleated saffron robe, a tall hammered copper collar, sleeves banded with small copper discs, a rust and cream sash. A small child holds her hand. One shaft of warm window light from the left. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "graphics": [
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L7",
+      "word": "follow"
+     },
+     "episode": "Episode 11 / 50",
+     "title": "Culture is more than clothing.",
+     "kicker": "Worldcraft Shorts",
+     "size": 80,
+     "lines": [
+      "Follow if you want",
+      "*your fictional nations*",
+      "to feel genuinely different."
+     ],
+     "button": "Follow",
+     "icon": "follow"
+    }
+   ],
+   "onScreenText": "Full logo, 'EPISODE 11 / 50', title, 'WORLDCRAFT SHORTS', 'Follow if you want your fictional nations to feel genuinely different.', pill 'Follow'.",
+   "transition": "Cross-fade into the hook's first frame (the empty costume) for a seamless loop.",
+   "sfx": [
+    {
+     "sound": "swell",
+     "at": {
+      "shot": "cta",
+      "offset": -0.3
+     },
+     "gain": -25
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L7",
+      "word": "different.",
+      "offset": 0.2
+     },
+     "gain": -24
+    }
+   ],
+   "music": "G to D major, warm; fades fully before the last frame.",
+   "sdxlPrompt": "wide shot of a dim tailor's workshop at dusk, the upper two thirds of the frame is dark empty wall and tall shelves of folded cloth, in the bottom third a grey-haired elder woman sits on a low wooden bench laughing warmly, wearing a deep teal layered wool coat over a rust and saffron robe, small child beside her, warm window light from the left"
+  }
+ ],
+ "lesson": "An outfit tells you where someone is from; a culture tells you who they are. Build what your people laugh at, who counts as family, and what makes someone good, then let one ordinary moment, read wrongly by a visitor, show all of it.",
+ "captionReplace": {},
+ "music": {
+  "key": "D minor, resolving to D major",
+  "drone": [
+   "D2",
+   "A2"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L3",
+     "word": "again,"
+    },
+    "pre": 0.2,
+    "dur": 1.0,
+    "gain": 0.5
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L4",
+     "word": "life"
+    },
+    "pre": 0.15,
+    "dur": 1.4,
+    "gain": 0.55
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F3",
+      "A3",
+      "E4"
+     ]
+    ],
+    "level": 0.46,
+    "dark": true
+   },
+   "visitor": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "A3"
+     ]
+    ],
+    "level": 0.48,
+    "dark": true
+   },
+   "again": {
+    "chords": [
+     [
+      "F2",
+      "C3",
+      "A3",
+      "G4"
+     ]
+    ],
+    "level": 0.52
+   },
+   "stories": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F3",
+      "C4",
+      "E4"
+     ]
+    ],
+    "level": 0.58,
+    "pulse": 70
+   },
+   "street": {
+    "chords": [
+     [
+      "G1",
+      "D2",
+      "Bb2",
+      "D3",
+      "G3"
+     ],
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "F3",
+      "Bb3"
+     ]
+    ],
+    "level": 0.62,
+    "pulse": 70
+   },
+   "lesson": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F#3",
+      "A3",
+      "D4"
+     ]
+    ],
+    "level": 0.66,
+    "bells": true
+   },
+   "cta": {
+    "chords": [
+     [
+      "G1",
+      "D2",
+      "B2",
+      "D3",
+      "G3"
+     ],
+     [
+      "D2",
+      "A2",
+      "F#3",
+      "A3",
+      "D4"
+     ]
+    ],
+    "level": 0.58,
+    "bells": true
+   }
+  }
+ },
+ "metadata": {
+  "youtube": {
+   "title": "Culture Is More Than Clothing (Worldbuilding)",
+   "titleAlternate": "Why laughing at a funeral can be the kindest thing",
+   "description": "Giving every nation a different outfit doesn't give them different cultures.\n\nAt a Varenni funeral, a visitor sees everyone laughing and thinks it's cruel. Look again from inside: each mourner tells one of the dead man's funniest failures, because to them a good life is one that leaves good stories. And the neighbours sit closest, because the whole street raised him.\n\nAn outfit is the surface. Culture is what people laugh at, who counts as family, and what makes someone good. Pick one ordinary moment, let a visitor misread it, then show what it really means.\n\nFollow if you want your fictional nations to feel genuinely different.\n\nEpisode 11 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.\n\n#Worldbuilding #FantasyCulture #WritingTips #FantasyWriting #WorldcraftShorts",
+   "pinnedComment": "Your turn: pick one of your nations. What do they laugh at, who counts as family, and what makes someone a good person there?",
+   "uploadSettings": "Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "Different outfits aren't different cultures. At a Varenni funeral everyone laughs, and it's the kindest thing they could do 🕯️ Follow for fictional nations that feel genuinely different. #Worldbuilding #FantasyCulture #WritingTips #FantasyWriting #WorldcraftShorts",
+   "pinnedComment": "Tell us one ordinary moment in your world that a visitor would completely misread.",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "Giving every nation a different outfit doesn't give them different cultures.\n\nAt a Varenni funeral, a visitor sees everyone laughing and thinks it's cruel. Look again from inside: each mourner tells one of the dead man's funniest failures, because to them a good life is one that leaves good stories. And the neighbours sit closest, because the whole street raised him.\n\nAn outfit is the surface. Culture is what people laugh at, who counts as family, and what makes someone good. Pick one ordinary moment, let a visitor misread it, then show what it really means.\n\nFollow if you want your fictional nations to feel genuinely different.\n\nEpisode 11 of 50.\n\n#Worldbuilding #FantasyCulture #WritingTips #FantasyWriting #WorldcraftShorts",
+   "pinnedComment": "What would a visitor get wrong about the people in your story, and what's really going on?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "An outfit isn't a culture.\n\nGiving every nation a different outfit doesn't give them different cultures.\n\nAt a Varenni funeral, a visitor sees everyone laughing and thinks it's cruel. Look again from inside: each mourner tells one of the dead man's funniest failures, because to them a good life is one that leaves good stories. And the neighbours sit closest, because the whole street raised him.\n\nAn outfit is the surface. Culture is what people laugh at, who counts as family, and what makes someone good. Pick one ordinary moment, let a visitor misread it, then show what it really means.\n\nFollow if you want your fictional nations to feel genuinely different.\n\nEpisode 11 of 50 · Worldcraft Shorts\n\n#Worldbuilding #FantasyCulture #WritingTips #FantasyWriting #WorldcraftShorts",
+   "hookCheck": "First 26 characters: 'An outfit isn't a culture.'",
+   "pinnedComment": "Laughter, family, goodness: which one have you built for your nations, and which one is still blank?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  },
+  "cover": "Worldcraft_Short_E11_cover.jpg: the empty costume on its dress form in a shaft of window light, 'A NEW OUTFIT / isn't a culture.' above it, corner logo.",
+  "followUpQuestion": "Take one ordinary ritual in your world: what would an outsider think it means, and what does it actually mean?"
+ }
+}

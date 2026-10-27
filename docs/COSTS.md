@@ -154,6 +154,19 @@ On the paid primary stack: about **$1.15 (₱73)**, or **$2.12 (₱134)** with o
 
 On the paid primary stack, with 3 stills instead of 4: about **$1.05 (₱67)**, or **$1.94 (₱123)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
+## What Episode 11 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 3 stills (an empty costume on a dress form, the Varenni funeral courtyard, the costume worn by an elder) | **Local SDXL-Lightning** (`pipeline/local_stills.py`, 4-step, CPU, 768×1344, lanczos to 1080×1920). 11 candidates, 3 kept. Figma was tried first: the plan is out of AI credits until 1 Nov 2026, so the call was refused and nothing was charged | $0 |
+| Grade wipe (outsider → insider), code-drawn shroud, callouts, ring, lesson stack | Remotion code (new `plateLook`, `shroud`; `callout`, `ghostLines`, `lessonStack`, `dustBeam`, `tag`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 76 words, 31.16 s | $0 |
+| Score + SFX (new: relook) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, no Figma credits |
+
+On the paid primary stack, with 3 stills: about **$1.05 (₱67)**, or **$1.94 (₱123)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
 ## What Episode 12 actually used
 
 | Item | Used | Cash cost |

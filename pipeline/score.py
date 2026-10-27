@@ -633,6 +633,28 @@ def sfx_hit(kind, dur=None):
         sweep = bp(noise(n), 500, 4000) * np.interp(t, [0, 0.3, 0.38, 0.6], [0, 0.6, 0.2, 0])
         tap = np.sin(2 * np.pi * 110 * np.clip(t - 0.32, 0, None)) * np.exp(-np.clip(t - 0.32, 0, None) * 18) * (t >= 0.32) * 0.7
         return stereo(sweep + tap, 0.6)
+    if kind == "benchSet":
+        # The bench carried out (EP15 signature): a short scrape on cobbles, then two hollow timber knocks as each end lands.
+        n = int(1.3 * SR)
+        t = np.arange(n) / SR
+        scrape = bp(noise(n), 700, 3500) * np.interp(t, [0, 0.04, 0.22, 0.3], [0, 0.35, 0.25, 0])
+        out = scrape.copy()
+        for at, a, f in ((0.3, 1.0, 196), (0.42, 0.75, 174)):
+            th = np.clip(t - at, 0, None)
+            body = sum(w * np.sin(2 * np.pi * f * r * th) for r, w in ((1, 1.0), (2.41, 0.45), (3.9, 0.2))) * np.exp(-th * 22)
+            out += (body * 0.8 + bp(noise(n), 300, 1800) * np.exp(-th * 60) * 0.5) * a * (t >= at)
+        return stereo(out, 0.3)
+    if kind == "inferSeal":
+        # A value inferred (EP15 inferChain): a dry pen tick, then a warm rising fifth, quiet, like a thought clicking into place.
+        n = int(1.8 * SR)
+        t = np.arange(n) / SR
+        tick = bp(noise(n), 2000, 7000) * np.exp(-t * 120) * 0.5
+        out = tick.copy()
+        for at, f in ((0.06, 587.33), (0.16, 880.0)):
+            th = np.clip(t - at, 0, None)
+            tone = (np.sin(2 * np.pi * f * th) + 0.35 * np.sin(2 * np.pi * 2 * f * th) + 0.12 * np.sin(2 * np.pi * 3.01 * f * th)) * np.exp(-th * 3.2)
+            out += tone * np.minimum(1, th / 0.004) * 0.3 * (t >= at)
+        return stereo(out, 0.35)
     raise KeyError(kind)
 
 

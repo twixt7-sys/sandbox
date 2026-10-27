@@ -7,7 +7,7 @@ Prompts come from each shot's `sdxlPrompt` (keep it under ~70 words: CLIP trunca
 Weights: SDXL base 1.0 text encoders + VAE (CreativeML OpenRAIL++-M) and ByteDance/SDXL-Lightning 4-step UNet (OpenRAIL++),
 both allow commercial use. About 2.5 min per image on 4 CPU cores. Memory is staged (prompts encoded, encoders freed,
 UNet cast to fp32 tensor by tensor, all latents denoised, UNet freed, then VAE decode) so it fits a 14 GB container.
-Then run `python pipeline/plates.py <ep> --register`.
+Install: `uv pip install -r pipeline/requirements-stills.txt`. Then run `python pipeline/plates.py <ep> --register`.
 """
 import argparse, gc, json, time
 from pathlib import Path

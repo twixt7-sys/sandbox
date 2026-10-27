@@ -1,0 +1,6 @@
+# Optional: free local stills (pipeline/local_stills.py). Install on top of requirements.txt.
+diffusers==0.42.1
+transformers==5.20.2
+accelerate==1.15.0
+safetensors==0.8.0
+Pillow

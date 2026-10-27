@@ -112,6 +112,10 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | atlas | shot `zoom: {from, to, origin, at, dur}` | Cue-timed camera move on the map: EP10 holds 2.5× on the capital, then pulls back to 1× on "Pull back" |
 | graphic | `lessonStack` `size`, `restSize` | Smaller type for longer lesson lines |
 | sfx | `gateSlam` (hit) | EP10: a chain run down, then a deep timber-and-iron boom as a gate shuts |
+| shot | `plateLook: {from, to?, at?, dur?}` | Grade a plate (`cold`, `warm` or any CSS filter) and wipe a second grade across it left to right on a cue, with an amber seam: the same scene re-read (EP11: a visitor's cold read → an insider's warm one) |
+| graphic | `shroud` | Code-drawn linen-wrapped body on a bier (`at`, `length`, `height`, `head`, `sprigs`; `local`), for when the image model won't paint one (EP11) |
+| sfx | `relook` (hit) | EP11: a swept breath blooming into a warm triad, on a perspective flip |
+| tool | `pipeline/local_stills.py epNN shots --seeds …` / `--pick seed` | Free local stills (SDXL-Lightning, CPU, about 2.5 min each) from each shot's `sdxlPrompt`, when Figma credits run out |
 
 ## Local / Claude-session commands
 

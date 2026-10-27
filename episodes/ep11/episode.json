@@ -102,12 +102,12 @@
    "scene": "nightSky",
    "plateFrame": {
     "from": {
-     "s": 1.0,
-     "y": 0
+     "s": 1.17,
+     "y": 160
     },
     "to": {
-     "s": 1.06,
-     "y": -15
+     "s": 1.21,
+     "y": 150
     }
    },
    "plateScrim": 0.55,
@@ -120,7 +120,7 @@
     "background": "shelves of cloth in shadow"
    },
    "lighting": "One warm shaft of window light; the rest in shadow. Top scrim for the title.",
-   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. A dim, empty tailor's workshop at dusk. In the centre, a headless wooden dress form displays an ornate ceremonial costume with nobody inside it: a deep teal layered wool coat over a pleated saffron robe, a tall hammered copper collar, sleeves banded with small copper discs, a rust and cream sash. One shaft of warm window light from the left; dark shelves of cloth behind. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits were exhausted.) Vertical 9:16 cinematic fantasy documentary still. A dim, empty tailor's workshop at dusk. In the centre, a headless wooden dress form displays an ornate ceremonial costume with nobody inside it: a deep teal layered wool coat over a pleated saffron robe, a tall hammered copper collar, sleeves banded with small copper discs, a rust and cream sash. One shaft of warm window light from the left; dark shelves of cloth behind. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
    "videoPrompt": "(Not used.) Dust drifting in the window light, 4 seconds",
    "graphics": [
     {
@@ -196,7 +196,8 @@
      "gain": -21
     }
    ],
-   "music": "D minor add9, sparse: something fine but empty."
+   "music": "D minor add9, sparse: something fine but empty.",
+   "sdxlPrompt": "cinematic fantasy documentary still, dim empty tailor's workshop at dusk, in the centre a headless wooden dress form displays an ornate ceremonial costume with nobody inside, deep teal layered wool coat over pleated saffron robe, tall hammered copper collar, sleeves banded with small copper discs, rust and cream sash, one shaft of warm window light from the left, dark shelves of cloth"
   },
   {
    "id": "visitor",
@@ -209,12 +210,12 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.0,
-     "y": 0
+     "s": 1.04,
+     "y": 30
     },
     "to": {
-     "s": 1.05,
-     "y": -10
+     "s": 1.07,
+     "y": 50
     }
    },
    "plateScrim": 0.5,
@@ -227,9 +228,20 @@
     "background": "courtyard walls and lamps"
    },
    "lighting": "Code grade: desaturated, cool, slightly dark (plateLook 'cold').",
-   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. An evening funeral in a lamp-lit stone courtyard of an invented town. A body wrapped in pale linen lies on a low wooden bier covered in herbs and small clay oil lamps. Neighbours sit close around it on cushions, laughing warmly; an old man stands telling a story with open hands. Faces in soft shadow. A lone cloaked traveller is seen from behind in the lower foreground. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits were exhausted.) Vertical 9:16 cinematic fantasy documentary still. An evening funeral in a lamp-lit stone courtyard of an invented town. A body wrapped in pale linen lies on a low wooden bier covered in herbs and small clay oil lamps. Neighbours sit close around it on cushions, laughing warmly; an old man stands telling a story with open hands. Faces in soft shadow. A lone cloaked traveller is seen from behind in the lower foreground. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
    "videoPrompt": "(Not used.) Lamp flames flickering, mourners laughing, 4 seconds",
    "graphics": [
+    {
+     "type": "shroud",
+     "local": true,
+     "at": [
+      580,
+      1452
+     ],
+     "length": 300,
+     "height": 56,
+     "head": "left"
+    },
     {
      "type": "tag",
      "kicker": "What a visitor sees",
@@ -245,12 +257,12 @@
      "local": true,
      "color": "#b9543a",
      "at": [
-      600,
-      900
+      670,
+      1375
      ],
-     "side": "right",
-     "rise": -90,
-     "reach": 70,
+     "side": "left",
+     "rise": -405,
+     "reach": 60,
      "label": "Visitor's verdict",
      "note": "cruel?",
      "start": {
@@ -295,7 +307,8 @@
      "gain": -22
     }
    ],
-   "music": "B-flat major 7 over the drone, hesitant."
+   "music": "B-flat major 7 over the drone, hesitant.",
+   "sdxlPrompt": "a night funeral wake in a lantern-lit stone courtyard, wide view, in the centre a body fully wrapped in a white linen shroud lies on a low wooden bier strewn with flowers and candles, a full circle of villagers sits on cushions close around the bier, laughing together, an old man stands beside the bier telling a funny story with raised hands, a cloaked traveller seen from behind in the bottom foreground watches"
   },
   {
    "id": "again",
@@ -316,12 +329,12 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.05,
-     "y": -10
+     "s": 1.07,
+     "y": 50
     },
     "to": {
-     "s": 1.07,
-     "y": -15
+     "s": 1.08,
+     "y": 50
     }
    },
    "plateScrim": 0.5,
@@ -337,6 +350,17 @@
    "imagePrompt": "",
    "videoPrompt": "",
    "graphics": [
+    {
+     "type": "shroud",
+     "local": true,
+     "at": [
+      580,
+      1452
+     ],
+     "length": 300,
+     "height": 56,
+     "head": "left"
+    },
     {
      "type": "tag",
      "kicker": "What a Varenni sees",
@@ -375,14 +399,14 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.2,
-     "x": 0,
-     "y": -80
+     "s": 1.14,
+     "x": -45,
+     "y": 20
     },
     "to": {
-     "s": 1.24,
-     "x": 0,
-     "y": -95
+     "s": 1.18,
+     "x": -50,
+     "y": 20
     }
    },
    "plateScrim": 0.45,
@@ -399,15 +423,26 @@
    "videoPrompt": "",
    "graphics": [
     {
+     "type": "shroud",
+     "local": true,
+     "at": [
+      580,
+      1452
+     ],
+     "length": 300,
+     "height": 56,
+     "head": "left"
+    },
+    {
      "type": "callout",
      "local": true,
      "at": [
-      600,
-      800
+      870,
+      1290
      ],
-     "side": "right",
-     "rise": -70,
-     "reach": 70,
+     "side": "left",
+     "rise": -280,
+     "reach": 40,
      "label": "Humour",
      "note": "his funniest failure",
      "start": {
@@ -426,12 +461,12 @@
      "type": "callout",
      "local": true,
      "at": [
-      540,
-      1100
+      660,
+      1430
      ],
      "side": "left",
-     "rise": -80,
-     "reach": 70,
+     "rise": -420,
+     "reach": 40,
      "label": "A good person",
      "note": "leaves good stories",
      "start": {
@@ -487,11 +522,11 @@
    "plateFrame": {
     "from": {
      "s": 1.1,
-     "y": -40
+     "y": 40
     },
     "to": {
      "s": 1.04,
-     "y": -20
+     "y": 30
     }
    },
    "plateScrim": 0.5,
@@ -507,6 +542,17 @@
    "imagePrompt": "",
    "videoPrompt": "",
    "graphics": [
+    {
+     "type": "shroud",
+     "local": true,
+     "at": [
+      580,
+      1452
+     ],
+     "length": 300,
+     "height": 56,
+     "head": "left"
+    },
     {
      "type": "ghostLines",
      "local": true,
@@ -524,7 +570,7 @@
      },
      "shapes": [
       {
-       "d": "M300,1000 A240,90 0 1,0 780,1000 A240,90 0 1,0 300,1000"
+       "d": "M265,1478 A320,95 0 1,0 905,1478 A320,95 0 1,0 265,1478"
       }
      ]
     },
@@ -532,12 +578,12 @@
      "type": "callout",
      "local": true,
      "at": [
-      540,
-      900
+      880,
+      1300
      ],
-     "side": "right",
-     "rise": -120,
-     "reach": 60,
+     "side": "left",
+     "rise": -300,
+     "reach": 40,
      "label": "Family",
      "note": "the whole street",
      "start": {
@@ -581,17 +627,17 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.08,
-     "y": 40
+     "s": 1.19,
+     "y": 140
     },
     "to": {
-     "s": 1.12,
-     "y": 60
+     "s": 1.22,
+     "y": 160
     }
    },
    "plateScrim": 0.8,
    "plateLook": {
-    "from": "cold"
+    "from": "saturate(0.2) brightness(0.42) contrast(1.05)"
    },
    "purpose": "Lesson, peeled from the outside in: the outfit is the surface; under it sit humour, family and goodness.",
    "visual": "The empty costume, dimmed and greyed. A stack lands line by line, each joined by an arrow downward: 'An outfit is the surface.' then 'What they laugh at.' then 'Who counts as family.' then 'What makes someone good.' (payoff, ember italic).",
@@ -697,15 +743,17 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.05,
-     "y": -10
+     "s": 1.32,
+     "x": 165,
+     "y": -130
     },
     "to": {
-     "s": 1.0,
-     "y": 0
+     "s": 1.3,
+     "x": 160,
+     "y": -120
     }
    },
-   "plateScrim": 0.55,
+   "plateScrim": 0.3,
    "captions": false,
    "hideLogoBug": true,
    "purpose": "Follow CTA over the opening image in a changed state: the same costume, now with a person and a culture inside it. Loops back to the empty one.",
@@ -717,7 +765,7 @@
     "background": "workshop"
    },
    "lighting": "Warm window light; the last 0.6 s cross-fades to the empty costume.",
-   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. A dim tailor's workshop at dusk. In the centre, a grey-haired elder woman stands laughing warmly, wearing the same ornate ceremonial costume: a deep teal layered wool coat over a pleated saffron robe, a tall hammered copper collar, sleeves banded with small copper discs, a rust and cream sash. A small child holds her hand. One shaft of warm window light from the left. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits were exhausted.) Vertical 9:16 cinematic fantasy documentary still. A dim tailor's workshop at dusk. In the centre, a grey-haired elder woman stands laughing warmly, wearing the same ornate ceremonial costume: a deep teal layered wool coat over a pleated saffron robe, a tall hammered copper collar, sleeves banded with small copper discs, a rust and cream sash. A small child holds her hand. One shaft of warm window light from the left. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
    "videoPrompt": "(Not used.)",
    "graphics": [
     {
@@ -763,7 +811,8 @@
      "gain": -24
     }
    ],
-   "music": "G to D major, warm; fades fully before the last frame."
+   "music": "G to D major, warm; fades fully before the last frame.",
+   "sdxlPrompt": "wide shot of a dim tailor's workshop at dusk, the upper two thirds of the frame is dark empty wall and tall shelves of folded cloth, in the bottom third a grey-haired elder woman sits on a low wooden bench laughing warmly, wearing a deep teal layered wool coat over a rust and saffron robe, small child beside her, warm window light from the left"
   }
  ],
  "lesson": "An outfit tells you where someone is from; a culture tells you who they are. Build what your people laugh at, who counts as family, and what makes someone good, then let one ordinary moment, read wrongly by a visitor, show all of it.",

@@ -672,3 +672,71 @@ Source of truth: `episodes/ep10/episode.json` → `metadata`. The AI label goes 
 
 - **Pinned comment:** Pass, bridge, harbour or strait: which chokepoint runs your world?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 11 captions (ready to paste)
+
+Source of truth: `episodes/ep11/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep11/Worldcraft_Short_E11_cover.jpg`. Subtitles: `episodes/ep11/ep11.srt`. The stills were made with a local open model (SDXL-Lightning), so they're AI-generated like every other episode's and need the same disclosure.
+
+### YouTube Shorts
+- **Title** (45/100 chars): `Culture Is More Than Clothing (Worldbuilding)`
+- **Alternate title** (50 chars): `Why laughing at a funeral can be the kindest thing`
+- **Description:**
+
+> Giving every nation a different outfit doesn't give them different cultures.
+>
+> At a Varenni funeral, a visitor sees everyone laughing and thinks it's cruel. Look again from inside: each mourner tells one of the dead man's funniest failures, because to them a good life is one that leaves good stories. And the neighbours sit closest, because the whole street raised him.
+>
+> An outfit is the surface. Culture is what people laugh at, who counts as family, and what makes someone good. Pick one ordinary moment, let a visitor misread it, then show what it really means.
+>
+> Follow if you want your fictional nations to feel genuinely different.
+>
+> Episode 11 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyCulture #WritingTips #FantasyWriting #WorldcraftShorts
+
+- **Pinned comment:** Your turn: pick one of your nations. What do they laugh at, who counts as family, and what makes someone a good person there?
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (264 chars): `Different outfits aren't different cultures. At a Varenni funeral everyone laughs, and it's the kindest thing they could do 🕯️ Follow for fictional nations that feel genuinely different. #Worldbuilding #FantasyCulture #WritingTips #FantasyWriting #WorldcraftShorts`
+- **Pinned comment:** Tell us one ordinary moment in your world that a visitor would completely misread.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> Giving every nation a different outfit doesn't give them different cultures.
+>
+> At a Varenni funeral, a visitor sees everyone laughing and thinks it's cruel. Look again from inside: each mourner tells one of the dead man's funniest failures, because to them a good life is one that leaves good stories. And the neighbours sit closest, because the whole street raised him.
+>
+> An outfit is the surface. Culture is what people laugh at, who counts as family, and what makes someone good. Pick one ordinary moment, let a visitor misread it, then show what it really means.
+>
+> Follow if you want your fictional nations to feel genuinely different.
+>
+> Episode 11 of 50.
+>
+> #Worldbuilding #FantasyCulture #WritingTips #FantasyWriting #WorldcraftShorts
+
+- **Pinned comment:** What would a visitor get wrong about the people in your story, and what's really going on?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> An outfit isn't a culture.
+>
+> Giving every nation a different outfit doesn't give them different cultures.
+>
+> At a Varenni funeral, a visitor sees everyone laughing and thinks it's cruel. Look again from inside: each mourner tells one of the dead man's funniest failures, because to them a good life is one that leaves good stories. And the neighbours sit closest, because the whole street raised him.
+>
+> An outfit is the surface. Culture is what people laugh at, who counts as family, and what makes someone good. Pick one ordinary moment, let a visitor misread it, then show what it really means.
+>
+> Follow if you want your fictional nations to feel genuinely different.
+>
+> Episode 11 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyCulture #WritingTips #FantasyWriting #WorldcraftShorts
+
+- **Hook check:** First 26 characters: 'An outfit isn't a culture.'
+- **Pinned comment:** Laughter, family, goodness: which one have you built for your nations, and which one is still blank?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

@@ -875,3 +875,71 @@ Source of truth: `episodes/ep13/episode.json` → `metadata`. The AI label goes 
 
 - **Pinned comment:** Gift, greeting, question or silence: which act means opposite things in your world?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 15 captions (ready to paste)
+
+Source of truth: `episodes/ep15/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep15/Worldcraft_Short_E15_cover.jpg`. Subtitles: `episodes/ep15/ep15.srt`.
+
+### YouTube Shorts
+- **Title** (59/100 chars): `Show a Civilization Without a Single Palace (Worldbuilding)`
+- **Alternate title** (45 chars): `How one bench reveals a whole fantasy culture`
+- **Description:**
+
+> You can reveal an entire civilization without showing a single palace.
+>
+> In Tamsry, when neighbours quarrel, they carry one bench into the street and sit on it together until they agree. No judge: nobody there stands above a neighbour. One bench: nobody can walk away, so the street matters more than winning. In the open: peace is everyone's business.
+>
+> Three values, and nobody ever states them. Don't explain your culture's values. Show one everyday habit and let the audience work them out.
+>
+> Follow for worldbuilding details that do more than decorate a setting.
+>
+> Episode 15 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyCulture #WorldcraftShorts
+
+- **Pinned comment:** Your turn: how do neighbours settle a quarrel in your world? Tell us the habit, and we'll guess the values.
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (272 chars): `No palace, no king, one bench 🪑 In Tamsry, quarrelling neighbours sit on it together until they agree, and that tells you everything. Follow for worldbuilding details that do more than decorate. #Worldbuilding #FantasyWriting #WritingTips #FantasyCulture #WorldcraftShorts`
+- **Pinned comment:** Give us one everyday habit from your world. We'll read the culture from it.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> You can reveal an entire civilization without showing a single palace.
+>
+> In Tamsry, when neighbours quarrel, they carry one bench into the street and sit on it together until they agree. No judge: nobody there stands above a neighbour. One bench: nobody can walk away, so the street matters more than winning. In the open: peace is everyone's business.
+>
+> Three values, and nobody ever states them. Don't explain your culture's values. Show one everyday habit and let the audience work them out.
+>
+> Follow for worldbuilding details that do more than decorate a setting.
+>
+> Episode 15 of 50.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyCulture #WorldcraftShorts
+
+- **Pinned comment:** How do children greet elders, or neighbours make peace, in your story? What does it say about them?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> One bench. A whole civilization.
+>
+> You can reveal an entire civilization without showing a single palace.
+>
+> In Tamsry, when neighbours quarrel, they carry one bench into the street and sit on it together until they agree. No judge: nobody there stands above a neighbour. One bench: nobody can walk away, so the street matters more than winning. In the open: peace is everyone's business.
+>
+> Three values, and nobody ever states them. Don't explain your culture's values. Show one everyday habit and let the audience work them out.
+>
+> Follow for worldbuilding details that do more than decorate a setting.
+>
+> Episode 15 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyCulture #WorldcraftShorts
+
+- **Hook check:** First 32 characters: 'One bench. A whole civilization.'
+- **Pinned comment:** Equals, the street first, peace in public: which value would your culture's quarrel habit reveal?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

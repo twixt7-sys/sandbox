@@ -55,7 +55,7 @@ const Seal: React.FC<{text: string; p: number; size?: number}> = ({text, p, size
  * InferChain: `at: [x, y]` the clue, `loop: [rx, ry]` (default [90, 60]) the pen loop round it, `box: [x, y]` where the
  * text block hangs (its top edge; `align` "left" | "right" | "center" says which edge of the block sits on x), `width`.
  * Tiers: `seen` (caps, amber) from `start`; `means` (serif italic) at `meansAt`; `value` (∴ + ember seal) at `valueAt`.
- * `end` fades it (else the shot end). Seal-only mode: give just `value` (no `seen`): a dot on the clue, a short leader to
+ * `end` fades it (else the shot end). `backdrop: true` puts a soft dark glow behind the text block. Seal-only mode: give just `value` (no `seen`): a dot on the clue, a short leader to
  * `box`, and the seal, for pinning several values onto one wide plate. `noLoop: true` skips the loop.
  */
 export const InferChain: React.FC<GraphicProps> = ({g, t, span}) => {
@@ -96,7 +96,18 @@ export const InferChain: React.FC<GraphicProps> = ({g, t, span}) => {
 				{sealOnly && <circle cx={cx} cy={cy} r={22 * dot} fill="none" stroke={palette.ember} strokeWidth={2} opacity={0.7 * dot} />}
 				<path d={`M${sx},${sy} Q${mx},${my} ${ex},${ey}`} fill="none" stroke={c} strokeWidth={2.5} strokeLinecap="round" pathLength={1} strokeDasharray={`${lead} 1`} style={{filter: shadow}} />
 			</svg>
-			<div style={{position: 'absolute', top: by, ...blockPos, width: g.width, textAlign: align}}>
+			<div
+				style={{
+					position: 'absolute',
+					top: by,
+					...blockPos,
+					width: g.width,
+					textAlign: align,
+					...(g.backdrop && !sealOnly
+						? {background: `radial-gradient(ellipse at 50% 50%, rgba(6,10,13,${0.6 * seen}) 0%, rgba(6,10,13,${0.4 * seen}) 55%, rgba(6,10,13,0) 75%)`, padding: '26px 60px 22px', margin: '-26px -60px 0'}
+						: {}),
+				}}
+			>
 				{!sealOnly && (
 					<>
 						<div style={{...kicker, fontSize: 30, color: c, opacity: seen, transform: `translateY(${(1 - seen) * 10}px)`, textShadow: '0 2px 12px rgba(0,0,0,0.95)'}}>{g.seen}</div>
@@ -145,7 +156,7 @@ export const Bench: React.FC<GraphicProps> = ({g}) => {
 	const x1 = cx + L / 2;
 	const top = cy - h;
 	const dusk = g.tone === 'dusk';
-	const wood = dusk ? ['#7a5a3e', '#4a3324', '#2a1c14'] : ['#b48a5c', '#7d5634', '#4b321f'];
+	const wood = dusk ? ['#7a5a3e', '#4a3324', '#2a1c14'] : ['#a07448', '#66422a', '#36231a'];
 	const leg = L * 0.045;
 	const legX = [x0 + L * 0.1, x1 - L * 0.1 - leg];
 	const cups = g.cups ?? 0;

@@ -193,6 +193,19 @@ On the paid primary stack: about **$1.15 (₱73)**, or **$2.12 (₱134)** with o
 
 On the paid primary stack, with 3 stills plus one re-roll (4 images): about **$1.15 (₱73)**, or **$2.12 (₱134)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
+## What Episode 15 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 3 stills (the morning street, the two neighbours on the bench, the same street at dusk) | **Local SDXL-Lightning** (`pipeline/local_stills.py`, 4-step, CPU, 768×1344, lanczos to 1080×1920). 12 candidates in three rounds, 3 kept: street seed 23, bench seed 8 (third prompt), dusk seed 11. A gibberish shop sign on the bench plate was painted out with PIL. Figma credits are out until 1 Nov 2026, so it wasn't tried | $0 |
+| Ink evidence chains, value seals, code-drawn street bench, pull-back, lesson card, CTA card | Remotion code (new `inferChain` and `bench`; `pullBack`, `callout`, `tag`, `titleLockup`, `reverseCard`, `ctaCard`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 77 words, 30.33 s | $0 |
+| Score + SFX (new: benchSet, inferSeal) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, no Figma credits |
+
+On the paid primary stack, with 3 stills: about **$1.05 (₱67)**, or **$1.94 (₱123)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
 ## Alternatives
 
 | Option | Per-episode | Monthly | Comment |

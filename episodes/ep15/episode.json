@@ -1,11 +1,1122 @@
 {
  "id": "ep15",
  "number": 15,
- "title": "draft",
+ "title": "The Best Cultural Detail Is Often Invisible",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "A warm, observant guide letting the viewer in on a small discovery. Plain and sure on the hook, a little amused on 'they carry one bench into the street', patient on 'until they agree'. Each inference is a quiet click: a short beat on 'No judge.', 'One bench.', 'In the open.', then the conclusion said simply. Clear and practical on the lesson; friendly on the follow CTA. No trailer voice."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "You can reveal an entire civilization without showing a single palace.",
+   "pauseAfter": 0.55,
+   "emphasis": [
+    "civilization",
+    "palace."
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "bench",
+   "text": "In Tamsry, when neighbours quarrel, they carry one bench into the street.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "quarrel,",
+    "bench"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "agree",
+   "text": "They sit on it together until they agree.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "together",
+    "agree."
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "judge",
+   "text": "No judge. Nobody here stands above a neighbour.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "judge.",
+    "above"
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "one",
+   "text": "One bench. The street matters more than winning.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "street",
+    "winning."
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "public",
+   "text": "In the open. Peace is everyone's business.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "open.",
+    "everyone's"
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "lesson",
+   "text": "Don't explain their values. Show one habit, and let us infer them.",
+   "pauseAfter": 0.7,
+   "emphasis": [
+    "explain",
+    "habit,"
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "cta",
+   "text": "Follow for worldbuilding details that do more than decorate a setting.",
+   "pauseAfter": 0.0,
+   "emphasis": [
+    "follow",
+    "decorate"
+   ]
+  }
+ ],
  "shots": [
   {
-   "id": "bench2",
-   "sdxlPrompt": "a man and a woman sit back to back on one long wooden bench in the middle of a sunny cobbled village street, arms folded, sulking, not looking at each other, invented folk clothing in rust and indigo wool, villagers watching from open doorways and windows, whitewashed houses with green doors, eye level, full figures"
+   "id": "hook",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.05,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "Stop the scroll on the opposite of an epic establishing shot: no palace, no ruler, one ordinary street.",
+   "visual": "A long, plain cobbled street of an invented hill town on a clear morning: whitewashed houses, ochre doors, washing lines, neighbours and children, a bench in the middle of the road. 'NO PALACE / Just a street.'",
+   "camera": "Slow push down the street (1.00 to 1.05).",
+   "layers": {
+    "foreground": "title",
+    "midground": "the bench in the road",
+    "background": "houses and washing lines"
+   },
+   "lighting": "Clear morning light; top scrim for the title.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. wide high view down a long ordinary cobbled street in an invented hill town on a clear morning, plain whitewashed houses with ochre doors and green shutters, washing lines strung between windows, potted herbs on steps, a small water cart, tiny figures of neighbours walking and children playing, in the middle of the street a long wooden bench with two people seated far apart, rooftops and pale sky above. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "wide high view down a long ordinary cobbled street in an invented hill town on a clear morning, plain whitewashed houses with ochre doors and green shutters, washing lines strung between windows, potted herbs on steps, a small water cart, tiny figures of neighbours walking and children playing, in the middle of the street a long wooden bench with two people seated far apart, rooftops and pale sky above",
+   "graphics": [
+    {
+     "type": "bench",
+     "local": true,
+     "at": [
+      450,
+      1478
+     ],
+     "length": 215
+    },
+    {
+     "type": "titleLockup",
+     "kicker": "No palace",
+     "text": "Just a street.",
+     "y": 330,
+     "size": 124,
+     "start": {
+      "line": "L1",
+      "word": "you",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L1",
+      "word": "palace.",
+      "offset": 0.6
+     }
+    }
+   ],
+   "onScreenText": "Kicker 'NO PALACE' + 'Just a street.' (ember serif italic).",
+   "transition": "Hard cut on 'In' to the two neighbours on the bench.",
+   "sfx": [
+    {
+     "sound": "market",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "public",
+      "offset": 2.5
+     },
+     "gain": -33
+    },
+    {
+     "sound": "footsteps",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "bench",
+      "offset": 1.0
+     },
+     "gain": -36
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L1",
+      "word": "palace.",
+      "offset": -0.9
+     },
+     "gain": -24
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L1",
+      "word": "palace."
+     },
+     "gain": -22
+    }
+   ],
+   "music": "A minor add9, sparse and plain."
+  },
+  {
+   "id": "bench",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.06,
+     "x": 0,
+     "y": -60
+    },
+    "to": {
+     "s": 1.1,
+     "x": 0,
+     "y": -70
+    }
+   },
+   "plateScrim": 0.4,
+   "purpose": "The one everyday behaviour, shown closely: how two neighbours settle a quarrel.",
+   "visual": "Two neighbours at opposite ends of one long bench in the street, arms folded, turned away from each other. Tag TAMSRY · A QUARREL / One bench. Two neighbours.",
+   "camera": "Slow push (1.00 to 1.04).",
+   "layers": {
+    "foreground": "the bench",
+    "midground": "the two neighbours",
+    "background": "whitewashed wall and doorway"
+   },
+   "lighting": "Bright, plain daylight.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. medium wide shot in a sunny cobbled street, a long plain wooden bench in the centre, a middle-aged man sits at the far left end and a middle-aged woman at the far right end, arms folded, turned away from each other, stubborn, a wide empty gap between them, invented folk clothing in rust and indigo wool, whitewashed wall and ochre doorway behind, potted herbs. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "medium wide shot in a sunny cobbled street, a long plain wooden bench in the centre, a middle-aged man sits at the far left end and a middle-aged woman at the far right end, arms folded, turned away from each other, stubborn, a wide empty gap between them, invented folk clothing in rust and indigo wool, whitewashed wall and ochre doorway behind, potted herbs",
+   "graphics": [
+    {
+     "type": "tag",
+     "kicker": "Tamsry · a quarrel",
+     "text": "One bench. Two neighbours.",
+     "start": {
+      "line": "L2",
+      "word": "tamsry,",
+      "offset": -0.15
+     }
+    }
+   ],
+   "onScreenText": "Tag 'TAMSRY · A QUARREL' + 'One bench. Two neighbours.'",
+   "transition": "Hard cut (punch-in) on 'They'.",
+   "sfx": [
+    {
+     "sound": "benchSet",
+     "at": {
+      "line": "L2",
+      "word": "bench",
+      "offset": -0.25
+     },
+     "gain": -19
+    }
+   ],
+   "music": "F major 7: the scene."
+  },
+  {
+   "id": "agree",
+   "scene": "nightSky",
+   "plateFrom": "bench",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.2,
+     "x": 60,
+     "y": -150
+    },
+    "to": {
+     "s": 1.24,
+     "x": 60,
+     "y": -160
+    }
+   },
+   "plateScrim": 0.4,
+   "purpose": "The rule of the habit: nobody stands until they agree. This is the behaviour the rest of the episode reads.",
+   "visual": "Punch-in on the gap between them; callout THE HABIT / sit until you agree.",
+   "camera": "Punch-in, slow push.",
+   "layers": {
+    "foreground": "callout",
+    "midground": "the empty middle of the bench",
+    "background": "wall"
+   },
+   "lighting": "Daylight.",
+   "graphics": [
+    {
+     "type": "callout",
+     "local": true,
+     "side": "up",
+     "at": [
+      300,
+      1530
+     ],
+     "rise": -560,
+     "dx": 200,
+     "backdrop": true,
+     "label": "The habit",
+     "note": "sit until it’s settled",
+     "start": {
+      "line": "L3",
+      "word": "sit",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Callout THE HABIT / sit until it's settled.",
+   "transition": "Hard cut on 'No' to a wider frame; the inference chain starts.",
+   "sfx": [
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L3",
+      "word": "sit",
+      "offset": -0.1
+     },
+     "gain": -25
+    }
+   ],
+   "music": "D minor 9, a 72 bpm pulse begins.",
+   "imagePrompt": "",
+   "videoPrompt": ""
+  },
+  {
+   "id": "judge",
+   "scene": "nightSky",
+   "plateFrom": "bench",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.08,
+     "x": 0,
+     "y": -80
+    },
+    "to": {
+     "s": 1.1,
+     "x": -10,
+     "y": -80
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "Inference 1: no judge is called, so no one sits above anyone. Value: equality.",
+   "visual": "Ink loop round the empty space above the bench where a judge would stand; chain NO JUDGE → no one sits higher → ∴ EQUALS.",
+   "camera": "Slow drift.",
+   "layers": {
+    "foreground": "ink chain",
+    "midground": "the bench",
+    "background": "wall"
+   },
+   "lighting": "Daylight.",
+   "graphics": [
+    {
+     "type": "inferChain",
+     "local": true,
+     "backdrop": true,
+     "at": [
+      790,
+      1570
+     ],
+     "loop": [
+      125,
+      105
+     ],
+     "box": [
+      540,
+      500
+     ],
+     "align": "center",
+     "seen": "No judge",
+     "means": "no one sits higher",
+     "value": "Equals",
+     "start": {
+      "line": "L4",
+      "word": "no",
+      "offset": -0.1,
+      "nth": 1
+     },
+     "meansAt": {
+      "line": "L4",
+      "word": "nobody",
+      "offset": -0.1
+     },
+     "valueAt": {
+      "line": "L4",
+      "word": "above",
+      "offset": -0.05
+     },
+     "seed": 1
+    }
+   ],
+   "onScreenText": "Inference chain: NO JUDGE / no one sits higher / ∴ EQUALS.",
+   "transition": "Hard cut on 'One'.",
+   "sfx": [
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L4",
+      "word": "no",
+      "offset": -0.1,
+      "nth": 1
+     },
+     "gain": -24
+    },
+    {
+     "sound": "inferSeal",
+     "at": {
+      "line": "L4",
+      "word": "above",
+      "offset": -0.1
+     },
+     "gain": -22
+    }
+   ],
+   "music": "D minor 9 with the pulse.",
+   "imagePrompt": "",
+   "videoPrompt": ""
+  },
+  {
+   "id": "one",
+   "scene": "nightSky",
+   "plateFrom": "bench",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.1,
+     "x": 20,
+     "y": -90
+    },
+    "to": {
+     "s": 1.14,
+     "x": 20,
+     "y": -100
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "Inference 2: one shared bench, nobody can walk off, so the relationship outlasts the quarrel. Value: the street first.",
+   "visual": "Ink loop round the whole bench; chain ONE BENCH → nobody walks away → ∴ THE STREET FIRST.",
+   "camera": "Slow push.",
+   "layers": {
+    "foreground": "ink chain",
+    "midground": "the bench",
+    "background": "wall"
+   },
+   "lighting": "Daylight.",
+   "graphics": [
+    {
+     "type": "inferChain",
+     "local": true,
+     "backdrop": true,
+     "at": [
+      250,
+      1560
+     ],
+     "loop": [
+      225,
+      75
+     ],
+     "box": [
+      540,
+      520
+     ],
+     "align": "center",
+     "seen": "One bench",
+     "means": "nobody walks away",
+     "value": "The street first",
+     "start": {
+      "line": "L5",
+      "word": "one",
+      "offset": -0.1
+     },
+     "meansAt": {
+      "line": "L5",
+      "word": "the",
+      "offset": -0.1
+     },
+     "valueAt": {
+      "line": "L5",
+      "word": "winning.",
+      "offset": -0.1
+     },
+     "seed": 2
+    }
+   ],
+   "onScreenText": "Inference chain: ONE BENCH / nobody walks away / ∴ THE STREET FIRST.",
+   "transition": "Pull back on 'In': the bench shrinks into its place in the whole street.",
+   "sfx": [
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L5",
+      "word": "one",
+      "offset": -0.1
+     },
+     "gain": -24
+    },
+    {
+     "sound": "inferSeal",
+     "at": {
+      "line": "L5",
+      "word": "winning.",
+      "offset": -0.15
+     },
+     "gain": -22
+    }
+   ],
+   "music": "B-flat major 7 over the pulse.",
+   "imagePrompt": "",
+   "videoPrompt": ""
+  },
+  {
+   "id": "public",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.06,
+     "y": 0
+    },
+    "to": {
+     "s": 1.02,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "Inference 3 and the pull-back: the quarrel happens in the open, so peace is everyone's business. The ordinary street now reads as a whole civilization.",
+   "visual": "The bench frame shrinks into its place in the wide street; ink loop round the neighbours watching from doorways; chain IN THE OPEN → every neighbour sees → ∴ PEACE IS PUBLIC. The first two values settle onto the street as seals.",
+   "camera": "Pull back (pullBack inset), then a slow pull (1.06 to 1.02).",
+   "layers": {
+    "foreground": "ink chain and seals",
+    "midground": "the bench in the street",
+    "background": "houses and washing lines"
+   },
+   "lighting": "Morning light.",
+   "graphics": [
+    {
+     "type": "bench",
+     "local": true,
+     "at": [
+      450,
+      1478
+     ],
+     "length": 215
+    },
+    {
+     "type": "pullBack",
+     "src": "ep15/plates/bench.jpg",
+     "from": {
+      "s": 1.14,
+      "x": 20,
+      "y": -100
+     },
+     "to": [
+      450,
+      1400,
+      170
+     ],
+     "dur": 0.8,
+     "hold": 0.35,
+     "fade": 0.4
+    },
+    {
+     "type": "inferChain",
+     "local": true,
+     "backdrop": true,
+     "at": [
+      820,
+      690
+     ],
+     "loop": [
+      105,
+      170
+     ],
+     "box": [
+      540,
+      400
+     ],
+     "align": "center",
+     "seen": "In the open",
+     "means": "every neighbour sees",
+     "value": "Peace is public",
+     "start": {
+      "line": "L6",
+      "word": "open.",
+      "offset": -0.25
+     },
+     "meansAt": {
+      "line": "L6",
+      "word": "peace",
+      "offset": -0.1
+     },
+     "valueAt": {
+      "line": "L6",
+      "word": "everyone's"
+     },
+     "seed": 3,
+     "end": {
+      "shot": "lesson"
+     }
+    },
+    {
+     "type": "inferChain",
+     "local": true,
+     "at": [
+      450,
+      1420
+     ],
+     "box": [
+      160,
+      1060
+     ],
+     "align": "left",
+     "value": "Equals",
+     "start": {
+      "line": "L6",
+      "word": "in",
+      "offset": 0.75
+     },
+     "sealSize": 28
+    },
+    {
+     "type": "inferChain",
+     "local": true,
+     "at": [
+      300,
+      900
+     ],
+     "box": [
+      140,
+      760
+     ],
+     "align": "left",
+     "value": "The street first",
+     "start": {
+      "line": "L6",
+      "word": "in",
+      "offset": 1.0
+     },
+     "sealSize": 28
+    }
+   ],
+   "onScreenText": "Inference chain: IN THE OPEN / every neighbour sees / ∴ PEACE IS PUBLIC; seals EQUALS and THE STREET FIRST pinned on the street.",
+   "transition": "Dissolve (0.5 s) to the same street, dimmed under the lesson.",
+   "sfx": [
+    {
+     "sound": "whoosh",
+     "at": {
+      "shot": "public",
+      "offset": 0.05
+     },
+     "gain": -27
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L6",
+      "word": "open.",
+      "offset": -0.25
+     },
+     "gain": -24
+    },
+    {
+     "sound": "inferSeal",
+     "at": {
+      "line": "L6",
+      "word": "everyone's",
+      "offset": -0.05
+     },
+     "gain": -21
+    }
+   ],
+   "music": "F major add9 to C major: the whole street.",
+   "imagePrompt": "",
+   "videoPrompt": ""
+  },
+  {
+   "id": "lesson",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.5
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.85,
+   "plateLook": {
+    "from": "saturate(0.55) brightness(0.62)"
+   },
+   "purpose": "Lesson over the street that now reads as a whole people: don't explain values; show one habit and let the audience infer them.",
+   "visual": "The same street, dimmed; the three value seals stay pinned where they were found. 'Don't explain their values' struck in rust, then ONE HABIT / A whole people.",
+   "camera": "Gentle pull (1.04 to 1.00).",
+   "layers": {
+    "foreground": "lesson card",
+    "midground": "value seals on the street",
+    "background": "street"
+   },
+   "lighting": "Dimmed and cooled under the type.",
+   "graphics": [
+    {
+     "type": "bench",
+     "local": true,
+     "at": [
+      450,
+      1478
+     ],
+     "length": 215
+    },
+    {
+     "type": "inferChain",
+     "local": true,
+     "at": [
+      450,
+      1420
+     ],
+     "box": [
+      160,
+      1060
+     ],
+     "align": "left",
+     "value": "Equals",
+     "start": {
+      "shot": "lesson",
+      "offset": -0.6
+     },
+     "sealSize": 28
+    },
+    {
+     "type": "inferChain",
+     "local": true,
+     "at": [
+      300,
+      900
+     ],
+     "box": [
+      140,
+      760
+     ],
+     "align": "left",
+     "value": "The street first",
+     "start": {
+      "shot": "lesson",
+      "offset": -0.6
+     },
+     "sealSize": 28
+    },
+    {
+     "type": "inferChain",
+     "local": true,
+     "at": [
+      820,
+      760
+     ],
+     "box": [
+      900,
+      830
+     ],
+     "align": "right",
+     "value": "Peace is public",
+     "start": {
+      "shot": "lesson",
+      "offset": -0.3
+     },
+     "sealSize": 28
+    },
+    {
+     "type": "reverseCard",
+     "top": 380,
+     "size": 112,
+     "dont": {
+      "line": "L7",
+      "word": "don't",
+      "offset": -0.1
+     },
+     "dontText": "explain their values.",
+     "strike": {
+      "line": "L7",
+      "word": "values.",
+      "offset": 0.05
+     },
+     "startAt": {
+      "line": "L7",
+      "word": "show",
+      "offset": -0.1
+     },
+     "doKicker": "Show one habit",
+     "doAt": {
+      "line": "L7",
+      "word": "infer",
+      "offset": -0.2
+     },
+     "doText": "A *whole* *people.*"
+    }
+   ],
+   "onScreenText": "'Don't explain their values.' (struck in rust) → 'SHOW ONE HABIT' / 'A whole people.'",
+   "transition": "Dissolve (0.6 s) to the same street at dusk, the bench empty.",
+   "sfx": [
+    {
+     "sound": "strike",
+     "at": {
+      "line": "L7",
+      "word": "values.",
+      "offset": 0.05
+     },
+     "gain": -22
+    },
+    {
+     "sound": "paper",
+     "at": {
+      "line": "L7",
+      "word": "show",
+      "offset": -0.1
+     },
+     "gain": -27
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L7",
+      "word": "infer",
+      "offset": -0.15
+     },
+     "gain": -21
+    }
+   ],
+   "music": "A major with bells: the answer.",
+   "imagePrompt": "",
+   "videoPrompt": ""
+  },
+  {
+   "id": "cta",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.35,
+   "captions": false,
+   "hideLogoBug": true,
+   "purpose": "Follow CTA over the opening street in a changed state: dusk, lanterns lit, the bench empty: they agreed and went home. Loops back to the morning street.",
+   "visual": "The same street at dusk, lanterns over the doors, the bench empty with two cups left on it. Full logo, Episode 15 / 50, the CTA, a 'Follow' pill.",
+   "camera": "Settles (1.04 to 1.00).",
+   "layers": {
+    "foreground": "logo and CTA type",
+    "midground": "the empty bench",
+    "background": "lit houses"
+   },
+   "lighting": "Blue dusk, warm lanterns; the last 0.6 s cross-fades to the morning street.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. wide high view down the same long cobbled street of an invented hill town at dusk, plain whitewashed houses with ochre doors and green shutters, warm lanterns glowing over doorways, washing lines between windows, in the middle of the street an empty long wooden bench with two clay cups left on it, deep blue evening sky, quiet and peaceful. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "wide high view down the same long cobbled street of an invented hill town at dusk, plain whitewashed houses with ochre doors and green shutters, warm lanterns glowing over doorways, washing lines between windows, in the middle of the street an empty long wooden bench with two clay cups left on it, deep blue evening sky, quiet and peaceful",
+   "graphics": [
+    {
+     "type": "bench",
+     "local": true,
+     "at": [
+      520,
+      1610
+     ],
+     "length": 260,
+     "tone": "dusk",
+     "cups": 2
+    },
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L8",
+      "word": "follow"
+     },
+     "episode": "Episode 15 / 50",
+     "title": "The best cultural detail is often invisible.",
+     "kicker": "Worldcraft Shorts",
+     "size": 72,
+     "lines": [
+      "Follow for worldbuilding",
+      "details that do more",
+      "*than decorate a setting.*"
+     ],
+     "button": "Follow",
+     "icon": "follow"
+    }
+   ],
+   "onScreenText": "Full logo, 'EPISODE 15 / 50', title, 'WORLDCRAFT SHORTS', 'Follow for worldbuilding details that do more than decorate a setting.', pill 'Follow'.",
+   "transition": "Cross-fade into the hook's first frame (the morning street) for a seamless loop.",
+   "sfx": [
+    {
+     "sound": "swell",
+     "at": {
+      "shot": "cta",
+      "offset": -0.3
+     },
+     "gain": -25
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L8",
+      "word": "setting.",
+      "offset": 0.2
+     },
+     "gain": -24
+    }
+   ],
+   "music": "D to A major, warm; fades fully before the last frame."
   }
- ]
+ ],
+ "lesson": "Everyday behaviour is the cheapest, strongest exposition. Show one ordinary habit closely (how neighbours settle a quarrel) and let the audience infer the values under it: here equality, the street before winning, and peace as everyone's business. Never state them.",
+ "captionReplace": {},
+ "music": {
+  "key": "A minor, resolving to A major",
+  "drone": [
+   "A1",
+   "E2"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L4",
+     "word": "no",
+     "nth": 1
+    },
+    "pre": 0.15,
+    "dur": 0.9,
+    "gain": 0.6
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L7",
+     "word": "show"
+    },
+    "pre": 0.15,
+    "dur": 1.2,
+    "gain": 0.55
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "A1",
+      "E2",
+      "C3",
+      "E3",
+      "B3"
+     ]
+    ],
+    "level": 0.46,
+    "dark": true
+   },
+   "bench": {
+    "chords": [
+     [
+      "F1",
+      "C2",
+      "A2",
+      "E3",
+      "A3"
+     ]
+    ],
+    "level": 0.5
+   },
+   "agree": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F3",
+      "C4",
+      "E4"
+     ]
+    ],
+    "level": 0.54,
+    "pulse": 72
+   },
+   "judge": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F3",
+      "C4",
+      "E4"
+     ]
+    ],
+    "level": 0.56,
+    "pulse": 72
+   },
+   "one": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "A3"
+     ]
+    ],
+    "level": 0.58,
+    "pulse": 72
+   },
+   "public": {
+    "chords": [
+     [
+      "F2",
+      "C3",
+      "A3",
+      "G4"
+     ],
+     [
+      "C2",
+      "G2",
+      "E3",
+      "G3",
+      "D4"
+     ]
+    ],
+    "level": 0.62,
+    "pulse": 72
+   },
+   "lesson": {
+    "chords": [
+     [
+      "A1",
+      "E2",
+      "C#3",
+      "E3",
+      "A3"
+     ]
+    ],
+    "level": 0.64,
+    "bells": true
+   },
+   "cta": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F#3",
+      "A3",
+      "D4"
+     ],
+     [
+      "A1",
+      "E2",
+      "C#3",
+      "E3",
+      "A3"
+     ]
+    ],
+    "level": 0.58,
+    "bells": true
+   }
+  }
+ },
+ "metadata": {
+  "youtube": {
+   "title": "Show a Civilization Without a Single Palace (Worldbuilding)",
+   "titleAlternate": "How one bench reveals a whole fantasy culture",
+   "description": "You can reveal an entire civilization without showing a single palace.\n\nIn Tamsry, when neighbours quarrel, they carry one bench into the street and sit on it together until they agree. No judge: nobody there stands above a neighbour. One bench: nobody can walk away, so the street matters more than winning. In the open: peace is everyone's business.\n\nThree values, and nobody ever states them. Don't explain your culture's values. Show one everyday habit and let the audience work them out.\n\nFollow for worldbuilding details that do more than decorate a setting.\n\nEpisode 15 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyCulture #WorldcraftShorts",
+   "pinnedComment": "Your turn: how do neighbours settle a quarrel in your world? Tell us the habit, and we'll guess the values.",
+   "uploadSettings": "Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "No palace, no king, one bench 🪑 In Tamsry, quarrelling neighbours sit on it together until they agree, and that tells you everything. Follow for worldbuilding details that do more than decorate. #Worldbuilding #FantasyWriting #WritingTips #FantasyCulture #WorldcraftShorts",
+   "pinnedComment": "Give us one everyday habit from your world. We'll read the culture from it.",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "You can reveal an entire civilization without showing a single palace.\n\nIn Tamsry, when neighbours quarrel, they carry one bench into the street and sit on it together until they agree. No judge: nobody there stands above a neighbour. One bench: nobody can walk away, so the street matters more than winning. In the open: peace is everyone's business.\n\nThree values, and nobody ever states them. Don't explain your culture's values. Show one everyday habit and let the audience work them out.\n\nFollow for worldbuilding details that do more than decorate a setting.\n\nEpisode 15 of 50.\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyCulture #WorldcraftShorts",
+   "pinnedComment": "How do children greet elders, or neighbours make peace, in your story? What does it say about them?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "One bench. A whole civilization.\n\nYou can reveal an entire civilization without showing a single palace.\n\nIn Tamsry, when neighbours quarrel, they carry one bench into the street and sit on it together until they agree. No judge: nobody there stands above a neighbour. One bench: nobody can walk away, so the street matters more than winning. In the open: peace is everyone's business.\n\nThree values, and nobody ever states them. Don't explain your culture's values. Show one everyday habit and let the audience work them out.\n\nFollow for worldbuilding details that do more than decorate a setting.\n\nEpisode 15 of 50 · Worldcraft Shorts\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyCulture #WorldcraftShorts",
+   "hookCheck": "First 32 characters: 'One bench. A whole civilization.'",
+   "pinnedComment": "Equals, the street first, peace in public: which value would your culture's quarrel habit reveal?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  },
+  "cover": "Worldcraft_Short_E15_cover.jpg: the ordinary morning street with the bench in the road, 'NO PALACE / Just a street.' above it, corner logo.",
+  "followUpQuestion": "Pick one everyday habit in your world (a greeting, a meal, a quarrel). What three values could a stranger infer from it?"
+ }
 }

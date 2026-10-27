@@ -125,6 +125,9 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | graphic | `callout` `side: "up"`, `dx`, `backdrop` | Leader straight up from the point, then sideways; the label is centred above it, for notes too wide for either side. `backdrop: true` adds a soft dark glow behind the label on bright plates |
 | captions | captions-off shots | A caption group no longer holds into a shot with `captions: false` |
 | sfx | `giftSet`, `seam` (hits) | EP13: a glazed ceramic lid settling on its box (the gift's signature); a soft air sweep and tap as a split frame draws across |
+| graphic | `inferChain` | An evidence chain inked onto the plate (`local`): a pen loop round the clue (`at`, `loop`), a leader to a text block (`box`, `align`), then `seen` (caps) → `means` (italic, `meansAt`) → ∴ `value` in an ember seal (`valueAt`); `backdrop`. Seal-only mode (just `value`) pins a value to a point on a wide plate (EP15: a habit read into values) |
+| graphic | `bench` | Code-drawn plain timber bench (`at`, `length`, `tone: "day" \| "dusk"`, `cups`; `local`), for objects the image model won't put where the story needs them (EP15) |
+| sfx | `benchSet`, `inferSeal` (hits) | EP15: a bench scraped and set down on cobbles; a pen tick and a warm rising fifth as a value is inferred |
 
 ## Local / Claude-session commands
 

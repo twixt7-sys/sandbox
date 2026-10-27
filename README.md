@@ -121,6 +121,10 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | graphic | `callout` `side: "up"`, `dx`, `backdrop` | Leader straight up from the point, then sideways; the label is centred above it, for notes too wide for either side. `backdrop: true` adds a soft dark glow behind the label on bright plates |
 | captions | captions-off shots | A caption group no longer holds into a shot with `captions: false` |
 | sfx | `giftSet`, `seam` (hits) | EP13: a glazed ceramic lid settling on its box (the gift's signature); a soft air sweep and tap as a split frame draws across |
+| shot | `plateLook: {from, to?, at?, dur?}` | Grade a plate (`cold`, `warm` or any CSS filter) and wipe a second grade across it left to right on a cue, with an amber seam: the same scene re-read (EP11: a visitor's cold read → an insider's warm one) |
+| graphic | `shroud` | Code-drawn linen-wrapped body on a bier (`at`, `length`, `height`, `head`, `sprigs`; `local`), for when the image model won't paint one (EP11) |
+| sfx | `relook` (hit) | EP11: a swept breath blooming into a warm triad, on a perspective flip |
+| tool | `pipeline/local_stills.py epNN shots --seeds …` / `--pick seed` | Free local stills (SDXL-Lightning, CPU, about 2.5 min each) from each shot's `sdxlPrompt`, when Figma credits run out |
 
 ## Local / Claude-session commands
 

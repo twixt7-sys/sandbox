@@ -421,6 +421,15 @@ def sfx_hit(kind, dur=None):
                   for k, f in enumerate((1568, 2093, 2349, 3136, 3520, 4186)))
         sig = sig * e + hp(noise(n), 6000) * e * 0.15
         return stereo(sig, 0.8)
+    if kind == "relook":
+        # EP11 "look again": a soft swept breath rising into a warm major-triad bloom, as the cold read turns warm.
+        n = int(2.4 * SR)
+        t = np.arange(n) / SR
+        sweep = bp(noise(n), 400, 3200) * np.minimum(1, t / 0.7) * np.exp(-np.maximum(0, t - 0.7) * 5)
+        bloom_e = np.clip((t - 0.55) / 0.25, 0, 1) * np.exp(-np.maximum(0, t - 0.8) * 1.6)
+        bloom = sum(np.sin(2 * np.pi * f * t + RNG.uniform(0, 6.28)) / (k + 1)
+                    for k, f in enumerate((293.66, 369.99, 440.0, 587.33)))
+        return reverb(stereo(sweep * 0.5 + bloom * bloom_e * 0.6, 0.6), 2.4, 3.0, 0.3)
     if kind == "tonalDrop":
         # Low atmospheric tonal shift: a sub tone gliding down a fourth, with a soft filtered body.
         n = int(3.2 * SR)

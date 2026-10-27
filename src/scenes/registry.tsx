@@ -1,7 +1,8 @@
 import React from 'react';
 import {AbsoluteFill, Img, OffthreadVideo, staticFile} from 'remotion';
 import {FogBank} from '../fx/Fx';
-import {lerp} from '../lib/timing';
+import {cueTime, ease, lerp, useTiming} from '../lib/timing';
+import {palette} from '../theme';
 import type {Shot} from '../types';
 import {AtlasScene} from './Atlas';
 import {Bridge} from './Bridge';
@@ -31,11 +32,20 @@ export const SCENES: Record<string, React.FC<SceneProps>> = {
 	nightSky: NightSky,
 };
 
+/** Named plate grades for `plateLook` (EP11): how an outsider vs an insider sees the same scene. Any CSS filter string also works. */
+const LOOKS: Record<string, string> = {
+	cold: 'saturate(0.22) brightness(0.78) contrast(1.08) hue-rotate(-8deg)',
+	warm: 'saturate(1.12) brightness(1.04) sepia(0.12)',
+	none: 'none',
+};
+const look = (k?: string) => (k ? LOOKS[k] ?? k : 'none');
+
 /**
  * AI-generated still (or a frame-accurate clip) used as the background plate.
  * Camera motion is a restrained push/drift so generated detail never has to move.
  */
-export const PlateScene: React.FC<SceneProps & {src: string; children?: React.ReactNode}> = ({progress, src, shot, children}) => {
+export const PlateScene: React.FC<SceneProps & {src: string; children?: React.ReactNode}> = ({progress, t, src, shot, children}) => {
+	const timing = useTiming();
 	const p = progress;
 	const motion: 'push' | 'pull' | 'driftL' | 'driftR' | 'descend' | 'still' = shot.plateMotion ?? 'push';
 	// Generated skies are often bright: darken the top so parchment type stays legible.
@@ -63,8 +73,19 @@ export const PlateScene: React.FC<SceneProps & {src: string; children?: React.Re
 					// plates.py requests clips at least as long as the shot (from timing.json), so no freeze/hold is needed.
 					<OffthreadVideo src={staticFile(src)} muted style={{width: '100%', height: '100%', objectFit: 'cover'}} />
 				) : (
-					<Img src={staticFile(src)} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+					<Img src={staticFile(src)} style={{width: '100%', height: '100%', objectFit: 'cover', filter: look(shot.plateLook?.from)}} />
 				)}
+				{/* `plateLook: {from, to?, at?, dur?}`: grade the plate (`from`), then wipe a second grade (`to`) across it left to right on a cue (a "look again" re-read of the same scene). */}
+				{shot.plateLook?.to && (() => {
+					const w = ease(t, cueTime(timing, shot.plateLook.at, 0), shot.plateLook.dur ?? 1.1);
+					if (w <= 0) return null;
+					return (
+						<>
+							<Img src={staticFile(src)} style={{position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: look(shot.plateLook.to), clipPath: `inset(0 ${(1 - w) * 100}% 0 0)`}} />
+							{w < 1 && <div style={{position: 'absolute', top: 0, bottom: 0, left: `${w * 100}%`, width: 3, marginLeft: -1.5, background: palette.amber, boxShadow: `0 0 24px 6px rgba(233,169,75,0.55)`, opacity: Math.min(1, (1 - w) * 6)}} />}
+						</>
+					);
+				})()}
 				{/* Plate-pinned graphics (sun in the sky, glow on a carving) move with the camera. */}
 				{children}
 			</AbsoluteFill>

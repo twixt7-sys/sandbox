@@ -125,6 +125,10 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | graphic | `shroud` | Code-drawn linen-wrapped body on a bier (`at`, `length`, `height`, `head`, `sprigs`; `local`), for when the image model won't paint one (EP11) |
 | sfx | `relook` (hit) | EP11: a swept breath blooming into a warm triad, on a perspective flip |
 | tool | `pipeline/local_stills.py epNN shots --seeds …` / `--pick seed` | Free local stills (SDXL-Lightning, CPU, about 2.5 min each) from each shot's `sdxlPrompt`, when Figma credits run out |
+| graphic | `verdictScale` | A drawn balance weighing two moral systems (`pans` labels, `tilts: [[cue, deg]]`, per-pan `words` replaced on cues, `glowAt` when it comes level); repeat it across shots with matching states so one scale tips one way, then the other (EP14: FREEDOM / DUTY) |
+| graphic | `callout` `then: {label, note, color, at}` | Re-captions the same point on a cue: the first note is struck through and drops away, the leader turns the new colour (EP14: "Hero." → "Traitor.") |
+| sfx | `scaleTip` (hit) | EP14: a wooden creak, two chain chinks and a soft knock as the verdict scale settles |
+| graphic file | `src/graphics/Rites.tsx` | EP11's `shroud`, moved out of `Culture.tsx` when EP11 and EP13 (both had added a `Culture.tsx`) were merged |
 
 ## Local / Claude-session commands
 

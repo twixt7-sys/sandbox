@@ -1,0 +1,980 @@
+{
+ "id": "ep14",
+ "number": 14,
+ "title": "Give Every Nation a Different Definition of Honor",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "A calm, fair-minded guide. Curious on the hook, plain on Mira's choice, warm admiration on 'courage', the same warmth for 'keeps everyone alive' so neither side sounds wrong. Weighing on 'Both are right about something', clear on the lesson, genuinely open on the question. No trailer voice."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "What if two honorable people could consider each other evil?",
+   "pauseAfter": 0.55,
+   "emphasis": [
+    "honorable",
+    "evil?"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "choice",
+   "text": "Mira walks away from the oath she swore at sixteen.",
+   "pauseAfter": 0.5,
+   "emphasis": [
+    "oath"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "free",
+   "text": "In the free towns, that's courage. No one should own your life.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "courage.",
+    "own"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "league",
+   "text": "In the valley league, it's betrayal. The levee she guarded keeps everyone alive.",
+   "pauseAfter": 0.55,
+   "emphasis": [
+    "betrayal.",
+    "everyone"
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "both",
+   "text": "Each side calls the other heartless. Both are right about something.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "heartless.",
+    "right"
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "lesson",
+   "text": "Give both sides real reasons, and let neither be entirely right.",
+   "pauseAfter": 0.7,
+   "emphasis": [
+    "reasons,",
+    "neither"
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "cta",
+   "text": "Which matters more: personal freedom, or collective responsibility?",
+   "pauseAfter": 0.0,
+   "emphasis": [
+    "freedom,",
+    "responsibility?"
+   ]
+  }
+ ],
+ "lesson": "Give each people a moral system with a real reason behind it (freedom because no one should own a life; duty because everyone depends on everyone), put one person between them, and let neither side be entirely right.",
+ "captionReplace": {},
+ "music": {
+  "key": "E minor, resolving to E major",
+  "drone": [
+   "E1",
+   "B1"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L1",
+     "word": "evil?"
+    },
+    "pre": 0.15,
+    "dur": 0.9,
+    "gain": 0.5
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L5",
+     "word": "right"
+    },
+    "pre": 0.15,
+    "dur": 1.2,
+    "gain": 0.5
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L6",
+     "word": "neither"
+    },
+    "pre": 0.15,
+    "dur": 1.2,
+    "gain": 0.55
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "E2",
+      "B2",
+      "G3",
+      "B3",
+      "F#4"
+     ]
+    ],
+    "level": 0.5
+   },
+   "choice": {
+    "chords": [
+     [
+      "C2",
+      "G2",
+      "E3",
+      "G3",
+      "B3"
+     ]
+    ],
+    "level": 0.54
+   },
+   "free": {
+    "chords": [
+     [
+      "G2",
+      "D3",
+      "B3",
+      "D4",
+      "A4"
+     ]
+    ],
+    "level": 0.58,
+    "arp": true,
+    "pulse": 76
+   },
+   "league": {
+    "chords": [
+     [
+      "A1",
+      "E2",
+      "C3",
+      "E3",
+      "A3"
+     ]
+    ],
+    "level": 0.6,
+    "pulse": 68
+   },
+   "both": {
+    "chords": [
+     [
+      "B1",
+      "F#2",
+      "A2",
+      "E3",
+      "F#3"
+     ]
+    ],
+    "level": 0.55,
+    "dark": true
+   },
+   "lesson": {
+    "chords": [
+     [
+      "E2",
+      "B2",
+      "G#3",
+      "B3",
+      "E4"
+     ]
+    ],
+    "level": 0.62,
+    "bells": true
+   },
+   "cta": {
+    "chords": [
+     [
+      "A1",
+      "E2",
+      "C#3",
+      "E3",
+      "A3"
+     ],
+     [
+      "E2",
+      "B2",
+      "G#3",
+      "B3",
+      "E4"
+     ]
+    ],
+    "level": 0.6,
+    "bells": true
+   }
+  }
+ },
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.12,
+     "y": 0
+    },
+    "to": {
+     "s": 1.17,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "Stop the scroll: one woman, one choice, two opposite verdicts on the same frame.",
+   "visual": "Dawn on a great grass levee; a young woman in a rust cloak walks away from a watch post, a horn left hanging on it. A callout on her reads THE FREE TOWNS / Hero. then flips to HER VALLEY / Traitor. in rust on 'evil'.",
+   "camera": "Slow push (1.12 to 1.17).",
+   "layers": {
+    "foreground": "the re-captioned callout",
+    "midground": "Mira on the levee crest",
+    "background": "river, mist and valley villages"
+   },
+   "lighting": "Cool dawn mist, first warm light on the horizon.",
+   "sdxlPrompt": "vertical fantasy film still, dawn mist over a huge curving grassy earthen levee beside a wide river, terraced stone villages in the valley, a wooden watch post on the levee crest with a long brass horn hanging from it, a lone young woman in a rust red hooded cloak with a bundle walking away along the crest, seen from behind, small in frame",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma generation was not available in this session.) Vertical 9:16 cinematic fantasy documentary still. Dawn mist over a huge curving grassy earthen levee beside a wide river, terraced stone villages in the valley. A wooden watch post on the crest with a long brass horn hanging from it; a lone young woman in a rust-red hooded cloak with a bundle walks away along the crest, seen from behind, small in frame. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture/clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "graphics": [
+    {
+     "type": "callout",
+     "local": true,
+     "at": [
+      560,
+      980
+     ],
+     "side": "up",
+     "rise": -330,
+     "backdrop": true,
+     "label": "The free towns",
+     "note": "Hero.",
+     "start": {
+      "line": "L1",
+      "word": "what",
+      "offset": -0.1
+     },
+     "then": {
+      "label": "Her valley",
+      "note": "Traitor.",
+      "color": "rust",
+      "at": {
+       "line": "L1",
+       "word": "evil?",
+       "offset": -0.15
+      }
+     }
+    }
+   ],
+   "onScreenText": "Callout 'THE FREE TOWNS / Hero.' flips to 'HER VALLEY / Traitor.' (rust).",
+   "transition": "Hard cut on 'Mira' to the post.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "choice",
+      "offset": 0.5
+     },
+     "gain": -34
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L1",
+      "word": "what",
+      "offset": -0.1
+     },
+     "gain": -25
+    },
+    {
+     "sound": "strike",
+     "at": {
+      "line": "L1",
+      "word": "evil?",
+      "offset": -0.15
+     },
+     "gain": -23
+    }
+   ],
+   "music": "E minor add9, open and unresolved."
+  },
+  {
+   "id": "choice",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.3,
+     "x": 0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.34,
+     "x": 0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "The dilemma, concretely: she is leaving a lifelong oath, and the horn she swore to sound stays behind.",
+   "visual": "Punch-in on the post and the horn left hanging, Mira walking out of frame. Tag MIRA / leaves her post.; callout on the horn THE OATH / sworn at sixteen.",
+   "camera": "Punch-in, slow push.",
+   "layers": {
+    "foreground": "the horn on the post",
+    "midground": "Mira walking away",
+    "background": "misty river"
+   },
+   "lighting": "Dawn.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "tag",
+     "kicker": "Mira",
+     "text": "leaves her post.",
+     "start": {
+      "line": "L2",
+      "word": "mira",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "callout",
+     "local": true,
+     "at": [
+      400,
+      1100
+     ],
+     "side": "up",
+     "rise": -260,
+     "backdrop": true,
+     "label": "The oath",
+     "note": "sworn at sixteen",
+     "start": {
+      "line": "L2",
+      "word": "oath",
+      "offset": -0.15
+     }
+    }
+   ],
+   "onScreenText": "Tag 'MIRA / leaves her post.'; callout 'THE OATH / sworn at sixteen'.",
+   "transition": "Hard cut on 'In' to the free towns.",
+   "sfx": [
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L2",
+      "word": "oath",
+      "offset": -0.15
+     },
+     "gain": -25
+    }
+   ],
+   "music": "C major 7: the choice."
+  },
+  {
+   "id": "free",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.06,
+     "y": 0
+    },
+    "to": {
+     "s": 1.1,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.5,
+   "purpose": "Moral system 1, from the inside: in the free towns, choosing your own life is the brave thing.",
+   "visual": "A bright hill town with open gates, townsfolk welcoming the cloaked traveller. Tag THE FREE TOWNS / Your life is yours.; the verdict scale drops on its FREEDOM side, word 'Courage.'",
+   "camera": "Slow push (1.06 to 1.10).",
+   "layers": {
+    "foreground": "verdict scale",
+    "midground": "the open gate and the welcome",
+    "background": "windmills and towers"
+   },
+   "lighting": "Warm morning sun.",
+   "sdxlPrompt": "vertical fantasy film still, sunny hilltop town of whitewashed round towers and windmills with saffron and teal awnings, wide open wooden gates, cheerful townsfolk in colourful patchwork clothes welcoming a traveller in a rust red hooded cloak on the road before the gate, seen from behind, distant figures, warm morning light, open sky",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma generation was not available in this session.) Vertical 9:16 cinematic fantasy documentary still. A sunny hilltop town of whitewashed round towers and windmills with saffron and teal awnings, wide-open wooden gates; cheerful townsfolk in colourful patchwork clothes welcome a traveller in a rust-red hooded cloak on the road before the gate, seen from behind, distant figures, warm morning light. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture/clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "graphics": [
+    {
+     "type": "tag",
+     "kicker": "The free towns",
+     "text": "Your life is yours.",
+     "start": {
+      "line": "L3",
+      "word": "free",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "verdictScale",
+     "pans": [
+      {
+       "label": "Freedom"
+      },
+      {
+       "label": "Duty"
+      }
+     ],
+     "start": {
+      "line": "L3",
+      "word": "in",
+      "offset": -0.05
+     },
+     "tilts": [
+      [
+       {
+        "line": "L3",
+        "word": "courage.",
+        "offset": -0.2
+       },
+       14
+      ]
+     ],
+     "words": [
+      [
+       {
+        "text": "Courage.",
+        "at": {
+         "line": "L3",
+         "word": "courage."
+        }
+       }
+      ],
+      []
+     ]
+    }
+   ],
+   "onScreenText": "Tag 'THE FREE TOWNS / Your life is yours.'; scale FREEDOM | DUTY tips to FREEDOM, 'Courage.'",
+   "transition": "Hard cut on 'In' to the valley league.",
+   "sfx": [
+    {
+     "sound": "market",
+     "from": {
+      "shot": "free"
+     },
+     "to": {
+      "shot": "free",
+      "offset": 3.2
+     },
+     "gain": -38
+    },
+    {
+     "sound": "scaleTip",
+     "at": {
+      "line": "L3",
+      "word": "courage.",
+      "offset": -0.25
+     },
+     "gain": -19
+    }
+   ],
+   "music": "G major, bright pulse."
+  },
+  {
+   "id": "league",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.06,
+     "y": 0
+    },
+    "to": {
+     "s": 1.1,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.5,
+   "purpose": "Moral system 2, equally sympathetic: in the valley league, everyone holds the levee, so leaving it endangers everyone.",
+   "visual": "Rain over the levee; a line of hooded villagers passes stones hand to hand. Tag THE VALLEY LEAGUE / We hold it together.; the scale tips the other way to DUTY, word 'Betrayal.' in rust.",
+   "camera": "Slow push (1.06 to 1.10).",
+   "layers": {
+    "foreground": "verdict scale",
+    "midground": "the human chain on the levee",
+    "background": "swollen river, villages"
+   },
+   "lighting": "Grey rain light.",
+   "sdxlPrompt": "vertical fantasy film still, grey rain over a long grassy earthen levee holding back a swollen river, a long line of villagers in matching slate blue hooded oilskin capes passing stones hand to hand to reinforce the levee together, terraced farms and stone villages behind, figures at a distance, faces hidden by hoods, solemn and united",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma generation was not available in this session.) Vertical 9:16 cinematic fantasy documentary still. Grey rain over a long grassy earthen levee holding back a swollen river; a long line of villagers in matching slate-blue hooded oilskin capes passes stones hand to hand to reinforce it together, terraced farms and stone villages behind, figures at a distance, faces hidden by hoods. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture/clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "graphics": [
+    {
+     "type": "rain",
+     "local": false,
+     "opacity": 0.5
+    },
+    {
+     "type": "tag",
+     "kicker": "The valley league",
+     "text": "We hold it together.",
+     "start": {
+      "line": "L4",
+      "word": "valley",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "verdictScale",
+     "pans": [
+      {
+       "label": "Freedom"
+      },
+      {
+       "label": "Duty"
+      }
+     ],
+     "start": {
+      "shot": "league"
+     },
+     "tilts": [
+      [
+       {
+        "shot": "league"
+       },
+       14
+      ],
+      [
+       {
+        "line": "L4",
+        "word": "betrayal.",
+        "offset": -0.2
+       },
+       -14
+      ]
+     ],
+     "words": [
+      [
+       {
+        "text": "Courage.",
+        "at": {
+         "shot": "league"
+        }
+       }
+      ],
+      [
+       {
+        "text": "Betrayal.",
+        "at": {
+         "line": "L4",
+         "word": "betrayal."
+        },
+        "color": "rust"
+       }
+      ]
+     ]
+    }
+   ],
+   "onScreenText": "Tag 'THE VALLEY LEAGUE / We hold it together.'; scale tips to DUTY, 'Betrayal.' (rust).",
+   "transition": "Dissolve (0.45 s) back to the empty post.",
+   "sfx": [
+    {
+     "sound": "rain",
+     "from": {
+      "shot": "league"
+     },
+     "to": {
+      "shot": "league",
+      "offset": 4.0
+     },
+     "gain": -33
+    },
+    {
+     "sound": "scaleTip",
+     "at": {
+      "line": "L4",
+      "word": "betrayal.",
+      "offset": -0.25
+     },
+     "gain": -18
+    }
+   ],
+   "music": "A minor, heavier pulse."
+  },
+  {
+   "id": "both",
+   "scene": "nightSky",
+   "plateFrom": "cta",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.45
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.08,
+     "y": 0
+    },
+    "to": {
+     "s": 1.1,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.75,
+   "plateLook": {
+    "from": "saturate(0.35) brightness(0.45) contrast(1.05)"
+   },
+   "purpose": "Neither side is a villain: each calls the other heartless, and each is guarding something real. The scale comes level.",
+   "visual": "The empty post, dimmed. The scale, larger: both pans flash 'Heartless.' in rust, then the beam levels and the reasons appear: 'No one owns you.' | 'Everyone needs you.'",
+   "camera": "Near static.",
+   "layers": {
+    "foreground": "verdict scale",
+    "midground": "the empty post",
+    "background": "river"
+   },
+   "lighting": "Dimmed and desaturated under the diagram.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "verdictScale",
+     "pans": [
+      {
+       "label": "Freedom"
+      },
+      {
+       "label": "Duty"
+      }
+     ],
+     "start": {
+      "shot": "both"
+     },
+     "y": 500,
+     "tilts": [
+      [
+       {
+        "shot": "both"
+       },
+       -14
+      ],
+      [
+       {
+        "line": "L5",
+        "word": "heartless.",
+        "offset": -0.1
+       },
+       0
+      ]
+     ],
+     "words": [
+      [
+       {
+        "text": "Courage.",
+        "at": {
+         "shot": "both"
+        }
+       },
+       {
+        "text": "Heartless.",
+        "at": {
+         "line": "L5",
+         "word": "heartless.",
+         "offset": -0.1
+        },
+        "color": "rust"
+       },
+       {
+        "text": "No one owns you.",
+        "at": {
+         "line": "L5",
+         "word": "right",
+         "offset": -0.1
+        }
+       }
+      ],
+      [
+       {
+        "text": "Betrayal.",
+        "at": {
+         "shot": "both"
+        },
+        "color": "rust"
+       },
+       {
+        "text": "Heartless.",
+        "at": {
+         "line": "L5",
+         "word": "heartless.",
+         "offset": -0.1
+        },
+        "color": "rust"
+       },
+       {
+        "text": "Everyone needs you.",
+        "at": {
+         "line": "L5",
+         "word": "right",
+         "offset": -0.1
+        }
+       }
+      ]
+     ],
+     "glowAt": {
+      "line": "L5",
+      "word": "right",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Scale: 'Heartless.' on both pans, then level: 'No one owns you.' | 'Everyone needs you.'",
+   "transition": "Dissolve (0.5 s) into the lesson.",
+   "sfx": [
+    {
+     "sound": "strike",
+     "at": {
+      "line": "L5",
+      "word": "heartless.",
+      "offset": -0.15
+     },
+     "gain": -24
+    },
+    {
+     "sound": "scaleTip",
+     "at": {
+      "line": "L5",
+      "word": "heartless.",
+      "offset": 0.1
+     },
+     "gain": -20
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L5",
+      "word": "right",
+      "offset": -0.1
+     },
+     "gain": -26
+    }
+   ],
+   "music": "B7sus, darker, holding."
+  },
+  {
+   "id": "lesson",
+   "scene": "nightSky",
+   "plateFrom": "league",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.5
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.1,
+     "y": 0
+    },
+    "to": {
+     "s": 1.13,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.8,
+   "plateLook": {
+    "from": "saturate(0.25) brightness(0.4) contrast(1.05)"
+   },
+   "purpose": "Lesson in words: give each moral system a real reason, and do not let either win outright.",
+   "visual": "The levee chain, dimmed. Stack: 'Give both sides real reasons.' then 'Let neither be' / 'entirely right.' (ember italic).",
+   "camera": "Gentle push.",
+   "layers": {
+    "foreground": "lesson stack",
+    "midground": "the human chain",
+    "background": "rain"
+   },
+   "lighting": "Dimmed under the type.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "lessonStack",
+     "top": 420,
+     "size": 84,
+     "restSize": 66,
+     "items": [
+      {
+       "text": "Give both sides real reasons.",
+       "at": {
+        "line": "L6",
+        "word": "give",
+        "offset": -0.1
+       }
+      },
+      {
+       "text": "Let neither be entirely right.",
+       "at": {
+        "line": "L6",
+        "word": "neither",
+        "offset": -0.1
+       }
+      }
+     ]
+    }
+   ],
+   "onScreenText": "'Give both sides real reasons.' then 'Let neither be entirely right.'",
+   "transition": "Dissolve (0.6 s) to the post at dusk.",
+   "sfx": [
+    {
+     "sound": "paper",
+     "at": {
+      "line": "L6",
+      "word": "give",
+      "offset": -0.1
+     },
+     "gain": -28
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L6",
+      "word": "neither",
+      "offset": -0.1
+     },
+     "gain": -26
+    }
+   ],
+   "music": "Resolves to E major."
+  },
+  {
+   "id": "cta",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.35,
+   "captions": false,
+   "hideLogoBug": true,
+   "purpose": "Comment CTA over the opening place in a changed state: the post at dusk, empty, her red cloth tied to it. Loops to the dawn hook.",
+   "visual": "The levee at dusk, the empty post with the horn and a rust cloth. Full logo, Episode 14 / 50, the CTA question, a 'Comment below' pill.",
+   "camera": "Settles from 1.04 to 1.00.",
+   "layers": {
+    "foreground": "logo and CTA type",
+    "midground": "the empty post",
+    "background": "dusk river and lit villages"
+   },
+   "lighting": "Amber dusk; the last 0.6 s cross-fades to the dawn hook.",
+   "sdxlPrompt": "vertical fantasy film still, dusk over an empty grassy earthen levee curving beside a wide calm river, a lone wooden watch post on the crest in the lower half with a long brass horn hanging from it and a small rust red cloth tied to it, terraced stone villages with warm lit windows in the valley, amber sky, no people",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma generation was not available in this session.) Vertical 9:16 cinematic fantasy documentary still. Dusk over an empty grassy earthen levee curving beside a wide calm river; a lone wooden watch post on the crest in the lower half, a long brass horn hanging from it and a small rust-red cloth tied to it; terraced stone villages with warm lit windows in the valley, amber sky, no people. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture/clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "graphics": [
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L7",
+      "word": "which"
+     },
+     "episode": "Episode 14 / 50",
+     "title": "Give every nation a different definition of honor.",
+     "kicker": "Your turn",
+     "lines": [
+      "Which matters more:",
+      "*personal freedom*",
+      "or collective duty?"
+     ],
+     "size": 80,
+     "button": "Comment below"
+    }
+   ],
+   "onScreenText": "Full logo, 'EPISODE 14 / 50', title, 'YOUR TURN', 'Which matters more: personal freedom or collective duty?', pill 'Comment below'.",
+   "transition": "Cross-fade into the hook's first frame for a seamless loop.",
+   "sfx": [
+    {
+     "sound": "swell",
+     "at": {
+      "shot": "cta",
+      "offset": -0.3
+     },
+     "gain": -25
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L7",
+      "word": "responsibility?",
+      "offset": 0.2
+     },
+     "gain": -24
+    }
+   ],
+   "music": "A major to E major, warm; fades before the last frame."
+  }
+ ],
+ "metadata": {
+  "youtube": {
+   "title": "Two Honorable People. Each Thinks the Other Is Evil. (Worldbuilding)",
+   "titleAlternate": "How to write moral systems that clash",
+   "description": "What if two honorable people could consider each other evil?\n\nMira walks away from the oath she swore at sixteen: to keep watch on the levee that protects her valley.\n\nIn the free towns, that's courage. No one should own your life, not even a promise you made as a child. In the valley league, it's betrayal. The levee only holds because everyone holds it, so leaving puts everyone at risk. Each side calls the other heartless, and both are right about something.\n\nThat's how to write clashing moral systems: give each people a real reason for what it values (freedom, duty, loyalty, mercy), put one person between them, and let neither side be entirely right.\n\nWhich matters more: personal freedom or collective responsibility? Tell us in the comments.\n\nEpisode 14 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyCultures #WorldcraftShorts",
+   "pinnedComment": "Your turn: freedom or responsibility? And what would the other side say about your answer?",
+   "uploadSettings": "Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "She broke her oath. Hero or traitor? Depends whose side of the levee you're on ⚖️ Give both sides real reasons and let neither be entirely right. Freedom or duty: which wins? #Worldbuilding #FantasyWriting #WritingTips #FantasyCultures #WorldcraftShorts",
+   "pinnedComment": "Freedom or responsibility: pick one, then make the best case for the other.",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "What if two honorable people could consider each other evil?\n\nMira walks away from the oath she swore at sixteen: to keep watch on the levee that protects her valley.\n\nIn the free towns, that's courage. No one should own your life, not even a promise you made as a child. In the valley league, it's betrayal. The levee only holds because everyone holds it, so leaving puts everyone at risk. Each side calls the other heartless, and both are right about something.\n\nThat's how to write clashing moral systems: give each people a real reason for what it values (freedom, duty, loyalty, mercy), put one person between them, and let neither side be entirely right.\n\nWhich matters more: personal freedom or collective responsibility? Tell us in the comments.\n\nEpisode 14 of 50.\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyCultures #WorldcraftShorts",
+   "pinnedComment": "Is Mira a hero or a traitor? Tell us which side of the levee you would stand on, and why.",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "Hero to one. Traitor to another.\n\nWhat if two honorable people could consider each other evil?\n\nMira walks away from the oath she swore at sixteen: to keep watch on the levee that protects her valley.\n\nIn the free towns, that's courage. No one should own your life, not even a promise you made as a child. In the valley league, it's betrayal. The levee only holds because everyone holds it, so leaving puts everyone at risk. Each side calls the other heartless, and both are right about something.\n\nThat's how to write clashing moral systems: give each people a real reason for what it values (freedom, duty, loyalty, mercy), put one person between them, and let neither side be entirely right.\n\nWhich matters more: personal freedom or collective responsibility?\n\nEpisode 14 of 50 · Worldcraft Shorts\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyCultures #WorldcraftShorts",
+   "hookCheck": "First 32 characters: 'Hero to one. Traitor to another.'",
+   "pinnedComment": "Which of your peoples values freedom, and which values duty? What does each call the other?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  },
+  "cover": "Worldcraft_Short_E14_cover.jpg: Mira walking away from the post on the dawn levee, the callout flipped to HER VALLEY / Traitor. with the struck-out Hero., corner logo.",
+  "followUpQuestion": "Pick one choice a character makes. Which of your cultures would call it heroic, and which would call it a crime?"
+ }
+}

@@ -104,13 +104,13 @@ export const InferChain: React.FC<GraphicProps> = ({g, t, span}) => {
 					width: g.width,
 					textAlign: align,
 					...(g.backdrop && !sealOnly
-						? {background: `radial-gradient(ellipse at 50% 50%, rgba(6,10,13,${0.6 * seen}) 0%, rgba(6,10,13,${0.4 * seen}) 55%, rgba(6,10,13,0) 75%)`, padding: '26px 60px 22px', margin: '-26px -60px 0'}
+						? {background: `radial-gradient(ellipse at 50% 50%, rgba(6,10,13,${0.74 * seen}) 0%, rgba(6,10,13,${0.55 * seen}) 55%, rgba(6,10,13,0) 75%)`, padding: '26px 60px 22px', margin: '-26px -60px 0'}
 						: {}),
 				}}
 			>
 				{!sealOnly && (
 					<>
-						<div style={{...kicker, fontSize: 30, color: c, opacity: seen, transform: `translateY(${(1 - seen) * 10}px)`, textShadow: '0 2px 12px rgba(0,0,0,0.95)'}}>{g.seen}</div>
+						<div style={{...kicker, fontSize: 34, fontWeight: 800, color: c, opacity: seen, transform: `translateY(${(1 - seen) * 10}px)`, textShadow: '0 2px 12px rgba(0,0,0,0.95)'}}>{g.seen}</div>
 						{g.means && (
 							<div
 								style={{

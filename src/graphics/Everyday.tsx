@@ -130,6 +130,51 @@ export const InferChain: React.FC<GraphicProps> = ({g, t, span}) => {
 	);
 };
 
+/**
+ * Bench: a plain backless timber bench standing in a street, seen slightly from above (EP15; SDXL would not paint one
+ * in the road). `at: [x, y]` = centre of the ground line, `length` (default 220), `height` (seat height, default
+ * length × 0.22), `tone: "day" | "dusk"`, `cups` (number of small clay cups on the seat). Pin with `local: true`.
+ */
+export const Bench: React.FC<GraphicProps> = ({g}) => {
+	const [cx, cy] = g.at;
+	const L = g.length ?? 220;
+	const h = g.height ?? L * 0.22;
+	const th = Math.max(4, L * 0.05); // seat thickness
+	const depth = L * 0.09; // visible top face
+	const x0 = cx - L / 2;
+	const x1 = cx + L / 2;
+	const top = cy - h;
+	const dusk = g.tone === 'dusk';
+	const wood = dusk ? ['#7a5a3e', '#4a3324', '#2a1c14'] : ['#b48a5c', '#7d5634', '#4b321f'];
+	const leg = L * 0.045;
+	const legX = [x0 + L * 0.1, x1 - L * 0.1 - leg];
+	const cups = g.cups ?? 0;
+	return (
+		<AbsoluteFill style={{opacity: g.opacity ?? 1}}>
+			<svg width={W} height={H} style={{position: 'absolute', inset: 0, overflow: 'visible'}}>
+				<ellipse cx={cx + L * 0.04} cy={cy + 2} rx={L * 0.58} ry={depth * 0.75} fill="rgba(10,8,6,0.45)" style={{filter: `blur(${L * 0.025}px)`}} />
+				{legX.map((lx, i) => (
+					<g key={i}>
+						<rect x={lx} y={top + th - 1} width={leg} height={h - th + 1} fill={wood[2]} />
+						<rect x={lx + depth * 0.5} y={top - depth + th} width={leg * 0.9} height={h - th + depth * 0.4} fill={wood[2]} opacity={0.8} />
+					</g>
+				))}
+				{/* top face (lit), then front edge */}
+				<path d={`M${x0},${top} L${x0 + depth * 0.6},${top - depth} L${x1 + depth * 0.6},${top - depth} L${x1},${top} Z`} fill={wood[0]} />
+				<path d={`M${x0 + L * 0.02},${top - depth * 0.45} L${x1 + L * 0.0},${top - depth * 0.45}`} stroke={wood[1]} strokeWidth={1} opacity={0.6} />
+				<rect x={x0} y={top} width={L} height={th} fill={wood[1]} />
+				{Array.from({length: cups}, (_, i) => {
+					const ux = cx + (i - (cups - 1) / 2) * L * 0.5;
+					const cw = L * 0.06;
+					const ch = L * 0.07;
+					return <path key={i} d={`M${ux - cw / 2},${top - depth * 0.5 - ch} L${ux + cw / 2},${top - depth * 0.5 - ch} L${ux + cw * 0.38},${top - depth * 0.5} L${ux - cw * 0.38},${top - depth * 0.5} Z`} fill={dusk ? '#8c4f33' : '#b8673f'} />;
+				})}
+			</svg>
+		</AbsoluteFill>
+	);
+};
+
 export const EVERYDAY: Record<string, React.FC<GraphicProps>> = {
 	inferChain: InferChain,
+	bench: Bench,
 };

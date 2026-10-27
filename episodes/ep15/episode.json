@@ -1,0 +1,19 @@
+{
+ "id": "ep15",
+ "number": 15,
+ "title": "draft",
+ "shots": [
+  {
+   "id": "street",
+   "sdxlPrompt": "wide high view down a long ordinary cobbled street in an invented hill town on a clear morning, plain whitewashed houses with ochre doors and green shutters, washing lines strung between windows, potted herbs on steps, a small water cart, tiny figures of neighbours walking and children playing, in the middle of the street a long wooden bench with two people seated far apart, rooftops and pale sky above"
+  },
+  {
+   "id": "bench",
+   "sdxlPrompt": "medium wide shot in a sunny cobbled street, a long plain wooden bench in the centre, a middle-aged man sits at the far left end and a middle-aged woman at the far right end, arms folded, turned away from each other, stubborn, a wide empty gap between them, invented folk clothing in rust and indigo wool, whitewashed wall and ochre doorway behind, potted herbs"
+  },
+  {
+   "id": "dusk",
+   "sdxlPrompt": "wide high view down the same long cobbled street of an invented hill town at dusk, plain whitewashed houses with ochre doors and green shutters, warm lanterns glowing over doorways, washing lines between windows, in the middle of the street an empty long wooden bench with two clay cups left on it, deep blue evening sky, quiet and peaceful"
+  }
+ ]
+}

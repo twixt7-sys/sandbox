@@ -31,7 +31,7 @@
    "id": "L1",
    "shot": "hook",
    "text": "What if two honorable people could consider each other evil?",
-   "pauseAfter": 0.55,
+   "pauseAfter": 0.8,
    "emphasis": [
     "honorable",
     "evil?"
@@ -266,17 +266,27 @@
    "videoPrompt": "(Not used.)",
    "graphics": [
     {
+     "type": "watchPost",
+     "local": true,
+     "at": [
+      745,
+      1500
+     ],
+     "height": 440
+    },
+    {
      "type": "callout",
      "local": true,
      "at": [
-      560,
-      980
+      552,
+      1330
      ],
      "side": "up",
-     "rise": -330,
+     "rise": -390,
      "backdrop": true,
      "label": "The free towns",
      "note": "Hero.",
+     "noteSize": 96,
      "start": {
       "line": "L1",
       "word": "what",
@@ -339,13 +349,13 @@
    "plateFrame": {
     "from": {
      "s": 1.3,
-     "x": 0,
-     "y": 0
+     "x": -150,
+     "y": -200
     },
     "to": {
-     "s": 1.34,
-     "x": 0,
-     "y": 0
+     "s": 1.33,
+     "x": -158,
+     "y": -212
     }
    },
    "plateScrim": 0.45,
@@ -372,14 +382,23 @@
      }
     },
     {
-     "type": "callout",
+     "type": "watchPost",
      "local": true,
      "at": [
-      400,
-      1100
+      745,
+      1500
+     ],
+     "height": 440
+    },
+    {
+     "type": "callout",
+     "at": [
+      697,
+      1190
      ],
      "side": "up",
-     "rise": -260,
+     "rise": -300,
+     "dx": 40,
      "backdrop": true,
      "label": "The oath",
      "note": "sworn at sixteen",
@@ -431,7 +450,7 @@
     "background": "windmills and towers"
    },
    "lighting": "Warm morning sun.",
-   "sdxlPrompt": "vertical fantasy film still, sunny hilltop town of whitewashed round towers and windmills with saffron and teal awnings, wide open wooden gates, cheerful townsfolk in colourful patchwork clothes welcoming a traveller in a rust red hooded cloak on the road before the gate, seen from behind, distant figures, warm morning light, open sky",
+   "sdxlPrompt": "vertical fantasy film still, medieval fantasy hilltop town of whitewashed round stone towers with saffron and teal cloth banners, wide open wooden town gate, smiling townsfolk in colourful patchwork tunics waving to welcome one lone traveller in a rust red hooded cloak walking up the road to the gate, seen from behind, distant figures, warm morning light",
    "imagePrompt": "(Generated locally: see sdxlPrompt; Figma generation was not available in this session.) Vertical 9:16 cinematic fantasy documentary still. A sunny hilltop town of whitewashed round towers and windmills with saffron and teal awnings, wide-open wooden gates; cheerful townsfolk in colourful patchwork clothes welcome a traveller in a rust-red hooded cloak on the road before the gate, seen from behind, distant figures, warm morning light. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture/clothing. No text, no letters, no signage, no logos, no watermark.",
    "videoPrompt": "(Not used.)",
    "graphics": [
@@ -542,8 +561,7 @@
    "graphics": [
     {
      "type": "rain",
-     "local": false,
-     "opacity": 0.5
+     "opacity": 0.35
     },
     {
      "type": "tag",
@@ -655,7 +673,7 @@
     "from": "saturate(0.35) brightness(0.45) contrast(1.05)"
    },
    "purpose": "Neither side is a villain: each calls the other heartless, and each is guarding something real. The scale comes level.",
-   "visual": "The empty post, dimmed. The scale, larger: both pans flash 'Heartless.' in rust, then the beam levels and the reasons appear: 'No one owns you.' | 'Everyone needs you.'",
+   "visual": "The empty post, dimmed. The scale, larger: both pans flash 'Heartless.' in rust, then the beam levels and the reasons appear: 'No one\nowns you.' | 'Everyone\nneeds you.'",
    "camera": "Near static.",
    "layers": {
     "foreground": "verdict scale",
@@ -666,6 +684,17 @@
    "imagePrompt": "",
    "videoPrompt": "",
    "graphics": [
+    {
+     "type": "watchPost",
+     "local": true,
+     "at": [
+      235,
+      1275
+     ],
+     "height": 360,
+     "cloth": true,
+     "shade": 0.3
+    },
     {
      "type": "verdictScale",
      "pans": [
@@ -714,7 +743,7 @@
         "color": "rust"
        },
        {
-        "text": "No one owns you.",
+        "text": "No one\nowns you.",
         "at": {
          "line": "L5",
          "word": "right",
@@ -740,7 +769,7 @@
         "color": "rust"
        },
        {
-        "text": "Everyone needs you.",
+        "text": "Everyone\nneeds you.",
         "at": {
          "line": "L5",
          "word": "right",
@@ -756,7 +785,7 @@
      }
     }
    ],
-   "onScreenText": "Scale: 'Heartless.' on both pans, then level: 'No one owns you.' | 'Everyone needs you.'",
+   "onScreenText": "Scale: 'Heartless.' on both pans, then level: 'No one\nowns you.' | 'Everyone\nneeds you.'",
    "transition": "Dissolve (0.5 s) into the lesson.",
    "sfx": [
     {
@@ -906,6 +935,17 @@
    "videoPrompt": "(Not used.)",
    "graphics": [
     {
+     "type": "watchPost",
+     "local": true,
+     "at": [
+      235,
+      1275
+     ],
+     "height": 360,
+     "cloth": true,
+     "shade": 0.3
+    },
+    {
      "type": "ctaCard",
      "start": {
       "shot": "cta"
@@ -919,14 +959,14 @@
      "kicker": "Your turn",
      "lines": [
       "Which matters more:",
-      "*personal freedom*",
-      "or collective duty?"
+      "*personal freedom* or",
+      "collective responsibility?"
      ],
-     "size": 80,
+     "size": 70,
      "button": "Comment below"
     }
    ],
-   "onScreenText": "Full logo, 'EPISODE 14 / 50', title, 'YOUR TURN', 'Which matters more: personal freedom or collective duty?', pill 'Comment below'.",
+   "onScreenText": "Full logo, 'EPISODE 14 / 50', title, 'YOUR TURN', 'Which matters more: personal freedom or collective responsibility?', pill 'Comment below'.",
    "transition": "Cross-fade into the hook's first frame for a seamless loop.",
    "sfx": [
     {
@@ -974,7 +1014,7 @@
    "pinnedComment": "Which of your peoples values freedom, and which values duty? What does each call the other?",
    "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
   },
-  "cover": "Worldcraft_Short_E14_cover.jpg: Mira walking away from the post on the dawn levee, the callout flipped to HER VALLEY / Traitor. with the struck-out Hero., corner logo.",
+  "cover": "Worldcraft_Short_E14_cover.jpg: Mira walking away from the post on the dawn levee, the callout flipped to HER VALLEY / Traitor., the horn left on the post, corner logo.",
   "followUpQuestion": "Pick one choice a character makes. Which of your cultures would call it heroic, and which would call it a crime?"
  }
 }

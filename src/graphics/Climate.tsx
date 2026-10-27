@@ -29,7 +29,7 @@ const out = (t: number, end: number, dur = 0.35) => 1 - ease(t, end - dur, dur, 
  * optional `end` cue (else the shot end). `color` defaults to amber. `side: "up"` runs the leader straight up by
  * `-rise`, then `dx` sideways, and centres the label above its end (EP13: a note too wide for either side). `backdrop: true`
  * puts a soft dark glow behind the label for bright plates (a window, a sky). `then: {label?, note?, color?, at}`
- * re-captions the same point on a cue (EP14: one person's choice read as "Hero." and then "Traitor."): the first
+ * re-captions the same point on a cue (`noteSize` sets the note's px size, default 54) (EP14: one person's choice read as "Hero." and then "Traitor."): the first
  * note is struck through and drops away, the leader and ring change colour, and the new label rises in its place.
  */
 export const Callout: React.FC<GraphicProps> = ({g, t, span}) => {
@@ -86,7 +86,7 @@ export const Callout: React.FC<GraphicProps> = ({g, t, span}) => {
 				<div style={{gridArea: '1 / 1', alignSelf: up ? 'end' : 'start', opacity: 1 - sw, transform: `translateY(${sw * 26}px)`}}>
 					<div style={{...kicker, fontSize: 28, color: c, textShadow: '0 2px 12px rgba(0,0,0,0.9)'}}>{g.label}</div>
 					{g.note && (
-						<div style={{position: 'relative', display: 'inline-block', marginTop: 2, fontFamily: fonts.display, fontStyle: 'italic', fontWeight: 600, fontSize: 54, lineHeight: 1.05, color: palette.parchment, textShadow: '0 3px 18px rgba(0,0,0,0.9)'}}>
+						<div style={{position: 'relative', display: 'inline-block', marginTop: 2, fontFamily: fonts.display, fontStyle: 'italic', fontWeight: 600, fontSize: g.noteSize ?? 54, lineHeight: 1.05, color: palette.parchment, textShadow: '0 3px 18px rgba(0,0,0,0.9)'}}>
 							{g.note}
 							{then && <div style={{position: 'absolute', left: -6, right: -6, top: '55%', height: 4, background: tone(then.color, c0), transform: `scaleX(${strike})`, transformOrigin: 'left'}} />}
 						</div>
@@ -95,7 +95,7 @@ export const Callout: React.FC<GraphicProps> = ({g, t, span}) => {
 				{then && (
 					<div style={{gridArea: '1 / 1', alignSelf: up ? 'end' : 'start', opacity: sw, transform: `translateY(${(1 - sw) * -18}px)`}}>
 						<div style={{...kicker, fontSize: 28, color: tone(then.color, c0), textShadow: '0 2px 12px rgba(0,0,0,0.9)'}}>{then.label ?? g.label}</div>
-						<div style={{marginTop: 2, fontFamily: fonts.display, fontStyle: 'italic', fontWeight: 600, fontSize: 54, lineHeight: 1.05, color: palette.parchment, textShadow: '0 3px 18px rgba(0,0,0,0.9)'}}>{then.note ?? g.note}</div>
+						<div style={{marginTop: 2, fontFamily: fonts.display, fontStyle: 'italic', fontWeight: 600, fontSize: g.noteSize ?? 54, lineHeight: 1.05, color: palette.parchment, textShadow: '0 3px 18px rgba(0,0,0,0.9)'}}>{then.note ?? g.note}</div>
 					</div>
 				)}
 			</div>

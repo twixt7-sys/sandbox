@@ -10,6 +10,7 @@ import {CRISIS} from './Crisis';
 import {CULTURE} from './Culture';
 import {EVERYDAY} from './Everyday';
 import {MORALITY} from './Morality';
+import {PILLARS} from './Pillars';
 import {POWER} from './Power';
 import {RITES} from './Rites';
 import {RUINS} from './Ruins';
@@ -300,4 +301,5 @@ export const GRAPHICS: Record<string, React.FC<GraphicProps>> = {
 	...RITES,
 	...MORALITY,
 	...POWER,
+	...PILLARS,
 };

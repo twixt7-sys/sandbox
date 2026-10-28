@@ -1,184 +1,253 @@
 import React from 'react';
-import {AbsoluteFill, Easing, Img, staticFile} from 'remotion';
+import {AbsoluteFill, Easing, interpolate} from 'remotion';
 import {cueTime, ease, lerp, useTiming} from '../lib/timing';
 import {fonts, H, palette, W} from '../theme';
-import type {Cue} from '../types';
 import type {GraphicProps} from './Graphics';
 
 /*
- * Power graphics (EP17 onward, Arc 4): an empire drawn as a roof on pillars. The pillars rise as plain stone, then each one
- * turns out to be a person (a portrait cut from their plate) with the reason they hold it up; an absent alternative is an
- * empty, dashed pillar. A matching tag numbers each supporter as we meet them.
+ * Power graphics (EP16 onward, Arc 4: Kingdoms and Power): who wears the crown vs who actually holds what people need.
+ * The crown glyph is shared with the atlas (`crown` feature), so the same mark sits on the palace, travels to the real
+ * holder on the map, and splits into TITLE / POWER on the lesson card.
  */
 
-const kicker: React.CSSProperties = {fontFamily: fonts.ui, fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase'};
+const kicker: React.CSSProperties = {fontFamily: fonts.ui, fontWeight: 800, letterSpacing: '0.22em', textTransform: 'uppercase'};
 const out = (t: number, end: number, dur = 0.35) => 1 - ease(t, end - dur, dur, Easing.in(Easing.quad));
-const STONE = 'repeating-linear-gradient(90deg, #4b555c 0px, #5f6a71 9px, #3d464c 13px, #4b555c 22px)';
 
-type Pillar = {label: string; who?: string; src?: string; x?: number; y?: number; zoom?: number; empty?: boolean};
+/**
+ * Crown glyph centred on (0, 0), about 100 × 64 at s = 1. `ghost`: a dashed outline only (the title without the
+ * power); otherwise amber-gold with ember jewels and a glow of `glow` (0..1).
+ */
+export const CrownGlyph: React.FC<{s?: number; ghost?: boolean; glow?: number; color?: string}> = ({s = 1, ghost, glow = 0, color}) => {
+	const body = 'M-50,30 L-50,-12 L-26,8 L0,-34 L26,8 L50,-12 L50,30 Z';
+	const tips: [number, number][] = [
+		[-50, -12],
+		[0, -34],
+		[50, -12],
+	];
+	if (ghost) {
+		const c = color ?? palette.mist;
+		return (
+			<g transform={`scale(${s})`} fill="none" stroke={c} strokeWidth={3 / s} strokeDasharray={`${9 / s} ${7 / s}`} strokeLinejoin="round" opacity={0.85}>
+				<path d={body} />
+				<line x1={-50} y1={18} x2={50} y2={18} />
+				{tips.map(([x, y], i) => (
+					<circle key={i} cx={x} cy={y - 5} r={5} strokeDasharray="none" />
+				))}
+			</g>
+		);
+	}
+	const c = color ?? palette.amber;
+	return (
+		<g transform={`scale(${s})`} style={{filter: `drop-shadow(0 0 ${4 + 18 * glow}px rgba(244,196,110,${0.35 + 0.5 * glow}))`}}>
+			<path d={body} fill={c} stroke="#7a5418" strokeWidth={2.5 / s} strokeLinejoin="round" />
+			<rect x={-50} y={14} width={100} height={16} fill="#c98a2f" stroke="#7a5418" strokeWidth={2 / s} />
+			{[-30, 0, 30].map((x) => (
+				<circle key={x} cx={x} cy={22} r={4} fill={palette.rust} />
+			))}
+			{tips.map(([x, y], i) => (
+				<circle key={i} cx={x} cy={y - 5} r={6} fill={palette.ember} stroke="#7a5418" strokeWidth={1.5 / s} />
+			))}
+		</g>
+	);
+};
 
-/** A small fluted column glyph (the series' pillar mark), drawn in `c`. */
-export const PillarGlyph: React.FC<{c: string; size?: number}> = ({c, size = 30}) => (
-	<svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth={1.8} strokeLinejoin="round">
-		<path d="M3 4 H21 L19 6.5 H5 Z" fill={c} fillOpacity={0.35} />
-		<path d="M6.5 6.5 V18.5 M10.5 6.5 V18.5 M13.5 6.5 V18.5 M17.5 6.5 V18.5" />
-		<path d="M4.5 18.5 H19.5 V21 H4.5 Z" fill={c} fillOpacity={0.35} />
-	</svg>
+/** Granary glyph for the atlas: a gabled storehouse between two round silos, centred on (0, 0). */
+export const GranaryGlyph: React.FC = () => (
+	<g stroke="#7a5418" strokeWidth={1.6} strokeLinejoin="round">
+		{[-30, 30].map((x) => (
+			<g key={x}>
+				<rect x={x - 9} y={-14} width={18} height={34} fill={palette.parchment} opacity={0.9} />
+				<path d={`M${x - 11},-14 L${x},-28 L${x + 11},-14 Z`} fill={palette.amber} />
+			</g>
+		))}
+		<rect x={-20} y={-6} width={40} height={26} fill={palette.parchment} />
+		<path d="M-25,-6 L0,-30 L25,-6 Z" fill={palette.amber} />
+		<rect x={-7} y={4} width={14} height={16} fill="#5c3d10" />
+		<line x1={0} y1={4} x2={0} y2={20} stroke={palette.amber} strokeWidth={1.2} />
+	</g>
 );
 
 /**
- * PillarStack: `label` on the entablature (rust caps), `pillars: [{label, src, x, y, zoom} | {label, empty: true}]`.
- * The roof shows from `start` (else the shot start); the pillars rise as stone from `riseAt`, staggered. `peopleAt[i]`
- * turns pillar i into its supporter: a portrait cut from `src` centred on plate point (x, y) at `zoom`, with its label;
- * an `empty` pillar fades to a dashed outline instead. `liftAt` shrinks the whole stack up to make room, and
- * `lessonKicker` / `lessonText` (string or lines; *word* = ember italic) land beneath it at `lessonAt`.
- * Geometry: pediment from `top` (default 380), pillars `pillarTop`..`pillarBase`, 5 pillars across x 162–918.
+ * TitlePower (EP16 lesson): one crown that splits in two on `splitAt`. The left copy stays as a dashed outline (THE
+ * TITLE, `left`), the right one turns gold and glows (THE POWER, `right`); each column's kicker and italic `text`
+ * (use "\n" for a second line) write in on `leftAt` / `rightAt`. `items: [{text, at}]` light as chips in a 2-wide grid
+ * under the card (who can hold the power), and `sum` + `sumAt` closes it with one serif line. `top` (default 400).
  */
-export const PillarStack: React.FC<GraphicProps> = ({g, t, span}) => {
+export const TitlePower: React.FC<GraphicProps> = ({g, t, span}) => {
 	const timing = useTiming();
-	const pillars: Pillar[] = g.pillars;
+	const top = g.top ?? 400;
 	const t0 = cueTime(timing, g.start, span.start);
-	const tEnd = g.end ? cueTime(timing, g.end, span.end) : span.end;
-	const vis = (g.instant ? 1 : ease(t, t0, 0.45)) * out(t, Math.min(tEnd, span.end + 0.25), 0.3);
-	const tRise = cueTime(timing, g.riseAt, -1e9);
-	const people: number[] = (g.peopleAt ?? []).map((c: Cue) => cueTime(timing, c));
-	const tLift = g.liftAt ? cueTime(timing, g.liftAt) : 1e9;
-	const tLesson = g.lessonAt ? cueTime(timing, g.lessonAt) : 1e9;
-	const lift = ease(t, tLift, 0.8);
-
-	const top = g.top ?? 380;
-	const beamTop = top + 96;
-	const beamH = 78;
-	const capTop = beamTop + beamH + 8;
-	const pillarBase = g.pillarBase ?? 1090;
-	const shaftTop = capTop + 30;
-	const shaftH = pillarBase - 26 - shaftTop;
-	const n = pillars.length;
-	const pw = g.pillarWidth ?? 132;
-	const gap = (756 - n * pw) / Math.max(1, n - 1);
-	const x0 = 540 - 378;
-	const roof = ease(t, t0 + 0.05, 0.6);
-
-	const lessonLines: string[] = Array.isArray(g.lessonText) ? g.lessonText : g.lessonText ? [g.lessonText] : [];
-	const lk = ease(t, tLesson, 0.5);
-
+	const tEnd = g.end ? cueTime(timing, g.end) : span.end + 0.1;
+	const appear = ease(t, t0, 0.5, Easing.out(Easing.back(1.4)));
+	const split = ease(t, cueTime(timing, g.splitAt, t0 + 0.8), 0.7, Easing.inOut(Easing.cubic));
+	const lA = ease(t, cueTime(timing, g.leftAt ?? g.splitAt, t0 + 0.9) + 0.1, 0.45);
+	const rA = ease(t, cueTime(timing, g.rightAt ?? g.splitAt, t0 + 1.2) + 0.1, 0.45);
+	const o = out(t, tEnd, 0.3);
+	const cx = 540;
+	const dx = 250 * split;
+	const items: {text: string; at: any}[] = g.items ?? [];
+	const sumP = g.sumAt ? ease(t, cueTime(timing, g.sumAt) - 0.05, 0.5) : 0;
+	const col = (side: 'left' | 'right', a: number, data: {kicker: string; text: string}) => (
+		<div
+			style={{
+				position: 'absolute',
+				top: top + 150,
+				left: side === 'left' ? cx - 250 - 230 : cx + 250 - 230,
+				width: 460,
+				textAlign: 'center',
+				opacity: a,
+				transform: `translateY(${(1 - a) * 12}px)`,
+			}}
+		>
+			<div style={{...kicker, fontSize: 32, color: side === 'left' ? palette.fog : palette.amber}}>{data.kicker}</div>
+			<div style={{marginTop: 10, fontFamily: fonts.display, fontStyle: 'italic', fontWeight: 600, fontSize: 60, lineHeight: 1.02, color: side === 'left' ? palette.mist : palette.ember, whiteSpace: 'pre-line', textShadow: '0 3px 18px rgba(0,0,0,0.9)'}}>
+				{data.text}
+			</div>
+		</div>
+	);
 	return (
-		<AbsoluteFill style={{opacity: vis}}>
-			{/* Deep midnight under the diagram so the dimmed plate only hints at the palace. */}
-			<AbsoluteFill style={{background: 'radial-gradient(ellipse 80% 60% at 50% 45%, rgba(7,14,30,0.55) 0%, rgba(7,14,30,0.82) 100%)'}} />
-			<AbsoluteFill style={{transform: `translateY(${lerp(0, (g.liftY ?? 0), lift)}px) scale(${lerp(1, g.liftScale ?? 0.7, lift)})`, transformOrigin: `540px ${top - 20}px`}}>
-				{/* Pediment + entablature: the empire itself. */}
-				<svg width={W} height={H} style={{position: 'absolute', inset: 0, overflow: 'visible', opacity: roof}}>
-					<path d={`M${x0 - 22} ${beamTop} L540 ${top} L${x0 + 778} ${beamTop} Z`} fill="#20262c" stroke={palette.amber} strokeWidth={2.5} strokeLinejoin="round" />
-					<path d={`M${x0 + 40} ${beamTop - 10} L540 ${top + 30} L${x0 + 716} ${beamTop - 10}`} fill="none" stroke={palette.amber} strokeOpacity={0.35} strokeWidth={1.5} />
-					<rect x={x0 - 22} y={beamTop} width={800} height={beamH} fill="#2a3138" stroke={palette.amber} strokeWidth={2.5} />
-					<rect x={x0 - 8} y={beamTop + beamH} width={772} height={8} fill="#343c43" stroke={palette.amber} strokeOpacity={0.6} strokeWidth={1.5} />
-					{/* Stylobate: the ground the pillars stand on. */}
-					<rect x={x0 - 30} y={pillarBase} width={816} height={16} fill="#2a3138" stroke={palette.amber} strokeOpacity={0.7} strokeWidth={2} opacity={ease(t, tRise - 0.3, 0.4)} />
-				</svg>
-				<div style={{position: 'absolute', top: beamTop + 18, width: '100%', textAlign: 'center', ...kicker, fontWeight: 800, fontSize: 40, letterSpacing: '0.3em', color: palette.rust, opacity: roof, textShadow: '0 2px 10px rgba(0,0,0,0.9)'}}>
-					{g.label}
-				</div>
-				{pillars.map((p, i) => {
-					const x = x0 + i * (pw + gap);
-					const rise = ease(t, tRise + i * 0.12, 0.55, Easing.out(Easing.cubic));
-					const tp = people[i] ?? 1e9;
-					const turn = ease(t, tp, 0.5);
-					const pop = ease(t, tp, 0.18) * (1 - ease(t, tp + 0.2, 0.6));
-					const stoneO = p.empty ? 1 - turn : 1 - turn;
-					const z = p.zoom ?? 0.5;
+		<AbsoluteFill style={{opacity: o}}>
+			<svg width={W} height={H} style={{position: 'absolute', inset: 0}}>
+				{/* the split seam */}
+				<line x1={cx} y1={top - 40} x2={cx} y2={top + 330} stroke={palette.amber} strokeOpacity={0.5 * split} strokeWidth={2} strokeDasharray="4 10" />
+				<g transform={`translate(${cx - dx} ${top + 40}) scale(${0.6 + 0.4 * appear})`} opacity={Math.min(1, appear * 2)}>
+					<CrownGlyph s={1.1} ghost={split > 0.5} glow={0} color={split > 0.5 ? palette.mist : undefined} />
+				</g>
+				<g transform={`translate(${cx + dx} ${top + 40}) scale(${0.6 + 0.4 * appear})`} opacity={Math.min(1, appear * 2) * Math.min(1, split * 4)}>
+					<CrownGlyph s={1.1} glow={rA} />
+				</g>
+				<text x={cx} y={top + 62} textAnchor="middle" fill={palette.rust} opacity={split} style={{fontFamily: fonts.display, fontWeight: 700, fontSize: 84}}>
+					≠
+				</text>
+			</svg>
+			{col('left', lA, g.left)}
+			{col('right', rA, g.right)}
+			<div style={{position: 'absolute', top: top + 430, left: 120, width: 840, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '22px 26px'}}>
+				{items.map((it, i) => {
+					const p = ease(t, cueTime(timing, it.at) - 0.08, 0.35, Easing.out(Easing.back(1.6)));
 					return (
-						<div key={i} style={{position: 'absolute', left: x, top: capTop, width: pw, height: pillarBase - capTop, transformOrigin: '50% 100%', transform: `scaleY(${Math.max(0.001, rise)})`, opacity: Math.min(1, rise * 2)}}>
-							{/* Capital */}
-							<div style={{position: 'absolute', left: -12, top: 0, width: pw + 24, height: 26, background: '#3a4349', border: `2px solid ${p.empty && turn > 0.5 ? 'rgba(233,169,75,0.5)' : palette.amber}`, borderRadius: 3, opacity: p.empty ? 1 - 0.6 * turn : 1}} />
-							{/* Shaft: stone, then the supporter (or nothing). */}
-							<div style={{position: 'absolute', left: 0, top: 30, width: pw, height: shaftH, overflow: 'hidden', borderLeft: `2px solid ${palette.amber}`, borderRight: `2px solid ${palette.amber}`, opacity: p.empty ? 1 - turn : 1}}>
-								<div style={{position: 'absolute', inset: 0, background: STONE, opacity: stoneO}} />
-								{p.src && turn > 0 && (
-									<Img
-										src={staticFile(p.src)}
-										style={{position: 'absolute', width: 1080 * z, height: 1920 * z, left: pw / 2 - (p.x ?? 540) * z, top: shaftH / 2 - (p.y ?? 960) * z, opacity: turn, filter: 'saturate(0.9)'}}
-									/>
-								)}
-								<div style={{position: 'absolute', inset: 0, boxShadow: 'inset 0 0 24px rgba(0,0,0,0.6)'}} />
-							</div>
-							{p.empty && (
-								<div style={{position: 'absolute', left: 0, top: 30, width: pw, height: shaftH, border: `3px dashed ${palette.mist}`, borderRadius: 2, opacity: turn, background: `linear-gradient(180deg, rgba(159,177,184,${0.06 * turn}) 0%, rgba(159,177,184,${0.16 * turn}) 100%)`}} />
-							)}
-							{/* Base */}
-							<div style={{position: 'absolute', left: -8, bottom: 0, width: pw + 16, height: 22, background: '#3a4349', border: `2px solid ${palette.amber}`, borderRadius: 2, opacity: p.empty ? 1 - 0.6 * turn : 1}} />
-							{/* Reason label, low on the shaft. */}
-							<div
-								style={{
-									position: 'absolute',
-									left: -14,
-									width: pw + 28,
-									top: 30 + shaftH - 92,
-									textAlign: 'center',
-									...kicker,
-									fontWeight: 800,
-									fontSize: 21,
-									letterSpacing: '0.14em',
-									lineHeight: 1.25,
-									color: p.empty ? palette.mist : palette.ember,
-									opacity: turn,
-									transform: `translateY(${(1 - turn) * 10}px) scale(${1 + 0.08 * pop})`,
-									textShadow: '0 1px 4px #000, 0 0 14px rgba(0,0,0,0.95)',
-								}}
-							>
-								<div style={{display: 'inline-block', padding: '7px 8px 5px', background: 'rgba(8,12,16,0.72)', borderTop: `1.5px solid ${p.empty ? palette.fog : palette.ember}`}}>{p.label}</div>
-							</div>
-							<div style={{position: 'absolute', left: -6, top: 30, width: pw + 12, height: shaftH, boxShadow: `0 0 ${30 * pop}px rgba(244,196,110,${0.5 * pop})`, pointerEvents: 'none'}} />
+						<div
+							key={i}
+							style={{
+								...kicker,
+								fontSize: 32,
+								width: 380,
+								textAlign: 'center',
+								padding: '18px 0 15px',
+								color: palette.ember,
+								border: `2px solid ${palette.ember}`,
+								borderRadius: 999,
+								background: 'rgba(8,12,16,0.55)',
+								opacity: 0.12 + 0.88 * p,
+								transform: `scale(${0.9 + 0.1 * p})`,
+								boxShadow: `0 0 ${22 * p}px rgba(244,196,110,${0.25 * p})`,
+							}}
+						>
+							{it.text}
 						</div>
 					);
 				})}
-			</AbsoluteFill>
-			{lessonLines.length > 0 && (
-				<div style={{position: 'absolute', top: g.lessonTop ?? 920, left: 60, right: 60, textAlign: 'center', opacity: lk, transform: `translateY(${(1 - lk) * 16}px)`}}>
-					{g.lessonKicker && <div style={{...kicker, fontSize: 30, color: palette.amber, textShadow: '0 2px 12px rgba(0,0,0,0.9)'}}>{g.lessonKicker}</div>}
-					{lessonLines.map((ln, li) => {
-						const lp = ease(t, tLesson + 0.15 + li * 0.25, 0.6);
-						return (
-							<div key={li} style={{marginTop: li ? 0 : 14, fontFamily: fonts.display, fontWeight: 600, fontSize: g.lessonSize ?? 96, lineHeight: 1.04, color: palette.parchment, opacity: lp, textShadow: '0 4px 30px rgba(0,0,0,0.8)'}}>
-								{ln.split(' ').map((w, k) => (
-									<span key={k} style={w.startsWith('*') ? {color: palette.ember, fontStyle: 'italic'} : undefined}>
-										{w.replace(/\*/g, '')}{' '}
-									</span>
-								))}
-							</div>
-						);
-					})}
+			</div>
+			{g.sum && (
+				<div style={{position: 'absolute', top: top + 690, width: '100%', textAlign: 'center', fontFamily: fonts.display, fontStyle: 'italic', fontWeight: 600, fontSize: 64, color: palette.parchment, opacity: sumP, transform: `translateY(${(1 - sumP) * 10}px)`}}>
+					{g.sum}
 				</div>
 			)}
 		</AbsoluteFill>
 	);
 };
 
-/** Supporter tag: like `tag`, with a pillar glyph and numeral ("I · BREAD") so each person reads as one pillar of the stack. */
-export const PillarTag: React.FC<GraphicProps> = ({g, t, span}) => {
+/**
+ * GrainSack: a tied burlap sack of grain standing on the ground, a few grains spilled (EP16). `at: [x, y]` = centre of
+ * the base, `size` (height, default 120), `tone: "day" | "dusk"`, `lean` (degrees). Pin with `local: true`.
+ */
+export const GrainSack: React.FC<GraphicProps> = ({g, t, span}) => {
 	const timing = useTiming();
-	const t0 = cueTime(timing, g.start, span.start);
-	const a = ease(t, t0, 0.5);
-	const b = ease(t, t0 + 0.15, 0.6);
-	const o = out(t, span.end, 0.3);
+	const [x, y] = g.at;
+	const h = g.size ?? 120;
+	const w = h * 0.78;
+	const dusk = g.tone === 'dusk';
+	const cloth = dusk ? ['#8a6b47', '#5a4430', '#3a2b1f'] : ['#c4a06a', '#8d6c43', '#5a4430'];
+	const p = g.start ? ease(t, cueTime(timing, g.start, span.start), 0.4) : 1;
+	const body = `M${-w * 0.42},0 C${-w * 0.56},${-h * 0.35} ${-w * 0.5},${-h * 0.66} ${-w * 0.2},${-h * 0.78} L${w * 0.2},${-h * 0.78} C${w * 0.5},${-h * 0.66} ${w * 0.56},${-h * 0.35} ${w * 0.42},0 Z`;
+	const grains = [
+		[-0.62, -0.02], [-0.7, 0.0], [-0.55, 0.015], [0.6, 0.0], [0.68, -0.01], [0.52, 0.02], [0.75, 0.012],
+	];
 	return (
-		<AbsoluteFill style={{opacity: o}}>
-			<div style={{position: 'absolute', top: g.top ?? 336, left: 90}}>
-				<div style={{display: 'inline-flex', alignItems: 'center', gap: 12, ...kicker, fontSize: 26, color: palette.amber, border: `1.5px solid ${palette.amber}`, padding: '8px 18px 6px 12px', background: 'rgba(11,18,22,0.5)', clipPath: `inset(0 ${(1 - a) * 100}% 0 0)`}}>
-					<PillarGlyph c={palette.amber} size={30} />
-					<span>
-						Pillar {g.numeral} · <span style={{color: palette.ember}}>{g.kicker}</span>
-					</span>
-				</div>
-				<div style={{marginTop: 16, fontFamily: fonts.display, fontStyle: 'italic', fontWeight: 500, fontSize: 64, color: palette.parchment, opacity: b, transform: `translateY(${(1 - b) * 14}px)`, textShadow: '0 3px 24px rgba(0,0,0,0.7)'}}>
-					{g.text}
-				</div>
-			</div>
+		<AbsoluteFill style={{opacity: p * (g.opacity ?? 1)}}>
+			<svg width={W} height={H} style={{position: 'absolute', inset: 0, overflow: 'visible'}}>
+				<g transform={`translate(${x} ${y}) rotate(${g.lean ?? 0})`}>
+					<ellipse cx={w * 0.05} cy={2} rx={w * 0.62} ry={h * 0.06} fill="rgba(8,6,4,0.5)" style={{filter: `blur(${h * 0.03}px)`}} />
+					<path d={body} fill={cloth[0]} stroke={cloth[2]} strokeWidth={2} />
+					{/* shading on the right flank, weave lines */}
+					<path d={`M${w * 0.1},0 C${w * 0.38},${-h * 0.3} ${w * 0.4},${-h * 0.6} ${w * 0.2},${-h * 0.78} C${w * 0.5},${-h * 0.66} ${w * 0.56},${-h * 0.35} ${w * 0.42},0 Z`} fill={cloth[1]} opacity={0.7} />
+					{[0.25, 0.45, 0.65].map((u) => (
+						<path key={u} d={`M${-w * 0.45},${-h * u} Q0,${-h * u + h * 0.04} ${w * 0.45},${-h * u}`} fill="none" stroke={cloth[2]} strokeOpacity={0.35} strokeWidth={1.2} />
+					))}
+					{/* neck, tie and the open grain top */}
+					<path d={`M${-w * 0.2},${-h * 0.78} L${-w * 0.14},${-h * 0.9} L${w * 0.14},${-h * 0.9} L${w * 0.2},${-h * 0.78} Z`} fill={cloth[0]} stroke={cloth[2]} strokeWidth={1.5} />
+					<rect x={-w * 0.17} y={-h * 0.82} width={w * 0.34} height={h * 0.05} fill="#6b3f22" />
+					<ellipse cx={0} cy={-h * 0.92} rx={w * 0.2} ry={h * 0.05} fill={dusk ? '#b8913f' : '#e3bd62'} stroke={cloth[2]} strokeWidth={1} />
+					{grains.map(([gx, gy], i) => (
+						<ellipse key={i} cx={gx * w} cy={gy * h} rx={h * 0.018} ry={h * 0.011} fill={dusk ? '#b8913f' : '#e3bd62'} transform={`rotate(${i * 37} ${gx * w} ${gy * h})`} />
+					))}
+				</g>
+			</svg>
 		</AbsoluteFill>
 	);
 };
 
+/**
+ * KeyRing: a heavy iron ring of long keys hanging from a point (a belt, a hand), swinging gently (EP16: the granary
+ * keeper's keys, which SDXL would not paint). `at: [x, y]` = the hanging point, `size` (ring radius, default 26),
+ * `count` (keys, default 5), `start` cue to fade in. Pin with `local: true`.
+ */
+export const KeyRing: React.FC<GraphicProps> = ({g, t, span}) => {
+	const timing = useTiming();
+	const [x, y] = g.at;
+	const r = g.size ?? 26;
+	const n = g.count ?? 5;
+	const p = g.start ? ease(t, cueTime(timing, g.start, span.start), 0.4) : 1;
+	const sway = Math.sin(t * 1.7) * 3;
+	const iron = '#77736a';
+	const hi = '#d8d2c0';
+	return (
+		<AbsoluteFill style={{opacity: p * (g.opacity ?? 1)}}>
+			<svg width={W} height={H} style={{position: 'absolute', inset: 0, overflow: 'visible'}}>
+				<g transform={`translate(${x} ${y}) rotate(${sway})`} style={{filter: 'drop-shadow(0 2px 3px rgba(0,0,0,0.7))'}}>
+					<circle cx={0} cy={r} r={r} fill="none" stroke={iron} strokeWidth={r * 0.22} />
+					<circle cx={0} cy={r} r={r} fill="none" stroke={hi} strokeWidth={r * 0.06} strokeDasharray={`${r * 0.8} ${r * 2.2}`} />
+					{Array.from({length: n}, (_, i) => {
+						const a = ((i - (n - 1) / 2) / n) * 1.6;
+						const bx = Math.sin(a) * r;
+						const by = r + Math.cos(a) * r;
+						const len = r * (2.2 + 0.35 * ((i * 7) % 3));
+						return (
+							<g key={i} transform={`translate(${bx} ${by}) rotate(${(-a * 180) / Math.PI * 0.6})`}>
+								<circle cx={0} cy={r * 0.28} r={r * 0.26} fill="none" stroke={iron} strokeWidth={r * 0.12} />
+								<rect x={-r * 0.06} y={r * 0.5} width={r * 0.12} height={len} fill={iron} />
+								<rect x={0} y={r * 0.5 + len - r * 0.4} width={r * 0.32} height={r * 0.14} fill={iron} />
+								<rect x={0} y={r * 0.5 + len - r * 0.15} width={r * 0.24} height={r * 0.14} fill={iron} />
+								<rect x={-r * 0.03} y={r * 0.55} width={r * 0.03} height={len * 0.8} fill={hi} opacity={0.6} />
+							</g>
+						);
+					})}
+				</g>
+			</svg>
+		</AbsoluteFill>
+	);
+};
+
+/** Small helper so other files can ease a crown along an arc between two points. */
+export const arcPoint = (a: [number, number], b: [number, number], u: number, lift = 0.25): [number, number] => {
+	const mx = (a[0] + b[0]) / 2;
+	const my = (a[1] + b[1]) / 2 - Math.hypot(b[0] - a[0], b[1] - a[1]) * lift;
+	const q = interpolate(u, [0, 1], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	return [lerp(lerp(a[0], mx, q), lerp(mx, b[0], q), q), lerp(lerp(a[1], my, q), lerp(my, b[1], q), q)];
+};
+
 export const POWER: Record<string, React.FC<GraphicProps>> = {
-	pillarStack: PillarStack,
-	pillarTag: PillarTag,
+	titlePower: TitlePower,
+	grainSack: GrainSack,
+	keyRing: KeyRing,
 };

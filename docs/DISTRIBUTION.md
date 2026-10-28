@@ -1018,6 +1018,74 @@ Source of truth: `episodes/ep15/episode.json` → `metadata`. The AI label goes 
 - **Pinned comment:** Equals, the street first, peace in public: which value would your culture's quarrel habit reveal?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
 
+## Episode 16 captions (ready to paste)
+
+Source of truth: `episodes/ep16/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep16/Worldcraft_Short_E16_cover.jpg`. Subtitles: `episodes/ep16/ep16.srt`. The stills were made with a local open model (SDXL-Lightning), so they're AI-generated like every other episode's and need the same disclosure.
+
+### YouTube Shorts
+- **Title** (58/100 chars): `The King Has the Crown. Who Has the Grain? (Worldbuilding)`
+- **Alternate title** (38 chars): `Who really rules your fantasy kingdom?`
+- **Description:**
+
+> The king wears the crown. But who controls the food supply?
+>
+> In Orvane, the king signs every law. But follow the grain: every sack in the kingdom passes through the Granary Guild. If the guild shuts its doors, the capital starves in a week. So every new law is quietly shown to the guild first.
+>
+> Separate the title from the power. Formal authority is who wears the crown. Actual power is whoever controls what people need: merchants, priests, generals, landlords, or whoever holds the grain, the roads or the debts.
+>
+> Who would secretly control your fictional kingdom? Tell us in the comments.
+>
+> Episode 16 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts
+
+- **Pinned comment:** Your turn: who secretly controls your kingdom, and what do they hold that the crown can't do without?
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (224 chars): `The king signs the laws 👑 The Granary Guild decides if anyone eats 🌾 Separate the title from the power. Who secretly runs your fictional kingdom? #Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts`
+- **Pinned comment:** Merchant, priest, general, landlord, or someone stranger: who really rules your kingdom?
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> The king wears the crown. But who controls the food supply?
+>
+> In Orvane, the king signs every law. But follow the grain: every sack in the kingdom passes through the Granary Guild. If the guild shuts its doors, the capital starves in a week. So every new law is quietly shown to the guild first.
+>
+> Separate the title from the power. Formal authority is who wears the crown. Actual power is whoever controls what people need: merchants, priests, generals, landlords, or whoever holds the grain, the roads or the debts.
+>
+> Who would secretly control your fictional kingdom?
+>
+> Episode 16 of 50.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts
+
+- **Pinned comment:** Who holds the real power in your story's kingdom, and does the king know it?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> The crown. Or the grain?
+>
+> The king wears the crown. But who controls the food supply?
+>
+> In Orvane, the king signs every law. But follow the grain: every sack in the kingdom passes through the Granary Guild. If the guild shuts its doors, the capital starves in a week. So every new law is quietly shown to the guild first.
+>
+> Separate the title from the power. Formal authority is who wears the crown. Actual power is whoever controls what people need: merchants, priests, generals, landlords, or whoever holds the grain, the roads or the debts.
+>
+> Who would secretly control your fictional kingdom?
+>
+> Episode 16 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts
+
+- **Hook check:** First 24 characters: 'The crown. Or the grain?'
+- **Pinned comment:** Name the real power in your kingdom, and the one thing they hold that everyone needs.
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
 ## Episode 17 captions (ready to paste)
 
 Source of truth: `episodes/ep17/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep17/Worldcraft_Short_E17_cover.jpg`. Subtitles: `episodes/ep17/ep17.srt`. The stills were made with a local open model (SDXL-Lightning), so they're AI-generated like every other episode's and need the same disclosure.

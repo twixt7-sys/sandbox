@@ -193,6 +193,19 @@ On the paid primary stack: about **$1.15 (₱73)**, or **$2.12 (₱134)** with o
 
 On the paid primary stack, with 3 stills plus one re-roll (4 images): about **$1.15 (₱73)**, or **$2.12 (₱134)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
+## What Episode 14 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 4 stills (Mira on the dawn river path, the free town, the valley league's hooded line, the empty bank at dusk) | **Local SDXL-Lightning** (`pipeline/local_stills.py`, 4-step, CPU, 768×1344, lanczos to 1080×1920). 10 candidates, 4 kept. Figma was tried first: the `generate_image` call was blocked by the session's permission check before reaching Figma, so no Figma credits were used | $0 |
+| Verdict scale, re-captioned callout, watch post and horn, tags, rain, lesson stack, CTA card | Remotion code (new `verdictScale`, `watchPost`, `callout` `then` and `noteSize`; `tag`, `rain`, `lessonStack`, `ctaCard`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 75 words, 29.8 s | $0 |
+| Score + SFX (new: scaleTip) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, no Figma credits |
+
+On the paid primary stack, with 4 stills: about **$1.15 (₱73)**, or **$2.12 (₱134)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
 ## What Episode 15 actually used
 
 | Item | Used | Cash cost |
@@ -205,6 +218,32 @@ On the paid primary stack, with 3 stills plus one re-roll (4 images): about **$1
 | **Total** | | **$0 cash (₱0)**, no Figma credits |
 
 On the paid primary stack, with 3 stills: about **$1.05 (₱67)**, or **$1.94 (₱123)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
+## What Episode 16 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 3 stills (the king in the throne hall, the guild keeper among the sacks, the empty throne) | **Local SDXL-Lightning** (`pipeline/local_stills.py`, 4-step, CPU, 768×1344, lanczos to 1080×1920). 12 candidates in two rounds, 3 kept (seeds 5, 11, 8). Figma not used: out of AI credits until 1 Nov 2026 | $0 |
+| Map, moving crown, granary, key ring, grain sack, lesson card, CTA card | Remotion code (new `titlePower`, `keyRing`, `grainSack`, atlas `crown` and `granary`; `atlas`, `inferChain`, `callout`, `tag`, `titleLockup`, `ctaCard`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 74 words, 29.7 s | $0 |
+| Score + SFX (new: grainPour, crownShift) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, no Figma credits |
+
+On the paid primary stack, with 3 stills: about **$1.05 (₱67)**, or **$1.94 (₱123)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
+## What Episode 17 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 6 stills (the black palace over the stair, the farmer and his ox, the clerk in the records hall, the soldier's mother in her doorway, the neighbour in the night street, the palace over the morning market) | **Local SDXL-Lightning** (`pipeline/local_stills.py`, 4-step, CPU, 768×1344, lanczos to 1080×1920). 18 candidates in two rounds, 6 kept: hook 11, farmer 11, cta 11 (round 2), clerk 23, mother 11, neighbour 11 (round 1). Round 1's palaces read as real tiered temples and were re-rolled. Figma credits are out until 1 Nov 2026, so it wasn't tried | $0 |
+| Pillar stack (pillars that turn into the supporters), pillar tags, title, CTA card | Remotion code (new `pillarStack` and `pillarTag`; `titleLockup`, `ctaCard`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 74 words, 30.02 s | $0 |
+| Score + SFX (new: pillarSet, doorKnock) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, no Figma credits |
+
+On the paid primary stack, with 6 stills: about **$1.35 (₱86)** (scaling EP15's 3-still and EP14's 4-still figures at about $0.10 a still), or **$2.48 (₱157)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
 ## Alternatives
 
@@ -222,29 +261,3 @@ On the paid primary stack, with 3 stills: about **$1.05 (₱67)**, or **$1.94 (�
 - The map is vector graphics, so it never needs generation.
 - Clips are only for the hook and payoff; every other shot uses a still with a restrained camera move.
 - `--only <shot>` regenerates a single failed shot instead of the whole set.
-
-## What Episode 14 actually used
-
-| Item | Used | Cash cost |
-|---|---|---|
-| 4 stills (Mira on the dawn river path, the free town, the valley league's hooded line, the empty bank at dusk) | **Local SDXL-Lightning** (`pipeline/local_stills.py`, 4-step, CPU, 768×1344, lanczos to 1080×1920). 10 candidates, 4 kept. Figma was tried first: the `generate_image` call was blocked by the session's permission check before reaching Figma, so no Figma credits were used | $0 |
-| Verdict scale, re-captioned callout, watch post and horn, tags, rain, lesson stack, CTA card | Remotion code (new `verdictScale`, `watchPost`, `callout` `then` and `noteSize`; `tag`, `rain`, `lessonStack`, `ctaCard`) | $0 |
-| Narration | Kokoro-82M (`af_heart`), 75 words, 29.8 s | $0 |
-| Score + SFX (new: scaleTip) | `pipeline/score.py` | $0 |
-| Render, QA, encodes | Claude cloud container | $0 |
-| **Total** | | **$0 cash (₱0)**, no Figma credits |
-
-On the paid primary stack, with 4 stills: about **$1.15 (₱73)**, or **$2.12 (₱134)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
-
-## What Episode 17 actually used
-
-| Item | Used | Cash cost |
-|---|---|---|
-| 6 stills (the black palace over the stair, the farmer and his ox, the clerk in the records hall, the soldier's mother in her doorway, the neighbour in the night street, the palace over the morning market) | **Local SDXL-Lightning** (`pipeline/local_stills.py`, 4-step, CPU, 768×1344, lanczos to 1080×1920). 18 candidates in two rounds, 6 kept: hook 11, farmer 11, cta 11 (round 2), clerk 23, mother 11, neighbour 11 (round 1). Round 1's palaces read as real tiered temples and were re-rolled. Figma credits are out until 1 Nov 2026, so it wasn't tried | $0 |
-| Pillar stack (pillars that turn into the supporters), pillar tags, title, CTA card | Remotion code (new `pillarStack` and `pillarTag`; `titleLockup`, `ctaCard`) | $0 |
-| Narration | Kokoro-82M (`af_heart`), 74 words, 30.02 s | $0 |
-| Score + SFX (new: pillarSet, doorKnock) | `pipeline/score.py` | $0 |
-| Render, QA, encodes | Claude cloud container | $0 |
-| **Total** | | **$0 cash (₱0)**, no Figma credits |
-
-On the paid primary stack, with 6 stills: about **$1.35 (₱86)** (scaling EP15's 3-still and EP14's 4-still figures at about $0.10 a still), or **$2.48 (₱157)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).

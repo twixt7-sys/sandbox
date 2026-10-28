@@ -18,7 +18,7 @@
 - **One shareable thought:** "A villainous empire is believable when its supporters aren't villains." On screen: *Its supporters aren't villains.*
 - **Explain, never endorse; platform-safe:** fear and force are implied (a lone figure in a dark doorway, a knock on a door), never shown. No violence, no real regime's flags, salutes, uniforms or symbols, no parallel to any real state or living politics. The palace and costume are invented.
 - **Scope guard (no repeats):**
-  - EP16 (made in parallel; not pushed when this branch was finished): formal vs actual power, the resource behind the throne. EP17 never asks who secretly rules; it asks why the many go along, and the throne is never entered.
+  - EP16 (made in parallel, merged into this branch before the final push): formal vs actual power, the crown moving from the throne to the Granary Guild in Orvane. EP17 never asks who secretly rules; it asks why the many go along, and the throne is never entered. The one shared motif is grain: EP16 follows it to its holder, EP17's farmer only carries it as his reason (bread).
   - EP19 (collapse): the pillars all hold; nothing cracks or falls.
   - EP20 (two nations, one war) and EP14 (honour, freedom vs duty): no second nation, no dilemma.
   - EP10 (the chokepoint): no geography as the answer.
@@ -51,9 +51,10 @@ Same stack as EP11–EP15:
 - `qa.py`, a contact sheet and beat frames.
 
 New in this episode:
-- `pillarStack` (`src/graphics/Power.tsx`): an entablature with a rust label on stone pillars that rise on a cue. `peopleAt[i]` turns pillar i into a portrait cut from a plate (`src`, plate point, `zoom`) with its reason, or an `empty` dashed pillar. `liftAt` shrinks the stack up and a two-line lesson lands beneath.
+- `pillarStack` (`src/graphics/Pillars.tsx`): an entablature with a rust label on stone pillars that rise on a cue. `peopleAt[i]` turns pillar i into a portrait cut from a plate (`src`, plate point, `zoom`) with its reason, or an `empty` dashed pillar. `liftAt` shrinks the stack up and a two-line lesson lands beneath.
 - `pillarTag` (same file): a `tag` with a pillar glyph and numeral.
 - `pillarSet` and `doorKnock` SFX.
+- Merged in from EP16 (`0713436`) before the final push. Both branches had added a `src/graphics/Power.tsx`, so EP16's keeps that name and EP17's pillar graphics live in `src/graphics/Pillars.tsx`; docs, README rows and SFX keep both sides.
 - Merged in from EP14 (finished, `b874755`): its plates, brief, srt, cover and docs. The only conflict was `docs/DISTRIBUTION.md`, where git interleaved the EP14 and EP15 caption sections; both are kept whole, in episode order. After the merge `tsc` passes and one still each of ep14 and ep15 renders correctly.
 
 ## 3. Narration (74 words, measured 30.02 s)
@@ -145,7 +146,7 @@ Also track how many comments give a *reason* (not just a villain), which shows t
 
 ## 11. How to produce EP18 ("Laws Reveal What a Society Fears")
 
-1. Branch `claude/worldcraft-ep18` from `claude/worldcraft-ep17` (EP01–EP15, the finished EP14, and EP17). Merge `claude/worldcraft-ep16` first if it has been pushed, keeping both sides (docs sections, SFX, graphic registrations). Read:
+1. Branch `claude/worldcraft-ep18` from `claude/worldcraft-ep17`, which has EP01–EP17 (EP14 finished, EP16 merged). Read:
    - `CLAUDE.md`, `docs/STYLE.md`, `docs/SERIES_PLAN.md`;
    - this brief, the EP16 brief and the EP12 brief (EP12's "tradition with a dark history" is the nearest earlier story: a rule from a remembered disaster).
 2. **Stills:** Figma credits reset on **1 Nov 2026**. If it's on or after that date and Figma would be clearly better, ask with AskUserQuestion first (about 4 images, up to 6). Otherwise use `python pipeline/local_stills.py ep18 <shots> --seeds 11 23`, then `--pick`, then `plates.py --register`, with nothing else heavy running (a TTS run alongside it got the first EP17 batch OOM-killed). Budget a second round; avoid words like "stacked terraces" or "tiered" for buildings, which pull SDXL towards real temples.

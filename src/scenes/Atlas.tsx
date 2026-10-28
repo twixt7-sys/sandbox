@@ -3,6 +3,7 @@ import {AbsoluteFill, Easing, interpolate, staticFile} from 'remotion';
 import {rng} from '../lib/random';
 import {cueTime, ease, lerp, useTiming} from '../lib/timing';
 import {fonts, H, palette, W} from '../theme';
+import {arcPoint, CrownGlyph, GranaryGlyph} from '../graphics/Power';
 import type {Cue} from '../types';
 import type {SceneProps} from './registry';
 
@@ -31,6 +32,10 @@ import type {SceneProps} from './registry';
  *   lock    {at, size?}                                      padlock snapping shut (put it beside a well)
  *   gorge   {pts, width?, seed?}                             chasm with cliff hachures on both rims (draws west→east; EP10)
  *   bridge  {at, len?, angle?}                               single stone span across a gorge or river (EP10's chokepoint)
+ *   granary {at, size?}                                      storehouse between two silos, ringed like a town; pulses (EP16)
+ *   crown   {at, from?, size?, ghost?}                       crown glyph; with `from` it flies along an arc from there to `at`
+ *                                                            as it draws and glows on landing; `ghost` = dashed outline (EP16:
+ *                                                            the title stays on the palace, the power moves to the guild)
  * Show entries: "id" (already there) or {id, at: Cue, dur?, until?: Cue, pulse?: Cue}.
  * Shot zoom: {from, to, origin?, at?: Cue, dur?}; with `at` the move runs on that cue, otherwise it eases over the whole shot.
  */
@@ -482,6 +487,35 @@ const Feature: React.FC<{f: AtlasFeature; p: number; pulse: number; t: number; t
 					<path d={`M-9,${-4 - shut} L-9,${-14 - shut} A9,9 0 0 1 9,${-14 - shut} L9,-4`} fill="none" stroke={palette.parchment} strokeWidth={4} strokeLinecap="round" />
 					<rect x={-14} y={-6} width={28} height={22} rx={4} fill={palette.amber} stroke="#7a5418" strokeWidth={2} />
 					<circle cx={0} cy={4} r={3} fill="#5c3d10" />
+				</g>
+			);
+		}
+		case 'granary': {
+			const s = interpolate(p, [0, 0.6, 1], [0.3, 1.15, 1]) * (f.size ?? 1);
+			return (
+				<g opacity={Math.min(1, p * 2.5)} transform={`translate(${f.at[0]} ${f.at[1]}) scale(${s})`}>
+					<circle r={58 + 10 * pulse} fill="none" stroke={palette.ember} strokeOpacity={0.15 + 0.6 * pulse} strokeWidth={2.5} />
+					<circle r={50} fill="none" stroke={palette.parchment} strokeOpacity={0.35} strokeWidth={1.5} strokeDasharray="3 6" />
+					<GranaryGlyph />
+				</g>
+			);
+		}
+		case 'crown': {
+			const s = f.size ?? 0.6;
+			if (f.from) {
+				const u = Easing.inOut(Easing.cubic)(p);
+				const [x, y] = arcPoint(f.from, f.at, u, f.lift ?? 0.3);
+				const glow = ease(p, 0.85, 0.15) * (0.7 + 0.3 * Math.sin((t - t0) * 3)) + pulse;
+				return (
+					<g transform={`translate(${x} ${y}) scale(${1 + 0.15 * Math.sin(u * Math.PI)})`}>
+						<CrownGlyph s={s} glow={Math.min(1, glow)} />
+					</g>
+				);
+			}
+			const k = interpolate(p, [0, 0.6, 1], [0.4, 1.15, 1]) * (1 + 0.15 * pulse);
+			return (
+				<g opacity={Math.min(1, p * 2.5)} transform={`translate(${f.at[0]} ${f.at[1]}) scale(${k})`}>
+					<CrownGlyph s={s} ghost={f.ghost} glow={pulse} />
 				</g>
 			);
 		}

@@ -132,6 +132,10 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | graphic | `inferChain` | An evidence chain inked onto the plate (`local`): a pen loop round the clue (`at`, `loop`), a leader to a text block (`box`, `align`), then `seen` (caps) → `means` (italic, `meansAt`) → ∴ `value` in an ember seal (`valueAt`); `backdrop`. Seal-only mode (just `value`) pins a value to a point on a wide plate (EP15: a habit read into values) |
 | graphic | `bench` | Code-drawn plain timber bench (`at`, `length`, `tone: "day" \| "dusk"`, `cups`; `local`), for objects the image model won't put where the story needs them (EP15) |
 | sfx | `benchSet`, `inferSeal` (hits) | EP15: a bench scraped and set down on cobbles; a pen tick and a warm rising fifth as a value is inferred |
+| graphic | `titlePower` | Lesson card: one crown splits into a dashed TITLE crown and a gold POWER crown with a rust ≠ (`splitAt`), each column's kicker + italic `text` on `leftAt`/`rightAt`, then `items` chips lit on cues (EP16: formal authority vs actual power) |
+| atlas | `crown` `{at, from?, ghost?, size?, lift?}`, `granary` `{at, size?}` | A crown on the map; with `from` it flies along an arc to `at` and glows on landing, `ghost` leaves a dashed outline (EP16: the crown leaves the palace for the guild); a storehouse-and-silos node that pulses |
+| graphic | `keyRing`, `grainSack` | Code-drawn props SDXL won't place (`local`): an iron ring of keys swinging from a point; a tied burlap grain sack with spilled kernels (`tone`, `lean`) (EP16) |
+| sfx | `grainPour`, `crownShift` (hits) | EP16: kernels hissing from a sack over a cloth thump; a gold ring lifted, carried on air and set down on a low chord (power changing hands) |
 
 ## Local / Claude-session commands
 

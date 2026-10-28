@@ -219,6 +219,19 @@ On the paid primary stack, with 4 stills: about **$1.15 (₱73)**, or **$2.12 (�
 
 On the paid primary stack, with 3 stills: about **$1.05 (₱67)**, or **$1.94 (₱123)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
+## What Episode 16 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 3 stills (the king in the throne hall, the guild keeper among the sacks, the empty throne) | **Local SDXL-Lightning** (`pipeline/local_stills.py`, 4-step, CPU, 768×1344, lanczos to 1080×1920). 12 candidates in two rounds, 3 kept (seeds 5, 11, 8). Figma not used: out of AI credits until 1 Nov 2026 | $0 |
+| Map, moving crown, granary, key ring, grain sack, lesson card, CTA card | Remotion code (new `titlePower`, `keyRing`, `grainSack`, atlas `crown` and `granary`; `atlas`, `inferChain`, `callout`, `tag`, `titleLockup`, `ctaCard`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 74 words, 29.7 s | $0 |
+| Score + SFX (new: grainPour, crownShift) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, no Figma credits |
+
+On the paid primary stack, with 3 stills: about **$1.05 (₱67)**, or **$1.94 (₱123)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
 ## Alternatives
 
 | Option | Per-episode | Monthly | Comment |

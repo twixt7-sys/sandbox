@@ -667,6 +667,29 @@ def sfx_hit(kind, dur=None):
         th = np.clip(t - 0.42, 0, None)
         knock = np.sin(2 * np.pi * 150 * th) * np.exp(-th * 22) * (t >= 0.42)
         return stereo(creak + chink * 0.22 + knock * 0.6, 0.4)
+    if kind == "grainPour":
+        # Grain on the move (EP16 signature): a dry hiss of kernels poured from a sack, thinning out, over a soft cloth thump.
+        n = int(1.8 * SR)
+        t = np.arange(n) / SR
+        hiss = bp(noise(n), 2500, 9000) * np.interp(t, [0, 0.12, 0.9, 1.5], [0, 0.5, 0.35, 0])
+        grains = np.zeros(n)
+        for g in RNG.uniform(0.05, 1.4, 160):
+            i = int(g * SR)
+            m = int(0.008 * SR)
+            grains[i:i + m] += bp(noise(m), 3000, 8000) * RNG.uniform(0.1, 0.5) * (1.4 - g)
+        thump = lp(noise(n), 300) * np.exp(-t * 14) * 1.5
+        return stereo(hiss + grains + thump, 0.5)
+    if kind == "crownShift":
+        # The crown changes hands (EP16 signature): a gold ring lifted (bright partials gliding up), carried on a breath of air,
+        # then set down with a soft low chord-tap: the power arriving somewhere new.
+        n = int(2.2 * SR)
+        t = np.arange(n) / SR
+        glide = 1 + 0.06 * np.minimum(1, t / 0.9)
+        ring = sum(a * np.sin(2 * np.pi * np.cumsum(np.full(n, f) * glide) / SR) * np.exp(-t * d) for f, a, d in [(1318.5, 1.0, 2.0), (1975.5, 0.5, 2.6), (2637.0, 0.25, 3.4)])
+        air = bp(noise(n), 600, 4000) * np.interp(t, [0, 0.4, 0.9, 1.2], [0, 0.35, 0.2, 0])
+        th = np.clip(t - 1.0, 0, None)
+        land = sum(np.sin(2 * np.pi * f * th) for f in (146.83, 220.0, 293.66)) * np.exp(-th * 4) * (t >= 1.0) * np.minimum(1, th / 0.01)
+        return stereo(ring * 0.3 * np.minimum(1, t / 0.01) + air + land * 0.35, 0.5)
     raise KeyError(kind)
 
 

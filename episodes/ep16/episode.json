@@ -1,0 +1,1574 @@
+{
+ "id": "ep16",
+ "number": 16,
+ "title": "Who Really Rules Your Kingdom?",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "A calm, slightly wry guide pulling back a curtain. Plain and sure on 'The king wears the crown', then a real question on 'who controls the food supply?'. Matter-of-fact on 'signs every law'. Leaning in on 'follow the grain'. A cool beat before 'starves in a week'. Low and knowing on 'quietly'. Clear and practical on the lesson; genuinely curious on the comment CTA. No trailer voice."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "The king wears the crown. But who controls the food supply?",
+   "pauseAfter": 0.75,
+   "emphasis": [
+    "crown.",
+    "food"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "decree",
+   "text": "In Orvane, the king signs every law.",
+   "pauseAfter": 0.5,
+   "emphasis": [
+    "signs",
+    "law."
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "route",
+   "text": "But follow the grain. Every sack passes through the Granary Guild.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "grain.",
+    "guild."
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "granary",
+   "text": "If the guild shuts its doors, the city starves in a week.",
+   "pauseAfter": 0.75,
+   "emphasis": [
+    "shuts",
+    "week."
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "permission",
+   "text": "So every new law is quietly shown to the guild first.",
+   "pauseAfter": 0.8,
+   "emphasis": [
+    "quietly",
+    "first."
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "lesson",
+   "text": "Separate the title from the power.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "title",
+    "power."
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "lesson",
+   "text": "Merchants, priests, generals, landlords: whoever controls what people need.",
+   "pauseAfter": 0.9,
+   "emphasis": [
+    "controls",
+    "need."
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "cta",
+   "text": "Who would secretly control your fictional kingdom?",
+   "pauseAfter": 0.0,
+   "emphasis": [
+    "secretly",
+    "kingdom?"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.4,
+     "y": -340
+    },
+    "to": {
+     "s": 1.46,
+     "y": -370
+    }
+   },
+   "plateScrim": 0.5,
+   "purpose": "Stop the scroll on the obvious answer to 'who rules': the king on his throne, then question it.",
+   "visual": "A long vaulted throne hall, the king small on a high pale-stone throne at the far end; callout on the crown 'THE CROWN / the title'; then 'BUT WHO CONTROLS / the grain?'",
+   "camera": "Slow push up the hall (1.00 to 1.06).",
+   "layers": {
+    "foreground": "title",
+    "midground": "the king on the throne",
+    "background": "vaulted hall, banners"
+   },
+   "lighting": "Cool morning shafts through tall windows; top scrim for the title.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a living bearded king in rust and indigo robes with a golden crown sits on a plain pale stone throne at the end of a long round-arched stone hall, seen from far down the hall, morning light shafts, plain rust banners, courtiers standing at the sides, polished floor. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "a living bearded king in rust and indigo robes with a golden crown sits on a plain pale stone throne at the end of a long round-arched stone hall, seen from far down the hall, morning light shafts, plain rust banners, courtiers standing at the sides, polished floor",
+   "graphics": [
+    {
+     "type": "callout",
+     "local": true,
+     "side": "up",
+     "at": [
+      516,
+      1256
+     ],
+     "rise": -170,
+     "dx": 0,
+     "backdrop": true,
+     "label": "The crown",
+     "note": "the title",
+     "start": {
+      "line": "L1",
+      "word": "crown.",
+      "offset": -0.35
+     },
+     "end": {
+      "line": "L1",
+      "word": "but",
+      "offset": 0.05
+     }
+    },
+    {
+     "type": "titleLockup",
+     "kicker": "But who controls",
+     "text": "the grain?",
+     "y": 330,
+     "size": 124,
+     "start": {
+      "line": "L1",
+      "word": "but",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L1",
+      "word": "supply?",
+      "offset": 0.6
+     }
+    }
+   ],
+   "onScreenText": "Callout 'THE CROWN / the title', then kicker 'BUT WHO CONTROLS' + 'the grain?' (ember serif italic).",
+   "transition": "Hard cut on 'In' to a punch-in on the throne.",
+   "sfx": [
+    {
+     "sound": "room",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "decree",
+      "offset": 1.5
+     },
+     "gain": -34
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L1",
+      "word": "crown.",
+      "offset": -0.35
+     },
+     "gain": -26
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L1",
+      "word": "supply?",
+      "offset": -0.9
+     },
+     "gain": -24
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L1",
+      "word": "supply?"
+     },
+     "gain": -22
+    }
+   ],
+   "music": "D minor add9, stately and sparse."
+  },
+  {
+   "id": "decree",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.7,
+     "x": 0,
+     "y": -520
+    },
+    "to": {
+     "s": 1.76,
+     "x": 0,
+     "y": -545
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "Formal authority, stated plainly: the king signs every law. One kingdom, one name.",
+   "visual": "Punch-in on the throne; tag 'ORVANE · THE THRONE / Signs every law.'",
+   "camera": "Punch-in, slow push.",
+   "layers": {
+    "foreground": "tag",
+    "midground": "the king",
+    "background": "dais and banners"
+   },
+   "lighting": "Same hall light.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "tag",
+     "kicker": "Orvane · the throne",
+     "text": "Signs every law.",
+     "start": {
+      "line": "L2",
+      "word": "orvane,",
+      "offset": -0.15
+     }
+    }
+   ],
+   "onScreenText": "Tag 'ORVANE · THE THRONE' + 'Signs every law.'",
+   "transition": "Cut on 'But' to the map of Orvane.",
+   "sfx": [
+    {
+     "sound": "paper",
+     "at": {
+      "line": "L2",
+      "word": "signs",
+      "offset": -0.1
+     },
+     "gain": -24
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L2",
+      "word": "law.",
+      "offset": -0.1
+     },
+     "gain": -23
+    }
+   ],
+   "music": "D minor: the court."
+  },
+  {
+   "id": "route",
+   "scene": "atlas",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.35
+   },
+   "atlas": {
+    "zoom": {
+     "from": 1.06,
+     "to": 1.0,
+     "origin": "50% 40%"
+    },
+    "show": [
+     {
+      "id": "realm",
+      "at": {
+       "shot": "route",
+       "offset": -0.3
+      },
+      "dur": 0.6
+     },
+     {
+      "id": "hillsS",
+      "at": {
+       "shot": "route",
+       "offset": -0.2
+      },
+      "dur": 0.9
+     },
+     {
+      "id": "hillsS2",
+      "at": {
+       "shot": "route",
+       "offset": -0.1
+      },
+      "dur": 0.9
+     },
+     {
+      "id": "river",
+      "at": {
+       "shot": "route",
+       "offset": -0.2
+      },
+      "dur": 1.2
+     },
+     {
+      "id": "palace",
+      "at": {
+       "shot": "route",
+       "offset": -0.2
+      },
+      "dur": 0.5
+     },
+     {
+      "id": "crownKing",
+      "at": {
+       "shot": "route",
+       "offset": 0.0
+      },
+      "dur": 0.5
+     },
+     {
+      "id": "lblOrvane",
+      "at": {
+       "shot": "route",
+       "offset": 0.1
+      },
+      "dur": 0.5
+     },
+     {
+      "id": "fieldsN",
+      "at": {
+       "line": "L3",
+       "word": "follow",
+       "offset": -0.1
+      },
+      "dur": 1.0
+     },
+     {
+      "id": "fieldsSE",
+      "at": {
+       "line": "L3",
+       "word": "follow",
+       "offset": 0.1
+      },
+      "dur": 1.0
+     },
+     {
+      "id": "farmA",
+      "at": {
+       "line": "L3",
+       "word": "grain.",
+       "offset": -0.2
+      },
+      "dur": 0.5
+     },
+     {
+      "id": "farmB",
+      "at": {
+       "line": "L3",
+       "word": "grain.",
+       "offset": -0.1
+      },
+      "dur": 0.5
+     },
+     {
+      "id": "farmC",
+      "at": {
+       "line": "L3",
+       "word": "grain.",
+       "offset": 0.0
+      },
+      "dur": 0.5
+     },
+     {
+      "id": "farmD",
+      "at": {
+       "line": "L3",
+       "word": "grain.",
+       "offset": 0.1
+      },
+      "dur": 0.5
+     },
+     {
+      "id": "grainA",
+      "at": {
+       "line": "L3",
+       "word": "every",
+       "offset": -0.1
+      },
+      "dur": 1.0
+     },
+     {
+      "id": "grainB",
+      "at": {
+       "line": "L3",
+       "word": "every",
+       "offset": 0.0
+      },
+      "dur": 1.0
+     },
+     {
+      "id": "grainC",
+      "at": {
+       "line": "L3",
+       "word": "every",
+       "offset": 0.1
+      },
+      "dur": 1.0
+     },
+     {
+      "id": "grainD",
+      "at": {
+       "line": "L3",
+       "word": "every",
+       "offset": 0.2
+      },
+      "dur": 1.0
+     },
+     {
+      "id": "granary",
+      "at": {
+       "line": "L3",
+       "word": "passes",
+       "offset": -0.05
+      },
+      "dur": 0.6,
+      "pulse": {
+       "line": "L3",
+       "word": "guild."
+      }
+     },
+     {
+      "id": "guildWash",
+      "at": {
+       "line": "L3",
+       "word": "granary",
+       "offset": -0.1
+      },
+      "dur": 1.4
+     },
+     {
+      "id": "lblGuild",
+      "at": {
+       "line": "L3",
+       "word": "granary",
+       "offset": -0.05
+      },
+      "dur": 0.5
+     },
+     {
+      "id": "bread",
+      "at": {
+       "line": "L3",
+       "word": "guild.",
+       "offset": 0.1
+      },
+      "dur": 0.9
+     }
+    ]
+   },
+   "purpose": "Follow the essential thing instead of the title: every grain road in the kingdom runs into one guild's granaries, and only then to the capital.",
+   "visual": "Map of Orvane: the palace with its crown; farmland lights up; grain roads flow (moving ember dots) from four farm villages into the Granary Guild, then one road on to the capital.",
+   "camera": "Gentle settle (1.06 to 1.00).",
+   "layers": {
+    "foreground": "labels",
+    "midground": "grain roads and granary",
+    "background": "parchment map"
+   },
+   "lighting": "Map.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [],
+   "onScreenText": "Map labels 'Orvane', 'The Granary Guild'.",
+   "transition": "Hard cut on 'If' into the guild's granary.",
+   "sfx": [
+    {
+     "sound": "whoosh",
+     "at": {
+      "shot": "route",
+      "offset": -0.1
+     },
+     "gain": -28
+    },
+    {
+     "sound": "grainPour",
+     "at": {
+      "line": "L3",
+      "word": "every",
+      "offset": -0.1
+     },
+     "gain": -22
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L3",
+      "word": "guild.",
+      "offset": -0.05
+     },
+     "gain": -23
+    }
+   ],
+   "music": "B-flat major 7, a 76 bpm pulse begins: the grain moving."
+  },
+  {
+   "id": "granary",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "x": 0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.09,
+     "x": 0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "The real holder, in person, and the evidence: her keys decide whether the capital eats.",
+   "visual": "Inside a vast timber granary: sacks to the rafters, clerks weighing grain, the guild's keeper with a heavy ring of iron keys. Ink loop round the keys: HER KEYS / the city's bread / ∴ REAL POWER.",
+   "camera": "Slow push (1.04 to 1.09).",
+   "layers": {
+    "foreground": "ink chain",
+    "midground": "the keeper and her keys",
+    "background": "sacks and beams"
+   },
+   "lighting": "Dusty golden shafts.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. inside a vast old timber granary hall, towering stacks of burlap grain sacks up to the rafters, dusty golden light beams, a stern grey-haired guild matron in a long moss green coat with a heavy ring of iron keys at her belt stands in the middle distance among the sacks, clerks weigh grain at a wooden counter, spilled golden wheat on the plank floor. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "inside a vast old timber granary hall, towering stacks of burlap grain sacks up to the rafters, dusty golden light beams, a stern grey-haired guild matron in a long moss green coat with a heavy ring of iron keys at her belt stands in the middle distance among the sacks, clerks weigh grain at a wooden counter, spilled golden wheat on the plank floor",
+   "graphics": [
+    {
+     "type": "keyRing",
+     "local": true,
+     "at": [
+      452,
+      850
+     ],
+     "size": 30,
+     "count": 5
+    },
+    {
+     "type": "inferChain",
+     "local": true,
+     "backdrop": true,
+     "at": [
+      452,
+      945
+     ],
+     "loop": [
+      78,
+      118
+     ],
+     "box": [
+      116,
+      370
+     ],
+     "align": "left",
+     "width": 400,
+     "size": 62,
+     "seen": "Her keys",
+     "means": "the city's bread",
+     "value": "Real power",
+     "start": {
+      "line": "L4",
+      "word": "guild",
+      "offset": -0.1
+     },
+     "meansAt": {
+      "line": "L4",
+      "word": "city",
+      "offset": -0.1
+     },
+     "valueAt": {
+      "line": "L4",
+      "word": "week.",
+      "offset": -0.05
+     },
+     "seed": 2
+    }
+   ],
+   "onScreenText": "Inference chain: HER KEYS / the city's bread / ∴ REAL POWER.",
+   "transition": "Hard cut on 'So' back to the map.",
+   "sfx": [
+    {
+     "sound": "grainPour",
+     "at": {
+      "shot": "granary",
+      "offset": 0.0
+     },
+     "gain": -27
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L4",
+      "word": "guild",
+      "offset": -0.1
+     },
+     "gain": -24
+    },
+    {
+     "sound": "gateSlam",
+     "at": {
+      "line": "L4",
+      "word": "doors,",
+      "offset": -0.1
+     },
+     "gain": -24
+    },
+    {
+     "sound": "inferSeal",
+     "at": {
+      "line": "L4",
+      "word": "week.",
+      "offset": -0.1
+     },
+     "gain": -21
+    }
+   ],
+   "music": "G minor 9 over the pulse: the threat."
+  },
+  {
+   "id": "permission",
+   "scene": "atlas",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "atlas": {
+    "zoom": {
+     "from": 1.0,
+     "to": 1.04,
+     "origin": "50% 42%"
+    },
+    "show": [
+     "realm",
+     "hillsS",
+     "hillsS2",
+     "river",
+     "fieldsN",
+     "fieldsSE",
+     "farmA",
+     "farmB",
+     "farmC",
+     "farmD",
+     "grainA",
+     "grainB",
+     "grainC",
+     "grainD",
+     "bread",
+     "palace",
+     "lblOrvane",
+     {
+      "id": "granary",
+      "pulse": {
+       "line": "L5",
+       "word": "first.",
+       "offset": 0.1
+      }
+     },
+     "guildWash",
+     "lblGuild",
+     {
+      "id": "law",
+      "at": {
+       "line": "L5",
+       "word": "law",
+       "offset": -0.15
+      },
+      "dur": 1.0,
+      "until": {
+       "line": "L5",
+       "word": "first.",
+       "offset": 0.3
+      }
+     },
+     {
+      "id": "crownKing",
+      "until": {
+       "line": "L5",
+       "word": "quietly",
+       "offset": -0.05
+      }
+     },
+     {
+      "id": "crownGhost",
+      "at": {
+       "line": "L5",
+       "word": "quietly",
+       "offset": 0.15
+      },
+      "dur": 0.6
+     },
+     {
+      "id": "crownMove",
+      "at": {
+       "line": "L5",
+       "word": "quietly",
+       "offset": -0.1
+      },
+      "dur": 1.5
+     }
+    ]
+   },
+   "purpose": "The quiet consequence: formal power defers to actual power. Every new law travels to the guild first, and the crown's real weight moves with it.",
+   "visual": "The same map: a dashed arrow (a law) runs from the palace to the guild; the crown lifts off the palace and settles, glowing, over the granary; a dashed outline crown stays on the palace ('The throne').",
+   "camera": "Slow push (1.00 to 1.04).",
+   "layers": {
+    "foreground": "crown and arrow",
+    "midground": "granary and palace",
+    "background": "map"
+   },
+   "lighting": "Map.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [],
+   "onScreenText": "The crown moves from the palace to the Granary Guild; a dashed crown stays on the throne.",
+   "transition": "Dissolve (0.5 s) to the lesson card.",
+   "sfx": [
+    {
+     "sound": "paper",
+     "at": {
+      "line": "L5",
+      "word": "law",
+      "offset": -0.15
+     },
+     "gain": -25
+    },
+    {
+     "sound": "crownShift",
+     "at": {
+      "line": "L5",
+      "word": "quietly",
+      "offset": -0.1
+     },
+     "gain": -20
+    }
+   ],
+   "music": "E-flat major 7 to B-flat: the turn."
+  },
+  {
+   "id": "lesson",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.5
+   },
+   "purpose": "Lesson: separate formal authority (the title) from actual power (control of what people need), and name who can hold it.",
+   "visual": "One crown splits: a dashed crown, THE TITLE / wears the crown; ≠; a gold crown, THE POWER / holds what people need. Chips light: MERCHANTS, PRIESTS, GENERALS, LANDLORDS.",
+   "camera": "Static diagram.",
+   "layers": {
+    "foreground": "lesson card",
+    "midground": "",
+    "background": "midnight"
+   },
+   "lighting": "Diagram.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "titlePower",
+     "top": 380,
+     "start": {
+      "shot": "lesson",
+      "offset": -0.2
+     },
+     "splitAt": {
+      "line": "L6",
+      "word": "separate",
+      "offset": 0.0
+     },
+     "leftAt": {
+      "line": "L6",
+      "word": "title",
+      "offset": -0.1
+     },
+     "rightAt": {
+      "line": "L6",
+      "word": "power.",
+      "offset": -0.1
+     },
+     "left": {
+      "kicker": "The title",
+      "text": "wears the\ncrown"
+     },
+     "right": {
+      "kicker": "The power",
+      "text": "holds what\npeople need"
+     },
+     "items": [
+      {
+       "text": "Merchants",
+       "at": {
+        "line": "L7",
+        "word": "merchants,"
+       }
+      },
+      {
+       "text": "Priests",
+       "at": {
+        "line": "L7",
+        "word": "priests,"
+       }
+      },
+      {
+       "text": "Generals",
+       "at": {
+        "line": "L7",
+        "word": "generals,"
+       }
+      },
+      {
+       "text": "Landlords",
+       "at": {
+        "line": "L7",
+        "word": "landlords:"
+       }
+      }
+     ]
+    }
+   ],
+   "onScreenText": "THE TITLE / wears the crown ≠ THE POWER / holds what people need; chips MERCHANTS · PRIESTS · GENERALS · LANDLORDS.",
+   "transition": "Dissolve (0.6 s) to the throne hall at night, the throne empty.",
+   "sfx": [
+    {
+     "sound": "seam",
+     "at": {
+      "line": "L6",
+      "word": "separate",
+      "offset": -0.1
+     },
+     "gain": -24
+    },
+    {
+     "sound": "crownShift",
+     "at": {
+      "line": "L6",
+      "word": "power.",
+      "offset": -0.9
+     },
+     "gain": -27
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L7",
+      "word": "merchants,"
+     },
+     "gain": -27
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L7",
+      "word": "priests,"
+     },
+     "gain": -27
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L7",
+      "word": "generals,"
+     },
+     "gain": -27
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L7",
+      "word": "landlords:"
+     },
+     "gain": -27
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L7",
+      "word": "need.",
+      "offset": -0.1
+     },
+     "gain": -22
+    }
+   ],
+   "music": "D major with bells: the answer."
+  },
+  {
+   "id": "cta",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.5,
+   "captions": false,
+   "hideLogoBug": true,
+   "plateLook": {
+    "from": "saturate(0.8) brightness(0.78) hue-rotate(-8deg)"
+   },
+   "purpose": "Comment CTA over the opening hall in a changed state: night, the throne empty, a sack of grain left on its steps. Loops back to the king.",
+   "visual": "The same throne hall at night, braziers lit, the throne empty with a grain sack on the dais. Full logo, Episode 16 / 50, the CTA, a 'Comment below' pill.",
+   "camera": "Settles (1.04 to 1.00).",
+   "layers": {
+    "foreground": "logo and CTA type",
+    "midground": "the empty throne and the sack",
+    "background": "hall at night"
+   },
+   "lighting": "Moonlight and braziers; the last 0.6 s cross-fades to the morning hall.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. an empty plain pale stone throne on a dais at the end of a long round-arched stone hall at night, seen from far down the hall, braziers glowing beside it, blue moonlight shafts, plain rust banners, polished floor. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "an empty plain pale stone throne on a dais at the end of a long round-arched stone hall at night, seen from far down the hall, braziers glowing beside it, blue moonlight shafts, plain rust banners, polished floor",
+   "graphics": [
+    {
+     "type": "grainSack",
+     "local": true,
+     "at": [
+      598,
+      1352
+     ],
+     "size": 62,
+     "tone": "dusk",
+     "lean": 4
+    },
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L8",
+      "word": "who"
+     },
+     "episode": "Episode 16 / 50",
+     "title": "Who really rules your kingdom?",
+     "kicker": "Your turn",
+     "size": 76,
+     "lines": [
+      "Who would *secretly*",
+      "control your",
+      "*fictional kingdom?*"
+     ],
+     "button": "Comment below"
+    }
+   ],
+   "onScreenText": "Full logo, 'EPISODE 16 / 50', title, 'YOUR TURN', 'Who would secretly control your fictional kingdom?', pill 'Comment below'.",
+   "transition": "Cross-fade into the hook's first frame (the king in the morning hall) for a seamless loop.",
+   "sfx": [
+    {
+     "sound": "swell",
+     "at": {
+      "shot": "cta",
+      "offset": -0.3
+     },
+     "gain": -25
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L8",
+      "word": "kingdom?",
+      "offset": 0.2
+     },
+     "gain": -24
+    }
+   ],
+   "music": "G to D major, warm; fades fully before the last frame."
+  }
+ ],
+ "atlas": {
+  "features": [
+   {
+    "id": "realm",
+    "kind": "region",
+    "d": "M76,334 L1004,334 L1004,1186 L76,1186 Z",
+    "color": "#c79a6a",
+    "opacity": 0.05
+   },
+   {
+    "id": "fieldsN",
+    "kind": "fields",
+    "box": [
+     100,
+     370,
+     990,
+     560
+    ],
+    "count": 70,
+    "seed": 16,
+    "avoid": [
+     [
+      200,
+      450,
+      60
+     ],
+     [
+      520,
+      420,
+      60
+     ],
+     [
+      880,
+      470,
+      60
+     ]
+    ]
+   },
+   {
+    "id": "fieldsSE",
+    "kind": "fields",
+    "box": [
+     770,
+     820,
+     990,
+     1150
+    ],
+    "count": 26,
+    "seed": 61,
+    "avoid": [
+     [
+      930,
+      980,
+      50
+     ]
+    ]
+   },
+   {
+    "id": "hillsS",
+    "kind": "range",
+    "pts": [
+     [
+      100,
+      1135
+     ],
+     [
+      230,
+      1118
+     ],
+     [
+      380,
+      1140
+     ]
+    ],
+    "rows": 2,
+    "scale": 0.7,
+    "seed": 5
+   },
+   {
+    "id": "hillsS2",
+    "kind": "range",
+    "pts": [
+     [
+      480,
+      1140
+     ],
+     [
+      600,
+      1120
+     ],
+     [
+      700,
+      1138
+     ]
+    ],
+    "rows": 1,
+    "scale": 0.65,
+    "seed": 9
+   },
+   {
+    "id": "river",
+    "kind": "river",
+    "pts": [
+     [
+      76,
+      640
+     ],
+     [
+      180,
+      700
+     ],
+     [
+      230,
+      800
+     ],
+     [
+      200,
+      900
+     ],
+     [
+      120,
+      1000
+     ],
+     [
+      76,
+      1060
+     ]
+    ],
+    "width": 16
+   },
+   {
+    "id": "farmA",
+    "kind": "town",
+    "at": [
+     200,
+     450
+    ],
+    "size": 0.6
+   },
+   {
+    "id": "farmB",
+    "kind": "town",
+    "at": [
+     520,
+     420
+    ],
+    "size": 0.6
+   },
+   {
+    "id": "farmC",
+    "kind": "town",
+    "at": [
+     880,
+     470
+    ],
+    "size": 0.6
+   },
+   {
+    "id": "farmD",
+    "kind": "town",
+    "at": [
+     930,
+     980
+    ],
+    "size": 0.6
+   },
+   {
+    "id": "grainA",
+    "kind": "route",
+    "pts": [
+     [
+      200,
+      450
+     ],
+     [
+      300,
+      530
+     ],
+     [
+      470,
+      600
+     ],
+     [
+      650,
+      640
+     ]
+    ],
+    "flow": true
+   },
+   {
+    "id": "grainB",
+    "kind": "route",
+    "pts": [
+     [
+      520,
+      420
+     ],
+     [
+      580,
+      520
+     ],
+     [
+      680,
+      610
+     ]
+    ],
+    "flow": true
+   },
+   {
+    "id": "grainC",
+    "kind": "route",
+    "pts": [
+     [
+      880,
+      470
+     ],
+     [
+      820,
+      560
+     ],
+     [
+      740,
+      620
+     ]
+    ],
+    "flow": true
+   },
+   {
+    "id": "grainD",
+    "kind": "route",
+    "pts": [
+     [
+      930,
+      980
+     ],
+     [
+      870,
+      840
+     ],
+     [
+      790,
+      730
+     ],
+     [
+      730,
+      680
+     ]
+    ],
+    "flow": true
+   },
+   {
+    "id": "bread",
+    "kind": "route",
+    "pts": [
+     [
+      675,
+      690
+     ],
+     [
+      580,
+      780
+     ],
+     [
+      450,
+      870
+     ],
+     [
+      370,
+      925
+     ]
+    ],
+    "flow": true,
+    "width": 6
+   },
+   {
+    "id": "palace",
+    "kind": "town",
+    "at": [
+     330,
+     950
+    ],
+    "size": 1.3,
+    "capital": true,
+    "palace": true
+   },
+   {
+    "id": "granary",
+    "kind": "granary",
+    "at": [
+     700,
+     650
+    ],
+    "size": 1.25
+   },
+   {
+    "id": "guildWash",
+    "kind": "wash",
+    "at": [
+     700,
+     650
+    ],
+    "r": 360
+   },
+   {
+    "id": "crownKing",
+    "kind": "crown",
+    "at": [
+     330,
+     870
+    ],
+    "size": 0.62
+   },
+   {
+    "id": "crownGhost",
+    "kind": "crown",
+    "at": [
+     330,
+     870
+    ],
+    "size": 0.62,
+    "ghost": true
+   },
+   {
+    "id": "crownMove",
+    "kind": "crown",
+    "from": [
+     330,
+     870
+    ],
+    "at": [
+     700,
+     575
+    ],
+    "size": 0.62,
+    "lift": 0.35
+   },
+   {
+    "id": "law",
+    "kind": "arrow",
+    "pts": [
+     [
+      260,
+      880
+     ],
+     [
+      300,
+      740
+     ],
+     [
+      430,
+      660
+     ],
+     [
+      600,
+      640
+     ]
+    ],
+    "color": "#d6dfe0"
+   },
+   {
+    "id": "lblOrvane",
+    "kind": "label",
+    "at": [
+     330,
+     1064
+    ],
+    "text": "Orvane",
+    "serif": true,
+    "size": 60,
+    "color": "#efe6d2"
+   },
+   {
+    "id": "lblGuild",
+    "kind": "label",
+    "at": [
+     700,
+     760
+    ],
+    "text": "The Granary Guild",
+    "serif": true,
+    "size": 50,
+    "color": "#f4c46e"
+   },
+   {
+    "id": "lblThrone",
+    "kind": "label",
+    "at": [
+     330,
+     1108
+    ],
+    "text": "The throne",
+    "size": 22,
+    "color": "#9fb1b8"
+   }
+  ]
+ },
+ "lesson": "Separate formal authority from actual power. The crown is a title; power sits with whoever controls what people need (food, water, faith, force, land, credit). Show the title, then follow the essential thing to whoever really holds it.",
+ "captionReplace": {},
+ "music": {
+  "key": "D minor, resolving to D major",
+  "drone": [
+   "D2",
+   "A2"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L3",
+     "word": "follow"
+    },
+    "pre": 0.15,
+    "dur": 0.9,
+    "gain": 0.6
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L6",
+     "word": "separate"
+    },
+    "pre": 0.15,
+    "dur": 1.4,
+    "gain": 0.55
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F3",
+      "A3",
+      "E4"
+     ]
+    ],
+    "level": 0.46,
+    "dark": true
+   },
+   "decree": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F3",
+      "C4"
+     ]
+    ],
+    "level": 0.5,
+    "dark": true
+   },
+   "route": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "A3"
+     ]
+    ],
+    "level": 0.54,
+    "pulse": 76
+   },
+   "granary": {
+    "chords": [
+     [
+      "G1",
+      "D2",
+      "Bb2",
+      "F3",
+      "A3"
+     ]
+    ],
+    "level": 0.58,
+    "pulse": 76
+   },
+   "permission": {
+    "chords": [
+     [
+      "Eb2",
+      "Bb2",
+      "G3",
+      "D4"
+     ],
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "F3",
+      "C4"
+     ]
+    ],
+    "level": 0.6,
+    "pulse": 76
+   },
+   "lesson": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F#3",
+      "A3",
+      "E4"
+     ]
+    ],
+    "level": 0.64,
+    "bells": true
+   },
+   "cta": {
+    "chords": [
+     [
+      "G1",
+      "D2",
+      "B2",
+      "D3",
+      "A3"
+     ],
+     [
+      "D2",
+      "A2",
+      "F#3",
+      "A3",
+      "D4"
+     ]
+    ],
+    "level": 0.58,
+    "bells": true
+   }
+  }
+ },
+ "metadata": {
+  "youtube": {
+   "title": "The King Has the Crown. Who Has the Grain? (Worldbuilding)",
+   "titleAlternate": "Who really rules your fantasy kingdom?",
+   "description": "The king wears the crown. But who controls the food supply?\n\nIn Orvane, the king signs every law. But follow the grain: every sack in the kingdom passes through the Granary Guild. If the guild shuts its doors, the capital starves in a week. So every new law is quietly shown to the guild first.\n\nSeparate the title from the power. Formal authority is who wears the crown. Actual power is whoever controls what people need: merchants, priests, generals, landlords, or whoever holds the grain, the roads or the debts.\n\nWho would secretly control your fictional kingdom? Tell us in the comments.\n\nEpisode 16 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts",
+   "pinnedComment": "Your turn: who secretly controls your kingdom, and what do they hold that the crown can't do without?",
+   "uploadSettings": "Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "The king signs the laws 👑 The Granary Guild decides if anyone eats 🌾 Separate the title from the power. Who secretly runs your fictional kingdom? #Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts",
+   "pinnedComment": "Merchant, priest, general, landlord, or someone stranger: who really rules your kingdom?",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "The king wears the crown. But who controls the food supply?\n\nIn Orvane, the king signs every law. But follow the grain: every sack in the kingdom passes through the Granary Guild. If the guild shuts its doors, the capital starves in a week. So every new law is quietly shown to the guild first.\n\nSeparate the title from the power. Formal authority is who wears the crown. Actual power is whoever controls what people need: merchants, priests, generals, landlords, or whoever holds the grain, the roads or the debts.\n\nWho would secretly control your fictional kingdom?\n\nEpisode 16 of 50.\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts",
+   "pinnedComment": "Who holds the real power in your story's kingdom, and does the king know it?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "The crown. Or the grain?\n\nThe king wears the crown. But who controls the food supply?\n\nIn Orvane, the king signs every law. But follow the grain: every sack in the kingdom passes through the Granary Guild. If the guild shuts its doors, the capital starves in a week. So every new law is quietly shown to the guild first.\n\nSeparate the title from the power. Formal authority is who wears the crown. Actual power is whoever controls what people need: merchants, priests, generals, landlords, or whoever holds the grain, the roads or the debts.\n\nWho would secretly control your fictional kingdom?\n\nEpisode 16 of 50 · Worldcraft Shorts\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts",
+   "hookCheck": "First 24 characters: 'The crown. Or the grain?'",
+   "pinnedComment": "Name the real power in your kingdom, and the one thing they hold that everyone needs.",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  },
+  "cover": "Worldcraft_Short_E16_cover.jpg: the king small on his throne at the end of the hall, 'BUT WHO CONTROLS / the grain?' above, corner logo.",
+  "followUpQuestion": "List what your kingdom can't live without for a month (grain, water, salt, iron, faith, credit). Who holds each one?"
+ }
+}

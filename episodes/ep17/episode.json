@@ -139,9 +139,9 @@
     "background": "the palace"
    },
    "lighting": "Heavy overcast, cold; top scrim for the title.",
-   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. low angle view up a vast stone stair to a colossal dark basalt palace of stacked terraces and tall narrow towers with green copper roofs, heavy overcast sky, a small crowd of ordinary townsfolk crossing the plaza far below, tiny distant guards with long spears, grand and oppressive, no flags, no banners. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. low angle view up a vast stone stair to a colossal fortress palace of black basalt, sheer windowless walls, many tall thin spired towers with green copper domes, heavy overcast sky, a few ordinary townsfolk climbing the stair far below, grim and oppressive, gothic fantasy, no flags, no banners. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
    "videoPrompt": "(Not used.)",
-   "sdxlPrompt": "low angle view up a vast stone stair to a colossal dark basalt palace of stacked terraces and tall narrow towers with green copper roofs, heavy overcast sky, a small crowd of ordinary townsfolk crossing the plaza far below, tiny distant guards with long spears, grand and oppressive, no flags, no banners",
+   "sdxlPrompt": "low angle view up a vast stone stair to a colossal fortress palace of black basalt, sheer windowless walls, many tall thin spired towers with green copper domes, heavy overcast sky, a few ordinary townsfolk climbing the stair far below, grim and oppressive, gothic fantasy, no flags, no banners",
    "graphics": [
     {
      "type": "titleLockup",
@@ -327,9 +327,9 @@
     "background": "their everyday world"
    },
    "lighting": "Natural to the scene.",
-   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a weathered farmer in a brown wool smock and wide straw hat walks beside an ox cart loaded with grain sacks on a wide well paved stone road through golden wheat fields, stone milestones along the road, calm late afternoon, a dark palace tower far away on the horizon, medium wide shot, figure in the middle distance. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. medium shot of a weathered farmer in a brown wool smock and wide straw hat walking beside his ox cart piled with grain sacks on a wide paved stone road, golden wheat fields on both sides, calm late afternoon light, a dark spired palace far away on the horizon, the farmer in the centre of the frame. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
    "videoPrompt": "(Not used.)",
-   "sdxlPrompt": "a weathered farmer in a brown wool smock and wide straw hat walks beside an ox cart loaded with grain sacks on a wide well paved stone road through golden wheat fields, stone milestones along the road, calm late afternoon, a dark palace tower far away on the horizon, medium wide shot, figure in the middle distance",
+   "sdxlPrompt": "medium shot of a weathered farmer in a brown wool smock and wide straw hat walking beside his ox cart piled with grain sacks on a wide paved stone road, golden wheat fields on both sides, calm late afternoon light, a dark spired palace far away on the horizon, the farmer in the centre of the frame",
    "graphics": [
     {
      "type": "pillarTag",
@@ -818,9 +818,9 @@
     "background": "the palace"
    },
    "lighting": "Warm morning; the last 0.6 s cross-fades to the grey hook.",
-   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. the colossal dark basalt palace of stacked terraces and tall narrow towers with green copper roofs in warm golden morning light, seen across a busy ordinary market plaza, stalls of bread and cloth, townsfolk, carts and children, life going on beneath it, wide view, no flags, no banners. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. the colossal black basalt fortress palace with tall thin spired towers and green copper domes in warm golden morning light, seen across a busy ordinary market plaza below, stalls of bread and cloth, townsfolk, carts and children, life going on beneath it, wide view, no flags, no banners. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
    "videoPrompt": "(Not used.)",
-   "sdxlPrompt": "the colossal dark basalt palace of stacked terraces and tall narrow towers with green copper roofs in warm golden morning light, seen across a busy ordinary market plaza, stalls of bread and cloth, townsfolk, carts and children, life going on beneath it, wide view, no flags, no banners",
+   "sdxlPrompt": "the colossal black basalt fortress palace with tall thin spired towers and green copper domes in warm golden morning light, seen across a busy ordinary market plaza below, stalls of bread and cloth, townsfolk, carts and children, life going on beneath it, wide view, no flags, no banners",
    "graphics": [
     {
      "type": "ctaCard",

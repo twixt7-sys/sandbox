@@ -77,7 +77,7 @@ export const VerdictScale: React.FC<GraphicProps> = ({g, t, span}) => {
 				const by = ey + chain + 60 * k;
 				const list = words[i] ?? [];
 				return (
-					<div key={i} style={{position: 'absolute', left: ex - 200 * k, width: 400 * k, top: by, textAlign: 'center'}}>
+					<div key={i} style={{position: 'absolute', left: ex - 165 * k, width: 330 * k, top: by, textAlign: 'center', padding: `${14 * k}px 0`, margin: `${-14 * k}px 0`, background: 'radial-gradient(ellipse at 50% 50%, rgba(6,10,13,0.6) 0%, rgba(6,10,13,0.4) 50%, rgba(6,10,13,0) 75%)'}}>
 						<div style={{...kicker, fontSize: 30 * k, color: glow > 0.5 ? palette.ember : palette.amber, textShadow: shadow}}>{pans[i]?.label}</div>
 						<div style={{display: 'grid', marginTop: 6 * k}}>
 							{list.map((w, j) => {
@@ -89,12 +89,13 @@ export const VerdictScale: React.FC<GraphicProps> = ({g, t, span}) => {
 										key={j}
 										style={{
 											gridArea: '1 / 1',
+											whiteSpace: 'pre-line',
 											fontFamily: fonts.display,
 											fontStyle: 'italic',
 											fontWeight: 600,
 											fontSize: 54 * k,
 											lineHeight: 1.02,
-											color: tone(w.color, palette.parchment),
+											color: w.color === 'rust' ? '#d8714f' : tone(w.color, palette.parchment),
 											textShadow: shadow,
 											opacity: v,
 											transform: `translateY(${(1 - a) * 12 - next * 10}px) scale(${1 + (1 - a) * 0.06})`,
@@ -112,6 +113,78 @@ export const VerdictScale: React.FC<GraphicProps> = ({g, t, span}) => {
 	);
 };
 
+/**
+ * Watch post: a weathered wooden post with a cross-peg, a long curved brass horn hung from it on a cord, and optional
+ * rust `cloth` tied below the peg (EP14: the oath left behind; SDXL would not paint it). `at: [x, y]` = foot of the
+ * post, `height` (default 460), `horn` (default true), `cloth` (default false), `flip` puts the horn on the left,
+ * `shade` (0–1, default 0) darkens it for dusk plates. Pin with `local: true`.
+ */
+export const WatchPost: React.FC<GraphicProps> = ({g, t}) => {
+	const [x, y] = g.at;
+	const h: number = g.height ?? 460;
+	const k = h / 460;
+	const dir = g.flip ? -1 : 1;
+	const top = y - h;
+	const peg = top + 70 * k;
+	const sway = Math.sin(t * 1.3) * 2.5;
+	const id = `wp-${x}-${y}`;
+	const hx = x + dir * 26 * k;
+	const hornTop = peg + 80 * k;
+	// Horn: a curved tapering tube hanging mouth-down, drawn as a filled band between two offset curves.
+	const horn = `M${hx - 6 * k},${hornTop} C${hx - 8 * k},${hornTop + 90 * k} ${hx + dir * 20 * k},${hornTop + 150 * k} ${hx + dir * 70 * k},${hornTop + 170 * k}
+		L${hx + dir * 88 * k},${hornTop + 140 * k}
+		C${hx + dir * 40 * k},${hornTop + 130 * k} ${hx + 10 * k},${hornTop + 80 * k} ${hx + 6 * k},${hornTop} Z`;
+	return (
+		<AbsoluteFill style={{pointerEvents: 'none', opacity: g.opacity ?? 1, filter: g.shade ? `brightness(${1 - 0.55 * g.shade})` : undefined}}>
+			<svg width={W} height={H} style={{position: 'absolute', inset: 0, overflow: 'visible'}}>
+				<defs>
+					<linearGradient id={`${id}-wood`} x1="0" y1="0" x2="1" y2="0">
+						<stop offset="0" stopColor="#2b2017" />
+						<stop offset="0.35" stopColor="#5d4632" />
+						<stop offset="0.7" stopColor="#47362a" />
+						<stop offset="1" stopColor="#1d1611" />
+					</linearGradient>
+					<linearGradient id={`${id}-brass`} x1="0" y1="0" x2="1" y2="1">
+						<stop offset="0" stopColor="#f1d38a" />
+						<stop offset="0.45" stopColor="#b8873a" />
+						<stop offset="1" stopColor="#5e3f17" />
+					</linearGradient>
+				</defs>
+				{/* Ground shadow */}
+				<ellipse cx={x + dir * 30 * k} cy={y + 4 * k} rx={70 * k} ry={12 * k} fill="rgba(0,0,0,0.35)" />
+				{/* Post, slightly tapered, with a weathered top */}
+				<path d={`M${x - 17 * k},${y} L${x - 13 * k},${top + 8 * k} Q${x},${top - 6 * k} ${x + 13 * k},${top + 8 * k} L${x + 17 * k},${y} Z`} fill={`url(#${id}-wood)`} />
+				{[0.22, 0.48, 0.71].map((f) => (
+					<line key={f} x1={x - 6 * k} y1={top + h * f} x2={x - 4 * k} y2={top + h * f + 40 * k} stroke="rgba(0,0,0,0.35)" strokeWidth={2 * k} />
+				))}
+				{/* Peg */}
+				<path d={`M${x},${peg} L${x + dir * 34 * k},${peg - 6 * k} L${x + dir * 34 * k},${peg + 4 * k} L${x},${peg + 10 * k} Z`} fill="#3a2b1f" />
+				<g transform={`rotate(${sway} ${x + dir * 26 * k} ${peg})`}>
+					{/* Cord */}
+					<path d={`M${x + dir * 26 * k},${peg} Q${hx - 14 * k},${peg + 40 * k} ${hx - 2 * k},${hornTop + 4 * k}`} fill="none" stroke="#2a1f16" strokeWidth={3 * k} />
+					{g.horn !== false && (
+						<>
+							<path d={horn} fill={`url(#${id}-brass)`} stroke="#3d2810" strokeWidth={1.5 * k} />
+							<ellipse cx={hx + dir * 79 * k} cy={hornTop + 155 * k} rx={22 * k} ry={9 * k} transform={`rotate(${dir * -62} ${hx + dir * 79 * k} ${hornTop + 155 * k})`} fill="#2e1d0a" stroke="#d9b264" strokeWidth={2.5 * k} />
+							<rect x={hx - 9 * k} y={hornTop - 6 * k} width={18 * k} height={9 * k} rx={2 * k} fill="#d9b264" />
+							<path d={`M${hx - 2 * k},${hornTop + 30 * k} C${hx - 3 * k},${hornTop + 90 * k} ${hx + dir * 20 * k},${hornTop + 135 * k} ${hx + dir * 60 * k},${hornTop + 152 * k}`} fill="none" stroke="rgba(255,240,200,0.55)" strokeWidth={2 * k} />
+						</>
+					)}
+				</g>
+				{g.cloth && (
+					<path
+						d={`M${x - 15 * k},${peg + 34 * k} q${-dir * 10 * k},${18 * k} 0,${26 * k} L${x - dir * (60 + 8 * Math.sin(t * 2.1)) * k},${peg + (70 + 6 * Math.sin(t * 1.7)) * k} L${x - dir * (52 + 6 * Math.sin(t * 2.4)) * k},${peg + 46 * k} Z`}
+						fill="#a8432c"
+						stroke="#5f2214"
+						strokeWidth={1.2 * k}
+					/>
+				)}
+			</svg>
+		</AbsoluteFill>
+	);
+};
+
 export const MORALITY: Record<string, React.FC<GraphicProps>> = {
 	verdictScale: VerdictScale,
+	watchPost: WatchPost,
 };

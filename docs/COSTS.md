@@ -193,6 +193,19 @@ On the paid primary stack: about **$1.15 (₱73)**, or **$2.12 (₱134)** with o
 
 On the paid primary stack, with 3 stills plus one re-roll (4 images): about **$1.15 (₱73)**, or **$2.12 (₱134)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
+## What Episode 14 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 4 stills (Mira on the dawn river path, the free town, the valley league's hooded line, the empty bank at dusk) | **Local SDXL-Lightning** (`pipeline/local_stills.py`, 4-step, CPU, 768×1344, lanczos to 1080×1920). 10 candidates, 4 kept. Figma was tried first: the `generate_image` call was blocked by the session's permission check before reaching Figma, so no Figma credits were used | $0 |
+| Verdict scale, re-captioned callout, watch post and horn, tags, rain, lesson stack, CTA card | Remotion code (new `verdictScale`, `watchPost`, `callout` `then` and `noteSize`; `tag`, `rain`, `lessonStack`, `ctaCard`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 75 words, 29.8 s | $0 |
+| Score + SFX (new: scaleTip) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, no Figma credits |
+
+On the paid primary stack, with 4 stills: about **$1.15 (₱73)**, or **$2.12 (₱134)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
 ## What Episode 15 actually used
 
 | Item | Used | Cash cost |

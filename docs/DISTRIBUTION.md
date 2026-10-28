@@ -876,6 +876,80 @@ Source of truth: `episodes/ep13/episode.json` → `metadata`. The AI label goes 
 - **Pinned comment:** Gift, greeting, question or silence: which act means opposite things in your world?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
 
+## Episode 14 captions (ready to paste)
+
+Source of truth: `episodes/ep14/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep14/Worldcraft_Short_E14_cover.jpg`. Subtitles: `episodes/ep14/ep14.srt`. The stills were made with a local open model (SDXL-Lightning), so they're AI-generated like every other episode's and need the same disclosure.
+
+### YouTube Shorts
+- **Title** (68/100 chars): `Two Honorable People. Each Thinks the Other Is Evil. (Worldbuilding)`
+- **Alternate title** (37 chars): `How to write moral systems that clash`
+- **Description:**
+
+> What if two honorable people could consider each other evil?
+>
+> Mira walks away from the oath she swore at sixteen: to keep watch on the levee that protects her valley.
+>
+> In the free towns, that's courage. No one should own your life, not even a promise you made as a child. In the valley league, it's betrayal. The levee only holds because everyone holds it, so leaving puts everyone at risk. Each side calls the other heartless, and both are right about something.
+>
+> That's how to write clashing moral systems: give each people a real reason for what it values (freedom, duty, loyalty, mercy), put one person between them, and let neither side be entirely right.
+>
+> Which matters more: personal freedom or collective responsibility? Tell us in the comments.
+>
+> Episode 14 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyCultures #WorldcraftShorts
+
+- **Pinned comment:** Your turn: freedom or responsibility? And what would the other side say about your answer?
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (253 chars): `She broke her oath. Hero or traitor? Depends whose side of the levee you're on ⚖️ Give both sides real reasons and let neither be entirely right. Freedom or duty: which wins? #Worldbuilding #FantasyWriting #WritingTips #FantasyCultures #WorldcraftShorts`
+- **Pinned comment:** Freedom or responsibility: pick one, then make the best case for the other.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> What if two honorable people could consider each other evil?
+>
+> Mira walks away from the oath she swore at sixteen: to keep watch on the levee that protects her valley.
+>
+> In the free towns, that's courage. No one should own your life, not even a promise you made as a child. In the valley league, it's betrayal. The levee only holds because everyone holds it, so leaving puts everyone at risk. Each side calls the other heartless, and both are right about something.
+>
+> That's how to write clashing moral systems: give each people a real reason for what it values (freedom, duty, loyalty, mercy), put one person between them, and let neither side be entirely right.
+>
+> Which matters more: personal freedom or collective responsibility? Tell us in the comments.
+>
+> Episode 14 of 50.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyCultures #WorldcraftShorts
+
+- **Pinned comment:** Is Mira a hero or a traitor? Tell us which side of the levee you would stand on, and why.
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Hero to one. Traitor to another.
+>
+> What if two honorable people could consider each other evil?
+>
+> Mira walks away from the oath she swore at sixteen: to keep watch on the levee that protects her valley.
+>
+> In the free towns, that's courage. No one should own your life, not even a promise you made as a child. In the valley league, it's betrayal. The levee only holds because everyone holds it, so leaving puts everyone at risk. Each side calls the other heartless, and both are right about something.
+>
+> That's how to write clashing moral systems: give each people a real reason for what it values (freedom, duty, loyalty, mercy), put one person between them, and let neither side be entirely right.
+>
+> Which matters more: personal freedom or collective responsibility?
+>
+> Episode 14 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyCultures #WorldcraftShorts
+
+- **Hook check:** First 32 characters: 'Hero to one. Traitor to another.'
+- **Pinned comment:** Which of your peoples values freedom, and which values duty? What does each call the other?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
 ## Episode 15 captions (ready to paste)
 
 Source of truth: `episodes/ep15/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep15/Worldcraft_Short_E15_cover.jpg`. Subtitles: `episodes/ep15/ep15.srt`.

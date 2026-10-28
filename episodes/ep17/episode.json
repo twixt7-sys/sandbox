@@ -1,0 +1,1057 @@
+{
+ "id": "ep17",
+ "number": 17,
+ "title": "Why Would Anyone Support an Evil Empire?",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "A calm, curious guide, never sarcastic about the empire's people. A real question on the hook; plain and practical on 'Ask the people holding it up'. Each supporter is said with sympathy, a short beat before each reason. 'Complainers get a knock at night' is quiet, not dramatic. 'And nobody can picture anything better' lands softly. The lesson is clear and sure; the share CTA friendly. No trailer voice."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "If your empire is so evil, why hasn't everyone rebelled?",
+   "pauseAfter": 0.5,
+   "emphasis": [
+    "evil,",
+    "rebelled?"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "ask",
+   "text": "Ask the people holding it up.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "people",
+    "holding"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "farmer",
+   "text": "The farmer gets safe roads, and bread every winter.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "roads,",
+    "bread"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "clerk",
+   "text": "The clerk remembers the chaos before the throne.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "chaos"
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "mother",
+   "text": "The soldier's mother needs his wage.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "wage."
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "neighbour",
+   "text": "The neighbour keeps quiet. Complainers get a knock at night.",
+   "pauseAfter": 0.5,
+   "emphasis": [
+    "quiet.",
+    "knock"
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "lesson",
+   "text": "And nobody can picture anything better.",
+   "pauseAfter": 0.55,
+   "emphasis": [
+    "better."
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "lesson",
+   "text": "A villainous empire is believable when its supporters aren't villains.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "believable",
+    "aren't"
+   ]
+  },
+  {
+   "id": "L9",
+   "shot": "cta",
+   "text": "Share this with someone writing a one-dimensional villainous empire.",
+   "pauseAfter": 0.0,
+   "emphasis": [
+    "share",
+    "one-dimensional"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.06,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.5,
+   "purpose": "Stop the scroll on the cliché the episode will take apart: a dark, cruel empire looming over a city, and the question nobody asks about it.",
+   "visual": "A colossal dark basalt palace above a vast stair; tiny townsfolk crossing the plaza. 'VALDREN · A CRUEL EMPIRE / Still standing.'",
+   "camera": "Slow push up the stair (1.00 to 1.06).",
+   "layers": {
+    "foreground": "title",
+    "midground": "the stair and the crowd",
+    "background": "the palace"
+   },
+   "lighting": "Heavy overcast, cold; top scrim for the title.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. low angle view up a vast stone stair to a colossal dark basalt palace of stacked terraces and tall narrow towers with green copper roofs, heavy overcast sky, a small crowd of ordinary townsfolk crossing the plaza far below, tiny distant guards with long spears, grand and oppressive, no flags, no banners. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "low angle view up a vast stone stair to a colossal dark basalt palace of stacked terraces and tall narrow towers with green copper roofs, heavy overcast sky, a small crowd of ordinary townsfolk crossing the plaza far below, tiny distant guards with long spears, grand and oppressive, no flags, no banners",
+   "graphics": [
+    {
+     "type": "titleLockup",
+     "kicker": "Valdren · a cruel empire",
+     "text": "Still standing.",
+     "y": 340,
+     "size": 124,
+     "start": {
+      "line": "L1",
+      "word": "if",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L1",
+      "word": "rebelled?",
+      "offset": 0.55
+     }
+    }
+   ],
+   "onScreenText": "Kicker 'VALDREN · A CRUEL EMPIRE' + 'Still standing.' (ember serif italic).",
+   "transition": "Hard cut on 'Ask': the palace dims and stone pillars rise under it.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "ask",
+      "offset": 1.5
+     },
+     "gain": -33
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L1",
+      "word": "rebelled?",
+      "offset": -1.0
+     },
+     "gain": -24
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L1",
+      "word": "rebelled?"
+     },
+     "gain": -21
+    }
+   ],
+   "music": "D minor, low and heavy."
+  },
+  {
+   "id": "ask",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.08,
+     "y": 0
+    },
+    "to": {
+     "s": 1.1,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.85,
+   "plateLook": {
+    "from": "saturate(0.5) brightness(0.5)"
+   },
+   "purpose": "Turn the question into a structure: an empire is a roof, and something has to hold it up.",
+   "visual": "The palace dimmed behind a drawn entablature 'THE EMPIRE'; five plain stone pillars rise under it, one after another.",
+   "camera": "Near still.",
+   "layers": {
+    "foreground": "pillar stack",
+    "midground": "",
+    "background": "the palace, dimmed"
+   },
+   "lighting": "Dimmed and cooled under the diagram.",
+   "graphics": [
+    {
+     "type": "pillarStack",
+     "label": "The empire",
+     "pillars": [
+      {
+       "label": "Bread",
+       "who": "The farmer",
+       "src": "ep17/plates/farmer.jpg",
+       "x": 540,
+       "y": 1000,
+       "zoom": 1.0
+      },
+      {
+       "label": "Order",
+       "who": "The clerk",
+       "src": "ep17/plates/clerk.jpg",
+       "x": 540,
+       "y": 900,
+       "zoom": 1.0
+      },
+      {
+       "label": "The wage",
+       "who": "The mother",
+       "src": "ep17/plates/mother.jpg",
+       "x": 540,
+       "y": 900,
+       "zoom": 1.0
+      },
+      {
+       "label": "Fear",
+       "who": "The neighbour",
+       "src": "ep17/plates/neighbour.jpg",
+       "x": 540,
+       "y": 800,
+       "zoom": 1.0
+      },
+      {
+       "label": "Nothing better",
+       "who": "Everyone",
+       "empty": true
+      }
+     ],
+     "riseAt": {
+      "line": "L2",
+      "word": "holding",
+      "offset": -0.35
+     }
+    }
+   ],
+   "onScreenText": "Entablature 'THE EMPIRE' on five blank stone pillars.",
+   "transition": "Hard cut on 'The' to the first supporter.",
+   "sfx": [
+    {
+     "sound": "pillarSet",
+     "at": {
+      "line": "L2",
+      "word": "holding",
+      "offset": -0.3
+     },
+     "gain": -23
+    },
+    {
+     "sound": "pillarSet",
+     "at": {
+      "line": "L2",
+      "word": "holding",
+      "offset": -0.04999999999999999
+     },
+     "gain": -25
+    }
+   ],
+   "music": "D minor with a slow pulse.",
+   "imagePrompt": "",
+   "videoPrompt": ""
+  },
+  {
+   "id": "farmer",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.4,
+   "purpose": "Supporter 1: the farmer backs the empire for safe roads and bread. Prosperity and stability are real goods.",
+   "visual": "A farmer beside an ox cart of grain on a wide paved imperial road through wheat. Pillar tag I · BREAD / The farmer.",
+   "camera": "Slow push.",
+   "layers": {
+    "foreground": "pillar tag",
+    "midground": "the farmer",
+    "background": "their everyday world"
+   },
+   "lighting": "Natural to the scene.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a weathered farmer in a brown wool smock and wide straw hat walks beside an ox cart loaded with grain sacks on a wide well paved stone road through golden wheat fields, stone milestones along the road, calm late afternoon, a dark palace tower far away on the horizon, medium wide shot, figure in the middle distance. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "a weathered farmer in a brown wool smock and wide straw hat walks beside an ox cart loaded with grain sacks on a wide well paved stone road through golden wheat fields, stone milestones along the road, calm late afternoon, a dark palace tower far away on the horizon, medium wide shot, figure in the middle distance",
+   "graphics": [
+    {
+     "type": "pillarTag",
+     "numeral": "I",
+     "kicker": "Bread",
+     "text": "The farmer",
+     "start": {
+      "line": "L3",
+      "word": "the",
+      "offset": -0.15,
+      "nth": 1
+     }
+    }
+   ],
+   "onScreenText": "Pillar tag 'I · BREAD' + 'The farmer'.",
+   "transition": "Hard cut on the next supporter.",
+   "sfx": [
+    {
+     "sound": "footsteps",
+     "from": {
+      "shot": "farmer"
+     },
+     "to": {
+      "shot": "clerk"
+     },
+     "gain": -36
+    },
+    {
+     "sound": "pillarSet",
+     "at": {
+      "line": "L3",
+      "word": "the",
+      "offset": -0.15,
+      "nth": 1
+     },
+     "gain": -27
+    }
+   ],
+   "music": "B-flat major 7: warm, ordinary."
+  },
+  {
+   "id": "clerk",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.4,
+   "purpose": "Supporter 2: the clerk remembers the chaos before the empire; order, even harsh order, feels like safety.",
+   "visual": "An elderly clerk pressing a wax seal in a candlelit records hall. Pillar tag II · ORDER / The clerk.",
+   "camera": "Slow push.",
+   "layers": {
+    "foreground": "pillar tag",
+    "midground": "the clerk",
+    "background": "their everyday world"
+   },
+   "lighting": "Natural to the scene.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. an elderly clerk in a high collared slate grey coat with ink stained cuffs stands at a tall wooden desk in a vaulted records hall, stacks of bound ledgers with blank pages, red wax seals, candlelight, endless shelves behind, he presses a seal carefully, medium shot, face in three quarter shadow. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "an elderly clerk in a high collared slate grey coat with ink stained cuffs stands at a tall wooden desk in a vaulted records hall, stacks of bound ledgers with blank pages, red wax seals, candlelight, endless shelves behind, he presses a seal carefully, medium shot, face in three quarter shadow",
+   "graphics": [
+    {
+     "type": "pillarTag",
+     "numeral": "II",
+     "kicker": "Order",
+     "text": "The clerk",
+     "start": {
+      "line": "L4",
+      "word": "the",
+      "offset": -0.15,
+      "nth": 1
+     }
+    }
+   ],
+   "onScreenText": "Pillar tag 'II · ORDER' + 'The clerk'.",
+   "transition": "Hard cut on the next supporter.",
+   "sfx": [
+    {
+     "sound": "clock",
+     "from": {
+      "shot": "clerk"
+     },
+     "to": {
+      "shot": "mother"
+     },
+     "gain": -34
+    },
+    {
+     "sound": "pillarSet",
+     "at": {
+      "line": "L4",
+      "word": "the",
+      "offset": -0.15,
+      "nth": 1
+     },
+     "gain": -27
+    }
+   ],
+   "music": "G minor 9: memory."
+  },
+  {
+   "id": "mother",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.4,
+   "purpose": "Supporter 3: the soldier's family depends on his pay; the empire feeds them.",
+   "visual": "A mother in a doorway at dusk holding a small purse of coins, a soldier's grey cloak on the peg. Pillar tag III · THE WAGE / The soldier's mother.",
+   "camera": "Slow push.",
+   "layers": {
+    "foreground": "pillar tag",
+    "midground": "the soldier's mother",
+    "background": "their everyday world"
+   },
+   "lighting": "Natural to the scene.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a tired middle aged mother in a faded indigo shawl stands in the doorway of a small whitewashed house at dusk, holding a small cloth purse of coins against her chest, a young soldier's long grey cloak hangs on a peg by the door, warm lamplight inside, she looks down the street, medium wide shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "a tired middle aged mother in a faded indigo shawl stands in the doorway of a small whitewashed house at dusk, holding a small cloth purse of coins against her chest, a young soldier's long grey cloak hangs on a peg by the door, warm lamplight inside, she looks down the street, medium wide shot",
+   "graphics": [
+    {
+     "type": "pillarTag",
+     "numeral": "III",
+     "kicker": "The wage",
+     "text": "The soldier's mother",
+     "start": {
+      "line": "L5",
+      "word": "the",
+      "offset": -0.15,
+      "nth": 1
+     }
+    }
+   ],
+   "onScreenText": "Pillar tag 'III · THE WAGE' + 'The soldier's mother'.",
+   "transition": "Hard cut on the next supporter.",
+   "sfx": [
+    {
+     "sound": "hearth",
+     "from": {
+      "shot": "mother"
+     },
+     "to": {
+      "shot": "neighbour"
+     },
+     "gain": -34
+    },
+    {
+     "sound": "coin",
+     "at": {
+      "line": "L5",
+      "word": "wage.",
+      "offset": -0.1
+     },
+     "gain": -25
+    },
+    {
+     "sound": "pillarSet",
+     "at": {
+      "line": "L5",
+      "word": "the",
+      "offset": -0.15,
+      "nth": 1
+     },
+     "gain": -27
+    }
+   ],
+   "music": "E-flat major 7: tender."
+  },
+  {
+   "id": "neighbour",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.4,
+   "purpose": "Supporter 4: the neighbour stays silent out of fear. Force is shown only by implication: a lantern at the end of the street, a knock.",
+   "visual": "Night street; an old man behind a barely open shutter; far below, one lantern coming. Pillar tag IV · FEAR / The neighbour.",
+   "camera": "Slow push.",
+   "layers": {
+    "foreground": "pillar tag",
+    "midground": "the neighbour",
+    "background": "their everyday world"
+   },
+   "lighting": "Natural to the scene.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. night in a narrow cobbled street, an old man peers through a barely open wooden shutter of a dark upstairs window, a candle behind him, far below at the end of the street a single lantern carried by a cloaked figure, long shadows, tense and quiet, view from the street below. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "night in a narrow cobbled street, an old man peers through a barely open wooden shutter of a dark upstairs window, a candle behind him, far below at the end of the street a single lantern carried by a cloaked figure, long shadows, tense and quiet, view from the street below",
+   "graphics": [
+    {
+     "type": "pillarTag",
+     "numeral": "IV",
+     "kicker": "Fear",
+     "text": "The neighbour",
+     "start": {
+      "line": "L6",
+      "word": "the",
+      "offset": -0.15,
+      "nth": 1
+     }
+    }
+   ],
+   "onScreenText": "Pillar tag 'IV · FEAR' + 'The neighbour'.",
+   "transition": "Hard cut on the next supporter.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "neighbour"
+     },
+     "to": {
+      "shot": "lesson",
+      "offset": 0.5
+     },
+     "gain": -35
+    },
+    {
+     "sound": "pillarSet",
+     "at": {
+      "line": "L6",
+      "word": "the",
+      "offset": -0.15,
+      "nth": 1
+     },
+     "gain": -27
+    },
+    {
+     "sound": "doorKnock",
+     "at": {
+      "line": "L6",
+      "word": "knock",
+      "offset": 0.0
+     },
+     "gain": -20
+    }
+   ],
+   "music": "D minor, thin and cold; the pulse stops."
+  },
+  {
+   "id": "lesson",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.45
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.1,
+     "y": 0
+    },
+    "to": {
+     "s": 1.06,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.88,
+   "plateLook": {
+    "from": "saturate(0.45) brightness(0.45)"
+   },
+   "purpose": "The reveal and the lesson: the pillars were people all along, each with an understandable reason, and the fifth pillar is an absence (no better option). Then the shareable thought.",
+   "visual": "The pillar stack returns; each stone pillar becomes the supporter we met (BREAD, ORDER, THE WAGE, FEAR); a fifth, empty dashed pillar appears: NOTHING BETTER. The stack lifts and the lesson lands below: 'STILL CRUEL. STILL STANDING. / Its supporters aren't villains.'",
+   "camera": "Gentle pull (1.10 to 1.06) on the dimmed palace.",
+   "layers": {
+    "foreground": "pillar stack and lesson",
+    "midground": "",
+    "background": "the palace, dimmed"
+   },
+   "lighting": "Dimmed and cooled under the diagram.",
+   "graphics": [
+    {
+     "type": "pillarStack",
+     "label": "The empire",
+     "pillars": [
+      {
+       "label": "Bread",
+       "who": "The farmer",
+       "src": "ep17/plates/farmer.jpg",
+       "x": 540,
+       "y": 1000,
+       "zoom": 1.0
+      },
+      {
+       "label": "Order",
+       "who": "The clerk",
+       "src": "ep17/plates/clerk.jpg",
+       "x": 540,
+       "y": 900,
+       "zoom": 1.0
+      },
+      {
+       "label": "The wage",
+       "who": "The mother",
+       "src": "ep17/plates/mother.jpg",
+       "x": 540,
+       "y": 900,
+       "zoom": 1.0
+      },
+      {
+       "label": "Fear",
+       "who": "The neighbour",
+       "src": "ep17/plates/neighbour.jpg",
+       "x": 540,
+       "y": 800,
+       "zoom": 1.0
+      },
+      {
+       "label": "Nothing better",
+       "who": "Everyone",
+       "empty": true
+      }
+     ],
+     "riseAt": {
+      "line": "L2",
+      "word": "holding",
+      "offset": -0.35
+     },
+     "start": {
+      "shot": "lesson",
+      "offset": -0.45
+     },
+     "peopleAt": [
+      {
+       "shot": "lesson",
+       "offset": 0.15
+      },
+      {
+       "shot": "lesson",
+       "offset": 0.37
+      },
+      {
+       "shot": "lesson",
+       "offset": 0.59
+      },
+      {
+       "shot": "lesson",
+       "offset": 0.81
+      },
+      {
+       "line": "L7",
+       "word": "better.",
+       "offset": -0.2
+      }
+     ],
+     "liftAt": {
+      "line": "L8",
+      "word": "a",
+      "offset": -0.1,
+      "nth": 1
+     },
+     "lessonKicker": "Still cruel · still standing",
+     "lessonText": [
+      "Its supporters",
+      "*aren't* *villains.*"
+     ],
+     "lessonAt": {
+      "line": "L8",
+      "word": "supporters",
+      "offset": -0.25
+     }
+    }
+   ],
+   "onScreenText": "Pillars BREAD / ORDER / THE WAGE / FEAR / NOTHING BETTER under THE EMPIRE; then 'STILL CRUEL · STILL STANDING' / 'Its supporters aren't villains.'",
+   "transition": "Dissolve (0.6 s) to the palace in morning light over a busy market.",
+   "sfx": [
+    {
+     "sound": "pillarSet",
+     "at": {
+      "shot": "lesson",
+      "offset": 0.15
+     },
+     "gain": -26
+    },
+    {
+     "sound": "pillarSet",
+     "at": {
+      "shot": "lesson",
+      "offset": 0.37
+     },
+     "gain": -26
+    },
+    {
+     "sound": "pillarSet",
+     "at": {
+      "shot": "lesson",
+      "offset": 0.59
+     },
+     "gain": -26
+    },
+    {
+     "sound": "pillarSet",
+     "at": {
+      "shot": "lesson",
+      "offset": 0.81
+     },
+     "gain": -26
+    },
+    {
+     "sound": "tonalDrop",
+     "at": {
+      "line": "L7",
+      "word": "better.",
+      "offset": -0.2
+     },
+     "gain": -24
+    },
+    {
+     "sound": "paper",
+     "at": {
+      "line": "L8",
+      "word": "a",
+      "offset": -0.1,
+      "nth": 1
+     },
+     "gain": -28
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L8",
+      "word": "villains.",
+      "offset": -0.1,
+      "nth": 1
+     },
+     "gain": -21
+    }
+   ],
+   "music": "B-flat → D major with bells: the answer.",
+   "imagePrompt": "",
+   "videoPrompt": ""
+  },
+  {
+   "id": "cta",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.4,
+   "captions": false,
+   "hideLogoBug": true,
+   "purpose": "Share CTA over the hook's palace in a changed state: morning light, a busy market under it. Ordinary life is what keeps it standing. Loops back to the grey hook.",
+   "visual": "The same palace in golden morning light above a busy market plaza. Full logo, Episode 17 / 50, the CTA, a 'Share' pill.",
+   "camera": "Settles (1.04 to 1.00).",
+   "layers": {
+    "foreground": "logo and CTA type",
+    "midground": "the market",
+    "background": "the palace"
+   },
+   "lighting": "Warm morning; the last 0.6 s cross-fades to the grey hook.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. the colossal dark basalt palace of stacked terraces and tall narrow towers with green copper roofs in warm golden morning light, seen across a busy ordinary market plaza, stalls of bread and cloth, townsfolk, carts and children, life going on beneath it, wide view, no flags, no banners. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "the colossal dark basalt palace of stacked terraces and tall narrow towers with green copper roofs in warm golden morning light, seen across a busy ordinary market plaza, stalls of bread and cloth, townsfolk, carts and children, life going on beneath it, wide view, no flags, no banners",
+   "graphics": [
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L9",
+      "word": "share"
+     },
+     "episode": "Episode 17 / 50",
+     "title": "Why would anyone support an evil empire?",
+     "kicker": "Pass it on",
+     "size": 72,
+     "lines": [
+      "Share this with someone",
+      "writing a one-dimensional",
+      "*villainous empire.*"
+     ],
+     "button": "Share",
+     "icon": "share"
+    }
+   ],
+   "onScreenText": "Full logo, 'EPISODE 17 / 50', title, 'PASS IT ON', 'Share this with someone writing a one-dimensional villainous empire.', pill 'Share'.",
+   "transition": "Cross-fade into the hook's first frame (the grey palace) for a seamless loop.",
+   "sfx": [
+    {
+     "sound": "market",
+     "from": {
+      "shot": "cta"
+     },
+     "to": {
+      "line": "L9",
+      "word": "empire.",
+      "offset": 1.0
+     },
+     "gain": -35
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "shot": "cta",
+      "offset": -0.3
+     },
+     "gain": -25
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L9",
+      "word": "empire.",
+      "offset": 0.2
+     },
+     "gain": -24
+    }
+   ],
+   "music": "G to D major, warm; fades fully before the last frame."
+  }
+ ],
+ "lesson": "An oppressive empire survives because many ordinary people hold it up, each for an understandable reason: prosperity (bread, safe roads), stability (order after remembered chaos), self-interest (the wage), fear, and the absence of any better alternative. A villainous empire is believable when its supporters are not villains.",
+ "captionReplace": {},
+ "music": {
+  "key": "D minor, resolving to D major",
+  "drone": [
+   "D2",
+   "A2"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L6",
+     "word": "complainers"
+    },
+    "pre": 0.15,
+    "dur": 1.6,
+    "gain": 0.55
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L8",
+     "word": "a",
+     "nth": 1
+    },
+    "pre": 0.15,
+    "dur": 1.2,
+    "gain": 0.6
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "D1",
+      "A1",
+      "F2",
+      "A2",
+      "E3"
+     ]
+    ],
+    "level": 0.46,
+    "dark": true
+   },
+   "ask": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F3",
+      "C4"
+     ]
+    ],
+    "level": 0.5,
+    "pulse": 66
+   },
+   "farmer": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "A3"
+     ]
+    ],
+    "level": 0.54,
+    "pulse": 66
+   },
+   "clerk": {
+    "chords": [
+     [
+      "G1",
+      "D2",
+      "Bb2",
+      "F3",
+      "A3"
+     ]
+    ],
+    "level": 0.55,
+    "pulse": 66
+   },
+   "mother": {
+    "chords": [
+     [
+      "Eb2",
+      "Bb2",
+      "G3",
+      "D4"
+     ]
+    ],
+    "level": 0.56,
+    "pulse": 66
+   },
+   "neighbour": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F3",
+      "A3"
+     ]
+    ],
+    "level": 0.44,
+    "dark": true
+   },
+   "lesson": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "A3"
+     ],
+     [
+      "D2",
+      "A2",
+      "F#3",
+      "A3",
+      "E4"
+     ]
+    ],
+    "level": 0.62,
+    "bells": true
+   },
+   "cta": {
+    "chords": [
+     [
+      "G1",
+      "D2",
+      "B2",
+      "D3",
+      "A3"
+     ],
+     [
+      "D2",
+      "A2",
+      "F#3",
+      "A3",
+      "D4"
+     ]
+    ],
+    "level": 0.58,
+    "bells": true
+   }
+  }
+ },
+ "metadata": {
+  "youtube": {
+   "title": "Why Would Anyone Support an Evil Empire? (Worldbuilding)",
+   "titleAlternate": "Your evil empire needs supporters who aren't evil",
+   "description": "If your empire is so evil, why hasn't everyone rebelled?\n\nAsk the people holding it up. In Valdren, the farmer gets safe roads and bread every winter. The clerk remembers the chaos before the throne. The soldier's mother needs his wage. The neighbour keeps quiet, because complainers get a knock at night. And nobody can picture anything better.\n\nBread, order, a wage, fear and no better option: five pillars, and not one of them is a villain. Real regimes last on mixtures of force, loyalty, stability, propaganda, prosperity and fear. Your empire can stay cruel. It becomes believable when its supporters have reasons a reader understands.\n\nShare this with someone writing a one-dimensional villainous empire.\n\nEpisode 17 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts",
+   "pinnedComment": "Your turn: name one ordinary person who keeps your empire standing, and the reason they'd give.",
+   "uploadSettings": "Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "Five pillars hold up this evil empire 🏛️ Bread, order, a wage, fear, and nothing better. Not one of them is a villain. Share with someone writing a one-dimensional empire. #Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts",
+   "pinnedComment": "What's the one reason ordinary people in your empire go along with it?",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "If your empire is so evil, why hasn't everyone rebelled?\n\nAsk the people holding it up. In Valdren, the farmer gets safe roads and bread every winter. The clerk remembers the chaos before the throne. The soldier's mother needs his wage. The neighbour keeps quiet, because complainers get a knock at night. And nobody can picture anything better.\n\nBread, order, a wage, fear and no better option: five pillars, and not one of them is a villain. Real regimes last on mixtures of force, loyalty, stability, propaganda, prosperity and fear. Your empire can stay cruel. It becomes believable when its supporters have reasons a reader understands.\n\nShare this with someone writing a one-dimensional villainous empire.\n\nEpisode 17 of 50.\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts",
+   "pinnedComment": "Which pillar holds up your empire: bread, order, the wage, fear, or nothing better?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "Five pillars. No villains.\n\nIf your empire is so evil, why hasn't everyone rebelled?\n\nAsk the people holding it up. In Valdren, the farmer gets safe roads and bread every winter. The clerk remembers the chaos before the throne. The soldier's mother needs his wage. The neighbour keeps quiet, because complainers get a knock at night. And nobody can picture anything better.\n\nBread, order, a wage, fear and no better option: five pillars, and not one of them is a villain. Real regimes last on mixtures of force, loyalty, stability, propaganda, prosperity and fear. Your empire can stay cruel. It becomes believable when its supporters have reasons a reader understands.\n\nShare this with someone writing a one-dimensional villainous empire.\n\nEpisode 17 of 50 · Worldcraft Shorts\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts",
+   "hookCheck": "First 26 characters: 'Five pillars. No villains.'",
+   "pinnedComment": "Bread, order, the wage, fear, nothing better: which pillar is strongest in your empire, and who stands in it?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  },
+  "cover": "Worldcraft_Short_E17_cover.jpg: the dark palace above the stair, 'VALDREN · A CRUEL EMPIRE / Still standing.' above it, corner logo.",
+  "followUpQuestion": "Pick your empire's most loyal ordinary supporter. What do they get from it, what do they fear, and what would they lose if it fell?"
+ }
+}

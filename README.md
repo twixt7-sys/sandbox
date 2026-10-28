@@ -132,6 +132,9 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | graphic | `inferChain` | An evidence chain inked onto the plate (`local`): a pen loop round the clue (`at`, `loop`), a leader to a text block (`box`, `align`), then `seen` (caps) → `means` (italic, `meansAt`) → ∴ `value` in an ember seal (`valueAt`); `backdrop`. Seal-only mode (just `value`) pins a value to a point on a wide plate (EP15: a habit read into values) |
 | graphic | `bench` | Code-drawn plain timber bench (`at`, `length`, `tone: "day" \| "dusk"`, `cups`; `local`), for objects the image model won't put where the story needs them (EP15) |
 | sfx | `benchSet`, `inferSeal` (hits) | EP15: a bench scraped and set down on cobbles; a pen tick and a warm rising fifth as a value is inferred |
+| graphic | `pillarStack` | An empire drawn as a roof on pillars (`label` on the entablature): the pillars rise as stone on `riseAt`, then `peopleAt[i]` turns each into a supporter, a portrait cut from their plate (`src`, plate point `x`/`y`, `zoom`) with its reason, or an `empty` dashed pillar for a missing alternative; `liftAt` shrinks the stack up and `lessonKicker` / `lessonText` land beneath it at `lessonAt` (EP17: BREAD / ORDER / THE WAGE / FEAR / NOTHING BETTER) |
+| graphic | `pillarTag` | A `tag` with a pillar glyph and a numeral ("PILLAR I · BREAD" / *The farmer*), so each person we meet reads as one pillar of the stack (EP17) |
+| sfx | `pillarSet`, `doorKnock` (hits) | EP17: grit and a dry stone thud as a pillar is set; three muffled knocks on a door down the street (fear by implication) |
 
 ## Local / Claude-session commands
 

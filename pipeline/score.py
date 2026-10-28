@@ -667,6 +667,26 @@ def sfx_hit(kind, dur=None):
         th = np.clip(t - 0.42, 0, None)
         knock = np.sin(2 * np.pi * 150 * th) * np.exp(-th * 22) * (t >= 0.42)
         return stereo(creak + chink * 0.22 + knock * 0.6, 0.4)
+    if kind == "pillarSet":
+        # A stone pillar set in place (EP17 pillarStack signature): a short grit scrape, then a low, dry stone thud.
+        n = int(1.2 * SR)
+        t = np.arange(n) / SR
+        grit = bp(noise(n), 900, 4200) * np.interp(t, [0, 0.03, 0.1, 0.14], [0, 0.3, 0.2, 0])
+        th = np.clip(t - 0.1, 0, None)
+        thud = np.sin(2 * np.pi * np.cumsum(70 * (1 + 0.5 * np.exp(-th * 30))) / SR) * np.exp(-th * 14) * (t >= 0.1)
+        thud += lp(noise(n), 700) * np.exp(-th * 40) * 0.6 * (t >= 0.1)
+        return stereo(grit + thud, 0.25)
+    if kind == "doorKnock":
+        # Three knuckle knocks on a wooden door down the street (EP17's implied fear): muffled, unhurried, a little room tail.
+        n = int(1.6 * SR)
+        t = np.arange(n) / SR
+        out = np.zeros(n)
+        for at, a in ((0.0, 0.9), (0.24, 1.0), (0.48, 0.85)):
+            th = np.clip(t - at, 0, None)
+            body = sum(w * np.sin(2 * np.pi * f * th) for f, w in ((118, 1.0), (241, 0.5), (377, 0.25))) * np.exp(-th * 30)
+            out += (body + bp(noise(n), 400, 2200) * np.exp(-th * 90) * 0.7) * a * (t >= at)
+        out = lp(out, 1600)
+        return stereo(out + np.roll(out, int(0.045 * SR)) * 0.25, 0.3)
     raise KeyError(kind)
 
 

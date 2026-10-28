@@ -234,33 +234,33 @@
        "label": "Bread",
        "who": "The farmer",
        "src": "ep17/plates/farmer.jpg",
-       "x": 540,
-       "y": 1000,
-       "zoom": 1.0
+       "x": 545,
+       "y": 1390,
+       "zoom": 0.45
       },
       {
        "label": "Order",
        "who": "The clerk",
        "src": "ep17/plates/clerk.jpg",
-       "x": 540,
-       "y": 900,
-       "zoom": 1.0
+       "x": 630,
+       "y": 1000,
+       "zoom": 0.45
       },
       {
        "label": "The wage",
        "who": "The mother",
        "src": "ep17/plates/mother.jpg",
-       "x": 540,
-       "y": 900,
-       "zoom": 1.0
+       "x": 520,
+       "y": 1000,
+       "zoom": 0.45
       },
       {
        "label": "Fear",
        "who": "The neighbour",
        "src": "ep17/plates/neighbour.jpg",
-       "x": 540,
-       "y": 800,
-       "zoom": 1.0
+       "x": 575,
+       "y": 1233,
+       "zoom": 0.7
       },
       {
        "label": "Nothing better",
@@ -447,12 +447,12 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.04,
-     "y": 0
+     "s": 1.08,
+     "y": 60
     },
     "to": {
-     "s": 1.08,
-     "y": 0
+     "s": 1.11,
+     "y": 60
     }
    },
    "plateScrim": 0.4,
@@ -636,33 +636,33 @@
        "label": "Bread",
        "who": "The farmer",
        "src": "ep17/plates/farmer.jpg",
-       "x": 540,
-       "y": 1000,
-       "zoom": 1.0
+       "x": 545,
+       "y": 1390,
+       "zoom": 0.45
       },
       {
        "label": "Order",
        "who": "The clerk",
        "src": "ep17/plates/clerk.jpg",
-       "x": 540,
-       "y": 900,
-       "zoom": 1.0
+       "x": 630,
+       "y": 1000,
+       "zoom": 0.45
       },
       {
        "label": "The wage",
        "who": "The mother",
        "src": "ep17/plates/mother.jpg",
-       "x": 540,
-       "y": 900,
-       "zoom": 1.0
+       "x": 520,
+       "y": 1000,
+       "zoom": 0.45
       },
       {
        "label": "Fear",
        "who": "The neighbour",
        "src": "ep17/plates/neighbour.jpg",
-       "x": 540,
-       "y": 800,
-       "zoom": 1.0
+       "x": 575,
+       "y": 1233,
+       "zoom": 0.7
       },
       {
        "label": "Nothing better",
@@ -715,8 +715,8 @@
      ],
      "lessonAt": {
       "line": "L8",
-      "word": "supporters",
-      "offset": -0.25
+      "word": "empire",
+      "offset": 0.0
      }
     }
    ],

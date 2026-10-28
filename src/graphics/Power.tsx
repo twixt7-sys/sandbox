@@ -66,7 +66,7 @@ export const PillarStack: React.FC<GraphicProps> = ({g, t, span}) => {
 		<AbsoluteFill style={{opacity: vis}}>
 			{/* Deep midnight under the diagram so the dimmed plate only hints at the palace. */}
 			<AbsoluteFill style={{background: 'radial-gradient(ellipse 80% 60% at 50% 45%, rgba(7,14,30,0.55) 0%, rgba(7,14,30,0.82) 100%)'}} />
-			<AbsoluteFill style={{transform: `translateY(${lerp(0, (g.liftY ?? 0), lift)}px) scale(${lerp(1, g.liftScale ?? 0.62, lift)})`, transformOrigin: `540px ${top - 20}px`}}>
+			<AbsoluteFill style={{transform: `translateY(${lerp(0, (g.liftY ?? 0), lift)}px) scale(${lerp(1, g.liftScale ?? 0.7, lift)})`, transformOrigin: `540px ${top - 20}px`}}>
 				{/* Pediment + entablature: the empire itself. */}
 				<svg width={W} height={H} style={{position: 'absolute', inset: 0, overflow: 'visible', opacity: roof}}>
 					<path d={`M${x0 - 22} ${beamTop} L540 ${top} L${x0 + 778} ${beamTop} Z`} fill="#20262c" stroke={palette.amber} strokeWidth={2.5} strokeLinejoin="round" />
@@ -81,7 +81,7 @@ export const PillarStack: React.FC<GraphicProps> = ({g, t, span}) => {
 				</div>
 				{pillars.map((p, i) => {
 					const x = x0 + i * (pw + gap);
-					const rise = ease(t, tRise + i * 0.12, 0.55, Easing.out(Easing.back(1.2)));
+					const rise = ease(t, tRise + i * 0.12, 0.55, Easing.out(Easing.cubic));
 					const tp = people[i] ?? 1e9;
 					const turn = ease(t, tp, 0.5);
 					const pop = ease(t, tp, 0.18) * (1 - ease(t, tp + 0.2, 0.6));
@@ -103,7 +103,7 @@ export const PillarStack: React.FC<GraphicProps> = ({g, t, span}) => {
 								<div style={{position: 'absolute', inset: 0, boxShadow: 'inset 0 0 24px rgba(0,0,0,0.6)'}} />
 							</div>
 							{p.empty && (
-								<div style={{position: 'absolute', left: 0, top: 30, width: pw, height: shaftH, border: `2.5px dashed ${palette.fog}`, borderRadius: 2, opacity: turn * 0.85, background: `linear-gradient(180deg, rgba(159,177,184,${0.06 * turn}) 0%, rgba(159,177,184,${0.16 * turn}) 100%)`}} />
+								<div style={{position: 'absolute', left: 0, top: 30, width: pw, height: shaftH, border: `3px dashed ${palette.mist}`, borderRadius: 2, opacity: turn, background: `linear-gradient(180deg, rgba(159,177,184,${0.06 * turn}) 0%, rgba(159,177,184,${0.16 * turn}) 100%)`}} />
 							)}
 							{/* Base */}
 							<div style={{position: 'absolute', left: -8, bottom: 0, width: pw + 16, height: 22, background: '#3a4349', border: `2px solid ${palette.amber}`, borderRadius: 2, opacity: p.empty ? 1 - 0.6 * turn : 1}} />
@@ -134,7 +134,7 @@ export const PillarStack: React.FC<GraphicProps> = ({g, t, span}) => {
 				})}
 			</AbsoluteFill>
 			{lessonLines.length > 0 && (
-				<div style={{position: 'absolute', top: g.lessonTop ?? 880, left: 60, right: 60, textAlign: 'center', opacity: lk, transform: `translateY(${(1 - lk) * 16}px)`}}>
+				<div style={{position: 'absolute', top: g.lessonTop ?? 920, left: 60, right: 60, textAlign: 'center', opacity: lk, transform: `translateY(${(1 - lk) * 16}px)`}}>
 					{g.lessonKicker && <div style={{...kicker, fontSize: 30, color: palette.amber, textShadow: '0 2px 12px rgba(0,0,0,0.9)'}}>{g.lessonKicker}</div>}
 					{lessonLines.map((ln, li) => {
 						const lp = ease(t, tLesson + 0.15 + li * 0.25, 0.6);

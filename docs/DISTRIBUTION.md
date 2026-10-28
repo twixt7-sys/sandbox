@@ -1017,3 +1017,71 @@ Source of truth: `episodes/ep15/episode.json` → `metadata`. The AI label goes 
 - **Hook check:** First 32 characters: 'One bench. A whole civilization.'
 - **Pinned comment:** Equals, the street first, peace in public: which value would your culture's quarrel habit reveal?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 17 captions (ready to paste)
+
+Source of truth: `episodes/ep17/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep17/Worldcraft_Short_E17_cover.jpg`. Subtitles: `episodes/ep17/ep17.srt`. The stills were made with a local open model (SDXL-Lightning), so they're AI-generated like every other episode's and need the same disclosure.
+
+### YouTube Shorts
+- **Title** (56/100 chars): `Why Would Anyone Support an Evil Empire? (Worldbuilding)`
+- **Alternate title** (49 chars): `Your evil empire needs supporters who aren't evil`
+- **Description:**
+
+> If your empire is so evil, why hasn't everyone rebelled?
+>
+> Ask the people holding it up. In Valdren, the farmer gets safe roads and bread every winter. The clerk remembers the chaos before the throne. The soldier's mother needs his wage. The neighbour keeps quiet, because complainers get a knock at night. And nobody can picture anything better.
+>
+> Bread, order, a wage, fear and no better option: five pillars, and not one of them is a villain. Real regimes last on mixtures of force, loyalty, stability, propaganda, prosperity and fear. Your empire can stay cruel. It becomes believable when its supporters have reasons a reader understands.
+>
+> Share this with someone writing a one-dimensional villainous empire.
+>
+> Episode 17 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts
+
+- **Pinned comment:** Your turn: name one ordinary person who keeps your empire standing, and the reason they'd give.
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (248 chars): `Five pillars hold up this evil empire 🏛️ Bread, order, a wage, fear, and nothing better. Not one of them is a villain. Share with someone writing a one-dimensional empire. #Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts`
+- **Pinned comment:** What's the one reason ordinary people in your empire go along with it?
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> If your empire is so evil, why hasn't everyone rebelled?
+>
+> Ask the people holding it up. In Valdren, the farmer gets safe roads and bread every winter. The clerk remembers the chaos before the throne. The soldier's mother needs his wage. The neighbour keeps quiet, because complainers get a knock at night. And nobody can picture anything better.
+>
+> Bread, order, a wage, fear and no better option: five pillars, and not one of them is a villain. Real regimes last on mixtures of force, loyalty, stability, propaganda, prosperity and fear. Your empire can stay cruel. It becomes believable when its supporters have reasons a reader understands.
+>
+> Share this with someone writing a one-dimensional villainous empire.
+>
+> Episode 17 of 50.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts
+
+- **Pinned comment:** Which pillar holds up your empire: bread, order, the wage, fear, or nothing better?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Five pillars. No villains.
+>
+> If your empire is so evil, why hasn't everyone rebelled?
+>
+> Ask the people holding it up. In Valdren, the farmer gets safe roads and bread every winter. The clerk remembers the chaos before the throne. The soldier's mother needs his wage. The neighbour keeps quiet, because complainers get a knock at night. And nobody can picture anything better.
+>
+> Bread, order, a wage, fear and no better option: five pillars, and not one of them is a villain. Real regimes last on mixtures of force, loyalty, stability, propaganda, prosperity and fear. Your empire can stay cruel. It becomes believable when its supporters have reasons a reader understands.
+>
+> Share this with someone writing a one-dimensional villainous empire.
+>
+> Episode 17 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts
+
+- **Hook check:** First 26 characters: 'Five pillars. No villains.'
+- **Pinned comment:** Bread, order, the wage, fear, nothing better: which pillar is strongest in your empire, and who stands in it?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

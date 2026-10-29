@@ -335,7 +335,7 @@
     "background": "the walled town"
    },
    "lighting": "Dusk, torchlight.",
-   "sdxlPrompt": "a walled provincial hill town at dusk, its heavy wooden gate firmly shut, torches burning on the walls, a long empty dirt road leading up to the closed gate, a few small watchful silhouettes on the walls, tense and quiet, wide view, no flags, no banners",
+   "sdxlPrompt": "front view of a massive closed wooden town gate with iron bands, set in a tall old stone wall of a provincial town at dusk, torches burning on both sides of the shut gate, an empty dirt road in the foreground leading to it, small dark silhouettes watching from the top of the wall, tense and quiet, no flags, no banners",
    "graphics": [
     {
      "type": "crackTag",
@@ -362,7 +362,7 @@
     }
    ],
    "music": "F minor, the pulse continues.",
-   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a walled provincial hill town at dusk, its heavy wooden gate firmly shut, torches burning on the walls, a long empty dirt road leading up to the closed gate, a few small watchful silhouettes on the walls, tense and quiet, wide view, no flags, no banners. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. front view of a massive closed wooden town gate with iron bands, set in a tall old stone wall of a provincial town at dusk, torches burning on both sides of the shut gate, an empty dirt road in the foreground leading to it, small dark silhouettes watching from the top of the wall, tense and quiet, no flags, no banners. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
    "videoPrompt": "(Not used.)"
   },
   {
@@ -945,5 +945,31 @@
    }
   }
  },
- "metadata": {}
+ "metadata": {
+  "youtube": {
+   "title": "How Does a Kingdom Collapse? (Worldbuilding)",
+   "titleAlternate": "No single crack brings down an empire",
+   "description": "Empires rarely fall because one person woke up and decided to be evil.\n\nUsually, it starts with a bad harvest. In Tolmere, the shortfall is made up with taxes, and the collectors skim a little more. Squeezed, the provinces refuse to pay. The army marches out to hold them, and feeding it empties the granaries, so the next lean year hits harder. Then the old emperor dies with two heirs, and an empire that would once have shrugged that off splits in two.\n\nFamine, corruption, revolt, overreach: each strain makes the next worse. Real collapses usually look like this, with economic strain, succession crises, military overextension, corruption, disasters and fading legitimacy feeding one another until something ordinary breaks a system that's already cracked. No single crack brings down an empire. Cracks that feed each other do.\n\nWhich would destroy your empire first: famine, civil war, or corruption?\n\nEpisode 19 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts",
+   "pinnedComment": "Your turn: famine, civil war or corruption? Name the first crack in your empire, and the one it would widen next.",
+   "uploadSettings": "Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "No villain needed to end an empire 🏚️ A bad harvest → higher taxes → revolt → an overstretched army → empty granaries. Round and round, until one death breaks it. Famine, civil war or corruption: which hits yours first? #Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts",
+   "pinnedComment": "Which crack starts the loop in your world, and what does it break next?",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "Empires rarely fall because one person woke up and decided to be evil.\n\nUsually, it starts with a bad harvest. In Tolmere, the shortfall is made up with taxes, and the collectors skim a little more. Squeezed, the provinces refuse to pay. The army marches out to hold them, and feeding it empties the granaries, so the next lean year hits harder. Then the old emperor dies with two heirs.\n\nFamine, corruption, revolt, overreach: each strain makes the next worse, until something ordinary breaks a system that's already cracked. No single crack brings down an empire. Cracks that feed each other do.\n\nWhich would destroy your empire first: famine, civil war, or corruption?\n\nEpisode 19 of 50.\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts",
+   "pinnedComment": "Famine, civil war or corruption: which one breaks your empire, and which crack feeds it?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "Cracks that feed each other.\n\nEmpires rarely fall because one person woke up and decided to be evil.\n\nUsually, it starts with a bad harvest. In Tolmere, the shortfall is made up with taxes, and the collectors skim a little more. Squeezed, the provinces refuse to pay. The army marches out to hold them, and feeding it empties the granaries, so the next lean year hits harder. Then the old emperor dies with two heirs.\n\nFamine, corruption, revolt, overreach: each strain makes the next worse, until something ordinary breaks a system that's already cracked. No single crack brings down an empire. Cracks that feed each other do.\n\nWhich would destroy your empire first: famine, civil war, or corruption?\n\nEpisode 19 of 50 · Worldcraft Shorts\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts",
+   "hookCheck": "First 28 characters: 'Cracks that feed each other.'",
+   "pinnedComment": "Draw your empire's loop: which strain starts it, and which three does it feed?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  },
+  "cover": "Worldcraft_Short_E19_cover.jpg: the loop at full speed, four medallions round the cracked seal of Tolmere, 'HOW DOES A KINGDOM / collapse?' above, corner logo.",
+  "followUpQuestion": "Pick four strains your empire is under. For each, write one line: 'X makes Y worse because…'. If the four lines close into a circle, you have your collapse."
+ }
 }

@@ -80,7 +80,7 @@
    "id": "L6",
    "shot": "lost",
    "text": "If anyone in your story dies of a wound, explain why.",
-   "pauseAfter": 0.55,
+   "pauseAfter": 0.9,
    "emphasis": [
     "dies",
     "why."
@@ -141,7 +141,7 @@
      "local": true,
      "at": [
       600,
-      1050
+      1100
      ],
      "r": 60,
      "start": {
@@ -613,12 +613,12 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.04,
-     "y": 0
+     "s": 1.13,
+     "y": 120
     },
     "to": {
-     "s": 1.08,
-     "y": 0
+     "s": 1.16,
+     "y": 120
     }
    },
    "plateScrim": 0.4,
@@ -657,8 +657,8 @@
      "type": "mendGlow",
      "local": true,
      "at": [
-      540,
-      700
+      625,
+      545
      ],
      "r": 46,
      "start": {
@@ -825,8 +825,8 @@
      "size": 200,
      "start": {
       "line": "L6",
-      "word": "why.",
-      "offset": -0.1
+      "word": "explain",
+      "offset": 0.25
      }
     }
    ],
@@ -920,7 +920,7 @@
        "side": "right",
        "at": {
         "shot": "lesson",
-        "offset": 0.1
+        "offset": -0.3
        }
       },
       {
@@ -931,7 +931,7 @@
        "side": "right",
        "at": {
         "shot": "lesson",
-        "offset": 0.42
+        "offset": -0.08
        }
       },
       {
@@ -942,7 +942,7 @@
        "side": "right",
        "at": {
         "shot": "lesson",
-        "offset": 0.74
+        "offset": 0.14
        }
       },
       {
@@ -954,7 +954,7 @@
        "lost": true,
        "at": {
         "shot": "lesson",
-        "offset": 1.06
+        "offset": 0.36
        }
       }
      ],
@@ -965,7 +965,7 @@
      "liftAt": {
       "line": "L7",
       "word": "rewrites",
-      "offset": -0.15
+      "offset": -0.1
      },
      "lift": {
       "to": [
@@ -994,7 +994,7 @@
      "sound": "ripple",
      "at": {
       "shot": "lesson",
-      "offset": 0.1
+      "offset": -0.3
      },
      "gain": -25
     },
@@ -1002,7 +1002,7 @@
      "sound": "ripple",
      "at": {
       "shot": "lesson",
-      "offset": 0.42
+      "offset": -0.08
      },
      "gain": -26
     },
@@ -1010,7 +1010,7 @@
      "sound": "ripple",
      "at": {
       "shot": "lesson",
-      "offset": 0.74
+      "offset": 0.14
      },
      "gain": -27
     },
@@ -1018,7 +1018,7 @@
      "sound": "ripple",
      "at": {
       "shot": "lesson",
-      "offset": 1.06
+      "offset": 0.36
      },
      "gain": -28
     },
@@ -1027,7 +1027,7 @@
      "at": {
       "line": "L7",
       "word": "rewrites",
-      "offset": -0.15
+      "offset": -0.1
      },
      "gain": -28
     },
@@ -1084,7 +1084,7 @@
      "local": true,
      "at": [
       600,
-      1050
+      1100
      ],
      "r": 60,
      "start": {

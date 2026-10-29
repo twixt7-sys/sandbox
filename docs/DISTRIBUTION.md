@@ -1154,6 +1154,74 @@ Source of truth: `episodes/ep17/episode.json` → `metadata`. The AI label goes 
 - **Pinned comment:** Bread, order, the wage, fear, nothing better: which pillar is strongest in your empire, and who stands in it?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
 
+## Episode 18 captions (ready to paste)
+
+Source of truth: `episodes/ep18/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep18/Worldcraft_Short_E18_cover.jpg`. Subtitles: `episodes/ep18/ep18.srt`. The stills were made with a local open model (SDXL-Lightning), so they're AI-generated like every other episode's and need the same disclosure.
+
+### YouTube Shorts
+- **Title** (48/100 chars): `Laws Reveal What a Society Fears (Worldbuilding)`
+- **Alternate title** (53 chars): `A kingdom where lying is legal but silence is a crime`
+- **Description:**
+
+> Imagine a kingdom where lying is legal, but silence is a crime.
+>
+> In Velmarch, a magistrate fines a man for saying nothing. Absurd, until you read why. Two hundred years ago, the city fell to a plot that everyone noticed and nobody mentioned. So they outlawed silence. A lie can be argued with. Silence can't.
+>
+> Laws show what a people fear, what they hold sacred and what they won't tolerate. A strange law becomes believable when it answers a specific disaster in your world's history. Every strange law is a scar. Find the wound.
+>
+> Invent one law that would make outsiders fear your kingdom.
+>
+> Episode 18 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts
+
+- **Pinned comment:** Your turn: write one law from your kingdom that would scare a visitor, and the disaster it answers.
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (237 chars): `Lying: legal. Silence: a crime. 🤐 Every strange law is a scar from something that went wrong. Find the wound. What law would make outsiders fear YOUR kingdom? #Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts`
+- **Pinned comment:** Drop one law from your world and the disaster that made it 👇
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> Imagine a kingdom where lying is legal, but silence is a crime.
+>
+> In Velmarch, a magistrate fines a man for saying nothing. Absurd, until you read why. Two hundred years ago, the city fell to a plot that everyone noticed and nobody mentioned. So they outlawed silence. A lie can be argued with. Silence can't.
+>
+> Laws show what a people fear, what they hold sacred and what they won't tolerate. A strange law becomes believable when it answers a specific disaster in your world's history. Every strange law is a scar. Find the wound.
+>
+> Invent one law that would make outsiders fear your kingdom.
+>
+> Episode 18 of 50.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts
+
+- **Pinned comment:** What's the strangest law in your kingdom, and what went wrong to make it?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Silence is a crime here.
+>
+> Imagine a kingdom where lying is legal, but silence is a crime.
+>
+> In Velmarch, a magistrate fines a man for saying nothing. Absurd, until you read why. Two hundred years ago, the city fell to a plot that everyone noticed and nobody mentioned. So they outlawed silence. A lie can be argued with. Silence can't.
+>
+> Laws show what a people fear, what they hold sacred and what they won't tolerate. A strange law becomes believable when it answers a specific disaster in your world's history. Every strange law is a scar. Find the wound.
+>
+> Invent one law that would make outsiders fear your kingdom.
+>
+> Episode 18 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts
+
+- **Hook check:** First 24 characters: 'Silence is a crime here.'
+- **Pinned comment:** One law, one wound: what's yours?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
 ## Episode 20 captions (ready to paste)
 
 Source of truth: `episodes/ep20/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep20/Worldcraft_Short_E20_cover.jpg`. Subtitles: `episodes/ep20/ep20.srt`. The stills were made with a local open model (SDXL-Lightning), so they're AI-generated like every other episode's and need the same disclosure.

@@ -103,7 +103,9 @@ Motif: no new colour. Amber is the chronicle's frame, rust is what it leaves out
   - The CTA lanterns are subtle under the card's dark band. They read on a phone but don't dominate.
   - Each reveal shows the *river leading to* the other side's loss, not the loss itself: SDXL wouldn't put cairns or ruins on the far bank, and the callout names them.
   - In the two-tablet frame, the rows sit over the dimmed left stone.
-- **EP18 / EP19:** neither branch existed on the remote at the start or at the final fetch before pushing (see the report), so nothing was merged. Both were still in progress elsewhere.
+- **EP18 / EP19 merge:** neither branch existed at the start of the session. At the final fetch:
+  - EP18 was finished (`be11236`), so it is merged in. The conflicts were all "both sides added" (README rows, the COSTS and STYLE sections, SFX in `score.py`, the `...LAW` / `...MEMORY` registrations), and every one keeps both sides. `DISTRIBUTION.md`'s caption sections, which git had interleaved, were rebuilt whole in episode order: 17, 18, 20. After the merge `tsc` passes, and one still each of ep18 and ep20 renders correctly.
+  - EP19 had only WIP commits, so it was not merged.
 - **Not verifiable by me:** how the narration and mix sound, including the new `chisel` and `frameOpen`. I can't hear the audio; please give it one listen.
 
 ## 7. Reusable components added
@@ -143,7 +145,7 @@ Also track the share of comments that give both sides' losses (not just one), wh
 
 ## 11. How to produce EP21 ("The Three Questions Every Magic System Needs", opens Arc 5: Magic and Its Rules)
 
-1. Branch `claude/worldcraft-ep21` from `claude/worldcraft-ep20` (plus EP18/EP19 if they have finished since). Read:
+1. Branch `claude/worldcraft-ep21` from `claude/worldcraft-ep20`, which has EP01–EP18 and EP20. Merge EP19 once it is finished. Read:
    - `CLAUDE.md`, `docs/STYLE.md`, `docs/SERIES_PLAN.md`;
    - this brief, and the EP01–EP03 briefs: the earliest episodes' sun and water magic are the nearest earlier "magic" visuals, with a signature sound per effect.
 2. **Stills:** Figma credits reset on **1 Nov 2026**. If it's on or after that date and Figma would be clearly better (magic glows, a practitioner), ask with AskUserQuestion first (about 4 images, up to 6). Otherwise use `python pipeline/local_stills.py ep21 <shots> --seeds 11 23`, then `--pick`, then `plates.py --register`, with nothing else heavy running.

@@ -16,6 +16,7 @@ const kicker: React.CSSProperties = {fontFamily: fonts.ui, fontWeight: 700, lett
 const out = (t: number, end: number, dur = 0.35) => 1 - ease(t, end - dur, dur, Easing.in(Easing.quad));
 const INK = '#2a2219';
 const FADED = '#7d6d58';
+const LIT = '#5b47a0';
 const PAGE_W = 800;
 const PAGE_H = 660;
 const ROW_TOP = 200;
@@ -34,12 +35,12 @@ const Sigil: React.FC<{cx: number; cy: number; r: number; lit: number[]; ignite:
 	return (
 		<g>
 			{ignite > 0 && <circle cx={cx} cy={cy} r={r * (1.2 + 0.5 * ignite)} fill={motif} opacity={0.22 * ignite * breathe} style={{filter: 'blur(14px)'}} />}
-			<circle cx={cx} cy={cy} r={r} fill="none" stroke={ignite > 0.5 ? motif : INK} strokeOpacity={0.35 + 0.65 * ignite} strokeWidth={2.5} />
+			<circle cx={cx} cy={cy} r={r} fill="none" stroke={ignite > 0.5 ? LIT : INK} strokeOpacity={0.35 + 0.65 * ignite} strokeWidth={2.5 + 1.5 * ignite} />
 			<circle cx={cx} cy={cy} r={r * 0.9} fill="none" stroke={INK} strokeOpacity={0.25} strokeWidth={1} strokeDasharray="3 6" />
 			{pts.map(([x, y], i) => {
 				const [nx, ny] = pts[(i + 1) % 3];
 				const edge = Math.min(lit[i], lit[(i + 1) % 3]);
-				return <line key={`e${i}`} x1={x} y1={y} x2={nx} y2={ny} stroke={edge > 0.5 ? motif : INK} strokeOpacity={0.3 + 0.7 * Math.max(edge, ignite)} strokeWidth={2 + 1.5 * ignite} />;
+				return <line key={`e${i}`} x1={x} y1={y} x2={nx} y2={ny} stroke={edge > 0.5 ? LIT : INK} strokeOpacity={0.3 + 0.7 * Math.max(edge, ignite)} strokeWidth={2 + 1.5 * ignite} />;
 			})}
 			{pts.map(([x, y], i) => (
 				<g key={`n${i}`}>
@@ -47,7 +48,7 @@ const Sigil: React.FC<{cx: number; cy: number; r: number; lit: number[]; ignite:
 					<circle cx={x} cy={y} r={7} fill={lit[i] > 0.5 ? motif : '#e9dfc6'} stroke={lit[i] > 0.5 ? '#6d5aa8' : INK} strokeWidth={2} />
 				</g>
 			))}
-			<circle cx={cx} cy={cy} r={4 + 4 * ignite} fill={ignite > 0.3 ? motif : INK} opacity={0.4 + 0.6 * ignite} />
+			<circle cx={cx} cy={cy} r={4 + 4 * ignite} fill={ignite > 0.3 ? LIT : INK} opacity={0.4 + 0.6 * ignite} />
 		</g>
 	);
 };
@@ -189,7 +190,7 @@ const pathD = (pts: number[][]) => pts.map((p, i) => `${i ? 'L' : 'M'}${p[0]} ${
 /**
  * Mend seam (`local`): a crack on the plate along `crack: [[x, y], …]` plus optional `branches` (polylines). It opens
  * at `crackAt`, growing over `crackDur` (0 = already there). At `mendAt` light runs along it over `mendDur` in the
- * `motif` colour and leaves a thin glowing seam where the crack was. `fail: true`: the light gets about 40 % of the
+ * `motif` colour and leaves a thin glowing seam where the crack was. `fail: true`: the light gets about 60 % (`reach`) of the
  * way, gutters to rust and dies, and the crack stays (the limit). `mended: true` shows the finished seam only.
  */
 export const MendSeam: React.FC<GraphicProps> = ({g, t, span}) => {
@@ -201,7 +202,7 @@ export const MendSeam: React.FC<GraphicProps> = ({g, t, span}) => {
 	const grow = g.crackDur ? ease(t, tc, g.crackDur, Easing.out(Easing.cubic)) : t >= tc ? 1 : 0;
 	const tm = g.mendAt ? cueTime(timing, g.mendAt) : 1e9;
 	const dur = g.mendDur ?? 0.9;
-	const reach = g.fail ? 0.4 : 1;
+	const reach = g.fail ? g.reach ?? 0.6 : 1;
 	const m = g.mended ? 1 : ease(t, tm, dur, Easing.inOut(Easing.quad)) * reach;
 	const done = g.mended ? 1 : g.fail ? 0 : ease(t, tm + dur, 0.6);
 	const die = g.fail ? ease(t, tm + dur * 0.55, 0.7) : 0;

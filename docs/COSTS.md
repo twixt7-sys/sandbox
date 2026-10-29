@@ -245,6 +245,19 @@ On the paid primary stack, with 3 stills: about **$1.05 (₱67)**, or **$1.94 (�
 
 On the paid primary stack, with 6 stills: about **$1.35 (₱86)** (scaling EP15's 3-still and EP14's 4-still figures at about $0.10 a still), or **$2.48 (₱157)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
+## What Episode 21 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 6 stills (the mender's workshop, the fish jar, the broken wheel in a lane, the cottage window, the crown on its cushion, the hooded thief on a rooftop) | **Local SDXL-Lightning** (`pipeline/local_stills.py`, 4-step, CPU, 768×1344, lanczos to 1080×1920). 12 candidates in one round, 6 kept: hook 23, can 11, cant 11, cost 11, crown 23, thief 11. The lesson and CTA reuse the hook plate. Figma credits are out until 1 Nov 2026, so it wasn't tried | $0 |
+| Spell page, mend seams and cracks, story questions, tags, CTA card (new save icon) | Remotion code (new `spellPage`, `mendSeam`, `storyQuestions`; `tag`, `ctaCard` `icon: "save"`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 78 words, 29.93 s | $0 |
+| Score + SFX (new: mendKnit, mendFizzle, costCrack) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, no Figma credits |
+
+On the paid primary stack, with 6 stills: about **$1.10 (₱70)** (EP17's estimate less its retries, at about $0.10 a still plus the fixed per-episode items), or about $2.48 (₱157) with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
 ## Alternatives
 
 | Option | Per-episode | Monthly | Comment |

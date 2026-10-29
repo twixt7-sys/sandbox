@@ -342,7 +342,7 @@
      "at": {
       "x": 90,
       "y": 336,
-      "s": 0.56
+      "s": 0.7
      },
      "show": 1,
      "active": 0
@@ -352,48 +352,67 @@
      "local": true,
      "crack": [
       [
-       560,
-       880
+       760,
+       330
       ],
       [
-       548,
+       740,
+       460
+      ],
+      [
+       785,
+       610
+      ],
+      [
+       720,
+       790
+      ],
+      [
+       745,
        960
       ],
       [
-       575,
-       1040
+       690,
+       1140
       ],
       [
-       552,
-       1120
-      ],
-      [
-       580,
-       1210
+       720,
+       1310
       ]
      ],
      "branches": [
       [
        [
-        575,
-        1040
+        785,
+        610
        ],
        [
-        620,
-        1075
+        860,
+        660
        ]
       ],
       [
        [
-        552,
-        1120
+        720,
+        790
        ],
        [
-        505,
-        1150
+        640,
+        835
+       ]
+      ],
+      [
+       [
+        690,
+        1140
+       ],
+       [
+        610,
+        1185
        ]
       ]
      ],
+     "width": 8,
      "crackAt": {
       "shot": "can"
      },
@@ -534,7 +553,7 @@
      "at": {
       "x": 90,
       "y": 336,
-      "s": 0.56
+      "s": 0.7
      },
      "show": 2,
      "active": 1
@@ -544,22 +563,39 @@
      "local": true,
      "crack": [
       [
-       430,
-       1330
+       525,
+       1030
       ],
       [
-       470,
-       1290
+       580,
+       980
       ],
       [
-       500,
-       1300
+       612,
+       962
       ],
       [
-       540,
-       1250
+       662,
+       905
+      ],
+      [
+       722,
+       852
       ]
      ],
+     "branches": [
+      [
+       [
+        612,
+        962
+       ],
+       [
+        650,
+        990
+       ]
+      ]
+     ],
+     "width": 10,
      "crackAt": {
       "shot": "cant"
      },
@@ -710,7 +746,7 @@
      "at": {
       "x": 90,
       "y": 336,
-      "s": 0.56
+      "s": 0.7
      },
      "show": 3,
      "active": 2
@@ -720,48 +756,63 @@
      "local": true,
      "crack": [
       [
+       790,
+       470
+      ],
+      [
+       735,
+       620
+      ],
+      [
+       775,
+       760
+      ],
+      [
        700,
-       640
+       900
       ],
       [
-       660,
-       720
+       740,
+       1060
       ],
       [
-       690,
-       780
-      ],
-      [
-       640,
-       860
-      ],
-      [
-       665,
-       930
+       705,
+       1180
       ]
      ],
      "branches": [
       [
        [
-        690,
-        780
+        775,
+        760
        ],
        [
-        760,
+        840,
         800
        ]
       ],
       [
        [
-        640,
-        860
+        700,
+        900
        ],
        [
-        590,
-        880
+        640,
+        945
+       ]
+      ],
+      [
+       [
+        735,
+        620
+       ],
+       [
+        680,
+        590
        ]
       ]
      ],
+     "width": 7,
      "crackAt": {
       "line": "L4",
       "word": "cracks",
@@ -841,48 +892,67 @@
      "local": true,
      "crack": [
       [
-       470,
-       900
+       290,
+       800
       ],
       [
-       520,
-       960
+       370,
+       880
+      ],
+      [
+       440,
+       860
       ],
       [
        505,
-       1020
+       950
       ],
       [
-       560,
-       1080
+       580,
+       930
       ],
       [
-       600,
-       1060
+       650,
+       1010
+      ],
+      [
+       740,
+       990
       ]
      ],
      "branches": [
       [
        [
-        520,
-        960
+        440,
+        860
        ],
        [
-        590,
-        935
+        470,
+        760
        ]
       ],
       [
        [
         505,
-        1020
+        950
        ],
        [
-        450,
-        1050
+        480,
+        1060
+       ]
+      ],
+      [
+       [
+        650,
+        1010
+       ],
+       [
+        690,
+        1090
        ]
       ]
      ],
+     "width": 10,
      "crackAt": {
       "line": "L5",
       "word": "shatters.",
@@ -945,12 +1015,12 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.04,
-     "y": 0
+     "s": 1.35,
+     "y": 300
     },
     "to": {
-     "s": 1.08,
-     "y": 0
+     "s": 1.38,
+     "y": 300
     }
    },
    "plateScrim": 0.45,
@@ -979,7 +1049,9 @@
     },
     {
      "type": "storyQuestions",
-     "top": 560,
+     "top": 520,
+     "gap": 92,
+     "size": 52,
      "items": [
       {
        "num": "II",
@@ -1181,8 +1253,8 @@
      },
      "lessonAt": {
       "line": "L8",
-      "word": "answer",
-      "offset": -0.1
+      "word": "costs.",
+      "offset": 0.5
      },
      "lessonText": [
       "Answer all three",
@@ -1245,18 +1317,20 @@
    "hideLogoBug": true,
    "plateFrame": {
     "from": {
-     "s": 1.04,
-     "y": 0
+     "s": 1.25,
+     "x": 110,
+     "y": 180
     },
     "to": {
-     "s": 1.0,
-     "y": 0
+     "s": 1.22,
+     "x": 110,
+     "y": 180
     }
    },
    "plateScrim": 0.4,
    "purpose": "Save CTA over the hook's workshop in a changed state: warm morning, the bench's jar mended with a lilac seam. Loops back to the night workshop.",
    "visual": "The same workshop in a warm grade. Full logo, Episode 21 / 50, the CTA, a 'Save this' pill with a bookmark icon.",
-   "camera": "Settles (1.04 to 1.00).",
+   "camera": "Reframed right and down so the mender sits clear of the title (1.25 to 1.22).",
    "layers": {
     "foreground": "spell page and type",
     "midground": "the subject",

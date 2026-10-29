@@ -1153,3 +1153,77 @@ Source of truth: `episodes/ep17/episode.json` → `metadata`. The AI label goes 
 - **Hook check:** First 26 characters: 'Five pillars. No villains.'
 - **Pinned comment:** Bread, order, the wage, fear, nothing better: which pillar is strongest in your empire, and who stands in it?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 21 captions (ready to paste)
+
+Source of truth: `episodes/ep21/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep21/Worldcraft_Short_E21_cover.jpg`. Subtitles: `episodes/ep21/ep21.srt`. The stills were made with a local open model (SDXL-Lightning), so they're AI-generated like every other episode's and need the same disclosure. This is the series' first **save** CTA: saves are the metric to watch (see the brief's experiments).
+
+### YouTube Shorts
+- **Title** (56/100 chars): `The 3 Questions Every Magic System Needs (Worldbuilding)`
+- **Alternate title** (49 chars): `Answer these 3 questions before inventing a spell`
+- **Description:**
+
+> Before inventing a spell, answer these three questions.
+>
+> One: what can it do? Menders fix anything broken. Two: what stops it? Only what they touched before it broke. Three: what does it cost? Each mend cracks something they own.
+>
+> Then the queen's crown shatters, and the only mender who ever held it is a thief. Why did a thief hold the crown? Will she mend it? What will crack in her own home? Three answers, and the story writes itself.
+>
+> Capabilities, limitations, consequences: can, can't, costs. Answer all three before your first spell, and your magic starts making plot instead of solving it.
+>
+> Save this before designing your next magic system.
+>
+> Episode 21 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators. This episode opens Arc 5: Magic and Its Rules.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #MagicSystem #WorldcraftShorts
+
+- **Pinned comment:** Your turn: give your magic system one line each. Can: ... Can't: ... Costs: ...
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (217 chars): `Can. Can't. Costs. 🪄 Answer all three before your first spell, and the story writes itself. Save this before designing your next magic system. #Worldbuilding #FantasyWriting #WritingTips #MagicSystem #WorldcraftShorts`
+- **Pinned comment:** Write your magic in three lines: what it can do, what it can't, and what it costs.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> Before inventing a spell, answer these three questions.
+>
+> One: what can it do? Menders fix anything broken. Two: what stops it? Only what they touched before it broke. Three: what does it cost? Each mend cracks something they own.
+>
+> Then the queen's crown shatters, and the only mender who ever held it is a thief. Why did a thief hold the crown? Will she mend it? What will crack in her own home? Three answers, and the story writes itself.
+>
+> Capabilities, limitations, consequences: can, can't, costs. Answer all three before your first spell, and your magic starts making plot instead of solving it.
+>
+> Save this before designing your next magic system.
+>
+> Episode 21 of 50.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #MagicSystem #WorldcraftShorts
+
+- **Pinned comment:** Which question do most magic systems skip: what it can't do, or what it costs?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Can. Can't. Costs.
+>
+> Before inventing a spell, answer these three questions.
+>
+> One: what can it do? Menders fix anything broken. Two: what stops it? Only what they touched before it broke. Three: what does it cost? Each mend cracks something they own.
+>
+> Then the queen's crown shatters, and the only mender who ever held it is a thief. Why did a thief hold the crown? Will she mend it? What will crack in her own home? Three answers, and the story writes itself.
+>
+> Capabilities, limitations, consequences: can, can't, costs. Answer all three before your first spell, and your magic starts making plot instead of solving it.
+>
+> Save this before designing your next magic system.
+>
+> Episode 21 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyWriting #WritingTips #MagicSystem #WorldcraftShorts
+
+- **Hook check:** First 18 characters: 'Can. Can't. Costs.'
+- **Pinned comment:** Three lines, one magic: tell us what yours can do, can't do, and costs.
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

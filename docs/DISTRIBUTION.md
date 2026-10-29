@@ -1221,3 +1221,71 @@ Source of truth: `episodes/ep18/episode.json` → `metadata`. The AI label goes 
 - **Hook check:** First 24 characters: 'Silence is a crime here.'
 - **Pinned comment:** One law, one wound: what's yours?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 19 captions (ready to paste)
+
+Source of truth: `episodes/ep19/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep19/Worldcraft_Short_E19_cover.jpg`. Subtitles: `episodes/ep19/ep19.srt`. The stills were made with a local open model (SDXL-Lightning), so they're AI-generated like every other episode's and need the same disclosure.
+
+### YouTube Shorts
+- **Title** (44/100 chars): `How Does a Kingdom Collapse? (Worldbuilding)`
+- **Alternate title** (37 chars): `No single crack brings down an empire`
+- **Description:**
+
+> Empires rarely fall because one person woke up and decided to be evil.
+>
+> Usually, it starts with a bad harvest. In Tolmere, the shortfall is made up with taxes, and the collectors skim a little more. Squeezed, the provinces refuse to pay. The army marches out to hold them, and feeding it empties the granaries, so the next lean year hits harder. Then the old emperor dies with two heirs, and an empire that would once have shrugged that off splits in two.
+>
+> Famine, corruption, revolt, overreach: each strain makes the next worse. Real collapses usually look like this, with economic strain, succession crises, military overextension, corruption, disasters and fading legitimacy feeding one another until something ordinary breaks a system that's already cracked. No single crack brings down an empire. Cracks that feed each other do.
+>
+> Which would destroy your empire first: famine, civil war, or corruption?
+>
+> Episode 19 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts
+
+- **Pinned comment:** Your turn: famine, civil war or corruption? Name the first crack in your empire, and the one it would widen next.
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (296 chars): `No villain needed to end an empire 🏚️ A bad harvest → higher taxes → revolt → an overstretched army → empty granaries. Round and round, until one death breaks it. Famine, civil war or corruption: which hits yours first? #Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts`
+- **Pinned comment:** Which crack starts the loop in your world, and what does it break next?
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> Empires rarely fall because one person woke up and decided to be evil.
+>
+> Usually, it starts with a bad harvest. In Tolmere, the shortfall is made up with taxes, and the collectors skim a little more. Squeezed, the provinces refuse to pay. The army marches out to hold them, and feeding it empties the granaries, so the next lean year hits harder. Then the old emperor dies with two heirs.
+>
+> Famine, corruption, revolt, overreach: each strain makes the next worse, until something ordinary breaks a system that's already cracked. No single crack brings down an empire. Cracks that feed each other do.
+>
+> Which would destroy your empire first: famine, civil war, or corruption?
+>
+> Episode 19 of 50.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts
+
+- **Pinned comment:** Famine, civil war or corruption: which one breaks your empire, and which crack feeds it?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Cracks that feed each other.
+>
+> Empires rarely fall because one person woke up and decided to be evil.
+>
+> Usually, it starts with a bad harvest. In Tolmere, the shortfall is made up with taxes, and the collectors skim a little more. Squeezed, the provinces refuse to pay. The army marches out to hold them, and feeding it empties the granaries, so the next lean year hits harder. Then the old emperor dies with two heirs.
+>
+> Famine, corruption, revolt, overreach: each strain makes the next worse, until something ordinary breaks a system that's already cracked. No single crack brings down an empire. Cracks that feed each other do.
+>
+> Which would destroy your empire first: famine, civil war, or corruption?
+>
+> Episode 19 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts
+
+- **Hook check:** First 28 characters: 'Cracks that feed each other.'
+- **Pinned comment:** Draw your empire's loop: which strain starts it, and which three does it feed?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

@@ -710,6 +710,26 @@ def sfx_hit(kind, dur=None):
             out += (body + bp(noise(n), 400, 2200) * np.exp(-th * 90) * 0.7) * a * (t >= at)
         out = lp(out, 1600)
         return stereo(out + np.roll(out, int(0.045 * SR)) * 0.25, 0.3)
+    if kind == "quill":
+        # A clause written into the law (EP18 lawText signature): three quick nib strokes on vellum, then a dry dot.
+        n = int(0.9 * SR)
+        t = np.arange(n) / SR
+        out = np.zeros(n)
+        for at, d, a in ((0.0, 0.16, 0.8), (0.2, 0.12, 0.6), (0.36, 0.2, 0.7)):
+            th = t - at
+            shape = np.clip(th / d, 0, 1) * (th < d) * np.sin(np.pi * np.clip(th / d, 0, 1))
+            out += bp(noise(n), 2500, 8000) * shape * a * (0.7 + 0.3 * np.sin(2 * np.pi * 55 * t))
+        th = np.clip(t - 0.62, 0, None)
+        out += bp(noise(n), 1500, 5000) * np.exp(-th * 80) * (t >= 0.62) * 0.6
+        return stereo(out * 0.6, 0.4)
+    if kind == "clauseLight":
+        # A clause lit by the fear behind it (EP18): a soft breath of flame catching, under a low, warm open fifth.
+        n = int(2.0 * SR)
+        t = np.arange(n) / SR
+        catch = bp(noise(n), 400, 2500) * np.interp(t, [0, 0.08, 0.5, 1.0], [0, 0.5, 0.2, 0])
+        tone = sum(a * np.sin(2 * np.pi * f * t) for f, a in ((110.0, 1.0), (164.81, 0.6), (220.0, 0.35), (329.63, 0.15)))
+        tone *= np.minimum(1, t / 0.06) * np.exp(-t * 2.2)
+        return stereo(catch + tone * 0.35, 0.4)
     if kind == "mendKnit":
         # The mend (EP21 signature magic): a fine crackle of pieces drawing together under a glassy cluster gliding up a
         # fourth, settling on a soft open fifth. Reused whenever the mending magic (or the spell page's sigil) works.

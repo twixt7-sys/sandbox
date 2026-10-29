@@ -32,7 +32,7 @@
 | Lesson | `reverseCard` | `titlePower` | Lifted stack | The full page returns and its sigil ignites only when all three rows are lit: "Can. Can't. Costs." |
 | CTA | Follow | Share | Share | **Save** (first in the series: a bookmark pill), over the workshop in morning light |
 
-EP18–EP20 are being made in parallel; their branches had no finished brief when this one was written (EP19 had a WIP commit with `crackLoop`/`crackTag`). EP21's cracks are a separate component (`mendSeam`) and are mended or moved, never a collapse.
+EP18–EP20 were made in parallel. EP18 ("Laws Reveal What a Society Fears", a law card drawn in code) finished and is merged into this branch; its dark vellum `lawText` and EP21's light parchment `spellPage` are deliberately different looks. EP19 and EP20 were still WIP at the final push (EP19 has `crackLoop`/`crackTag`; EP21's cracks are a separate component, `mendSeam`, and are mended or moved, never a collapse).
 
 ## 1. Research note (only what could have changed)
 
@@ -57,6 +57,7 @@ New in this episode (`src/graphics/Spellbook.tsx`, a file for Arc 5):
 - `storyQuestions`: plot questions, each badged with the answer that raised it;
 - `ctaCard` `icon: "save"`: a bookmark pill for save CTAs;
 - SFX `mendKnit` (signature), `mendFizzle`, `costCrack`.
+- Merged in from EP18 (finished, `be11236`) before the final push. Conflicts were all side-by-side additions, and both sides are kept: `LAW` and `SPELLBOOK` in `Graphics.tsx`, EP18's `quill`/`clauseLight` and EP21's SFX in `score.py`, and both sections in README, STYLE, COSTS and DISTRIBUTION (DISTRIBUTION is EP18's file with the EP21 section appended). After the merge `tsc` passes, and one still each of ep18 (frame 300, the law card) and ep21 (frame 700, the lesson page) renders correctly. EP19 and EP20 had only WIP commits, so they weren't merged.
 
 ## 3. Narration (78 words, measured 29.93 s)
 

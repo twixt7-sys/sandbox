@@ -245,6 +245,19 @@ On the paid primary stack, with 3 stills: about **$1.05 (₱67)**, or **$1.94 (�
 
 On the paid primary stack, with 6 stills: about **$1.35 (₱86)** (scaling EP15's 3-still and EP14's 4-still figures at about $0.10 a still), or **$2.48 (₱157)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
+## What Episode 18 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 3 stills (the silent man before the official in the square, the shuttered night street, the square at dusk) | **Local SDXL-Lightning** (`pipeline/local_stills.py`, 4-step, CPU, 768×1344, lanczos to 1080×1920). 13 candidates in three rounds, 3 kept: hook 11 (round 1), origin 11 (round 2), cta 23 (round 1). Rounds 2 and 3 couldn't paint a seated magistrate before a silent man, and no round painted an open gate, so the gate was dropped from the story. Figma credits are out until 1 Nov 2026, so it wasn't tried | $0 |
+| The law card (written clause by clause, then lit with the fear behind each clause), window glints, tags, title, CTA card | Remotion code (new `lawText` and `glints`; `titleLockup`, `tag`, `callout`, `ctaCard`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 78 words, 29.76 s | $0 |
+| Score + SFX (new: quill, clauseLight) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, no Figma credits |
+
+On the paid primary stack, with 3 stills: about **$1.05 (₱67)**, or **$1.15 (₱73)** with one retry per still, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
 ## What Episode 21 actually used
 
 | Item | Used | Cash cost |

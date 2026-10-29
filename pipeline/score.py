@@ -710,6 +710,29 @@ def sfx_hit(kind, dur=None):
             out += (body + bp(noise(n), 400, 2200) * np.exp(-th * 90) * 0.7) * a * (t >= at)
         out = lp(out, 1600)
         return stereo(out + np.roll(out, int(0.045 * SR)) * 0.25, 0.3)
+    if kind == "crackTick":
+        # A strain spreading (EP19 crackLoop signature): a dry, brittle snap like glaze crazing, with a short low knock under it.
+        n = int(0.7 * SR)
+        t = np.arange(n) / SR
+        snap = bp(noise(n), 2200, 9000) * np.exp(-t * 90) * 0.7
+        for at in (0.012, 0.03):
+            th = np.clip(t - at, 0, None)
+            snap += bp(noise(n), 3000, 8000) * np.exp(-th * 140) * 0.35 * (t >= at)
+        knock = np.sin(2 * np.pi * np.cumsum(95 * (1 + 0.4 * np.exp(-t * 40))) / SR) * np.exp(-t * 26) * 0.6
+        return stereo(snap + knock, 0.35)
+    if kind == "sealSplit":
+        # The empire's seal breaks in two (EP19): a sharp stone crack, a dropping low boom, and fragments settling.
+        n = int(2.6 * SR)
+        t = np.arange(n) / SR
+        crack = bp(noise(n), 1200, 9000) * np.exp(-t * 35) * 1.1
+        boom = np.sin(2 * np.pi * np.cumsum(58 * (1 + 0.9 * np.exp(-t * 9))) / SR) * np.exp(-t * 1.9)
+        boom += lp(noise(n), 220, 3) * np.exp(-t * 3.5) * 1.4
+        bits = np.zeros(n)
+        for g in RNG.uniform(0.15, 1.3, 18):
+            i = int(g * SR)
+            m = int(0.05 * SR)
+            bits[i:i + m] += bp(noise(m), 1500, 6000) * np.exp(-np.arange(m) / SR * 80) * RNG.uniform(0.1, 0.35)
+        return stereo(crack + boom * 0.9 + bits, 0.55)
     raise KeyError(kind)
 
 

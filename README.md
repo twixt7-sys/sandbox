@@ -139,6 +139,9 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | graphic | `pillarStack` | An empire drawn as a roof on pillars (`label` on the entablature): the pillars rise as stone on `riseAt`, then `peopleAt[i]` turns each into a supporter, a portrait cut from their plate (`src`, plate point `x`/`y`, `zoom`) with its reason, or an `empty` dashed pillar for a missing alternative; `liftAt` shrinks the stack up and `lessonKicker` / `lessonText` land beneath it at `lessonAt` (EP17: BREAD / ORDER / THE WAGE / FEAR / NOTHING BETTER) |
 | graphic | `pillarTag` | A `tag` with a pillar glyph and a numeral ("PILLAR I · BREAD" / *The farmer*), so each person we meet reads as one pillar of the stack (EP17) |
 | sfx | `pillarSet`, `doorKnock` (hits) | EP17: grit and a dry stone thud as a pillar is set; three muffled knocks on a door down the street (fear by implication) |
+| graphic | `lawText` | An invented law on a dark vellum card (EP18): `kicker` + `title`, `clauses: [{n, text, at, litAt, fear, fearKicker}]` write in left to right on `at`; on `litAt` a clause warms to ember and the fear behind it appears beneath (unlit clauses dim); rust wax seal; `liftAt` shrinks it up and `lessonKicker`/`lessonText` (optional per-line `lessonLineAt`) land beneath. Law text is always drawn in code, never generated |
+| graphic | `glints` | Watchers behind shutters: warm slits with a halo lit one by one at plate `points` (`local`), `dur`, `size`, then dimmed together at `outAt` to `dimTo` (EP18: everyone noticed, nobody spoke) |
+| sfx | `quill`, `clauseLight` (hits) | EP18: a clause written into the law; a clause lit by its fear (a breath of flame over a low open fifth) |
 
 ## Local / Claude-session commands
 

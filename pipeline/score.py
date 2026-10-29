@@ -710,6 +710,28 @@ def sfx_hit(kind, dur=None):
             out += (body + bp(noise(n), 400, 2200) * np.exp(-th * 90) * 0.7) * a * (t >= at)
         out = lp(out, 1600)
         return stereo(out + np.roll(out, int(0.045 * SR)) * 0.25, 0.3)
+    if kind == "chisel":
+        # A memorial inscription cut into stone (EP20 tablet signature): a run of light chisel taps with grit, slowing at the end.
+        n = int(1.6 * SR)
+        t = np.arange(n) / SR
+        out = np.zeros(n)
+        hits = np.cumsum(np.linspace(0.085, 0.16, 11))
+        for i, at in enumerate(hits[hits < 1.4]):
+            th = np.clip(t - at, 0, None)
+            f = 2300 + 260 * np.sin(i * 1.7)
+            ring = (np.sin(2 * np.pi * f * th) + 0.4 * np.sin(2 * np.pi * 2.76 * f * th)) * np.exp(-th * 70)
+            out += (ring * 0.35 + bp(noise(n), 1500, 6500) * np.exp(-th * 55) * 0.6 + lp(noise(n), 500) * np.exp(-th * 45) * 0.4) * (t >= at) * RNG.uniform(0.6, 1.0)
+        return stereo(out, 0.3)
+    if kind == "frameOpen":
+        # A chronicle's frame opening onto what it left out (EP20 chronicleFrame signature): a breath of air widening as its
+        # low-pass opens, under a low hollow fifth that swells and fades, unresolved.
+        n = int(2.4 * SR)
+        t = np.arange(n) / SR
+        k = np.minimum(1, t / 1.1)
+        air = bp(noise(n), 200, 900) * (1 - k) + bp(noise(n), 700, 5200) * k
+        air *= np.interp(t, [0, 0.5, 1.2, 2.2], [0, 0.4, 0.3, 0])
+        tone = sum(np.sin(2 * np.pi * f * t + RNG.uniform(0, 6.28)) for f in (110.0, 164.81, 220.0)) * np.interp(t, [0, 0.7, 1.4, 2.4], [0, 0.22, 0.16, 0])
+        return stereo(air + tone, 0.6)
     raise KeyError(kind)
 
 

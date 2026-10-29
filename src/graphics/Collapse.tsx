@@ -72,7 +72,7 @@ const SealFace: React.FC<{r: number; label: string}> = ({r, label}) => (
  * rust on `closeAt`. From `spinAt` a pulse runs round at w0·e^(k·τ) rad/s, lighting each node as it passes, and each pass
  * adds a crack through the seal pointing at that node. `breakAt` splits the seal in two (with `breakLabel`, default
  * TWO HEIRS) and stops the pulse. `liftAt` shrinks the loop up and `lessonKicker` / `lessonText` (*word* = ember
- * italic) land beneath it at `lessonAt`. Sits in the diagram block on `nightSky` over a dimmed plate.
+ * italic) land beneath it at `lessonAt` (the kicker can land earlier, on `kickerAt`). Sits in the diagram block on `nightSky` over a dimmed plate.
  */
 export const CrackLoop: React.FC<GraphicProps> = ({g, t, span}) => {
 	const timing = useTiming();
@@ -122,7 +122,7 @@ export const CrackLoop: React.FC<GraphicProps> = ({g, t, span}) => {
 	const flash = ease(t, tBreak - 0.04, 0.08) * (1 - ease(t, tBreak + 0.1, 0.5));
 
 	const lessonLines: string[] = Array.isArray(g.lessonText) ? g.lessonText : g.lessonText ? [g.lessonText] : [];
-	const lk = ease(t, tLesson, 0.5);
+	const kk = ease(t, g.kickerAt ? cueTime(timing, g.kickerAt) : tLesson, 0.5);
 	const top = g.top ?? cy - R - mr - 50;
 
 	const seal = (
@@ -135,12 +135,12 @@ export const CrackLoop: React.FC<GraphicProps> = ({g, t, span}) => {
 						points={c.pts.map(([x, y]) => `${x},${y}`).join(' ')}
 						fill="none"
 						stroke={palette.ember}
-						strokeWidth={2.6}
+						strokeWidth={4.5}
 						strokeLinejoin="round"
 						strokeLinecap="round"
 						pathLength={1}
 						strokeDasharray={`${c.grow} 1`}
-						style={{filter: 'drop-shadow(0 0 5px rgba(244,196,110,0.9))'}}
+						style={{filter: 'drop-shadow(0 0 8px rgba(244,196,110,1))'}}
 					/>
 				) : null,
 			)}
@@ -199,8 +199,8 @@ export const CrackLoop: React.FC<GraphicProps> = ({g, t, span}) => {
 							const [sx, sy] = polar(cx, cy, R, a0);
 							return (
 								<g opacity={spinOn}>
-									<path d={`M${sx} ${sy} A${R} ${R} 0 ${trail > Math.PI ? 1 : 0} 1 ${hx} ${hy}`} fill="none" stroke={palette.ember} strokeOpacity={0.55} strokeWidth={9} strokeLinecap="round" style={{filter: 'blur(3px)'}} />
-									<circle cx={hx} cy={hy} r={11} fill={palette.ember} style={{filter: 'drop-shadow(0 0 14px rgba(244,196,110,1))'}} />
+									<path d={`M${sx} ${sy} A${R} ${R} 0 ${trail > Math.PI ? 1 : 0} 1 ${hx} ${hy}`} fill="none" stroke={palette.ember} strokeOpacity={0.7} strokeWidth={14} strokeLinecap="round" style={{filter: 'blur(3px)'}} />
+									<circle cx={hx} cy={hy} r={16} fill={palette.ember} style={{filter: 'drop-shadow(0 0 14px rgba(244,196,110,1))'}} />
 								</g>
 							);
 						})()}
@@ -222,8 +222,8 @@ export const CrackLoop: React.FC<GraphicProps> = ({g, t, span}) => {
 					</g>
 				</svg>
 				{g.breakAt && (
-					<div style={{position: 'absolute', top: cy + sealR + 18, width: '100%', textAlign: 'center', ...kicker, fontWeight: 800, fontSize: 26, color: palette.rust, opacity: ease(t, tBreak + 0.1, 0.4), textShadow: '0 2px 10px rgba(0,0,0,0.9)'}}>
-						{g.breakLabel ?? 'Two heirs'}
+					<div style={{position: 'absolute', top: cy + sealR * 0.6, width: '100%', textAlign: 'center', opacity: ease(t, tBreak + 0.1, 0.4)}}>
+						<span style={{display: 'inline-block', ...kicker, fontWeight: 800, fontSize: 26, color: palette.rust, background: 'rgba(8,12,16,0.88)', border: `1.5px solid ${palette.rust}`, padding: '6px 12px 4px', textShadow: '0 2px 10px rgba(0,0,0,0.9)'}}>{g.breakLabel ?? 'Two heirs'}</span>
 					</div>
 				)}
 				{nodes.map((nd, i) => {
@@ -268,12 +268,12 @@ export const CrackLoop: React.FC<GraphicProps> = ({g, t, span}) => {
 									position: 'absolute',
 									left: x - 170,
 									width: 340,
-									top: below ? y + mr + 10 : y - mr - 46,
+									top: below ? y + mr + 10 : y - mr - 48,
 									textAlign: 'center',
 									...kicker,
 									fontWeight: 800,
-									fontSize: 25,
-									letterSpacing: '0.16em',
+									fontSize: 29,
+									letterSpacing: '0.14em',
 									color: lit > 0.05 ? palette.parchment : palette.ember,
 									opacity: Math.min(1, pop * 1.5) * lerp(1, 0.7, brk),
 									textShadow: '0 1px 4px #000, 0 0 14px rgba(0,0,0,0.95)',
@@ -286,8 +286,8 @@ export const CrackLoop: React.FC<GraphicProps> = ({g, t, span}) => {
 				})}
 			</AbsoluteFill>
 			{lessonLines.length > 0 && (
-				<div style={{position: 'absolute', top: g.lessonTop ?? 900, left: 60, right: 60, textAlign: 'center', opacity: lk, transform: `translateY(${(1 - lk) * 16}px)`}}>
-					{g.lessonKicker && <div style={{...kicker, fontSize: 30, color: palette.amber, textShadow: '0 2px 12px rgba(0,0,0,0.9)'}}>{g.lessonKicker}</div>}
+				<div style={{position: 'absolute', top: g.lessonTop ?? 900, left: 60, right: 60, textAlign: 'center'}}>
+					{g.lessonKicker && <div style={{...kicker, fontSize: 30, color: palette.amber, opacity: kk, transform: `translateY(${(1 - kk) * 12}px)`, textShadow: '0 2px 12px rgba(0,0,0,0.9)'}}>{g.lessonKicker}</div>}
 					{lessonLines.map((ln, li) => {
 						const lp = ease(t, tLesson + 0.15 + li * 0.25, 0.6);
 						return (

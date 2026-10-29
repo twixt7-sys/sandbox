@@ -69,7 +69,7 @@
    "id": "L5",
    "shot": "army",
    "text": "So the army marches out, and feeding it empties the granaries.",
-   "pauseAfter": 0.7,
+   "pauseAfter": 0.9,
    "emphasis": [
     "army",
     "granaries."
@@ -406,7 +406,7 @@
     }
    ],
    "onScreenText": "Crack tag 'CRACK IV · OVERREACH' / 'The army marches'.",
-   "transition": "Dissolve on 'and' to the loop: the four cracks join.",
+   "transition": "Dissolve on 'empties' to the loop: the four cracks join.",
    "sfx": [
     {
      "sound": "footsteps",
@@ -430,8 +430,8 @@
    "plateFrom": "hook",
    "startAt": {
     "line": "L5",
-    "word": "and",
-    "offset": -0.12
+    "word": "empties",
+    "offset": -0.1
    },
    "transitionIn": {
     "type": "dissolve",
@@ -469,40 +469,45 @@
        "label": "Famine",
        "note": "a bad harvest",
        "src": "ep19/plates/harvest.jpg",
-       "x": 540,
-       "y": 1100,
-       "zoom": 0.32
+       "x": 535,
+       "y": 960,
+       "zoom": 0.5
       },
       {
        "label": "Corruption",
        "note": "taxes rise",
        "src": "ep19/plates/taxes.jpg",
-       "x": 540,
-       "y": 1000,
-       "zoom": 0.32
+       "x": 560,
+       "y": 700,
+       "zoom": 0.42
       },
       {
        "label": "Revolt",
        "note": "provinces refuse",
        "src": "ep19/plates/provinces.jpg",
        "x": 540,
-       "y": 1000,
-       "zoom": 0.32
+       "y": 1080,
+       "zoom": 0.36
       },
       {
        "label": "Overreach",
        "note": "the army marches",
        "src": "ep19/plates/army.jpg",
-       "x": 540,
-       "y": 1000,
-       "zoom": 0.32
+       "x": 520,
+       "y": 1250,
+       "zoom": 0.4
       }
      ],
      "center": [
       540,
-      790
+      762
      ],
-     "radius": 262,
+     "radius": 282,
+     "medallion": 106,
+     "sealRadius": 148,
+     "liftScale": 0.62,
+     "lessonTop": 895,
+     "lessonSize": 80,
      "start": {
       "shot": "loop",
       "offset": -0.3
@@ -510,44 +515,44 @@
      "nodesAt": [
       {
        "shot": "loop",
-       "offset": -0.2
+       "offset": -0.15
       },
       {
        "shot": "loop",
-       "offset": -0.05
+       "offset": -0.03
       },
       {
        "shot": "loop",
-       "offset": 0.1
+       "offset": 0.09
       },
       {
        "shot": "loop",
-       "offset": 0.25
+       "offset": 0.21
       }
      ],
      "arrowsAt": [
       {
        "shot": "loop",
-       "offset": 0.15
+       "offset": 0.12
       },
       {
        "shot": "loop",
-       "offset": 0.3
+       "offset": 0.24
       },
       {
        "shot": "loop",
-       "offset": 0.45
+       "offset": 0.36
       }
      ],
      "closeAt": {
       "line": "L5",
       "word": "granaries.",
-      "offset": -0.15
+      "offset": -0.05
      },
      "spinAt": {
       "line": "L5",
       "word": "granaries.",
-      "offset": 0.45
+      "offset": 0.6
      },
      "w0": 1.6,
      "k": 0.95,
@@ -562,6 +567,10 @@
       "offset": -0.15
      },
      "lessonKicker": "No single crack",
+     "kickerAt": {
+      "line": "L7",
+      "word": "single"
+     },
      "lessonText": [
       "Cracks that",
       "*feed each other* do."
@@ -581,7 +590,7 @@
      "at": {
       "line": "L5",
       "word": "granaries.",
-      "offset": 1.144
+      "offset": 1.294
      },
      "gain": -24.0
     },
@@ -590,7 +599,7 @@
      "at": {
       "line": "L5",
       "word": "granaries.",
-      "offset": 1.558
+      "offset": 1.708
      },
      "gain": -23.4
     },
@@ -599,7 +608,7 @@
      "at": {
       "line": "L5",
       "word": "granaries.",
-      "offset": 1.855
+      "offset": 2.005
      },
      "gain": -22.8
     },
@@ -608,7 +617,7 @@
      "at": {
       "line": "L5",
       "word": "granaries.",
-      "offset": 2.086
+      "offset": 2.236
      },
      "gain": -22.2
     },
@@ -617,7 +626,7 @@
      "at": {
       "line": "L5",
       "word": "granaries.",
-      "offset": 2.275
+      "offset": 2.425
      },
      "gain": -21.6
     },
@@ -626,63 +635,9 @@
      "at": {
       "line": "L5",
       "word": "granaries.",
-      "offset": 2.436
+      "offset": 2.586
      },
      "gain": -21.0
-    },
-    {
-     "sound": "crackTick",
-     "at": {
-      "line": "L5",
-      "word": "granaries.",
-      "offset": 2.575
-     },
-     "gain": -20.4
-    },
-    {
-     "sound": "crackTick",
-     "at": {
-      "line": "L5",
-      "word": "granaries.",
-      "offset": 2.698
-     },
-     "gain": -19.8
-    },
-    {
-     "sound": "crackTick",
-     "at": {
-      "line": "L5",
-      "word": "granaries.",
-      "offset": 2.808
-     },
-     "gain": -19.2
-    },
-    {
-     "sound": "crackTick",
-     "at": {
-      "line": "L5",
-      "word": "granaries.",
-      "offset": 2.908
-     },
-     "gain": -18.6
-    },
-    {
-     "sound": "crackTick",
-     "at": {
-      "line": "L5",
-      "word": "granaries.",
-      "offset": 2.999
-     },
-     "gain": -18
-    },
-    {
-     "sound": "crackTick",
-     "at": {
-      "line": "L5",
-      "word": "granaries.",
-      "offset": 3.082
-     },
-     "gain": -18
     },
     {
      "sound": "sealSplit",

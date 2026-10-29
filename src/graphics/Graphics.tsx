@@ -15,6 +15,7 @@ import {POWER} from './Power';
 import {RITES} from './Rites';
 import {RUINS} from './Ruins';
 import {SCALE} from './Scale';
+import {SPELLBOOK} from './Spellbook';
 import {SURVEY} from './Survey';
 import {TERRAIN} from './Terrain';
 import {TRADITION} from './Tradition';
@@ -302,4 +303,5 @@ export const GRAPHICS: Record<string, React.FC<GraphicProps>> = {
 	...MORALITY,
 	...POWER,
 	...PILLARS,
+	...SPELLBOOK,
 };

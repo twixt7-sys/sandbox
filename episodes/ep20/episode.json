@@ -3,11 +3,11 @@
  "shots": [
   {
    "id": "hook",
-   "sdxlPrompt": "wide misty river valley at dawn, a calm river winding down the middle, on the left bank a tall weathered memorial standing stone, on the right bank a second tall memorial standing stone facing it across the water, green hills, low mist on the river, empty and quiet, no people, no buildings, no flags"
+   "sdxlPrompt": "wide river valley at dawn seen from high above, a calm river runs down the middle of the frame, two tall weathered standing stones, one on the left bank and one on the right bank, facing each other across the water, low mist, green hills, empty, no people"
   },
   {
    "id": "arvel",
-   "sdxlPrompt": "a tall weathered memorial standing stone in the left foreground beside the charred black timber frames of a burned village, ash and empty doorways, grey morning, a wide river on the right side, on the far bank of the river many small stone cairns in a field, no people, no flags"
+   "sdxlPrompt": "the burned ruins of a small village, roofless stone cottages with charred black roof beams, ash on the ground, a tall weathered memorial standing stone in front of them, grey overcast morning, a wide river flowing away to the right into the distance, no people"
   },
   {
    "id": "dunmere",

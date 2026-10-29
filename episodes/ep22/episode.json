@@ -1,0 +1,1318 @@
+{
+ "id": "ep22",
+ "number": 22,
+ "title": "The Most Dangerous Magic Is Cheap Magic",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "A calm, curious guide. A real puzzle on the hook. 'One touch' is plain and a little wondering. Each consequence is matter-of-fact, a short beat before it, like turning over a card. 'If anyone in your story dies of a wound' slows and softens; 'explain why' is a gentle challenge. The lesson is clear and sure; the share CTA friendly. No trailer voice."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "If healing is free, why does anyone ever die from an injury?",
+   "pauseAfter": 0.5,
+   "emphasis": [
+    "free,",
+    "die"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "touch",
+   "text": "Here, one touch from a mender closes any wound.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "one",
+    "touch"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "surgeon",
+   "text": "Surgeons vanished. Nobody remembers how to set a bone.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "vanished.",
+    "nobody"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "war",
+   "text": "Wars got longer, because no wound sends a soldier home.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "longer,",
+    "home."
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "menders",
+   "text": "And menders became the most powerful class.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "powerful"
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "lost",
+   "text": "If anyone in your story dies of a wound, explain why.",
+   "pauseAfter": 0.55,
+   "emphasis": [
+    "dies",
+    "why."
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "lesson",
+   "text": "Every cheap power rewrites a hundred ordinary lives. Follow it.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "cheap",
+    "hundred",
+    "follow"
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "cta",
+   "text": "Share this with a fantasy writer who loves overpowered magic.",
+   "pauseAfter": 0.0,
+   "emphasis": [
+    "share",
+    "overpowered"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.06,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.5,
+   "purpose": "Stop the scroll on the premise and its contradiction: healing is free here, yet the hook asks why anyone dies of a wound.",
+   "visual": "A young mender in a moss-green hooded coat kneels in a sunny market street, her hand on a stonemason's forearm; a soft jade glow (code) blooms under her palm. 'IN VEYRA, HEALING IS FREE / So who dies?'",
+   "camera": "Slow push (1.00 to 1.06).",
+   "layers": {
+    "foreground": "title",
+    "midground": "the mender, her glowing hand",
+    "background": "onlookers, the street"
+   },
+   "lighting": "Warm afternoon; top scrim for the title.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. medium shot of a sunny cobbled market street, a young woman healer in a moss green hooded coat with copper clasps kneels beside a seated stonemason, her open hand resting on his bare forearm, curious townsfolk watching behind, warm afternoon light, her face in soft shadow under the hood. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "medium shot of a sunny cobbled market street, a young woman healer in a moss green hooded coat with copper clasps kneels beside a seated stonemason, her open hand resting on his bare forearm, curious townsfolk watching behind, warm afternoon light, her face in soft shadow under the hood",
+   "graphics": [
+    {
+     "type": "mendGlow",
+     "local": true,
+     "at": [
+      600,
+      1050
+     ],
+     "r": 60,
+     "start": {
+      "shot": "hook",
+      "offset": 0.1
+     },
+     "pulses": [
+      {
+       "line": "L1",
+       "word": "healing",
+       "offset": -0.05
+      },
+      {
+       "line": "L1",
+       "word": "injury?",
+       "offset": -0.1
+      }
+     ],
+     "ringMax": 230
+    },
+    {
+     "type": "titleLockup",
+     "kicker": "In Veyra, healing is free",
+     "text": "So who dies?",
+     "y": 340,
+     "size": 124,
+     "start": {
+      "line": "L1",
+      "word": "if",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L1",
+      "word": "injury?",
+      "offset": 0.55
+     }
+    }
+   ],
+   "onScreenText": "Kicker 'IN VEYRA, HEALING IS FREE' + 'So who dies?' (ember serif italic).",
+   "transition": "Hard cut on 'Here' to the city from above.",
+   "sfx": [
+    {
+     "sound": "market",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "touch",
+      "offset": 0.5
+     },
+     "gain": -36
+    },
+    {
+     "sound": "mend",
+     "at": {
+      "line": "L1",
+      "word": "healing",
+      "offset": -0.05
+     },
+     "gain": -22
+    },
+    {
+     "sound": "mend",
+     "at": {
+      "line": "L1",
+      "word": "injury?",
+      "offset": -0.1
+     },
+     "gain": -25
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L1",
+      "word": "injury?",
+      "offset": 0.05
+     },
+     "gain": -22
+    }
+   ],
+   "music": "A minor, low and open."
+  },
+  {
+   "id": "touch",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.02,
+     "y": 0
+    },
+    "to": {
+     "s": 1.05,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "plateLook": {
+    "from": "saturate(0.85) brightness(0.8)"
+   },
+   "purpose": "Name the one cheap ability and set up the spine: everything that follows spreads from this one point.",
+   "visual": "The walled city from straight above at golden hour; a jade glow in the central plaza, faint rings already rippling out from it. Tag 'ONE CHEAP POWER / A mender's touch'.",
+   "camera": "Very slow push (1.02 to 1.05).",
+   "layers": {
+    "foreground": "tag",
+    "midground": "glow and rings at the plaza",
+    "background": "the roofs"
+   },
+   "lighting": "Golden hour, slightly dimmed so the jade reads.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. high aerial view looking straight down at a dense walled fantasy city at golden hour, red clay tile roofs, winding narrow streets, a round cobbled plaza in the exact centre, a river curving along one side, tiny people, painterly map-like composition. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "high aerial view looking straight down at a dense walled fantasy city at golden hour, red clay tile roofs, winding narrow streets, a round cobbled plaza in the exact centre, a river curving along one side, tiny people, painterly map-like composition",
+   "graphics": [
+    {
+     "type": "tag",
+     "kicker": "One cheap power",
+     "text": "A mender's touch",
+     "start": {
+      "line": "L2",
+      "word": "here",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "mendGlow",
+     "local": true,
+     "at": [
+      540,
+      900
+     ],
+     "r": 48,
+     "start": {
+      "shot": "touch"
+     },
+     "pulses": [
+      {
+       "line": "L2",
+       "word": "touch",
+       "offset": -0.05
+      },
+      {
+       "line": "L2",
+       "word": "wound.",
+       "offset": -0.05
+      }
+     ],
+     "ringMax": 320,
+     "ringDur": 1.4
+    },
+    {
+     "type": "rippleMap",
+     "local": true,
+     "origin": [
+      540,
+      900
+     ],
+     "rings": [],
+     "idle": true,
+     "start": {
+      "shot": "touch",
+      "offset": 0.2
+     }
+    }
+   ],
+   "onScreenText": "Tag 'ONE CHEAP POWER' + 'A mender's touch'.",
+   "transition": "Hard cut on 'Surgeons' to the first ring.",
+   "sfx": [
+    {
+     "sound": "mend",
+     "at": {
+      "line": "L2",
+      "word": "touch",
+      "offset": -0.05
+     },
+     "gain": -22
+    },
+    {
+     "sound": "ripple",
+     "at": {
+      "line": "L2",
+      "word": "wound.",
+      "offset": -0.05
+     },
+     "gain": -24
+    }
+   ],
+   "music": "A minor with a slow pulse."
+  },
+  {
+   "id": "surgeon",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.4,
+   "purpose": "First consequence (medicine): the craft nobody needed is gone.",
+   "visual": "An abandoned workshop: dusty empty shelves, a closed book and old tools under dust. A jade ring sweeps across the frame as we arrive. RING I \u00b7 MEDICINE / 'Surgeons, forgotten'.",
+   "camera": "Slow push (1.04 to 1.08).",
+   "layers": {
+    "foreground": "ring tag",
+    "midground": "workbench and book",
+    "background": "empty shelves, shuttered window"
+   },
+   "lighting": "Pale shaft through the shutter; dust.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. interior of an abandoned craftsman's workshop, dusty empty wooden shelves, cobwebs, a closed leather book and old brass tools under thick dust on a workbench, pale light through a shuttered window, forgotten for decades, nobody inside. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "interior of an abandoned craftsman's workshop, dusty empty wooden shelves, cobwebs, a closed leather book and old brass tools under thick dust on a workbench, pale light through a shuttered window, forgotten for decades, nobody inside",
+   "graphics": [
+    {
+     "type": "mendGlow",
+     "local": true,
+     "core": false,
+     "at": [
+      540,
+      2300
+     ],
+     "pulses": [
+      {
+       "shot": "surgeon"
+      }
+     ],
+     "ringFrom": 300,
+     "ringMax": 2300,
+     "ringDur": 1.3,
+     "ringWidth": 8
+    },
+    {
+     "type": "ringTag",
+     "numeral": "I",
+     "kicker": "Medicine",
+     "text": "Surgeons, forgotten",
+     "start": {
+      "line": "L3",
+      "word": "surgeons",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Ring tag 'RING I \u00b7 MEDICINE' + 'Surgeons, forgotten'.",
+   "transition": "Hard cut on 'Wars'.",
+   "sfx": [
+    {
+     "sound": "ripple",
+     "at": {
+      "shot": "surgeon",
+      "offset": -0.05
+     },
+     "gain": -24
+    },
+    {
+     "sound": "room",
+     "from": {
+      "shot": "surgeon"
+     },
+     "to": {
+      "shot": "war"
+     },
+     "gain": -36
+    }
+   ],
+   "music": "F major 7: something lost, quietly."
+  },
+  {
+   "id": "war",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.4,
+   "purpose": "Second consequence (war): no wound ends a soldier's war, so wars drag on. Shown through implication: unhurt soldiers, fresh glows, nobody leaving the line.",
+   "visual": "A line of weary, unhurt soldiers in a misty field at dawn, more marching up; small jade glows flare on three of them in turn (healed, back in line). RING II \u00b7 WAR / 'Nobody goes home'.",
+   "camera": "Slow push (1.04 to 1.08).",
+   "layers": {
+    "foreground": "ring tag",
+    "midground": "the line and its glows",
+    "background": "fresh troops in the mist"
+   },
+   "lighting": "Cold dawn mist.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a long line of weary but unhurt soldiers in plain grey quilted coats and round iron helmets standing in a misty field at dawn, spears upright, fresh troops marching up behind them, a war that never ends, wide shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "a long line of weary but unhurt soldiers in plain grey quilted coats and round iron helmets standing in a misty field at dawn, spears upright, fresh troops marching up behind them, a war that never ends, wide shot",
+   "graphics": [
+    {
+     "type": "mendGlow",
+     "local": true,
+     "core": false,
+     "at": [
+      540,
+      2300
+     ],
+     "pulses": [
+      {
+       "shot": "war"
+      }
+     ],
+     "ringFrom": 300,
+     "ringMax": 2300,
+     "ringDur": 1.3,
+     "ringWidth": 8
+    },
+    {
+     "type": "mendGlow",
+     "local": true,
+     "at": [
+      300,
+      1000
+     ],
+     "r": 34,
+     "start": {
+      "line": "L4",
+      "word": "longer,",
+      "offset": -0.1
+     },
+     "pulses": [
+      {
+       "line": "L4",
+       "word": "longer,",
+       "offset": -0.1
+      }
+     ],
+     "ringMax": 120,
+     "ringDur": 0.9
+    },
+    {
+     "type": "mendGlow",
+     "local": true,
+     "at": [
+      560,
+      980
+     ],
+     "r": 34,
+     "start": {
+      "line": "L4",
+      "word": "wound",
+      "offset": -0.1
+     },
+     "pulses": [
+      {
+       "line": "L4",
+       "word": "wound",
+       "offset": -0.1
+      }
+     ],
+     "ringMax": 120,
+     "ringDur": 0.9
+    },
+    {
+     "type": "mendGlow",
+     "local": true,
+     "at": [
+      800,
+      1010
+     ],
+     "r": 34,
+     "start": {
+      "line": "L4",
+      "word": "soldier",
+      "offset": -0.1
+     },
+     "pulses": [
+      {
+       "line": "L4",
+       "word": "soldier",
+       "offset": -0.1
+      }
+     ],
+     "ringMax": 120,
+     "ringDur": 0.9
+    },
+    {
+     "type": "ringTag",
+     "numeral": "II",
+     "kicker": "War",
+     "text": "Nobody goes home",
+     "start": {
+      "line": "L4",
+      "word": "wars",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Ring tag 'RING II \u00b7 WAR' + 'Nobody goes home'.",
+   "transition": "Hard cut on 'And'.",
+   "sfx": [
+    {
+     "sound": "ripple",
+     "at": {
+      "shot": "war",
+      "offset": -0.05
+     },
+     "gain": -24
+    },
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "war"
+     },
+     "to": {
+      "shot": "menders"
+     },
+     "gain": -34
+    },
+    {
+     "sound": "mend",
+     "at": {
+      "line": "L4",
+      "word": "longer,",
+      "offset": -0.1
+     },
+     "gain": -27
+    },
+    {
+     "sound": "mend",
+     "at": {
+      "line": "L4",
+      "word": "wound",
+      "offset": -0.1
+     },
+     "gain": -27
+    },
+    {
+     "sound": "mend",
+     "at": {
+      "line": "L4",
+      "word": "soldier",
+      "offset": -0.1
+     },
+     "gain": -27
+    },
+    {
+     "sound": "warHorn",
+     "at": {
+      "line": "L4",
+      "word": "home.",
+      "offset": 0.1
+     },
+     "gain": -30
+    }
+   ],
+   "music": "D minor, tense; the pulse quickens."
+  },
+  {
+   "id": "menders",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.4,
+   "purpose": "Third consequence (power): whoever holds the cheap ability becomes the ruling class; the queue shows it without a word.",
+   "visual": "A long queue of townsfolk with coins and baskets up the steps of a grand hall; menders in rich robes at the top. A jade glow at the top of the stair. RING III \u00b7 POWER / 'Menders rule'.",
+   "camera": "Slow push (1.04 to 1.08).",
+   "layers": {
+    "foreground": "ring tag",
+    "midground": "the queue",
+    "background": "the menders at the top"
+   },
+   "lighting": "Bright morning on marble.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a long queue of ordinary townsfolk holding coins and baskets waiting up the wide marble steps of a grand hall, at the top three healers in rich moss green and gold robes stand proudly like nobles, guards beside them, morning light, wide shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "a long queue of ordinary townsfolk holding coins and baskets waiting up the wide marble steps of a grand hall, at the top three healers in rich moss green and gold robes stand proudly like nobles, guards beside them, morning light, wide shot",
+   "graphics": [
+    {
+     "type": "mendGlow",
+     "local": true,
+     "core": false,
+     "at": [
+      540,
+      2300
+     ],
+     "pulses": [
+      {
+       "shot": "menders"
+      }
+     ],
+     "ringFrom": 300,
+     "ringMax": 2300,
+     "ringDur": 1.3,
+     "ringWidth": 8
+    },
+    {
+     "type": "mendGlow",
+     "local": true,
+     "at": [
+      540,
+      700
+     ],
+     "r": 46,
+     "start": {
+      "line": "L5",
+      "word": "menders",
+      "offset": -0.1
+     },
+     "pulses": [
+      {
+       "line": "L5",
+       "word": "powerful",
+       "offset": -0.1
+      }
+     ],
+     "ringMax": 200
+    },
+    {
+     "type": "ringTag",
+     "numeral": "III",
+     "kicker": "Power",
+     "text": "Menders rule",
+     "start": {
+      "line": "L5",
+      "word": "and",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Ring tag 'RING III \u00b7 POWER' + 'Menders rule'.",
+   "transition": "Hard cut on 'If' to the dark room.",
+   "sfx": [
+    {
+     "sound": "ripple",
+     "at": {
+      "shot": "menders",
+      "offset": -0.05
+     },
+     "gain": -24
+    },
+    {
+     "sound": "procession",
+     "from": {
+      "shot": "menders"
+     },
+     "to": {
+      "shot": "lost"
+     },
+     "gain": -36
+    },
+    {
+     "sound": "coin",
+     "at": {
+      "line": "L5",
+      "word": "powerful",
+      "offset": -0.15
+     },
+     "gain": -26
+    },
+    {
+     "sound": "mend",
+     "at": {
+      "line": "L5",
+      "word": "powerful",
+      "offset": -0.1
+     },
+     "gain": -26
+    }
+   ],
+   "music": "B-flat major: grand, a little hollow."
+  },
+  {
+   "id": "lost",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "The turn: the last ring finds someone the magic couldn't save. Loss shown only through absence (an empty bed, a mender alone).",
+   "visual": "Candlelit room: the mender sits alone beside an empty bed. A jade glow lights above the bed, gutters twice and goes out. RING IV \u00b7 UNEXPLAINED (rust, dashed) / 'The one it couldn't save'; 'Why?' lands on 'why'.",
+   "camera": "Slow push (1.04 to 1.08).",
+   "layers": {
+    "foreground": "rust tag, 'Why?'",
+    "midground": "the failing glow over the bed",
+    "background": "the mender, the candle"
+   },
+   "lighting": "One candle; deep shadow.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a small dim room at night lit by a single candle, a young woman healer in a moss green hooded coat sits alone on a stool beside a narrow empty bed with a folded blanket, head bowed, hands in her lap, quiet grief, soft shadows, medium wide shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "a small dim room at night lit by a single candle, a young woman healer in a moss green hooded coat sits alone on a stool beside a narrow empty bed with a folded blanket, head bowed, hands in her lap, quiet grief, soft shadows, medium wide shot",
+   "graphics": [
+    {
+     "type": "mendGlow",
+     "local": true,
+     "core": false,
+     "at": [
+      540,
+      2300
+     ],
+     "pulses": [
+      {
+       "shot": "lost"
+      }
+     ],
+     "ringFrom": 300,
+     "ringMax": 2300,
+     "ringDur": 1.3,
+     "ringWidth": 6,
+     "color": "mist"
+    },
+    {
+     "type": "mendGlow",
+     "local": true,
+     "at": [
+      700,
+      1100
+     ],
+     "r": 56,
+     "start": {
+      "line": "L6",
+      "word": "if",
+      "offset": 0.1
+     },
+     "pulses": [
+      {
+       "line": "L6",
+       "word": "story"
+      }
+     ],
+     "failAt": {
+      "line": "L6",
+      "word": "dies",
+      "offset": -0.05
+     },
+     "ringMax": 180
+    },
+    {
+     "type": "ringTag",
+     "numeral": "IV",
+     "kicker": "Unexplained",
+     "text": "The one it couldn't save",
+     "lost": true,
+     "start": {
+      "line": "L6",
+      "word": "if",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "oversizedWord",
+     "text": "Why?",
+     "y": 760,
+     "size": 200,
+     "start": {
+      "line": "L6",
+      "word": "why.",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Rust ring tag 'RING IV \u00b7 UNEXPLAINED' + 'The one it couldn't save'; 'Why?'.",
+   "transition": "Dissolve (0.45 s) to the dimmed city map.",
+   "sfx": [
+    {
+     "sound": "ripple",
+     "at": {
+      "shot": "lost",
+      "offset": -0.05
+     },
+     "gain": -27
+    },
+    {
+     "sound": "hearth",
+     "from": {
+      "shot": "lost"
+     },
+     "to": {
+      "shot": "lesson",
+      "offset": 0.4
+     },
+     "gain": -36
+    },
+    {
+     "sound": "mend",
+     "at": {
+      "line": "L6",
+      "word": "story"
+     },
+     "gain": -24
+    },
+    {
+     "sound": "tonalDrop",
+     "at": {
+      "line": "L6",
+      "word": "dies"
+     },
+     "gain": -23
+    }
+   ],
+   "music": "A minor, thin; the pulse stops."
+  },
+  {
+   "id": "lesson",
+   "scene": "nightSky",
+   "plateFrom": "touch",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.45
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.05,
+     "y": 0
+    },
+    "to": {
+     "s": 1.03,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.85,
+   "plateLook": {
+    "from": "saturate(0.45) brightness(0.42)"
+   },
+   "purpose": "The lesson: every consequence ring at once around the one cheap power, the unexplained one dashed at the edge; then the principle.",
+   "visual": "The dimmed city from above; four rings spread from the plaza: MEDICINE / Surgeons forgotten, WAR / Nobody goes home, POWER / Menders rule, and a dashed rust '?' ring, UNEXPLAINED / Why?. The map lifts; 'FOLLOW THE RIPPLE / Every cheap power rewrites a hundred lives.'",
+   "camera": "Slow pull (1.05 to 1.03).",
+   "layers": {
+    "foreground": "lesson type",
+    "midground": "the rings and labels",
+    "background": "the dimmed city"
+   },
+   "lighting": "Night-dimmed map; jade rings carry the light.",
+   "imagePrompt": "(Reuses the touch plate.)",
+   "videoPrompt": "(Not used.)",
+   "graphics": [
+    {
+     "type": "rippleMap",
+     "origin": [
+      540,
+      760
+     ],
+     "rings": [
+      {
+       "r": 150,
+       "kicker": "I \u00b7 Medicine",
+       "label": "Surgeons forgotten",
+       "angle": -60,
+       "at": {
+        "shot": "lesson",
+        "offset": 0.1
+       }
+      },
+      {
+       "r": 250,
+       "kicker": "II \u00b7 War",
+       "label": "Nobody goes home",
+       "angle": 200,
+       "at": {
+        "shot": "lesson",
+        "offset": 0.42
+       }
+      },
+      {
+       "r": 350,
+       "kicker": "III \u00b7 Power",
+       "label": "Menders rule",
+       "angle": -20,
+       "at": {
+        "shot": "lesson",
+        "offset": 0.74
+       }
+      },
+      {
+       "r": 440,
+       "kicker": "IV \u00b7 Unexplained",
+       "label": "Why?",
+       "angle": 150,
+       "lost": true,
+       "at": {
+        "shot": "lesson",
+        "offset": 1.06
+       }
+      }
+     ],
+     "start": {
+      "shot": "lesson",
+      "offset": -0.45
+     },
+     "liftAt": {
+      "line": "L7",
+      "word": "rewrites",
+      "offset": -0.15
+     },
+     "lift": {
+      "to": [
+       540,
+       610
+      ],
+      "s": 0.6
+     },
+     "lessonKicker": "Follow the ripple",
+     "lessonText": [
+      "Every cheap power",
+      "rewrites *a* *hundred* *lives.*"
+     ],
+     "lessonAt": {
+      "line": "L7",
+      "word": "hundred",
+      "offset": -0.2
+     },
+     "lessonTop": 930
+    }
+   ],
+   "onScreenText": "Rings I MEDICINE / II WAR / III POWER / IV UNEXPLAINED (?); then 'FOLLOW THE RIPPLE' / 'Every cheap power rewrites a hundred lives.'",
+   "transition": "Dissolve (0.6 s) to the hook street at dusk.",
+   "sfx": [
+    {
+     "sound": "ripple",
+     "at": {
+      "shot": "lesson",
+      "offset": 0.1
+     },
+     "gain": -25
+    },
+    {
+     "sound": "ripple",
+     "at": {
+      "shot": "lesson",
+      "offset": 0.42
+     },
+     "gain": -26
+    },
+    {
+     "sound": "ripple",
+     "at": {
+      "shot": "lesson",
+      "offset": 0.74
+     },
+     "gain": -27
+    },
+    {
+     "sound": "ripple",
+     "at": {
+      "shot": "lesson",
+      "offset": 1.06
+     },
+     "gain": -28
+    },
+    {
+     "sound": "paper",
+     "at": {
+      "line": "L7",
+      "word": "rewrites",
+      "offset": -0.15
+     },
+     "gain": -28
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L7",
+      "word": "follow",
+      "offset": -0.05
+     },
+     "gain": -22
+    }
+   ],
+   "music": "F \u2192 A major with bells: the answer."
+  },
+  {
+   "id": "cta",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.06,
+     "y": 0
+    },
+    "to": {
+     "s": 1.0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "plateLook": {
+    "from": "sepia(0.25) saturate(0.9) brightness(0.62) hue-rotate(-8deg)"
+   },
+   "captions": false,
+   "hideLogoBug": true,
+   "purpose": "Share CTA over the opening street at dusk, the glow still at the mender's hand; loops back to the hook.",
+   "visual": "The hook's market street in a dusk grade, the glow still under the mender's hand; CTA card with the Share pill.",
+   "camera": "Slow pull back (1.06 to 1.00) toward the hook framing for the loop.",
+   "layers": {
+    "foreground": "CTA card",
+    "midground": "the mender's glow",
+    "background": "the dusk street"
+   },
+   "lighting": "Dusk; dimmed under the card.",
+   "imagePrompt": "(Reuses the hook plate.)",
+   "videoPrompt": "(Not used.)",
+   "graphics": [
+    {
+     "type": "mendGlow",
+     "local": true,
+     "at": [
+      600,
+      1050
+     ],
+     "r": 60,
+     "start": {
+      "shot": "cta",
+      "offset": -0.6
+     }
+    },
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L8",
+      "word": "share"
+     },
+     "episode": "Episode 22 / 50",
+     "title": "The most dangerous magic is cheap magic",
+     "kicker": "Pass it on",
+     "size": 72,
+     "lines": [
+      "Share this with a",
+      "fantasy writer who loves",
+      "*overpowered* *magic.*"
+     ],
+     "button": "Share",
+     "icon": "share"
+    }
+   ],
+   "onScreenText": "Full logo, 'EPISODE 22 / 50', title, 'PASS IT ON', 'Share this with a fantasy writer who loves overpowered magic.', pill 'Share'.",
+   "transition": "Cross-fade into the hook's first frame for a seamless loop.",
+   "sfx": [
+    {
+     "sound": "market",
+     "from": {
+      "shot": "cta"
+     },
+     "to": {
+      "line": "L8",
+      "word": "magic.",
+      "offset": 1.0
+     },
+     "gain": -37
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "shot": "cta",
+      "offset": -0.3
+     },
+     "gain": -26
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L8",
+      "word": "magic.",
+      "offset": 0.2
+     },
+     "gain": -24
+    }
+   ],
+   "music": "D to A major, warm; fades fully before the last frame."
+  }
+ ],
+ "lesson": "Powerful magic changes society, and cheap magic changes it most, because everyone uses it. Free healing would erase surgery, prolong wars (no wound sends a soldier home) and make healers the ruling class. Follow every cheap power outward; and if anyone in the story still dies of a wound, the world has to explain why.",
+ "captionReplace": {},
+ "music": {
+  "key": "A minor, resolving to A major",
+  "drone": [
+   "A1",
+   "E2"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L6",
+     "word": "if"
+    },
+    "pre": 0.15,
+    "dur": 2.0,
+    "gain": 0.55
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L7",
+     "word": "every"
+    },
+    "pre": 0.15,
+    "dur": 1.4,
+    "gain": 0.6
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "A1",
+      "E2",
+      "C3",
+      "E3",
+      "B3"
+     ]
+    ],
+    "level": 0.46,
+    "dark": true
+   },
+   "touch": {
+    "chords": [
+     [
+      "A1",
+      "E2",
+      "C3",
+      "G3"
+     ]
+    ],
+    "level": 0.5,
+    "pulse": 70
+   },
+   "surgeon": {
+    "chords": [
+     [
+      "F1",
+      "C2",
+      "A2",
+      "E3"
+     ]
+    ],
+    "level": 0.52,
+    "pulse": 70
+   },
+   "war": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F3",
+      "A3"
+     ]
+    ],
+    "level": 0.55,
+    "pulse": 80
+   },
+   "menders": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "A3"
+     ]
+    ],
+    "level": 0.56,
+    "pulse": 80
+   },
+   "lost": {
+    "chords": [
+     [
+      "A1",
+      "E2",
+      "C3",
+      "E3"
+     ]
+    ],
+    "level": 0.42,
+    "dark": true
+   },
+   "lesson": {
+    "chords": [
+     [
+      "F1",
+      "C2",
+      "A2",
+      "E3"
+     ],
+     [
+      "A1",
+      "E2",
+      "C#3",
+      "E3",
+      "B3"
+     ]
+    ],
+    "level": 0.62,
+    "bells": true
+   },
+   "cta": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F#3",
+      "A3"
+     ],
+     [
+      "A1",
+      "E2",
+      "C#3",
+      "E3",
+      "A3"
+     ]
+    ],
+    "level": 0.58,
+    "bells": true
+   }
+  }
+ },
+ "metadata": {
+  "youtube": {
+   "title": "The Most Dangerous Magic Is Cheap Magic (Worldbuilding)",
+   "titleAlternate": "If healing is free, why does anyone die of a wound?",
+   "description": "If healing is free, why does anyone ever die from an injury?\n\nIn Veyra, one touch from a mender closes any wound. Follow that one cheap power outward. Surgeons vanished: nobody remembers how to set a bone. Wars got longer, because no wound sends a soldier home. And menders became the most powerful class.\n\nSo if anyone in your story dies of a wound, explain why. Every cheap power rewrites a hundred ordinary lives: medicine, war, money, law, faith. Follow it.\n\nShare this with a fantasy writer who loves overpowered magic.\n\nEpisode 22 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.\n\n#Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts",
+   "pinnedComment": "Your turn: name the cheapest power in your world, and one ordinary job it destroyed.",
+   "uploadSettings": "Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "Free healing sounds harmless \u2728\u27a1\ufe0f\u2694\ufe0f Then surgeons vanish, wars never end, and healers rule. So who dies of a wound? Share with a writer who loves overpowered magic. #Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts",
+   "pinnedComment": "What's the cheapest magic in your world, and what job did it kill?",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "If healing is free, why does anyone ever die from an injury?\n\nIn Veyra, one touch from a mender closes any wound. Follow that one cheap power outward. Surgeons vanished: nobody remembers how to set a bone. Wars got longer, because no wound sends a soldier home. And menders became the most powerful class.\n\nSo if anyone in your story dies of a wound, explain why. Every cheap power rewrites a hundred ordinary lives: medicine, war, money, law, faith. Follow it.\n\nShare this with a fantasy writer who loves overpowered magic.\n\nEpisode 22 of 50.\n\n#Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts",
+   "pinnedComment": "Which ring would your world forget: medicine, war, or who holds power?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "Free healing. Endless wars.\n\nIf healing is free, why does anyone ever die from an injury?\n\nIn Veyra, one touch from a mender closes any wound. Follow that one cheap power outward. Surgeons vanished: nobody remembers how to set a bone. Wars got longer, because no wound sends a soldier home. And menders became the most powerful class.\n\nSo if anyone in your story dies of a wound, explain why. Every cheap power rewrites a hundred ordinary lives: medicine, war, money, law, faith. Follow it.\n\nShare this with a fantasy writer who loves overpowered magic.\n\nEpisode 22 of 50 \u00b7 Worldcraft Shorts\n\n#Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts",
+   "hookCheck": "First 27 characters: 'Free healing. Endless wars.'",
+   "pinnedComment": "Medicine, war, power: follow your cheapest spell one ring further. What changes?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  },
+  "cover": "Worldcraft_Short_E22_cover.jpg: the mender's glowing hand in the market street, 'IN VEYRA, HEALING IS FREE / So who dies?' above it, corner logo.",
+  "followUpQuestion": "Take the cheapest power in your world. Who lost their job to it, who got rich from it, and what does it still fail to fix?"
+ }
+}

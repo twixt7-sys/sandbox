@@ -710,6 +710,25 @@ def sfx_hit(kind, dur=None):
             out += (body + bp(noise(n), 400, 2200) * np.exp(-th * 90) * 0.7) * a * (t >= at)
         out = lp(out, 1600)
         return stereo(out + np.roll(out, int(0.045 * SR)) * 0.25, 0.3)
+    if kind == "mend":
+        # A wound closing at a touch (EP22 mendGlow signature): a soft breath, then glassy A-major partials that bloom and
+        # drift a few cents upward, like warmth spreading under the hand. No attack transient: healing never clicks.
+        n = int(2.0 * SR)
+        t = np.arange(n) / SR
+        breath = bp(noise(n), 500, 3000) * np.interp(t, [0, 0.18, 0.5, 0.9], [0, 0.25, 0.12, 0])
+        glide = 1 + 0.004 * np.minimum(1, t / 1.2)
+        bloom = np.interp(t, [0, 0.12, 0.35], [0, 0.6, 1.0]) * np.exp(-np.maximum(0, t - 0.35) * 2.4)
+        tone = sum(a * np.sin(2 * np.pi * np.cumsum(np.full(n, f) * glide) / SR + p) for f, a, p in [(880.0, 1.0, 0.0), (1108.73, 0.6, 1.1), (1318.51, 0.45, 2.3), (2217.46, 0.15, 0.7)])
+        return stereo(breath + tone * bloom * 0.28, 0.5)
+    if kind == "ripple":
+        # The consequence spreading outward (EP22 rippleMap ring): a low, round water-like swell whose pitch sinks as the ring
+        # widens, with a faint airy shimmer on top, so each ring sounds farther away than the last hit.
+        n = int(1.8 * SR)
+        t = np.arange(n) / SR
+        f = 150 * (1 - 0.35 * np.minimum(1, t / 1.2))
+        body = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.interp(t, [0, 0.08, 0.5, 1.6], [0, 1.0, 0.45, 0])
+        air = bp(noise(n), 1500, 6000) * np.interp(t, [0, 0.15, 0.7, 1.3], [0, 0.18, 0.08, 0])
+        return stereo(lp(body, 900) + air, 0.6)
     raise KeyError(kind)
 
 

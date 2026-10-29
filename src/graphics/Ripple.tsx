@@ -190,9 +190,9 @@ export const RippleMap: React.FC<GraphicProps> = ({g, t, span}) => {
 									whiteSpace: 'nowrap',
 								}}
 							>
-								<div style={{...kicker, fontSize: 24, color: kc, textShadow: '0 2px 10px rgba(0,0,0,0.95)'}}>{rg.kicker}</div>
+								<div style={{...kicker, fontSize: 27, color: kc, textShadow: '0 2px 10px rgba(0,0,0,0.95)'}}>{rg.kicker}</div>
 								{rg.label && (
-									<div style={{marginTop: 4, fontFamily: fonts.display, fontStyle: 'italic', fontWeight: 600, fontSize: 44, lineHeight: 1.05, color: palette.parchment, textShadow: '0 2px 16px rgba(0,0,0,0.95), 0 0 4px rgba(0,0,0,0.8)'}}>{rg.label}</div>
+									<div style={{marginTop: 4, fontFamily: fonts.display, fontStyle: 'italic', fontWeight: 600, fontSize: 50, lineHeight: 1.05, color: palette.parchment, textShadow: '0 2px 16px rgba(0,0,0,0.95), 0 0 4px rgba(0,0,0,0.8)'}}>{rg.label}</div>
 								)}
 							</div>
 						</React.Fragment>

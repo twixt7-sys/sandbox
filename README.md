@@ -139,6 +139,10 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | graphic | `pillarStack` | An empire drawn as a roof on pillars (`label` on the entablature): the pillars rise as stone on `riseAt`, then `peopleAt[i]` turns each into a supporter, a portrait cut from their plate (`src`, plate point `x`/`y`, `zoom`) with its reason, or an `empty` dashed pillar for a missing alternative; `liftAt` shrinks the stack up and `lessonKicker` / `lessonText` land beneath it at `lessonAt` (EP17: BREAD / ORDER / THE WAGE / FEAR / NOTHING BETTER) |
 | graphic | `pillarTag` | A `tag` with a pillar glyph and a numeral ("PILLAR I · BREAD" / *The farmer*), so each person we meet reads as one pillar of the stack (EP17) |
 | sfx | `pillarSet`, `doorKnock` (hits) | EP17: grit and a dry stone thud as a pillar is set; three muffled knocks on a door down the street (fear by implication) |
+| graphic | `mendGlow` | Free healing drawn in code at a plate point (`at`, `r`, pin with `"local": true`): a breathing jade glow with rising sparks; each cue in `pulses` brightens it and sends a ring to `ringMax`; `core: false` draws only a ring sweeping across the frame from an off-frame origin; `failAt` makes it gutter twice and go out (EP22: the touch, healed soldiers, the menders' door, the one it couldn't save) |
+| graphic | `rippleMap` | Rings of consequence spreading from `origin`: each of `rings: [{r, at, kicker, label, angle, side, lost}]` runs out as a wavefront on its cue and lights a pin with its label; a `lost` ring is dashed with a rust "?"; `idle` sends faint rings out; `liftAt` / `lift` shrink the map and `lessonKicker` / `lessonText` land beneath at `lessonAt` (EP22: MEDICINE / WAR / POWER / UNEXPLAINED) |
+| graphic | `ringTag` | A `tag` with a concentric-ring glyph and numeral ("RING II · WAR" / *Nobody goes home*), the numbered ring lit; `lost: true` turns it rust and dashed (EP22) |
+| sfx | `mend`, `ripple` (hits) | EP22: a soft breath blooming into glassy A-major partials (the healing touch, reused for every glow); a low round swell sinking in pitch as a consequence ring spreads |
 
 ## Local / Claude-session commands
 

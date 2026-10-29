@@ -245,6 +245,19 @@ On the paid primary stack, with 3 stills: about **$1.05 (₱67)**, or **$1.94 (�
 
 On the paid primary stack, with 6 stills: about **$1.35 (₱86)** (scaling EP15's 3-still and EP14's 4-still figures at about $0.10 a still), or **$2.48 (₱157)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
+## What Episode 22 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 6 stills (the mender and the young man in the market street, the walled city from above, the abandoned workshop, the soldiers in the dawn field, the queue up the hall steps, the mender alone by the empty bed) | **Local SDXL-Lightning** (`pipeline/local_stills.py`, 4-step, CPU, 768×1344, lanczos to 1080×1920). 18 candidates in two rounds, 6 kept: touch (city) 23, surgeon 23, war 11, lost 11 (round 1); hook 7, menders 23 (round 2). Round 1's hook had no patient and both menders plates read as monks (one in saffron robes), so they were re-rolled. Figma credits are out until 1 Nov 2026, so it wasn't tried | $0 |
+| Healing glow, rings of consequence, ring tags, title, CTA card | Remotion code (new `mendGlow`, `rippleMap` and `ringTag`; `titleLockup`, `tag`, `oversizedWord`, `ctaCard`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 78 words, 30.05 s | $0 |
+| Score + SFX (new: mend, ripple) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, no Figma credits |
+
+On the paid primary stack, with 6 stills: about **$1.35 (₱86)**, or **$2.48 (₱157)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
 ## Alternatives
 
 | Option | Per-episode | Monthly | Comment |

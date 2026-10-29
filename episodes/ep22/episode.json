@@ -965,14 +965,14 @@
      "liftAt": {
       "line": "L7",
       "word": "rewrites",
-      "offset": -0.1
+      "offset": 0.1
      },
      "lift": {
       "to": [
        540,
        610
       ],
-      "s": 0.6
+      "s": 0.78
      },
      "lessonKicker": "Follow the ripple",
      "lessonText": [
@@ -982,9 +982,9 @@
      "lessonAt": {
       "line": "L7",
       "word": "hundred",
-      "offset": -0.2
+      "offset": -0.1
      },
-     "lessonTop": 930
+     "lessonTop": 960
     }
    ],
    "onScreenText": "Rings I MEDICINE / II WAR / III POWER / IV UNEXPLAINED (?); then 'FOLLOW THE RIPPLE' / 'Every cheap power rewrites a hundred lives.'",
@@ -1027,7 +1027,7 @@
      "at": {
       "line": "L7",
       "word": "rewrites",
-      "offset": -0.1
+      "offset": 0.1
      },
      "gain": -28
     },

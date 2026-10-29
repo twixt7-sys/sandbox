@@ -1153,3 +1153,71 @@ Source of truth: `episodes/ep17/episode.json` → `metadata`. The AI label goes 
 - **Hook check:** First 26 characters: 'Five pillars. No villains.'
 - **Pinned comment:** Bread, order, the wage, fear, nothing better: which pillar is strongest in your empire, and who stands in it?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 22 captions (ready to paste)
+
+Source of truth: `episodes/ep22/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep22/Worldcraft_Short_E22_cover.jpg`. Subtitles: `episodes/ep22/ep22.srt`. The stills were made with a local open model (SDXL-Lightning), so they're AI-generated like every other episode's and need the same disclosure. The healing glow is drawn in code, and no real-world medical or religious symbol appears (the TikTok caption avoids the bandage emoji for the same reason).
+
+### YouTube Shorts
+- **Title** (55/100 chars): `The Most Dangerous Magic Is Cheap Magic (Worldbuilding)`
+- **Alternate title** (51 chars): `If healing is free, why does anyone die of a wound?`
+- **Description:**
+
+> If healing is free, why does anyone ever die from an injury?
+>
+> In Veyra, one touch from a mender closes any wound. Follow that one cheap power outward. Surgeons vanished: nobody remembers how to set a bone. Wars got longer, because no wound sends a soldier home. And menders became the most powerful class.
+>
+> So if anyone in your story dies of a wound, explain why. Every cheap power rewrites a hundred ordinary lives: medicine, war, money, law, faith. Follow it.
+>
+> Share this with a fantasy writer who loves overpowered magic.
+>
+> Episode 22 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts
+
+- **Pinned comment:** Your turn: name the cheapest power in your world, and one ordinary job it destroyed.
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (238 chars): `Free healing sounds harmless ✨➡️⚔️ Then surgeons vanish, wars never end, and healers rule. So who dies of a wound? Share with a writer who loves overpowered magic. #Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts`
+- **Pinned comment:** What's the cheapest magic in your world, and what job did it kill?
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> If healing is free, why does anyone ever die from an injury?
+>
+> In Veyra, one touch from a mender closes any wound. Follow that one cheap power outward. Surgeons vanished: nobody remembers how to set a bone. Wars got longer, because no wound sends a soldier home. And menders became the most powerful class.
+>
+> So if anyone in your story dies of a wound, explain why. Every cheap power rewrites a hundred ordinary lives: medicine, war, money, law, faith. Follow it.
+>
+> Share this with a fantasy writer who loves overpowered magic.
+>
+> Episode 22 of 50.
+>
+> #Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts
+
+- **Pinned comment:** Which ring would your world forget: medicine, war, or who holds power?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Free healing. Endless wars.
+>
+> If healing is free, why does anyone ever die from an injury?
+>
+> In Veyra, one touch from a mender closes any wound. Follow that one cheap power outward. Surgeons vanished: nobody remembers how to set a bone. Wars got longer, because no wound sends a soldier home. And menders became the most powerful class.
+>
+> So if anyone in your story dies of a wound, explain why. Every cheap power rewrites a hundred ordinary lives: medicine, war, money, law, faith. Follow it.
+>
+> Share this with a fantasy writer who loves overpowered magic.
+>
+> Episode 22 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts
+
+- **Hook check:** First 27 characters: 'Free healing. Endless wars.'
+- **Pinned comment:** Medicine, war, power: follow your cheapest spell one ring further. What changes?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

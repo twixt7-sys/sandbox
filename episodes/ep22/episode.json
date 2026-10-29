@@ -132,9 +132,9 @@
     "background": "onlookers, the street"
    },
    "lighting": "Warm afternoon; top scrim for the title.",
-   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. medium shot of a sunny cobbled market street, a young woman healer in a moss green hooded coat with copper clasps kneels beside a seated stonemason, her open hand resting on his bare forearm, curious townsfolk watching behind, warm afternoon light, her face in soft shadow under the hood. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a young woman healer in a moss green hooded coat kneels on a sunny cobbled market street holding the bare forearm of a burly seated stonemason in both hands, he watches her calmly, a few townsfolk behind, warm afternoon light, medium shot, faces in soft shadow. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
    "videoPrompt": "(Not used.)",
-   "sdxlPrompt": "medium shot of a sunny cobbled market street, a young woman healer in a moss green hooded coat with copper clasps kneels beside a seated stonemason, her open hand resting on his bare forearm, curious townsfolk watching behind, warm afternoon light, her face in soft shadow under the hood",
+   "sdxlPrompt": "a young woman healer in a moss green hooded coat kneels on a sunny cobbled market street holding the bare forearm of a burly seated stonemason in both hands, he watches her calmly, a few townsfolk behind, warm afternoon light, medium shot, faces in soft shadow",
    "graphics": [
     {
      "type": "mendGlow",
@@ -232,12 +232,12 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.02,
-     "y": 0
+     "s": 1.11,
+     "y": -100
     },
     "to": {
-     "s": 1.05,
-     "y": 0
+     "s": 1.14,
+     "y": -100
     }
    },
    "plateScrim": 0.45,
@@ -271,8 +271,8 @@
      "type": "mendGlow",
      "local": true,
      "at": [
-      540,
-      900
+      560,
+      1170
      ],
      "r": 48,
      "start": {
@@ -297,8 +297,8 @@
      "type": "rippleMap",
      "local": true,
      "origin": [
-      540,
-      900
+      560,
+      1170
      ],
      "rings": [],
      "idle": true,
@@ -424,12 +424,12 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.04,
-     "y": 0
+     "s": 1.16,
+     "y": -150
     },
     "to": {
-     "s": 1.08,
-     "y": 0
+     "s": 1.19,
+     "y": -150
     }
    },
    "plateScrim": 0.4,
@@ -468,8 +468,8 @@
      "type": "mendGlow",
      "local": true,
      "at": [
-      300,
-      1000
+      248,
+      1253
      ],
      "r": 34,
      "start": {
@@ -491,8 +491,8 @@
      "type": "mendGlow",
      "local": true,
      "at": [
-      560,
-      980
+      518,
+      1264
      ],
      "r": 34,
      "start": {
@@ -514,8 +514,8 @@
      "type": "mendGlow",
      "local": true,
      "at": [
-      800,
-      1010
+      788,
+      1274
      ],
      "r": 34,
      "start": {
@@ -631,9 +631,9 @@
     "background": "the menders at the top"
    },
    "lighting": "Bright morning on marble.",
-   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a long queue of ordinary townsfolk holding coins and baskets waiting up the wide marble steps of a grand hall, at the top three healers in rich moss green and gold robes stand proudly like nobles, guards beside them, morning light, wide shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a long line of poor townsfolk, farmers and mothers with children, holding coins and baskets, queue up the wide white steps of a grand palace hall, at the top of the steps two proud healers in rich moss green coats embroidered with gold, morning light, wide shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
    "videoPrompt": "(Not used.)",
-   "sdxlPrompt": "a long queue of ordinary townsfolk holding coins and baskets waiting up the wide marble steps of a grand hall, at the top three healers in rich moss green and gold robes stand proudly like nobles, guards beside them, morning light, wide shot",
+   "sdxlPrompt": "a long line of poor townsfolk, farmers and mothers with children, holding coins and baskets, queue up the wide white steps of a grand palace hall, at the top of the steps two proud healers in rich moss green coats embroidered with gold, morning light, wide shot",
    "graphics": [
     {
      "type": "mendGlow",
@@ -737,12 +737,14 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.04,
-     "y": 0
+     "s": 1.22,
+     "x": 115,
+     "y": -200
     },
     "to": {
-     "s": 1.08,
-     "y": 0
+     "s": 1.25,
+     "x": 115,
+     "y": -200
     }
    },
    "plateScrim": 0.45,
@@ -782,8 +784,8 @@
      "type": "mendGlow",
      "local": true,
      "at": [
-      700,
-      1100
+      497,
+      1225
      ],
      "r": 56,
      "start": {
@@ -808,7 +810,7 @@
      "type": "ringTag",
      "numeral": "IV",
      "kicker": "Unexplained",
-     "text": "The one it couldn't save",
+     "text": "Couldn't save",
      "lost": true,
      "start": {
       "line": "L6",
@@ -819,7 +821,7 @@
     {
      "type": "oversizedWord",
      "text": "Why?",
-     "y": 760,
+     "y": 640,
      "size": 200,
      "start": {
       "line": "L6",
@@ -911,40 +913,44 @@
      ],
      "rings": [
       {
-       "r": 150,
+       "r": 130,
        "kicker": "I \u00b7 Medicine",
        "label": "Surgeons forgotten",
-       "angle": -60,
+       "angle": 90,
+       "side": "right",
        "at": {
         "shot": "lesson",
         "offset": 0.1
        }
       },
       {
-       "r": 250,
+       "r": 220,
        "kicker": "II \u00b7 War",
        "label": "Nobody goes home",
-       "angle": 200,
+       "angle": -90,
+       "side": "right",
        "at": {
         "shot": "lesson",
         "offset": 0.42
        }
       },
       {
-       "r": 350,
+       "r": 310,
        "kicker": "III \u00b7 Power",
        "label": "Menders rule",
-       "angle": -20,
+       "angle": 90,
+       "side": "right",
        "at": {
         "shot": "lesson",
         "offset": 0.74
        }
       },
       {
-       "r": 440,
+       "r": 400,
        "kicker": "IV \u00b7 Unexplained",
        "label": "Why?",
-       "angle": 150,
+       "angle": -90,
+       "side": "right",
        "lost": true,
        "at": {
         "shot": "lesson",

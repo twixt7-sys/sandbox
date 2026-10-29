@@ -41,7 +41,7 @@
 - Figma: the Starter plan is out of AI credits until **1 Nov 2026** (today is 29 Oct), so I used the free local route without asking, as the brief says.
 - No Runway, ElevenLabs or Creatomate keys were used. AWS credentials exist in the environment but weren't used.
 - The idea: treating a magic system's social and economic side-effects as part of its design is standard craft advice in fantasy writing (the "if it's cheap, everyone uses it" test). The episode makes no claim about any real medicine, army or faith.
-- Parallel episodes: when I started, only EP19 and EP20 had pushed, and both were WIP (`ec27b63`, `476bd6a`). EP18 and EP21 had no branch, so there was no EP21 brief to build on. EP22 therefore assumes only the plan's framing of EP21 (can / can't / costs) and avoids it.
+- Parallel episodes: when I started, only EP19 and EP20 had pushed, both as WIP, and EP18 and EP21 had no branch, so the script was written from the plan's framing of EP21 (can / can't / costs). Before the final push, **EP18 and EP21 had finished**. EP21 (`b9508d1`, which already contains EP18 `be11236`) is merged into this branch. EP19 (`d1209c9`) and EP20 (`394761c`) were still WIP and aren't merged. EP21's example magic is also called *mending*, but there menders fix broken objects; in EP22 they heal wounds, in a different realm (Veyra). The two don't contradict each other, and EP21's brief explicitly leaves "what mending would do to a whole economy" to EP22. Graphic and SFX names don't collide: EP21 has `mendSeam` / `mendKnit` / `mendFizzle`, EP22 has `mendGlow` / `mend` / `ripple`.
 
 ## 2. Stack
 
@@ -56,6 +56,7 @@ New in this episode (`src/graphics/Ripple.tsx`):
 - `mendGlow`: a breathing jade glow with rising sparks at a plate point. `pulses` brighten it and send a ring out. `core: false` draws only a ring sweeping across the frame. `failAt` makes it gutter twice and go out, leaving a faint rust ember.
 - `rippleMap`: rings of consequence spreading from one origin. Each ring has a wavefront, a pin and a label; a `lost` ring is dashed with a rust "?". `idle` sends faint rings out. `liftAt` / `lift` and `lessonText` lay out the lesson, as `pillarStack` does.
 - `ringTag`: a `tag` with a concentric-ring glyph and a numeral; `lost` turns it rust and dashed.
+- Merged in from EP21 (finished, `b9508d1`, which already contains EP18 `be11236`): its plates, briefs, srt, covers and docs. The conflicts were in `README.md`, `docs/COSTS.md`, `docs/DISTRIBUTION.md`, `docs/STYLE.md`, `pipeline/score.py` and `src/graphics/Graphics.tsx`, all additions on both sides. Every side is kept, in episode order: EP18's `quill`/`clauseLight` and EP21's `mendKnit`/`mendFizzle`/`costCrack` sit beside EP22's SFX, and the `LAW`, `SPELLBOOK` and `RIPPLE` registrations are all present. Git had interleaved the DISTRIBUTION caption sections, so the file was rebuilt as EP21's version plus the EP22 section. After the merge, `tsc` passes, one still each of ep18, ep21 and ep22 renders correctly, and EP22's CTA frame (EP21 added a save icon to the shared `ctaCard`) matches the pre-merge render.
 - `mend` and `ripple` SFX (`pipeline/score.py`). `mend` is the signature sound of the healing and is reused every time a glow lights: the hook, the touch, the three soldiers, the menders' door, the bed. `ripple` plays on every ring.
 - Motif colour: **mend `#a6e3c4`** (pale jade), used only for the healing and its rings. Everything else stays on the series palette, with rust for the unexplained death.
 
@@ -147,9 +148,9 @@ Also track how many comments name a *consequence* (not just a power), which show
 
 ## 11. How to produce EP23 ("Make Magic Expensive Without Using Mana")
 
-1. Branch `claude/worldcraft-ep23` from `claude/worldcraft-ep22`. Read:
+1. Branch `claude/worldcraft-ep23` from `claude/worldcraft-ep22`, which has EP01–EP18 and EP21–EP22 (EP19 and EP20 were still WIP). Read:
    - `CLAUDE.md`, `docs/STYLE.md`, `docs/SERIES_PLAN.md`;
-   - this brief, the EP21 brief (once it's pushed: the can / can't / costs framework) and EP17's.
+   - this brief, the EP21 brief (the can / can't / costs framework, with its mending magic) and EP17's.
 2. **Stills:** Figma credits reset on **1 Nov 2026**. If it's on or after that date and Figma would be clearly better, ask with AskUserQuestion first (about 4 images, up to 6). Otherwise use `python pipeline/local_stills.py ep23 <shots> --seeds 11 23` (add a third seed, such as 7, for people doing something specific with their hands), then `--pick`, then `plates.py --register` **and `pipeline/build.sh`**, since the plates reach `public/` only through the build. Name each prompt after its shot id. Run nothing heavy alongside, and budget a second round.
 3. Story (plan): costs that aren't mana. "Every spell steals a memory" is the plan's example; others are years of life, warmth, a name, a sense. The cost should create drama and choices.
    - One caster and one cost, shown through what it takes from them (a family that she can't recognise, a fading name on a door), never through injury.

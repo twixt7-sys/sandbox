@@ -710,6 +710,65 @@ def sfx_hit(kind, dur=None):
             out += (body + bp(noise(n), 400, 2200) * np.exp(-th * 90) * 0.7) * a * (t >= at)
         out = lp(out, 1600)
         return stereo(out + np.roll(out, int(0.045 * SR)) * 0.25, 0.3)
+    if kind == "quill":
+        # A clause written into the law (EP18 lawText signature): three quick nib strokes on vellum, then a dry dot.
+        n = int(0.9 * SR)
+        t = np.arange(n) / SR
+        out = np.zeros(n)
+        for at, d, a in ((0.0, 0.16, 0.8), (0.2, 0.12, 0.6), (0.36, 0.2, 0.7)):
+            th = t - at
+            shape = np.clip(th / d, 0, 1) * (th < d) * np.sin(np.pi * np.clip(th / d, 0, 1))
+            out += bp(noise(n), 2500, 8000) * shape * a * (0.7 + 0.3 * np.sin(2 * np.pi * 55 * t))
+        th = np.clip(t - 0.62, 0, None)
+        out += bp(noise(n), 1500, 5000) * np.exp(-th * 80) * (t >= 0.62) * 0.6
+        return stereo(out * 0.6, 0.4)
+    if kind == "clauseLight":
+        # A clause lit by the fear behind it (EP18): a soft breath of flame catching, under a low, warm open fifth.
+        n = int(2.0 * SR)
+        t = np.arange(n) / SR
+        catch = bp(noise(n), 400, 2500) * np.interp(t, [0, 0.08, 0.5, 1.0], [0, 0.5, 0.2, 0])
+        tone = sum(a * np.sin(2 * np.pi * f * t) for f, a in ((110.0, 1.0), (164.81, 0.6), (220.0, 0.35), (329.63, 0.15)))
+        tone *= np.minimum(1, t / 0.06) * np.exp(-t * 2.2)
+        return stereo(catch + tone * 0.35, 0.4)
+    if kind == "mendKnit":
+        # The mend (EP21 signature magic): a fine crackle of pieces drawing together under a glassy cluster gliding up a
+        # fourth, settling on a soft open fifth. Reused whenever the mending magic (or the spell page's sigil) works.
+        n = int(2.2 * SR)
+        t = np.arange(n) / SR
+        grains = np.zeros(n)
+        for g in RNG.uniform(0.0, 0.8, 70):
+            i = int(g * SR)
+            m = int(0.006 * SR)
+            grains[i:i + m] += bp(noise(m), 2500, 8000) * RNG.uniform(0.1, 0.4) * (0.9 - g)
+        glide = 1 + (4 / 3 - 1) * np.minimum(1, t / 0.8) ** 0.7
+        glass = sum(a * np.sin(2 * np.pi * np.cumsum(np.full(n, f) * glide) / SR) for f, a in ((523.25, 1.0), (784.0, 0.5), (1046.5, 0.3)))
+        glass *= np.interp(t, [0, 0.3, 0.8, 2.2], [0, 0.35, 0.5, 0])
+        th = np.clip(t - 0.8, 0, None)
+        settle = sum(np.sin(2 * np.pi * f * th) for f in (349.23, 523.25, 698.46)) * np.exp(-th * 2.2) * (t >= 0.8) * np.minimum(1, th / 0.02)
+        return stereo(grains + glass * 0.5 + settle * 0.3, 0.5)
+    if kind == "mendFizzle":
+        # A mend that fails (EP21's limit): the glassy tone sags a semitone, sputters and dies on a dull thump.
+        n = int(1.2 * SR)
+        t = np.arange(n) / SR
+        f = 698.46 * (1 - 0.06 * np.minimum(1, t / 0.5))
+        tone = np.sin(2 * np.pi * np.cumsum(f) / SR) + 0.4 * np.sin(2 * np.pi * np.cumsum(f * 1.5) / SR)
+        gate = (lp(noise(n), 18, 1) > -0.02).astype(float) * 0.7 + 0.3
+        tone *= gate * np.interp(t, [0, 0.05, 0.5, 0.75], [0, 0.6, 0.35, 0])
+        th = np.clip(t - 0.55, 0, None)
+        thump = lp(noise(n), 400) * np.exp(-th * 18) * (t >= 0.55) * 1.2
+        return stereo(tone + thump, 0.3)
+    if kind == "costCrack":
+        # The price of a mend (EP21): a brittle crack racing across glass or stone, a few splitting ticks, a low creak.
+        n = int(1.4 * SR)
+        t = np.arange(n) / SR
+        snap = hp(noise(n), 1800) * np.exp(-t * 40) * 0.9
+        ticks = np.zeros(n)
+        for g in np.sort(RNG.uniform(0.02, 0.4, 12)):
+            i = int(g * SR)
+            m = int(0.004 * SR)
+            ticks[i:i + m] += hp(noise(m), 3000) * RNG.uniform(0.3, 0.8)
+        creak = bp(noise(n), 120, 500) * np.interp(t, [0, 0.05, 0.5, 1.0], [0, 0.6, 0.3, 0])
+        return stereo(snap + ticks + creak, 0.5)
     if kind == "mend":
         # A wound closing at a touch (EP22 mendGlow signature): a soft breath, then glassy A-major partials that bloom and
         # drift a few cents upward, like warmth spreading under the hand. No attack transient: healing never clicks.

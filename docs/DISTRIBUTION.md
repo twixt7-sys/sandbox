@@ -1154,6 +1154,148 @@ Source of truth: `episodes/ep17/episode.json` → `metadata`. The AI label goes 
 - **Pinned comment:** Bread, order, the wage, fear, nothing better: which pillar is strongest in your empire, and who stands in it?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
 
+## Episode 18 captions (ready to paste)
+
+Source of truth: `episodes/ep18/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep18/Worldcraft_Short_E18_cover.jpg`. Subtitles: `episodes/ep18/ep18.srt`. The stills were made with a local open model (SDXL-Lightning), so they're AI-generated like every other episode's and need the same disclosure.
+
+### YouTube Shorts
+- **Title** (48/100 chars): `Laws Reveal What a Society Fears (Worldbuilding)`
+- **Alternate title** (53 chars): `A kingdom where lying is legal but silence is a crime`
+- **Description:**
+
+> Imagine a kingdom where lying is legal, but silence is a crime.
+>
+> In Velmarch, a magistrate fines a man for saying nothing. Absurd, until you read why. Two hundred years ago, the city fell to a plot that everyone noticed and nobody mentioned. So they outlawed silence. A lie can be argued with. Silence can't.
+>
+> Laws show what a people fear, what they hold sacred and what they won't tolerate. A strange law becomes believable when it answers a specific disaster in your world's history. Every strange law is a scar. Find the wound.
+>
+> Invent one law that would make outsiders fear your kingdom.
+>
+> Episode 18 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts
+
+- **Pinned comment:** Your turn: write one law from your kingdom that would scare a visitor, and the disaster it answers.
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (237 chars): `Lying: legal. Silence: a crime. 🤐 Every strange law is a scar from something that went wrong. Find the wound. What law would make outsiders fear YOUR kingdom? #Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts`
+- **Pinned comment:** Drop one law from your world and the disaster that made it 👇
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> Imagine a kingdom where lying is legal, but silence is a crime.
+>
+> In Velmarch, a magistrate fines a man for saying nothing. Absurd, until you read why. Two hundred years ago, the city fell to a plot that everyone noticed and nobody mentioned. So they outlawed silence. A lie can be argued with. Silence can't.
+>
+> Laws show what a people fear, what they hold sacred and what they won't tolerate. A strange law becomes believable when it answers a specific disaster in your world's history. Every strange law is a scar. Find the wound.
+>
+> Invent one law that would make outsiders fear your kingdom.
+>
+> Episode 18 of 50.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts
+
+- **Pinned comment:** What's the strangest law in your kingdom, and what went wrong to make it?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Silence is a crime here.
+>
+> Imagine a kingdom where lying is legal, but silence is a crime.
+>
+> In Velmarch, a magistrate fines a man for saying nothing. Absurd, until you read why. Two hundred years ago, the city fell to a plot that everyone noticed and nobody mentioned. So they outlawed silence. A lie can be argued with. Silence can't.
+>
+> Laws show what a people fear, what they hold sacred and what they won't tolerate. A strange law becomes believable when it answers a specific disaster in your world's history. Every strange law is a scar. Find the wound.
+>
+> Invent one law that would make outsiders fear your kingdom.
+>
+> Episode 18 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts
+
+- **Hook check:** First 24 characters: 'Silence is a crime here.'
+- **Pinned comment:** One law, one wound: what's yours?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 21 captions (ready to paste)
+
+Source of truth: `episodes/ep21/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep21/Worldcraft_Short_E21_cover.jpg`. Subtitles: `episodes/ep21/ep21.srt`. The stills were made with a local open model (SDXL-Lightning), so they're AI-generated like every other episode's and need the same disclosure. This is the series' first **save** CTA: saves are the metric to watch (see the brief's experiments).
+
+### YouTube Shorts
+- **Title** (56/100 chars): `The 3 Questions Every Magic System Needs (Worldbuilding)`
+- **Alternate title** (49 chars): `Answer these 3 questions before inventing a spell`
+- **Description:**
+
+> Before inventing a spell, answer these three questions.
+>
+> One: what can it do? Menders fix anything broken. Two: what stops it? Only what they touched before it broke. Three: what does it cost? Each mend cracks something they own.
+>
+> Then the queen's crown shatters, and the only mender who ever held it is a thief. Why did a thief hold the crown? Will she mend it? What will crack in her own home? Three answers, and the story writes itself.
+>
+> Capabilities, limitations, consequences: can, can't, costs. Answer all three before your first spell, and your magic starts making plot instead of solving it.
+>
+> Save this before designing your next magic system.
+>
+> Episode 21 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators. This episode opens Arc 5: Magic and Its Rules.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #MagicSystem #WorldcraftShorts
+
+- **Pinned comment:** Your turn: give your magic system one line each. Can: ... Can't: ... Costs: ...
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (217 chars): `Can. Can't. Costs. 🪄 Answer all three before your first spell, and the story writes itself. Save this before designing your next magic system. #Worldbuilding #FantasyWriting #WritingTips #MagicSystem #WorldcraftShorts`
+- **Pinned comment:** Write your magic in three lines: what it can do, what it can't, and what it costs.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> Before inventing a spell, answer these three questions.
+>
+> One: what can it do? Menders fix anything broken. Two: what stops it? Only what they touched before it broke. Three: what does it cost? Each mend cracks something they own.
+>
+> Then the queen's crown shatters, and the only mender who ever held it is a thief. Why did a thief hold the crown? Will she mend it? What will crack in her own home? Three answers, and the story writes itself.
+>
+> Capabilities, limitations, consequences: can, can't, costs. Answer all three before your first spell, and your magic starts making plot instead of solving it.
+>
+> Save this before designing your next magic system.
+>
+> Episode 21 of 50.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #MagicSystem #WorldcraftShorts
+
+- **Pinned comment:** Which question do most magic systems skip: what it can't do, or what it costs?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Can. Can't. Costs.
+>
+> Before inventing a spell, answer these three questions.
+>
+> One: what can it do? Menders fix anything broken. Two: what stops it? Only what they touched before it broke. Three: what does it cost? Each mend cracks something they own.
+>
+> Then the queen's crown shatters, and the only mender who ever held it is a thief. Why did a thief hold the crown? Will she mend it? What will crack in her own home? Three answers, and the story writes itself.
+>
+> Capabilities, limitations, consequences: can, can't, costs. Answer all three before your first spell, and your magic starts making plot instead of solving it.
+>
+> Save this before designing your next magic system.
+>
+> Episode 21 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyWriting #WritingTips #MagicSystem #WorldcraftShorts
+
+- **Hook check:** First 18 characters: 'Can. Can't. Costs.'
+- **Pinned comment:** Three lines, one magic: tell us what yours can do, can't do, and costs.
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
 ## Episode 22 captions (ready to paste)
 
 Source of truth: `episodes/ep22/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep22/Worldcraft_Short_E22_cover.jpg`. Subtitles: `episodes/ep22/ep22.srt`. The stills were made with a local open model (SDXL-Lightning), so they're AI-generated like every other episode's and need the same disclosure. The healing glow is drawn in code, and no real-world medical or religious symbol appears (the TikTok caption avoids the bandage emoji for the same reason).

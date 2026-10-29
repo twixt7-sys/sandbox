@@ -78,7 +78,7 @@ export const ChronicleFrame: React.FC<GraphicProps> = ({g, t, span}) => {
  * Tablet: a carved memorial inscription. `at: [x, y]` is its top-left (or top-centre with `align: "center"`), `width`
  * (default 560). `kicker` (amber caps) names whose stone it is; `lines` are cut into the stone letter by letter from
  * `start` over `dur` (default 1.4 s; a chisel `sfx` belongs on the same cue). `size` sets the carved type (default 46).
- * `sealAt` stamps an ember `seal` (default "TRUE") on its corner; `leftOut: {text, at}` adds a mist italic line under
+ * `sealAt` stamps an ember `seal` (default "TRUE") on its lower-right corner; `leftOut: {text, at}` adds a mist italic line under
  * the stone naming what it leaves out. `end` fades it (else the shot end). Pin with `local: true` to stand it on a plate.
  */
 export const Tablet: React.FC<GraphicProps> = ({g, t, span}) => {
@@ -140,7 +140,7 @@ export const Tablet: React.FC<GraphicProps> = ({g, t, span}) => {
 							style={{
 								position: 'absolute',
 								right: -22,
-								top: -26,
+								bottom: -24,
 								...kicker,
 								fontWeight: 800,
 								fontSize: g.sealSize ?? 28,
@@ -228,20 +228,14 @@ export const MemorialLanterns: React.FC<GraphicProps> = ({g, t, span}) => {
 	return (
 		<AbsoluteFill style={{pointerEvents: 'none'}}>
 			<svg width={W} height={H} style={{position: 'absolute', inset: 0, overflow: 'visible'}}>
-				<defs>
-					<radialGradient id="lanternGlow">
-						<stop offset="0%" stopColor="#ffd98a" stopOpacity={0.85} />
-						<stop offset="35%" stopColor="#f4a94b" stopOpacity={0.35} />
-						<stop offset="100%" stopColor="#e9a94b" stopOpacity={0} />
-					</radialGradient>
-				</defs>
 				{pts.map(([x, y], i) => {
 					const lit = g.instant ? 1 : ease(t, t0 + i * (g.stagger ?? 0.35), 0.7);
 					const fl = 0.9 + 0.06 * Math.sin(t * 9.3 + i * 2.1) + 0.04 * Math.sin(t * 23.7 + i);
 					const top = y - 70 * k;
 					return (
 						<g key={i}>
-							<circle cx={x} cy={top + 12 * k} r={120 * k * fl} fill="url(#lanternGlow)" opacity={lit} />
+							<circle cx={x} cy={top + 12 * k} r={110 * k * fl} fill="#f4a94b" opacity={0.45 * lit} style={{filter: `blur(${36 * k}px)`}} />
+							<circle cx={x} cy={top + 12 * k} r={34 * k * fl} fill="#ffd98a" opacity={0.85 * lit} style={{filter: `blur(${12 * k}px)`}} />
 							<rect x={x - 2.5 * k} y={top + 26 * k} width={5 * k} height={44 * k} fill="#14100c" />
 							<path d={`M${x - 10 * k},${top} H${x + 10 * k} L${x + 8 * k},${top + 26 * k} H${x - 8 * k} Z`} fill={lit > 0.05 ? '#ffcf7a' : '#3a3026'} fillOpacity={0.4 + 0.6 * lit * fl} stroke="#1a140e" strokeWidth={2.2 * k} />
 							<path d={`M${x - 12 * k},${top} H${x + 12 * k} L${x},${top - 9 * k} Z`} fill="#1a140e" />

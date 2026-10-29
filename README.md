@@ -139,6 +139,11 @@ New *kinds* of visuals, such as a new diagram type, are added once as a componen
 | graphic | `pillarStack` | An empire drawn as a roof on pillars (`label` on the entablature): the pillars rise as stone on `riseAt`, then `peopleAt[i]` turns each into a supporter, a portrait cut from their plate (`src`, plate point `x`/`y`, `zoom`) with its reason, or an `empty` dashed pillar for a missing alternative; `liftAt` shrinks the stack up and `lessonKicker` / `lessonText` land beneath it at `lessonAt` (EP17: BREAD / ORDER / THE WAGE / FEAR / NOTHING BETTER) |
 | graphic | `pillarTag` | A `tag` with a pillar glyph and a numeral ("PILLAR I · BREAD" / *The farmer*), so each person we meet reads as one pillar of the stack (EP17) |
 | sfx | `pillarSet`, `doorKnock` (hits) | EP17: grit and a dry stone thud as a pillar is set; three muffled knocks on a door down the street (fear by implication) |
+| graphic | `chronicleFrame` | The view a chronicle keeps (`local`): a gilt `frame: [x,y,w,h]` with corner brackets and a top `label` darkens everything outside it (`dim`), then `openAt` widens it past the plate edges so the plate shows what was cropped out (EP20: each nation's memorial frames out the other side's dead). `dim: 0` draws the border alone |
+| graphic | `tablet` | A carved stone inscription, all text drawn in code: `kicker`, `lines` cut letter by letter from `start` over `dur`, an ember `seal` ("TRUE") stamped at `sealAt`, optional `leftOut: {text, at}` line; `align: "center"`, `size`, `width` (EP20) |
+| graphic | `truthRows` | Short lesson rows landing on cues (`rows: [{text, at}]`, *word* amber), then a `sumKicker` + `sum` (*word* ember) at `sumAt` while the rows step back (EP20: Different losses / stories / values → ENEMIES / Neither is evil.) |
+| graphic | `lanterns` | Small code-drawn memorial lanterns on posts at plate points, lit in turn with a warm flickering glow (`size`, `stagger`) (EP20: one at each nation's stone at dusk) |
+| sfx | `chisel`, `frameOpen` (hits) | EP20: light chisel taps cutting an inscription; a breath of air widening over a low hollow fifth as a chronicle's frame opens |
 
 ## Local / Claude-session commands
 

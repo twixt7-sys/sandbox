@@ -1153,3 +1153,71 @@ Source of truth: `episodes/ep17/episode.json` → `metadata`. The AI label goes 
 - **Hook check:** First 26 characters: 'Five pillars. No villains.'
 - **Pinned comment:** Bread, order, the wage, fear, nothing better: which pillar is strongest in your empire, and who stands in it?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 20 captions (ready to paste)
+
+Source of truth: `episodes/ep20/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep20/Worldcraft_Short_E20_cover.jpg`. Subtitles: `episodes/ep20/ep20.srt`. The stills were made with a local open model (SDXL-Lightning), so they're AI-generated like every other episode's and need the same disclosure.
+
+### YouTube Shorts
+- **Title** (61/100 chars): `Two Kingdoms, One War, Both Telling the Truth (Worldbuilding)`
+- **Alternate title** (48 chars): `Make two nations enemies without making one evil`
+- **Description:**
+
+> What if both kingdoms are telling the truth about the same war?
+>
+> Upstream, Arvel's memorial stone says: they crossed the river and burned our town. True. Downstream, Dunmere's cairns say: they dammed the river, and we starved. Also true. Each memorial frames out the other side's dead.
+>
+> Nations remember the same event differently because they lost different things, inherited different stories and hold different values sacred. That is how two peoples stay enemies without either being evil. Give each side a true story and a real loss, and you'll never need a villain.
+>
+> Tag someone who loves morally complicated fantasy.
+>
+> Episode 20 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyWar #WorldcraftShorts
+
+- **Pinned comment:** Your turn: two nations in your world, one shared event. What does each side carve on its memorial, and what does it leave out?
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (230 chars): `One war, two memorials, both true 🪨 One remembers the fire, the other the famine. Neither is the villain. Tag someone who loves morally complicated fantasy. #Worldbuilding #FantasyWriting #WritingTips #FantasyWar #WorldcraftShorts`
+- **Pinned comment:** What does the other side's memorial leave out in your world?
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> What if both kingdoms are telling the truth about the same war?
+>
+> Upstream, Arvel's memorial stone says: they crossed the river and burned our town. True. Downstream, Dunmere's cairns say: they dammed the river, and we starved. Also true. Each memorial frames out the other side's dead.
+>
+> Nations remember the same event differently because they lost different things, inherited different stories and hold different values sacred. That is how two peoples stay enemies without either being evil. Give each side a true story and a real loss, and you'll never need a villain.
+>
+> Tag someone who loves morally complicated fantasy.
+>
+> Episode 20 of 50.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyWar #WorldcraftShorts
+
+- **Pinned comment:** Which loss does each nation in your world remember, and which one does it forget?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Both true. Neither evil.
+>
+> What if both kingdoms are telling the truth about the same war?
+>
+> Upstream, Arvel's memorial stone says: they crossed the river and burned our town. True. Downstream, Dunmere's cairns say: they dammed the river, and we starved. Also true. Each memorial frames out the other side's dead.
+>
+> Nations remember the same event differently because they lost different things, inherited different stories and hold different values sacred. That is how two peoples stay enemies without either being evil. Give each side a true story and a real loss, and you'll never need a villain.
+>
+> Tag someone who loves morally complicated fantasy.
+>
+> Episode 20 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyWar #WorldcraftShorts
+
+- **Hook check:** First 24 characters: 'Both true. Neither evil.'
+- **Pinned comment:** Fire or famine: which memory would your nation carve in stone, and who did it leave out?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

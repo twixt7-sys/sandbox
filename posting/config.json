@@ -1,0 +1,23 @@
+{
+  "series": "Worldcraft Shorts",
+  "totalEpisodes": 50,
+  "branchPattern": "claude/worldcraft-ep{nn}",
+  "branchOverrides": {},
+  "minHoursBetweenPosts": 20,
+  "aiLabel": true,
+  "shareToFeed": true,
+  "postFirstComment": true,
+  "caption": {
+    "template": "{hook}\n\nEpisode {number} · {title}\n\n{cta}\n\n{hashtags}",
+    "cta": "More valuable bite-sized worldbuilding/fantasy writing content? Give this small page a follow and come along :)",
+    "maxHashtags": 5,
+    "baseHashtags": ["#worldbuilding", "#fantasywriting", "#writingcommunity", "#writingtips"],
+    "fallbackTopicHashtag": "#fantasy",
+    "excludeHashtags": ["#worldcraftshorts"]
+  },
+  "insights": {
+    "metrics": ["views", "reach", "likes", "comments", "shares", "saved", "total_interactions",
+                "ig_reels_avg_watch_time", "ig_reels_video_view_total_time", "reels_skip_rate"],
+    "trackDays": 14
+  }
+}

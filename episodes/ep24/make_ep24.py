@@ -52,13 +52,13 @@ def ring(key, **kw):
 
 
 lines = [
-    ("L1", "hook", "If teleportation exists, why are merchants still using horses?", 0.5, ["teleportation", "horses?"]),
+    ("L1", "hook", "If teleportation exists, why are merchants still using horses?", 0.4, ["teleportation", "horses?"]),
     ("L2", "gate", "Here, a crystal gate links two cities.", 0.4, ["crystal", "two"]),
     ("L3", "cargo", "Each jump burns a crystal worth more than the cargo.", 0.35, ["burns", "more"]),
-    ("L4", "village", "It reaches one city. Every village still needs the road.", 0.35, ["one", "road."]),
-    ("L5", "queue", "One jump in a hundred fails. The guild rations the rest.", 0.45, ["fails.", "rations"]),
-    ("L6", "courier", "So it carries only what can't wait: medicine, royal mail.", 0.7, ["can't", "wait:"]),
-    ("L7", "lesson", "Magic doesn't replace technology. Price, range and reliability decide who uses what.", 0.7, ["price,", "range", "reliability"]),
+    ("L4", "village", "It reaches one city. Every village needs the road.", 0.35, ["one", "road."]),
+    ("L5", "queue", "One jump in a hundred fails. The guild rations the rest.", 0.35, ["fails.", "rations"]),
+    ("L6", "courier", "So it carries only what can't wait: medicine, royal mail.", 0.55, ["can't", "wait:"]),
+    ("L7", "lesson", "Magic doesn't replace technology. Price, range and reliability decide who uses what.", 0.5, ["price,", "range", "reliability"]),
     ("L8", "cta", "What technology would magic replace first in your world?", 0.0, ["first"]),
 ]
 
@@ -101,7 +101,7 @@ shots = [
         "lighting": "Overcast drizzle; top scrim for the title.",
         "imagePrompt": ip("hook"), "videoPrompt": "(Not used.)", "sdxlPrompt": SDXL["hook"],
         "graphics": [
-            ring("hookRing", start={"shot": "hook"}, idle=0.55, jumps=[c("L1", "teleportation", -0.05)]),
+            ring("hookRing", start={"shot": "hook"}, idle=0.7, stone=True, jumps=[c("L1", "teleportation", -0.05)]),
             {"type": "titleLockup", "kicker": "Teleportation exists", "text": "So why horses?", "y": 340, "size": 118,
              "start": c("L1", "if", -0.1), "end": c("L1", "horses?", 0.5)},
         ],
@@ -151,7 +151,7 @@ shots = [
         "graphics": [
             board("cargo", enter=True),
             {"type": "crystalPrice", "at": G.get("crystalAt", [800, 1020]), "kicker": "One jump", "price": "40 crowns", "burnedKicker": "Burned",
-             "start": c("L3", "each", -0.05), "burnAt": c("L3", "burns", -0.05), "side": "left"},
+             "start": c("L3", "each", -0.05), "burnAt": c("L3", "burns", -0.05), "side": "below"},
             {"type": "callout", "at": G["cargoAt"], "label": "Cargo", "note": "12 crowns", "side": G.get("cargoSide", "left"), "reach": 120, "rise": -70,
              "backdrop": True, "start": c("L3", "cargo.", -0.15)},
         ],
@@ -220,7 +220,7 @@ shots = [
         "lighting": "Lantern night; the gate is the brightest thing in frame.",
         "imagePrompt": ip("courier"), "videoPrompt": "(Not used.)", "sdxlPrompt": SDXL["courier"],
         "graphics": [
-            ring("courierRing", openAt=c("L6", "so", -0.1), jumps=[c("L6", "mail.", 0.1)]),
+            ring("courierRing", occlude=G["courierOcclude"], openAt=c("L6", "so", -0.1), jumps=[c("L6", "mail.", 0.1)]),
             board("courier"),
         ],
         "onScreenText": "Board row SPEED: medicine, royal mail / nine days, bead to the GATE.",
@@ -280,7 +280,7 @@ shots = [
         "lighting": "Dusk; dimmed under the card.",
         "imagePrompt": "(Reuses the hook plate.)", "videoPrompt": "(Not used.)",
         "graphics": [
-            ring("hookRing", start={"shot": "cta", "offset": -0.6}, idle=0.55),
+            ring("hookRing", start={"shot": "cta", "offset": -0.6}, idle=0.7, stone=True),
             {"type": "ctaCard", "start": {"shot": "cta"}, "ctaAt": c("L8", "what"), "episode": "Episode 24 / 50",
              "title": "Why teleportation doesn't replace the road", "kicker": "Your turn", "size": 74,
              "lines": ["What technology", "would magic replace", "*first in your world?*"], "button": "Comment below"},

@@ -25,6 +25,8 @@ const cue = (timing: ReturnType<typeof useTiming>, c?: Cue) => (c ? cueTime(timi
  * faint lilac shimmer (`idle`, default 0.3). `openAt` fills it with a turning swirl and a bright rim; `closeAt` lets it
  * fade back to idle. `jumps` cues flash the surface white and send one ring out (a cart going through). `failAt` makes an
  * open gate stutter three times and collapse to a point, leaving a few rust sparks. `dark: true` starts with no shimmer.
+ * `stone: true` draws the stone ring itself (for plates where SDXL painted none). `occlude: [[x, y, rx, ry], ...]` masks
+ * ellipses out of the light, so a figure standing in the opening stays in front of it.
  */
 export const GateRing: React.FC<GraphicProps> = ({g, t, span}) => {
 	const timing = useTiming();
@@ -59,6 +61,12 @@ export const GateRing: React.FC<GraphicProps> = ({g, t, span}) => {
 						<stop offset="85%" stopColor="#6d5bb8" stopOpacity={0.45} />
 						<stop offset="100%" stopColor={CRYSTAL} stopOpacity={0.9} />
 					</radialGradient>
+					<mask id={`${id}-m`} maskUnits="userSpaceOnUse" x={0} y={0} width={1080} height={1920}>
+						<rect x={-200} y={-200} width={1480} height={2320} fill="white" />
+						{(g.occlude ?? []).map(([ox, oy, orx, ory]: number[], i: number) => (
+							<ellipse key={i} cx={ox} cy={oy} rx={orx} ry={ory} fill="black" style={{filter: 'blur(3px)'}} />
+						))}
+					</mask>
 					<clipPath id={`${id}-c`}>
 						<ellipse cx={x} cy={y} rx={rx} ry={ry} />
 					</clipPath>
@@ -67,7 +75,7 @@ export const GateRing: React.FC<GraphicProps> = ({g, t, span}) => {
 					// A code-drawn stone ring for plates where SDXL painted none (a small, distant object it ignores).
 					<g>
 						<ellipse cx={x} cy={y + ry * 0.12} rx={rx * 1.55} ry={ry * 0.18} fill="rgba(0,0,0,0.35)" style={{filter: 'blur(4px)'}} transform={`translate(0 ${ry * 1.05})`} />
-						<ellipse cx={x} cy={y} rx={rx * 1.3} ry={ry * 1.3} fill="none" stroke={g.stoneColor ?? '#5f625f'} strokeWidth={Math.max(rx, ry) * 0.6} />
+						<ellipse cx={x} cy={y} rx={rx * 1.3} ry={ry * 1.3} fill="none" stroke={g.stoneColor ?? '#8d908a'} strokeWidth={Math.max(rx, ry) * 0.6} />
 						<ellipse cx={x} cy={y} rx={rx * 1.3} ry={ry * 1.3} fill="none" stroke="#2c2f2e" strokeWidth={Math.max(rx, ry) * 0.6} strokeDasharray={`${Math.max(rx, ry) * 0.06} ${Math.max(rx, ry) * 0.62}`} opacity={0.55} />
 						<ellipse cx={x} cy={y} rx={rx * 1.58} ry={ry * 1.58} fill="none" stroke="#2c2f2e" strokeWidth={1.5} opacity={0.7} />
 						<ellipse cx={x} cy={y} rx={rx} ry={ry} fill="none" stroke="#2c2f2e" strokeWidth={1.5} opacity={0.7} />
@@ -75,6 +83,7 @@ export const GateRing: React.FC<GraphicProps> = ({g, t, span}) => {
 						<path d={`M ${x - 6} ${y - ry * 1.58 - 4} L ${x} ${y - ry * 1.58 - 18} L ${x + 6} ${y - ry * 1.58 - 4} Z`} fill={CRYSTAL} opacity={0.9} style={{filter: `drop-shadow(0 0 6px ${CRYSTAL})`}} />
 					</g>
 				)}
+				<g mask={g.occlude ? `url(#${id}-m)` : undefined}>
 				{surf > 0.001 && (
 					<g style={{mixBlendMode: 'screen'}} opacity={Math.min(1, surf)}>
 						<g transform={`translate(${x} ${y}) scale(${sx}) translate(${-x} ${-y})`}>
@@ -106,6 +115,7 @@ export const GateRing: React.FC<GraphicProps> = ({g, t, span}) => {
 					if (t < p || q >= 1) return null;
 					return <ellipse key={i} cx={x} cy={y} rx={lerp(rx, rx * 2.4, q)} ry={lerp(ry, ry * 2.4, q)} fill="none" stroke={CRYSTAL} strokeWidth={lerp(5, 1, q)} opacity={(1 - q) * 0.8} />;
 				})}
+				</g>
 				{Number.isFinite(tFail) &&
 					t > tFail + 0.7 &&
 					Array.from({length: 10}, (_, i) => {
@@ -281,7 +291,7 @@ export const CountingBoard: React.FC<GraphicProps> = ({g, t, span}) => {
 						const bead = lerp(BOARD_W / 2, gate ? rodL + 30 : rodR - 30, slide);
 						const top = HEAD_H + i * ROW_H;
 						const winO = lerp(0.75, 1, slide);
-						const loseO = lerp(0.75, 0.38, slide);
+						const loseO = lerp(0.75, 0.5, slide);
 						return (
 							<div key={r.label} style={{position: 'absolute', top, left: 0, width: BOARD_W, height: ROW_H, opacity: appear}}>
 								{fresh > 0.01 && <div style={{position: 'absolute', inset: '4px 20px', borderRadius: 10, background: wc, opacity: 0.1 * fresh}} />}

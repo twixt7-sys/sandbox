@@ -31,7 +31,7 @@
    "id": "L1",
    "shot": "hook",
    "text": "If teleportation exists, why are merchants still using horses?",
-   "pauseAfter": 0.5,
+   "pauseAfter": 0.4,
    "emphasis": [
     "teleportation",
     "horses?"
@@ -60,7 +60,7 @@
   {
    "id": "L4",
    "shot": "village",
-   "text": "It reaches one city. Every village still needs the road.",
+   "text": "It reaches one city. Every village needs the road.",
    "pauseAfter": 0.35,
    "emphasis": [
     "one",
@@ -71,7 +71,7 @@
    "id": "L5",
    "shot": "queue",
    "text": "One jump in a hundred fails. The guild rations the rest.",
-   "pauseAfter": 0.45,
+   "pauseAfter": 0.35,
    "emphasis": [
     "fails.",
     "rations"
@@ -81,7 +81,7 @@
    "id": "L6",
    "shot": "courier",
    "text": "So it carries only what can't wait: medicine, royal mail.",
-   "pauseAfter": 0.7,
+   "pauseAfter": 0.55,
    "emphasis": [
     "can't",
     "wait:"
@@ -91,7 +91,7 @@
    "id": "L7",
    "shot": "lesson",
    "text": "Magic doesn't replace technology. Price, range and reliability decide who uses what.",
-   "pauseAfter": 0.7,
+   "pauseAfter": 0.5,
    "emphasis": [
     "price,",
     "range",
@@ -140,15 +140,16 @@
      "type": "gateRing",
      "local": true,
      "at": [
-      700,
-      640
+      760,
+      868
      ],
-     "rx": 70,
-     "ry": 80,
+     "rx": 34,
+     "ry": 42,
      "start": {
       "shot": "hook"
      },
-     "idle": 0.55,
+     "idle": 0.7,
+     "stone": true,
      "jumps": [
       {
        "line": "L1",
@@ -228,12 +229,12 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.04,
-     "y": 0
+     "s": 1.12,
+     "y": -100
     },
     "to": {
-     "s": 1.08,
-     "y": 0
+     "s": 1.15,
+     "y": -100
     }
    },
    "plateScrim": 0.35,
@@ -254,11 +255,11 @@
      "type": "gateRing",
      "local": true,
      "at": [
-      540,
-      820
+      578,
+      1240
      ],
-     "rx": 220,
-     "ry": 260,
+     "rx": 130,
+     "ry": 165,
      "openAt": {
       "line": "L2",
       "word": "crystal",
@@ -325,12 +326,12 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.04,
-     "y": 0
+     "s": 1.2,
+     "y": 180
     },
     "to": {
-     "s": 1.08,
-     "y": 0
+     "s": 1.23,
+     "y": 180
     }
    },
    "plateScrim": 0.3,
@@ -419,8 +420,8 @@
     {
      "type": "crystalPrice",
      "at": [
-      800,
-      1020
+      200,
+      760
      ],
      "kicker": "One jump",
      "price": "40 crowns",
@@ -435,13 +436,13 @@
       "word": "burns",
       "offset": -0.05
      },
-     "side": "left"
+     "side": "below"
     },
     {
      "type": "callout",
      "at": [
-      540,
-      1100
+      804,
+      1068
      ],
      "label": "Cargo",
      "note": "12 crowns",
@@ -507,11 +508,11 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.04,
+     "s": 1.03,
      "y": 0
     },
     "to": {
-     "s": 1.08,
+     "s": 1.07,
      "y": 0
     }
    },
@@ -641,12 +642,12 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.04,
-     "y": 0
+     "s": 1.3,
+     "y": -280
     },
     "to": {
-     "s": 1.08,
-     "y": 0
+     "s": 1.33,
+     "y": -280
     }
    },
    "plateScrim": 0.3,
@@ -667,11 +668,11 @@
      "type": "gateRing",
      "local": true,
      "at": [
-      540,
-      820
+      543,
+      1390
      ],
-     "rx": 200,
-     "ry": 240,
+     "rx": 185,
+     "ry": 205,
      "open": true,
      "start": {
       "shot": "queue"
@@ -801,12 +802,12 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.04,
-     "y": 0
+     "s": 1.1,
+     "y": 80
     },
     "to": {
-     "s": 1.08,
-     "y": 0
+     "s": 1.13,
+     "y": 80
     }
    },
    "plateScrim": 0.3,
@@ -827,11 +828,25 @@
      "type": "gateRing",
      "local": true,
      "at": [
-      540,
-      820
+      530,
+      1030
      ],
-     "rx": 200,
-     "ry": 240,
+     "rx": 262,
+     "ry": 395,
+     "occlude": [
+      [
+       598,
+       1135,
+       42,
+       55
+      ],
+      [
+       600,
+       1360,
+       80,
+       240
+      ]
+     ],
      "openAt": {
       "line": "L6",
       "word": "so",
@@ -1179,16 +1194,17 @@
      "type": "gateRing",
      "local": true,
      "at": [
-      700,
-      640
+      760,
+      868
      ],
-     "rx": 70,
-     "ry": 80,
+     "rx": 34,
+     "ry": 42,
      "start": {
       "shot": "cta",
       "offset": -0.6
      },
-     "idle": 0.55
+     "idle": 0.7,
+     "stone": true
     },
     {
      "type": "ctaCard",

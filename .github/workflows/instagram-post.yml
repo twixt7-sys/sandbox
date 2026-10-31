@@ -1,0 +1,167 @@
+name: Instagram daily post
+
+# Posts the next Worldcraft Shorts episode as an Instagram Reel once a day.
+# Order: the lowest episode number not yet in posting/state.json. The video is rendered from that
+# episode's branch (claude/worldcraft-epNN) with the same steps as render.yml, QA-checked, hosted
+# as a public asset on the "videos" release, then published through the Instagram API.
+# Needs repository secrets IG_ACCESS_TOKEN and IG_USER_ID (see posting/README.md).
+
+on:
+  schedule:
+    - cron: "23 16 * * *" # 16:23 UTC daily = 00:23 Manila, 12:23 New York. GitHub may start it a few minutes late.
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: Post this episode (e.g. ep13). Leave empty for the next one in order.
+        required: false
+        default: ""
+      dry_run:
+        description: Render, upload and print the caption, but don't publish to Instagram
+        type: boolean
+        default: false
+      force:
+        description: Ignore the minimum gap between posts (and allow reposting an episode)
+        type: boolean
+        default: false
+
+concurrency:
+  group: instagram-state
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  post:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      IG_API_BASE: ${{ vars.IG_API_BASE }}
+      HF_HOME: ${{ github.workspace }}/.cache/hf
+      RELEASE_TAG: videos
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check secrets
+        if: ${{ !inputs.dry_run }}
+        run: |
+          if [ -z "$IG_ACCESS_TOKEN" ] || [ -z "$IG_USER_ID" ]; then
+            echo "::error::Add the IG_ACCESS_TOKEN and IG_USER_ID repository secrets first (posting/README.md, step 3)."
+            exit 1
+          fi
+
+      - name: Pick episode
+        id: pick
+        env:
+          EPISODE: ${{ inputs.episode }}
+          FORCE: ${{ inputs.force }}
+        run: |
+          args=()
+          [ -n "$EPISODE" ] && args+=(--episode "$EPISODE")
+          [ "$FORCE" = "true" ] && args+=(--force)
+          python3 posting/post.py select "${args[@]}"
+
+      - name: Nothing to post
+        if: steps.pick.outputs.go != 'true'
+        env:
+          REASON: ${{ steps.pick.outputs.reason }}
+        run: |
+          echo "::notice::Nothing posted today: $REASON"
+
+      - name: Look for an existing video asset
+        if: steps.pick.outputs.go == 'true'
+        id: asset
+        run: |
+          EP=${{ steps.pick.outputs.episode }}
+          gh release view "$RELEASE_TAG" >/dev/null 2>&1 || gh release create "$RELEASE_TAG" \
+            --title "Episode videos" --latest=false \
+            --notes "Rendered episodes hosted for Instagram publishing (posting/README.md). You can replace an epNN.mp4 here by hand before it is posted."
+          if gh release view "$RELEASE_TAG" --json assets -q '.assets[].name' | grep -qx "$EP.mp4"; then
+            echo "have=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "have=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check out the episode branch
+        if: steps.pick.outputs.go == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.pick.outputs.branch }}
+          path: ep
+
+      # ── render (same steps as render.yml), only when the release has no video yet ──
+      - uses: actions/setup-python@v5
+        if: steps.pick.outputs.go == 'true' && steps.asset.outputs.have != 'true'
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: ep/pipeline/requirements.txt
+
+      - uses: actions/setup-node@v4
+        if: steps.pick.outputs.go == 'true' && steps.asset.outputs.have != 'true'
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ep/package-lock.json
+
+      - uses: actions/cache@v4
+        if: steps.pick.outputs.go == 'true' && steps.asset.outputs.have != 'true'
+        with:
+          path: .cache/hf
+          key: hf-kokoro-v1
+
+      - name: Render, QA and encode for Instagram
+        if: steps.pick.outputs.go == 'true' && steps.asset.outputs.have != 'true'
+        working-directory: ep
+        run: |
+          set -euo pipefail
+          EP=${{ steps.pick.outputs.episode }}
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng
+          pip install -r pipeline/requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+          npm ci && npx remotion browser ensure
+          pipeline/build.sh "$EP" --provider kokoro
+          npx remotion render Episode "out/$EP.mp4" --props="{\"episodeId\":\"$EP\"}"
+          python pipeline/qa.py "out/$EP.mp4" --sheet "out/${EP}_sheet.jpg"
+          # H.264 High / AAC, capped bitrate, moov atom first: what Instagram's fetcher expects.
+          ffmpeg -nostdin -y -i "out/$EP.mp4" -c:v libx264 -profile:v high -level 4.1 -pix_fmt yuv420p \
+            -preset slow -crf 19 -maxrate 10M -bufsize 20M -r 30 -c:a aac -b:a 192k -ar 48000 \
+            -movflags +faststart "out/$EP.ig.mp4"
+          python pipeline/qa.py "out/$EP.ig.mp4"
+          mv "out/$EP.ig.mp4" "out/$EP.mp4"
+          gh release upload "$RELEASE_TAG" "out/$EP.mp4" --clobber -R "$GITHUB_REPOSITORY"
+
+      - name: Upload the cover
+        if: steps.pick.outputs.go == 'true'
+        id: cover
+        run: |
+          EP=${{ steps.pick.outputs.episode }}
+          COVER=$(ls ep/episodes/$EP/*_cover.jpg 2>/dev/null | head -1 || true)
+          if [ -n "$COVER" ]; then
+            cp "$COVER" "$EP"_cover.jpg
+            gh release upload "$RELEASE_TAG" "$EP"_cover.jpg --clobber
+            echo "url=https://github.com/$GITHUB_REPOSITORY/releases/download/$RELEASE_TAG/${EP}_cover.jpg" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish to Instagram
+        if: steps.pick.outputs.go == 'true'
+        run: |
+          EP=${{ steps.pick.outputs.episode }}
+          args=(--episode-json "ep/episodes/$EP/episode.json"
+                --video-url "https://github.com/$GITHUB_REPOSITORY/releases/download/$RELEASE_TAG/$EP.mp4")
+          [ -n "${{ steps.cover.outputs.url }}" ] && args+=(--cover-url "${{ steps.cover.outputs.url }}")
+          [ "${{ inputs.dry_run }}" = "true" ] && args+=(--dry-run)
+          python3 posting/post.py publish "${args[@]}"
+
+      - name: Save posting state
+        if: steps.pick.outputs.go == 'true' && always()
+        run: |
+          git diff --quiet posting/state.json && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add posting/state.json
+          git commit -m "Instagram: posted ${{ steps.pick.outputs.episode }}"
+          for i in 1 2 3; do git pull --rebase -q origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME" && exit 0; sleep 5; done
+          exit 1

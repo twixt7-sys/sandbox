@@ -100,7 +100,24 @@ The first pass (78 words) measured 32.07 s, with the lesson line alone 5.4 s. I 
 
 ## 6. Final video and verification
 
-QA_SECTION
+- `out/ep24.mp4` (master, 37.7 MB) and `out/ep24_compat.mp4` (H.264 Main, CRF 20, `+faststart`, 21.6 MB): sent with SendUserFile.
+- `ep24_download.mp4` (two-pass 3300k, 14.0 MB) and `ep24_player.mp4` (CRF 26, 6.7 MB), both with the master's audio copied: used on the preview page.
+- `qa.py` **passed** on all four local files: 1080×1920, 30 fps, 31.27 s, −14.0 LUFS, true peak −1.4 dB (the compat copy, with its AAC re-encoded, measures −14.1 LUFS / −1.4 dB). The download copy published on the preview page was read back and QA'd as well (see the page's Checks).
+- Fixes made after inspecting the beat frames and the contact sheet (two full renders):
+  - the code-drawn stone ring on the hook first sat on the far ridge beside the title, where it read as a dark letter "O"; it now stands on the field at the road's bend, lighter and larger;
+  - the courier's gate light overran the arch and covered the courier; it is smaller and lower, and the courier is masked out of it (`occlude`), so he walks into the light;
+  - the crystal burned 0.3 s after appearing; it now shows from the start of the shot and burns on "worth";
+  - the hook's gate also shimmered behind the CTA text; it was removed from the CTA (the loop still lands on it);
+  - the losing side's notes on the board were too dim (38 %); they're now 50 %;
+  - spire finials that could read as crosses were painted out of the gate and queue plates (section 5);
+  - the plates were reframed to keep faces and key points out of the caption band and under the board: gate ×1.12 raised 100 px, cargo ×1.2 lowered 180 px, queue ×1.3 raised 280 px, courier ×1.1 lowered 80 px.
+- **Accepted compromises:**
+  - The gate looks different in each plate (a free-standing ring, a ring in a stone frame, an arch at night, and a small code-drawn ring on the hook's field). SDXL wouldn't paint one consistent gate; the lilac light, the `blink` sound and the board tie them together.
+  - The queue shot shows two travellers waiting, not a long queue (all three queue seeds were rejected); the board's AVAILABILITY row and "the guild rations the rest" carry the rationing.
+  - The board is empty for about a second at the start of the cargo shot before COST lands; the header (GATE / WHO WINS? / CART) introduces it.
+  - Runtime is 31.3 s, a little over the 30 s target (inside the 27–33 s window), to keep the shareable line whole.
+  - The SDXL costumes and towns are generic old-European. The gate, the guild, the crystal and the story are original; no plate shows a real place, people, flag or religious symbol.
+- **Not verifiable by me:** how the narration and mix sound, including the new `blink`, `gateFail`, `crystalBurn` and `bead`. I can't hear the audio; please give it one listen.
 
 ## 7. Reusable components added
 

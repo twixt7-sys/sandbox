@@ -427,14 +427,13 @@
      "price": "40 crowns",
      "burnedKicker": "Burned",
      "start": {
-      "line": "L3",
-      "word": "each",
-      "offset": -0.05
+      "shot": "cargo",
+      "offset": 0.05
      },
      "burnAt": {
       "line": "L3",
-      "word": "burns",
-      "offset": -0.05
+      "word": "worth",
+      "offset": -0.1
      },
      "side": "below"
     },
@@ -483,8 +482,8 @@
      "sound": "crystalBurn",
      "at": {
       "line": "L3",
-      "word": "burns",
-      "offset": -0.05
+      "word": "worth",
+      "offset": -0.1
      },
      "gain": -22
     },
@@ -1178,7 +1177,7 @@
    },
    "captions": false,
    "hideLogoBug": true,
-   "purpose": "Comment CTA over the opening road at dusk, the gate still shimmering on the hill; loops back to the hook.",
+   "purpose": "Comment CTA over the opening road at dusk, loops back to the hook, where the gate shimmers again.",
    "visual": "The hook's road in a dusk grade, wagons still on it, the gate shimmering above; CTA card with the 'Comment below' pill.",
    "camera": "Slow pull back (1.06 to 1.00) toward the hook framing for the loop.",
    "layers": {
@@ -1190,22 +1189,6 @@
    "imagePrompt": "(Reuses the hook plate.)",
    "videoPrompt": "(Not used.)",
    "graphics": [
-    {
-     "type": "gateRing",
-     "local": true,
-     "at": [
-      760,
-      868
-     ],
-     "rx": 34,
-     "ry": 42,
-     "start": {
-      "shot": "cta",
-      "offset": -0.6
-     },
-     "idle": 0.7,
-     "stone": true
-    },
     {
      "type": "ctaCard",
      "start": {

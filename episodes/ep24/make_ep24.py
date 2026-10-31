@@ -151,7 +151,7 @@ shots = [
         "graphics": [
             board("cargo", enter=True),
             {"type": "crystalPrice", "at": G.get("crystalAt", [800, 1020]), "kicker": "One jump", "price": "40 crowns", "burnedKicker": "Burned",
-             "start": c("L3", "each", -0.05), "burnAt": c("L3", "burns", -0.05), "side": "below"},
+             "start": {"shot": "cargo", "offset": 0.05}, "burnAt": c("L3", "worth", -0.1), "side": "below"},
             {"type": "callout", "at": G["cargoAt"], "label": "Cargo", "note": "12 crowns", "side": G.get("cargoSide", "left"), "reach": 120, "rise": -70,
              "backdrop": True, "start": c("L3", "cargo.", -0.15)},
         ],
@@ -160,7 +160,7 @@ shots = [
         "sfx": [
             {"sound": "caravan", "from": {"shot": "cargo"}, "to": {"shot": "village", "offset": 0.2}, "gain": -36},
             {"sound": "paper", "at": {"shot": "cargo", "offset": 0.1}, "gain": -30},
-            {"sound": "crystalBurn", "at": c("L3", "burns", -0.05), "gain": -22},
+            {"sound": "crystalBurn", "at": c("L3", "worth", -0.1), "gain": -22},
             bead(ROWS[0]),
         ],
         "music": "B-flat major, the pulse steady: the ledger begins.",
@@ -273,14 +273,13 @@ shots = [
         "plateScrim": 0.45,
         "plateLook": {"from": "sepia(0.25) saturate(0.9) brightness(0.62) hue-rotate(-8deg)"},
         "captions": False, "hideLogoBug": True,
-        "purpose": "Comment CTA over the opening road at dusk, the gate still shimmering on the hill; loops back to the hook.",
+        "purpose": "Comment CTA over the opening road at dusk, loops back to the hook, where the gate shimmers again.",
         "visual": "The hook's road in a dusk grade, wagons still on it, the gate shimmering above; CTA card with the 'Comment below' pill.",
         "camera": "Slow pull back (1.06 to 1.00) toward the hook framing for the loop.",
         "layers": {"foreground": "CTA card", "midground": "the gate's shimmer", "background": "the dusk road"},
         "lighting": "Dusk; dimmed under the card.",
         "imagePrompt": "(Reuses the hook plate.)", "videoPrompt": "(Not used.)",
         "graphics": [
-            ring("hookRing", start={"shot": "cta", "offset": -0.6}, idle=0.7, stone=True),
             {"type": "ctaCard", "start": {"shot": "cta"}, "ctaAt": c("L8", "what"), "episode": "Episode 24 / 50",
              "title": "Why teleportation doesn't replace the road", "kicker": "Your turn", "size": 74,
              "lines": ["What technology", "would magic replace", "*first in your world?*"], "button": "Comment below"},

@@ -123,13 +123,13 @@
     }
    },
    "plateScrim": 0.5,
-   "purpose": "Stop the scroll on the caster: a figure on a tower whose sight falls on the courtyard below like a searchlight, and the hook's promise that her terror isn't invincibility.",
-   "visual": "A cloaked woman on a high balcony, seen from behind, over a misty courtyard at dusk; a pale lilac beam (code) falls from her into the yard and slowly sweeps. 'THE TERRIFYING WIZARD / isn't unbeatable.'",
+   "purpose": "Stop the scroll on the caster: a cloaked figure on a high balcony whose sight sweeps the misty castle like a searchlight, and the hook's promise that her terror isn't invincibility.",
+   "visual": "A cloaked woman on a high arched balcony, seen from behind, over a misty castle at dusk; a pale lilac beam (code) reaches from her hood into the mist and slowly sweeps. 'THE TERRIFYING WIZARD / isn't unbeatable.'",
    "camera": "Slow push (1.00 to 1.06).",
    "layers": {
     "foreground": "title",
     "midground": "the Unmaker and her sight",
-    "background": "the courtyard far below"
+    "background": "the misty castle"
    },
    "lighting": "Cold dusk; top scrim for the title.",
    "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. seen from behind, a tall woman in a long dark grey hooded cloak stands alone on a high stone tower balcony at dusk looking down into a wide empty misty castle courtyard far below, stone pillars and an old well in the courtyard, cold blue light, wide shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
@@ -244,7 +244,7 @@
     "from": "saturate(0.75) brightness(0.62) hue-rotate(-6deg)"
    },
    "purpose": "Show the power once, on a thing: her sight lands on the courtyard gate and the gate simply stops existing. Threat by implication.",
-   "visual": "The great studded gate at dusk; the lilac beam slants in from her tower, the gate's edge lights, and on 'erase' it dissolves cell by cell into the dark, shedding motes. Tag 'THE UNMAKER / Sees it. Erases it.'",
+   "visual": "The great iron-strapped wooden gate at dusk; the lilac beam slants in from her tower, the gate's edge lights, and on 'erase' it dissolves cell by cell into the dark, shedding motes. Tag 'THE UNMAKER / Sees it. Erases it.'",
    "camera": "Slow push (1.04 to 1.08).",
    "layers": {
     "foreground": "tag",
@@ -521,12 +521,12 @@
     }
    },
    "plateScrim": 0.4,
-   "purpose": "What the weakness does to the other side: the heroes stop charging and start planning. They crouch in shadow while her sight passes over.",
-   "visual": "Three cloaked adventurers crouched behind a broken pillar at night, one pointing a route; a lilac sweep of sight passes above them. Tag 'THE HEROES / Think, don't fight'.",
+   "purpose": "What the weakness does to the other side: the heroes stop charging and start planning. They wait in the column's shadow while her sight passes over.",
+   "visual": "Three hooded adventurers, faces unseen, wait in the shadow of a great column at night; a lilac sweep of sight passes above them across the arches. Tag 'THE HEROES / Think, don't fight'.",
    "camera": "Slow push (1.04 to 1.08).",
    "layers": {
     "foreground": "tag",
-    "midground": "the heroes behind the pillar",
+    "midground": "the heroes by the column",
     "background": "the sweep of light, the yard"
    },
    "lighting": "Night; cold light from above, the heroes in shadow.",
@@ -786,7 +786,7 @@
     }
    ],
    "onScreenText": "Tag 'THE PUZZLE' + 'Make your own shadows'; labels SMOKE / FOG / WALL; dotted route to the door.",
-   "transition": "Hard cut on 'And' to her tower.",
+   "transition": "Hard cut on 'And' to her terrace.",
    "sfx": [
     {
      "sound": "whoosh",
@@ -859,7 +859,7 @@
    },
    "plateScrim": 0.4,
    "purpose": "The weakness cuts both ways: she plans too. A mirror bends her sight around corners, lanterns burn the fog away, and she climbs higher. She is more frightening, not less.",
-   "visual": "The Unmaker on a tower parapet at night beside a tall standing mirror; her lilac sight strikes the mirror and bends down into the yard; three lanterns flare along the parapet on 'lanterns'. Tag 'HER MOVE / She plans too'.",
+   "visual": "The Unmaker on a terrace at night beside a huge oval iron mirror frame; her lilac sight strikes the frame and bends away across the castle; the lantern beside her flares on 'lanterns'. Tag 'HER MOVE / She plans too'.",
    "camera": "Slow push with a slight rise (1.04 to 1.08).",
    "layers": {
     "foreground": "tag",
@@ -1165,7 +1165,7 @@
     }
    ],
    "onScreenText": "Arc row 'CAN · CAN'T · COSTS · CONSEQUENCES · WEAKNESS'; 'UNBEATABLE IS BORING' / 'A weakness turns a fight into a puzzle.'",
-   "transition": "Dissolve (0.6 s) to the hook tower by night.",
+   "transition": "Dissolve (0.6 s) to the hook balcony by night.",
    "sfx": [
     {
      "sound": "resonance",
@@ -1202,8 +1202,8 @@
    },
    "captions": false,
    "hideLogoBug": true,
-   "purpose": "Follow CTA over the opening tower at night, her sight still sweeping the yard; the halfway mark of the series; loops back to the hook.",
-   "visual": "The hook's tower and courtyard, darker, her beam still sweeping; CTA card with the Follow pill.",
+   "purpose": "Follow CTA over the opening balcony at night, her sight still sweeping the castle; the halfway mark of the series; loops back to the hook.",
+   "visual": "The hook's balcony and castle, darker, her beam still sweeping; CTA card with the Follow pill.",
    "camera": "Slow pull back (1.06 to 1.00) toward the hook framing for the loop.",
    "layers": {
     "foreground": "CTA card",
@@ -1471,7 +1471,7 @@
    "pinnedComment": "Name a caster from your world and the one thing that stops them. How would a clever hero use it?",
    "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
   },
-  "cover": "Worldcraft_Short_E25_cover.jpg: the Unmaker on her tower, her lilac sight falling on the courtyard, 'THE TERRIFYING WIZARD / isn't unbeatable.' above, corner logo.",
+  "cover": "Worldcraft_Short_E25_cover.jpg: the Unmaker on her balcony, her lilac sight reaching into the misty castle, 'THE TERRIFYING WIZARD / isn't unbeatable.' above, corner logo.",
   "followUpQuestion": "Take your strongest caster. What one condition must be true for their power to work, and what would a clever enemy do to break it?"
  }
 }

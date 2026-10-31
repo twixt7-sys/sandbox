@@ -115,7 +115,7 @@ New in this episode (`src/graphics/Sightline.tsx`, registered in `Graphics.tsx`)
   - `out/ep25.mp4` (master, 37.1 MB);
   - `out/ep25_compat.mp4` (H.264 Main, CRF 20, `+faststart`, 21.6 MB).
 - **Used on the preview page:** `ep25_download.mp4` (two-pass 3300k, 13.3 MB) and `ep25_player.mp4` (CRF 26, 7.2 MB), both with the master's audio copied.
-- **QA:** `qa.py` **passed** on all four local files: 1080×1920, 30 fps, 29.72 s, −14.1 LUFS, true peak −1.5 dB. The compat copy, with its AAC re-encoded, measures −14.2 LUFS and −1.3 dB. The download copy published on the preview page was read back and QA'd as well (see the page).
+- **QA:** `qa.py` **passed** on all four local files: 1080×1920, 30 fps, 29.72 s, −14.1 LUFS, true peak −1.5 dB. The compat copy, with its AAC re-encoded, measures −14.2 LUFS and −1.3 dB. The download copy published on the preview page (https://claude.ai/artifact/MNrHBuYpjMPnwaeEhoc4VL) was read back with Artifact `read`: it is byte-identical (sha256 `a3b37372…`) and `qa.py` passes (29.72 s, −14.1 LUFS, TP −1.5 dB).
 - **Fixes made after inspecting the beat frames and the contact sheet:**
   - The sight cone didn't draw at all on the first beat stills: the sweep's phase was taken from a cue object without resolving it to a time, which gave NaN. It now resolves the cue, and the cone sweeps continuously across all three plan shots.
   - The hook's kicker wrapped to two lines. It's now THE TERRIFYING WIZARD / *isn't unbeatable.*, and the hook beam is wider and brighter.

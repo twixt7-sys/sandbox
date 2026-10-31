@@ -753,6 +753,28 @@ def sfx_hit(kind, dur=None):
         tone = sum(a * np.sin(2 * np.pi * f * t) for f, a in ((110.0, 1.0), (164.81, 0.6), (220.0, 0.35), (329.63, 0.15)))
         tone *= np.minimum(1, t / 0.06) * np.exp(-t * 2.2)
         return stereo(catch + tone * 0.35, 0.4)
+    if kind == "chisel":
+        # A memorial inscription cut into stone (EP20 tablet signature): a run of light chisel taps with grit, slowing at the end.
+        n = int(1.6 * SR)
+        t = np.arange(n) / SR
+        out = np.zeros(n)
+        hits = np.cumsum(np.linspace(0.085, 0.16, 11))
+        for i, at in enumerate(hits[hits < 1.4]):
+            th = np.clip(t - at, 0, None)
+            f = 2300 + 260 * np.sin(i * 1.7)
+            ring = (np.sin(2 * np.pi * f * th) + 0.4 * np.sin(2 * np.pi * 2.76 * f * th)) * np.exp(-th * 70)
+            out += (ring * 0.35 + bp(noise(n), 1500, 6500) * np.exp(-th * 55) * 0.6 + lp(noise(n), 500) * np.exp(-th * 45) * 0.4) * (t >= at) * RNG.uniform(0.6, 1.0)
+        return stereo(out, 0.3)
+    if kind == "frameOpen":
+        # A chronicle's frame opening onto what it left out (EP20 chronicleFrame signature): a breath of air widening as its
+        # low-pass opens, under a low hollow fifth that swells and fades, unresolved.
+        n = int(2.4 * SR)
+        t = np.arange(n) / SR
+        k = np.minimum(1, t / 1.1)
+        air = bp(noise(n), 200, 900) * (1 - k) + bp(noise(n), 700, 5200) * k
+        air *= np.interp(t, [0, 0.5, 1.2, 2.2], [0, 0.4, 0.3, 0])
+        tone = sum(np.sin(2 * np.pi * f * t + RNG.uniform(0, 6.28)) for f in (110.0, 164.81, 220.0)) * np.interp(t, [0, 0.7, 1.4, 2.4], [0, 0.22, 0.16, 0])
+        return stereo(air + tone, 0.6)
     if kind == "mendKnit":
         # The mend (EP21 signature magic): a fine crackle of pieces drawing together under a glassy cluster gliding up a
         # fourth, settling on a soft open fifth. Reused whenever the mending magic (or the spell page's sigil) works.

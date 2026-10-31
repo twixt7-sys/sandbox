@@ -270,6 +270,18 @@ On the paid primary stack, with 3 stills: about **$1.05 (₱67)**, or **$1.15 (�
 | **Total** | | **$0 cash (₱0)**, no Figma credits |
 
 On the paid primary stack, with 5 stills: about **$1.25 (₱79)**, or **$2.27 (₱144)** with one retry per asset (scaled from EP16–EP17), plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+## What Episode 20 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 3 stills (the dawn valley with a stone on each bank, Arvel's stone by the razed village, Dunmere's cairn field) | **Local SDXL-Lightning** (`pipeline/local_stills.py`, 4-step, CPU, 768×1344, lanczos to 1080×1920). 12 candidates in three rounds, 3 kept, all from round 1: hook 11, arvel 11, dunmere 23. The second stone on the hook plate is the first stone, flipped, scaled, hazed and composited onto the far bank (SDXL wouldn't paint two); the cottage behind Arvel's stone was darkened into a burned shell. Figma credits are out until 1 Nov 2026, so it wasn't tried | $0 |
+| Chronicle frames, carved tablets, lesson rows, lanterns, title, statement, CTA card | Remotion code (new `chronicleFrame`, `tablet`, `truthRows`, `lanterns`; `callout`, `titleLockup`, `statement`, `emberDusk`, `ctaCard`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 78 words, 29.99 s | $0 |
+| Score + SFX (new: chisel, frameOpen) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, no Figma credits |
+
+On the paid primary stack, with 3 stills: about **$1.05 (₱67)**, or **$1.94 (₱123)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
 ## What Episode 21 actually used
 
 | Item | Used | Cash cost |

@@ -89,7 +89,7 @@ The first pass measured 27.28 s (Kokoro reads these short sentences quickly). Ra
 
 - `out/ep23.mp4` (master, 35.0 MB) and `out/ep23_compat.mp4` (H.264 Main, CRF 20, `+faststart`, 20.2 MB): sent with SendUserFile.
 - `ep23_download.mp4` (two-pass 3300k, 13.4 MB) and `ep23_player.mp4` (CRF 26, 5.9 MB), both with the master's audio copied: used on the preview page.
-- `qa.py` **passed** on all four local files: 1080×1920, 30 fps, 29.87 s, −14.1 LUFS, true peak −1.5 dB. The download copy published on the preview page was read back and QA'd as well (see the report).
+- `qa.py` **passed** on all four local files: 1080×1920, 30 fps, 29.87 s, −14.1 LUFS, true peak −1.5 dB. The download copy published on the preview page (https://claude.ai/artifact/RpqcfdbeD2QvzPicNF5oWU) was read back: byte-identical to the local file, and QA passed.
 - Fixes made after inspecting the beat frames and the contact sheet:
   - "Worth it?" sat on the caption band and doubled the caption. The choice ledger now sits higher at 0.85 scale, with "Worth it?" beneath it, above the captions;
   - the lesson text ran into the caption band, so the ledger now lifts smaller (0.45), the pills sit at y 660 and the lesson at y 880;

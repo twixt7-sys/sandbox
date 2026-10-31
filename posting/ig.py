@@ -1,10 +1,10 @@
 """Minimal Instagram Graph API client (stdlib only).
 
 Credentials come from the environment:
-  IG_ACCESS_TOKEN  long-lived token (Instagram Login: IGAA...; Facebook Login: EAA...)
+  IG_ACCESS_TOKEN  long-lived token (Unified/Facebook login: EAA...; Instagram login: IGAA...)
   IG_USER_ID       the Instagram professional account id
-  IG_API_BASE      optional; default https://graph.instagram.com/v24.0
-                   (use https://graph.facebook.com/v24.0 for Facebook Login tokens)
+  IG_API_BASE      optional override; by default EAA tokens use graph.facebook.com and
+                   IGAA tokens use graph.instagram.com
 """
 
 import json
@@ -15,6 +15,7 @@ import urllib.parse
 import urllib.request
 
 DEFAULT_BASE = "https://graph.instagram.com/v24.0"
+FACEBOOK_BASE = "https://graph.facebook.com/v24.0"
 
 
 class GraphError(RuntimeError):
@@ -31,7 +32,9 @@ class Client:
     def __init__(self, token=None, user_id=None, base=None):
         self.token = token or os.environ["IG_ACCESS_TOKEN"]
         self.user_id = user_id or os.environ["IG_USER_ID"]
-        self.base = (base or os.environ.get("IG_API_BASE") or DEFAULT_BASE).rstrip("/")
+        # EAA... tokens (Unified login / Facebook Login / system users) only work on graph.facebook.com.
+        default = FACEBOOK_BASE if self.token.startswith("EAA") else DEFAULT_BASE
+        self.base = (base or os.environ.get("IG_API_BASE") or default).rstrip("/")
 
     def _call(self, method, path, params=None):
         params = {k: v for k, v in (params or {}).items() if v is not None}

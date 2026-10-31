@@ -52,11 +52,16 @@ In the Instagram app: **Settings → Account type and tools → Switch to profes
 ### 2. Get an access token (about 10 minutes, no app review needed for your own account)
 1. Go to <https://developers.facebook.com/apps> and click **Create app**. Pick the use case
    **"Manage messaging & content on Instagram"**, then finish creating the app.
-2. In the app, open **Instagram → API setup with Instagram login**.
-3. Under **Generate access tokens**, click **Add account** and log in with the Instagram account.
-   Approve the permissions it asks for (basic, content publish, manage comments, manage insights).
-4. Copy the **access token** it shows (starts with `IGAA`) and the **Instagram account ID** (a long number)
-   listed next to the account.
+2. In the app: **Use cases → Customize → API setup with Unified login**. This needs a
+   **business portfolio**: click **+ Business portfolio** and create one (any name; no company or
+   verification needed).
+3. Connect the Instagram account to it, approving the permissions it asks for (basic, content publish,
+   manage comments, manage insights), then **Generate token**. The token starts with `EAA`.
+4. Copy the token and the **Instagram account ID** (a long number shown next to the account; also under
+   business.facebook.com → **Settings → Accounts → Instagram accounts**).
+
+Older apps may show **API setup with Instagram login** instead; it works too, and its token starts with
+`IGAA`. The scripts pick the right Meta API host from the token prefix.
 
 If the account doesn't appear or the token is refused: in the app, open **App roles → Roles → Add people → Instagram Tester**, add
 your username, then accept it in Instagram (**Settings → Website permissions → Apps and websites → Tester invites**).
@@ -66,11 +71,8 @@ In this repo: **Settings → Secrets and variables → Actions → New repositor
 
 | Name | Value |
 |---|---|
-| `IG_ACCESS_TOKEN` | the `IGAA...` token |
+| `IG_ACCESS_TOKEN` | the `EAA...` (or `IGAA...`) token |
 | `IG_USER_ID` | the Instagram account ID |
-
-Only if your token starts with `EAA` (Facebook Login): also add a repository **variable**
-`IG_API_BASE` = `https://graph.facebook.com/v24.0`.
 
 ### 4. Test, then go live
 **Actions → Instagram daily post → Run workflow**:
@@ -93,8 +95,10 @@ New episodes are picked up automatically as long as they're on a `claude/worldcr
 
 ## Limits to know
 
-- **The token expires after 60 days.** Generate a new one (step 2) and replace the secret before then.
-  Posting through EP50 at one a day takes 38 days, so one token covers the test.
+- **Token lifetime:** `IGAA` tokens expire after 60 days. `EAA` tokens from Unified login are reported
+  not to expire, but check the expiry Meta shows when generating it. Either way, posting through EP50
+  at one a day takes 38 days, so one token covers the test. If a run fails with an expired-token error,
+  generate a new one (step 2) and replace the secret.
 - Instagram allows up to 100 API posts a day; this posts one.
 - GitHub can start scheduled runs a few minutes late, and it pauses schedules in repos with no
   activity for 60 days. The daily commits from these workflows count as activity.

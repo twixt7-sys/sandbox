@@ -833,6 +833,49 @@ def sfx_hit(kind, dur=None):
         body = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.interp(t, [0, 0.08, 0.5, 1.6], [0, 1.0, 0.45, 0])
         air = bp(noise(n), 1500, 6000) * np.interp(t, [0, 0.15, 0.7, 1.3], [0, 0.18, 0.08, 0])
         return stereo(lp(body, 900) + air, 0.6)
+    if kind == "blink":
+        # The teleport gate (EP24 gateRing signature): a glassy E-major cluster swelling out of a soft inward rush of air,
+        # then a hollow "pop" as the distance folds shut. Reused whenever the gate opens or something goes through.
+        n = int(2.0 * SR)
+        t = np.arange(n) / SR
+        rush = bp(noise(n), 300, 4000) * np.interp(t, [0, 0.35, 0.5, 0.6], [0, 0.35, 0.5, 0])
+        swell = np.interp(t, [0, 0.45, 0.55, 2.0], [0, 0.8, 0.5, 0])
+        glass = sum(a * np.sin(2 * np.pi * f * t + p) for f, a, p in [(659.25, 1.0, 0.0), (830.61, 0.7, 1.3), (987.77, 0.5, 2.1), (1975.5, 0.18, 0.4)])
+        th = np.clip(t - 0.5, 0, None)
+        pop = np.sin(2 * np.pi * (180 * th - 60 * th * th)) * np.exp(-th * 22) * (t >= 0.5)
+        return stereo(rush + glass * swell * 0.25 + pop * 0.8, 0.5)
+    if kind == "gateFail":
+        # A failed jump (EP24): the gate's cluster wavers and stutters, sags a tone and collapses on a dull low thud.
+        n = int(1.6 * SR)
+        t = np.arange(n) / SR
+        f = 659.25 * (1 - 0.11 * np.minimum(1, t / 0.6))
+        tone = np.sin(2 * np.pi * np.cumsum(f) / SR) + 0.6 * np.sin(2 * np.pi * np.cumsum(f * 1.26) / SR)
+        stut = np.where((t < 0.5) & ((t * 12).astype(int) % 2 == 1), 0.15, 1.0)
+        tone *= lp(stut, 60, 1) * np.interp(t, [0, 0.05, 0.5, 0.85], [0, 0.5, 0.4, 0])
+        th = np.clip(t - 0.82, 0, None)
+        thud = lp(noise(n), 220) * np.exp(-th * 9) * (t >= 0.82) * 1.6
+        return stereo(tone * 0.6 + thud, 0.3)
+    if kind == "crystalBurn":
+        # The crystal a jump burns (EP24 crystalPrice): a bright glassy flare that crackles away into a fine hiss of dust.
+        n = int(1.8 * SR)
+        t = np.arange(n) / SR
+        flare = sum(np.sin(2 * np.pi * f * t) for f in (1318.5, 1975.5, 2637.0)) * np.exp(-t * 5) * np.minimum(1, t / 0.01) * 0.35
+        crackle = np.zeros(n)
+        for g in RNG.uniform(0.15, 1.0, 50):
+            i = int(g * SR)
+            m = int(0.004 * SR)
+            crackle[i:i + m] += hp(noise(m), 3500) * RNG.uniform(0.1, 0.5) * (1.1 - g)
+        dust = hp(noise(n), 5000) * np.interp(t, [0, 0.2, 0.6, 1.6], [0, 0.12, 0.08, 0])
+        return stereo(flare + crackle + dust, 0.5)
+    if kind == "bead":
+        # A wooden bead slid along a brass rod and knocking home (EP24 countingBoard): a short brush, then a hollow clack.
+        n = int(0.9 * SR)
+        t = np.arange(n) / SR
+        brush = bp(noise(n), 1500, 5000) * np.interp(t, [0, 0.03, 0.2, 0.26], [0, 0.12, 0.08, 0])
+        th = np.clip(t - 0.26, 0, None)
+        clack = (np.sin(2 * np.pi * 940 * th) + 0.6 * np.sin(2 * np.pi * 2210 * th)) * np.exp(-th * 55) * (t >= 0.26)
+        knock = lp(noise(n), 900) * np.exp(-th * 70) * (t >= 0.26) * 0.8
+        return stereo(brush + clack * 0.6 + knock, 0.2)
     raise KeyError(kind)
 
 

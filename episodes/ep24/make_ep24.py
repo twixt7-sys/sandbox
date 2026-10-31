@@ -1,0 +1,372 @@
+"""Writes episodes/ep24/episode.json (EP24: Why Teleportation Doesn't Replace the Road)."""
+import json
+from pathlib import Path
+
+ROOT = Path("/home/user/sandbox")
+HERE = Path(__file__).parent
+EP = HERE / "episode.json"
+
+# ---- Plate geometry (plate px, 1080x1920), measured from gridded plates ----
+G = {
+    # inner opening of the stone ring on each plate: [x, y, rx, ry]
+    "hookRing": [700, 640, 70, 80],
+    "gateRing": [540, 820, 220, 260],
+    "queueRing": [540, 820, 200, 240],
+    "courierRing": [540, 820, 200, 240],
+    "cargoAt": [540, 1100],  # the heaped cargo
+    "frames": {
+        "hook": {"from": {"s": 1.0, "y": 0}, "to": {"s": 1.06, "y": 0}},
+        "gate": {"from": {"s": 1.04, "y": 0}, "to": {"s": 1.08, "y": 0}},
+        "cargo": {"from": {"s": 1.04, "y": 0}, "to": {"s": 1.08, "y": 0}},
+        "village": {"from": {"s": 1.04, "y": 0}, "to": {"s": 1.08, "y": 0}},
+        "queue": {"from": {"s": 1.04, "y": 0}, "to": {"s": 1.08, "y": 0}},
+        "courier": {"from": {"s": 1.04, "y": 0}, "to": {"s": 1.08, "y": 0}},
+    },
+}
+GEOM = HERE / "geom.json"
+if GEOM.exists():
+    G.update(json.loads(GEOM.read_text()))
+
+TAIL = "Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark."
+SDXL = json.loads((HERE / "prompts.json").read_text())
+
+
+def ip(k):
+    return f"(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. {SDXL[k]}. {TAIL}"
+
+
+def c(line, word=None, offset=0.0, nth=None):
+    d = {"line": line}
+    if word:
+        d["word"] = word
+    if offset:
+        d["offset"] = round(offset, 3)
+    if nth:
+        d["nth"] = nth
+    return d
+
+
+def ring(key, **kw):
+    x, y, rx, ry = G[key]
+    return {"type": "gateRing", "local": True, "at": [x, y], "rx": rx, "ry": ry, **kw}
+
+
+lines = [
+    ("L1", "hook", "If teleportation exists, why are merchants still using horses?", 0.5, ["teleportation", "horses?"]),
+    ("L2", "gate", "Here, a crystal gate links two cities.", 0.4, ["crystal", "two"]),
+    ("L3", "cargo", "Each jump burns a crystal worth more than the cargo.", 0.35, ["burns", "more"]),
+    ("L4", "village", "It reaches one city. Every village still needs the road.", 0.35, ["one", "road."]),
+    ("L5", "queue", "One jump in a hundred fails. The guild rations the rest.", 0.45, ["fails.", "rations"]),
+    ("L6", "courier", "So it carries only what can't wait: medicine, royal mail.", 0.7, ["can't", "wait:"]),
+    ("L7", "lesson", "Magic doesn't replace technology. Price, range and reliability decide who uses what.", 0.7, ["price,", "range", "reliability"]),
+    ("L8", "cta", "What technology would magic replace first in your world?", 0.0, ["first"]),
+]
+
+# The counting board: one row per question, GATE (left) vs CART (right).
+ROWS = [
+    {"label": "Cost", "gate": "a crystal a jump", "cart": "hay and a driver", "win": "cart", "at": c("L3", "cargo.", 0.0)},
+    {"label": "Range", "gate": "two cities", "cart": "every village", "win": "cart", "at": c("L4", "village", -0.1)},
+    {"label": "Reliability", "gate": "1 jump in 100 fails", "cart": "a day late, at worst", "win": "cart", "at": c("L5", "fails.", 0.05)},
+    {"label": "Availability", "gate": "guild-rationed", "cart": "anyone's", "win": "cart", "at": c("L5", "rations", -0.1)},
+    {"label": "Speed", "gate": "medicine, royal mail", "cart": "nine days", "win": "gate", "at": c("L6", "can't", -0.05)},
+]
+BOX = {"x": 90, "y": 336, "s": 0.8}
+
+
+def board(shot, enter=False, **kw):
+    g = {"type": "countingBoard", "rows": ROWS, "box": G.get("box", {}).get(shot, BOX), "title": "Who wins?"}
+    if enter:
+        g["start"] = {"shot": shot, "offset": 0.1}
+    else:
+        g["enter"] = False
+    g.update(kw)
+    return g
+
+
+def bead(row, gain=-21):
+    return {"sound": "bead", "at": {**row["at"], "offset": round(row["at"].get("offset", 0) + 0.1, 3)}, "gain": gain}
+
+
+F = G["frames"]
+
+shots = [
+    {
+        "id": "hook", "scene": "nightSky",
+        "plateFrame": F["hook"],
+        "plateScrim": 0.5,
+        "purpose": "Stop the scroll on the contradiction: a teleport gate stands on the hill, and the road beneath it is full of mud, carts and horses.",
+        "visual": "A muddy road in drizzle with a line of horse-drawn wagons; on the hill above, a huge stone ring whose opening shimmers lilac (code). 'TELEPORTATION EXISTS / So why the horses?'",
+        "camera": "Slow push (1.00 to 1.06).",
+        "layers": {"foreground": "title", "midground": "the wagons on the road", "background": "the gate ring on the hill"},
+        "lighting": "Overcast drizzle; top scrim for the title.",
+        "imagePrompt": ip("hook"), "videoPrompt": "(Not used.)", "sdxlPrompt": SDXL["hook"],
+        "graphics": [
+            ring("hookRing", start={"shot": "hook"}, idle=0.55, jumps=[c("L1", "teleportation", -0.05)]),
+            {"type": "titleLockup", "kicker": "Teleportation exists", "text": "So why horses?", "y": 340, "size": 118,
+             "start": c("L1", "if", -0.1), "end": c("L1", "horses?", 0.5)},
+        ],
+        "onScreenText": "Kicker 'TELEPORTATION EXISTS' + 'So why horses?' (ember serif italic).",
+        "transition": "Hard cut on 'Here' to the gate in the city square.",
+        "sfx": [
+            {"sound": "rain", "from": {"shot": "hook"}, "to": {"shot": "gate", "offset": 0.4}, "gain": -37},
+            {"sound": "caravan", "from": {"shot": "hook"}, "to": {"shot": "gate", "offset": 0.3}, "gain": -32},
+            {"sound": "blink", "at": c("L1", "teleportation", -0.05), "gain": -24},
+            {"sound": "drum", "at": c("L1", "horses?", 0.0), "gain": -22},
+        ],
+        "music": "D minor, low and open.",
+    },
+    {
+        "id": "gate", "scene": "nightSky", "transitionIn": {"type": "cut"},
+        "plateFrame": F["gate"],
+        "plateScrim": 0.35,
+        "purpose": "The one magic: a crystal gate that links exactly two cities, in a blink.",
+        "visual": "The stone ring in a cobbled city square, a merchant with a handcart before it; on 'crystal' the opening fills with a turning lilac swirl and flashes as it links. THE GATE / Two cities, one blink.",
+        "camera": "Slow push (1.04 to 1.08).",
+        "layers": {"foreground": "tag", "midground": "the gate opening", "background": "the square"},
+        "lighting": "Soft morning; the gate's lilac light on the stones.",
+        "imagePrompt": ip("gate"), "videoPrompt": "(Not used.)", "sdxlPrompt": SDXL["gate"],
+        "graphics": [
+            ring("gateRing", openAt=c("L2", "crystal", -0.1), jumps=[c("L2", "links", -0.05)]),
+            {"type": "tag", "kicker": "The gate", "text": "Two cities, one blink", "start": c("L2", "here", 0.0)},
+        ],
+        "onScreenText": "Tag 'THE GATE' / 'Two cities, one blink'.",
+        "transition": "Hard cut on 'Each' to the cabbage cart.",
+        "sfx": [
+            {"sound": "market", "from": {"shot": "gate"}, "to": {"shot": "cargo", "offset": 0.3}, "gain": -38},
+            {"sound": "blink", "at": c("L2", "crystal", -0.1), "gain": -21},
+            {"sound": "blink", "at": c("L2", "links", -0.05), "gain": -24},
+        ],
+        "music": "D minor, a soft pulse enters.",
+    },
+    {
+        "id": "cargo", "scene": "nightSky", "transitionIn": {"type": "cut"},
+        "plateFrame": F["cargo"],
+        "plateScrim": 0.3,
+        "purpose": "Cost: one jump burns a crystal worth more than the whole cart of cabbages. The counting board arrives and its first bead goes to the cart.",
+        "visual": "A farmer's cart heaped with cabbages on a muddy road; a lilac crystal (code) floats beside it, ONE JUMP / 40 crowns, and burns to dust on 'burns'; CARGO / 12 crowns on the cart. The counting board (GATE vs CART) slides in at the top: COST, bead to the cart.",
+        "camera": "Slow push (1.04 to 1.08).",
+        "layers": {"foreground": "the counting board", "midground": "the crystal and price chips", "background": "the cart and horse"},
+        "lighting": "Grey morning.",
+        "imagePrompt": ip("cargo"), "videoPrompt": "(Not used.)", "sdxlPrompt": SDXL["cargo"],
+        "graphics": [
+            board("cargo", enter=True),
+            {"type": "crystalPrice", "at": G.get("crystalAt", [800, 1020]), "kicker": "One jump", "price": "40 crowns", "burnedKicker": "Burned",
+             "start": c("L3", "each", -0.05), "burnAt": c("L3", "burns", -0.05), "side": "left"},
+            {"type": "callout", "at": G["cargoAt"], "label": "Cargo", "note": "12 crowns", "side": G.get("cargoSide", "left"), "reach": 120, "rise": -70,
+             "backdrop": True, "start": c("L3", "cargo.", -0.15)},
+        ],
+        "onScreenText": "Board 'GATE / WHO WINS? / CART', row COST: a crystal a jump / hay and a driver. Chips 'ONE JUMP 40 crowns' (→ BURNED), 'CARGO 12 crowns'.",
+        "transition": "Hard cut on 'It' to the hill village.",
+        "sfx": [
+            {"sound": "caravan", "from": {"shot": "cargo"}, "to": {"shot": "village", "offset": 0.2}, "gain": -36},
+            {"sound": "paper", "at": {"shot": "cargo", "offset": 0.1}, "gain": -30},
+            {"sound": "crystalBurn", "at": c("L3", "burns", -0.05), "gain": -22},
+            bead(ROWS[0]),
+        ],
+        "music": "B-flat major, the pulse steady: the ledger begins.",
+    },
+    {
+        "id": "village", "scene": "nightSky", "transitionIn": {"type": "cut"},
+        "plateFrame": F["village"],
+        "plateScrim": 0.3,
+        "purpose": "Range: the gate reaches one other city, and every village still depends on the road.",
+        "visual": "A small hillside village at the end of a muddy track, a wagon arriving. The board adds RANGE: two cities / every village, bead to the cart.",
+        "camera": "Slow push (1.04 to 1.08).",
+        "layers": {"foreground": "the counting board", "midground": "the wagon on the track", "background": "the village"},
+        "lighting": "Soft overcast.",
+        "imagePrompt": ip("village"), "videoPrompt": "(Not used.)", "sdxlPrompt": SDXL["village"],
+        "graphics": [board("village")],
+        "onScreenText": "Board row RANGE: two cities / every village.",
+        "transition": "Hard cut on 'One' to the queue at the gate.",
+        "sfx": [
+            {"sound": "wind", "from": {"shot": "village"}, "to": {"shot": "queue", "offset": 0.2}, "gain": -37},
+            {"sound": "caravan", "from": {"shot": "village"}, "to": {"shot": "queue", "offset": 0.2}, "gain": -38},
+            bead(ROWS[1]),
+        ],
+        "music": "G minor, the pulse steady.",
+    },
+    {
+        "id": "queue", "scene": "nightSky", "transitionIn": {"type": "cut"},
+        "plateFrame": F["queue"],
+        "plateScrim": 0.3,
+        "purpose": "Reliability and availability: a jump fails before our eyes, and the guild's clerk rations the rest to a long queue.",
+        "visual": "Merchants queue with crates before the gate, a grey-robed guild clerk at a desk; the open gate stutters and collapses on 'fails' (rust sparks). The board adds RELIABILITY and AVAILABILITY, both beads to the cart.",
+        "camera": "Slow push (1.04 to 1.08).",
+        "layers": {"foreground": "the counting board", "midground": "the failing gate", "background": "the queue and the clerk"},
+        "lighting": "Overcast; the gate's light dies.",
+        "imagePrompt": ip("queue"), "videoPrompt": "(Not used.)", "sdxlPrompt": SDXL["queue"],
+        "graphics": [
+            ring("queueRing", open=True, start={"shot": "queue"}, failAt=c("L5", "fails.", -0.35)),
+            board("queue"),
+        ],
+        "onScreenText": "Board rows RELIABILITY: 1 jump in 100 fails / a day late, at worst; AVAILABILITY: guild-rationed / anyone's.",
+        "transition": "Hard cut on 'So' to the courier at night.",
+        "sfx": [
+            {"sound": "room", "from": {"shot": "queue"}, "to": {"shot": "courier", "offset": 0.2}, "gain": -38},
+            {"sound": "gateFail", "at": c("L5", "fails.", -0.35), "gain": -20},
+            bead(ROWS[2]),
+            bead(ROWS[3]),
+        ],
+        "music": "E-flat major to A: the doubt.",
+    },
+    {
+        "id": "courier", "scene": "nightSky", "transitionIn": {"type": "cut"},
+        "plateFrame": F["courier"],
+        "plateScrim": 0.3,
+        "purpose": "The turn: where the gate does win. Speed is worth a crystal only for what can't wait, so the last bead flips to the gate.",
+        "visual": "Night; a hooded courier with a sealed satchel walks toward the gate, which opens lilac; on 'can't' the board's SPEED row slides to GATE (medicine, royal mail / nine days); the courier's jump flashes on 'mail'.",
+        "camera": "Slow push (1.04 to 1.08).",
+        "layers": {"foreground": "the counting board", "midground": "the courier", "background": "the open gate"},
+        "lighting": "Lantern night; the gate is the brightest thing in frame.",
+        "imagePrompt": ip("courier"), "videoPrompt": "(Not used.)", "sdxlPrompt": SDXL["courier"],
+        "graphics": [
+            ring("courierRing", openAt=c("L6", "so", -0.1), jumps=[c("L6", "mail.", 0.1)]),
+            board("courier"),
+        ],
+        "onScreenText": "Board row SPEED: medicine, royal mail / nine days, bead to the GATE.",
+        "transition": "Dissolve (0.45 s) to the board over the dimmed road.",
+        "sfx": [
+            {"sound": "footsteps", "from": {"shot": "courier"}, "to": {"line": "L6", "word": "mail.", "offset": 0.1}, "gain": -34},
+            {"sound": "blink", "at": c("L6", "so", -0.1), "gain": -23},
+            bead(ROWS[4], -19),
+            {"sound": "shimmer", "at": c("L6", "can't", 0.4), "gain": -27},
+            {"sound": "blink", "at": c("L6", "mail.", 0.1), "gain": -22},
+        ],
+        "music": "D major lifts for the first time: the narrow win.",
+    },
+    {
+        "id": "lesson", "scene": "nightSky", "plateFrom": "hook",
+        "transitionIn": {"type": "dissolve", "duration": 0.45},
+        "plateFrame": {"from": {"s": 1.06, "y": 0}, "to": {"s": 1.03, "y": 0}},
+        "plateScrim": 0.85,
+        "plateLook": {"from": "saturate(0.45) brightness(0.4)"},
+        "purpose": "The lesson: the whole board at once, CART 4 to GATE 1, then the principle.",
+        "visual": "The muddy road dimmed; the full counting board, all five rows and the tally 1 · MOST DAYS, THE CART · 4; on 'price' it lifts and shrinks; MAGIC DOESN'T REPLACE TECHNOLOGY / Price, range and reliability decide who uses what.",
+        "camera": "Slow pull (1.06 to 1.03).",
+        "layers": {"foreground": "lesson type", "midground": "the counting board", "background": "the dimmed road"},
+        "lighting": "Night-dimmed; the board's brass carries the light.",
+        "imagePrompt": "(Reuses the hook plate.)", "videoPrompt": "(Not used.)",
+        "graphics": [
+            {"type": "countingBoard", "rows": ROWS, "all": True, "title": "Who wins?",
+             "start": {"shot": "lesson", "offset": -0.3},
+             "box": {"x": 117, "y": 340, "s": 0.94},
+             "score": {"at": {"shot": "lesson", "offset": 0.25}, "label": "Most days, the cart"},
+             "moveAt": c("L7", "price,", -0.25), "move": {"x": 252, "y": 330, "s": 0.64},
+             "lessonKicker": "Magic doesn't replace technology",
+             "lessonText": ["Price, range and reliability", "decide *who* *uses* *what.*"],
+             "lessonAt": c("L7", "price,", 0.0), "lessonTop": 860, "lessonSize": 78},
+        ],
+        "onScreenText": "Full board, tally GATE 1 · CART 4 ('MOST DAYS, THE CART'); then 'MAGIC DOESN'T REPLACE TECHNOLOGY' / 'Price, range and reliability decide who uses what.'",
+        "transition": "Dissolve (0.6 s) to the road at dusk.",
+        "sfx": [
+            {"sound": "whoosh", "at": {"shot": "lesson", "offset": -0.2}, "gain": -30},
+            {"sound": "coin", "at": {"shot": "lesson", "offset": 0.3}, "gain": -27},
+            {"sound": "paper", "at": c("L7", "price,", -0.25), "gain": -28},
+            {"sound": "drum", "at": c("L7", "decide", -0.05), "gain": -22},
+        ],
+        "music": "B-flat → D major with bells: the answer.",
+    },
+    {
+        "id": "cta", "scene": "nightSky", "plateFrom": "hook",
+        "transitionIn": {"type": "dissolve", "duration": 0.6},
+        "plateFrame": {"from": {"s": 1.06, "y": 0}, "to": {"s": 1.0, "y": 0}},
+        "plateScrim": 0.45,
+        "plateLook": {"from": "sepia(0.25) saturate(0.9) brightness(0.62) hue-rotate(-8deg)"},
+        "captions": False, "hideLogoBug": True,
+        "purpose": "Comment CTA over the opening road at dusk, the gate still shimmering on the hill; loops back to the hook.",
+        "visual": "The hook's road in a dusk grade, wagons still on it, the gate shimmering above; CTA card with the 'Comment below' pill.",
+        "camera": "Slow pull back (1.06 to 1.00) toward the hook framing for the loop.",
+        "layers": {"foreground": "CTA card", "midground": "the gate's shimmer", "background": "the dusk road"},
+        "lighting": "Dusk; dimmed under the card.",
+        "imagePrompt": "(Reuses the hook plate.)", "videoPrompt": "(Not used.)",
+        "graphics": [
+            ring("hookRing", start={"shot": "cta", "offset": -0.6}, idle=0.55),
+            {"type": "ctaCard", "start": {"shot": "cta"}, "ctaAt": c("L8", "what"), "episode": "Episode 24 / 50",
+             "title": "Why teleportation doesn't replace the road", "kicker": "Your turn", "size": 74,
+             "lines": ["What technology", "would magic replace", "*first in your world?*"], "button": "Comment below"},
+        ],
+        "onScreenText": "CTA card: logo, 'Episode 24 / 50', title, 'YOUR TURN', 'What technology / would magic replace / first in your world?', 'Comment below' pill.",
+        "transition": "Cross-fade (0.6 s) into the hook for the loop.",
+        "sfx": [
+            {"sound": "rain", "from": {"shot": "cta"}, "to": {"shot": "cta", "offset": 5.0}, "gain": -40},
+            {"sound": "swell", "at": {"shot": "cta", "offset": 0.1}, "gain": -26},
+        ],
+        "music": "D major, resolving; fades before the last frame.",
+    },
+]
+
+TAGS = "#Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts"
+BODY = (
+    "If teleportation exists, why are merchants still using horses?\n\n"
+    "Here, a crystal gate links two cities. But each jump burns a crystal worth more than the cargo. It reaches one city, and every village still needs the road. "
+    "One jump in a hundred fails, and the guild rations the rest. So the gate carries only what can't wait: medicine and royal mail.\n\n"
+    "Magic doesn't replace technology. Price, range and reliability decide who uses what.\n\n"
+    "What technology would magic replace first in your world?"
+)
+metadata = {
+    "youtube": {
+        "title": "Why Teleportation Wouldn't Replace Horses (Worldbuilding)",
+        "titleAlternate": "If teleportation exists, why are merchants still using horses?",
+        "description": BODY + "\n\nEpisode 24 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.\n\n" + TAGS,
+        "pinnedComment": "Your turn: what technology would magic replace first in your world, and what would it still lose to?",
+        "uploadSettings": "Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.",
+    },
+    "tiktok": {
+        "caption": "A teleport gate vs a muddy cart 🐴🔮 The cart wins on cost, range, reliability and access. The gate wins one thing: speed. What would magic replace first in your world? " + TAGS,
+        "pinnedComment": "Name one job in your world that magic should have killed, and why it's still around.",
+        "uploadSettings": "Turn on 'AI-generated content' under More options before posting.",
+    },
+    "facebook": {
+        "caption": BODY + "\n\nEpisode 24 of 50.\n\n" + TAGS,
+        "pinnedComment": "Cost, range, reliability, availability, speed: which one decides it in your world?",
+        "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).",
+    },
+    "instagram": {
+        "caption": "Gate vs cart. The cart wins.\n\n" + BODY + "\n\nEpisode 24 of 50 · Worldcraft Shorts\n\n" + TAGS,
+        "hookCheck": "First 28 characters: 'Gate vs cart. The cart wins.'",
+        "pinnedComment": "Score your world's magic against one ordinary tool: cost, range, reliability, availability. Who wins?",
+        "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).",
+    },
+    "cover": "Worldcraft_Short_E24_cover.jpg: the muddy road of wagons under the shimmering gate on the hill, 'TELEPORTATION EXISTS / So why horses?' above it, corner logo.",
+    "followUpQuestion": "Take the most useful spell in your world and score it against the ordinary tool it competes with: cost, range, reliability, availability, speed. Where does the tool still win?",
+}
+
+ep = {
+    "id": "ep24",
+    "number": 24,
+    "title": "Why Teleportation Doesn't Replace the Road",
+    "voice": {
+        "provider": "kokoro",
+        "kokoro": {"voice": "af_heart", "lang": "a", "speed": 1.0},
+        "elevenlabs": {"voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID", "model": "eleven_multilingual_v2",
+                       "settings": {"stability": 0.55, "similarity_boost": 0.75, "style": 0.15, "use_speaker_boost": True}},
+        "direction": "A calm, amused guide. The hook is a genuine puzzle. 'Here, a crystal gate' has a little wonder in it; then each practical problem is dry and matter-of-fact, like a merchant reading out costs. 'So it carries only what can't wait' turns warmer: the gate does win, narrowly. The lesson is plain and sure; the comment CTA curious. No trailer voice.",
+    },
+    "timing": {"leadIn": 0.25, "tail": 1.5, "shotLead": 0.12},
+    "lines": [{"id": i, "shot": s, "text": t, "pauseAfter": p, "emphasis": e} for i, s, t, p, e in lines],
+    "shots": shots,
+    "lesson": "Magic doesn't automatically replace technology. A teleport gate competes with the cart on range, reliability, cost, availability, safety and infrastructure, and an ordinary tool that is cheap, dependable and everywhere wins most days. Magic takes the narrow jobs where its one advantage (here, speed) is worth its price: urgent medicine, royal mail.",
+    "captionReplace": {},
+    "music": {
+        "key": "D minor, resolving to D major",
+        "drone": ["D2", "A2"],
+        "events": [
+            {"type": "duck", "at": c("L6", "so"), "pre": 0.15, "dur": 2.2, "gain": 0.6},
+            {"type": "duck", "at": c("L7", "magic"), "pre": 0.15, "dur": 1.6, "gain": 0.6},
+        ],
+        "sections": {
+            "hook": {"chords": [["D2", "A2", "F3", "A3", "E4"]], "level": 0.46, "dark": True},
+            "gate": {"chords": [["D2", "A2", "F3", "C4"]], "level": 0.5, "pulse": 76},
+            "cargo": {"chords": [["Bb1", "F2", "D3", "A3"]], "level": 0.52, "pulse": 76},
+            "village": {"chords": [["G1", "D2", "Bb2", "F3"]], "level": 0.53, "pulse": 76},
+            "queue": {"chords": [["Eb2", "Bb2", "G3", "D4"], ["A1", "E2", "C#3", "G3"]], "level": 0.5, "pulse": 76},
+            "courier": {"chords": [["D2", "A2", "F#3", "A3", "E4"]], "level": 0.5},
+            "lesson": {"chords": [["Bb1", "F2", "D3", "A3"], ["D2", "A2", "F#3", "A3", "E4"]], "level": 0.62, "bells": True},
+            "cta": {"chords": [["G1", "D2", "B2", "F#3"], ["D2", "A2", "F#3", "A3", "D4"]], "level": 0.58, "bells": True},
+        },
+    },
+    "metadata": metadata,
+}
+
+EP.write_text(json.dumps(ep, indent=1, ensure_ascii=False) + "\n")
+print(f"wrote {EP}: {sum(len(t.split()) for _, _, t, _, _ in lines)} words")

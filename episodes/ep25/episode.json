@@ -1,0 +1,1518 @@
+{
+ "id": "ep25",
+ "number": 25,
+ "title": "The Strongest Magic System Has Weaknesses",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "A calm guide with a hint of relish. The hook is a quiet secret, not a trailer line. 'Meet the Unmaker' is cool and level; 'she can erase' lands softly, more chilling for it. 'But only what she can see' is the turn: slower, a small smile. 'Smoke. Fog. A wall.' are three placed pieces, a beat each. 'And she has to plan too' warns. The lesson is clear and sure, and the CTA is warm."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "The secret to a terrifying wizard isn't making them unbeatable.",
+   "pauseAfter": 0.5,
+   "emphasis": [
+    "terrifying",
+    "unbeatable."
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "erase",
+   "text": "Meet the Unmaker. Anything she can see, she can erase.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "unmaker.",
+    "erase."
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "plan",
+   "text": "But only what she can see.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "only",
+    "see."
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "heroes",
+   "text": "So the heroes stop fighting, and start thinking.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "stop",
+    "thinking."
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "path",
+   "text": "Smoke. Fog. A wall. Every shadow becomes a path.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "shadow",
+    "path."
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "mirror",
+   "text": "And she has to plan too: mirrors, lanterns, a higher tower.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "she",
+    "too:"
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "lesson",
+   "text": "Unbeatable is boring. A weakness turns a fight into a puzzle.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "boring.",
+    "puzzle."
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "cta",
+   "text": "Follow for more ways to make fictional powers interesting.",
+   "pauseAfter": 0.0,
+   "emphasis": [
+    "follow",
+    "interesting."
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.06,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.5,
+   "purpose": "Stop the scroll on the caster: a figure on a tower whose sight falls on the courtyard below like a searchlight, and the hook's promise that her terror isn't invincibility.",
+   "visual": "A cloaked woman on a high balcony, seen from behind, over a misty courtyard at dusk; a pale lilac beam (code) falls from her into the yard and slowly sweeps. 'THE SECRET TO A TERRIFYING WIZARD / Not unbeatable.'",
+   "camera": "Slow push (1.00 to 1.06).",
+   "layers": {
+    "foreground": "title",
+    "midground": "the Unmaker and her sight",
+    "background": "the courtyard far below"
+   },
+   "lighting": "Cold dusk; top scrim for the title.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. seen from behind, a tall woman in a long dark grey hooded cloak stands alone on a high stone tower balcony at dusk looking down into a wide empty misty castle courtyard far below, stone pillars and an old well in the courtyard, cold blue light, wide shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "seen from behind, a tall woman in a long dark grey hooded cloak stands alone on a high stone tower balcony at dusk looking down into a wide empty misty castle courtyard far below, stone pillars and an old well in the courtyard, cold blue light, wide shot",
+   "graphics": [
+    {
+     "type": "gazeBeam",
+     "local": true,
+     "points": [
+      [
+       560,
+       820
+      ],
+      [
+       520,
+       1500
+      ]
+     ],
+     "widths": [
+      14,
+      300
+     ],
+     "sway": [
+      160,
+      30,
+      4.5
+     ],
+     "start": {
+      "shot": "hook",
+      "offset": 0.15
+     },
+     "flares": [
+      {
+       "line": "L1",
+       "word": "terrifying",
+       "offset": -0.05
+      }
+     ]
+    },
+    {
+     "type": "titleLockup",
+     "kicker": "The secret to a terrifying wizard",
+     "text": "Not unbeatable.",
+     "y": 340,
+     "size": 120,
+     "start": {
+      "line": "L1",
+      "word": "the",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L1",
+      "word": "unbeatable.",
+      "offset": 0.5
+     }
+    }
+   ],
+   "onScreenText": "Kicker 'THE SECRET TO A TERRIFYING WIZARD' + 'Not unbeatable.' (ember serif italic).",
+   "transition": "Hard cut on 'Meet' to the gate.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "erase",
+      "offset": 0.5
+     },
+     "gain": -34
+    },
+    {
+     "sound": "gaze",
+     "at": {
+      "shot": "hook",
+      "offset": 0.1
+     },
+     "gain": -24
+    },
+    {
+     "sound": "gaze",
+     "at": {
+      "line": "L1",
+      "word": "terrifying",
+      "offset": -0.05
+     },
+     "gain": -26
+    }
+   ],
+   "music": "C minor, hushed and cold."
+  },
+  {
+   "id": "erase",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.4,
+   "purpose": "Show the power once, on a thing: her sight lands on the courtyard gate and the gate simply stops existing. Threat by implication.",
+   "visual": "The great studded gate at dusk; the lilac beam slants in from her tower, the gate's edge lights, and on 'erase' it dissolves cell by cell into the dark, shedding motes. Tag 'THE UNMAKER / Sees it. Erases it.'",
+   "camera": "Slow push (1.04 to 1.08).",
+   "layers": {
+    "foreground": "tag",
+    "midground": "the gate dissolving",
+    "background": "the wall, the lantern"
+   },
+   "lighting": "Dusk; the beam is the brightest thing in frame.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a massive old wooden double gate with iron studs and black hinges set in a tall weathered stone courtyard wall at dusk, wet flagstones with puddles, one lantern on the wall, light mist, no people, straight-on view. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "a massive old wooden double gate with iron studs and black hinges set in a tall weathered stone courtyard wall at dusk, wet flagstones with puddles, one lantern on the wall, light mist, no people, straight-on view",
+   "graphics": [
+    {
+     "type": "gazeBeam",
+     "local": true,
+     "points": [
+      [
+       -160,
+       260
+      ],
+      [
+       540,
+       900
+      ]
+     ],
+     "widths": [
+      60,
+      340
+     ],
+     "sway": [
+      12,
+      6,
+      3
+     ],
+     "start": {
+      "line": "L2",
+      "word": "anything",
+      "offset": -0.15
+     },
+     "draw": 0.5,
+     "flares": [
+      {
+       "line": "L2",
+       "word": "erase.",
+       "offset": -0.1
+      }
+     ],
+     "opacity": 0.7
+    },
+    {
+     "type": "unmake",
+     "local": true,
+     "poly": [
+      [
+       380,
+       820
+      ],
+      [
+       700,
+       820
+      ],
+      [
+       700,
+       1240
+      ],
+      [
+       380,
+       1240
+      ]
+     ],
+     "from": [
+      540,
+      900
+     ],
+     "at": {
+      "line": "L2",
+      "word": "she",
+      "offset": -0.05,
+      "nth": 2
+     },
+     "edge": 0.45,
+     "dur": 1.1
+    },
+    {
+     "type": "tag",
+     "kicker": "The Unmaker",
+     "text": "Sees it. Erases it.",
+     "start": {
+      "line": "L2",
+      "word": "meet",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Tag 'THE UNMAKER' + 'Sees it. Erases it.'",
+   "transition": "Dissolve (0.35 s) on 'But' to the courtyard plan.",
+   "sfx": [
+    {
+     "sound": "gaze",
+     "at": {
+      "line": "L2",
+      "word": "anything",
+      "offset": -0.15
+     },
+     "gain": -23
+    },
+    {
+     "sound": "unmake",
+     "at": {
+      "line": "L2",
+      "word": "she",
+      "offset": -0.05,
+      "nth": 2
+     },
+     "gain": -20
+    }
+   ],
+   "music": "C minor; a slow pulse begins."
+  },
+  {
+   "id": "plan",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.35
+   },
+   "purpose": "The weakness, made visible: on a top-down plan her sight is a cone, ray-cast against the cover, so every pillar and the well throw a blind spot.",
+   "visual": "Top-down courtyard plan on dark midnight: walls, two pillars, a well, her lilac eye on the top wall. Her sight cone opens and sweeps; black blind spots trail behind each piece of cover. 'BLIND SPOT' chips pin behind the well and in the corner beside her. Tag 'THE WEAKNESS / Line of sight'.",
+   "camera": "Static diagram; the cone does the moving.",
+   "layers": {
+    "foreground": "tag, chips",
+    "midground": "the cone and its shadows",
+    "background": "the plan"
+   },
+   "lighting": "Midnight board; the cone carries the light.",
+   "imagePrompt": "(Code-drawn plan; no plate.)",
+   "videoPrompt": "(Not used.)",
+   "graphics": [
+    {
+     "type": "sightPlan",
+     "yard": [
+      150,
+      500,
+      930,
+      1140
+     ],
+     "eye": [
+      540,
+      500
+     ],
+     "spread": 30,
+     "range": 900,
+     "sweep": [
+      62,
+      118,
+      4.6
+     ],
+     "blocks": [
+      {
+       "rect": [
+        300,
+        640,
+        360,
+        700
+       ]
+      },
+      {
+       "rect": [
+        720,
+        640,
+        780,
+        700
+       ]
+      },
+      {
+       "circle": [
+        540,
+        820,
+        48
+       ]
+      }
+     ],
+     "start": {
+      "shot": "plan",
+      "offset": -0.2
+     },
+     "sweepZero": {
+      "shot": "plan",
+      "offset": -0.2
+     },
+     "labels": [
+      {
+       "text": "Blind spot",
+       "at": [
+        540,
+        945
+       ],
+       "cue": {
+        "line": "L3",
+        "word": "what",
+        "offset": -0.05
+       }
+      },
+      {
+       "text": "Blind spot",
+       "at": [
+        835,
+        560
+       ],
+       "cue": {
+        "line": "L3",
+        "word": "see.",
+        "offset": -0.1
+       }
+      }
+     ]
+    },
+    {
+     "type": "tag",
+     "kicker": "The weakness",
+     "text": "Line of sight",
+     "start": {
+      "line": "L3",
+      "word": "but",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Tag 'THE WEAKNESS' + 'Line of sight'; 'BLIND SPOT' chips.",
+   "transition": "Hard cut on 'So' to the heroes.",
+   "sfx": [
+    {
+     "sound": "gaze",
+     "at": {
+      "shot": "plan",
+      "offset": 0.05
+     },
+     "gain": -24
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L3",
+      "word": "what",
+      "offset": -0.05
+     },
+     "gain": -28
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L3",
+      "word": "see.",
+      "offset": -0.1
+     },
+     "gain": -28
+    }
+   ],
+   "music": "Ab major 7 under a held C: the first crack of hope."
+  },
+  {
+   "id": "heroes",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.4,
+   "purpose": "What the weakness does to the other side: the heroes stop charging and start planning. They crouch in shadow while her sight passes over.",
+   "visual": "Three cloaked adventurers crouched behind a broken pillar at night, one pointing a route; a lilac sweep of sight passes above them. Tag 'THE HEROES / Think, don't fight'.",
+   "camera": "Slow push (1.04 to 1.08).",
+   "layers": {
+    "foreground": "tag",
+    "midground": "the heroes behind the pillar",
+    "background": "the sweep of light, the yard"
+   },
+   "lighting": "Night; cold light from above, the heroes in shadow.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. seen from behind, three adventurers in dark hooded travel cloaks crouch low, hidden behind a large broken stone column in a moonlit castle courtyard at night, one of them points ahead around the column, pale light falls on the flagstones beyond, faces unseen, medium wide shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "seen from behind, three adventurers in dark hooded travel cloaks crouch low, hidden behind a large broken stone column in a moonlit castle courtyard at night, one of them points ahead around the column, pale light falls on the flagstones beyond, faces unseen, medium wide shot",
+   "graphics": [
+    {
+     "type": "gazeBeam",
+     "local": true,
+     "points": [
+      [
+       1300,
+       -200
+      ],
+      [
+       -200,
+       700
+      ]
+     ],
+     "widths": [
+      80,
+      420
+     ],
+     "sway": [
+      0,
+      260,
+      3.2
+     ],
+     "start": {
+      "shot": "heroes"
+     },
+     "draw": 0.01,
+     "instant": true,
+     "opacity": 0.55
+    },
+    {
+     "type": "tag",
+     "kicker": "The heroes",
+     "text": "Think, don't fight",
+     "start": {
+      "line": "L4",
+      "word": "so",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Tag 'THE HEROES' + 'Think, don't fight'.",
+   "transition": "Hard cut on 'Smoke' back to the plan.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "heroes"
+     },
+     "to": {
+      "shot": "path",
+      "offset": 0.3
+     },
+     "gain": -36
+    },
+    {
+     "sound": "gaze",
+     "at": {
+      "shot": "heroes",
+      "offset": 0.2
+     },
+     "gain": -27
+    }
+   ],
+   "music": "F minor, the pulse quickens."
+  },
+  {
+   "id": "path",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "The puzzle solved in three moves: each piece of cover they add (smoke, fog, a wall) cuts a new blind spot out of her cone, until a route through the shadows reaches her door.",
+   "visual": "The plan again. On 'Smoke' a smoke cloud blooms, on 'Fog' a fog bank rolls in, on 'A wall' a wall drops; each casts a new shadow in the sweeping cone. On 'Every shadow becomes a path' an amber dotted route draws from the gate through the shadows to the tower door, and three hero tokens move along it. Tag 'THE PUZZLE / Make your own shadows'.",
+   "camera": "Static diagram.",
+   "layers": {
+    "foreground": "tag, labels",
+    "midground": "cone, cover, route, tokens",
+    "background": "the plan"
+   },
+   "lighting": "Midnight board.",
+   "imagePrompt": "(Code-drawn plan; no plate.)",
+   "videoPrompt": "(Not used.)",
+   "graphics": [
+    {
+     "type": "sightPlan",
+     "yard": [
+      150,
+      500,
+      930,
+      1140
+     ],
+     "eye": [
+      540,
+      500
+     ],
+     "spread": 30,
+     "range": 900,
+     "sweep": [
+      62,
+      118,
+      4.6
+     ],
+     "blocks": [
+      {
+       "rect": [
+        300,
+        640,
+        360,
+        700
+       ]
+      },
+      {
+       "rect": [
+        720,
+        640,
+        780,
+        700
+       ]
+      },
+      {
+       "circle": [
+        540,
+        820,
+        48
+       ]
+      },
+      {
+       "circle": [
+        770,
+        925,
+        82
+       ],
+       "kind": "smoke",
+       "label": "Smoke",
+       "at": {
+        "line": "L5",
+        "word": "smoke.",
+        "offset": -0.05
+       }
+      },
+      {
+       "circle": [
+        320,
+        985,
+        96
+       ],
+       "kind": "fog",
+       "label": "Fog",
+       "at": {
+        "line": "L5",
+        "word": "fog.",
+        "offset": -0.05
+       }
+      },
+      {
+       "rect": [
+        470,
+        1012,
+        690,
+        1036
+       ],
+       "kind": "wall",
+       "label": "Wall",
+       "labelAt": [
+        580,
+        1070
+       ],
+       "at": {
+        "line": "L5",
+        "word": "wall.",
+        "offset": -0.05
+       }
+      }
+     ],
+     "start": {
+      "shot": "path"
+     },
+     "instantBoard": true,
+     "sweepZero": {
+      "shot": "plan",
+      "offset": -0.2
+     },
+     "route": [
+      [
+       540,
+       1128
+      ],
+      [
+       600,
+       1080
+      ],
+      [
+       790,
+       1080
+      ],
+      [
+       830,
+       1010
+      ],
+      [
+       800,
+       760
+      ],
+      [
+       905,
+       700
+      ],
+      [
+       905,
+       540
+      ]
+     ],
+     "routeAt": {
+      "line": "L5",
+      "word": "shadow",
+      "offset": -0.1
+     },
+     "tokensAt": {
+      "shot": "path",
+      "offset": 0.1
+     },
+     "moves": [
+      {
+       "at": {
+        "line": "L5",
+        "word": "becomes",
+        "offset": -0.1
+       },
+       "p": 0.42
+      },
+      {
+       "at": {
+        "line": "L5",
+        "word": "path.",
+        "offset": 0.05
+       },
+       "p": 1.0
+      }
+     ]
+    },
+    {
+     "type": "tag",
+     "kicker": "The puzzle",
+     "text": "Make your own shadows",
+     "start": {
+      "line": "L5",
+      "word": "smoke.",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Tag 'THE PUZZLE' + 'Make your own shadows'; labels SMOKE / FOG / WALL; dotted route to the door.",
+   "transition": "Hard cut on 'And' to her tower.",
+   "sfx": [
+    {
+     "sound": "whoosh",
+     "at": {
+      "line": "L5",
+      "word": "smoke.",
+      "offset": -0.1
+     },
+     "gain": -26
+    },
+    {
+     "sound": "whoosh",
+     "at": {
+      "line": "L5",
+      "word": "fog.",
+      "offset": -0.1
+     },
+     "gain": -29
+    },
+    {
+     "sound": "stoneShift",
+     "at": {
+      "line": "L5",
+      "word": "wall.",
+      "offset": -0.1
+     },
+     "gain": -26
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L5",
+      "word": "shadow",
+      "offset": -0.1
+     },
+     "gain": -27
+    },
+    {
+     "sound": "footsteps",
+     "from": {
+      "line": "L5",
+      "word": "becomes",
+      "offset": -0.1
+     },
+     "to": {
+      "line": "L5",
+      "word": "path.",
+      "offset": 0.9
+     },
+     "gain": -33
+    }
+   ],
+   "music": "Bb major: the plan works."
+  },
+  {
+   "id": "mirror",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": -30
+    }
+   },
+   "plateScrim": 0.4,
+   "purpose": "The weakness cuts both ways: she plans too. A mirror bends her sight around corners, lanterns burn the fog away, and she climbs higher. She is more frightening, not less.",
+   "visual": "The Unmaker on a tower parapet at night beside a tall standing mirror; her lilac sight strikes the mirror and bends down into the yard; three lanterns flare along the parapet on 'lanterns'. Tag 'HER MOVE / She plans too'.",
+   "camera": "Slow push with a slight rise (1.04 to 1.08).",
+   "layers": {
+    "foreground": "tag",
+    "midground": "her, the mirror, the bent beam",
+    "background": "lanterns, the yard below"
+   },
+   "lighting": "Night; lanterns warm, her sight cold.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a huge oval standing mirror in an ornate black iron frame, taller than a person, stands on a stone tower rooftop at night, a hooded woman in a long dark cloak stands beside it with her back to us, three lit lanterns on the parapet, misty castle below, wide shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "a huge oval standing mirror in an ornate black iron frame, taller than a person, stands on a stone tower rooftop at night, a hooded woman in a long dark cloak stands beside it with her back to us, three lit lanterns on the parapet, misty castle below, wide shot",
+   "graphics": [
+    {
+     "type": "gazeBeam",
+     "local": true,
+     "points": [
+      [
+       420,
+       760
+      ],
+      [
+       700,
+       820
+      ],
+      [
+       900,
+       1700
+      ]
+     ],
+     "widths": [
+      12,
+      70,
+      300
+     ],
+     "sway": [
+      60,
+      0,
+      3.5
+     ],
+     "start": {
+      "line": "L6",
+      "word": "mirrors,",
+      "offset": -0.25
+     },
+     "draw": 0.55,
+     "flares": [
+      {
+       "line": "L6",
+       "word": "tower.",
+       "offset": -0.1
+      }
+     ]
+    },
+    {
+     "type": "mendGlow",
+     "local": true,
+     "at": [
+      200,
+      1150
+     ],
+     "r": 34,
+     "color": "amber",
+     "start": {
+      "line": "L6",
+      "word": "lanterns,",
+      "offset": -0.1
+     },
+     "pulses": [
+      {
+       "line": "L6",
+       "word": "lanterns,",
+       "offset": -0.1
+      }
+     ],
+     "ringMax": 120,
+     "ringDur": 0.8
+    },
+    {
+     "type": "mendGlow",
+     "local": true,
+     "at": [
+      520,
+      1180
+     ],
+     "r": 34,
+     "color": "amber",
+     "start": {
+      "line": "L6",
+      "word": "lanterns,"
+     },
+     "pulses": [
+      {
+       "line": "L6",
+       "word": "lanterns,"
+      }
+     ],
+     "ringMax": 120,
+     "ringDur": 0.8
+    },
+    {
+     "type": "mendGlow",
+     "local": true,
+     "at": [
+      860,
+      1200
+     ],
+     "r": 34,
+     "color": "amber",
+     "start": {
+      "line": "L6",
+      "word": "lanterns,",
+      "offset": 0.1
+     },
+     "pulses": [
+      {
+       "line": "L6",
+       "word": "lanterns,",
+       "offset": 0.1
+      }
+     ],
+     "ringMax": 120,
+     "ringDur": 0.8
+    },
+    {
+     "type": "tag",
+     "kicker": "Her move",
+     "text": "She plans too",
+     "start": {
+      "line": "L6",
+      "word": "and",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Tag 'HER MOVE' + 'She plans too'.",
+   "transition": "Dissolve (0.45 s) to the plan for the lesson.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "mirror"
+     },
+     "to": {
+      "shot": "lesson",
+      "offset": 0.4
+     },
+     "gain": -36
+    },
+    {
+     "sound": "gaze",
+     "at": {
+      "line": "L6",
+      "word": "mirrors,",
+      "offset": -0.25
+     },
+     "gain": -22
+    },
+    {
+     "sound": "shimmer",
+     "at": {
+      "line": "L6",
+      "word": "lanterns,",
+      "offset": -0.1
+     },
+     "gain": -28
+    },
+    {
+     "sound": "gaze",
+     "at": {
+      "line": "L6",
+      "word": "tower.",
+      "offset": -0.1
+     },
+     "gain": -25
+    }
+   ],
+   "music": "G7: tension returns, she answers."
+  },
+  {
+   "id": "lesson",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.45
+   },
+   "purpose": "The lesson: the solved puzzle lifts, a one-line nod to the whole arc (can, can't, costs, consequences, weakness), then the principle.",
+   "visual": "The plan, solved (smoke, fog, wall, the route to the door), lifts to the top. A small row: CAN · CAN'T · COSTS · CONSEQUENCES · WEAKNESS (the last in ember). Then 'UNBEATABLE IS BORING / A weakness turns a fight into a puzzle.'",
+   "camera": "Static; the plan lifts.",
+   "layers": {
+    "foreground": "lesson type",
+    "midground": "the arc row",
+    "background": "the lifted plan"
+   },
+   "lighting": "Midnight board.",
+   "imagePrompt": "(Code-drawn plan; no plate.)",
+   "videoPrompt": "(Not used.)",
+   "graphics": [
+    {
+     "type": "sightPlan",
+     "yard": [
+      150,
+      500,
+      930,
+      1140
+     ],
+     "eye": [
+      540,
+      500
+     ],
+     "spread": 30,
+     "range": 900,
+     "sweep": [
+      62,
+      118,
+      6
+     ],
+     "blocks": [
+      {
+       "rect": [
+        300,
+        640,
+        360,
+        700
+       ]
+      },
+      {
+       "rect": [
+        720,
+        640,
+        780,
+        700
+       ]
+      },
+      {
+       "circle": [
+        540,
+        820,
+        48
+       ]
+      },
+      {
+       "circle": [
+        770,
+        925,
+        82
+       ],
+       "kind": "smoke",
+       "label": "Smoke"
+      },
+      {
+       "circle": [
+        320,
+        985,
+        96
+       ],
+       "kind": "fog",
+       "label": "Fog"
+      },
+      {
+       "rect": [
+        470,
+        1012,
+        690,
+        1036
+       ],
+       "kind": "wall",
+       "label": "Wall",
+       "labelAt": [
+        580,
+        1070
+       ]
+      }
+     ],
+     "start": {
+      "shot": "lesson",
+      "offset": -0.45
+     },
+     "instant": true,
+     "instantP": 1.0,
+     "sweepZero": {
+      "shot": "plan",
+      "offset": -0.2
+     },
+     "route": [
+      [
+       540,
+       1128
+      ],
+      [
+       600,
+       1080
+      ],
+      [
+       790,
+       1080
+      ],
+      [
+       830,
+       1010
+      ],
+      [
+       800,
+       760
+      ],
+      [
+       905,
+       700
+      ],
+      [
+       905,
+       540
+      ]
+     ],
+     "liftAt": {
+      "shot": "lesson",
+      "offset": 0.15
+     },
+     "lift": {
+      "to": [
+       540,
+       605
+      ],
+      "s": 0.6
+     },
+     "arcRow": [
+      "Can",
+      "Can't",
+      "Costs",
+      "Consequences",
+      "Weakness"
+     ],
+     "arcAt": {
+      "line": "L7",
+      "word": "unbeatable"
+     },
+     "arcTop": 850,
+     "lessonKicker": "Unbeatable is boring",
+     "lessonText": [
+      "A weakness turns",
+      "a fight into *a* *puzzle.*"
+     ],
+     "lessonAt": {
+      "line": "L7",
+      "word": "boring.",
+      "offset": -0.1
+     },
+     "lessonTop": 915,
+     "lessonSize": 88
+    }
+   ],
+   "onScreenText": "Arc row 'CAN · CAN'T · COSTS · CONSEQUENCES · WEAKNESS'; 'UNBEATABLE IS BORING' / 'A weakness turns a fight into a puzzle.'",
+   "transition": "Dissolve (0.6 s) to the hook tower by night.",
+   "sfx": [
+    {
+     "sound": "resonance",
+     "at": {
+      "shot": "lesson",
+      "offset": 0.1
+     },
+     "gain": -27
+    }
+   ],
+   "music": "Ab to C major: resolved."
+  },
+  {
+   "id": "cta",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.06,
+     "y": 0
+    },
+    "to": {
+     "s": 1.0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "plateLook": {
+    "from": "saturate(0.7) brightness(0.55) hue-rotate(8deg)"
+   },
+   "captions": false,
+   "hideLogoBug": true,
+   "purpose": "Follow CTA over the opening tower at night, her sight still sweeping the yard; the halfway mark of the series; loops back to the hook.",
+   "visual": "The hook's tower and courtyard, darker, her beam still sweeping; CTA card with the Follow pill.",
+   "camera": "Slow pull back (1.06 to 1.00) toward the hook framing for the loop.",
+   "layers": {
+    "foreground": "CTA card",
+    "midground": "her sight",
+    "background": "the night courtyard"
+   },
+   "lighting": "Night; dimmed under the card.",
+   "imagePrompt": "(Reuses the hook plate.)",
+   "videoPrompt": "(Not used.)",
+   "graphics": [
+    {
+     "type": "gazeBeam",
+     "local": true,
+     "points": [
+      [
+       560,
+       820
+      ],
+      [
+       520,
+       1500
+      ]
+     ],
+     "widths": [
+      14,
+      300
+     ],
+     "sway": [
+      160,
+      30,
+      4.5
+     ],
+     "start": {
+      "shot": "cta",
+      "offset": -0.6
+     },
+     "instant": true,
+     "draw": 0.01,
+     "opacity": 0.6
+    },
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L8",
+      "word": "follow"
+     },
+     "episode": "Episode 25 / 50",
+     "title": "The strongest magic system has weaknesses",
+     "kicker": "Halfway there",
+     "size": 74,
+     "lines": [
+      "Follow for more ways",
+      "to make fictional",
+      "*powers* *interesting.*"
+     ],
+     "button": "Follow",
+     "icon": "follow"
+    }
+   ],
+   "onScreenText": "Full logo, 'EPISODE 25 / 50', title, 'HALFWAY THERE', 'Follow for more ways to make fictional powers interesting.', pill 'Follow'.",
+   "transition": "Cross-fade into the hook's first frame for a seamless loop.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "cta"
+     },
+     "to": {
+      "line": "L8",
+      "word": "interesting.",
+      "offset": 1.0
+     },
+     "gain": -38
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "shot": "cta",
+      "offset": -0.3
+     },
+     "gain": -26
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L8",
+      "word": "interesting.",
+      "offset": 0.2
+     },
+     "gain": -24
+    }
+   ],
+   "music": "F to C major, warm; fades fully before the last frame."
+  }
+ ],
+ "lesson": "A caster isn't frightening because nothing can stop them; they are frightening when the story has to work around them. Give a powerful caster one strategic weakness (line of sight, silence, preparation, a rare resource) and every encounter becomes a puzzle: the heroes must think instead of charge, and the caster must plan to cover the gap. Tension without powerlessness.",
+ "captionReplace": {},
+ "music": {
+  "key": "C minor, resolving to C major",
+  "drone": [
+   "C2",
+   "G2"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L5",
+     "word": "every"
+    },
+    "pre": 0.15,
+    "dur": 1.6,
+    "gain": 0.6
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L7",
+     "word": "unbeatable"
+    },
+    "pre": 0.15,
+    "dur": 2.2,
+    "gain": 0.55
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "C2",
+      "G2",
+      "Eb3",
+      "G3",
+      "D4"
+     ]
+    ],
+    "level": 0.46,
+    "dark": true
+   },
+   "erase": {
+    "chords": [
+     [
+      "C2",
+      "G2",
+      "Eb3",
+      "Bb3"
+     ]
+    ],
+    "level": 0.5,
+    "pulse": 72
+   },
+   "plan": {
+    "chords": [
+     [
+      "Ab1",
+      "Eb2",
+      "C3",
+      "G3"
+     ]
+    ],
+    "level": 0.52,
+    "pulse": 72
+   },
+   "heroes": {
+    "chords": [
+     [
+      "F1",
+      "C2",
+      "Ab2",
+      "Eb3"
+     ]
+    ],
+    "level": 0.54,
+    "pulse": 84
+   },
+   "path": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "F3"
+     ]
+    ],
+    "level": 0.56,
+    "pulse": 84
+   },
+   "mirror": {
+    "chords": [
+     [
+      "G1",
+      "D2",
+      "B2",
+      "F3"
+     ]
+    ],
+    "level": 0.52,
+    "pulse": 84,
+    "dark": true
+   },
+   "lesson": {
+    "chords": [
+     [
+      "Ab1",
+      "Eb2",
+      "C3",
+      "G3"
+     ],
+     [
+      "C2",
+      "G2",
+      "E3",
+      "G3",
+      "D4"
+     ]
+    ],
+    "level": 0.62,
+    "bells": true
+   },
+   "cta": {
+    "chords": [
+     [
+      "F2",
+      "C3",
+      "A3",
+      "C4"
+     ],
+     [
+      "C2",
+      "G2",
+      "E3",
+      "G3",
+      "C4"
+     ]
+    ],
+    "level": 0.58,
+    "bells": true
+   }
+  }
+ },
+ "metadata": {
+  "youtube": {
+   "title": "The Strongest Magic System Has Weaknesses (Worldbuilding)",
+   "titleAlternate": "Why the scariest wizard isn't unbeatable",
+   "description": "The secret to a terrifying wizard isn't making them unbeatable.\n\nMeet the Unmaker. Anything she can see, she can erase. But only what she can see. So the heroes stop fighting and start thinking: smoke, fog, a wall. Every shadow becomes a path. And she has to plan too: mirrors, lanterns, a higher tower.\n\nUnbeatable is boring. A weakness turns a fight into a puzzle. Can, can't, costs, consequences, and now weakness: that's Arc 5, Magic and Its Rules.\n\nFollow for more ways to make fictional powers interesting.\n\nEpisode 25 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.\n\n#Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts",
+   "pinnedComment": "Your turn: give your strongest caster one weakness. Silence, line of sight, preparation or a rare ingredient. What would your heroes do with it?",
+   "uploadSettings": "Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "The scariest wizard isn't unbeatable 👁️ She erases anything she can see, so the heroes fight with smoke, fog and walls. A weakness turns a fight into a puzzle. Follow for more. #Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts",
+   "pinnedComment": "Line of sight, silence, or a rare ingredient: which weakness makes the scariest caster?",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "The secret to a terrifying wizard isn't making them unbeatable.\n\nMeet the Unmaker. Anything she can see, she can erase. But only what she can see. So the heroes stop fighting and start thinking: smoke, fog, a wall. Every shadow becomes a path. And she has to plan too: mirrors, lanterns, a higher tower.\n\nUnbeatable is boring. A weakness turns a fight into a puzzle. Can, can't, costs, consequences, and now weakness: that's Arc 5, Magic and Its Rules.\n\nFollow for more ways to make fictional powers interesting.\n\nEpisode 25 of 50.\n\n#Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts",
+   "pinnedComment": "What weakness would make your most powerful caster more frightening, not less?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "Unbeatable is boring.\n\nThe secret to a terrifying wizard isn't making them unbeatable.\n\nMeet the Unmaker. Anything she can see, she can erase. But only what she can see. So the heroes stop fighting and start thinking: smoke, fog, a wall. Every shadow becomes a path. And she has to plan too: mirrors, lanterns, a higher tower.\n\nUnbeatable is boring. A weakness turns a fight into a puzzle. Can, can't, costs, consequences, and now weakness: that's Arc 5, Magic and Its Rules.\n\nFollow for more ways to make fictional powers interesting.\n\nEpisode 25 of 50 · Worldcraft Shorts\n\n#Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts",
+   "hookCheck": "First 21 characters: 'Unbeatable is boring.'",
+   "pinnedComment": "Name a caster from your world and the one thing that stops them. How would a clever hero use it?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  },
+  "cover": "Worldcraft_Short_E25_cover.jpg: the Unmaker on her tower, her lilac sight falling on the courtyard, 'THE SECRET TO A TERRIFYING WIZARD / Not unbeatable.' above, corner logo.",
+  "followUpQuestion": "Take your strongest caster. What one condition must be true for their power to work, and what would a clever enemy do to break it?"
+ }
+}

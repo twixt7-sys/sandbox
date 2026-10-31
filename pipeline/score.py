@@ -833,6 +833,32 @@ def sfx_hit(kind, dur=None):
         body = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.interp(t, [0, 0.08, 0.5, 1.6], [0, 1.0, 0.45, 0])
         air = bp(noise(n), 1500, 6000) * np.interp(t, [0, 0.15, 0.7, 1.3], [0, 0.18, 0.08, 0])
         return stereo(lp(body, 900) + air, 0.6)
+    if kind == "gaze":
+        # Her sight touching something (EP25 gazeBeam / sightPlan signature): a cold glassy hum on a tritone-free open fifth
+        # (C5 + G5) that swells in and hangs, with a faint high whistle drifting a few cents, like a wet finger on crystal.
+        n = int(1.8 * SR)
+        t = np.arange(n) / SR
+        shape = np.interp(t, [0, 0.35, 1.0, 1.8], [0, 1.0, 0.6, 0])
+        drift = 1 + 0.003 * np.sin(2 * np.pi * 0.9 * t)
+        hum = sum(a * np.sin(2 * np.pi * np.cumsum(np.full(n, f) * drift) / SR) for f, a in ((523.25, 1.0), (783.99, 0.55), (1567.98, 0.18)))
+        whistle = np.sin(2 * np.pi * np.cumsum(np.full(n, 3135.96) * (1 + 0.006 * t)) / SR) * 0.06
+        air = bp(noise(n), 2000, 7000) * 0.05
+        return stereo((hum * 0.3 + whistle + air) * shape, 0.6)
+    if kind == "unmake":
+        # Something erased (EP25 unmake): an inward rush (filtered noise that swells *up* to the moment, like a reversed
+        # breath), a sine that falls an octave as the thing dissolves, and a spray of fine crackles thinning to silence.
+        # No impact and no thud: what she unmakes just stops being there.
+        n = int(2.2 * SR)
+        t = np.arange(n) / SR
+        rush = bp(noise(n), 400, 4000) * np.interp(t, [0, 0.5, 0.62, 1.2], [0, 0.6, 0.15, 0])
+        f = 440 * 2 ** (-np.clip(t - 0.5, 0, 1.2) / 1.2)
+        fall = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.interp(t, [0, 0.45, 0.6, 1.9], [0, 0.1, 0.45, 0])
+        crackle = np.zeros(n)
+        for g in RNG.uniform(0.5, 1.9, 160):
+            i = int(g * SR)
+            m = int(0.003 * SR)
+            crackle[i:i + m] += hp(noise(m), 4000) * RNG.uniform(0.1, 0.5) * (1.9 - g) / 1.4
+        return stereo(rush + fall * 0.5 + crackle * 0.6, 0.6)
     raise KeyError(kind)
 
 

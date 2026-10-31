@@ -16,6 +16,7 @@ import {MEMORY} from './Memory';
 import {PILLARS} from './Pillars';
 import {POWER} from './Power';
 import {RIPPLE} from './Ripple';
+import {SIGHTLINE} from './Sightline';
 import {RITES} from './Rites';
 import {RUINS} from './Ruins';
 import {SCALE} from './Scale';
@@ -312,4 +313,5 @@ export const GRAPHICS: Record<string, React.FC<GraphicProps>> = {
 	...MEMORY,
 	...SPELLBOOK,
 	...RIPPLE,
+	...SIGHTLINE,
 };

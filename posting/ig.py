@@ -101,8 +101,9 @@ class Client:
         return self._call("POST", f"{media_id}/comments", {"message": message})["id"]
 
     # ── insights ─────────────────────────────────────────────────────────
-    def insights(self, media_id, metrics):
-        """Fetch metrics; if the batch is rejected, fall back to one call per metric and skip the ones that fail."""
+    def insights(self, media_id, metrics, log=print):
+        """Fetch metrics; if the batch is rejected, fall back to one call per metric and skip the ones that fail.
+        Failures are logged so a missing permission doesn't just look like empty numbers."""
         def parse(res):
             out = {}
             for row in res.get("data", []):
@@ -112,11 +113,15 @@ class Client:
 
         try:
             return parse(self._call("GET", f"{media_id}/insights", {"metric": ",".join(metrics)}))
-        except GraphError:
-            out = {}
+        except GraphError as batch_error:
+            out, failed = {}, {}
             for m in metrics:
                 try:
                     out.update(parse(self._call("GET", f"{media_id}/insights", {"metric": m})))
-                except GraphError:
-                    pass
+                except GraphError as e:
+                    failed[m] = str(e)
+            if failed and not out:
+                log(f"::warning::no insights for {media_id}: {batch_error}")
+            elif failed:
+                log(f"::warning::skipped metrics for {media_id}: " + "; ".join(f"{m} ({e})" for m, e in failed.items()))
             return out

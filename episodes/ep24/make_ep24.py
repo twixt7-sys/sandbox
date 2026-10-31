@@ -305,7 +305,7 @@ BODY = (
 )
 metadata = {
     "youtube": {
-        "title": "Why Teleportation Wouldn't Replace Horses (Worldbuilding)",
+        "title": "Why Teleportation Doesn't Replace the Road (Worldbuilding)",
         "titleAlternate": "If teleportation exists, why are merchants still using horses?",
         "description": BODY + "\n\nEpisode 24 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.\n\n" + TAGS,
         "pinnedComment": "Your turn: what technology would magic replace first in your world, and what would it still lose to?",

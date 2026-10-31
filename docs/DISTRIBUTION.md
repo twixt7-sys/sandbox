@@ -1499,3 +1499,71 @@ Source of truth: `episodes/ep22/episode.json` → `metadata`. The AI label goes 
 - **Hook check:** First 27 characters: 'Free healing. Endless wars.'
 - **Pinned comment:** Medicine, war, power: follow your cheapest spell one ring further. What changes?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 24 captions (ready to paste)
+
+Source of truth: `episodes/ep24/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep24/Worldcraft_Short_E24_cover.jpg`. Subtitles: `episodes/ep24/ep24.srt`. The stills were made with a local open model (SDXL-Lightning), so they're AI-generated like every other episode's and need the same disclosure. The gate's light, the crystal and the counting board are drawn in code. Two small spire finials that could read as crosses were painted out of the gate and queue plates, so no religious symbol appears.
+
+### YouTube Shorts
+- **Title** (58/100 chars): `Why Teleportation Doesn't Replace the Road (Worldbuilding)`
+- **Alternate title** (62 chars): `If teleportation exists, why are merchants still using horses?`
+- **Description:**
+
+> If teleportation exists, why are merchants still using horses?
+>
+> Here, a crystal gate links two cities. But each jump burns a crystal worth more than the cargo. It reaches one city, and every village still needs the road. One jump in a hundred fails, and the guild rations the rest. So the gate carries only what can't wait: medicine and royal mail.
+>
+> Magic doesn't replace technology. Price, range and reliability decide who uses what.
+>
+> What technology would magic replace first in your world?
+>
+> Episode 24 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts
+
+- **Pinned comment:** Your turn: what technology would magic replace first in your world, and what would it still lose to?
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (241 chars): `A teleport gate vs a muddy cart 🐴🔮 The cart wins on cost, range, reliability and access. The gate wins one thing: speed. What would magic replace first in your world? #Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts`
+- **Pinned comment:** Name one job in your world that magic should have killed, and why it's still around.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> If teleportation exists, why are merchants still using horses?
+>
+> Here, a crystal gate links two cities. But each jump burns a crystal worth more than the cargo. It reaches one city, and every village still needs the road. One jump in a hundred fails, and the guild rations the rest. So the gate carries only what can't wait: medicine and royal mail.
+>
+> Magic doesn't replace technology. Price, range and reliability decide who uses what.
+>
+> What technology would magic replace first in your world?
+>
+> Episode 24 of 50.
+>
+> #Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts
+
+- **Pinned comment:** Cost, range, reliability, availability, speed: which one decides it in your world?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Gate vs cart. The cart wins.
+>
+> If teleportation exists, why are merchants still using horses?
+>
+> Here, a crystal gate links two cities. But each jump burns a crystal worth more than the cargo. It reaches one city, and every village still needs the road. One jump in a hundred fails, and the guild rations the rest. So the gate carries only what can't wait: medicine and royal mail.
+>
+> Magic doesn't replace technology. Price, range and reliability decide who uses what.
+>
+> What technology would magic replace first in your world?
+>
+> Episode 24 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts
+
+- **Hook check:** First 28 characters: 'Gate vs cart. The cart wins.'
+- **Pinned comment:** Score your world's magic against one ordinary tool: cost, range, reliability, availability. Who wins?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

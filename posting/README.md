@@ -9,8 +9,9 @@ and nothing depends on a Claude session staying open.
 Every day at **16:23 UTC** (00:23 Manila, 12:23 New York), `.github/workflows/instagram-post.yml`:
 
 1. Picks the lowest episode number that isn't in `posting/state.json` yet (EP13 first).
-   If that episode's branch (`claude/worldcraft-epNN`) doesn't exist yet, it posts nothing that day
-   rather than skipping ahead, and says so in the run summary.
+   If that episode's branch (`claude/worldcraft-epNN`) doesn't exist yet, or the episode is still in
+   progress (no `*_cover.jpg` and `epNN.srt` in its folder yet; both are made last), it posts nothing
+   that day rather than skipping ahead, and says so in the run summary.
 2. Renders it from that branch with the same steps as `render.yml`, runs `pipeline/qa.py`, re-encodes
    it to the H.264/AAC format Instagram's fetcher expects and runs QA again.
 3. Uploads the MP4 and the episode cover to the public **`videos` release** of this repo. Instagram

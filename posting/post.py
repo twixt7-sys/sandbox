@@ -123,7 +123,23 @@ def cmd_select(args):
     branch = branch_for(cfg, n)
     if branch not in branches:
         return set_output(go="false", reason=f"{ep_id(n)} is next but branch {branch} does not exist yet")
+    missing = unfinished(branch, ep_id(n))
+    if missing:
+        return set_output(go="false", reason=f"{ep_id(n)} is still in progress on {branch} (no {missing} yet)")
     set_output(go="true", episode=ep_id(n), branch=branch)
+
+
+def unfinished(branch, eid):
+    """An episode branch exists from its first WIP commit. The cover and subtitles are made last, so
+    require both before posting. Returns what's missing, or None when the episode looks finished."""
+    subprocess.run(["git", "fetch", "-q", "--depth=1", "origin", branch], check=True)
+    files = subprocess.run(["git", "ls-tree", "-r", "--name-only", "FETCH_HEAD", f"episodes/{eid}/"],
+                           check=True, capture_output=True, text=True).stdout.split()
+    if not any(f.endswith("_cover.jpg") for f in files):
+        return "cover image"
+    if f"episodes/{eid}/{eid}.srt" not in files:
+        return "subtitles (.srt)"
+    return None
 
 
 def cmd_caption(args):

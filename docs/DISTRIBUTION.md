@@ -1500,6 +1500,74 @@ Source of truth: `episodes/ep22/episode.json` → `metadata`. The AI label goes 
 - **Pinned comment:** Medicine, war, power: follow your cheapest spell one ring further. What changes?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
 
+## Episode 23 captions (ready to paste)
+
+Source of truth: `episodes/ep23/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep23/Worldcraft_Short_E23_cover.jpg`. Subtitles: `episodes/ep23/ep23.srt`. The stills were made with a local open model (SDXL-Lightning), so they're AI-generated like every other episode's and need the same disclosure. This is a **comment** CTA: the pinned comments seed it with examples of strange prices.
+
+### YouTube Shorts
+- **Title** (55/100 chars): `Make Magic Expensive Without Using Mana (Worldbuilding)`
+- **Alternate title** (47 chars): `What if every spell stole one of your memories?`
+- **Description:**
+
+> What if every spell stole one of your memories?
+>
+> Wren keeps a ledger of what she still remembers. She stills a storm, and her first snow is gone. She breaks a fever, and her mother's name fades. One more spell, and her sister is a stranger. Now only her own name is left. Is the next spell worth it?
+>
+> Magic doesn't need mana to be expensive. It can cost strength, years of life, warmth, a sense, someone's standing, a rare material, or a memory. A real price makes every spell a choice, and choices make drama.
+>
+> Comment the strangest price someone could pay for magic.
+>
+> Episode 23 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts
+
+- **Pinned comment:** Your turn: what's the strangest price someone could pay for magic? Bonus points if it forces a hard choice.
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (267 chars): `Every spell costs her a memory 🕯️ First snow, gone. Mother's name, gone. Her sister, a stranger. One line left: her own name. Is the next spell worth it? Comment the strangest price for magic. #Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts`
+- **Pinned comment:** Drop the strangest price your magic could charge. Years? Warmth? Your shadow?
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> What if every spell stole one of your memories?
+>
+> Wren keeps a ledger of what she still remembers. She stills a storm, and her first snow is gone. She breaks a fever, and her mother's name fades. One more spell, and her sister is a stranger. Now only her own name is left. Is the next spell worth it?
+>
+> Magic doesn't need mana to be expensive. It can cost strength, years of life, warmth, a sense, someone's standing, a rare material, or a memory. A real price makes every spell a choice, and choices make drama.
+>
+> Comment the strangest price someone could pay for magic.
+>
+> Episode 23 of 50.
+>
+> #Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts
+
+- **Pinned comment:** Which price would stop you casting: a memory, a year of your life, or your sense of taste?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Every spell takes a memory.
+>
+> What if every spell stole one of your memories?
+>
+> Wren keeps a ledger of what she still remembers. She stills a storm, and her first snow is gone. She breaks a fever, and her mother's name fades. One more spell, and her sister is a stranger. Now only her own name is left. Is the next spell worth it?
+>
+> Magic doesn't need mana to be expensive. It can cost strength, years of life, warmth, a sense, someone's standing, a rare material, or a memory. A real price makes every spell a choice, and choices make drama.
+>
+> Comment the strangest price someone could pay for magic.
+>
+> Episode 23 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts
+
+- **Hook check:** First 27 characters: 'Every spell takes a memory.'
+- **Pinned comment:** Name a price for magic that would make *you* hesitate. Strangest one wins.
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
 ## Episode 25 captions (ready to paste)
 
 Source of truth: `episodes/ep25/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep25/Worldcraft_Short_E25_cover.jpg`. Subtitles: `episodes/ep25/ep25.srt`. The stills were made with a local open model (SDXL-Lightning), so they're AI-generated like every other episode's and need the same disclosure. The caster's sight and the erased gate are drawn in code; nobody is shown harmed, and the threat stays implied by what her sight touches.

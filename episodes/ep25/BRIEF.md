@@ -22,7 +22,7 @@
 - **Scope guard within Arc 5:**
   - EP21 (the can / can't / costs framework): there, "can't" is a limit on what the magic can do. Here it's a tactical weakness of one caster, and the framework isn't re-taught.
   - EP22 (cheap magic and its ripples): no social consequences are explored.
-  - EP23 (creative costs; WIP when I started, on the memory-ledger idea): her power has no price at all.
+  - EP23 (creative costs: Wren's memory ledger): her power has no price at all.
   - EP24 (magic vs technology; no branch yet): nothing about logistics or replacing tools.
 
 ### How EP25 varies the series rhythm
@@ -45,8 +45,11 @@
 - **Paid services:** no Runway, ElevenLabs or Creatomate keys were used. AWS credentials exist in the environment but weren't used.
 - **The idea:** that limitations make powers more interesting than raw strength is widely cited fantasy craft advice. "Line of sight" is a standard tactical constraint in tabletop games. The episode makes the point in its own words, and the caster is invented.
 - **Parallel episodes:**
-  - EP23 had only a WIP commit (`944d2e2`, memoryLedger/fadingName) at the start and again at the final push, so it isn't merged.
-  - EP24 had no branch at either check, so it isn't merged.
+  - EP23 had only a WIP commit (`944d2e2`) when I started, but had **finished by the final push** (`ea4989c` "EP23: Make Magic Expensive Without Using Mana", then `50fbfa3`). It is merged into this branch.
+    - The conflicts were all side-by-side additions (README, COSTS, STYLE, `score.py`, `Graphics.tsx`), and both sides are kept, EP23's first: `LEDGER` and `SIGHTLINE` are both registered, and `recall`/`forget` sit beside `gaze`/`unmake`.
+    - DISTRIBUTION is EP23's file with the EP25 section appended, to avoid git interleaving the caption sections.
+    - After the merge, `tsc` passes, and one still each of ep23 (frame 330, the ledger at the door) and ep25 (frames 470 and 820, the plan and the CTA card) renders correctly.
+  - EP24 was still WIP at the final push (`5ddc861`, "EP24 (WIP): …"), so it isn't merged.
   - No names collide. EP23 adds `memoryLedger`, `fadingName`, `recall` and `forget`; EP25 adds `gazeBeam`, `unmake`, `sightPlan`, `gaze` and `unmake` (SFX).
 
 ## 2. Stack
@@ -164,7 +167,7 @@ Also track how many comments propose a weakness *and* a tactic that exploits it;
 
 ## 11. How to produce EP26 ("Don't Design a Monster. Design an Ecosystem.", opening Arc 6: Creatures and Species)
 
-1. **Branch:** `claude/worldcraft-ep26` from `claude/worldcraft-ep25`, which has EP01–EP22 and EP25. EP23 and EP24 weren't finished when EP25 was pushed: merge them if they have since landed, keeping both sides of every doc, SFX and graphics registration.
+1. **Branch:** `claude/worldcraft-ep26` from `claude/worldcraft-ep25`, which has EP01–EP23 and EP25. EP24 wasn't finished when EP25 was pushed: merge it if it has since landed, keeping both sides of every doc, SFX and graphics registration.
    
    **Read:**
    - `CLAUDE.md`, `docs/STYLE.md`, `docs/SERIES_PLAN.md`;

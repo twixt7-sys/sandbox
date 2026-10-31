@@ -102,7 +102,7 @@ The first pass (78 words) measured 32.07 s, with the lesson line alone 5.4 s. I 
 
 - `out/ep24.mp4` (master, 37.7 MB) and `out/ep24_compat.mp4` (H.264 Main, CRF 20, `+faststart`, 21.6 MB): sent with SendUserFile.
 - `ep24_download.mp4` (two-pass 3300k, 14.0 MB) and `ep24_player.mp4` (CRF 26, 6.7 MB), both with the master's audio copied: used on the preview page.
-- `qa.py` **passed** on all four local files: 1080×1920, 30 fps, 31.27 s, −14.0 LUFS, true peak −1.4 dB (the compat copy, with its AAC re-encoded, measures −14.1 LUFS / −1.4 dB). The download copy published on the preview page was read back and QA'd as well (see the page's Checks).
+- `qa.py` **passed** on all four local files: 1080×1920, 30 fps, 31.27 s, −14.0 LUFS, true peak −1.4 dB (the compat copy, with its AAC re-encoded, measures −14.1 LUFS / −1.4 dB). Preview page (private): https://claude.ai/artifact/9WySrA5jw73nG3P6QZiMDm, with the player copy in the asset store and a Download MP4 button (`downloads` capability) serving `ep24_download.mp4`. That published file was read back: byte-identical to the local copy (sha256 `0ae9e14c…`) and `qa.py` **passed** on it (31.27 s, −14.0 LUFS, TP −1.4 dB).
 - Fixes made after inspecting the beat frames and the contact sheet (two full renders):
   - the code-drawn stone ring on the hook first sat on the far ridge beside the title, where it read as a dark letter "O"; it now stands on the field at the road's bend, lighter and larger;
   - the courier's gate light overran the arch and covered the courier; it is smaller and lower, and the courier is masked out of it (`occlude`), so he walks into the light;

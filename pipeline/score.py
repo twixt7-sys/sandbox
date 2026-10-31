@@ -843,8 +843,8 @@ def sfx_hit(kind, dur=None):
         for k, f in enumerate([587.33, 739.99, 880.0, 1318.51]):
             st = 0.06 + k * 0.085
             th = np.clip(t - st, 0, None)
-            env = (t >= st) * (1 - np.exp(-th * 60)) * np.exp(-th * 1.9)
-            tone += env * (np.sin(2 * np.pi * f * th) + 0.3 * np.sin(2 * np.pi * 2.01 * f * th) * np.exp(-th * 4)) * (0.9 - 0.12 * k)
+            amp = (t >= st) * (1 - np.exp(-th * 60)) * np.exp(-th * 1.9)
+            tone += amp * (np.sin(2 * np.pi * f * th) + 0.3 * np.sin(2 * np.pi * 2.01 * f * th) * np.exp(-th * 4)) * (0.9 - 0.12 * k)
         shimmer = 1 + 0.04 * np.sin(2 * np.pi * 5.5 * t)
         return stereo(breath + tone * shimmer * 0.22, 0.55)
     if kind == "forget":

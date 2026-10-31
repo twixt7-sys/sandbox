@@ -23,7 +23,7 @@
  },
  "timing": {
   "leadIn": 0.25,
-  "tail": 1.5,
+  "tail": 2.5,
   "shotLead": 0.12
  },
  "lines": [
@@ -31,7 +31,7 @@
    "id": "L1",
    "shot": "hook",
    "text": "What if every spell stole one of your memories?",
-   "pauseAfter": 0.5,
+   "pauseAfter": 0.75,
    "emphasis": [
     "every",
     "memories?"
@@ -41,7 +41,7 @@
    "id": "L2",
    "shot": "ledger",
    "text": "Wren keeps a ledger of what she still remembers.",
-   "pauseAfter": 0.45,
+   "pauseAfter": 0.65,
    "emphasis": [
     "ledger",
     "remembers."
@@ -51,7 +51,7 @@
    "id": "L3",
    "shot": "storm",
    "text": "She stills a storm. Her first snow is gone.",
-   "pauseAfter": 0.45,
+   "pauseAfter": 0.65,
    "emphasis": [
     "storm.",
     "gone."
@@ -61,7 +61,7 @@
    "id": "L4",
    "shot": "door",
    "text": "She breaks a fever. Her mother's name fades.",
-   "pauseAfter": 0.45,
+   "pauseAfter": 0.65,
    "emphasis": [
     "fever.",
     "fades."
@@ -71,7 +71,7 @@
    "id": "L5",
    "shot": "sister",
    "text": "One more spell, and her sister is a stranger.",
-   "pauseAfter": 0.6,
+   "pauseAfter": 0.8,
    "emphasis": [
     "stranger."
    ]
@@ -80,7 +80,7 @@
    "id": "L6",
    "shot": "choice",
    "text": "Only her own name is left. Is the next spell worth it?",
-   "pauseAfter": 0.8,
+   "pauseAfter": 1.1,
    "emphasis": [
     "own",
     "worth"
@@ -90,7 +90,7 @@
    "id": "L7",
    "shot": "lesson",
    "text": "Years, warmth, a sense: a real price makes every spell a choice.",
-   "pauseAfter": 0.6,
+   "pauseAfter": 0.8,
    "emphasis": [
     "real",
     "choice."
@@ -113,12 +113,12 @@
    "scene": "nightSky",
    "plateFrame": {
     "from": {
-     "s": 1.0,
-     "y": 0
+     "s": 1.12,
+     "y": -100
     },
     "to": {
-     "s": 1.06,
-     "y": 0
+     "s": 1.17,
+     "y": -100
     }
    },
    "plateScrim": 0.5,
@@ -139,10 +139,10 @@
      "type": "mendGlow",
      "local": true,
      "at": [
-      600,
-      1080
+      362,
+      1405
      ],
-     "r": 44,
+     "r": 58,
      "color": "#f3b9c8",
      "start": {
       "shot": "hook",
@@ -211,12 +211,12 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.06,
-     "y": 0
+     "s": 1.17,
+     "y": -100
     },
     "to": {
-     "s": 1.08,
-     "y": 0
+     "s": 1.19,
+     "y": -100
     }
    },
    "plateScrim": 0.6,
@@ -355,12 +355,12 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.04,
-     "y": 0
+     "s": 1.12,
+     "y": -110
     },
     "to": {
-     "s": 1.08,
-     "y": 0
+     "s": 1.16,
+     "y": -110
     }
    },
    "plateScrim": 0.4,
@@ -381,10 +381,10 @@
      "type": "mendGlow",
      "local": true,
      "at": [
-      640,
-      760
+      592,
+      1185
      ],
-     "r": 46,
+     "r": 64,
      "color": "#f3b9c8",
      "start": {
       "line": "L3",
@@ -472,7 +472,7 @@
      "at": {
       "x": 90,
       "y": 336,
-      "s": 0.6
+      "s": 0.55
      },
      "start": {
       "shot": "storm"
@@ -525,12 +525,12 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.04,
-     "y": 0
+     "s": 1.4,
+     "y": -110
     },
     "to": {
-     "s": 1.08,
-     "y": 0
+     "s": 1.46,
+     "y": -110
     }
    },
    "plateScrim": 0.4,
@@ -551,10 +551,10 @@
      "type": "mendGlow",
      "local": true,
      "at": [
-      860,
-      900
+      600,
+      860
      ],
-     "r": 40,
+     "r": 70,
      "color": "#f3b9c8",
      "start": {
       "line": "L4",
@@ -579,11 +579,12 @@
      "local": true,
      "text": "Maren",
      "at": [
-      540,
-      820
+      536,
+      1089
      ],
-     "width": 220,
+     "width": 120,
      "rotate": 0,
+     "size": 28,
      "start": {
       "shot": "door"
      },
@@ -655,7 +656,7 @@
      "at": {
       "x": 90,
       "y": 336,
-      "s": 0.6
+      "s": 0.55
      },
      "start": {
       "shot": "door"
@@ -706,17 +707,19 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.04,
-     "y": 0
+     "s": 1.35,
+     "x": 180,
+     "y": 300
     },
     "to": {
-     "s": 1.08,
-     "y": 0
+     "s": 1.39,
+     "x": 180,
+     "y": 300
     }
    },
    "plateScrim": 0.4,
-   "purpose": "Spell III and the cost made personal: her sister waves, and Wren doesn't know her. Shown with tenderness.",
-   "visual": "A woman waves warmly from a garden gate; Wren, seen from behind, doesn't wave back. Callout 'HER SISTER' struck to 'A KIND STRANGER'; the ledger strikes III.",
+   "purpose": "Spell III and the cost made personal: her sister smiles at her from the gate, and Wren doesn't know her. Shown with tenderness.",
+   "visual": "Wren's sister smiles from her garden gate (Wren's point of view). Callout 'HER SISTER / Smiling at her' struck to 'A STRANGER / Who is she?' in rust; the ledger strikes III.",
    "camera": "Slow push (1.04 to 1.08).",
    "layers": {
     "foreground": "ledger, callout",
@@ -724,9 +727,9 @@
     "background": "the cottage"
    },
    "lighting": "Soft morning.",
-   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. seen from behind in the foreground, a young woman in a plum wool hooded cloak stands in a village lane facing a smiling young woman in a green dress who waves warmly from an open wooden garden gate in front of a stone cottage, soft morning light, medium wide shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a smiling young woman with long auburn hair in a green dress stands at an open wooden garden gate in front of a stone cottage, facing the viewer, one hand raised in a friendly wave, cottage garden flowers, soft morning light, medium shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
    "videoPrompt": "(Not used.)",
-   "sdxlPrompt": "seen from behind in the foreground, a young woman in a plum wool hooded cloak stands in a village lane facing a smiling young woman in a green dress who waves warmly from an open wooden garden gate in front of a stone cottage, soft morning light, medium wide shot",
+   "sdxlPrompt": "a smiling young woman with long auburn hair in a green dress stands at an open wooden garden gate in front of a stone cottage, facing the viewer, one hand raised in a friendly wave, cottage garden flowers, soft morning light, medium shot",
    "graphics": [
     {
      "type": "memoryLedger",
@@ -789,7 +792,7 @@
      "at": {
       "x": 90,
       "y": 336,
-      "s": 0.6
+      "s": 0.55
      },
      "start": {
       "shot": "sister"
@@ -800,14 +803,15 @@
     {
      "type": "callout",
      "at": [
-      700,
-      900
+      734,
+      720
      ],
      "label": "Her sister",
-     "note": "Waving hello",
+     "note": "Smiling at her",
      "side": "left",
      "reach": 110,
-     "rise": -90,
+     "rise": 300,
+     "noteSize": 50,
      "backdrop": true,
      "start": {
       "line": "L5",
@@ -826,7 +830,7 @@
      }
     }
    ],
-   "onScreenText": "Callout 'HER SISTER / Ilse', struck to 'A STRANGER / Who is she?'; ledger line III struck.",
+   "onScreenText": "Callout 'HER SISTER / Smiling at her', struck to 'A STRANGER / Who is she?'; ledger line III struck.",
    "transition": "Dissolve (0.45 s) to the ledger.",
    "sfx": [
     {
@@ -871,12 +875,12 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.08,
-     "y": 0
+     "s": 1.19,
+     "y": -100
     },
     "to": {
-     "s": 1.1,
-     "y": 0
+     "s": 1.21,
+     "y": -100
     }
    },
    "plateScrim": 0.7,
@@ -954,9 +958,9 @@
      ],
      "motif": "#f3b9c8",
      "at": {
-      "x": 140,
-      "y": 360,
-      "s": 1.0
+      "x": 200,
+      "y": 320,
+      "s": 0.85
      },
      "dim": 0.6,
      "start": {
@@ -973,7 +977,7 @@
     {
      "type": "oversizedWord",
      "text": "Worth it?",
-     "y": 1010,
+     "y": 900,
      "size": 170,
      "start": {
       "line": "L6",
@@ -1090,9 +1094,9 @@
      ],
      "motif": "#f3b9c8",
      "at": {
-      "x": 140,
-      "y": 360,
-      "s": 1.0
+      "x": 200,
+      "y": 320,
+      "s": 0.85
      },
      "start": {
       "shot": "lesson",
@@ -1103,9 +1107,9 @@
       "shot": "lesson"
      },
      "lift": {
-      "x": 330,
+      "x": 360,
       "y": 336,
-      "s": 0.55
+      "s": 0.45
      },
      "prices": [
       {
@@ -1141,7 +1145,7 @@
        }
       }
      ],
-     "pricesTop": 760,
+     "pricesTop": 660,
      "lessonKicker": "Make it cost",
      "lessonText": [
       "A real price makes",
@@ -1152,7 +1156,7 @@
       "word": "real",
       "offset": -0.1
      },
-     "lessonTop": 980
+     "lessonTop": 880
     }
    ],
    "onScreenText": "Chips 'YEARS · WARMTH · A SENSE · A MEMORY'; 'MAKE IT COST' / 'A real price makes every spell a choice.'",
@@ -1207,12 +1211,12 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.06,
-     "y": 0
+     "s": 1.17,
+     "y": -100
     },
     "to": {
-     "s": 1.0,
-     "y": 0
+     "s": 1.12,
+     "y": -100
     }
    },
    "plateScrim": 0.45,
@@ -1237,10 +1241,10 @@
      "type": "mendGlow",
      "local": true,
      "at": [
-      600,
-      1080
+      362,
+      1405
      ],
-     "r": 44,
+     "r": 58,
      "color": "#f3b9c8",
      "start": {
       "shot": "cta",

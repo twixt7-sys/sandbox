@@ -307,6 +307,19 @@ On the paid primary stack, with 6 stills: about **$1.10 (₱70)** (EP17's estima
 
 On the paid primary stack, with 6 stills: about **$1.35 (₱86)**, or **$2.48 (₱157)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
+## What Episode 23 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 4 stills (Wren writing by candlelight, the harbour wall in a storm, the blue cottage door with a brass plate, her sister smiling at the garden gate) | **Local SDXL-Lightning** (`pipeline/local_stills.py`, 4-step, CPU, 768×1344, lanczos to 1080×1920). 15 candidates in two rounds, 4 kept: hook 7, storm 7, door 7 (round 1); sister 11 (round 2). Round 1's sister plates all walked away down a lane, so it was re-prompted from Wren's point of view. Figma credits are out until 1 Nov 2026, so it wasn't tried | $0 |
+| Memory ledger, fading name on the door, spell glows, sister callout, price pills, title, CTA card | Remotion code (new `memoryLedger` and `fadingName`; `mendGlow`, `callout` `then`, `titleLockup`, `oversizedWord`, `ctaCard`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 77 words, 29.83 s | $0 |
+| Score + SFX (new: recall, forget) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, no Figma credits |
+
+On the paid primary stack, with 4 stills: about **$1.05 (₱67)**, or **$1.15 (₱73)** with one retry per still, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
 ## Alternatives
 
 | Option | Per-episode | Monthly | Comment |

@@ -16,15 +16,15 @@ SDXL = {
     "hook": "a young woman with short dark hair in a plum wool coat sits at a wooden desk by candlelight writing in a thick open leather journal with a quill, seen from the side, face half in shadow, shelves of glass jars behind her, small attic room at night, medium shot",
     "storm": "seen from behind, a lone young woman in a plum wool hooded cloak stands on a stone harbour wall raising one open hand toward a dark storm over the sea, huge grey waves, small fishing boats tied below, a break of pale light opening in the clouds above, wide shot",
     "door": "a weathered blue wooden cottage front door with black iron hinges and a small blank brass plate at eye level, climbing pink roses around the stone doorframe, a warm lit window beside it, evening light, quiet village lane, no people",
-    "sister": "seen from behind in the foreground, a young woman in a plum wool hooded cloak stands in a village lane facing a smiling young woman in a green dress who waves warmly from an open wooden garden gate in front of a stone cottage, soft morning light, medium wide shot",
+    "sister": "a smiling young woman with long auburn hair in a green dress stands at an open wooden garden gate in front of a stone cottage, facing the viewer, one hand raised in a friendly wave, cottage garden flowers, soft morning light, medium shot",
 }
 
 # Plate geometry (plate px), measured from the gridded plates.
 GEOM = {
-    "hook": {"hand": [600, 1080], "book": [560, 1150]},
-    "storm": {"hand": [640, 760]},
-    "door": {"plate": [540, 820], "window": [860, 900], "plateW": 220, "plateRot": 0},
-    "sister": {"face": [700, 900]},
+    "hook": {"hand": [362, 1405]},
+    "storm": {"hand": [592, 1185]},
+    "door": {"plate": [536, 1089], "window": [600, 860], "plateW": 120, "plateRot": 0, "nameSize": 28},
+    "sister": {"heart": [734, 720]},
 }
 
 
@@ -51,13 +51,13 @@ def sh(shot, offset=0.0):
 
 
 lines = [
-    ("L1", "hook", "What if every spell stole one of your memories?", 0.5, ["every", "memories?"]),
-    ("L2", "ledger", "Wren keeps a ledger of what she still remembers.", 0.45, ["ledger", "remembers."]),
-    ("L3", "storm", "She stills a storm. Her first snow is gone.", 0.45, ["storm.", "gone."]),
-    ("L4", "door", "She breaks a fever. Her mother's name fades.", 0.45, ["fever.", "fades."]),
-    ("L5", "sister", "One more spell, and her sister is a stranger.", 0.6, ["stranger."]),
-    ("L6", "choice", "Only her own name is left. Is the next spell worth it?", 0.8, ["own", "worth"]),
-    ("L7", "lesson", "Years, warmth, a sense: a real price makes every spell a choice.", 0.6, ["real", "choice."]),
+    ("L1", "hook", "What if every spell stole one of your memories?", 0.75, ["every", "memories?"]),
+    ("L2", "ledger", "Wren keeps a ledger of what she still remembers.", 0.65, ["ledger", "remembers."]),
+    ("L3", "storm", "She stills a storm. Her first snow is gone.", 0.65, ["storm.", "gone."]),
+    ("L4", "door", "She breaks a fever. Her mother's name fades.", 0.65, ["fever.", "fades."]),
+    ("L5", "sister", "One more spell, and her sister is a stranger.", 0.8, ["stranger."]),
+    ("L6", "choice", "Only her own name is left. Is the next spell worth it?", 1.1, ["own", "worth"]),
+    ("L7", "lesson", "Years, warmth, a sense: a real price makes every spell a choice.", 0.8, ["real", "choice."]),
     ("L8", "cta", "Comment the strangest price someone could pay for magic.", 0.0, ["comment", "strangest"]),
 ]
 
@@ -76,13 +76,13 @@ def ledger(**kw):
     return g
 
 
-CORNER = {"x": 90, "y": 336, "s": 0.6}
+CORNER = {"x": 90, "y": 336, "s": 0.55}
 H, S, D, SI = GEOM["hook"], GEOM["storm"], GEOM["door"], GEOM["sister"]
 
 shots = [
     {
         "id": "hook", "scene": "nightSky",
-        "plateFrame": {"from": {"s": 1.0, "y": 0}, "to": {"s": 1.06, "y": 0}},
+        "plateFrame": {"from": {"s": 1.12, "y": -100}, "to": {"s": 1.17, "y": -100}},
         "plateScrim": 0.5,
         "purpose": "Stop the scroll on the price: a caster writing down what she still remembers, and the hook's question.",
         "visual": "A young woman writes by candlelight in a thick journal; a pale rose glow (code) breathes at her hand. 'EVERY SPELL TAKES A MEMORY / Which one goes?'",
@@ -91,7 +91,7 @@ shots = [
         "lighting": "Candlelight; top scrim for the title.",
         "imagePrompt": ip("hook"), "videoPrompt": "(Not used.)", "sdxlPrompt": SDXL["hook"],
         "graphics": [
-            {"type": "mendGlow", "local": True, "at": H["hand"], "r": 44, "color": MEMORY, "start": sh("hook", 0.1),
+            {"type": "mendGlow", "local": True, "at": H["hand"], "r": 58, "color": MEMORY, "start": sh("hook", 0.1),
              "pulses": [c("L1", "spell", -0.05)], "ringMax": 200},
             {"type": "titleLockup", "kicker": "Every spell takes a memory", "text": "Which one goes?", "y": 340, "size": 120,
              "start": c("L1", "what", -0.1), "end": c("L1", "memories?", 0.45)},
@@ -107,7 +107,7 @@ shots = [
     {
         "id": "ledger", "scene": "nightSky", "plateFrom": "hook",
         "transitionIn": {"type": "dissolve", "duration": 0.35},
-        "plateFrame": {"from": {"s": 1.06, "y": 0}, "to": {"s": 1.08, "y": 0}},
+        "plateFrame": {"from": {"s": 1.17, "y": -100}, "to": {"s": 1.19, "y": -100}},
         "plateScrim": 0.6, "plateLook": {"from": "saturate(0.7) brightness(0.55)"},
         "purpose": "Show the price as a list: the ledger of the four memories she has left, written in as she names them.",
         "visual": "The attic dims; the ledger card (code) fills the frame: 'WHAT I REMEMBER / Wren', four lines written in: I My first snow, II Mother's name, III My sister's face, IV My own name.",
@@ -124,7 +124,7 @@ shots = [
     {
         "id": "storm", "scene": "nightSky",
         "transitionIn": {"type": "cut"},
-        "plateFrame": {"from": {"s": 1.04, "y": 0}, "to": {"s": 1.08, "y": 0}},
+        "plateFrame": {"from": {"s": 1.12, "y": -110}, "to": {"s": 1.16, "y": -110}},
         "plateScrim": 0.4,
         "purpose": "Spell I and its price: the storm stills, and the first line is struck.",
         "visual": "Wren on a harbour wall, hand raised to a storm; a rose glow at her hand sends rings into the clouds. In the corner the ledger strikes I: My first snow, and a mote of light drifts away.",
@@ -133,7 +133,7 @@ shots = [
         "lighting": "Storm grey; pale light opening above.",
         "imagePrompt": ip("storm"), "videoPrompt": "(Not used.)", "sdxlPrompt": SDXL["storm"],
         "graphics": [
-            {"type": "mendGlow", "local": True, "at": S["hand"], "r": 46, "color": MEMORY, "start": c("L3", "she", -0.1),
+            {"type": "mendGlow", "local": True, "at": S["hand"], "r": 64, "color": MEMORY, "start": c("L3", "she", -0.1),
              "pulses": [c("L3", "stills", -0.05), c("L3", "storm.", -0.05)], "ringMax": 520, "ringDur": 1.5, "end": c("L3", "gone.", 0.4)},
             ledger(at=CORNER, start=sh("storm"), active=0, instant=True),
         ],
@@ -149,7 +149,7 @@ shots = [
     {
         "id": "door", "scene": "nightSky",
         "transitionIn": {"type": "cut"},
-        "plateFrame": {"from": {"s": 1.04, "y": 0}, "to": {"s": 1.08, "y": 0}},
+        "plateFrame": {"from": {"s": 1.4, "y": -110}, "to": {"s": 1.46, "y": -110}},
         "plateScrim": 0.4,
         "purpose": "Spell II and its price: a fever broken behind a warm window, and her mother's name fades from the door.",
         "visual": "A blue cottage door; the window beside it glows rose for a moment (the fever breaks). The name MAREN, painted on the door's plate in code, fades letter by letter; the ledger strikes II.",
@@ -158,9 +158,9 @@ shots = [
         "lighting": "Evening; warm window.",
         "imagePrompt": ip("door"), "videoPrompt": "(Not used.)", "sdxlPrompt": SDXL["door"],
         "graphics": [
-            {"type": "mendGlow", "local": True, "at": D["window"], "r": 40, "color": MEMORY, "start": c("L4", "breaks", -0.15),
+            {"type": "mendGlow", "local": True, "at": D["window"], "r": 70, "color": MEMORY, "start": c("L4", "breaks", -0.15),
              "pulses": [c("L4", "fever.", -0.05)], "ringMax": 200, "end": c("L4", "name", 0.0)},
-            {"type": "fadingName", "local": True, "text": "Maren", "at": D["plate"], "width": D["plateW"], "rotate": D["plateRot"],
+            {"type": "fadingName", "local": True, "text": "Maren", "at": D["plate"], "width": D["plateW"], "rotate": D["plateRot"], "size": D["nameSize"],
              "start": sh("door"), "fadeAt": c("L4", "name", -0.05), "fadeDur": 1.2},
             ledger(at=CORNER, start=sh("door"), active=1, instant=True),
         ],
@@ -176,21 +176,21 @@ shots = [
     {
         "id": "sister", "scene": "nightSky",
         "transitionIn": {"type": "cut"},
-        "plateFrame": {"from": {"s": 1.04, "y": 0}, "to": {"s": 1.08, "y": 0}},
+        "plateFrame": {"from": {"s": 1.35, "x": 180, "y": 300}, "to": {"s": 1.39, "x": 180, "y": 300}},
         "plateScrim": 0.4,
-        "purpose": "Spell III and the cost made personal: her sister waves, and Wren doesn't know her. Shown with tenderness.",
-        "visual": "A woman waves warmly from a garden gate; Wren, seen from behind, doesn't wave back. Callout 'HER SISTER' struck to 'A KIND STRANGER'; the ledger strikes III.",
+        "purpose": "Spell III and the cost made personal: her sister smiles at her from the gate, and Wren doesn't know her. Shown with tenderness.",
+        "visual": "Wren's sister smiles from her garden gate (Wren's point of view). Callout 'HER SISTER / Smiling at her' struck to 'A STRANGER / Who is she?' in rust; the ledger strikes III.",
         "camera": "Slow push (1.04 to 1.08).",
         "layers": {"foreground": "ledger, callout", "midground": "the sister at the gate", "background": "the cottage"},
         "lighting": "Soft morning.",
         "imagePrompt": ip("sister"), "videoPrompt": "(Not used.)", "sdxlPrompt": SDXL["sister"],
         "graphics": [
             ledger(at=CORNER, start=sh("sister"), active=2, instant=True),
-            {"type": "callout", "at": SI["face"], "label": "Her sister", "note": "Waving hello", "side": "left", "reach": 110, "rise": -90,
+            {"type": "callout", "at": SI["heart"], "label": "Her sister", "note": "Smiling at her", "side": "left", "reach": 110, "rise": 300, "noteSize": 50,
              "backdrop": True, "start": c("L5", "sister", -0.1),
              "then": {"label": "A stranger", "note": "Who is she?", "color": "rust", "at": c("L5", "stranger.", -0.1)}},
         ],
-        "onScreenText": "Callout 'HER SISTER / Ilse', struck to 'A STRANGER / Who is she?'; ledger line III struck.",
+        "onScreenText": "Callout 'HER SISTER / Smiling at her', struck to 'A STRANGER / Who is she?'; ledger line III struck.",
         "transition": "Dissolve (0.45 s) to the ledger.",
         "sfx": [
             {"sound": "market", "from": sh("sister"), "to": sh("choice", 0.3), "gain": -40},
@@ -202,7 +202,7 @@ shots = [
     {
         "id": "choice", "scene": "nightSky", "plateFrom": "hook",
         "transitionIn": {"type": "dissolve", "duration": 0.45},
-        "plateFrame": {"from": {"s": 1.08, "y": 0}, "to": {"s": 1.1, "y": 0}},
+        "plateFrame": {"from": {"s": 1.19, "y": -100}, "to": {"s": 1.21, "y": -100}},
         "plateScrim": 0.7, "plateLook": {"from": "saturate(0.5) brightness(0.45)"},
         "purpose": "The turn: one line is left, and it is her own name. The cost is now a choice.",
         "visual": "The ledger returns large over the dimmed attic: I–III struck, IV 'My own name' glowing and breathing. 'Worth it?' lands beneath.",
@@ -211,8 +211,8 @@ shots = [
         "lighting": "Nearly dark; the last line carries the light.",
         "imagePrompt": "(Reuses the hook plate.)", "videoPrompt": "(Not used.)",
         "graphics": [
-            ledger(at={"x": 140, "y": 360, "s": 1.0}, from_=None, dim=0.6, start=sh("choice", -0.2), active=3, hoverAt=c("L6", "own", -0.1)),
-            {"type": "oversizedWord", "text": "Worth it?", "y": 1010, "size": 170, "start": c("L6", "worth", -0.1)},
+            ledger(at={"x": 200, "y": 320, "s": 0.85}, from_=None, dim=0.6, start=sh("choice", -0.2), active=3, hoverAt=c("L6", "own", -0.1)),
+            {"type": "oversizedWord", "text": "Worth it?", "y": 900, "size": 170, "start": c("L6", "worth", -0.1)},
         ],
         "onScreenText": "Ledger: three struck lines, 'My own name' glowing; 'Worth it?'.",
         "transition": "Dissolve (0.45 s) to the lesson.",
@@ -231,13 +231,13 @@ shots = [
         "lighting": "Night-dimmed; rose chips carry the light.",
         "imagePrompt": "(Reuses the storm plate.)", "videoPrompt": "(Not used.)",
         "graphics": [
-            ledger(at={"x": 140, "y": 360, "s": 1.0}, start=sh("lesson", -0.45), instant=True,
-                   liftAt=sh("lesson", 0.0), lift={"x": 330, "y": 336, "s": 0.55},
+            ledger(at={"x": 200, "y": 320, "s": 0.85}, start=sh("lesson", -0.45), instant=True,
+                   liftAt=sh("lesson", 0.0), lift={"x": 360, "y": 336, "s": 0.45},
                    prices=[{"text": "Years", "at": c("L7", "years,", -0.05)}, {"text": "Warmth", "at": c("L7", "warmth,", -0.05)},
                            {"text": "A sense", "at": c("L7", "sense:", -0.05)}, {"text": "A memory", "at": c("L7", "sense:", 0.35)}],
-                   pricesTop=760,
+                   pricesTop=660,
                    lessonKicker="Make it cost", lessonText=["A real price makes", "*every* *spell* *a* *choice.*"],
-                   lessonAt=c("L7", "real", -0.1), lessonTop=980),
+                   lessonAt=c("L7", "real", -0.1), lessonTop=880),
         ],
         "onScreenText": "Chips 'YEARS · WARMTH · A SENSE · A MEMORY'; 'MAKE IT COST' / 'A real price makes every spell a choice.'",
         "transition": "Dissolve (0.6 s) to the attic at dawn.",
@@ -250,7 +250,7 @@ shots = [
     {
         "id": "cta", "scene": "nightSky", "plateFrom": "hook",
         "transitionIn": {"type": "dissolve", "duration": 0.6},
-        "plateFrame": {"from": {"s": 1.06, "y": 0}, "to": {"s": 1.0, "y": 0}},
+        "plateFrame": {"from": {"s": 1.17, "y": -100}, "to": {"s": 1.12, "y": -100}},
         "plateScrim": 0.45, "plateLook": {"from": "sepia(0.2) saturate(0.85) brightness(0.6)"},
         "captions": False, "hideLogoBug": True,
         "purpose": "Comment CTA over the opening attic, the glow still at her hand; loops back to the hook.",
@@ -260,7 +260,7 @@ shots = [
         "lighting": "Dim candlelight under the card.",
         "imagePrompt": "(Reuses the hook plate.)", "videoPrompt": "(Not used.)",
         "graphics": [
-            {"type": "mendGlow", "local": True, "at": H["hand"], "r": 44, "color": MEMORY, "start": sh("cta", -0.6)},
+            {"type": "mendGlow", "local": True, "at": H["hand"], "r": 58, "color": MEMORY, "start": sh("cta", -0.6)},
             {"type": "ctaCard", "start": sh("cta"), "ctaAt": c("L8", "comment"), "episode": "Episode 23 / 50",
              "title": "Make magic expensive without mana", "kicker": "Your turn", "size": 72,
              "lines": ["Comment the strangest", "price someone could", "*pay* *for* *magic.*"], "button": "Comment below"},
@@ -347,7 +347,7 @@ ep = {
                        "settings": {"stability": 0.55, "similarity_boost": 0.75, "style": 0.15, "use_speaker_boost": True}},
         "direction": "A calm, warm guide. The hook is a real, slightly uneasy question. Each spell line is two beats: the deed, then the price, softer. 'Her sister is a stranger' is tender, not tragic. 'Is the next spell worth it?' is a genuine question, left hanging. The lesson is clear and sure; the comment CTA friendly. No trailer voice.",
     },
-    "timing": {"leadIn": 0.25, "tail": 1.5, "shotLead": 0.12},
+    "timing": {"leadIn": 0.25, "tail": 2.5, "shotLead": 0.12},
     "lines": [{"id": i, "shot": s, "text": t, "pauseAfter": p, "emphasis": e} for i, s, t, p, e in lines],
     "shots": shots,
     "lesson": "Magic doesn't need mana to be expensive. A spell can cost strength, time, years of life, warmth, a sense, social standing, rare materials, emotional stability or a memory. The best price is one the caster truly values, so every spell becomes a decision: is this worth what it takes?",

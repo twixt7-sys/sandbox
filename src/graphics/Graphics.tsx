@@ -6,6 +6,7 @@ import {fonts, palette} from '../theme';
 import type {Graphic, Shot, TimedShot} from '../types';
 import {CELESTIAL} from './Celestial';
 import {CLIMATE} from './Climate';
+import {COLLAPSE} from './Collapse';
 import {CRISIS} from './Crisis';
 import {CULTURE} from './Culture';
 import {EVERYDAY} from './Everyday';
@@ -305,6 +306,7 @@ export const GRAPHICS: Record<string, React.FC<GraphicProps>> = {
 	...MORALITY,
 	...POWER,
 	...PILLARS,
+	...COLLAPSE,
 	...LAW,
 	...SPELLBOOK,
 	...RIPPLE,

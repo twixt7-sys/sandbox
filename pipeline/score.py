@@ -833,6 +833,31 @@ def sfx_hit(kind, dur=None):
         body = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.interp(t, [0, 0.08, 0.5, 1.6], [0, 1.0, 0.45, 0])
         air = bp(noise(n), 1500, 6000) * np.interp(t, [0, 0.15, 0.7, 1.3], [0, 0.18, 0.08, 0])
         return stereo(lp(body, 900) + air, 0.6)
+    if kind == "recall":
+        # The memory spell (EP23 signature): a soft breath, then a quick rising music-box arpeggio (D, F#, A, E) whose notes
+        # ring on and shimmer, like something remembered for the last time. Gentle attacks: the spell itself never hurts.
+        n = int(2.4 * SR)
+        t = np.arange(n) / SR
+        breath = bp(noise(n), 700, 4000) * np.interp(t, [0, 0.15, 0.45, 1.0], [0, 0.18, 0.08, 0])
+        tone = np.zeros(n)
+        for k, f in enumerate([587.33, 739.99, 880.0, 1318.51]):
+            st = 0.06 + k * 0.085
+            th = np.clip(t - st, 0, None)
+            env = (t >= st) * (1 - np.exp(-th * 60)) * np.exp(-th * 1.9)
+            tone += env * (np.sin(2 * np.pi * f * th) + 0.3 * np.sin(2 * np.pi * 2.01 * f * th) * np.exp(-th * 4)) * (0.9 - 0.12 * k)
+        shimmer = 1 + 0.04 * np.sin(2 * np.pi * 5.5 * t)
+        return stereo(breath + tone * shimmer * 0.22, 0.55)
+    if kind == "forget":
+        # A memory struck from the ledger (EP23 price): a short dry quill stroke, then one music-box note that sags a
+        # quarter-tone as it fades, and an airy whisper rising away (the mote of light drifting off the page).
+        n = int(2.2 * SR)
+        t = np.arange(n) / SR
+        stroke = bp(noise(n), 2500, 7500) * np.interp(t, [0, 0.02, 0.22, 0.3], [0, 0.35, 0.22, 0])
+        f = 880.0 * (1 - 0.028 * np.minimum(1, t / 1.6))
+        th = np.clip(t - 0.12, 0, None)
+        note = (t >= 0.12) * np.sin(2 * np.pi * np.cumsum(f) / SR) * (1 - np.exp(-th * 50)) * np.exp(-th * 1.7)
+        air = bp(noise(n), 3000, 9000) * np.interp(t, [0, 0.3, 0.9, 1.8], [0, 0.0, 0.1, 0])
+        return stereo(stroke + note * 0.3 + air, 0.6)
     raise KeyError(kind)
 
 

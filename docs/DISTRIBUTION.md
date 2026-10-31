@@ -1499,3 +1499,71 @@ Source of truth: `episodes/ep22/episode.json` → `metadata`. The AI label goes 
 - **Hook check:** First 27 characters: 'Free healing. Endless wars.'
 - **Pinned comment:** Medicine, war, power: follow your cheapest spell one ring further. What changes?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 25 captions (ready to paste)
+
+Source of truth: `episodes/ep25/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep25/Worldcraft_Short_E25_cover.jpg`. Subtitles: `episodes/ep25/ep25.srt`. The stills were made with a local open model (SDXL-Lightning), so they're AI-generated like every other episode's and need the same disclosure. The caster's sight and the erased gate are drawn in code; nobody is shown harmed, and the threat stays implied by what her sight touches.
+
+### YouTube Shorts
+- **Title** (57/100 chars): `The Strongest Magic System Has Weaknesses (Worldbuilding)`
+- **Alternate title** (40 chars): `Why the scariest wizard isn't unbeatable`
+- **Description:**
+
+> The secret to a terrifying wizard isn't making them unbeatable.
+>
+> Meet the Unmaker. Anything she can see, she can erase. But only what she can see. So the heroes stop fighting and start thinking: smoke, fog, a wall. Every shadow becomes a path. And she has to plan too: mirrors, lanterns, a higher tower.
+>
+> Unbeatable is boring. A weakness turns a fight into a puzzle. Can, can't, costs, consequences, and now weakness: that's Arc 5, Magic and Its Rules.
+>
+> Follow for more ways to make fictional powers interesting.
+>
+> Episode 25 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.
+>
+> #Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts
+
+- **Pinned comment:** Your turn: give your strongest caster one weakness. Silence, line of sight, preparation or a rare ingredient. What would your heroes do with it?
+- **Upload settings:** Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (251 chars): `The scariest wizard isn't unbeatable 👁️ She erases anything she can see, so the heroes fight with smoke, fog and walls. A weakness turns a fight into a puzzle. Follow for more. #Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts`
+- **Pinned comment:** Line of sight, silence, or a rare ingredient: which weakness makes the scariest caster?
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> The secret to a terrifying wizard isn't making them unbeatable.
+>
+> Meet the Unmaker. Anything she can see, she can erase. But only what she can see. So the heroes stop fighting and start thinking: smoke, fog, a wall. Every shadow becomes a path. And she has to plan too: mirrors, lanterns, a higher tower.
+>
+> Unbeatable is boring. A weakness turns a fight into a puzzle. Can, can't, costs, consequences, and now weakness: that's Arc 5, Magic and Its Rules.
+>
+> Follow for more ways to make fictional powers interesting.
+>
+> Episode 25 of 50.
+>
+> #Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts
+
+- **Pinned comment:** What weakness would make your most powerful caster more frightening, not less?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Unbeatable is boring.
+>
+> The secret to a terrifying wizard isn't making them unbeatable.
+>
+> Meet the Unmaker. Anything she can see, she can erase. But only what she can see. So the heroes stop fighting and start thinking: smoke, fog, a wall. Every shadow becomes a path. And she has to plan too: mirrors, lanterns, a higher tower.
+>
+> Unbeatable is boring. A weakness turns a fight into a puzzle. Can, can't, costs, consequences, and now weakness: that's Arc 5, Magic and Its Rules.
+>
+> Follow for more ways to make fictional powers interesting.
+>
+> Episode 25 of 50 · Worldcraft Shorts
+>
+> #Worldbuilding #FantasyWriting #MagicSystem #WritingTips #WorldcraftShorts
+
+- **Hook check:** First 21 characters: 'Unbeatable is boring.'
+- **Pinned comment:** Name a caster from your world and the one thing that stops them. How would a clever hero use it?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

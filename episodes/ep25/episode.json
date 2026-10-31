@@ -31,7 +31,7 @@
    "id": "L1",
    "shot": "hook",
    "text": "The secret to a terrifying wizard isn't making them unbeatable.",
-   "pauseAfter": 0.5,
+   "pauseAfter": 0.6,
    "emphasis": [
     "terrifying",
     "unbeatable."
@@ -41,7 +41,7 @@
    "id": "L2",
    "shot": "erase",
    "text": "Meet the Unmaker. Anything she can see, she can erase.",
-   "pauseAfter": 0.45,
+   "pauseAfter": 0.55,
    "emphasis": [
     "unmaker.",
     "erase."
@@ -51,7 +51,7 @@
    "id": "L3",
    "shot": "plan",
    "text": "But only what she can see.",
-   "pauseAfter": 0.45,
+   "pauseAfter": 0.8,
    "emphasis": [
     "only",
     "see."
@@ -61,7 +61,7 @@
    "id": "L4",
    "shot": "heroes",
    "text": "So the heroes stop fighting, and start thinking.",
-   "pauseAfter": 0.4,
+   "pauseAfter": 0.5,
    "emphasis": [
     "stop",
     "thinking."
@@ -71,7 +71,7 @@
    "id": "L5",
    "shot": "path",
    "text": "Smoke. Fog. A wall. Every shadow becomes a path.",
-   "pauseAfter": 0.45,
+   "pauseAfter": 0.7,
    "emphasis": [
     "shadow",
     "path."
@@ -124,7 +124,7 @@
    },
    "plateScrim": 0.5,
    "purpose": "Stop the scroll on the caster: a figure on a tower whose sight falls on the courtyard below like a searchlight, and the hook's promise that her terror isn't invincibility.",
-   "visual": "A cloaked woman on a high balcony, seen from behind, over a misty courtyard at dusk; a pale lilac beam (code) falls from her into the yard and slowly sweeps. 'THE SECRET TO A TERRIFYING WIZARD / Not unbeatable.'",
+   "visual": "A cloaked woman on a high balcony, seen from behind, over a misty courtyard at dusk; a pale lilac beam (code) falls from her into the yard and slowly sweeps. 'THE TERRIFYING WIZARD / isn't unbeatable.'",
    "camera": "Slow push (1.00 to 1.06).",
    "layers": {
     "foreground": "title",
@@ -141,23 +141,24 @@
      "local": true,
      "points": [
       [
-       560,
-       820
+       540,
+       1005
       ],
       [
-       520,
-       1500
+       565,
+       560
       ]
      ],
      "widths": [
-      14,
-      300
+      22,
+      420
      ],
      "sway": [
-      160,
-      30,
+      170,
+      20,
       4.5
      ],
+     "opacity": 1.0,
      "start": {
       "shot": "hook",
       "offset": 0.15
@@ -172,8 +173,8 @@
     },
     {
      "type": "titleLockup",
-     "kicker": "The secret to a terrifying wizard",
-     "text": "Not unbeatable.",
+     "kicker": "The terrifying wizard",
+     "text": "isn't unbeatable.",
      "y": 340,
      "size": 120,
      "start": {
@@ -188,7 +189,7 @@
      }
     }
    ],
-   "onScreenText": "Kicker 'THE SECRET TO A TERRIFYING WIZARD' + 'Not unbeatable.' (ember serif italic).",
+   "onScreenText": "Kicker 'THE TERRIFYING WIZARD' + 'isn't unbeatable.' (ember serif italic).",
    "transition": "Hard cut on 'Meet' to the gate.",
    "sfx": [
     {
@@ -239,6 +240,9 @@
     }
    },
    "plateScrim": 0.4,
+   "plateLook": {
+    "from": "saturate(0.75) brightness(0.62) hue-rotate(-6deg)"
+   },
    "purpose": "Show the power once, on a thing: her sight lands on the courtyard gate and the gate simply stops existing. Threat by implication.",
    "visual": "The great studded gate at dusk; the lilac beam slants in from her tower, the gate's edge lights, and on 'erase' it dissolves cell by cell into the dark, shedding motes. Tag 'THE UNMAKER / Sees it. Erases it.'",
    "camera": "Slow push (1.04 to 1.08).",
@@ -257,12 +261,12 @@
      "local": true,
      "points": [
       [
-       -160,
-       260
+       -200,
+       200
       ],
       [
        540,
-       900
+       1000
       ]
      ],
      "widths": [
@@ -294,25 +298,25 @@
      "local": true,
      "poly": [
       [
-       380,
-       820
+       272,
+       588
       ],
       [
-       700,
-       820
+       806,
+       600
       ],
       [
-       700,
-       1240
+       806,
+       1662
       ],
       [
-       380,
-       1240
+       272,
+       1662
       ]
      ],
      "from": [
       540,
-      900
+      1000
      ],
      "at": {
       "line": "L2",
@@ -508,12 +512,12 @@
    },
    "plateFrame": {
     "from": {
-     "s": 1.04,
-     "y": 0
+     "s": 1.2,
+     "y": 185
     },
     "to": {
-     "s": 1.08,
-     "y": 0
+     "s": 1.23,
+     "y": 185
     }
    },
    "plateScrim": 0.4,
@@ -536,11 +540,11 @@
      "points": [
       [
        1300,
-       -200
+       -150
       ],
       [
-       -200,
-       700
+       -250,
+       760
       ]
      ],
      "widths": [
@@ -872,16 +876,16 @@
      "local": true,
      "points": [
       [
-       420,
-       760
+       578,
+       1045
       ],
       [
-       700,
-       820
+       330,
+       590
       ],
       [
-       900,
-       1700
+       1220,
+       1380
       ]
      ],
      "widths": [
@@ -912,8 +916,8 @@
      "type": "mendGlow",
      "local": true,
      "at": [
-      200,
-      1150
+      240,
+      1062
      ],
      "r": 34,
      "color": "amber",
@@ -929,53 +933,7 @@
        "offset": -0.1
       }
      ],
-     "ringMax": 120,
-     "ringDur": 0.8
-    },
-    {
-     "type": "mendGlow",
-     "local": true,
-     "at": [
-      520,
-      1180
-     ],
-     "r": 34,
-     "color": "amber",
-     "start": {
-      "line": "L6",
-      "word": "lanterns,"
-     },
-     "pulses": [
-      {
-       "line": "L6",
-       "word": "lanterns,"
-      }
-     ],
-     "ringMax": 120,
-     "ringDur": 0.8
-    },
-    {
-     "type": "mendGlow",
-     "local": true,
-     "at": [
-      860,
-      1200
-     ],
-     "r": 34,
-     "color": "amber",
-     "start": {
-      "line": "L6",
-      "word": "lanterns,",
-      "offset": 0.1
-     },
-     "pulses": [
-      {
-       "line": "L6",
-       "word": "lanterns,",
-       "offset": 0.1
-      }
-     ],
-     "ringMax": 120,
+     "ringMax": 160,
      "ringDur": 0.8
     },
     {
@@ -1170,7 +1128,7 @@
      ],
      "liftAt": {
       "shot": "lesson",
-      "offset": 0.15
+      "offset": -0.1
      },
      "lift": {
       "to": [
@@ -1188,7 +1146,8 @@
      ],
      "arcAt": {
       "line": "L7",
-      "word": "unbeatable"
+      "word": "is",
+      "offset": -0.05
      },
      "arcTop": 850,
      "lessonKicker": "Unbeatable is boring",
@@ -1260,12 +1219,12 @@
      "local": true,
      "points": [
       [
-       560,
-       820
+       540,
+       1005
       ],
       [
-       520,
-       1500
+       565,
+       560
       ]
      ],
      "widths": [
@@ -1273,8 +1232,8 @@
       300
      ],
      "sway": [
-      160,
-      30,
+      170,
+      20,
       4.5
      ],
      "start": {
@@ -1512,7 +1471,7 @@
    "pinnedComment": "Name a caster from your world and the one thing that stops them. How would a clever hero use it?",
    "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
   },
-  "cover": "Worldcraft_Short_E25_cover.jpg: the Unmaker on her tower, her lilac sight falling on the courtyard, 'THE SECRET TO A TERRIFYING WIZARD / Not unbeatable.' above, corner logo.",
+  "cover": "Worldcraft_Short_E25_cover.jpg: the Unmaker on her tower, her lilac sight falling on the courtyard, 'THE TERRIFYING WIZARD / isn't unbeatable.' above, corner logo.",
   "followUpQuestion": "Take your strongest caster. What one condition must be true for their power to work, and what would a clever enemy do to break it?"
  }
 }

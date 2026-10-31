@@ -18,10 +18,10 @@ TAIL = "Painterly realism, atmospheric perspective, 35mm anamorphic look, soft f
 
 # Plate geometry (plate px), measured from the gridded plates.
 GEOM = {
-    "hook": {"eye": [540, 1005], "look": [560, 700], "sway": [170, 20, 4.5]},
+    "hook": {"eye": [540, 1005], "look": [565, 560], "sway": [170, 20, 4.5]},
     "erase": {"from": [-200, 200], "gate": [[272, 588], [806, 600], [806, 1662], [272, 1662]], "land": [540, 1000]},
-    "heroes": {"from": [1300, -200], "to": [-200, 700]},
-    "mirror": {"eye": [420, 760], "mirror": [700, 820], "down": [900, 1700], "lanterns": [[200, 1150], [520, 1180], [860, 1200]]},
+    "heroes": {"from": [1300, -150], "to": [-250, 760]},
+    "mirror": {"eye": [578, 1045], "mirror": [330, 590], "down": [1220, 1380], "lanterns": [[240, 1062]]},
 }
 
 # The courtyard plan (screen px). The eye sits on the top wall; cover casts blind spots below it.
@@ -57,11 +57,11 @@ def sh(shot, offset=0.0):
 
 
 lines = [
-    ("L1", "hook", "The secret to a terrifying wizard isn't making them unbeatable.", 0.5, ["terrifying", "unbeatable."]),
-    ("L2", "erase", "Meet the Unmaker. Anything she can see, she can erase.", 0.45, ["unmaker.", "erase."]),
-    ("L3", "plan", "But only what she can see.", 0.45, ["only", "see."]),
-    ("L4", "heroes", "So the heroes stop fighting, and start thinking.", 0.4, ["stop", "thinking."]),
-    ("L5", "path", "Smoke. Fog. A wall. Every shadow becomes a path.", 0.45, ["shadow", "path."]),
+    ("L1", "hook", "The secret to a terrifying wizard isn't making them unbeatable.", 0.6, ["terrifying", "unbeatable."]),
+    ("L2", "erase", "Meet the Unmaker. Anything she can see, she can erase.", 0.55, ["unmaker.", "erase."]),
+    ("L3", "plan", "But only what she can see.", 0.8, ["only", "see."]),
+    ("L4", "heroes", "So the heroes stop fighting, and start thinking.", 0.5, ["stop", "thinking."]),
+    ("L5", "path", "Smoke. Fog. A wall. Every shadow becomes a path.", 0.7, ["shadow", "path."]),
     ("L6", "mirror", "And she has to plan too: mirrors, lanterns, a higher tower.", 0.6, ["she", "too:"]),
     ("L7", "lesson", "Unbeatable is boring. A weakness turns a fight into a puzzle.", 0.6, ["boring.", "puzzle."]),
     ("L8", "cta", "Follow for more ways to make fictional powers interesting.", 0.0, ["follow", "interesting."]),
@@ -87,17 +87,17 @@ shots = [
         "plateFrame": {"from": {"s": 1.0, "y": 0}, "to": {"s": 1.06, "y": 0}},
         "plateScrim": 0.5,
         "purpose": "Stop the scroll on the caster: a figure on a tower whose sight falls on the courtyard below like a searchlight, and the hook's promise that her terror isn't invincibility.",
-        "visual": "A cloaked woman on a high balcony, seen from behind, over a misty courtyard at dusk; a pale lilac beam (code) falls from her into the yard and slowly sweeps. 'THE SECRET TO A TERRIFYING WIZARD / Not unbeatable.'",
+        "visual": "A cloaked woman on a high balcony, seen from behind, over a misty courtyard at dusk; a pale lilac beam (code) falls from her into the yard and slowly sweeps. 'THE TERRIFYING WIZARD / isn\'t unbeatable.'",
         "camera": "Slow push (1.00 to 1.06).",
         "layers": {"foreground": "title", "midground": "the Unmaker and her sight", "background": "the courtyard far below"},
         "lighting": "Cold dusk; top scrim for the title.",
         "imagePrompt": ip("hook"), "videoPrompt": "(Not used.)", "sdxlPrompt": SDXL["hook"],
         "graphics": [
-            {"type": "gazeBeam", "local": True, "points": [H["eye"], H["look"]], "widths": [14, 300], "sway": H["sway"], "start": sh("hook", 0.15), "flares": [c("L1", "terrifying", -0.05)]},
-            {"type": "titleLockup", "kicker": "The secret to a terrifying wizard", "text": "Not unbeatable.", "y": 340, "size": 120,
+            {"type": "gazeBeam", "local": True, "points": [H["eye"], H["look"]], "widths": [22, 420], "sway": H["sway"], "opacity": 1.0, "start": sh("hook", 0.15), "flares": [c("L1", "terrifying", -0.05)]},
+            {"type": "titleLockup", "kicker": "The terrifying wizard", "text": "isn't unbeatable.", "y": 340, "size": 120,
              "start": c("L1", "the", -0.1), "end": c("L1", "unbeatable.", 0.5)},
         ],
-        "onScreenText": "Kicker 'THE SECRET TO A TERRIFYING WIZARD' + 'Not unbeatable.' (ember serif italic).",
+        "onScreenText": "Kicker 'THE TERRIFYING WIZARD' + 'isn\'t unbeatable.' (ember serif italic).",
         "transition": "Hard cut on 'Meet' to the gate.",
         "sfx": [
             {"sound": "wind", "from": sh("hook"), "to": sh("erase", 0.5), "gain": -34},
@@ -159,7 +159,7 @@ shots = [
     {
         "id": "heroes", "scene": "nightSky",
         "transitionIn": {"type": "cut"},
-        "plateFrame": {"from": {"s": 1.04, "y": 0}, "to": {"s": 1.08, "y": 0}},
+        "plateFrame": {"from": {"s": 1.2, "y": 185}, "to": {"s": 1.23, "y": 185}},
         "plateScrim": 0.4,
         "purpose": "What the weakness does to the other side: the heroes stop charging and start planning. They crouch in shadow while her sight passes over.",
         "visual": "Three cloaked adventurers crouched behind a broken pillar at night, one pointing a route; a lilac sweep of sight passes above them. Tag 'THE HEROES / Think, don't fight'.",
@@ -223,7 +223,7 @@ shots = [
         "imagePrompt": ip("mirror"), "videoPrompt": "(Not used.)", "sdxlPrompt": SDXL["mirror"],
         "graphics": [
             {"type": "gazeBeam", "local": True, "points": [M["eye"], M["mirror"], M["down"]], "widths": [12, 70, 300], "sway": [60, 0, 3.5], "start": c("L6", "mirrors,", -0.25), "draw": 0.55, "flares": [c("L6", "tower.", -0.1)]},
-            *[{"type": "mendGlow", "local": True, "at": p, "r": 34, "color": "amber", "start": c("L6", "lanterns,", -0.1 + 0.1 * i), "pulses": [c("L6", "lanterns,", -0.1 + 0.1 * i)], "ringMax": 120, "ringDur": 0.8} for i, p in enumerate(M["lanterns"])],
+            *[{"type": "mendGlow", "local": True, "at": p, "r": 34, "color": "amber", "start": c("L6", "lanterns,", -0.1 + 0.1 * i), "pulses": [c("L6", "lanterns,", -0.1 + 0.1 * i)], "ringMax": 160, "ringDur": 0.8} for i, p in enumerate(M["lanterns"])],
             {"type": "tag", "kicker": "Her move", "text": "She plans too", "start": c("L6", "and", -0.1)},
         ],
         "onScreenText": "Tag 'HER MOVE' + 'She plans too'.",
@@ -248,8 +248,8 @@ shots = [
         "graphics": [
             plan(start=sh("lesson", -0.45), instant=True, instantP=1.0, sweep=[62, 118, 6], sweepZero=sh("plan", -0.2),
                  blocks=[dict(b) for b in PILLARS] + [dict(SMOKE), dict(FOG), dict(WALL)], route=ROUTE,
-                 liftAt=sh("lesson", 0.15), lift={"to": [540, 605], "s": 0.6},
-                 arcRow=["Can", "Can't", "Costs", "Consequences", "Weakness"], arcAt=c("L7", "unbeatable", 0.0), arcTop=850,
+                 liftAt=sh("lesson", -0.1), lift={"to": [540, 605], "s": 0.6},
+                 arcRow=["Can", "Can't", "Costs", "Consequences", "Weakness"], arcAt=c("L7", "is", -0.05), arcTop=850,
                  lessonKicker="Unbeatable is boring", lessonText=["A weakness turns", "a fight into *a* *puzzle.*"],
                  lessonAt=c("L7", "boring.", -0.1), lessonTop=915, lessonSize=88),
         ],
@@ -340,7 +340,7 @@ metadata = {
         "pinnedComment": "Name a caster from your world and the one thing that stops them. How would a clever hero use it?",
         "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).",
     },
-    "cover": "Worldcraft_Short_E25_cover.jpg: the Unmaker on her tower, her lilac sight falling on the courtyard, 'THE SECRET TO A TERRIFYING WIZARD / Not unbeatable.' above, corner logo.",
+    "cover": "Worldcraft_Short_E25_cover.jpg: the Unmaker on her tower, her lilac sight falling on the courtyard, 'THE TERRIFYING WIZARD / isn\'t unbeatable.' above, corner logo.",
     "followUpQuestion": "Take your strongest caster. What one condition must be true for their power to work, and what would a clever enemy do to break it?",
 }
 

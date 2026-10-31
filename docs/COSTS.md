@@ -307,6 +307,19 @@ On the paid primary stack, with 6 stills: about **$1.10 (₱70)** (EP17's estima
 
 On the paid primary stack, with 6 stills: about **$1.35 (₱86)**, or **$2.48 (₱157)** with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
+## What Episode 25 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 4 stills (the Unmaker on her balcony over the misty castle, the courtyard gate, the three hooded heroes by the great column, the Unmaker beside the oval mirror frame) | **Local SDXL-Lightning** (`pipeline/local_stills.py`, 4-step, CPU, 768×1344, lanczos to 1080×1920). 14 candidates in two rounds, 4 kept: hook 23, erase 11 (round 1); heroes 11, mirror 7 (round 2). Round 1's heroes weren't hiding and both mirror plates left the mirror out, so those two were re-rolled with seeds 7, 11 and 23. Figma credits are out until 1 Nov 2026, so it wasn't tried | $0 |
+| Her sight, the erased gate, the courtyard plan with its ray-cast sight cone, tags, title, CTA card | Remotion code (new `gazeBeam`, `unmake` and `sightPlan`; `titleLockup`, `tag`, `mendGlow` for the lantern, `ctaCard`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 74 words, 29.69 s | $0 |
+| Score + SFX (new: gaze, unmake) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, no Figma credits |
+
+On the paid primary stack, with 4 stills: about **$1.05 (₱67)**, or about $2.20 (₱139) with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
 ## Alternatives
 
 | Option | Per-episode | Monthly | Comment |

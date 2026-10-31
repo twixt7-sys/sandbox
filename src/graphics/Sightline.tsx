@@ -259,7 +259,7 @@ export const SightPlan: React.FC<GraphicProps> = ({g, t, span}) => {
 	const sw: number[] = g.sweep ?? [60, 120, 5];
 	const mid = (sw[0] + sw[1]) / 2;
 	const amp = (sw[1] - sw[0]) / 2;
-	const dirDeg = mid + amp * Math.sin(((t - (g.sweepZero !== undefined ? g.sweepZero : t0)) * 2 * Math.PI) / (sw[2] || 5));
+	const dirDeg = mid + amp * Math.sin(((t - (g.sweepZero ? cueTime(timing, g.sweepZero) : t0)) * 2 * Math.PI) / (sw[2] || 5));
 	const spread = (g.spread ?? 30) * open;
 	const range = g.range ?? 900;
 	const blocks: Block[] = g.blocks ?? [];

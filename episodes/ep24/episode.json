@@ -246,9 +246,9 @@
     "background": "the square"
    },
    "lighting": "Soft morning; the gate's lilac light on the stones.",
-   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a huge empty upright ring of carved grey stone standing in a cobbled city square, a pale violet crystal set at the top of the ring, a merchant in a long blue coat with a small handcart of crates waiting in front of it, onlookers, soft morning light, wide shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a giant circular stone ring portal as tall as a house standing upright on its edge in a cobbled town square, a round hole through its middle showing the square behind, a merchant in a long blue coat with a handcart of crates waiting before it, morning light, wide shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
    "videoPrompt": "(Not used.)",
-   "sdxlPrompt": "a huge empty upright ring of carved grey stone standing in a cobbled city square, a pale violet crystal set at the top of the ring, a merchant in a long blue coat with a small handcart of crates waiting in front of it, onlookers, soft morning light, wide shot",
+   "sdxlPrompt": "a giant circular stone ring portal as tall as a house standing upright on its edge in a cobbled town square, a round hole through its middle showing the square behind, a merchant in a long blue coat with a handcart of crates waiting before it, morning light, wide shot",
    "graphics": [
     {
      "type": "gateRing",
@@ -659,9 +659,9 @@
     "background": "the queue and the clerk"
    },
    "lighting": "Overcast; the gate's light dies.",
-   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a long queue of tired merchants with crates and bundles waiting in a cobbled square before a huge empty upright ring of carved grey stone, a stern official in a grey robe at a wooden desk beside the ring, overcast light, wide shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a long queue of tired merchants with crates waiting before a giant circular stone ring portal standing upright on its edge in a grey town square, a round hole through its middle, a clerk in a grey robe at a wooden desk beside it, overcast, wide shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
    "videoPrompt": "(Not used.)",
-   "sdxlPrompt": "a long queue of tired merchants with crates and bundles waiting in a cobbled square before a huge empty upright ring of carved grey stone, a stern official in a grey robe at a wooden desk beside the ring, overcast light, wide shot",
+   "sdxlPrompt": "a long queue of tired merchants with crates waiting before a giant circular stone ring portal standing upright on its edge in a grey town square, a round hole through its middle, a clerk in a grey robe at a wooden desk beside it, overcast, wide shot",
    "graphics": [
     {
      "type": "gateRing",
@@ -819,9 +819,9 @@
     "background": "the open gate"
    },
    "lighting": "Lantern night; the gate is the brightest thing in frame.",
-   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. night, a lone hooded courier in a dark green riding cloak with a small leather satchel walks toward a huge empty upright ring of carved grey stone in a quiet square lit by lanterns, seen from behind, wide shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. night, a lone hooded courier in a dark green cloak with a small leather satchel walks toward a giant circular stone ring portal standing upright on its edge at the end of a lantern-lit street, a round hole through its middle, seen from behind, wide shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
    "videoPrompt": "(Not used.)",
-   "sdxlPrompt": "night, a lone hooded courier in a dark green riding cloak with a small leather satchel walks toward a huge empty upright ring of carved grey stone in a quiet square lit by lanterns, seen from behind, wide shot",
+   "sdxlPrompt": "night, a lone hooded courier in a dark green cloak with a small leather satchel walks toward a giant circular stone ring portal standing upright on its edge at the end of a lantern-lit street, a round hole through its middle, seen from behind, wide shot",
    "graphics": [
     {
      "type": "gateRing",

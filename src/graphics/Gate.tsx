@@ -63,6 +63,18 @@ export const GateRing: React.FC<GraphicProps> = ({g, t, span}) => {
 						<ellipse cx={x} cy={y} rx={rx} ry={ry} />
 					</clipPath>
 				</defs>
+				{g.stone && (
+					// A code-drawn stone ring for plates where SDXL painted none (a small, distant object it ignores).
+					<g>
+						<ellipse cx={x} cy={y + ry * 0.12} rx={rx * 1.55} ry={ry * 0.18} fill="rgba(0,0,0,0.35)" style={{filter: 'blur(4px)'}} transform={`translate(0 ${ry * 1.05})`} />
+						<ellipse cx={x} cy={y} rx={rx * 1.3} ry={ry * 1.3} fill="none" stroke={g.stoneColor ?? '#5f625f'} strokeWidth={Math.max(rx, ry) * 0.6} />
+						<ellipse cx={x} cy={y} rx={rx * 1.3} ry={ry * 1.3} fill="none" stroke="#2c2f2e" strokeWidth={Math.max(rx, ry) * 0.6} strokeDasharray={`${Math.max(rx, ry) * 0.06} ${Math.max(rx, ry) * 0.62}`} opacity={0.55} />
+						<ellipse cx={x} cy={y} rx={rx * 1.58} ry={ry * 1.58} fill="none" stroke="#2c2f2e" strokeWidth={1.5} opacity={0.7} />
+						<ellipse cx={x} cy={y} rx={rx} ry={ry} fill="none" stroke="#2c2f2e" strokeWidth={1.5} opacity={0.7} />
+						<path d={`M ${x - rx * 1.2} ${y - ry * 0.9} A ${rx * 1.3} ${ry * 1.3} 0 0 1 ${x + rx * 0.4} ${y - ry * 1.4}`} fill="none" stroke="#c9c9bf" strokeWidth={Math.max(2, rx * 0.12)} opacity={0.35} />
+						<path d={`M ${x - 6} ${y - ry * 1.58 - 4} L ${x} ${y - ry * 1.58 - 18} L ${x + 6} ${y - ry * 1.58 - 4} Z`} fill={CRYSTAL} opacity={0.9} style={{filter: `drop-shadow(0 0 6px ${CRYSTAL})`}} />
+					</g>
+				)}
 				{surf > 0.001 && (
 					<g style={{mixBlendMode: 'screen'}} opacity={Math.min(1, surf)}>
 						<g transform={`translate(${x} ${y}) scale(${sx}) translate(${-x} ${-y})`}>
@@ -128,7 +140,7 @@ export const WheelGlyph: React.FC<{c: string; size?: number}> = ({c, size = 40})
 
 /**
  * CrystalPrice: a crystal floating at `at: [x, y]` with a price chip (`kicker`, `price`) beside it on `side` (default
- * left). At `burnAt` it flares, then crumbles into rising lilac dust and its chip turns rust ("burned"). Overlay or local.
+ * left; `below` centres it under the crystal). At `burnAt` it flares, then crumbles into rising lilac dust and its chip turns rust ("burned"). Overlay or local.
  */
 export const CrystalPrice: React.FC<GraphicProps> = ({g, t, span}) => {
 	const timing = useTiming();
@@ -141,6 +153,7 @@ export const CrystalPrice: React.FC<GraphicProps> = ({g, t, span}) => {
 	const gone = at(t, tBurn + 0.25, 0.5);
 	const chip = ease(t, t0 + 0.2, 0.45);
 	const left = (g.side ?? 'left') === 'left';
+	const below = g.side === 'below';
 	const size = g.size ?? 70;
 	return (
 		<AbsoluteFill style={{opacity: vis, pointerEvents: 'none'}}>
@@ -159,9 +172,9 @@ export const CrystalPrice: React.FC<GraphicProps> = ({g, t, span}) => {
 			<div
 				style={{
 					position: 'absolute',
-					top: y - 50,
-					...(left ? {right: 1080 - x + size * 0.75} : {left: x + size * 0.75}),
-					textAlign: left ? 'right' : 'left',
+					...(below
+						? {top: y + size * 0.85, left: x - 300, width: 600, textAlign: 'center' as const}
+						: {top: y - 50, ...(left ? {right: 1080 - x + size * 0.75} : {left: x + size * 0.75}), textAlign: (left ? 'right' : 'left') as 'right' | 'left'}),
 					opacity: chip,
 					transform: `translateY(${(1 - chip) * 10}px)`,
 					whiteSpace: 'nowrap',

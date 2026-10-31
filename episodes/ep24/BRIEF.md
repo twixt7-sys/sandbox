@@ -45,7 +45,7 @@ The board is deliberately unlike EP07's `reasonTally` (icons in a row), EP14's `
 - Figma: the Starter plan is out of AI credits until **1 Nov 2026** (today is 31 Oct), so I used the free local route without asking, as the brief says.
 - No Runway, ElevenLabs or Creatomate keys were used. AWS credentials exist in the environment but weren't used.
 - The idea: that magic must compete with ordinary technology on cost, range, reliability, availability, safety and infrastructure (and that a rare-fuel teleport would be a luxury service) is standard worldbuilding craft advice. The episode makes no claim about any real transport history.
-- Parallel episodes: EP23 ("Make Magic Expensive Without Using Mana") had pushed only a WIP commit (`944d2e2`: script, `memoryLedger`, `fadingName`, `recall`/`forget`) at the start; see section 6 for its status at the final push.
+- Parallel episodes: EP23 ("Make Magic Expensive Without Using Mana") had pushed only a WIP commit (`944d2e2`: script, `memoryLedger`, `fadingName`, `recall`/`forget`) when I started, so EP24 was written around it: its price is a market price, not a cost to a caster, and its board is a counting device, not a ledger with struck lines. **Before the final push EP23 had finished** (`ea4989c` "EP23: Make Magic Expensive Without Using Mana", then `50fbfa3`), so it is merged into this branch. The conflicts were in `README.md`, `docs/COSTS.md`, `docs/DISTRIBUTION.md`, `pipeline/score.py` and `src/graphics/Graphics.tsx`, all additions on both sides; every side is kept in episode order (EP23's `recall`/`forget` before EP24's `blink`/`gateFail`/`crystalBurn`/`bead`, `LEDGER` before `GATE`). Git interleaved the DISTRIBUTION caption sections, so that file was rebuilt as EP23's version plus the EP24 section. EP23 changes no shared component (it adds `Ledger.tsx`). After the merge, `tsc` passes, and one ep23 still (the storm, with its ledger) and one ep24 still (the queue, with the board) render correctly.
 
 ## 2. Stack
 
@@ -155,7 +155,7 @@ Also track how many comments name a *limit* on the magic rather than just a tech
 
 ## 11. How to produce EP25 ("The Strongest Magic System Has Weaknesses"), closing Arc 5
 
-1. Branch `claude/worldcraft-ep25` from `claude/worldcraft-ep24` (EP01–EP22 and EP24; merge EP23 first if its finished episode has landed on `claude/worldcraft-ep23`). Read:
+1. Branch `claude/worldcraft-ep25` from `claude/worldcraft-ep24`, which has EP01–EP24 (EP23 merged). Read:
    - `CLAUDE.md`, `docs/STYLE.md`, `docs/SERIES_PLAN.md`;
    - this brief and the EP21, EP22 and EP23 briefs, so the arc's closer doesn't repeat any of them.
 2. **Stills:** Figma credits reset on **1 Nov 2026**. If it's on or after that date and Figma would be clearly better (it would likely paint key props like the ring that SDXL ignored), ask with AskUserQuestion first (about 4 images, up to 6; plan key `team::1384938462301182142`). Otherwise use `python pipeline/local_stills.py ep25 <shots> --seeds 11 23` (add 7 for hands), `--pick`, `plates.py --register` **and `pipeline/build.sh ep25`**. Run nothing heavy alongside it, and budget a second round. SDXL won't paint unusual key objects even when they're the subject: describe them as plain physical shapes ("a giant circular stone ring standing upright on its edge"), and draw anything smaller in code. Check every spire and gable for crosses.

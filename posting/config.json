@@ -3,7 +3,7 @@
   "totalEpisodes": 50,
   "branchPattern": "claude/worldcraft-ep{nn}",
   "branchOverrides": {},
-  "minHoursBetweenPosts": 20,
+  "minHoursBetweenPosts": 12,
   "aiLabel": true,
   "shareToFeed": true,
   "postFirstComment": true,

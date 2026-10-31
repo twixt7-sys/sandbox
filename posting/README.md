@@ -85,7 +85,7 @@ In this repo: **Settings → Secrets and variables → Actions → New repositor
 
 | You want to... | Do this |
 |---|---|
-| Post right now | Actions → Instagram daily post → Run workflow (tick **force** if something was already posted in the last 20 h) |
+| Post right now | Actions → Instagram daily post → Run workflow (tick **force** if something was already posted in the last 12 h) |
 | Post a specific episode | Run workflow with **episode** = `ep15` |
 | Skip or delay an episode | Add it to `"hold"` in `posting/state.json`, e.g. `"hold": ["ep16"]` |
 | Use your own render instead of the CI one | Upload it to the `videos` release as `epNN.mp4` before it's posted |
@@ -101,6 +101,6 @@ New episodes are picked up automatically as long as they're on a `claude/worldcr
   at one a day takes 38 days, so one token covers the test. If a run fails with an expired-token error,
   generate a new one (step 2) and replace the secret.
 - Instagram allows up to 100 API posts a day; this posts one.
-- GitHub can start scheduled runs a few minutes late, and it pauses schedules in repos with no
+- GitHub can start scheduled runs late (3–4 hours has been seen here), so posts land some time after 00:23 Manila; the 12-hour minimum gap keeps that from skipping a day. GitHub also pauses schedules in repos with no
   activity for 60 days. The daily commits from these workflows count as activity.
 - If a run fails, GitHub emails you. The run log shows Instagram's error message.

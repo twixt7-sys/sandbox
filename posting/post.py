@@ -87,7 +87,8 @@ def build_caption(cfg, episode):
 
 def resolve(url):
     import urllib.request
-    with urllib.request.urlopen(urllib.request.Request(url, method="HEAD"), timeout=30) as r:
+    # GET, not HEAD: GitHub's signed release-asset URLs reject HEAD with 401. Range keeps it to 1 byte.
+    with urllib.request.urlopen(urllib.request.Request(url, headers={"Range": "bytes=0-0"}), timeout=30) as r:
         return r.geturl()
 
 

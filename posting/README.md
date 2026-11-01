@@ -1,5 +1,7 @@
 # Instagram auto-posting
 
+> TikTok has its own flow, through Buffer: see [TIKTOK.md](TIKTOK.md).
+
 Posts one Worldcraft Shorts episode a day as an Instagram Reel, in order, starting after the last
 episode you posted by hand (EP12). Runs entirely on GitHub Actions: nothing runs on your computer
 and nothing depends on a Claude session staying open.

@@ -99,34 +99,38 @@ def episode_marker(number):
 
 # ── commands ─────────────────────────────────────────────────────────────
 
-def cmd_select(args):
-    cfg, state = load(CONFIG_PATH), load(STATE_PATH)
+def pick(cfg, state, episode=None, force=False, first=1):
+    """Decide which episode goes out next for one platform's state. Returns the GITHUB_OUTPUT fields.
+    Shared by Instagram (this file) and TikTok (tiktok_post.py); `first` is where the platform starts."""
     posted, hold = state["posted"], set(state.get("hold", []))
-    branches = remote_branches()
 
-    if args.episode:
-        n = int(args.episode.lower().removeprefix("ep"))
-        if ep_id(n) in posted and not args.force:
-            return set_output(go="false", reason=f"{ep_id(n)} is already posted (use force to repost)")
+    if episode:
+        n = int(episode.lower().removeprefix("ep"))
+        if ep_id(n) in posted and not force:
+            return dict(go="false", reason=f"{ep_id(n)} is already posted (use force to repost)")
     else:
         last = max((v["posted_at"] for v in posted.values() if v.get("posted_at")), default=None)
-        if last and not args.force:
+        if last and not force:
             age = (now_utc() - dt.datetime.fromisoformat(last)).total_seconds() / 3600
             if age < cfg["minHoursBetweenPosts"]:
-                return set_output(go="false", reason=f"last post was {age:.1f} h ago "
-                                                     f"(minimum {cfg['minHoursBetweenPosts']} h)")
-        n = next((i for i in range(1, cfg["totalEpisodes"] + 1)
+                return dict(go="false", reason=f"last post was {age:.1f} h ago "
+                                               f"(minimum {cfg['minHoursBetweenPosts']} h)")
+        n = next((i for i in range(first, cfg["totalEpisodes"] + 1)
                   if ep_id(i) not in posted and ep_id(i) not in hold), None)
         if n is None:
-            return set_output(go="false", reason="every episode is posted or on hold")
+            return dict(go="false", reason="every episode is posted or on hold")
 
     branch = branch_for(cfg, n)
-    if branch not in branches:
-        return set_output(go="false", reason=f"{ep_id(n)} is next but branch {branch} does not exist yet")
+    if branch not in remote_branches():
+        return dict(go="false", reason=f"{ep_id(n)} is next but branch {branch} does not exist yet")
     missing = unfinished(branch, ep_id(n))
     if missing:
-        return set_output(go="false", reason=f"{ep_id(n)} is still in progress on {branch} (no {missing} yet)")
-    set_output(go="true", episode=ep_id(n), branch=branch)
+        return dict(go="false", reason=f"{ep_id(n)} is still in progress on {branch} (no {missing} yet)")
+    return dict(go="true", episode=ep_id(n), branch=branch)
+
+
+def cmd_select(args):
+    set_output(**pick(load(CONFIG_PATH), load(STATE_PATH), args.episode, args.force))
 
 
 def unfinished(branch, eid):

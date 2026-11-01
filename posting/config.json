@@ -19,5 +19,16 @@
     "metrics": ["views", "reach", "likes", "comments", "shares", "saved", "total_interactions",
                 "ig_reels_avg_watch_time", "ig_reels_video_view_total_time", "reels_skip_rate"],
     "trackDays": 14
+  },
+  "tiktok": {
+    "startEpisode": 14,
+    "minHoursBetweenPosts": 12,
+    "aiLabel": true,
+    "thumbnailOffsetMs": null,
+    "caption": {
+      "template": "{text}\n\nEpisode {number} · {title}\n\n{hashtags}",
+      "maxHashtags": 5,
+      "fallbackHashtags": ["#worldbuilding", "#fantasywriting", "#writingtok"]
+    }
   }
 }

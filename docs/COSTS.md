@@ -319,6 +319,19 @@ On the paid primary stack, with 6 stills: about **$1.35 (₱86)**, or **$2.48 (�
 | **Total** | | **$0 cash (₱0)**, no Figma credits |
 
 On the paid primary stack, with 4 stills: about **$1.05 (₱67)**, or **$1.15 (₱73)** with one retry per still, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+## What Episode 24 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| 6 stills (the wagon train on the muddy road, the stone ring gate in a town square, the cabbage cart, the hill village, two travellers at a framed ring gate, the hooded courier at a night arch) | **Local SDXL-Lightning** (`pipeline/local_stills.py`, 4-step, CPU, 768×1344, lanczos to 1080×1920). 21 candidates in two rounds, 6 kept: hook 11, cargo 23, village 23 (round 1); gate 23, queue (gate prompt, seed 7), courier 7 (round 2). Round 1 painted no stone ring in any gate shot, so the gate, queue and courier prompts were rewritten as "a giant circular stone ring portal standing upright on its edge". Two spire finials that could read as crosses were painted out of the gate and queue plates with the plates' own sky. Figma credits are out until 1 Nov 2026, so it wasn't tried | $0 |
+| Gate light, stone ring on the hook's hill, crystal, counting board, tags, title, CTA card | Remotion code (new `gateRing`, `crystalPrice` and `countingBoard`; `titleLockup`, `tag`, `callout`, `ctaCard`) | $0 |
+| Narration | Kokoro-82M (`af_heart`), 77 words, 31.26 s | $0 |
+| Score + SFX (new: blink, gateFail, crystalBurn, bead) | `pipeline/score.py` | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, no Figma credits |
+
+On the paid primary stack, with 6 stills: about **$1.10 (₱70)**, or about $2.48 (₱157) with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
 ## What Episode 25 actually used
 
 | Item | Used | Cash cost |

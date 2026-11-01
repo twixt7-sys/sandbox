@@ -8,7 +8,7 @@ and nothing depends on a Claude session staying open.
 
 ## How it works
 
-Every day at **16:23 UTC** (00:23 Manila, 12:23 New York), `.github/workflows/instagram-post.yml`:
+Every day at **12:23 UTC** (20:23 Manila; GitHub often starts it a few hours late, so expect 20:30 to about midnight), `.github/workflows/instagram-post.yml`:
 
 1. Picks the lowest episode number that isn't in `posting/state.json` yet (EP13 first).
    If that episode's branch (`claude/worldcraft-epNN`) doesn't exist yet, or the episode is still in
@@ -103,6 +103,6 @@ New episodes are picked up automatically as long as they're on a `claude/worldcr
   at one a day takes 38 days, so one token covers the test. If a run fails with an expired-token error,
   generate a new one (step 2) and replace the secret.
 - Instagram allows up to 100 API posts a day; this posts one.
-- GitHub can start scheduled runs late (3–4 hours has been seen here), so posts land some time after 00:23 Manila; the 12-hour minimum gap keeps that from skipping a day. GitHub also pauses schedules in repos with no
+- GitHub can start scheduled runs late (3–4 hours has been seen here), so posts land some time after 20:23 Manila; the 12-hour minimum gap keeps that from skipping a day. GitHub also pauses schedules in repos with no
   activity for 60 days. The daily commits from these workflows count as activity.
 - If a run fails, GitHub emails you. The run log shows Instagram's error message.

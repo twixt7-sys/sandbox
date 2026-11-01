@@ -15,7 +15,7 @@ import pyloudnorm as pyln
 import soundfile as sf
 from scipy.signal import butter, sosfilt
 
-from common import SR, load_series, out_dir
+from common import SR, load_episode, load_series, out_dir
 
 VOICE_LUFS = -18.0
 MUSIC_LUFS = -31.0   # before ducking; ~13 LU under the voice
@@ -72,9 +72,13 @@ def main():
     voice = stereo(voice)
     music, sfx = (np.pad(x[:n], ((0, max(0, n - len(x))), (0, 0))) for x in (music, sfx))
 
+    # Optional per-episode overrides (Season 2 runs its music a little hotter); absent = series defaults.
+    over = load_episode(ep_id).get("mix", {})
+    global DUCK_DB
+    DUCK_DB = over.get("duckDb", DUCK_DB)
     voice = gain_to(voice, VOICE_LUFS, meter)
-    music = gain_to(music, MUSIC_LUFS, meter) * duck_curve(voice)[:, None]
-    sfx = gain_to(sfx, SFX_LUFS, meter)
+    music = gain_to(music, over.get("musicLufs", MUSIC_LUFS), meter) * duck_curve(voice)[:, None]
+    sfx = gain_to(sfx, over.get("sfxLufs", SFX_LUFS), meter)
     premix = voice + music + sfx
     sf.write(d / "premix.wav", premix.astype(np.float32), SR, subtype="FLOAT")
 

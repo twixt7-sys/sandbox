@@ -4,3 +4,4 @@ numpy>=1.26
 scipy>=1.11
 pyloudnorm==0.2.0
 torch==2.14.1
+pillow>=10  # pixelate.py, tile.py (Season 2)

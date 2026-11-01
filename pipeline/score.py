@@ -944,6 +944,10 @@ def ticks(t0, t1):
     return out
 
 
+S2_HITS: set = set()
+S2_BEDS: set = set()
+
+
 def build_sfx(ep, timing):
     n = int(timing["duration"] * SR)
     out = np.zeros((n, 2))
@@ -953,20 +957,26 @@ def build_sfx(ep, timing):
             if "from" in cue:
                 t0 = resolve_cue(cue["from"], timing)
                 t1 = resolve_cue(cue["to"], timing)
-                clip = ticks(t0, t1) if cue["sound"] == "ticks" else sfx_bed(cue["sound"], t1 - t0 + 0.6)
+                if cue["sound"] in S2_BEDS:  # Season 2 palette (pipeline/score_s2.py)
+                    clip = s2_bed(cue["sound"], t1 - t0)
+                else:
+                    clip = ticks(t0, t1) if cue["sound"] == "ticks" else sfx_bed(cue["sound"], t1 - t0 + 0.6)
                 place(out, clip / (np.abs(clip).max() + 1e-9), t0, gain)
             else:
-                clip = sfx_hit(cue["sound"])
+                clip = s2_hit(cue["sound"]) if cue["sound"] in S2_HITS else sfx_hit(cue["sound"])
                 place(out, clip / (np.abs(clip).max() + 1e-9), resolve_cue(cue["at"], timing), gain)
     return reverb(out, seconds=2.0, decay=4.5, wet=0.2)
 
 
 def main():
     ep_id = sys.argv[1]
+    global S2_HITS, S2_BEDS, s2_hit, s2_bed, build_music_s2
+    from score_s2 import S2_BEDS, S2_HITS, build_music_s2, s2_bed, s2_hit  # noqa: F401  (Season 2 only)
     ep = load_episode(ep_id)
     d = out_dir(ep_id)
     timing = json.loads((d / "timing.json").read_text())
-    music = build_music(ep, timing)
+    # Season 2 episodes use the World Engine score; EP01-EP25 are unchanged.
+    music = build_music_s2(ep, timing) if ep.get("season") == 2 else build_music(ep, timing)
     sfx = build_sfx(ep, timing)
     sf.write(d / "music.wav", (music / (np.abs(music).max() + 1e-9) * 0.7).astype(np.float32), SR, subtype="PCM_16")
     sf.write(d / "sfx.wav", np.clip(sfx, -1, 1).astype(np.float32), SR, subtype="PCM_16")

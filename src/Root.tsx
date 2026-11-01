@@ -2,6 +2,7 @@ import React from 'react';
 import {Composition, staticFile} from 'remotion';
 import {EpisodeComposition} from './Episode';
 import type {EpisodeProps} from './types';
+import {S2Lab} from './s2/Lab';
 
 const getJson = async (path: string, optional = false) => {
 	const res = await fetch(staticFile(path));
@@ -13,6 +14,8 @@ const getJson = async (path: string, optional = false) => {
 };
 
 export const Root: React.FC = () => (
+	<>
+	<Composition id="S2Lab" component={S2Lab} width={1080} height={1920} fps={30} durationInFrames={300} defaultProps={{pixel: 3}} />
 	<Composition
 		id="Episode"
 		component={EpisodeComposition}
@@ -38,4 +41,5 @@ export const Root: React.FC = () => (
 			};
 		}}
 	/>
+	</>
 );

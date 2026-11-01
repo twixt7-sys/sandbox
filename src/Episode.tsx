@@ -9,6 +9,7 @@ import {AtlasContext} from './scenes/Atlas';
 import {PlateScene, SCENES} from './scenes/registry';
 import {Valley} from './scenes/Valley';
 import type {EpisodeProps, Graphic, Plates, Shot, TimedShot} from './types';
+import {EpisodeS2} from './s2/EpisodeS2';
 
 const MAP_LOCAL = new Set(['mapBase', 'ferryRoute', 'power', 'accents']);
 
@@ -85,7 +86,11 @@ const LoopTail: React.FC<{duration: number; hook: Shot; span: TimedShot; plate?:
 /** A shot can reuse another shot's plate (`"plateFrom": "hook"`), e.g. the same landscape by night. */
 const plateFor = (plates: Plates, shot: Shot) => plates[shot.id] ?? (shot.plateFrom ? plates[shot.plateFrom] : undefined);
 
-export const EpisodeComposition: React.FC<EpisodeProps> = ({episodeId, episode, series, timing, plates = {}}) => {
+export const EpisodeComposition: React.FC<EpisodeProps> = (props) =>
+	// Season 2 episodes (EP26 on) use the World Engine composition; EP01–EP25 render exactly as before.
+	(props.episode as any)?.season === 2 ? <EpisodeS2 {...props} /> : <EpisodeS1 {...props} />;
+
+const EpisodeS1: React.FC<EpisodeProps> = ({episodeId, episode, series, timing, plates = {}}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	if (!episode || !series || !timing) return null;

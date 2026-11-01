@@ -1,6 +1,8 @@
-# Worldcraft Shorts: series style guide
+# Worldcraft Shorts: series style guide (Season 1, EP01–EP25)
 
-Every episode, from 01 to 50, follows this guide so the series reads as one show. It records what EP01–EP03 actually use. Change it only on purpose, and then update earlier episodes or note the break here.
+> **From EP26 on, use `docs/STYLE_S2.md` ("The World Engine", 60-second episodes).** This guide still governs EP01–EP25, which must keep rendering exactly as they do.
+
+Every Season 1 episode follows this guide so the series reads as one show. It records what EP01–EP03 actually use. Change it only on purpose, and then update earlier episodes or note the break here.
 
 ## Format
 - 1080×1920, 30 fps, about 30 s (27–33 s passes QA). H.264 yuv420p BT.709 + AAC, −14 LUFS, true peak ≤ −1 dB.

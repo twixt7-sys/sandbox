@@ -2,7 +2,8 @@
 
 Usage: python pipeline/qa.py out/ep01.mp4 [--sheet out/ep01_sheet.jpg]
 
-Checks: container plays end-to-end (full decode), 1080x1920 @ 30 fps, duration 27-33 s,
+Checks: container plays end-to-end (full decode), 1080x1920 @ 30 fps, duration in the episode's window
+(episode.json -> format.qa {min, max}, e.g. 55-62 s for Season 2; 27-33 s when absent, as for EP01-EP25),
 audio present, integrated loudness and true peak, no black gaps, no frozen video,
 no audio dropouts mid-narration. Writes a JSON report next to the video and an
 optional contact sheet of representative frames (incl. the last frame) for visual review.
@@ -21,15 +22,34 @@ def run(args):
     return subprocess.run(args, capture_output=True, text=True)
 
 
+def episode_id(v: Path):
+    m = re.search(r"(ep\d+)", v.name)
+    return m.group(1) if m else None
+
+
+def window(ep_id):
+    """Duration window from the episode (format.qa); 27-33 s when the episode doesn't set one (EP01-EP25)."""
+    if ep_id:
+        f = Path(__file__).resolve().parent.parent / "episodes" / ep_id / "episode.json"
+        if f.exists():
+            q = json.loads(f.read_text()).get("format", {}).get("qa", {})
+            return float(q.get("min", 27.0)), float(q.get("max", 33.0))
+    return 27.0, 33.0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video")
     ap.add_argument("--sheet")
-    ap.add_argument("--min", type=float, default=27.0)
-    ap.add_argument("--max", type=float, default=33.0)
+    ap.add_argument("--min", type=float, default=None)
+    ap.add_argument("--max", type=float, default=None)
+    ap.add_argument("--episode", help="episode id for the duration window (default: from the file name, e.g. out/ep26_compat.mp4)")
     args = ap.parse_args()
     v = Path(args.video)
     checks = {}
+    lo, hi = window(args.episode or episode_id(v))
+    args.min = lo if args.min is None else args.min
+    args.max = hi if args.max is None else args.max
 
     probe = json.loads(run(["ffprobe", "-v", "error", "-show_streams", "-show_format", "-of", "json", str(v)]).stdout)
     vs = next(s for s in probe["streams"] if s["codec_type"] == "video")
@@ -65,13 +85,15 @@ def main():
     # Only the very end may go quiet (loop fade); a long silence before that means a dropout.
     checks["no_audio_dropouts"] = all(s >= dur - 2.0 for s, _ in silences)
 
-    report = {"file": str(v), "durationSec": round(dur, 3), "integratedLufs": lufs, "truePeakDb": tp,
+    report = {"file": str(v), "durationWindow": [args.min, args.max], "durationSec": round(dur, 3), "integratedLufs": lufs, "truePeakDb": tp,
               "blackSegments": blacks, "freezeStarts": freezes, "silences": silences, "checks": checks,
               "passed": all(checks.values())}
     v.with_suffix(".qa.json").write_text(json.dumps(report, indent=1))
 
     if args.sheet:
         times = [0.5, 2.5, 4.8, 8.0, 11.5, 14.5, 17.3, 19.8, 23.0, 26.5, dur - 1.2, None]
+        if dur > 40:  # longer formats (Season 2): spread the first ten tiles evenly instead
+            times = [0.5] + [round(dur * k / 10, 2) for k in range(1, 10)] + [dur - 1.2, None]
         tiles = []
         for i, t in enumerate(times):
             f = v.parent / f".sheet_{i}.jpg"

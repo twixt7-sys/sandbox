@@ -1,0 +1,4401 @@
+{
+ "id": "ep26",
+ "number": 26,
+ "season": 2,
+ "title": "Don't Design a Monster. Design an Ecosystem.",
+ "lesson": "A creature becomes believable when it has a place in its environment: prey that out-breeds it, a territory, an energy budget, slow breeding, and a job the ecosystem needs it for.",
+ "format": {
+  "version": "s2",
+  "qa": {
+   "min": 55.0,
+   "max": 62.0
+  }
+ },
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.05
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.2,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "A curious lab-host energy: brisk, warm, a little playful. The hook is a genuine puzzle. 'Press run' is a small grin. The year count is a quick, flat countdown. 'It ends it' lands low and slow. 'The fifth is the twist' teases. Rules one to four are crisp list beats. 'Rule five? Delete the monster' is mischievous; the lesson is sure and warm."
+ },
+ "timing": {
+  "leadIn": 0.2,
+  "tail": 2.4,
+  "shotLead": 0.12
+ },
+ "captionY": 1238,
+ "captionsOff": [
+  {
+   "line": "L6",
+   "from": "It"
+  },
+  {
+   "line": "L14",
+   "from": "Rule",
+   "to": "Delete"
+  }
+ ],
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "If your giant predator eats everything, why hasn't everything gone extinct?",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "everything,",
+    "extinct?"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "setup",
+   "text": "Let's test it. This is the Grimmaw. It eats anything that moves.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "grimmaw.",
+    "anything"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "setup",
+   "text": "Press run.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "run."
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "run1",
+   "text": "Year one: mossbacks everywhere. Year three: thinning. Year five: gone.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "mossbacks",
+    "gone."
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "starve",
+   "text": "With nothing left to hunt, the Grimmaw starves too.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "starves"
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "ends",
+   "text": "A monster that eats everything doesn't rule your world. It ends it.",
+   "pauseAfter": 0.7,
+   "emphasis": [
+    "rule",
+    "ends"
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "rehook",
+   "text": "Real predators live inside limits. Four are easy. The fifth is the twist.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "limits.",
+    "twist."
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "prey",
+   "text": "One: prey that breeds faster than it's eaten.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "breeds",
+    "faster"
+   ]
+  },
+  {
+   "id": "L9",
+   "shot": "range",
+   "text": "Two: territory. One Grimmaw needs a whole valley.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "territory.",
+    "valley."
+   ]
+  },
+  {
+   "id": "L10",
+   "shot": "energy",
+   "text": "Three: energy. A body this big hunts rarely and sleeps a lot.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "energy.",
+    "rarely"
+   ]
+  },
+  {
+   "id": "L11",
+   "shot": "breed",
+   "text": "Four: slow breeding. One cub every few winters.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "slow",
+    "cub"
+   ]
+  },
+  {
+   "id": "L12",
+   "shot": "run2",
+   "text": "Run it again.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "again."
+   ]
+  },
+  {
+   "id": "L13",
+   "shot": "run2",
+   "text": "Now the numbers rise and fall, but nothing vanishes.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "nothing",
+    "vanishes."
+   ]
+  },
+  {
+   "id": "L14",
+   "shot": "twist",
+   "text": "Rule five? Delete the monster.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "delete"
+   ]
+  },
+  {
+   "id": "L15",
+   "shot": "twist",
+   "text": "The mossbacks boom, strip the meadow bare, then starve.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "boom,",
+    "starve."
+   ]
+  },
+  {
+   "id": "L16",
+   "shot": "role",
+   "text": "Rule five is its job. The Grimmaw holds the island together.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "job.",
+    "together."
+   ]
+  },
+  {
+   "id": "L17",
+   "shot": "lesson",
+   "text": "Don't design a monster. Design its place in the world.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "monster.",
+    "place"
+   ]
+  },
+  {
+   "id": "L18",
+   "shot": "cta",
+   "text": "Share this with someone designing fantasy monsters.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "share"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "world",
+   "purpose": "Stop the scroll on a question with the answer already on screen: a giant predator among its prey.",
+   "visual": "The Grimmaw in profile on the meadow of the Isle, mossbacks grazing around it; WORLD ENGINE boots top-right as the island ripples.",
+   "camera": "Hero close (dist 40, el 10, fov 22, az 22), slow drift.",
+   "layers": {
+    "foreground": "kinetic question",
+    "midground": "the Grimmaw and herd",
+    "background": "the Isle's peak and the void"
+   },
+   "lighting": "Day mood; warm key from the south-east, hard pixel shadows.",
+   "onScreenText": "IF IT EATS / EVERYTHING then WHY ISN'T / EVERYTHING / EXTINCT?",
+   "transition": "Continuous camera into the setup.",
+   "music": "Hook: Dm\u2013Bb, pad + 8th arp.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "IF IT EATS"
+      },
+      {
+       "text": "EVERYTHING",
+       "color": "ember"
+      }
+     ],
+     "y": 452,
+     "size": 100,
+     "start": {
+      "shot": "hook"
+     },
+     "end": {
+      "line": "L1",
+      "word": "why",
+      "offset": -0.08
+     },
+     "preShow": true
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "WHY ISN'T",
+       "at": {
+        "line": "L1",
+        "word": "why"
+       }
+      },
+      {
+       "text": "EVERYTHING",
+       "at": {
+        "line": "L1",
+        "word": "everything",
+        "nth": 2
+       }
+      },
+      {
+       "text": "EXTINCT?",
+       "at": {
+        "line": "L1",
+        "word": "extinct?"
+       },
+       "color": "rust",
+       "size": 132
+      }
+     ],
+     "y": 452,
+     "size": 100,
+     "start": {
+      "line": "L1",
+      "word": "why",
+      "offset": -0.02
+     },
+     "end": {
+      "line": "L2",
+      "word": "Let's",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "sting",
+     "label": "WORLD ENGINE",
+     "run": "RUN 26 \u00b7 CREATURES",
+     "dur": 1.4,
+     "start": {
+      "shot": "hook"
+     },
+     "front": true
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "sting",
+     "at": {
+      "shot": "hook"
+     },
+     "gain": -9
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "shot": "hook",
+      "offset": 0.05
+     },
+     "gain": -17
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "setup",
+   "scene": "world",
+   "purpose": "Meet the subject and its one dangerous claim, then press RUN.",
+   "visual": "Field card intro (sprite x3, GRIMMAW, APEX PREDATOR, DIET anything that moves) over the Grimmaw walking in profile; the sim bar slides in and RUN is pressed.",
+   "camera": "Hero close orbit (az 8), then rise to wide on 'run'.",
+   "layers": {
+    "foreground": "field card, sim bar",
+    "midground": "the Grimmaw walking",
+    "background": "herd and lake"
+   },
+   "lighting": "Day.",
+   "onScreenText": "Field card; RUN.",
+   "transition": "Ripple + rise to the wide on 'run'.",
+   "music": "Adds bass and a heartbeat kick.",
+   "graphics": [
+    {
+     "type": "fieldCard",
+     "mode": "intro",
+     "y": 440,
+     "start": {
+      "line": "L2",
+      "word": "This",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L3",
+      "word": "Press",
+      "offset": -0.1
+     },
+     "dietAt": {
+      "line": "L2",
+      "word": "eats"
+     },
+     "kicker": "FIELD CARD \u00b7 NO. 001",
+     "kind": "APEX PREDATOR",
+     "name": "GRIMMAW",
+     "diet": "anything that moves",
+     "sprite": "ep26/grimmaw_sprite.png"
+    },
+    {
+     "type": "simBar",
+     "start": {
+      "line": "L3",
+      "word": "Press",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L17",
+      "word": "Don't",
+      "offset": -0.3
+     },
+     "runAt": [
+      {
+       "line": "L3",
+       "word": "run."
+      },
+      {
+       "line": "L12",
+       "word": "Run"
+      },
+      {
+       "line": "L15",
+       "word": "The"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "stomp",
+     "from": {
+      "line": "L2",
+      "word": "This"
+     },
+     "to": {
+      "line": "L2",
+      "word": "This",
+      "offset": 2.2
+     },
+     "gain": -17
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L2",
+      "word": "This",
+      "offset": -0.1
+     },
+     "gain": -17
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L2",
+      "word": "eats"
+     },
+     "gain": -20
+    },
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L3",
+      "word": "run."
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L3",
+      "word": "run."
+     },
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "run1",
+   "scene": "world",
+   "purpose": "The naive design runs and fails, in numbers.",
+   "visual": "The whole Isle; clock 0\u21925, MOSSBACKS 120\u21920 while the graph falls; herds thin everywhere.",
+   "camera": "Wide (dist 192, el 44).",
+   "layers": {
+    "foreground": "sim bar + graph",
+    "midground": "the thinning herds",
+    "background": "the island in the void"
+   },
+   "lighting": "Day.",
+   "onScreenText": "YEAR 01..05; counters; graph YEARS 0\u20135.",
+   "transition": "Swoop down to the lone predator.",
+   "music": "Run: 16th arp, four-on-the-floor, claps.",
+   "graphics": [
+    {
+     "type": "simGraph",
+     "y": 456,
+     "h": 214,
+     "from": {
+      "line": "L3",
+      "word": "run."
+     },
+     "to": {
+      "line": "L4",
+      "word": "gone.",
+      "offset": 0.4
+     },
+     "start": {
+      "line": "L4",
+      "word": "Year",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L5",
+      "word": "With",
+      "offset": -0.1
+     },
+     "caption": "YEARS 0\u20135",
+     "series": [
+      {
+       "key": "herd",
+       "color": "#9bd16a",
+       "max": 130,
+       "label": "MOSSBACKS"
+      },
+      {
+       "key": "pred",
+       "color": "#f08a4b",
+       "max": 2,
+       "label": "GRIMMAW"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L3",
+      "word": "run.",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L4",
+      "word": "gone.",
+      "offset": 0.2
+     },
+     "gain": -21
+    },
+    {
+     "sound": "losses",
+     "from": {
+      "line": "L4",
+      "word": "everywhere.",
+      "offset": 0.35
+     },
+     "to": {
+      "line": "L4",
+      "word": "gone."
+     },
+     "gain": -23
+    }
+   ]
+  },
+  {
+   "id": "starve",
+   "scene": "world",
+   "purpose": "Hunger shown as an empty range, never a kill.",
+   "visual": "The Grimmaw walks an empty meadow at dusk, then lies down and greys. Pin: FOOD IN RANGE / NONE.",
+   "camera": "Close (dist 32, az 140).",
+   "layers": {
+    "foreground": "pin",
+    "midground": "the Grimmaw",
+    "background": "empty meadow"
+   },
+   "lighting": "Dusk to gloom.",
+   "onScreenText": "FOOD IN RANGE: NONE",
+   "transition": "Pull back.",
+   "music": "Drop: drone and heartbeat.",
+   "graphics": [
+    {
+     "type": "pin",
+     "pred": "g1",
+     "kicker": "FOOD IN RANGE",
+     "text": "NONE",
+     "color": "rust",
+     "lift": 120,
+     "start": {
+      "line": "L5",
+      "word": "nothing"
+     },
+     "end": {
+      "line": "L5",
+      "word": "starves",
+      "offset": 0.2
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "stomp",
+     "from": {
+      "line": "L5",
+      "word": "With",
+      "offset": -0.1
+     },
+     "to": {
+      "line": "L5",
+      "word": "With",
+      "offset": 1.4
+     },
+     "gain": -18
+    },
+    {
+     "sound": "crash",
+     "at": {
+      "line": "L5",
+      "word": "starves",
+      "offset": 0.1
+     },
+     "gain": -19
+    }
+   ]
+  },
+  {
+   "id": "ends",
+   "scene": "world",
+   "purpose": "The punchline of the failure.",
+   "visual": "The whole island desaturated and empty; EXTINCT stamp; 'IT ENDS IT.' in rust.",
+   "camera": "Long pull back (dist 200).",
+   "layers": {
+    "foreground": "stamp, kinetic",
+    "midground": "empty island",
+    "background": "void"
+   },
+   "lighting": "Gloom (saturation 0.35).",
+   "onScreenText": "EXTINCT \u00b7 EVERYTHING \u00b7 YEAR 5; IT ENDS IT.",
+   "transition": "Rewind + block wipe.",
+   "music": "Near silence, drone; duck on 'It ends it'.",
+   "graphics": [
+    {
+     "type": "stamp",
+     "text": "EXTINCT",
+     "sub": "EVERYTHING \u00b7 YEAR 5",
+     "color": "rust",
+     "y": 560,
+     "start": {
+      "line": "L6",
+      "word": "eats"
+     },
+     "end": {
+      "line": "L6",
+      "word": "It",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "IT ENDS IT.",
+       "at": {
+        "line": "L6",
+        "word": "It"
+       },
+       "color": "rust"
+      }
+     ],
+     "font": "pixel",
+     "size": 100,
+     "y": 1180,
+     "start": {
+      "line": "L6",
+      "word": "It",
+      "offset": -0.02
+     },
+     "end": {
+      "line": "L6",
+      "word": "it.",
+      "offset": 0.55
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L6",
+      "word": "eats"
+     },
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "rehook",
+   "scene": "world",
+   "purpose": "Re-hook: rewind the world and open a loop (four easy rules, one locked twist).",
+   "visual": "REWIND chip and scanlines; clock and herd run back; the checklist card with a blinking locked row 5.",
+   "camera": "Medium (dist 92).",
+   "layers": {
+    "foreground": "rewind, checklist card",
+    "midground": "herd returning",
+    "background": "island"
+   },
+   "lighting": "Back to day.",
+   "onScreenText": "DESIGN CHECK 0/5, row 5 '??? the twist'.",
+   "transition": "Cut on 'One'.",
+   "music": "Arp returns: Dm\u2013C\u2013Bb\u2013A.",
+   "graphics": [
+    {
+     "type": "rewind",
+     "y": 620,
+     "start": {
+      "line": "L6",
+      "word": "it.",
+      "offset": 0.5
+     },
+     "end": {
+      "line": "L7",
+      "word": "Real",
+      "offset": 0.25
+     }
+    },
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L6",
+      "word": "it.",
+      "offset": 0.48
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "fieldCard",
+     "mode": "checklist",
+     "y": 448,
+     "rows": [
+      {
+       "n": 1,
+       "label": "PREY",
+       "text": "breeds faster than it's eaten",
+       "at": {
+        "line": "L8",
+        "word": "prey"
+       }
+      },
+      {
+       "n": 2,
+       "label": "RANGE",
+       "text": "one valley per Grimmaw",
+       "at": {
+        "line": "L9",
+        "word": "territory."
+       }
+      },
+      {
+       "n": 3,
+       "label": "ENERGY",
+       "text": "hunts rarely, sleeps a lot",
+       "at": {
+        "line": "L10",
+        "word": "energy."
+       }
+      },
+      {
+       "n": 4,
+       "label": "BREEDING",
+       "text": "one cub, every few winters",
+       "at": {
+        "line": "L11",
+        "word": "slow"
+       }
+      },
+      {
+       "n": 5,
+       "label": "ROLE",
+       "text": "keeps the grazers in check",
+       "at": {
+        "line": "L7",
+        "word": "limits."
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L16",
+        "word": "job."
+       }
+      }
+     ],
+     "start": {
+      "line": "L7",
+      "word": "limits.",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L17",
+      "word": "Don't",
+      "offset": -0.3
+     },
+     "kicker": "DESIGN CHECK",
+     "title": "GRIMMAW",
+     "blinkAt": {
+      "line": "L7",
+      "word": "twist."
+     },
+     "lockedText": "the twist",
+     "collapse": [
+      [
+       {
+        "line": "L9",
+        "word": "territory.",
+        "offset": 0.5
+       },
+       0
+      ],
+      [
+       {
+        "line": "L9",
+        "word": "territory.",
+        "offset": 0.85
+       },
+       1
+      ],
+      [
+       {
+        "line": "L10",
+        "word": "Three:",
+        "offset": -0.25
+       },
+       1
+      ],
+      [
+       {
+        "line": "L10",
+        "word": "Three:",
+        "offset": 0.1
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": -0.2
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 0.15
+       },
+       1
+      ],
+      [
+       {
+        "line": "L16",
+        "word": "Rule",
+        "offset": -0.3
+       },
+       1
+      ],
+      [
+       {
+        "line": "L16",
+        "word": "Rule",
+        "offset": 0.05
+       },
+       0
+      ]
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L6",
+      "word": "it.",
+      "offset": 0.45
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L7",
+      "word": "limits.",
+      "offset": -0.1
+     },
+     "gain": -17
+    }
+   ]
+  },
+  {
+   "id": "prey",
+   "scene": "world",
+   "purpose": "Rule 1: prey that breeds faster than it is eaten.",
+   "visual": "Close on a herd; lambs pop in small and grow; pin SPRING +55 BORN; row 1 ticks.",
+   "camera": "Close on the herd (dist 46).",
+   "layers": {
+    "foreground": "pin",
+    "midground": "herd and lambs",
+    "background": "meadow"
+   },
+   "lighting": "Day.",
+   "onScreenText": "1 PREY \u00b7 breeds faster than it's eaten",
+   "transition": "Rise to top-down.",
+   "music": "Bass joins.",
+   "graphics": [
+    {
+     "type": "pin",
+     "at": [
+      15,
+      4.5,
+      3
+     ],
+     "kicker": "SPRING",
+     "text": "+55 BORN",
+     "color": "prey",
+     "lift": 130,
+     "start": {
+      "line": "L8",
+      "word": "breeds"
+     },
+     "end": {
+      "line": "L9",
+      "word": "Two:",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L8",
+      "word": "prey"
+     },
+     "gain": -13
+    },
+    {
+     "sound": "births",
+     "from": {
+      "line": "L8",
+      "word": "breeds"
+     },
+     "to": {
+      "line": "L8",
+      "word": "eaten.",
+      "offset": 0.3
+     },
+     "gain": -20
+    }
+   ]
+  },
+  {
+   "id": "range",
+   "scene": "world",
+   "purpose": "Rule 2: territory; the island only fits three.",
+   "visual": "Top-down Isle; three territory rings painted on the voxels (outside dimmed); two more Grimmaws appear, one per valley; card folds.",
+   "camera": "Near top-down wide (el 66, dist 182).",
+   "layers": {
+    "foreground": "pin, folded card",
+    "midground": "three rings",
+    "background": "island"
+   },
+   "lighting": "Day.",
+   "onScreenText": "2 RANGE \u00b7 one valley per Grimmaw; TERRITORY / 1 VALLEY EACH",
+   "transition": "Down to the den.",
+   "music": "Kick joins.",
+   "graphics": [
+    {
+     "type": "pin",
+     "at": [
+      11.0,
+      null,
+      -2.0
+     ],
+     "kicker": "TERRITORY",
+     "text": "1 VALLEY EACH",
+     "color": "ember",
+     "lift": 70,
+     "start": {
+      "line": "L9",
+      "word": "territory.",
+      "offset": 0.1
+     },
+     "end": {
+      "line": "L10",
+      "word": "Three:",
+      "offset": -0.15
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L9",
+      "word": "territory."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "ringOn",
+     "at": {
+      "line": "L9",
+      "word": "territory."
+     },
+     "gain": -15
+    },
+    {
+     "sound": "ringOn",
+     "at": {
+      "line": "L9",
+      "word": "Grimmaw",
+      "offset": 0.1
+     },
+     "gain": -19
+    },
+    {
+     "sound": "ringOn",
+     "at": {
+      "line": "L9",
+      "word": "whole"
+     },
+     "gain": -19
+    }
+   ]
+  },
+  {
+   "id": "energy",
+   "scene": "world",
+   "purpose": "Rule 3: a big body hunts rarely and sleeps a lot.",
+   "visual": "The Grimmaw walks to its den at the foot of the peak and lies down to sleep; Zs.",
+   "camera": "Close profile (dist 40).",
+   "layers": {
+    "foreground": "pin, Zs",
+    "midground": "sleeping Grimmaw",
+    "background": "rock face"
+   },
+   "lighting": "Day.",
+   "onScreenText": "3 ENERGY \u00b7 hunts rarely, sleeps a lot; BIG BODY / HUNTS RARELY",
+   "transition": "Orbit.",
+   "music": "Hats join.",
+   "graphics": [
+    {
+     "type": "pin",
+     "pred": "g1",
+     "kicker": "BIG BODY",
+     "text": "HUNTS RARELY",
+     "color": "sky",
+     "lift": 120,
+     "start": {
+      "line": "L10",
+      "word": "hunts",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L10",
+      "word": "sleeps",
+      "offset": -0.05
+     }
+    },
+    {
+     "type": "zzz",
+     "pred": "g1",
+     "start": {
+      "line": "L10",
+      "word": "sleeps",
+      "offset": 0.3
+     },
+     "end": {
+      "line": "L12",
+      "word": "Run"
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L10",
+      "word": "energy."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "stomp",
+     "from": {
+      "line": "L10",
+      "word": "energy.",
+      "offset": 0.1
+     },
+     "to": {
+      "line": "L10",
+      "word": "energy.",
+      "offset": 2.0
+     },
+     "gain": -18
+    },
+    {
+     "sound": "sleepZ",
+     "at": {
+      "line": "L10",
+      "word": "sleeps",
+      "offset": 0.3
+     },
+     "gain": -14
+    },
+    {
+     "sound": "sleepZ",
+     "at": {
+      "line": "L10",
+      "word": "lot.",
+      "offset": 0.6
+     },
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "breed",
+   "scene": "world",
+   "purpose": "Rule 4: slow breeding.",
+   "visual": "Winter falls over the den (snow on voxels and trees); one cub pops in beside the sleeping Grimmaw.",
+   "camera": "Close (dist 34, az 108).",
+   "layers": {
+    "foreground": "pin",
+    "midground": "cub and parent",
+    "background": "snowy rocks"
+   },
+   "lighting": "Winter mood.",
+   "onScreenText": "4 BREEDING \u00b7 one cub, every few winters; 1 CUB",
+   "transition": "Rise to the wide on 'Run'.",
+   "music": "Bells join.",
+   "graphics": [
+    {
+     "type": "pin",
+     "pred": "cub",
+     "dy": 3.0,
+     "kicker": "EVERY FEW WINTERS",
+     "text": "1 CUB",
+     "color": "ember",
+     "lift": 90,
+     "start": {
+      "line": "L11",
+      "word": "cub",
+      "offset": 0.1
+     },
+     "end": {
+      "line": "L12",
+      "word": "Run",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L11",
+      "word": "slow"
+     },
+     "gain": -13
+    },
+    {
+     "sound": "snowAir",
+     "at": {
+      "line": "L11",
+      "word": "slow",
+      "offset": -0.2
+     },
+     "gain": -15
+    },
+    {
+     "sound": "cubPop",
+     "at": {
+      "line": "L11",
+      "word": "cub"
+     },
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "run2",
+   "scene": "world",
+   "purpose": "The fixed world runs: it cycles instead of collapsing.",
+   "visual": "Wide Isle, winters flicker past, years 3\u219223; graph shows prey and predators rising and falling; STABLE stamp.",
+   "camera": "Wide (dist 196).",
+   "layers": {
+    "foreground": "folded card, graph, stamp",
+    "midground": "herds and three predators",
+    "background": "island"
+   },
+   "lighting": "Day.",
+   "onScreenText": "YEARS 3\u201323; STABLE \u00b7 NOTHING VANISHES",
+   "transition": "Hold the wide.",
+   "music": "Full groove in F.",
+   "graphics": [
+    {
+     "type": "simGraph",
+     "y": 566,
+     "h": 214,
+     "from": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "to": {
+      "line": "L13",
+      "word": "vanishes.",
+      "offset": 0.6
+     },
+     "start": {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.1
+     },
+     "end": {
+      "line": "L14",
+      "word": "Rule",
+      "offset": -0.1
+     },
+     "caption": "YEARS 3\u201323",
+     "series": [
+      {
+       "key": "herd",
+       "color": "#9bd16a",
+       "max": 230,
+       "label": "MOSSBACKS"
+      },
+      {
+       "key": "pred",
+       "color": "#f08a4b",
+       "max": 5,
+       "label": "GRIMMAW"
+      }
+     ]
+    },
+    {
+     "type": "stamp",
+     "text": "STABLE",
+     "sub": "NOTHING VANISHES",
+     "color": "stable",
+     "rotate": -4,
+     "y": 900,
+     "size": 92,
+     "start": {
+      "line": "L13",
+      "word": "nothing"
+     },
+     "end": {
+      "line": "L14",
+      "word": "Rule",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -16
+    },
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L13",
+      "word": "vanishes.",
+      "offset": 0.6
+     },
+     "gain": -21
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L13",
+      "word": "nothing"
+     },
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "twist",
+   "scene": "world",
+   "purpose": "The locked rule, as an experiment: delete the monster.",
+   "visual": "RULE 5? then selection brackets + DEL: the three Grimmaws fly apart into voxels; mossbacks boom to 380, strip the meadow to dirt, the forest thins, then the herd crashes.",
+   "camera": "Wide (dist 170).",
+   "layers": {
+    "foreground": "kinetic, DEL, graph, pin",
+    "midground": "boom and bare earth",
+    "background": "island"
+   },
+   "lighting": "Gloom on 'bare'.",
+   "onScreenText": "RULE 5?; DEL; NO PREDATOR graph; MEADOW / STRIPPED BARE",
+   "transition": "Restore.",
+   "music": "Dark minor, filter down; drone on the crash.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "RULE 5?",
+       "at": {
+        "line": "L14",
+        "word": "Rule"
+       },
+       "color": "ember"
+      }
+     ],
+     "size": 150,
+     "y": 640,
+     "start": {
+      "line": "L14",
+      "word": "Rule",
+      "offset": -0.02
+     },
+     "end": {
+      "line": "L14",
+      "word": "Delete",
+      "offset": -0.08
+     }
+    },
+    {
+     "type": "deleteFx",
+     "preds": [
+      "g1",
+      "g2",
+      "g3"
+     ],
+     "y": 640,
+     "start": {
+      "line": "L14",
+      "word": "Delete",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L14",
+      "word": "monster.",
+      "offset": 0.45
+     }
+    },
+    {
+     "type": "simGraph",
+     "y": 566,
+     "h": 214,
+     "from": {
+      "line": "L15",
+      "word": "The"
+     },
+     "to": {
+      "line": "L15",
+      "word": "starve.",
+      "offset": 0.45
+     },
+     "start": {
+      "line": "L15",
+      "word": "The",
+      "offset": 0.05
+     },
+     "end": {
+      "line": "L16",
+      "word": "Rule",
+      "offset": -0.05
+     },
+     "caption": "NO PREDATOR",
+     "series": [
+      {
+       "key": "herd",
+       "color": "#9bd16a",
+       "max": 400,
+       "label": "MOSSBACKS"
+      }
+     ]
+    },
+    {
+     "type": "pin",
+     "at": [
+      12,
+      null,
+      -6
+     ],
+     "kicker": "MEADOW",
+     "text": "STRIPPED BARE",
+     "color": "rust",
+     "lift": 140,
+     "start": {
+      "line": "L15",
+      "word": "bare,",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L16",
+      "word": "Rule",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "delete",
+     "at": {
+      "line": "L14",
+      "word": "Delete",
+      "offset": 0.05
+     },
+     "gain": -9
+    },
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L15",
+      "word": "The"
+     },
+     "gain": -14
+    },
+    {
+     "sound": "boomPop",
+     "at": {
+      "line": "L15",
+      "word": "boom,"
+     },
+     "gain": -13
+    },
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L15",
+      "word": "The",
+      "offset": 0.2
+     },
+     "to": {
+      "line": "L15",
+      "word": "starve.",
+      "offset": 0.4
+     },
+     "gain": -22
+    },
+    {
+     "sound": "losses",
+     "from": {
+      "line": "L15",
+      "word": "then"
+     },
+     "to": {
+      "line": "L15",
+      "word": "starve.",
+      "offset": 0.5
+     },
+     "gain": -20
+    },
+    {
+     "sound": "crash",
+     "at": {
+      "line": "L15",
+      "word": "starve."
+     },
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "role",
+   "scene": "world",
+   "purpose": "Unlock rule 5: its job.",
+   "visual": "Row 5 unlocks (ROLE \u00b7 keeps the grazers in check); the Grimmaws re-appear, the meadow and forest heal, the island ripples on 'together'.",
+   "camera": "Medium-wide (dist 170).",
+   "layers": {
+    "foreground": "unlocked card",
+    "midground": "healing island",
+    "background": "void"
+   },
+   "lighting": "Day.",
+   "onScreenText": "5/5",
+   "transition": "Card goes full.",
+   "music": "Resolution to D major, bells.",
+   "graphics": [],
+   "sfx": [
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L16",
+      "word": "job."
+     },
+     "gain": -10
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L16",
+      "word": "Grimmaw"
+     },
+     "gain": -12
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L16",
+      "word": "together."
+     },
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "lesson",
+   "scene": "world",
+   "purpose": "The takeaway: the full design check, screenshot-able.",
+   "visual": "The complete field card (BEFORE YOU DESIGN A MONSTER / GRIMMAW / 5 rows ticked) with 'Design its place in the world.' in serif italic.",
+   "camera": "Wide orbit (dist 190).",
+   "layers": {
+    "foreground": "full card",
+    "midground": "island at dusk",
+    "background": "stars"
+   },
+   "lighting": "Dusk.",
+   "onScreenText": "Full card.",
+   "transition": "Block wipe to the end card.",
+   "music": "D\u2013G\u2013Bm\u2013A, warm.",
+   "graphics": [
+    {
+     "type": "fieldCard",
+     "mode": "full",
+     "y": 452,
+     "rows": [
+      {
+       "n": 1,
+       "label": "PREY",
+       "text": "breeds faster than it's eaten",
+       "at": {
+        "line": "L17",
+        "word": "Don't",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 2,
+       "label": "RANGE",
+       "text": "one valley per Grimmaw",
+       "at": {
+        "line": "L17",
+        "word": "Don't",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 3,
+       "label": "ENERGY",
+       "text": "hunts rarely, sleeps a lot",
+       "at": {
+        "line": "L17",
+        "word": "Don't",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 4,
+       "label": "BREEDING",
+       "text": "one cub, every few winters",
+       "at": {
+        "line": "L17",
+        "word": "Don't",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 5,
+       "label": "ROLE",
+       "text": "keeps the grazers in check",
+       "at": {
+        "line": "L17",
+        "word": "Don't",
+        "offset": -0.3
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L17",
+        "word": "Don't",
+        "offset": -0.3
+       }
+      }
+     ],
+     "start": {
+      "line": "L17",
+      "word": "Don't",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L18",
+      "word": "Share",
+      "offset": -0.25
+     },
+     "kicker": "BEFORE YOU DESIGN A MONSTER",
+     "title": "GRIMMAW",
+     "subtitle": "Design its place in the world.",
+     "subtitleAt": {
+      "line": "L17",
+      "word": "Design"
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L17",
+      "word": "Don't",
+      "offset": -0.3
+     },
+     "gain": -18
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "cta",
+   "scene": "world",
+   "purpose": "Share CTA, then loop to frame 0.",
+   "visual": "End card: logo, EPISODE 26 / 50, title, SHARE THIS with someone designing fantasy monsters; it lifts to reveal the hook frame and title again.",
+   "camera": "Cut (under the card) to the hook pose.",
+   "layers": {
+    "foreground": "end card",
+    "midground": "the Isle",
+    "background": "void"
+   },
+   "lighting": "Day for the loop frame.",
+   "onScreenText": "End card; then the hook title.",
+   "transition": "Loop.",
+   "music": "G\u2013D outro, faded to silence by 59.7 s.",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L18",
+      "word": "Share",
+      "offset": -0.3
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "endCardS2",
+     "start": {
+      "line": "L18",
+      "word": "Share",
+      "offset": -0.3
+     },
+     "end": {
+      "shot": "cta",
+      "offset": 4.85
+     },
+     "fadeOut": 0.3,
+     "kicker": "EPISODE 26 / 50",
+     "title": "Don't Design a Monster. Design an Ecosystem.",
+     "cta": "SHARE THIS",
+     "with": "with someone designing fantasy monsters"
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "IF IT EATS"
+      },
+      {
+       "text": "EVERYTHING",
+       "color": "ember"
+      }
+     ],
+     "y": 452,
+     "size": 100,
+     "start": {
+      "shot": "cta",
+      "offset": 5.1
+     },
+     "fadeIn": 0.4,
+     "preShow": true
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L18",
+      "word": "Share",
+      "offset": -0.3
+     },
+     "gain": -21
+    }
+   ],
+   "captions": false,
+   "hideLogoBug": true,
+   "hideLogoBugUntil": {
+    "shot": "cta",
+    "offset": 4.95
+   }
+  }
+ ],
+ "world": {
+  "clock": {
+   "label": "YEAR",
+   "keys": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "run."
+     },
+     0
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "one:",
+      "offset": 0.2
+     },
+     1,
+     "linear"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "three:",
+      "offset": 0.25
+     },
+     3,
+     "linear"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "five:",
+      "offset": 0.2
+     },
+     5,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "it.",
+      "offset": 0.4
+     },
+     5
+    ],
+    [
+     {
+      "line": "L7",
+      "word": "Real",
+      "offset": 0.15
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "slow"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "winters.",
+      "offset": 0.4
+     },
+     3,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.1
+     },
+     3
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "vanishes.",
+      "offset": 0.7
+     },
+     23,
+     "linear"
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "The"
+     },
+     23
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "starve.",
+      "offset": 0.4
+     },
+     31,
+     "linear"
+    ]
+   ]
+  },
+  "speed": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L3",
+     "word": "run."
+    },
+    1
+   ],
+   [
+    {
+     "line": "L3",
+     "word": "run.",
+     "offset": 0.35
+    },
+    9
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "gone.",
+     "offset": 0.2
+    },
+    9
+   ],
+   [
+    {
+     "line": "L5",
+     "word": "With",
+     "offset": -0.1
+    },
+    1
+   ],
+   [
+    {
+     "line": "L6",
+     "word": "it.",
+     "offset": 0.35
+    },
+    1
+   ],
+   [
+    {
+     "line": "L6",
+     "word": "it.",
+     "offset": 0.55
+    },
+    -10
+   ],
+   [
+    {
+     "line": "L7",
+     "word": "Real",
+     "offset": 0.1
+    },
+    -10
+   ],
+   [
+    {
+     "line": "L7",
+     "word": "Real",
+     "offset": 0.3
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.1
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.4
+    },
+    9
+   ],
+   [
+    {
+     "line": "L13",
+     "word": "vanishes.",
+     "offset": 0.6
+    },
+    9
+   ],
+   [
+    {
+     "line": "L14",
+     "word": "Rule"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L15",
+     "word": "The",
+     "offset": -0.1
+    },
+    1
+   ],
+   [
+    {
+     "line": "L15",
+     "word": "The",
+     "offset": 0.2
+    },
+    9
+   ],
+   [
+    {
+     "line": "L15",
+     "word": "starve.",
+     "offset": 0.4
+    },
+    9
+   ],
+   [
+    {
+     "line": "L16",
+     "word": "Rule"
+    },
+    1
+   ]
+  ],
+  "camera": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "az": 24,
+    "el": 8,
+    "dist": 54,
+    "target": [
+     8.9,
+     6.9,
+     -1.2
+    ],
+    "fov": 16.5,
+    "dur": 1.4,
+    "drift": 1.2
+   },
+   {
+    "at": {
+     "line": "L2",
+     "word": "Let's",
+     "offset": -0.2
+    },
+    "az": 8,
+    "el": 12,
+    "dist": 40,
+    "target": [
+     9.6,
+     9.4,
+     -1.8
+    ],
+    "fov": 22,
+    "dur": 1.8,
+    "drift": 2.0
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "run.",
+     "offset": 0.05
+    },
+    "az": 30,
+    "el": 44,
+    "dist": 192,
+    "target": [
+     2.0,
+     10.5,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 1.3,
+    "drift": 2.0
+   },
+   {
+    "at": {
+     "line": "L5",
+     "word": "With",
+     "offset": -0.25
+    },
+    "az": 140,
+    "el": 15,
+    "dist": 32,
+    "target": [
+     6.6,
+     7.4,
+     -4.6
+    ],
+    "fov": 22,
+    "dur": 1.3,
+    "drift": 3.0
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "A"
+    },
+    "az": 165,
+    "el": 34,
+    "dist": 200,
+    "target": [
+     1.0,
+     5.0,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 2.6,
+    "drift": 2.0
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "it.",
+     "offset": 0.45
+    },
+    "az": 40,
+    "el": 30,
+    "dist": 92,
+    "target": [
+     7.0,
+     9.5,
+     -2.0
+    ],
+    "fov": 24,
+    "dur": 0.9,
+    "drift": 2.0
+   },
+   {
+    "at": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.2
+    },
+    "az": 64,
+    "el": 24,
+    "dist": 46,
+    "target": [
+     15.0,
+     6.4,
+     3.0
+    ],
+    "fov": 22,
+    "dur": 1.1,
+    "drift": 1.0
+   },
+   {
+    "at": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.15
+    },
+    "az": 25,
+    "el": 66,
+    "dist": 182,
+    "target": [
+     5.0,
+     13.0,
+     -1.0
+    ],
+    "fov": 26,
+    "dur": 1.1,
+    "drift": 1.5
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.15
+    },
+    "az": 12,
+    "el": 18,
+    "dist": 40,
+    "target": [
+     4.0,
+     11.0,
+     -4.4
+    ],
+    "fov": 22,
+    "dur": 1.3,
+    "drift": 2.0
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.1
+    },
+    "az": 108,
+    "el": 22,
+    "dist": 34,
+    "target": [
+     2.4,
+     10.6,
+     -4.4
+    ],
+    "fov": 22,
+    "dur": 1.3,
+    "drift": 2.0
+   },
+   {
+    "at": {
+     "line": "L12",
+     "word": "Run",
+     "offset": -0.05
+    },
+    "az": 35,
+    "el": 44,
+    "dist": 196,
+    "target": [
+     2.0,
+     13.0,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 1.0,
+    "drift": 3.0
+   },
+   {
+    "at": {
+     "line": "L14",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "az": 50,
+    "el": 42,
+    "dist": 170,
+    "target": [
+     4.0,
+     12.0,
+     -1.0
+    ],
+    "fov": 26,
+    "dur": 0.8,
+    "drift": 1.0
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "az": 30,
+    "el": 36,
+    "dist": 170,
+    "target": [
+     3.0,
+     13.5,
+     -1.0
+    ],
+    "fov": 26,
+    "dur": 1.4,
+    "drift": 1.5
+   },
+   {
+    "at": {
+     "line": "L17",
+     "word": "Don't",
+     "offset": -0.25
+    },
+    "az": 15,
+    "el": 30,
+    "dist": 190,
+    "target": [
+     2.0,
+     2.0,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 1.6,
+    "drift": 3.0
+   },
+   {
+    "at": {
+     "shot": "cta",
+     "offset": 3.6
+    },
+    "az": 21.48,
+    "el": 8,
+    "dist": 54,
+    "target": [
+     8.9,
+     6.9,
+     -1.2
+    ],
+    "fov": 16.5,
+    "dur": 1.4,
+    "drift": 1.2,
+    "cut": true
+   }
+  ],
+  "light": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "mood": "day"
+   },
+   {
+    "at": {
+     "line": "L5",
+     "word": "With",
+     "offset": -0.2
+    },
+    "mood": "dusk",
+    "dur": 1.0
+   },
+   {
+    "at": {
+     "line": "L5",
+     "word": "starves"
+    },
+    "mood": "gloom",
+    "dur": 1.8
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "it.",
+     "offset": 0.45
+    },
+    "mood": "day",
+    "dur": 0.8
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "slow",
+     "offset": -0.2
+    },
+    "mood": "winter",
+    "dur": 0.8
+   },
+   {
+    "at": {
+     "line": "L12",
+     "word": "Run",
+     "offset": -0.2
+    },
+    "mood": "day",
+    "dur": 0.6
+   },
+   {
+    "at": {
+     "line": "L15",
+     "word": "bare,"
+    },
+    "mood": "gloom",
+    "dur": 0.8
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Grimmaw"
+    },
+    "mood": "day",
+    "dur": 0.9
+   },
+   {
+    "at": {
+     "line": "L17",
+     "word": "Don't"
+    },
+    "mood": "dusk",
+    "dur": 2.0
+   },
+   {
+    "at": {
+     "shot": "cta",
+     "offset": 3.6
+    },
+    "mood": "day",
+    "dur": 0.1
+   }
+  ],
+  "herd": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     120
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "run."
+     },
+     120
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "everywhere.",
+      "offset": 0.35
+     },
+     116
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "three:",
+      "offset": 0.3
+     },
+     64,
+     "linear"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "five:",
+      "offset": 0.15
+     },
+     9,
+     "linear"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "gone.",
+      "offset": 0.1
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "it.",
+      "offset": 0.4
+     },
+     0
+    ],
+    [
+     {
+      "line": "L7",
+      "word": "Real",
+      "offset": 0.15
+     },
+     120,
+     "out"
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "breeds"
+     },
+     120
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "eaten.",
+      "offset": 0.3
+     },
+     175,
+     "out"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.2
+     },
+     175
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.6
+     },
+     150
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.1
+     },
+     122
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.6
+     },
+     118
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 2.1
+     },
+     142
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 2.6
+     },
+     186
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 3.1
+     },
+     196
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 3.6
+     },
+     172
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 4.1
+     },
+     158
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "The"
+     },
+     160
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "boom,",
+      "offset": 0.35
+     },
+     380,
+     "out"
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "bare,",
+      "offset": 0.2
+     },
+     372
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "starve.",
+      "offset": 0.35
+     },
+     28,
+     "in"
+    ],
+    [
+     {
+      "line": "L16",
+      "word": "Grimmaw"
+     },
+     28
+    ],
+    [
+     {
+      "line": "L16",
+      "word": "together.",
+      "offset": 0.2
+     },
+     150,
+     "out"
+    ],
+    [
+     {
+      "line": "L18",
+      "word": "Share",
+      "offset": 0.6
+     },
+     150
+    ],
+    [
+     {
+      "shot": "cta",
+      "offset": 3.0
+     },
+     120,
+     "linear"
+    ]
+   ],
+   "max": 380,
+   "base": 120,
+   "centers": [
+    [
+     13,
+     -6
+    ],
+    [
+     15,
+     3
+    ],
+    [
+     6,
+     -12
+    ],
+    [
+     3,
+     -16
+    ],
+    [
+     17,
+     -2
+    ],
+    [
+     9,
+     -9
+    ],
+    [
+     14,
+     9
+    ]
+   ]
+  },
+  "pred": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L5",
+     "word": "starves",
+     "offset": 0.3
+    },
+    1
+   ],
+   [
+    {
+     "line": "L5",
+     "word": "starves",
+     "offset": 0.5
+    },
+    0,
+    "step"
+   ],
+   [
+    {
+     "line": "L6",
+     "word": "it.",
+     "offset": 0.45
+    },
+    0
+   ],
+   [
+    {
+     "line": "L6",
+     "word": "it.",
+     "offset": 0.55
+    },
+    1,
+    "step"
+   ],
+   [
+    {
+     "line": "L9",
+     "word": "Grimmaw",
+     "offset": 0.1
+    },
+    1
+   ],
+   [
+    {
+     "line": "L9",
+     "word": "Grimmaw",
+     "offset": 0.2
+    },
+    2,
+    "step"
+   ],
+   [
+    {
+     "line": "L9",
+     "word": "whole"
+    },
+    2
+   ],
+   [
+    {
+     "line": "L9",
+     "word": "whole",
+     "offset": 0.1
+    },
+    3,
+    "step"
+   ],
+   [
+    {
+     "line": "L11",
+     "word": "cub",
+     "offset": -0.05
+    },
+    3
+   ],
+   [
+    {
+     "line": "L11",
+     "word": "cub",
+     "offset": 0.05
+    },
+    4,
+    "step"
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.15
+    },
+    4
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.25
+    },
+    3,
+    "step"
+   ],
+   [
+    {
+     "line": "L13",
+     "word": "and"
+    },
+    3
+   ],
+   [
+    {
+     "line": "L13",
+     "word": "and",
+     "offset": 0.1
+    },
+    2,
+    "step"
+   ],
+   [
+    {
+     "line": "L13",
+     "word": "but",
+     "offset": 0.1
+    },
+    2
+   ],
+   [
+    {
+     "line": "L13",
+     "word": "but",
+     "offset": 0.2
+    },
+    3,
+    "step"
+   ],
+   [
+    {
+     "line": "L14",
+     "word": "Delete",
+     "offset": 0.1
+    },
+    3
+   ],
+   [
+    {
+     "line": "L14",
+     "word": "Delete",
+     "offset": 0.5
+    },
+    0,
+    "linear"
+   ],
+   [
+    {
+     "line": "L16",
+     "word": "Grimmaw"
+    },
+    0
+   ],
+   [
+    {
+     "line": "L16",
+     "word": "Grimmaw",
+     "offset": 0.35
+    },
+    3,
+    "linear"
+   ]
+  ],
+  "predators": [
+   {
+    "id": "g1",
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 8.0,
+      "z": -1.0,
+      "state": "idle",
+      "face": 10
+     },
+     {
+      "at": {
+       "line": "L2",
+       "word": "This"
+      },
+      "x": 9.6,
+      "z": -1.8,
+      "state": "walk",
+      "dur": 2.2
+     },
+     {
+      "at": {
+       "line": "L2",
+       "word": "moves.",
+       "offset": 0.4
+      },
+      "x": 9.6,
+      "z": -1.8,
+      "state": "idle",
+      "face": 200
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 0.15
+      },
+      "x": 11,
+      "z": -6,
+      "state": "walk",
+      "dur": 0.55
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 0.73
+      },
+      "x": 6,
+      "z": -11,
+      "state": "walk",
+      "dur": 0.55
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 1.31
+      },
+      "x": 3,
+      "z": -15,
+      "state": "walk",
+      "dur": 0.55
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 1.89
+      },
+      "x": 9,
+      "z": -9,
+      "state": "walk",
+      "dur": 0.55
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 2.47
+      },
+      "x": 13,
+      "z": 0,
+      "state": "walk",
+      "dur": 0.55
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 3.05
+      },
+      "x": 10,
+      "z": 6,
+      "state": "walk",
+      "dur": 0.55
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 3.63
+      },
+      "x": 14,
+      "z": 3,
+      "state": "walk",
+      "dur": 0.55
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 4.21
+      },
+      "x": 8,
+      "z": -3,
+      "state": "walk",
+      "dur": 0.55
+     },
+     {
+      "at": {
+       "line": "L5",
+       "word": "With",
+       "offset": -0.1
+      },
+      "x": 7.0,
+      "z": -5.0,
+      "state": "walk",
+      "dur": 1.5
+     },
+     {
+      "at": {
+       "line": "L5",
+       "word": "starves"
+      },
+      "x": 7.0,
+      "z": -5.0,
+      "state": "lie"
+     },
+     {
+      "at": {
+       "line": "L6",
+       "word": "A",
+       "offset": 0.15
+      },
+      "x": 7.0,
+      "z": -5.0,
+      "state": "dissolve"
+     },
+     {
+      "at": {
+       "line": "L6",
+       "word": "rule"
+      },
+      "x": 7.0,
+      "z": -5.0,
+      "state": "hidden"
+     },
+     {
+      "at": {
+       "line": "L6",
+       "word": "it.",
+       "offset": 0.45
+      },
+      "x": 8.0,
+      "z": -1.0,
+      "state": "appear",
+      "face": 10
+     },
+     {
+      "at": {
+       "line": "L7",
+       "word": "Real",
+       "offset": 0.2
+      },
+      "x": 8.0,
+      "z": -1.0,
+      "state": "idle",
+      "face": 10
+     },
+     {
+      "at": {
+       "line": "L9",
+       "word": "Two:",
+       "offset": -0.2
+      },
+      "x": 10.5,
+      "z": -2.2,
+      "state": "walk",
+      "dur": 1.1
+     },
+     {
+      "at": {
+       "line": "L9",
+       "word": "valley.",
+       "offset": 0.1
+      },
+      "x": 10.5,
+      "z": -2.2,
+      "state": "idle",
+      "face": 160
+     },
+     {
+      "at": {
+       "line": "L10",
+       "word": "energy.",
+       "offset": 0.1
+      },
+      "x": 1.0,
+      "z": -5.5,
+      "state": "walk",
+      "dur": 2.0
+     },
+     {
+      "at": {
+       "line": "L10",
+       "word": "sleeps"
+      },
+      "x": 1.0,
+      "z": -5.5,
+      "state": "sleep",
+      "face": 70
+     },
+     {
+      "at": {
+       "line": "L12",
+       "word": "Run",
+       "offset": 0.1
+      },
+      "x": 1.0,
+      "z": -5.5,
+      "state": "idle",
+      "face": 70
+     },
+     {
+      "at": {
+       "line": "L12",
+       "word": "Run",
+       "offset": 0.25
+      },
+      "x": 12,
+      "z": -4,
+      "state": "walk",
+      "dur": 0.58
+     },
+     {
+      "at": {
+       "line": "L12",
+       "word": "Run",
+       "offset": 0.87
+      },
+      "x": 9,
+      "z": -6,
+      "state": "walk",
+      "dur": 0.58
+     },
+     {
+      "at": {
+       "line": "L12",
+       "word": "Run",
+       "offset": 1.49
+      },
+      "x": 13,
+      "z": 1,
+      "state": "walk",
+      "dur": 0.58
+     },
+     {
+      "at": {
+       "line": "L12",
+       "word": "Run",
+       "offset": 2.11
+      },
+      "x": 10,
+      "z": -1,
+      "state": "walk",
+      "dur": 0.58
+     },
+     {
+      "at": {
+       "line": "L12",
+       "word": "Run",
+       "offset": 2.73
+      },
+      "x": 14,
+      "z": -3,
+      "state": "walk",
+      "dur": 0.58
+     },
+     {
+      "at": {
+       "line": "L12",
+       "word": "Run",
+       "offset": 3.35
+      },
+      "x": 9,
+      "z": 1,
+      "state": "walk",
+      "dur": 0.58
+     },
+     {
+      "at": {
+       "line": "L14",
+       "word": "Rule"
+      },
+      "x": 10.0,
+      "z": -1.0,
+      "state": "walk",
+      "dur": 0.6
+     },
+     {
+      "at": {
+       "line": "L14",
+       "word": "Delete",
+       "offset": 0.1
+      },
+      "x": 10.0,
+      "z": -1.0,
+      "state": "dissolve"
+     },
+     {
+      "at": {
+       "line": "L14",
+       "word": "monster.",
+       "offset": 0.6
+      },
+      "x": 10.0,
+      "z": -1.0,
+      "state": "hidden"
+     },
+     {
+      "at": {
+       "line": "L16",
+       "word": "Grimmaw"
+      },
+      "x": 11.0,
+      "z": -2.0,
+      "state": "appear",
+      "face": 200
+     },
+     {
+      "at": {
+       "line": "L16",
+       "word": "together.",
+       "offset": 0.2
+      },
+      "x": 11.0,
+      "z": -2.0,
+      "state": "idle",
+      "face": 200
+     },
+     {
+      "at": {
+       "line": "L17",
+       "word": "Design"
+      },
+      "x": 9.0,
+      "z": -1.5,
+      "state": "walk",
+      "dur": 2.5
+     },
+     {
+      "at": {
+       "shot": "cta",
+       "offset": 3.2
+      },
+      "x": 8.0,
+      "z": -1.0,
+      "state": "idle",
+      "face": 10
+     }
+    ]
+   },
+   {
+    "id": "g2",
+    "keys": [
+     {
+      "at": {
+       "line": "L9",
+       "word": "One",
+       "offset": 0.1
+      },
+      "x": 4.0,
+      "z": -14.0,
+      "state": "hidden"
+     },
+     {
+      "at": {
+       "line": "L9",
+       "word": "Grimmaw",
+       "offset": 0.1
+      },
+      "x": 4.0,
+      "z": -14.0,
+      "state": "appear",
+      "face": 300
+     },
+     {
+      "at": {
+       "line": "L9",
+       "word": "needs",
+       "offset": 0.4
+      },
+      "x": 4.0,
+      "z": -14.0,
+      "state": "idle",
+      "face": 300
+     },
+     {
+      "at": {
+       "line": "L12",
+       "word": "Run",
+       "offset": 0.3
+      },
+      "x": 6.0,
+      "z": -12.0,
+      "state": "walk",
+      "dur": 0.55
+     },
+     {
+      "at": {
+       "line": "L12",
+       "word": "Run",
+       "offset": 0.9
+      },
+      "x": 2.0,
+      "z": -13.0,
+      "state": "walk",
+      "dur": 0.55
+     },
+     {
+      "at": {
+       "line": "L12",
+       "word": "Run",
+       "offset": 1.5
+      },
+      "x": 5.0,
+      "z": -16.0,
+      "state": "walk",
+      "dur": 0.55
+     },
+     {
+      "at": {
+       "line": "L12",
+       "word": "Run",
+       "offset": 2.1
+      },
+      "x": 3.0,
+      "z": -15.0,
+      "state": "walk",
+      "dur": 0.55
+     },
+     {
+      "at": {
+       "line": "L12",
+       "word": "Run",
+       "offset": 2.7
+      },
+      "x": 6.0,
+      "z": -14.0,
+      "state": "walk",
+      "dur": 0.55
+     },
+     {
+      "at": {
+       "line": "L12",
+       "word": "Run",
+       "offset": 3.3
+      },
+      "x": 4.0,
+      "z": -12.0,
+      "state": "walk",
+      "dur": 0.55
+     },
+     {
+      "at": {
+       "line": "L14",
+       "word": "Delete",
+       "offset": 0.22
+      },
+      "x": 4.0,
+      "z": -12.0,
+      "state": "dissolve"
+     },
+     {
+      "at": {
+       "line": "L14",
+       "word": "monster.",
+       "offset": 0.7
+      },
+      "x": 4.0,
+      "z": -12.0,
+      "state": "hidden"
+     },
+     {
+      "at": {
+       "line": "L16",
+       "word": "Grimmaw",
+       "offset": 0.15
+      },
+      "x": 4.0,
+      "z": -14.0,
+      "state": "appear",
+      "face": 250
+     },
+     {
+      "at": {
+       "line": "L16",
+       "word": "together.",
+       "offset": 0.3
+      },
+      "x": 4.0,
+      "z": -14.0,
+      "state": "idle",
+      "face": 250
+     },
+     {
+      "at": {
+       "shot": "cta",
+       "offset": 3.2
+      },
+      "x": 4.0,
+      "z": -14.0,
+      "state": "hidden"
+     }
+    ]
+   },
+   {
+    "id": "g3",
+    "keys": [
+     {
+      "at": {
+       "line": "L9",
+       "word": "One",
+       "offset": 0.1
+      },
+      "x": 10.0,
+      "z": 12.0,
+      "state": "hidden"
+     },
+     {
+      "at": {
+       "line": "L9",
+       "word": "whole"
+      },
+      "x": 10.0,
+      "z": 12.0,
+      "state": "appear",
+      "face": 120
+     },
+     {
+      "at": {
+       "line": "L9",
+       "word": "valley.",
+       "offset": 0.5
+      },
+      "x": 10.0,
+      "z": 12.0,
+      "state": "idle",
+      "face": 120
+     },
+     {
+      "at": {
+       "line": "L12",
+       "word": "Run",
+       "offset": 0.3
+      },
+      "x": 8.0,
+      "z": 11.0,
+      "state": "walk",
+      "dur": 0.5
+     },
+     {
+      "at": {
+       "line": "L12",
+       "word": "Run",
+       "offset": 0.85
+      },
+      "x": 11.0,
+      "z": 14.0,
+      "state": "walk",
+      "dur": 0.5
+     },
+     {
+      "at": {
+       "line": "L12",
+       "word": "Run",
+       "offset": 1.4
+      },
+      "x": 12.0,
+      "z": 11.0,
+      "state": "walk",
+      "dur": 0.5
+     },
+     {
+      "at": {
+       "line": "L13",
+       "word": "and"
+      },
+      "x": 12.0,
+      "z": 11.0,
+      "state": "despawn"
+     },
+     {
+      "at": {
+       "line": "L13",
+       "word": "but",
+       "offset": 0.1
+      },
+      "x": 10.0,
+      "z": 12.0,
+      "state": "spawn",
+      "face": 90
+     },
+     {
+      "at": {
+       "line": "L13",
+       "word": "vanishes.",
+       "offset": 0.2
+      },
+      "x": 9.0,
+      "z": 13.0,
+      "state": "walk",
+      "dur": 0.6
+     },
+     {
+      "at": {
+       "line": "L14",
+       "word": "Delete",
+       "offset": 0.34
+      },
+      "x": 9.0,
+      "z": 13.0,
+      "state": "dissolve"
+     },
+     {
+      "at": {
+       "line": "L14",
+       "word": "monster.",
+       "offset": 0.8
+      },
+      "x": 9.0,
+      "z": 13.0,
+      "state": "hidden"
+     },
+     {
+      "at": {
+       "line": "L16",
+       "word": "Grimmaw",
+       "offset": 0.3
+      },
+      "x": 10.0,
+      "z": 12.0,
+      "state": "appear",
+      "face": 150
+     },
+     {
+      "at": {
+       "line": "L16",
+       "word": "together.",
+       "offset": 0.4
+      },
+      "x": 10.0,
+      "z": 12.0,
+      "state": "idle",
+      "face": 150
+     },
+     {
+      "at": {
+       "shot": "cta",
+       "offset": 3.2
+      },
+      "x": 10.0,
+      "z": 12.0,
+      "state": "hidden"
+     }
+    ]
+   },
+   {
+    "id": "cub",
+    "scale": 0.45,
+    "keys": [
+     {
+      "at": {
+       "line": "L11",
+       "word": "One"
+      },
+      "x": 2.6,
+      "z": -4.1,
+      "state": "hidden"
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "cub",
+       "offset": -0.05
+      },
+      "x": 2.6,
+      "z": -4.1,
+      "state": "spawn",
+      "face": 40
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "winters.",
+       "offset": 0.3
+      },
+      "x": 2.6,
+      "z": -4.1,
+      "state": "idle",
+      "face": 40
+     },
+     {
+      "at": {
+       "line": "L12",
+       "word": "Run",
+       "offset": 0.15
+      },
+      "x": 2.6,
+      "z": -4.1,
+      "state": "despawn"
+     },
+     {
+      "at": {
+       "line": "L12",
+       "word": "again.",
+       "offset": 0.3
+      },
+      "x": 2.6,
+      "z": -4.1,
+      "state": "hidden"
+     }
+    ]
+   }
+  ],
+  "layers": {
+   "graze": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "strip",
+      "offset": -0.3
+     },
+     0
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "bare,",
+      "offset": 0.25
+     },
+     1,
+     "linear"
+    ],
+    [
+     {
+      "line": "L16",
+      "word": "Grimmaw"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L16",
+      "word": "together.",
+      "offset": 0.1
+     },
+     0,
+     "linear"
+    ]
+   ],
+   "forest": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "meadow",
+      "offset": -0.2
+     },
+     1
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "starve.",
+      "offset": 0.2
+     },
+     0.3,
+     "linear"
+    ],
+    [
+     {
+      "line": "L16",
+      "word": "Grimmaw"
+     },
+     0.3
+    ],
+    [
+     {
+      "line": "L16",
+      "word": "together.",
+      "offset": 0.2
+     },
+     1,
+     "linear"
+    ]
+   ],
+   "snow": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "slow",
+      "offset": -0.2
+     },
+     0
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "breeding.",
+      "offset": 0.2
+     },
+     0.95,
+     "linear"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "winters.",
+      "offset": 0.4
+     },
+     0.95
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": -0.2
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.9
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.15
+     },
+     0.6,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.45
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 2.0
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 2.25
+     },
+     0.6,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 2.55
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 3.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 3.35
+     },
+     0.6,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 3.65
+     },
+     0,
+     "linear"
+    ]
+   ],
+   "rings": [
+    {
+     "x": 11.0,
+     "z": -2.0,
+     "r": 7.5,
+     "on": {
+      "line": "L9",
+      "word": "territory."
+     },
+     "off": {
+      "line": "L10",
+      "word": "Three:",
+      "offset": -0.1
+     },
+     "color": "#f4c46e"
+    },
+    {
+     "x": 4.0,
+     "z": -14.0,
+     "r": 6.5,
+     "on": {
+      "line": "L9",
+      "word": "Grimmaw",
+      "offset": 0.1
+     },
+     "off": {
+      "line": "L10",
+      "word": "Three:",
+      "offset": -0.1
+     },
+     "color": "#f08a4b"
+    },
+    {
+     "x": 10.0,
+     "z": 12.0,
+     "r": 6.0,
+     "on": {
+      "line": "L9",
+      "word": "whole"
+     },
+     "off": {
+      "line": "L10",
+      "word": "Three:",
+      "offset": -0.1
+     },
+     "color": "#f08a4b"
+    }
+   ],
+   "ripple": [
+    {
+     "shot": "hook",
+     "offset": 0.05
+    },
+    {
+     "line": "L3",
+     "word": "run."
+    },
+    {
+     "line": "L12",
+     "word": "Run"
+    },
+    {
+     "line": "L15",
+     "word": "The"
+    },
+    {
+     "line": "L16",
+     "word": "together."
+    }
+   ]
+  }
+ },
+ "music": {
+  "engine": "s2",
+  "key": "D minor, resolving to D major",
+  "bpm": 100,
+  "sections": [
+   {
+    "from": {
+     "shot": "hook"
+    },
+    "chords": [
+     [
+      "D3",
+      "F3",
+      "A3",
+      "D4"
+     ],
+     [
+      "Bb2",
+      "D3",
+      "F3",
+      "Bb3"
+     ]
+    ],
+    "beatsPerChord": 4,
+    "layers": {
+     "pad": 0.6,
+     "arp": 0.7,
+     "arpRate": 8
+    },
+    "level": 0.5
+   },
+   {
+    "from": {
+     "line": "L2",
+     "word": "Let's",
+     "offset": -0.1
+    },
+    "chords": [
+     [
+      "D3",
+      "F3",
+      "A3",
+      "D4"
+     ],
+     [
+      "Bb2",
+      "D3",
+      "F3",
+      "Bb3"
+     ],
+     [
+      "F3",
+      "A3",
+      "C4",
+      "F4"
+     ],
+     [
+      "C3",
+      "E3",
+      "G3",
+      "C4"
+     ]
+    ],
+    "beatsPerChord": 4,
+    "layers": {
+     "pad": 0.5,
+     "arp": 0.8,
+     "arpRate": 8,
+     "bass": 0.6,
+     "kick": "heart"
+    },
+    "level": 0.55
+   },
+   {
+    "from": {
+     "line": "L3",
+     "word": "run."
+    },
+    "chords": [
+     [
+      "D3",
+      "F3",
+      "A3",
+      "D4"
+     ],
+     [
+      "D3",
+      "F3",
+      "A3",
+      "D4"
+     ],
+     [
+      "Bb2",
+      "D3",
+      "F3",
+      "Bb3"
+     ],
+     [
+      "A2",
+      "C#3",
+      "E3",
+      "A3"
+     ]
+    ],
+    "beatsPerChord": 2,
+    "layers": {
+     "pad": 0.3,
+     "arp": 1.0,
+     "arpRate": 16,
+     "bass": 1.0,
+     "bassEighths": true,
+     "kick": "four",
+     "hats": 16,
+     "clap": 0.6
+    },
+    "level": 0.66,
+    "bright": 1.3
+   },
+   {
+    "from": {
+     "line": "L5",
+     "word": "With",
+     "offset": -0.2
+    },
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "D3",
+      "F3"
+     ]
+    ],
+    "beatsPerChord": 8,
+    "layers": {
+     "pad": 0.6,
+     "kick": "heart"
+    },
+    "level": 0.42,
+    "dark": true
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "A"
+    },
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "D3"
+     ]
+    ],
+    "beatsPerChord": 8,
+    "layers": {
+     "pad": 0.4
+    },
+    "level": 0.3,
+    "dark": true
+   },
+   {
+    "from": {
+     "line": "L7",
+     "word": "Real",
+     "offset": -0.1
+    },
+    "chords": [
+     [
+      "D3",
+      "F3",
+      "A3",
+      "D4"
+     ],
+     [
+      "C3",
+      "E3",
+      "G3",
+      "C4"
+     ],
+     [
+      "Bb2",
+      "D3",
+      "F3",
+      "Bb3"
+     ],
+     [
+      "A2",
+      "C#3",
+      "E3",
+      "A3"
+     ]
+    ],
+    "beatsPerChord": 2,
+    "layers": {
+     "pad": 0.5,
+     "arp": 0.7,
+     "arpRate": 8
+    },
+    "level": 0.5
+   },
+   {
+    "from": {
+     "line": "L8",
+     "word": "One:"
+    },
+    "chords": [
+     [
+      "F3",
+      "A3",
+      "C4",
+      "F4"
+     ],
+     [
+      "C3",
+      "E3",
+      "G3",
+      "C4"
+     ],
+     [
+      "D3",
+      "F3",
+      "A3",
+      "D4"
+     ],
+     [
+      "Bb2",
+      "D3",
+      "F3",
+      "Bb3"
+     ]
+    ],
+    "beatsPerChord": 4,
+    "layers": {
+     "pad": 0.5,
+     "arp": 0.7,
+     "arpRate": 8,
+     "bass": 0.7
+    },
+    "level": 0.55
+   },
+   {
+    "from": {
+     "line": "L9",
+     "word": "Two:"
+    },
+    "chords": [
+     [
+      "F3",
+      "A3",
+      "C4",
+      "F4"
+     ],
+     [
+      "C3",
+      "E3",
+      "G3",
+      "C4"
+     ],
+     [
+      "D3",
+      "F3",
+      "A3",
+      "D4"
+     ],
+     [
+      "Bb2",
+      "D3",
+      "F3",
+      "Bb3"
+     ]
+    ],
+    "beatsPerChord": 4,
+    "layers": {
+     "pad": 0.5,
+     "arp": 0.7,
+     "arpRate": 8,
+     "bass": 0.7,
+     "kick": "half"
+    },
+    "level": 0.56
+   },
+   {
+    "from": {
+     "line": "L10",
+     "word": "Three:"
+    },
+    "chords": [
+     [
+      "F3",
+      "A3",
+      "C4",
+      "F4"
+     ],
+     [
+      "C3",
+      "E3",
+      "G3",
+      "C4"
+     ],
+     [
+      "D3",
+      "F3",
+      "A3",
+      "D4"
+     ],
+     [
+      "Bb2",
+      "D3",
+      "F3",
+      "Bb3"
+     ]
+    ],
+    "beatsPerChord": 4,
+    "layers": {
+     "pad": 0.5,
+     "arp": 0.8,
+     "arpRate": 8,
+     "bass": 0.7,
+     "kick": "half",
+     "hats": 8
+    },
+    "level": 0.58
+   },
+   {
+    "from": {
+     "line": "L11",
+     "word": "Four:"
+    },
+    "chords": [
+     [
+      "F3",
+      "A3",
+      "C4",
+      "F4"
+     ],
+     [
+      "C3",
+      "E3",
+      "G3",
+      "C4"
+     ],
+     [
+      "D3",
+      "F3",
+      "A3",
+      "D4"
+     ],
+     [
+      "Bb2",
+      "D3",
+      "F3",
+      "Bb3"
+     ]
+    ],
+    "beatsPerChord": 4,
+    "layers": {
+     "pad": 0.6,
+     "arp": 0.8,
+     "arpRate": 8,
+     "bass": 0.7,
+     "kick": "half",
+     "hats": 8,
+     "bells": 0.8
+    },
+    "level": 0.6
+   },
+   {
+    "from": {
+     "line": "L12",
+     "word": "Run"
+    },
+    "chords": [
+     [
+      "F3",
+      "A3",
+      "C4",
+      "F4"
+     ],
+     [
+      "C3",
+      "E3",
+      "G3",
+      "C4"
+     ],
+     [
+      "Bb2",
+      "D3",
+      "F3",
+      "Bb3"
+     ],
+     [
+      "F3",
+      "A3",
+      "C4",
+      "F4"
+     ]
+    ],
+    "beatsPerChord": 2,
+    "layers": {
+     "pad": 0.35,
+     "arp": 1.0,
+     "arpRate": 16,
+     "bass": 1.0,
+     "bassEighths": true,
+     "kick": "four",
+     "hats": 16,
+     "clap": 0.8
+    },
+    "level": 0.7,
+    "bright": 1.4
+   },
+   {
+    "from": {
+     "line": "L14",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "chords": [
+     [
+      "D3",
+      "F3",
+      "A3",
+      "D4"
+     ],
+     [
+      "Bb2",
+      "D3",
+      "F3",
+      "Bb3"
+     ],
+     [
+      "G2",
+      "Bb2",
+      "D3",
+      "G3"
+     ],
+     [
+      "A2",
+      "C#3",
+      "E3",
+      "A3"
+     ]
+    ],
+    "beatsPerChord": 2,
+    "layers": {
+     "pad": 0.4,
+     "arp": 0.8,
+     "arpRate": 16,
+     "bass": 0.8,
+     "kick": "one"
+    },
+    "level": 0.58,
+    "bright": 0.6,
+    "dark": true
+   },
+   {
+    "from": {
+     "line": "L15",
+     "word": "starve.",
+     "offset": -0.3
+    },
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "D3",
+      "F3"
+     ]
+    ],
+    "beatsPerChord": 8,
+    "layers": {
+     "pad": 0.5,
+     "kick": "heart"
+    },
+    "level": 0.4,
+    "dark": true
+   },
+   {
+    "from": {
+     "line": "L16",
+     "word": "Rule"
+    },
+    "chords": [
+     [
+      "Bb2",
+      "D3",
+      "F3",
+      "Bb3"
+     ],
+     [
+      "F3",
+      "A3",
+      "C4",
+      "F4"
+     ],
+     [
+      "C3",
+      "E3",
+      "G3",
+      "C4"
+     ],
+     [
+      "D3",
+      "F#3",
+      "A3",
+      "D4"
+     ]
+    ],
+    "beatsPerChord": 2,
+    "layers": {
+     "pad": 0.5,
+     "arp": 0.8,
+     "arpRate": 8,
+     "bass": 0.7,
+     "kick": "half",
+     "bells": 0.8
+    },
+    "level": 0.6
+   },
+   {
+    "from": {
+     "line": "L17",
+     "word": "Don't",
+     "offset": -0.2
+    },
+    "chords": [
+     [
+      "D3",
+      "F#3",
+      "A3",
+      "D4"
+     ],
+     [
+      "G2",
+      "B2",
+      "D3",
+      "G3"
+     ],
+     [
+      "B2",
+      "D3",
+      "F#3",
+      "B3"
+     ],
+     [
+      "A2",
+      "C#3",
+      "E3",
+      "A3"
+     ]
+    ],
+    "beatsPerChord": 4,
+    "layers": {
+     "pad": 0.6,
+     "arp": 0.6,
+     "arpRate": 8,
+     "bass": 0.5,
+     "bells": 0.5
+    },
+    "level": 0.55
+   },
+   {
+    "from": {
+     "line": "L18",
+     "word": "Share"
+    },
+    "chords": [
+     [
+      "G2",
+      "B2",
+      "D3",
+      "G3"
+     ],
+     [
+      "D3",
+      "F#3",
+      "A3",
+      "D4"
+     ]
+    ],
+    "beatsPerChord": 4,
+    "layers": {
+     "pad": 0.6,
+     "arp": 0.5,
+     "arpRate": 8,
+     "bells": 0.4
+    },
+    "level": 0.5
+   }
+  ],
+  "drones": [
+   {
+    "from": {
+     "line": "L5",
+     "word": "With",
+     "offset": -0.2
+    },
+    "to": {
+     "line": "L7",
+     "word": "Real"
+    },
+    "notes": [
+     "D1",
+     "A1"
+    ],
+    "level": 1.0
+   }
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L6",
+     "word": "It"
+    },
+    "pre": 0.2,
+    "dur": 1.4,
+    "gain": 0.4
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L14",
+     "word": "Delete"
+    },
+    "pre": 0.15,
+    "dur": 1.0,
+    "gain": 0.5
+   }
+  ],
+  "fadeOut": {
+   "at": {
+    "shot": "cta",
+    "offset": 3.5
+   },
+   "dur": 1.5
+  }
+ },
+ "mix": {
+  "musicLufs": -28.0,
+  "duckDb": -6.0,
+  "sfxLufs": -29.0
+ },
+ "metadata": {
+  "youtube": {
+   "title": "Don't Design a Monster. Design an Ecosystem. (Worldbuilding)",
+   "titleAlternate": "Why your apex predator would starve",
+   "description": "If your giant predator eats everything, why hasn't everything gone extinct?\n\nWe ran it. The Grimmaw eats anything that moves. By year five the mossbacks are gone, and then the Grimmaw starves too. A monster that eats everything doesn't rule your world. It ends it.\n\nReal predators live inside limits: prey that breeds faster than it's eaten, one territory per predator, a big body that hunts rarely and sleeps a lot, and slow breeding. Then the twist: delete the monster, and the grazers strip the meadow bare and starve instead. The predator was holding the island together.\n\nDon't design a monster. Design its place in the world.\n\nShare this with someone designing fantasy monsters.\n\nEpisode 26 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 6: Creatures and Species.\n\n#Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts",
+   "pinnedComment": "Design check: which of the five does your monster break? Prey, range, energy, breeding, or its role? Name the creature and the rule.",
+   "uploadSettings": "Altered or synthetic content: Yes (synthetic narration and an AI-generated creature sprite; the island and creatures are drawn in code). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "Your apex predator would starve \ud83e\udd96 We ran it: it eats everything, then there's nothing left, then it's gone too. 5 rules for a believable monster, and #5 is the twist. #Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts",
+   "pinnedComment": "Which rule does your monster break: prey, range, energy, breeding, or its role?",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "If your giant predator eats everything, why hasn't everything gone extinct?\n\nWe ran it. The Grimmaw eats anything that moves. By year five the mossbacks are gone, and then the Grimmaw starves too. A monster that eats everything doesn't rule your world. It ends it.\n\nReal predators live inside limits: prey that breeds faster than it's eaten, one territory per predator, a big body that hunts rarely and sleeps a lot, and slow breeding. Then the twist: delete the monster, and the grazers strip the meadow bare and starve instead. The predator was holding the island together.\n\nDon't design a monster. Design its place in the world.\n\nShare this with someone designing fantasy monsters.\n\nEpisode 26 of 50. Season 2: The World Engine.\n\n#Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts",
+   "pinnedComment": "What keeps the scariest creature in your world from eating everything? Prey, territory, energy, breeding, or something it's needed for?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "Your monster would starve.\n\nIf your giant predator eats everything, why hasn't everything gone extinct?\n\nWe ran it. The Grimmaw eats anything that moves. By year five the mossbacks are gone, and then the Grimmaw starves too. A monster that eats everything doesn't rule your world. It ends it.\n\nReal predators live inside limits: prey that breeds faster than it's eaten, one territory per predator, a big body that hunts rarely and sleeps a lot, and slow breeding. Then the twist: delete the monster, and the grazers strip the meadow bare and starve instead. The predator was holding the island together.\n\nDon't design a monster. Design its place in the world.\n\nShare this with someone designing fantasy monsters.\n\nEpisode 26 of 50 \u00b7 Worldcraft Shorts \u00b7 Season 2\n\n#Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts",
+   "hookCheck": "First 26 characters: 'Your monster would starve.'",
+   "pinnedComment": "Save the five-rule checklist, then tell us: which rule is your monster missing?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  }
+ }
+}

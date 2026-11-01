@@ -1703,3 +1703,85 @@ Source of truth: `episodes/ep25/episode.json` → `metadata`. The AI label goes 
 - **Hook check:** First 21 characters: 'Unbeatable is boring.'
 - **Pinned comment:** Name a caster from your world and the one thing that stops them. How would a clever hero use it?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 26 captions (ready to paste) — Season 2 relaunch
+
+Source of truth: `episodes/ep26/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep26/Worldcraft_Short_E26_cover.jpg`. Subtitles: `episodes/ep26/ep26.srt`.
+
+**Disclosure.** This is the first World Engine episode, and it's mostly code: the island, the creatures, the HUD and every number are drawn and simulated in code. Two things are AI-made:
+- the narration (Kokoro synthetic voice);
+- the field card's Grimmaw sprite (Figma `generate_image`, re-gridded by `pipeline/pixelate.py`).
+
+YouTube's rules only require disclosure for realistic content, and this is clearly animated. Meta names realistic AI voice-overs as label-worthy. So, per series policy, the AI label stays on everywhere (research: `docs/SEASON2_RESEARCH.md` §1). The episode shows no kills: prey loss is a falling counter, and the starving predator lies down, greys and dissolves out of the simulation.
+
+**The 60-second format.** Sixty seconds is fine on every platform (Shorts allow up to 3 minutes since Oct 2024). The video loops: the last 0.7 s returns to the exact opening frame.
+
+### YouTube Shorts
+- **Title** (60/100 chars): `Don't Design a Monster. Design an Ecosystem. (Worldbuilding)`
+- **Alternate title** (35 chars): `Why your apex predator would starve`
+- **Description:**
+
+> If your giant predator eats everything, why hasn't everything gone extinct?
+>
+> We ran it. The Grimmaw eats anything that moves. By year five the mossbacks are gone, and then the Grimmaw starves too. A monster that eats everything doesn't rule your world. It ends it.
+>
+> Real predators live inside limits: prey that breeds faster than it's eaten, one territory per predator, a big body that hunts rarely and sleeps a lot, and slow breeding. Then the twist: delete the monster, and the grazers strip the meadow bare and starve instead. The predator was holding the island together.
+>
+> Don't design a monster. Design its place in the world.
+>
+> Share this with someone designing fantasy monsters.
+>
+> Episode 26 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 6: Creatures and Species.
+>
+> #Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts
+
+- **Pinned comment:** Design check: which of the five does your monster break? Prey, range, energy, breeding, or its role? Name the creature and the rule.
+- **Upload settings:** Altered or synthetic content: Yes (synthetic narration and an AI-generated creature sprite; the island and creatures are drawn in code). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (244 chars): `Your apex predator would starve 🦖 We ran it: it eats everything, then there's nothing left, then it's gone too. 5 rules for a believable monster, and #5 is the twist. #Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts`
+- **Pinned comment:** Which rule does your monster break: prey, range, energy, breeding, or its role?
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> If your giant predator eats everything, why hasn't everything gone extinct?
+>
+> We ran it. The Grimmaw eats anything that moves. By year five the mossbacks are gone, and then the Grimmaw starves too. A monster that eats everything doesn't rule your world. It ends it.
+>
+> Real predators live inside limits: prey that breeds faster than it's eaten, one territory per predator, a big body that hunts rarely and sleeps a lot, and slow breeding. Then the twist: delete the monster, and the grazers strip the meadow bare and starve instead. The predator was holding the island together.
+>
+> Don't design a monster. Design its place in the world.
+>
+> Share this with someone designing fantasy monsters.
+>
+> Episode 26 of 50. Season 2: The World Engine.
+>
+> #Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts
+
+- **Pinned comment:** What keeps the scariest creature in your world from eating everything? Prey, territory, energy, breeding, or something it's needed for?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Your monster would starve.
+>
+> If your giant predator eats everything, why hasn't everything gone extinct?
+>
+> We ran it. The Grimmaw eats anything that moves. By year five the mossbacks are gone, and then the Grimmaw starves too. A monster that eats everything doesn't rule your world. It ends it.
+>
+> Real predators live inside limits: prey that breeds faster than it's eaten, one territory per predator, a big body that hunts rarely and sleeps a lot, and slow breeding. Then the twist: delete the monster, and the grazers strip the meadow bare and starve instead. The predator was holding the island together.
+>
+> Don't design a monster. Design its place in the world.
+>
+> Share this with someone designing fantasy monsters.
+>
+> Episode 26 of 50 · Worldcraft Shorts · Season 2
+>
+> #Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts
+
+- **Hook check:** First 26 characters: 'Your monster would starve.'
+- **Pinned comment:** Save the five-rule checklist, then tell us: which rule is your monster missing?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

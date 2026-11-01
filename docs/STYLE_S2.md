@@ -116,7 +116,7 @@ Full logo (y 268) → `EPISODE NN / 50` (Silkscreen, amber) → title in Cormora
 5. Encodes, all `-c:a copy` and each through `qa.py`:
    - compat: H.264 Main, CRF 20, `+faststart`;
    - download: two-pass at **1,600k** so it stays under 15 MB at 60 s (the copied 256k audio adds about 1.9 MB, and 1,900k would come to about 16.3 MB);
-   - player: CRF 26.
+   - player: two-pass 1,300k (≈12 MB). A CRF-26 copy of a 60 s pixel-art render is about 25 MB, over the asset upload cap.
 6. SRT, storyboard, cover, the 11-section brief, docs, preview page with a Download button, then SendUserFile.
 
 ## Making the next episode

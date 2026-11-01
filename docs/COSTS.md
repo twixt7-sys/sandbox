@@ -345,6 +345,20 @@ On the paid primary stack, with 6 stills: about **$1.10 (₱70)**, or about $2.4
 
 On the paid primary stack, with 4 stills: about **$1.05 (₱67)**, or about $2.20 (₱139) with one retry per asset, plus $6 (₱380) a month for ElevenLabs Starter, at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
+## What Episode 26 actually used (Season 2 relaunch)
+
+| Item | Used | Cash cost |
+|---|---|---|
+| Field card sprite (the Grimmaw) | **Figma AI, 1 generation**: `generate_image` with `gpt-image-2.5-sunburst`, 1536×1024, in the new file "Worldcraft Shorts EP26 art", on the user's Starter plan (`team::1384938462301182142`), approved for EP26. I attempted two more calls (the same prompt on `gpt-image-2.5-flare` and `gemini-3.1-flash-image`, to compare models), but the session's permission check **blocked both before they ran**, so they used no credits. Re-gridded to a 168 px sprite with `pipeline/pixelate.py` | $0 cash (1 of the ~12 generations allowed) |
+| The Isle, the Grimmaw and mossback models, the herd simulation, HUD, graphs, field cards, stamps, end card, all type | Remotion + three.js (`@remotion/three`) code, software WebGL (`swangle`) | $0 |
+| Narration | Kokoro-82M (`af_heart`, speed 1.05), 159 words, 51.6 s of speech, 60.3 s total | $0 |
+| Score + SFX (new Season 2 palette) | `pipeline/score_s2.py` | $0 |
+| Fonts (Silkscreen, Pixelify Sans, Inter 900) | Fontsource packages, SIL OFL, self-hosted | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, 1 Figma generation |
+
+On the paid primary stack: no stills are needed any more (the world is code), so the only paid item would be ElevenLabs narration (about 900 characters, inside the $6 (₱380) a month Starter allowance), at ₱63.35 = $1 (BSP, 22 Oct 2026).
+
 ## Alternatives
 
 | Option | Per-episode | Monthly | Comment |

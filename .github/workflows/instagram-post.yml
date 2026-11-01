@@ -8,7 +8,9 @@ name: Instagram daily post
 
 on:
   schedule:
-    - cron: "23 16 * * *" # 16:23 UTC daily = 00:23 Manila, 12:23 New York. GitHub may start it a few minutes late.
+    # 12:23 UTC = 20:23 Manila. GitHub has been starting scheduled runs 3-4 hours late, so posts land
+    # roughly 20:30-midnight Manila. TikTok (tiktok-post.yml) posts right after each scheduled run.
+    - cron: "23 12 * * *"
   workflow_dispatch:
     inputs:
       episode:

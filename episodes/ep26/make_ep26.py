@@ -405,7 +405,7 @@ LESSON = "A creature becomes believable when it has a place in its environment: 
 NOTES = {
     "hook": ("Stop the scroll on a question with the answer already on screen: a giant predator among its prey.",
              "The Grimmaw in profile on the meadow of the Isle, mossbacks grazing around it; WORLD ENGINE boots top-right as the island ripples.",
-             "Hero close (dist 40, el 10, fov 22, az 22), slow drift.", ("kinetic question", "the Grimmaw and herd", "the Isle's peak and the void"),
+             "Long-lens hero shot (fov 16.5 from dist 54, el 8, az 24), slow drift; the last 0.7 s returns to this exact pose.", ("kinetic question", "the Grimmaw and herd", "the Isle's peak and the void"),
              "Day mood; warm key from the south-east, hard pixel shadows.", "IF IT EATS / EVERYTHING then WHY ISN'T / EVERYTHING / EXTINCT?",
              "Continuous camera into the setup.", "Hook: Dm–Bb, pad + 8th arp."),
     "setup": ("Meet the subject and its one dangerous claim, then press RUN.",

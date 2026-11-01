@@ -37,13 +37,13 @@
 
 **Visual:** The Grimmaw in profile on the meadow of the Isle, mossbacks grazing around it; WORLD ENGINE boots top-right as the island ripples.
 
-**Camera:** Hero close (dist 40, el 10, fov 22, az 22), slow drift.
+**Camera:** Long-lens hero shot (fov 16.5 from dist 54, el 8, az 24), slow drift; the last 0.7 s returns to this exact pose.
 
 **Layers:** foreground: kinetic question; midground: the Grimmaw and herd; background: the Isle's peak and the void
 
 **Light / palette / composition:** Day mood; warm key from the south-east, hard pixel shadows.
 
-**On-screen text:** IF IT EATS / EVERYTHING... then WHY ISN'T / EVERYTHING / EXTINCT?
+**On-screen text:** IF IT EATS / EVERYTHING then WHY ISN'T / EVERYTHING / EXTINCT?
 
 **Motion graphics:** `kinetic`, `kinetic`, `sting`
 

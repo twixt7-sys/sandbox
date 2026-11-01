@@ -230,7 +230,7 @@
    "scene": "world",
    "purpose": "Stop the scroll on a question with the answer already on screen: a giant predator among its prey.",
    "visual": "The Grimmaw in profile on the meadow of the Isle, mossbacks grazing around it; WORLD ENGINE boots top-right as the island ripples.",
-   "camera": "Hero close (dist 40, el 10, fov 22, az 22), slow drift.",
+   "camera": "Long-lens hero shot (fov 16.5 from dist 54, el 8, az 24), slow drift; the last 0.7 s returns to this exact pose.",
    "layers": {
     "foreground": "kinetic question",
     "midground": "the Grimmaw and herd",

@@ -208,7 +208,34 @@ Everything is in `docs/SEASON2_RESEARCH.md` (sources read 1 Nov 2026, with unver
 
 ## 6. Final video and verification
 
-**v2 (2 Nov 2026), the current files:**
+**v3 (2 Nov 2026), the current files:**
+- **QA:** `qa.py` **passed** on all four copies, each 61.01 s, −14.0 LUFS, TP −1.4 dB:
+  - master: 51.7 MB;
+  - compat: 44.7 MB;
+  - download: two-pass 1,600k, 14.2 MB;
+  - player: two-pass 1,300k, 11.9 MB.
+- **The loop:** frame 0 against the master's last frame now differs by **about 1.4/255** on average, mostly compression noise (stills: under 0.5). The first v3 render differed by about 16/255, before the sim-time reset and the loop-periodic ambient motion.
+- **Preview page:** version 5, https://claude.ai/artifact/CQMMgqMj4M6J1cjkLtCxRe.
+  - The download reads back byte-identical (sha256 `95f9f1d1…`) and passes `qa.py`.
+  - The player is asset `/_blob/721c63c986e62e85f7b006c3c4c87181`.
+  - Version 4 briefly showed the first v3 render. Its asset and v2's were deleted after being replaced.
+- **Render:** 19 min 7 s (the first v3 render took 18 min 16 s) with `--gl=swangle`. v2 took 12 min; full shadows and ambient life cost about 50 %.
+- **Inspected:**
+  - the contact sheets of both v3 renders;
+  - master frames at 0, 0.3, 50.3, 53.4, 57.07, 58.5, 59.25, 59.6 and 60.4 s, and the last frame (the follow press, the dragon's shadow over the Grimmaw and herd, the title handover, the loop);
+  - stills of every beat after the shadow fix (dusk, gloom, the den and winter all still read).
+- **Sound (measured):**
+  - −14.05 LUFS, voice/music 13.9 LU;
+  - the chime 6–7 LU under the voice and above the music at frame 0, at the lesson card and at the follow press;
+  - the music holds to the loop point with an 80 ms click-free fade; the mix's last 10 ms sit at −41 dB.
+- **Season 1:**
+  - EP24 and EP25 `music.wav`, `sfx.wav` and `mix.wav` rebuild **bit-identical**;
+  - their frame-300 stills are **byte-identical** to the references.
+- **Cover:** `Worldcraft_Short_E26_cover.jpg`, the golden hook at 1.5 s, mid-roar, with the sting.
+- **CI (PR #5):** the `render` check failed at the score step ("No General MIDI SoundFont found"), because the workflows never installed Season 2's FluidSynth + SoundFont. Fixed in `render.yml` and both posting workflows: the packages, `--gl=swangle` for Season 2, timeouts 90 min.
+- **Not verifiable by me:** how the chime, the tease and the dragon pass actually sound. Please listen to the last 8 seconds and the loop into frame 0.
+
+**v2 (2 Nov 2026), superseded:**
 - **QA:** `qa.py` **passed** on the master (49.1 MB), compat (42.2 MB), download (two-pass 1,600k, 14.1 MB) and player (two-pass 1,300k, 11.9 MB). All are 60.35 s, −14.0 LUFS, TP −1.4 dB.
 - **Preview page:** the download copy published on the same page (version 3, https://claude.ai/artifact/CQMMgqMj4M6J1cjkLtCxRe) reads back byte-identical (sha256 `5d3b4d5d…`) and passes `qa.py`. The player is asset `/_blob/bd011c29ae5d5ce855c3ade80b3d42fa`; the v1 player asset was deleted after it was replaced.
 - **Render:** 716 s.

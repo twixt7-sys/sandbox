@@ -27,7 +27,8 @@ concurrency:
 jobs:
   render:
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
+    # Season 2 renders a software-WebGL diorama (about 18 min for 60 s on 4 vCPU), so leave headroom
+    timeout-minutes: 90
     env:
       ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
       HF_HOME: ${{ github.workspace }}/.cache/hf
@@ -43,6 +44,8 @@ jobs:
             [ -z "$EP" ] && EP=$(ls episodes | sort | tail -1)
           fi
           echo "id=$EP" >> "$GITHUB_OUTPUT"
+          # Season 2 (the World Engine) is WebGL: only the software 'swangle' backend gets a context on CPU runners.
+          echo "gl=$(python3 -c "import json,sys; print('swangle' if json.load(open(sys.argv[1])).get('season') == 2 else 'angle')" "episodes/$EP/episode.json")" >> "$GITHUB_OUTPUT"
           echo "provider=${{ inputs.voice_provider || 'kokoro' }}" >> "$GITHUB_OUTPUT"
         shell: bash
 
@@ -63,7 +66,8 @@ jobs:
           key: hf-kokoro-v1
 
       - name: System packages
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng
+        # fluidsynth + the MuseScore General SoundFont play Season 2's composed score (pipeline/music_s2.py)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng fluidsynth musescore-general-soundfont-small
 
       - name: Python deps (CPU-only torch)
         run: pip install -r pipeline/requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
@@ -75,7 +79,7 @@ jobs:
         run: pipeline/build.sh "${{ steps.ep.outputs.id }}" --provider "${{ steps.ep.outputs.provider }}"
 
       - name: Render MP4
-        run: npx remotion render Episode "out/${{ steps.ep.outputs.id }}.mp4" --props="{\"episodeId\":\"${{ steps.ep.outputs.id }}\"}"
+        run: npx remotion render Episode "out/${{ steps.ep.outputs.id }}.mp4" --props="{\"episodeId\":\"${{ steps.ep.outputs.id }}\"}" --gl=${{ steps.ep.outputs.gl }}
 
       - name: QA
         run: python pipeline/qa.py "out/${{ steps.ep.outputs.id }}.mp4" --sheet "out/${{ steps.ep.outputs.id }}_sheet.jpg"

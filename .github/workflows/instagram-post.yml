@@ -36,7 +36,8 @@ permissions:
 jobs:
   post:
     runs-on: ubuntu-24.04
-    timeout-minutes: 60
+    # Season 2 episodes render a software-WebGL diorama (about 18 min for 60 s on 4 vCPU)
+    timeout-minutes: 90
     env:
       GH_TOKEN: ${{ github.token }}
       IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
@@ -121,11 +122,14 @@ jobs:
         run: |
           set -euo pipefail
           EP=${{ steps.pick.outputs.episode }}
-          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng
+          # fluidsynth + SoundFont: Season 2's composed score (pipeline/music_s2.py)
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng fluidsynth musescore-general-soundfont-small
           pip install -r pipeline/requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
           npm ci && npx remotion browser ensure
           pipeline/build.sh "$EP" --provider kokoro
-          npx remotion render Episode "out/$EP.mp4" --props="{\"episodeId\":\"$EP\"}"
+          # Season 2 is WebGL: only the software 'swangle' backend gets a context on CPU runners (Season 1 keeps angle)
+          GL=$(python3 -c "import json,sys; print('swangle' if json.load(open(sys.argv[1])).get('season') == 2 else 'angle')" "episodes/$EP/episode.json")
+          npx remotion render Episode "out/$EP.mp4" --props="{\"episodeId\":\"$EP\"}" --gl=$GL
           python pipeline/qa.py "out/$EP.mp4" --sheet "out/${EP}_sheet.jpg"
           # H.264 High / AAC, capped bitrate, moov atom first: what Instagram's fetcher expects.
           ffmpeg -nostdin -y -i "out/$EP.mp4" -c:v libx264 -profile:v high -level 4.1 -pix_fmt yuv420p \

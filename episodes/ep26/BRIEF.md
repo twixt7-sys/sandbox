@@ -75,7 +75,12 @@ What changed in v3:
    - two loose flocks of voxel birds circling the Isle;
    - pollen motes drifting over the meadows (warm in golden light);
    - glints twinkling on the lake.
-6. **Smaller things:**
+6. **A seamless loop.** The first v3 render passed QA, but its last frame still differed from frame 0 by about 19/255 on average: the herd had wandered (its positions follow simulation time) and the birds and pollen had drifted.
+   - A sim-time reset hidden under the share card's wipe (`world.simLoop`) makes sim time reach 0 exactly at the end.
+   - Ambient motion now runs whole cycles per episode.
+   - The difference is now under 0.5/255, so the video wraps without a visible jump.
+   - The ending panels now clear *before* the hook title returns (they overlapped for about 0.2 s), and the lesson card fades behind the incoming wipe.
+7. **Smaller things:**
    - a cue relative to the episode's end (`{"end": true, "offset": …}`), in both Python and Remotion;
    - the loop camera computes its drift from the measured timing (`loop_span()`), so it lands exactly on frame 0's pose;
    - narration speed is 1.07, with shorter pauses on four lines, so 169 words fit in 60.97 s.

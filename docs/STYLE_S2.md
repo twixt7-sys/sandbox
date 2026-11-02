@@ -132,7 +132,13 @@ Why: `docs/SEASON2_RESEARCH.md` → "Follow ask, part numbers and the sound logo
 1. **Spoken, as the last line:** "Part NN of 50. Follow for part NN+1: <a concrete tease>." The tease names the next run in a few words (EP26: "a dragon lands here."). Specific beats generic: never "follow for more".
 2. **Shown at the same time** (captions off; the overlays carry the words): `seasonBar` on "Part", `followButton` pressed on "Follow" with `followPress` + the chime, `nextRun` in on "NN+1" with a locked silhouette, decoding to the title on the tease word.
 3. **Teased in the world:** the next episode's subject appears *indirectly* on the Isle (a shadow, a sound, a footprint), and the current creature reacts (`alert`). The tease is the open loop; the next episode closes it.
-4. **Loop:** the overlays clear at the tease line's end + 0.75 s, the hook title fades back in, and the camera (cut on the share card's wipe, drifting so it lands exactly on frame 0's pose: `loop_span()` in `make_ep26.py`), light (`golden`) and world all match frame 0. The music holds the dominant to the end, and `engineWind` winds up into frame 0's chime.
+4. **Loop, seamless:** the overlays clear at the tease line's end + 0.6 s (gone 0.3 s later), *then* the hook title fades back in. Everything else lands on frame 0:
+   - **Camera:** cut on the share card's wipe, drifting so it lands exactly on frame 0's pose (`loop_span()` in `make_ep26.py`).
+   - **Light:** `golden`.
+   - **The herd:** `world.simLoop` (a cue under the wipe) resets sim time so it reaches 0 at the end.
+   - **Ambient motion:** birds, pollen, star twinkle, water shimmer and grazing heads run whole cycles per episode (`loopFreq` in `src/s2/keys.ts`).
+   - **Sound:** the music holds the dominant to the end, and `engineWind` winds up into frame 0's chime.
+   - **Result (EP26 v3):** the last frame differs from frame 0 by under 0.5/255 on average, against about 19/255 before the reset.
 5. **A light mid-video nudge**, once: `followChip` for about 2 s right after the payoff line, never before it.
 6. **Metadata** repeats it: descriptions end "Part NN of 50. Follow for part NN+1: …".
 

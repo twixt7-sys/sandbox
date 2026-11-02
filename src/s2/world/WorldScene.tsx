@@ -2,7 +2,7 @@
 import React, {createContext, useContext, useMemo} from 'react';
 import * as THREE from 'three';
 import {clamp, hash2, smoothstep} from '../rng';
-import {sample} from '../keys';
+import {loopFreq, sample} from '../keys';
 import {buildHerd, Grimmaw, GrimmawPose, Herd, HerdAgent} from './Creatures';
 import {Column, Island, isle} from './island';
 import {BIOME_COLORS, DIRT, IslandMesh} from './IslandMesh';
@@ -130,10 +130,10 @@ const STARS = Array.from({length: 80}, (_, i) => ({
 	ph: hash2(i, 4, 77) * 6.28,
 	sp: 0.6 + hash2(i, 5, 77) * 1.8,
 }));
-const PixelStars: React.FC<{t: number; level: number}> = ({t, level}) => (
+const PixelStars: React.FC<{t: number; level: number; loopT?: number}> = ({t, level, loopT}) => (
 	<div style={{position: 'absolute', inset: 0}}>
 		{STARS.map((s, i) => {
-			const tw = 0.45 + 0.55 * Math.max(0, Math.sin(t * s.sp + s.ph));
+			const tw = 0.45 + 0.55 * Math.max(0, Math.sin(t * loopFreq(s.sp, loopT) + s.ph));
 			return <div key={i} style={{position: 'absolute', left: s.x, top: s.y, width: s.big ? 6 : 3, height: s.big ? 6 : 3, background: '#dfe9ff', opacity: level * tw * (s.big ? 0.9 : 0.6)}} />;
 		})}
 	</div>
@@ -163,31 +163,37 @@ const Dust: React.FC<{t: number; at: number; x: number; z: number; y: number; r?
 
 const BIRD_BOX = new THREE.BoxGeometry(1, 1, 1);
 const BIRD_MAT = new THREE.MeshLambertMaterial({color: '#2b2a33'});
-/** Small voxel birds circling the island in two loose flocks, wings flapping. */
-const Birds: React.FC<{t: number; n: number}> = ({t, n}) => (
-	<group>
-		{Array.from({length: n}, (_, i) => {
-			const f = i % 2;
-			const R = (f ? 25 : 19) + (i % 3) * 1.4;
-			const w = (f ? -0.085 : 0.11) * (1 + (i % 4) * 0.02);
-			const a = (f ? 2.1 : 0.4) + w * t + i * 0.09;
-			const y = (f ? 19 : 16) + Math.sin(t * 1.1 + i) * 0.7 + (i % 3) * 0.6;
-			const flap = Math.sin(t * 8.5 + i * 1.7) * 0.75;
-			const heading = -a + (w > 0 ? 0 : Math.PI);
-			return (
-				<group key={i} position={[Math.cos(a) * R, y, Math.sin(a) * R]} rotation={[0, heading, 0]} scale={0.9}>
-					<mesh geometry={BIRD_BOX} material={BIRD_MAT} scale={[0.2, 0.16, 0.55]} castShadow />
-					<group rotation={[0, 0, flap]}>
-						<mesh geometry={BIRD_BOX} material={BIRD_MAT} position={[0.38, 0, 0]} scale={[0.62, 0.05, 0.26]} />
+/** Small voxel birds circling the island in two loose flocks, wings flapping. Each flock laps the Isle a whole number
+ * of times per episode (and every flap and bob repeats too), so the birds are where frame 0 has them at the loop. */
+const Birds: React.FC<{t: number; n: number; loopT?: number}> = ({t, n, loopT}) => {
+	const orbit = loopFreq(0.1, loopT);
+	const bob = loopFreq(1.1, loopT);
+	const flapW = loopFreq(8.5, loopT);
+	return (
+		<group>
+			{Array.from({length: n}, (_, i) => {
+				const f = i % 2;
+				const R = (f ? 25 : 19) + (i % 3) * 1.4;
+				const w = f ? -orbit : orbit;
+				const a = (f ? 2.1 : 0.4) + w * t + i * 0.09 + (i % 4) * 0.05;
+				const y = (f ? 19 : 16) + Math.sin(t * bob + i) * 0.7 + (i % 3) * 0.6;
+				const flap = Math.sin(t * flapW + i * 1.7) * 0.75;
+				const heading = -a + (w > 0 ? 0 : Math.PI);
+				return (
+					<group key={i} position={[Math.cos(a) * R, y, Math.sin(a) * R]} rotation={[0, heading, 0]} scale={0.9}>
+						<mesh geometry={BIRD_BOX} material={BIRD_MAT} scale={[0.2, 0.16, 0.55]} castShadow />
+						<group rotation={[0, 0, flap]}>
+							<mesh geometry={BIRD_BOX} material={BIRD_MAT} position={[0.38, 0, 0]} scale={[0.62, 0.05, 0.26]} />
+						</group>
+						<group rotation={[0, 0, -flap]}>
+							<mesh geometry={BIRD_BOX} material={BIRD_MAT} position={[-0.38, 0, 0]} scale={[0.62, 0.05, 0.26]} />
+						</group>
 					</group>
-					<group rotation={[0, 0, -flap]}>
-						<mesh geometry={BIRD_BOX} material={BIRD_MAT} position={[-0.38, 0, 0]} scale={[0.62, 0.05, 0.26]} />
-					</group>
-				</group>
-			);
-		})}
-	</group>
-);
+				);
+			})}
+		</group>
+	);
+};
 
 const MOTE_BOX = new THREE.BoxGeometry(1, 1, 1);
 const moteM4 = new THREE.Matrix4();
@@ -195,7 +201,7 @@ const moteQ = new THREE.Quaternion();
 const moteV = new THREE.Vector3();
 const moteS = new THREE.Vector3();
 /** Drifting pollen / firefly motes over the meadows: one or two pixels each at the stage's resolution, twinkling. */
-const Motes: React.FC<{t: number; n: number; island: Island; warm: number}> = ({t, n, island, warm}) => {
+const Motes: React.FC<{t: number; n: number; island: Island; warm: number; loopT?: number}> = ({t, n, island, warm, loopT}) => {
 	const ref = React.useRef<THREE.InstancedMesh>(null);
 	const mat = useMemo(() => new THREE.MeshBasicMaterial({color: '#fff4cf'}), []);
 	const homes = useMemo(() => {
@@ -213,11 +219,12 @@ const Motes: React.FC<{t: number; n: number; island: Island; warm: number}> = ({
 	React.useLayoutEffect(() => {
 		const m = ref.current!;
 		mat.color.set(warm > 0.6 ? '#ffd889' : '#f4f7dc');
+		const [wx, wz, wy, wt] = [0.21, 0.17, 0.6, 2.4].map((w) => loopFreq(w, loopT));
 		homes.forEach(([hx, hz, top], i) => {
-			const x = hx + Math.sin(t * 0.21 + i * 1.3) * 1.6;
-			const z = hz + Math.cos(t * 0.17 + i * 2.1) * 1.6;
-			const y = top + 1.1 + Math.sin(t * 0.6 + i) * 0.9 + (i % 3) * 0.4;
-			const tw = 0.6 + 0.4 * Math.max(0, Math.sin(t * 2.4 + i * 1.9));
+			const x = hx + Math.sin(t * wx + i * 1.3) * 1.6;
+			const z = hz + Math.cos(t * wz + i * 2.1) * 1.6;
+			const y = top + 1.1 + Math.sin(t * wy + i) * 0.9 + (i % 3) * 0.4;
+			const tw = 0.6 + 0.4 * Math.max(0, Math.sin(t * wt + i * 1.9));
 			moteM4.compose(moteV.set(x, y, z), moteQ.identity(), moteS.setScalar(0.16 * tw));
 			m.setMatrixAt(i, moteM4);
 		});
@@ -359,18 +366,19 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 		<Stage
 			cam={cam}
 			background={`radial-gradient(ellipse at 50% 42%, ${mood.sky[0]} 0%, ${mood.sky[1]} 48%, ${mood.sky[2]} 100%)`}
-			backdrop={<PixelStars t={t} level={0.35 + 0.45 * (1 - mood.sun)} />}
+			backdrop={<PixelStars t={t} level={0.35 + 0.45 * (1 - mood.sun)} loopT={world.loopT} />}
 		>
 			{/* Distance haze in the void's colour: the far side of the island recedes a little (diorama depth). */}
 			<fog attach="fog" args={[mood.sky[1], cam.dist * 0.98, cam.dist + 120]} />
 			<Lights sun={mood.sun} warm={mood.warm} hemi={mood.hemi} az={mood.az} el={mood.el} />
-			<IslandMesh island={island} t={t} tint={tint} treeScale={treeScale} treeTint={treeTint} lift={lift} />
+			<IslandMesh island={island} t={t} tint={tint} treeScale={treeScale} treeTint={treeTint} lift={lift} loopT={world.loopT} />
 			<Herd
 				island={island}
 				agents={agents}
 				count={count}
 				s={s}
 				t={t}
+				loopT={world.loopT}
 				pale={herdPale}
 				born={(i) => {
 					const b = births[i].filter((x) => x <= t).pop();
@@ -378,8 +386,8 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 				}}
 			/>
 			{poses.map((p, i) => (p ? <Grimmaw key={i} pose={p} /> : null))}
-			{world.ambient.birds > 0 && <Birds t={t} n={world.ambient.birds} />}
-			{world.ambient.motes > 0 && <Motes t={t} n={world.ambient.motes} island={island} warm={mood.warm} />}
+			{world.ambient.birds > 0 && <Birds t={t} n={world.ambient.birds} loopT={world.loopT} />}
+			{world.ambient.motes > 0 && <Motes t={t} n={world.ambient.motes} island={island} warm={mood.warm} loopT={world.loopT} />}
 			{world.flyers.map((f, i) => (
 				<Flyer key={`f${i}`} t={t} f={f} sun={sunDir(mood.az, mood.el)} island={island} />
 			))}

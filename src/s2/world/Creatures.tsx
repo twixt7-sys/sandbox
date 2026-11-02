@@ -1,6 +1,7 @@
 // Voxel creatures for the Season 2 diorama. Built from boxes so they read as pixel art at the stage's 1/3 resolution.
 import React, {useLayoutEffect, useMemo, useRef} from 'react';
 import * as THREE from 'three';
+import {loopFreq} from '../keys';
 import {hash2, wander} from '../rng';
 import {Island} from './island';
 
@@ -221,11 +222,12 @@ const MB_COLORS = ['#3a2c20', '#ece2c6', '', '#4a3828'];
  * The herd: `count` agents visible (fractional = the last one fading), wandering around their homes in simulation
  * time `s`. Agents beyond `base` are born small and grow. `pale` greys them (a starving boom).
  */
-export const Herd: React.FC<{island: Island; agents: HerdAgent[]; count: number; s: number; t: number; pale?: number; born?: (i: number) => number}> = ({island, agents, count, s, t, pale = 0, born}) => {
+export const Herd: React.FC<{island: Island; agents: HerdAgent[]; count: number; s: number; t: number; pale?: number; born?: (i: number) => number; loopT?: number}> = ({island, agents, count, s, t, pale = 0, born, loopT}) => {
 	const refs = [useRef<THREE.InstancedMesh>(null), useRef<THREE.InstancedMesh>(null), useRef<THREE.InstancedMesh>(null), useRef<THREE.InstancedMesh>(null)];
 	const outline = useRef<THREE.InstancedMesh>(null);
 	const m = useMemo(() => new THREE.MeshLambertMaterial(), []);
 	useLayoutEffect(() => {
+		const grazeW = loopFreq(1.3, loopT);
 		agents.forEach((a, i) => {
 			const vis = Math.max(0, Math.min(1, count - i));
 			const grow = born ? born(i) : 1;
@@ -247,7 +249,7 @@ export const Herd: React.FC<{island: Island; agents: HerdAgent[]; count: number;
 			e3.set(0, head, 0);
 			q.setFromEuler(e3);
 			m4.compose(v3.set(x, y + hop, z), q, s3.set(sc, sc, sc));
-			const graze = Math.sin(t * 1.3 + i * 2.3) > 0.55 ? -0.14 : 0;
+			const graze = Math.sin(t * grazeW + i * 2.3) > 0.55 ? -0.14 : 0;
 			// outline hull around the wool body
 			m4b.compose(v3.set(0, 0.39, 0), q.identity(), s3.set(0.84 + 0.1, 0.42 + 0.1, 0.58 + 0.1));
 			outline.current!.setMatrixAt(i, m4.clone().multiply(m4b));

@@ -57,3 +57,6 @@ export const integrate = (keys: Key<number>[], t: number, def = 1) => {
 /** 0..1 window: rises over `fade` s after `on`, falls over `fade` s after `off`. */
 export const windowed = (t: number, on: number, off = Infinity, fade = 0.4) =>
 	clamp((t - on) / fade) * (off === Infinity ? 1 : 1 - clamp((t - off) / fade));
+
+/** A frequency (rad/s) nudged to a whole number of cycles per loop, so periodic motion lines up at the loop point. */
+export const loopFreq = (w: number, loopT?: number) => (loopT && loopT > 1 ? (2 * Math.PI * Math.max(1, Math.round((w * loopT) / (2 * Math.PI)))) / loopT : w);

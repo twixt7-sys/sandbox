@@ -2,6 +2,7 @@
 // Colours can change per frame (grazing, seasons) through `tint`, without rebuilding geometry.
 import React, {useLayoutEffect, useMemo, useRef} from 'react';
 import * as THREE from 'three';
+import {loopFreq} from '../keys';
 import {Column, Island} from './island';
 
 export const BIOME_COLORS: Record<string, string[]> = {
@@ -60,9 +61,11 @@ type Props = {
 	/** mutate a tree part colour in place (snow, desaturation); part 0 trunk, 1 crown, 2 crown top */
 	treeTint?: (c: THREE.Color, k: number, part: number) => void;
 	t: number;
+	/** the episode's length: the water shimmer repeats over it (seamless loop); omit outside episodes */
+	loopT?: number;
 };
 
-export const IslandMesh: React.FC<Props> = ({island, tint, treeScale, lift, treeTint, t}) => {
+export const IslandMesh: React.FC<Props> = ({island, tint, treeScale, lift, treeTint, t, loopT}) => {
 	const terrain = useRef<THREE.InstancedMesh>(null);
 	const trunks = useRef<THREE.InstancedMesh>(null);
 	const crowns = useRef<THREE.InstancedMesh>(null);
@@ -107,12 +110,13 @@ export const IslandMesh: React.FC<Props> = ({island, tint, treeScale, lift, tree
 	});
 
 	// Colours every frame (cheap: ~1.7k columns).
+	const shimmer = loopFreq(2.2, loopT);
 	useLayoutEffect(() => {
 		const m = terrain.current!;
 		island.columns.forEach((c, k) => {
 			tmpC.copy(base[k]);
 			if (c.biome === 'water') {
-				const s = 0.04 * Math.sin(t * 2.2 + c.x * 0.9 + c.z * 0.7);
+				const s = 0.04 * Math.sin(t * shimmer + c.x * 0.9 + c.z * 0.7);
 				tmpC.offsetHSL(0, 0, s);
 			}
 			if (tint) {

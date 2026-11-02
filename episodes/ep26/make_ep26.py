@@ -345,6 +345,8 @@ def world():
         "layers": {"graze": graze, "forest": forest, "snow": snow, "rings": rings, "ripple": ripple, "dust": dust},
         "ambient": {"birds": 9, "motes": 40, "glints": True},
         "flyers": flyers,
+        # seamless loop: under the wipe, sim time jumps so it reaches 0 at the end, putting the herd back where frame 0 has it
+        "simLoop": WIPE,
     }
 
 
@@ -420,7 +422,7 @@ def overlays():
     G["role"] += []
     G["lesson"] += [
         {"type": "fieldCard", "mode": "full", "y": 452, "rows": [dict(r, at=cue("L17", "Don't", -0.3), **({"unlockAt": cue("L17", "Don't", -0.3)} if r.get("locked") else {})) for r in ROWS],
-         "start": cue("L17", "Don't", -0.3), "end": WIPE, "kicker": "BEFORE YOU DESIGN A MONSTER", "title": "GRIMMAW",
+         "start": cue("L17", "Don't", -0.3), "end": cue("L18", "Send", -0.52), "kicker": "BEFORE YOU DESIGN A MONSTER", "title": "GRIMMAW",
          "subtitle": "Design its place in the world.", "subtitleAt": cue("L17", "Design")},
     ]
     G["role"] += [
@@ -433,7 +435,7 @@ def overlays():
          "title": "Don't Design a Monster. Design an Ecosystem.", "cta": "SEND THIS", "with": "to a monster designer"},
     ]
     # The ending formula: say the part number, ask for the follow with a reason (part 27), open the next loop.
-    gone = cue("L19", "here.", 0.75)
+    gone = cue("L19", "here.", 0.6)
     G["next"] += [
         {"type": "seasonBar", "y": 350, "part": 26, "of": 50, "start": cue("L19", "Part", -0.1), "fillAt": cue("L19", "Part", -0.05), "fillDur": 0.6,
          "ofAt": cue("L19", "50."), "end": gone},
@@ -442,7 +444,8 @@ def overlays():
         {"type": "nextRun", "y": 772, "start": cue("L19", "27:", -0.1), "revealAt": cue("L19", "dragon"), "end": gone,
          "kicker": "NEXT RUN · 27", "title": "DRAGONS", "sub": "A DRAGON LANDS HERE."},
         # The loop: the hook's opening words fade back in as the ending clears, matching frame 0.
-        {"type": "kinetic", "parts": hook_text, "y": 452, "size": 100, "start": cue("L19", "here.", 0.85), "fadeIn": 0.4, "preShow": True},
+        # (only after the ending has cleared: gone + its 0.3 s fade)
+        {"type": "kinetic", "parts": hook_text, "y": 452, "size": 100, "start": cue("L19", "here.", 0.92), "fadeIn": 0.35, "preShow": True},
     ]
     return G
 

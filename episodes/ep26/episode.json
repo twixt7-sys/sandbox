@@ -1628,7 +1628,7 @@
      "end": {
       "line": "L18",
       "word": "Send",
-      "offset": -0.3
+      "offset": -0.52
      },
      "kicker": "BEFORE YOU DESIGN A MONSTER",
      "title": "GRIMMAW",
@@ -1771,7 +1771,7 @@
      "end": {
       "line": "L19",
       "word": "here.",
-      "offset": 0.75
+      "offset": 0.6
      }
     },
     {
@@ -1789,7 +1789,7 @@
      "end": {
       "line": "L19",
       "word": "here.",
-      "offset": 0.75
+      "offset": 0.6
      },
      "text": "FOLLOW",
      "doneText": "FOLLOWING",
@@ -1810,7 +1810,7 @@
      "end": {
       "line": "L19",
       "word": "here.",
-      "offset": 0.75
+      "offset": 0.6
      },
      "kicker": "NEXT RUN \u00b7 27",
      "title": "DRAGONS",
@@ -1832,9 +1832,9 @@
      "start": {
       "line": "L19",
       "word": "here.",
-      "offset": 0.85
+      "offset": 0.92
      },
-     "fadeIn": 0.4,
+     "fadeIn": 0.35,
      "preShow": true
     }
    ],
@@ -4061,7 +4061,12 @@
     "height": 30,
     "scale": 1.6
    }
-  ]
+  ],
+  "simLoop": {
+   "line": "L18",
+   "word": "Send",
+   "offset": -0.3
+  }
  },
  "music": {
   "engine": "s2-score",

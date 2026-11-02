@@ -25,6 +25,9 @@ export type WorldRaw = {
 	ambient?: {birds?: number; motes?: number; glints?: boolean};
 	/** Shadow-only flyers (a teaser): invisible to the camera, but their shadow crosses the ground from `from` to `to`. */
 	flyers?: {kind?: string; at: Cue; dur: number; from: [number, number]; to: [number, number]; height?: number; scale?: number}[];
+	/** Seamless loop: at this cue (hide it under a wipe) sim time jumps so it reaches 0 exactly at the episode's end, so
+	 * the herd is back where frame 0 has it when the video loops. */
+	simLoop?: Cue;
 };
 
 export type PredKey = {t: number; x: number; z: number; state: string; face?: number; dur: number};
@@ -48,6 +51,9 @@ export type World = {
 	dust: {t: number; x: number; z: number; r?: number}[];
 	ambient: {birds: number; motes: number; glints: boolean};
 	flyers: {kind: string; t: number; dur: number; from: [number, number]; to: [number, number]; height: number; scale: number}[];
+	simLoop: number | null;
+	/** the episode's length: ambient motion repeats over it, so the loop has no seam */
+	loopT: number;
 };
 
 export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
@@ -71,6 +77,8 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 	dust: (raw.layers?.dust ?? []).map((d) => ({t: cueTime(timing, d.at), x: d.x, z: d.z, r: d.r})),
 	ambient: {birds: raw.ambient?.birds ?? 9, motes: raw.ambient?.motes ?? 40, glints: raw.ambient?.glints ?? true},
 	flyers: (raw.flyers ?? []).map((f) => ({kind: f.kind ?? 'dragon', t: cueTime(timing, f.at), dur: f.dur, from: f.from, to: f.to, height: f.height ?? 30, scale: f.scale ?? 1})),
+	simLoop: raw.simLoop ? cueTime(timing, raw.simLoop) : null,
+	loopT: timing.duration,
 	rings: (raw.layers?.rings ?? []).map((r) => ({x: r.x, z: r.z, r: r.r, on: cueTime(timing, r.on), off: r.off ? cueTime(timing, r.off) : Infinity, color: r.color ?? '#f4c46e'})),
 });
 
@@ -151,7 +159,12 @@ export const moodAt = (w: World, t: number) => {
 	};
 };
 
-export const simTime = (w: World, t: number) => integrate(w.speed, t, 1);
+export const simTime = (w: World, t: number) => {
+	const s = integrate(w.speed, t, 1);
+	if (w.simLoop === null || t < w.simLoop) return s;
+	// after the (hidden) loop reset, sim time runs at the same speed but lands on 0 at the episode's end
+	return s - integrate(w.speed, w.loopT, 1);
+};
 export const herdCount = (w: World, t: number) => sample(w.herd, t, 0);
 export const clockAt = (w: World, t: number) => sample(w.clock, t, 0);
 

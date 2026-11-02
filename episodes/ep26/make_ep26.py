@@ -82,7 +82,9 @@ def lv_keys(start_line, start_word, t_offsets, values):
 def world():
     shot = lambda sid, off=0.0: {"shot": sid, **({"offset": off} if off else {})}
     roam = [(11, -6), (6, -11), (3, -15), (9, -9), (13, 0), (10, 6), (14, 3), (8, -3)]
-    g1 = [pk(shot("hook"), *G1_HOME, face=10)]
+    g1 = [pk(shot("hook"), *G1_HOME, face=10),
+          pk(cue("L1", "eats", -0.15), *G1_HOME, "roar", face=10),
+          pk(cue("L1", "why", 0.1), *G1_HOME, "idle", face=10)]
     g1.append(pk(cue("L2", "This"), 9.6, -1.8, "walk", dur=2.2))
     g1.append(pk(cue("L2", "moves.", 0.4), 9.6, -1.8, "idle", face=200))
     for k, (x, z) in enumerate(roam):
@@ -265,11 +267,13 @@ def world():
         {"x": RING_C[0], "z": RING_C[1], "r": RING_C[2], "on": cue("L9", "whole"), "off": cue("L10", "Three:", -0.1), "color": "#f08a4b"},
     ]
     ripple = [shot("hook", 0.05), cue("L3", "run."), cue("L12", "Run"), cue("L15", "The"), cue("L16", "together.")]
+    dust = [{"at": cue("L1", "eats", -0.15), "x": G1_HOME[0] + 1.2, "z": G1_HOME[1], "r": 2.8}]
 
     # Long lens (fov 16.5 from 54 units): less perspective, so the predator towers over its herd. Chosen over a 22° / 40-unit variant.
     hook_pose = dict(az=24, el=8, dist=54, target=(8.9, 6.9, -1.2), fov=16.5)
     camera = [
         cam(shot("hook"), drift=1.2, **hook_pose),
+        cam(cue("L1", "If", 0.0), hook_pose["az"] + 0.5, hook_pose["el"], 45, (8.9, 6.6, -1.2), fov=hook_pose["fov"], dur=4.2, drift=1.2),
         cam(cue("L2", "Let's", -0.2), 8, 12, 40, (9.6, 9.4, -1.8), fov=22, dur=1.8, drift=2.0),
         cam(cue("L3", "run.", 0.05), 30, 44, 192, (2.0, 10.5, 0.0), fov=26, dur=1.3, drift=2.0),
         cam(cue("L5", "With", -0.25), 140, 15, 32, (6.6, 7.4, -4.6), fov=22, dur=1.3, drift=3.0),
@@ -310,7 +314,7 @@ def world():
             {"id": "g3", "keys": g3},
             {"id": "cub", "scale": 0.45, "keys": cub},
         ],
-        "layers": {"graze": graze, "forest": forest, "snow": snow, "rings": rings, "ripple": ripple},
+        "layers": {"graze": graze, "forest": forest, "snow": snow, "rings": rings, "ripple": ripple, "dust": dust},
     }
 
 
@@ -407,40 +411,40 @@ NOTES = {
              "The Grimmaw in profile on the meadow of the Isle, mossbacks grazing around it; WORLD ENGINE boots top-right as the island ripples.",
              "Long-lens hero shot (fov 16.5 from dist 54, el 8, az 24), slow drift; the last 0.7 s returns to this exact pose.", ("kinetic question", "the Grimmaw and herd", "the Isle's peak and the void"),
              "Day mood; warm key from the south-east, hard pixel shadows.", "IF IT EATS / EVERYTHING then WHY ISN'T / EVERYTHING / EXTINCT?",
-             "Continuous camera into the setup.", "Hook: Dm–Bb, pad + 8th arp."),
+             "Continuous camera into the setup.", "Hook: the series theme on celesta over strings and a harp sweep; a hit on 'extinct?'."),
     "setup": ("Meet the subject and its one dangerous claim, then press RUN.",
               "Field card intro (sprite x3, GRIMMAW, APEX PREDATOR, DIET anything that moves) over the Grimmaw walking in profile; the sim bar slides in and RUN is pressed.",
               "Hero close orbit (az 8), then rise to wide on 'run'.", ("field card, sim bar", "the Grimmaw walking", "herd and lake"),
-              "Day.", "Field card; RUN.", "Ripple + rise to the wide on 'run'.", "Adds bass and a heartbeat kick."),
+              "Day.", "Field card; RUN.", "Ripple + rise to the wide on 'run'.", "Pulse: pizzicato eighths, the theme's answer on celesta, a soft kick."),
     "run1": ("The naive design runs and fails, in numbers.", "The whole Isle; clock 0→5, MOSSBACKS 120→0 while the graph falls; herds thin everywhere.",
              "Wide (dist 192, el 44).", ("sim bar + graph", "the thinning herds", "the island in the void"), "Day.", "YEAR 01..05; counters; graph YEARS 0–5.",
-             "Swoop down to the lone predator.", "Run: 16th arp, four-on-the-floor, claps."),
+             "Swoop down to the lone predator.", "Drive: 16th marimba and quiet square-lead arps, pizzicato, bass, drums."),
     "starve": ("Hunger shown as an empty range, never a kill.", "The Grimmaw walks an empty meadow at dusk, then lies down and greys. Pin: FOOD IN RANGE / NONE.",
-               "Close (dist 32, az 140).", ("pin", "the Grimmaw", "empty meadow"), "Dusk to gloom.", "FOOD IN RANGE: NONE", "Pull back.", "Drop: drone and heartbeat."),
+               "Close (dist 32, az 140).", ("pin", "the Grimmaw", "empty meadow"), "Dusk to gloom.", "FOOD IN RANGE: NONE", "Pull back.", "Drop: cello pedal, a timpani heartbeat, a slowed music-box echo of the theme."),
     "ends": ("The punchline of the failure.", "The whole island desaturated and empty; EXTINCT stamp; 'IT ENDS IT.' in rust.",
              "Long pull back (dist 200).", ("stamp, kinetic", "empty island", "void"), "Gloom (saturation 0.35).", "EXTINCT · EVERYTHING · YEAR 5; IT ENDS IT.",
-             "Rewind + block wipe.", "Near silence, drone; duck on 'It ends it'."),
+             "Rewind + block wipe.", "Near silence; a taiko boom on 'It ends it.'"),
     "rehook": ("Re-hook: rewind the world and open a loop (four easy rules, one locked twist).", "REWIND chip and scanlines; clock and herd run back; the checklist card with a blinking locked row 5.",
-               "Medium (dist 92).", ("rewind, checklist card", "herd returning", "island"), "Back to day.", "DESIGN CHECK 0/5, row 5 '??? the twist'.", "Cut on 'One'.", "Arp returns: Dm–C–Bb–A."),
+               "Medium (dist 92).", ("rewind, checklist card", "herd returning", "island"), "Back to day.", "DESIGN CHECK 0/5, row 5 '??? the twist'.", "Cut on 'One'.", "Mystery: celesta arpeggios and harp; a reverse-cymbal riser peaks on 'the twist'."),
     "prey": ("Rule 1: prey that breeds faster than it is eaten.", "Close on a herd; lambs pop in small and grow; pin SPRING +55 BORN; row 1 ticks.",
-             "Close on the herd (dist 46).", ("pin", "herd and lambs", "meadow"), "Day.", "1 PREY · breeds faster than it's eaten", "Rise to top-down.", "Bass joins."),
+             "Close on the herd (dist 46).", ("pin", "herd and lambs", "meadow"), "Day.", "1 PREY · breeds faster than it's eaten", "Rise to top-down.", "Build 1 (F major): marimba and strings."),
     "range": ("Rule 2: territory; the island only fits three.", "Top-down Isle; three territory rings painted on the voxels (outside dimmed); two more Grimmaws appear, one per valley; card folds.",
-              "Near top-down wide (el 66, dist 182).", ("pin, folded card", "three rings", "island"), "Day.", "2 RANGE · one valley per Grimmaw; TERRITORY / 1 VALLEY EACH", "Down to the den.", "Kick joins."),
+              "Near top-down wide (el 66, dist 182).", ("pin, folded card", "three rings", "island"), "Day.", "2 RANGE · one valley per Grimmaw; TERRITORY / 1 VALLEY EACH", "Down to the den.", "Build 2: bass and pizzicato join."),
     "energy": ("Rule 3: a big body hunts rarely and sleeps a lot.", "The Grimmaw walks to its den at the foot of the peak and lies down to sleep; Zs.",
-               "Close profile (dist 40).", ("pin, Zs", "sleeping Grimmaw", "rock face"), "Day.", "3 ENERGY · hunts rarely, sleeps a lot; BIG BODY / HUNTS RARELY", "Orbit.", "Hats join."),
+               "Close profile (dist 40).", ("pin, Zs", "sleeping Grimmaw", "rock face"), "Day.", "3 ENERGY · hunts rarely, sleeps a lot; BIG BODY / HUNTS RARELY", "Orbit.", "Build 3: light drums join."),
     "breed": ("Rule 4: slow breeding.", "Winter falls over the den (snow on voxels and trees); one cub pops in beside the sleeping Grimmaw.",
-              "Close (dist 34, az 108).", ("pin", "cub and parent", "snowy rocks"), "Winter mood.", "4 BREEDING · one cub, every few winters; 1 CUB", "Rise to the wide on 'Run'.", "Bells join."),
+              "Close (dist 34, az 108).", ("pin", "cub and parent", "snowy rocks"), "Winter mood.", "4 BREEDING · one cub, every few winters; 1 CUB", "Rise to the wide on 'Run'.", "Build 4: the theme on glockenspiel."),
     "run2": ("The fixed world runs: it cycles instead of collapsing.", "Wide Isle, winters flicker past, years 3→23; graph shows prey and predators rising and falling; STABLE stamp.",
-             "Wide (dist 196).", ("folded card, graph, stamp", "herds and three predators", "island"), "Day.", "YEARS 3–23; STABLE · NOTHING VANISHES", "Hold the wide.", "Full groove in F."),
+             "Wide (dist 196).", ("folded card, graph, stamp", "herds and three predators", "island"), "Day.", "YEARS 3–23; STABLE · NOTHING VANISHES", "Hold the wide.", "Drive with the theme on flute and glockenspiel; a stab and cymbal on 'nothing'."),
     "twist": ("The locked rule, as an experiment: delete the monster.", "RULE 5? then selection brackets + DEL: the three Grimmaws fly apart into voxels; mossbacks boom to 380, strip the meadow to dirt, the forest thins, then the herd crashes.",
               "Wide (dist 170).", ("kinetic, DEL, graph, pin", "boom and bare earth", "island"), "Gloom on 'bare'.", "RULE 5?; DEL; NO PREDATOR graph; MEADOW / STRIPPED BARE",
-              "Restore.", "Dark minor, filter down; drone on the crash."),
+              "Restore.", "A held A7♭9 with a timpani roll, a hard stop on 'Delete', a frenzy for the boom, a chromatic crash into 'starve'."),
     "role": ("Unlock rule 5: its job.", "Row 5 unlocks (ROLE · keeps the grazers in check); the Grimmaws re-appear, the meadow and forest heal, the island ripples on 'together'.",
-             "Medium-wide (dist 170).", ("unlocked card", "healing island", "void"), "Day.", "5/5", "Card goes full.", "Resolution to D major, bells."),
+             "Medium-wide (dist 170).", ("unlocked card", "healing island", "void"), "Day.", "5/5", "Card goes full.", "Swell: strings and harp rise, a timpani roll into a big D-major hit on 'together'."),
     "lesson": ("The takeaway: the full design check, screenshot-able.", "The complete field card (BEFORE YOU DESIGN A MONSTER / GRIMMAW / 5 rows ticked) with 'Design its place in the world.' in serif italic.",
-               "Wide orbit (dist 190).", ("full card", "island at dusk", "stars"), "Dusk.", "Full card.", "Block wipe to the end card.", "D–G–Bm–A, warm."),
+               "Wide orbit (dist 190).", ("full card", "island at dusk", "stars"), "Dusk.", "Full card.", "Block wipe to the end card.", "Anthem: the theme in D major on flute, horns and glockenspiel."),
     "cta": ("Share CTA, then loop to frame 0.", "End card: logo, EPISODE 26 / 50, title, SHARE THIS with someone designing fantasy monsters; it lifts to reveal the hook frame and title again.",
-            "Cut (under the card) to the hook pose.", ("end card", "the Isle", "void"), "Day for the loop frame.", "End card; then the hook title.", "Loop.", "G–D outro, faded to silence by 59.7 s."),
+            "Cut (under the card) to the hook pose.", ("end card", "the Isle", "void"), "Day for the loop frame.", "End card; then the hook title.", "Loop.", "Outro: the theme's answer on celesta and music box, faded to silence by 59.7 s."),
 }
 
 
@@ -481,7 +485,7 @@ def build():
             shot["hideLogoBugUntil"] = {"shot": "cta", "offset": 4.95}
         ep["shots"].append(shot)
     ep["music"] = MUSIC
-    ep["mix"] = {"musicLufs": -28.0, "duckDb": -6.0, "sfxLufs": -29.0}
+    ep["mix"] = {"musicLufs": -25.0, "duckDb": -8.0, "sfxLufs": -29.0, "voiceFx": True}
     ep["metadata"] = METADATA
     return ep
 
@@ -497,7 +501,8 @@ def bed(sound, a, b, gain):
 
 
 SFX = {
-    "hook": [hit("sting", {"shot": "hook"}, -9), hit("worldRipple", {"shot": "hook", "offset": 0.05}, -17)],
+    "hook": [hit("sting", {"shot": "hook"}, -13), hit("worldRipple", {"shot": "hook", "offset": 0.05}, -17),
+             hit("roar", cue("L1", "eats", -0.15), -12), hit("stompHit", cue("L1", "eats", -0.15), -13)],
     "setup": [bed("stomp", cue("L2", "This"), cue("L2", "This", 2.2), -17), hit("cardSlide", cue("L2", "This", -0.1), -17),
               hit("check", cue("L2", "eats"), -20), hit("runPress", cue("L3", "run."), -11), hit("worldRipple", cue("L3", "run."), -16)],
     "run1": [bed("simTicks", cue("L3", "run.", 0.3), cue("L4", "gone.", 0.2), -21), bed("losses", cue("L4", "everywhere.", 0.35), cue("L4", "gone."), -23)],
@@ -520,43 +525,49 @@ SFX = {
     "cta": [hit("restore", cue("L18", "Share", -0.3), -21)],
 }
 
-Dm, Bb, F, C, A, Gm = ["D3", "F3", "A3", "D4"], ["Bb2", "D3", "F3", "Bb3"], ["F3", "A3", "C4", "F4"], ["C3", "E3", "G3", "C4"], ["A2", "C#3", "E3", "A3"], ["G2", "Bb2", "D3", "G3"]
-D, G, Bm = ["D3", "F#3", "A3", "D4"], ["G2", "B2", "D3", "G3"], ["B2", "D3", "F#3", "B3"]
-LOW = ["D2", "A2", "D3", "F3"]
+def msec(at, style, chords, key, **kw):
+    return {"from": at, "style": style, "chords": chords, "key": key, **kw}
 
 
-def sec(at, chords, layers, level, bpc=4, **kw):
-    return {"from": at, "chords": chords, "beatsPerChord": bpc, "layers": layers, "level": level, **kw}
-
-
+# The score (pipeline/music_s2.py): sections start on spoken cues and the tempo map stretches each one to a whole
+# number of beats, so every change lands on its story beat. The series theme plays in D minor for the problem and
+# returns in D major for the payoff.
 MUSIC = {
-    "engine": "s2",
+    "engine": "s2-score",
     "key": "D minor, resolving to D major",
     "bpm": 100,
     "sections": [
-        sec({"shot": "hook"}, [Dm, Bb], {"pad": 0.6, "arp": 0.7, "arpRate": 8}, 0.5),
-        sec(cue("L2", "Let's", -0.1), [Dm, Bb, F, C], {"pad": 0.5, "arp": 0.8, "arpRate": 8, "bass": 0.6, "kick": "heart"}, 0.55),
-        sec(cue("L3", "run."), [Dm, Dm, Bb, A], {"pad": 0.3, "arp": 1.0, "arpRate": 16, "bass": 1.0, "bassEighths": True, "kick": "four", "hats": 16, "clap": 0.6}, 0.66, bpc=2, bright=1.3),
-        sec(cue("L5", "With", -0.2), [LOW], {"pad": 0.6, "kick": "heart"}, 0.42, bpc=8, dark=True),
-        sec(cue("L6", "A"), [["D2", "A2", "D3"]], {"pad": 0.4}, 0.3, bpc=8, dark=True),
-        sec(cue("L7", "Real", -0.1), [Dm, C, Bb, A], {"pad": 0.5, "arp": 0.7, "arpRate": 8}, 0.5, bpc=2),
-        sec(cue("L8", "One:"), [F, C, Dm, Bb], {"pad": 0.5, "arp": 0.7, "arpRate": 8, "bass": 0.7}, 0.55),
-        sec(cue("L9", "Two:"), [F, C, Dm, Bb], {"pad": 0.5, "arp": 0.7, "arpRate": 8, "bass": 0.7, "kick": "half"}, 0.56),
-        sec(cue("L10", "Three:"), [F, C, Dm, Bb], {"pad": 0.5, "arp": 0.8, "arpRate": 8, "bass": 0.7, "kick": "half", "hats": 8}, 0.58),
-        sec(cue("L11", "Four:"), [F, C, Dm, Bb], {"pad": 0.6, "arp": 0.8, "arpRate": 8, "bass": 0.7, "kick": "half", "hats": 8, "bells": 0.8}, 0.6),
-        sec(cue("L12", "Run"), [F, C, Bb, F], {"pad": 0.35, "arp": 1.0, "arpRate": 16, "bass": 1.0, "bassEighths": True, "kick": "four", "hats": 16, "clap": 0.8}, 0.7, bpc=2, bright=1.4),
-        sec(cue("L14", "Rule", -0.1), [Dm, Bb, Gm, A], {"pad": 0.4, "arp": 0.8, "arpRate": 16, "bass": 0.8, "kick": "one"}, 0.58, bpc=2, bright=0.6, dark=True),
-        sec(cue("L15", "starve.", -0.3), [LOW], {"pad": 0.5, "kick": "heart"}, 0.4, bpc=8, dark=True),
-        sec(cue("L16", "Rule"), [Bb, F, C, D], {"pad": 0.5, "arp": 0.8, "arpRate": 8, "bass": 0.7, "kick": "half", "bells": 0.8}, 0.6, bpc=2),
-        sec(cue("L17", "Don't", -0.2), [D, G, Bm, A], {"pad": 0.6, "arp": 0.6, "arpRate": 8, "bass": 0.5, "bells": 0.5}, 0.55),
-        sec(cue("L18", "Share"), [G, D], {"pad": 0.6, "arp": 0.5, "arpRate": 8, "bells": 0.4}, 0.5),
+        msec({"shot": "hook"}, "hook", ["Dm", "Bb"], "D minor"),
+        msec(cue("L2", "Let's", -0.1), "pulse", ["Dm", "Bb", "F", "C"], "D minor"),
+        msec(cue("L3", "run."), "drive", ["Dm", "Bb", "Gm", "A"], "D minor", intensity=0.8),
+        msec(cue("L5", "With", -0.2), "drop", ["Dm"], "D minor", beatsPerChord=8),
+        msec(cue("L6", "A"), "void", ["Dm"], "D minor", beatsPerChord=8),
+        msec(cue("L6", "it.", 0.45), "mystery", ["Dm", "C", "Bb", "A"], "D minor", beatsPerChord=2),
+        msec(cue("L8", "One:", -0.1), "build", ["F", "C", "Dm", "Bb"], "F major", layer=1),
+        msec(cue("L9", "Two:", -0.1), "build", ["F", "C", "Dm", "Bb"], "F major", layer=2),
+        msec(cue("L10", "Three:", -0.1), "build", ["F", "C", "Dm", "Bb"], "F major", layer=3),
+        msec(cue("L11", "Four:", -0.1), "build", ["F", "C", "Dm", "Bb"], "F major", layer=4),
+        msec(cue("L12", "Run"), "drive", ["F", "C", "Bb", "F"], "F major", intensity=1.0, theme=True),
+        msec(cue("L14", "Rule", -0.05), "twist", ["A7b9"], "D minor"),
+        msec(cue("L14", "Delete"), "rest", ["Dm"], "D minor"),
+        msec(cue("L15", "The"), "frenzy", ["Dm", "Eb", "Edim", "F"], "D minor", beatsPerChord=2),
+        msec(cue("L15", "then", -0.05), "crash", ["Dm"], "D minor"),
+        msec(cue("L16", "Rule"), "swell", ["Bb", "F", "C", "A"], "D minor", beatsPerChord=2),
+        msec(cue("L16", "together.", 0.0), "anthem", ["D", "G", "Bm", "A"], "D major"),
+        msec(cue("L18", "Share", -0.2), "outro", ["G", "D"], "D major"),
     ],
-    "drones": [{"from": cue("L5", "With", -0.2), "to": cue("L7", "Real"), "notes": ["D1", "A1"], "level": 1.0}],
-    "events": [
-        {"type": "duck", "at": cue("L6", "It"), "pre": 0.2, "dur": 1.4, "gain": 0.4},
-        {"type": "duck", "at": cue("L14", "Delete"), "pre": 0.15, "dur": 1.0, "gain": 0.5},
+    "accents": [
+        {"kind": "hit", "at": cue("L1", "extinct?"), "chord": "Dm"},
+        {"kind": "boom", "at": cue("L6", "It"), "chord": "Dm"},
+        {"kind": "riser", "at": cue("L7", "twist."), "chord": "A"},
+        {"kind": "stab", "at": cue("L13", "nothing"), "chord": "F"},
+        {"kind": "cymbal", "at": cue("L13", "nothing")},
+        {"kind": "hit", "at": cue("L16", "together."), "chord": "D"},
     ],
+    # the half-second of silence after "Delete" (the glitch SFX owns it)
+    "rests": [{"from": cue("L14", "Delete", 0.05), "to": cue("L15", "The", -0.02)}],
     "fadeOut": {"at": {"shot": "cta", "offset": 3.5}, "dur": 1.5},
+    "gain": 0.55,
 }
 
 TAGS = "#Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts"

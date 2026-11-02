@@ -11,8 +11,8 @@
 - `0:08.33–0:09.05` Press run.
 - `0:09.35–0:13.61` Year one: mossbacks everywhere. Year three: thinning. Year five: gone.
 - `0:13.96–0:16.48` With nothing left to hunt, the Grimmaw starves too.
-- `0:16.78–0:20.33` A monster that eats everything doesn't rule your world. It ends it.
-- `0:21.03–0:25.37` Real predators live inside limits. Four are easy. The fifth is the twist.
+- `0:16.78–0:20.34` A monster that eats everything doesn't rule your world. It ends it.
+- `0:21.04–0:25.37` Real predators live inside limits. Four are easy. The fifth is the twist.
 - `0:25.72–0:27.86` One: prey that breeds faster than it's eaten.
 - `0:28.05–0:30.85` Two: territory. One Grimmaw needs a whole valley.
 - `0:31.05–0:34.55` Three: energy. A body this big hunts rarely and sleeps a lot.
@@ -51,7 +51,7 @@
 
 **Transition out:** Continuous camera into the setup.
 
-**Sound:** sting (-9 dB); worldRipple (-17 dB). Music: Hook: Dm–Bb, pad + 8th arp.
+**Sound:** sting (-13 dB); worldRipple (-17 dB); roar (-12 dB); stompHit (-13 dB). Music: Hook: the series theme on celesta over strings and a harp sweep; a hit on 'extinct?'.
 
 ### 2. `setup` · 0:04.57 → 0:09.23 (4.7 s)
 
@@ -75,7 +75,7 @@
 
 **Transition out:** Ripple + rise to the wide on 'run'.
 
-**Sound:** stomp (-17 dB); cardSlide (-17 dB); check (-20 dB); runPress (-11 dB); worldRipple (-16 dB). Music: Adds bass and a heartbeat kick.
+**Sound:** stomp (-17 dB); cardSlide (-17 dB); check (-20 dB); runPress (-11 dB); worldRipple (-16 dB). Music: Pulse: pizzicato eighths, the theme's answer on celesta, a soft kick.
 
 ### 3. `run1` · 0:09.23 → 0:13.84 (4.6 s)
 
@@ -99,7 +99,7 @@
 
 **Transition out:** Swoop down to the lone predator.
 
-**Sound:** simTicks (-21 dB); losses (-23 dB). Music: Run: 16th arp, four-on-the-floor, claps.
+**Sound:** simTicks (-21 dB); losses (-23 dB). Music: Drive: 16th marimba and quiet square-lead arps, pizzicato, bass, drums.
 
 ### 4. `starve` · 0:13.84 → 0:16.66 (2.8 s)
 
@@ -123,7 +123,7 @@
 
 **Transition out:** Pull back.
 
-**Sound:** stomp (-18 dB); crash (-19 dB). Music: Drop: drone and heartbeat.
+**Sound:** stomp (-18 dB); crash (-19 dB). Music: Drop: cello pedal, a timpani heartbeat, a slowed music-box echo of the theme.
 
 ### 5. `ends` · 0:16.66 → 0:20.91 (4.3 s)
 
@@ -147,7 +147,7 @@
 
 **Transition out:** Rewind + block wipe.
 
-**Sound:** stamp (-10 dB). Music: Near silence, drone; duck on 'It ends it'.
+**Sound:** stamp (-10 dB). Music: Near silence; a taiko boom on 'It ends it.'
 
 ### 6. `rehook` · 0:20.91 → 0:25.60 (4.7 s)
 
@@ -171,7 +171,7 @@
 
 **Transition out:** Cut on 'One'.
 
-**Sound:** rewind (-11 dB); cardSlide (-17 dB). Music: Arp returns: Dm–C–Bb–A.
+**Sound:** rewind (-11 dB); cardSlide (-17 dB). Music: Mystery: celesta arpeggios and harp; a reverse-cymbal riser peaks on 'the twist'.
 
 ### 7. `prey` · 0:25.60 → 0:27.93 (2.3 s)
 
@@ -195,7 +195,7 @@
 
 **Transition out:** Rise to top-down.
 
-**Sound:** check (-13 dB); births (-20 dB). Music: Bass joins.
+**Sound:** check (-13 dB); births (-20 dB). Music: Build 1 (F major): marimba and strings.
 
 ### 8. `range` · 0:27.93 → 0:30.93 (3.0 s)
 
@@ -219,7 +219,7 @@
 
 **Transition out:** Down to the den.
 
-**Sound:** check (-13 dB); ringOn (-15 dB); ringOn (-19 dB); ringOn (-19 dB). Music: Kick joins.
+**Sound:** check (-13 dB); ringOn (-15 dB); ringOn (-19 dB); ringOn (-19 dB). Music: Build 2: bass and pizzicato join.
 
 ### 9. `energy` · 0:30.93 → 0:34.63 (3.7 s)
 
@@ -243,7 +243,7 @@
 
 **Transition out:** Orbit.
 
-**Sound:** check (-13 dB); stomp (-18 dB); sleepZ (-14 dB); sleepZ (-18 dB). Music: Hats join.
+**Sound:** check (-13 dB); stomp (-18 dB); sleepZ (-14 dB); sleepZ (-18 dB). Music: Build 3: light drums join.
 
 ### 10. `breed` · 0:34.63 → 0:38.01 (3.4 s)
 
@@ -267,7 +267,7 @@
 
 **Transition out:** Rise to the wide on 'Run'.
 
-**Sound:** check (-13 dB); snowAir (-15 dB); cubPop (-12 dB). Music: Bells join.
+**Sound:** check (-13 dB); snowAir (-15 dB); cubPop (-12 dB). Music: Build 4: the theme on glockenspiel.
 
 ### 11. `run2` · 0:38.01 → 0:42.39 (4.4 s)
 
@@ -291,7 +291,7 @@
 
 **Transition out:** Hold the wide.
 
-**Sound:** runPress (-11 dB); worldRipple (-16 dB); simTicks (-21 dB); stamp (-13 dB). Music: Full groove in F.
+**Sound:** runPress (-11 dB); worldRipple (-16 dB); simTicks (-21 dB); stamp (-13 dB). Music: Drive with the theme on flute and glockenspiel; a stab and cymbal on 'nothing'.
 
 ### 12. `twist` · 0:42.39 → 0:47.56 (5.2 s)
 
@@ -315,7 +315,7 @@
 
 **Transition out:** Restore.
 
-**Sound:** delete (-9 dB); runPress (-14 dB); boomPop (-13 dB); simTicks (-22 dB); losses (-20 dB); crash (-15 dB). Music: Dark minor, filter down; drone on the crash.
+**Sound:** delete (-9 dB); runPress (-14 dB); boomPop (-13 dB); simTicks (-22 dB); losses (-20 dB); crash (-15 dB). Music: A held A7♭9 with a timpani roll, a hard stop on 'Delete', a frenzy for the boom, a chromatic crash into 'starve'.
 
 ### 13. `role` · 0:47.56 → 0:51.42 (3.9 s)
 
@@ -339,7 +339,7 @@
 
 **Transition out:** Card goes full.
 
-**Sound:** unlock (-10 dB); restore (-12 dB); worldRipple (-14 dB). Music: Resolution to D major, bells.
+**Sound:** unlock (-10 dB); restore (-12 dB); worldRipple (-14 dB). Music: Swell: strings and harp rise, a timpani roll into a big D-major hit on 'together'.
 
 ### 14. `lesson` · 0:51.42 → 0:54.67 (3.3 s)
 
@@ -363,7 +363,7 @@
 
 **Transition out:** Block wipe to the end card.
 
-**Sound:** cardSlide (-18 dB). Music: D–G–Bm–A, warm.
+**Sound:** cardSlide (-18 dB). Music: Anthem: the theme in D major on flute, horns and glockenspiel.
 
 ### 15. `cta` · 0:54.67 → 1:00.31 (5.6 s)
 
@@ -387,7 +387,7 @@
 
 **Transition out:** Loop.
 
-**Sound:** restore (-21 dB). Music: G–D outro, faded to silence by 59.7 s.
+**Sound:** restore (-21 dB). Music: Outro: the theme's answer on celesta and music box, faded to silence by 59.7 s.
 
 ## Platform metadata
 

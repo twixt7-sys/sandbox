@@ -11,6 +11,38 @@
 
 **Shot list and timings:** [`STORYBOARD.md`](STORYBOARD.md), generated from `episode.json` and the measured `timing.json`. The script that writes `episode.json`, including the whole world timeline, is `make_ep26.py`.
 
+## v2 (2 Nov 2026): after the first review
+
+The user's response to v1 (verbatim): "it's okay but I feel like music would work good, or I don't know can you look through things that can make it even better than it is now?"
+
+What changed in v2:
+
+1. **Real music.** v1's score was synthesised tones on a beat grid (pads, square plucks, drum synthesis): functional, but it didn't sound like music. v2 is a **composed score played on sampled instruments**:
+   - FluidSynth with the MuseScore General SoundFont (MIT, from the Ubuntu archive), arranged in the new `pipeline/music_s2.py`.
+   - It has a **series theme**: a 4-bar melody that plays in D minor over the problem and returns in D major for the payoff.
+   - The instruments: celesta, marimba, pizzicato and full strings, cello, bass, flute, horns, harp, glockenspiel, music box, timpani, taiko, a quiet square-wave lead for the World Engine colour, and drums.
+   - A **tempo map fitted to the narration** puts every musical change exactly on its story beat:
+     - the drive starts on "run";
+     - the music drops out for "It ends it." with a low boom;
+     - one instrument family joins per rule;
+     - a full groove on the second run;
+     - a hard stop on "Delete";
+     - a frenzy and crash for the boom;
+     - a big hit on "together";
+     - the theme as an anthem for the lesson, and a soft outro faded out before the loop.
+2. **A mix that lets the music be heard:**
+   - **Music level:** music −25 LUFS before ducking, ducking −8 dB under speech. The music is now about **14 LU** under the voice (v1: 15.3 LU) and swells in every pause.
+   - **Narration polish (`voiceFx`):** high-pass, presence lift, air and gentle compression for phone speakers.
+   - **Stereo:** instruments are panned across the field and sub-rumble is filtered out.
+3. **A stronger first two seconds.** On "eats everything" the Grimmaw now gives a **display call**: head up, jaw open, body rocks back, with a voxel **dust ring** from its feet (`roar` + `stompHit` sounds), and the camera slowly pushes in through the hook. Frame 0 is unchanged, so the loop still matches.
+4. **Captions:** the word pop is softer (1.12× instead of 1.22×), so a popping word no longer overlaps its neighbour.
+
+Checked objectively, since I can't hear:
+- all 16 instrument channels render (927 notes, no missing presets);
+- the theme is checked against every chord it plays over;
+- the score's loudness envelope follows the story arc;
+- EP25's audio is still bit-identical.
+
 ## The brief
 
 The user's direction (1 Nov 2026), verbatim:
@@ -76,8 +108,9 @@ Everything is in `docs/SEASON2_RESEARCH.md` (sources read 1 Nov 2026, with unver
 - **Overlays:** `src/s2/overlays/`: sim bar, graph, field card, kinetic type, stamp, world-pinned labels, Zs, delete brackets, rewind, block wipe, sting, end card. Captions: `src/s2/CaptionsS2.tsx`.
 - **Sound:**
   - Narration: Kokoro `af_heart` at speed 1.05.
-  - Score and SFX: `pipeline/score_s2.py` (beat grid, D minor → D major, 100 BPM), dispatched from `score.py` only for season 2.
-  - Mix: `mix.py` with a per-episode override (`musicLufs` −28, `duckDb` −6, `sfxLufs` −29).
+  - Score (v2): `pipeline/music_s2.py`, a composed score (the series theme, D minor → D major, about 100 BPM on a tempo map fitted to the narration) played by FluidSynth on the MuseScore General SoundFont. v1 used the synth beat grid in `pipeline/score_s2.py`.
+  - SFX: the World Engine palette in `pipeline/score_s2.py`, plus `roar` and `stompHit` in v2.
+  - Mix: `mix.py` with a per-episode override: v2 sets `musicLufs` −25, `duckDb` −8, `sfxLufs` −29 and `voiceFx`; v1 used −28 / −6.
 - **Art:** one Figma generation (§5), re-gridded by the new `pipeline/pixelate.py`.
 - **Fonts** (Fontsource, SIL OFL, self-hosted in `public/fonts/`): Silkscreen, Pixelify Sans and Inter 900 are new; Cormorant Garamond is kept for the two serif lines.
 
@@ -126,6 +159,17 @@ Everything is in `docs/SEASON2_RESEARCH.md` (sources read 1 Nov 2026, with unver
 
 ## 6. Final video and verification
 
+**v2 (2 Nov 2026), the current files:**
+- **QA:** `qa.py` **passed** on the master (49.1 MB), compat (42.2 MB), download (two-pass 1,600k, 14.1 MB) and player (two-pass 1,300k, 11.9 MB). All are 60.35 s, −14.0 LUFS, TP −1.4 dB.
+- **Preview page:** the download copy published on the same page (version 3, https://claude.ai/artifact/CQMMgqMj4M6J1cjkLtCxRe) reads back byte-identical (sha256 `5d3b4d5d…`) and passes `qa.py`. The player is asset `/_blob/bd011c29ae5d5ce855c3ade80b3d42fa`; the v1 player asset was deleted after it was replaced.
+- **Render:** 716 s.
+- **Inspected:** the sheet and beat frames from the master, including the roar (1.3–1.9 s) and the "It ends it." handover. That's where v2's first render showed "YOUR WORLD." lingering under the title for about 0.2 s, now fixed in `CaptionsS2`.
+- **Mix:** voice/music 14.0 LU.
+- **Score checks:** all 16 instrument channels, 927 notes, no missing presets; stereo correlation 0.89 after panning.
+- **Cover:** the hook at 1.5 s, mid-roar.
+- **Sent in the chat:** `out/ep26_score_only.mp3`, the score by itself, so the music can be judged without the voice.
+
+**v1 (1 Nov 2026), superseded:**
 - **Sent with SendUserFile:**
   - `out/ep26.mp4` (master, 48.8 MB);
   - `out/ep26_compat.mp4` (H.264 Main, CRF 20, `+faststart`, 41.9 MB).
@@ -168,6 +212,9 @@ All are documented in `README.md` (Season 2 building blocks) and `docs/STYLE_S2.
 - **Composition:** `EpisodeS2` (selected by `"season": 2`).
 - **World:** `Stage` (⅓-res pixel WebGL + camera rig + backdrop), the Isle (`island.ts`, `IslandMesh`), `Grimmaw` (walk, sleep, lie, dissolve, appear, spawn / despawn, outlines), `Herd` (instanced, simulation time, births grow, live-count culling), and the timeline (`resolveWorld`, `cameraAt`, `moodAt`, `predatorAt`, `simTime`, keyed sampling and integration).
 - **Overlays:** `sting`, `simBar`, `simGraph`, `fieldCard` (intro / checklist / full, locked rows, `collapse`), `kinetic`, `stamp`, `pin`, `zzz`, `deleteFx`, `rewind`, `blockWipe`, `endCardS2`. Captions: `CaptionsS2` (with `captionsOff` ranges).
+- **Music (v2):** `music_s2.py`, the composed-score engine (tempo map to picture, the series theme, 14 arrangement styles, accents, rests, fade).
+- **Mix (v2):** `mix.voiceFx` narration polish.
+- **World (v2):** the `roar` predator state and the `dust` layer.
 - **Sound:** `score_s2.py` (beat-grid music with layered sections, drones and fade-out, plus the SFX palette: `sting`, `runPress`, `simTicks`, `births`, `losses`, `stamp`, `rewind`, `ringOn`, `snowAir`, `sleepZ`, `cubPop`, `delete`, `restore`, `cardSlide`, `check`, `unlock`, `worldRipple`, `stomp`, `crash`, `boomPop`).
 - **Pipeline:**
   - `pixelate.py`;
@@ -238,11 +285,13 @@ In `episode.json → metadata`, and ready to paste in `docs/DISTRIBUTION.md` ("E
    - Reuse everything else: sim bar counters (e.g. ROOFS, LIVESTOCK, TRADE), graphs, field card, stamps, rewind, end card.
    - Use a comment CTA on `endCardS2` (`cta: "COMMENT"` with a speech-bubble sprite, which you'll need to add to `Pixel.tsx`).
 
-5. **Art:** Figma credits need the user's go-ahead for each new episode (`CLAUDE.md`), and in EP26 this session's permission check blocked 2 of 3 generate calls. **Ask first** with AskUserQuestion: 1–2 generations for the dragon sprite. Fallback: local SDXL (`pipeline/local_stills.py`, prompt for a pixel-art sprite on a flat navy background), then `pixelate.py`.
+5. **Music:** copy EP26's `MUSIC` plan (`"engine": "s2-score"`). Keep the series theme (it's the sonic logo), pick a style per beat (a `drive` for each run, `build` layers as the fixes switch on, `anthem` for the lesson), and put an accent (`hit` / `boom` / `stab`) on each punchline. Check the loudness envelope and the instrument list as in §v2, since you can't listen either.
 
-6. **Narration:** 140–160 words, Kokoro `af_heart` at speed 1.05, measured before cueing. Check "dragon" names in the G2P if you invent one.
+6. **Art:** Figma credits need the user's go-ahead for each new episode (`CLAUDE.md`), and in EP26 this session's permission check blocked 2 of 3 generate calls. **Ask first** with AskUserQuestion: 1–2 generations for the dragon sprite. Fallback: local SDXL (`pipeline/local_stills.py`, prompt for a pixel-art sprite on a flat navy background), then `pixelate.py`.
 
-7. **Then:**
+7. **Narration:** 140–160 words, Kokoro `af_heart` at speed 1.05, measured before cueing. Check "dragon" names in the G2P if you invent one.
+
+8. **Then:**
    - `python episodes/ep27/make_ep27.py` → `pipeline/build.sh ep27`;
    - beat stills with `node pipeline/stills.mjs` and `tile.py`;
    - render with `--gl=swangle` (EP26: 10.5 min), then `qa.py` (55–62 s), the sheet and beat frames including the loop tail;
@@ -251,4 +300,4 @@ In `episode.json → metadata`, and ready to paste in `docs/DISTRIBUTION.md` ("E
    - a **new** preview page (same pattern as EP26's) with the Download button, then SendUserFile;
    - push to the episode branch.
 
-8. **Scope after EP27:** EP28 intelligent species, EP29 immortality, EP30 a monster people worship. The Isle keeps what earlier episodes added (village, roads), so plan landmarks with `island.ts` `LANDMARKS`.
+9. **Scope after EP27:** EP28 intelligent species, EP29 immortality, EP30 a monster people worship. The Isle keeps what earlier episodes added (village, roads), so plan landmarks with `island.ts` `LANDMARKS`.

@@ -36,6 +36,8 @@ episodes/<ep>/episode.json  ──►  pipeline/build.sh  ──►  remotion re
 
 Docs: [research and stack decision](docs/RESEARCH.md) · [costs](docs/COSTS.md) · [distribution and experiments](docs/DISTRIBUTION.md)
 
+Instagram auto-posting for Worldcraft Shorts: see [posting/README.md](posting/README.md). TikTok: [posting/TIKTOK.md](posting/TIKTOK.md).
+
 ## Render in the cloud (no local install)
 
 1. GitHub → **Actions → Render episode → Run workflow**, then pick the episode (e.g. `ep02`) and the voice provider. Pushing changes to `episodes/**` also triggers a render.

@@ -1,0 +1,162 @@
+name: TikTok daily post
+
+# Posts the next Worldcraft Shorts episode to TikTok through Buffer (posting/TIKTOK.md).
+# Order: the lowest episode from tiktok.startEpisode (posting/config.json) that isn't in
+# posting/tiktok_state.json yet. TikTok's state is separate from Instagram's posting/state.json.
+# The video is the epNN.mp4 Instagram's workflow already put on the "videos" release; it is only
+# rendered here if it's missing. Needs the BUFFER_API_KEY repository secret.
+
+on:
+  # Right after each scheduled Instagram run, so both accounts get the same episode the same day
+  # and the video is already rendered. Manual Instagram runs (tests, dry runs) don't trigger this.
+  workflow_run:
+    workflows: ["Instagram daily post"]
+    types: [completed]
+  # Fallback in case the Instagram run didn't happen. The 12-hour gap stops a second post.
+  schedule:
+    - cron: "47 22 * * *" # 22:47 UTC = 06:47 Manila
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: Post this episode (e.g. ep14). Leave empty for the next one in order.
+        required: false
+        default: ""
+      dry_run:
+        description: Check everything and print the caption, but don't post to TikTok
+        type: boolean
+        default: true
+      force:
+        description: Ignore the minimum gap between posts (and allow reposting an episode)
+        type: boolean
+        default: false
+
+concurrency:
+  group: tiktok-state
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  post:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.event == 'schedule'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+      BUFFER_CHANNEL_ID: ${{ vars.BUFFER_CHANNEL_ID }}
+      HF_HOME: ${{ github.workspace }}/.cache/hf
+      RELEASE_TAG: videos
+      DRY_RUN: ${{ inputs.dry_run == true }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check secrets
+        if: env.DRY_RUN != 'true'
+        run: |
+          if [ -z "$BUFFER_API_KEY" ]; then
+            echo "::error::Add the BUFFER_API_KEY repository secret first (posting/TIKTOK.md, step 3)."
+            exit 1
+          fi
+
+      - name: Pick episode
+        id: pick
+        env:
+          EPISODE: ${{ inputs.episode }}
+          FORCE: ${{ inputs.force }}
+        run: |
+          args=()
+          [ -n "$EPISODE" ] && args+=(--episode "$EPISODE")
+          [ "$FORCE" = "true" ] && args+=(--force)
+          python3 posting/tiktok_post.py select "${args[@]}"
+
+      - name: Nothing to post
+        if: steps.pick.outputs.go != 'true'
+        env:
+          REASON: ${{ steps.pick.outputs.reason }}
+        run: |
+          echo "::notice::Nothing posted to TikTok: $REASON"
+
+      - name: Look for an existing video asset
+        if: steps.pick.outputs.go == 'true'
+        id: asset
+        run: |
+          EP=${{ steps.pick.outputs.episode }}
+          gh release view "$RELEASE_TAG" >/dev/null 2>&1 || gh release create "$RELEASE_TAG" \
+            --title "Episode videos" --latest=false \
+            --notes "Rendered episodes hosted for Instagram publishing (posting/README.md). You can replace an epNN.mp4 here by hand before it is posted."
+          if gh release view "$RELEASE_TAG" --json assets -q '.assets[].name' | grep -qx "$EP.mp4"; then
+            echo "have=true" >> "$GITHUB_OUTPUT"
+            echo "Reusing $EP.mp4 from the $RELEASE_TAG release; no render needed."
+          else
+            echo "have=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check out the episode branch
+        if: steps.pick.outputs.go == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.pick.outputs.branch }}
+          path: ep
+
+      # ── render, only when the release has no video yet (same steps as instagram-post.yml; keep in sync) ──
+      - uses: actions/setup-python@v5
+        if: steps.pick.outputs.go == 'true' && steps.asset.outputs.have != 'true'
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: ep/pipeline/requirements.txt
+
+      - uses: actions/setup-node@v4
+        if: steps.pick.outputs.go == 'true' && steps.asset.outputs.have != 'true'
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ep/package-lock.json
+
+      - uses: actions/cache@v4
+        if: steps.pick.outputs.go == 'true' && steps.asset.outputs.have != 'true'
+        with:
+          path: .cache/hf
+          key: hf-kokoro-v1
+
+      - name: Render, QA and encode
+        if: steps.pick.outputs.go == 'true' && steps.asset.outputs.have != 'true'
+        working-directory: ep
+        run: |
+          set -euo pipefail
+          EP=${{ steps.pick.outputs.episode }}
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg espeak-ng
+          pip install -r pipeline/requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+          npm ci && npx remotion browser ensure
+          pipeline/build.sh "$EP" --provider kokoro
+          npx remotion render Episode "out/$EP.mp4" --props="{\"episodeId\":\"$EP\"}"
+          python pipeline/qa.py "out/$EP.mp4" --sheet "out/${EP}_sheet.jpg"
+          # H.264 High / AAC, capped bitrate, moov atom first: fine for both Instagram and TikTok.
+          ffmpeg -nostdin -y -i "out/$EP.mp4" -c:v libx264 -profile:v high -level 4.1 -pix_fmt yuv420p \
+            -preset slow -crf 19 -maxrate 10M -bufsize 20M -r 30 -c:a aac -b:a 192k -ar 48000 \
+            -movflags +faststart "out/$EP.ig.mp4"
+          python pipeline/qa.py "out/$EP.ig.mp4"
+          mv "out/$EP.ig.mp4" "out/$EP.mp4"
+          gh release upload "$RELEASE_TAG" "out/$EP.mp4" --clobber -R "$GITHUB_REPOSITORY"
+
+      - name: Publish to TikTok via Buffer
+        if: steps.pick.outputs.go == 'true'
+        run: |
+          EP=${{ steps.pick.outputs.episode }}
+          args=(--episode-json "ep/episodes/$EP/episode.json"
+                --video-url "https://github.com/$GITHUB_REPOSITORY/releases/download/$RELEASE_TAG/$EP.mp4")
+          [ "$DRY_RUN" = "true" ] && args+=(--dry-run)
+          python3 posting/tiktok_post.py publish "${args[@]}"
+
+      - name: Save posting state
+        if: steps.pick.outputs.go == 'true' && always()
+        run: |
+          git diff --quiet posting/tiktok_state.json && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add posting/tiktok_state.json
+          git commit -m "TikTok: posted ${{ steps.pick.outputs.episode }}"
+          for i in 1 2 3; do git pull --rebase -q origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME" && exit 0; sleep 5; done
+          exit 1

@@ -1,0 +1,484 @@
+# Don't Design a Monster. Design an Ecosystem.
+
+**Series:** Worldcraft Shorts · Episode 26  
+**Lesson:** A creature becomes believable when it has a place in its environment: prey that out-breeds it, a territory, an energy budget, slow breeding, and a job the ecosystem needs it for.  
+**Measured runtime:** 60.97 s · 169 spoken words · voice `kokoro`
+
+## Narration (exactly as spoken)
+
+- `0:00.20–0:04.24` If your giant predator eats everything, why hasn't everything gone extinct?
+- `0:04.62–0:07.96` Let's test it. This is the Grimmaw. It eats anything that moves.
+- `0:08.21–0:08.92` Press run.
+- `0:09.22–0:13.45` Year one: mossbacks everywhere. Year three: thinning. Year five: gone.
+- `0:13.79–0:16.01` With nothing to hunt, the Grimmaw starves too.
+- `0:16.31–0:19.83` A monster that eats everything doesn't rule your world. It ends it.
+- `0:20.43–0:24.69` Real predators live inside limits. Four are easy. The fifth is the twist.
+- `0:25.04–0:27.18` One: prey that breeds faster than it's eaten.
+- `0:27.38–0:30.14` Two: territory. One Grimmaw needs a whole valley.
+- `0:30.34–0:33.78` Three: energy. A body this big hunts rarely and sleeps a lot.
+- `0:33.98–0:36.97` Four: slow breeding. One cub every few winters.
+- `0:37.32–0:38.08` Run it again.
+- `0:38.33–0:41.18` Now the numbers rise and fall, but nothing vanishes.
+- `0:41.56–0:43.27` Rule five? Delete the monster.
+- `0:43.57–0:46.33` The mossbacks boom, strip the meadow bare, then starve.
+- `0:46.68–0:50.09` Rule five is its job. The Grimmaw holds the island together.
+- `0:50.47–0:53.24` Don't design a monster. Design its place in the world.
+- `0:53.59–0:55.10` Send this to a monster designer.
+- `0:55.35–0:59.87` Part 26 of 50. Follow for part 27: a dragon lands here.
+
+**Voice direction:** A curious lab-host energy: brisk, warm, a little playful. The hook is a genuine puzzle. 'Press run' is a small grin. The year count is a quick, flat countdown. 'It ends it' lands low and slow. 'The fifth is the twist' teases. Rules one to four are crisp list beats. 'Rule five? Delete the monster' is mischievous; the lesson is sure and warm.
+
+## Shots
+
+### 1. `hook` · 0:00.00 → 0:04.50 (4.5 s)
+
+**Purpose:** Stop the scroll on a question with the answer already on screen: a giant predator among its prey.
+
+**Narration:** “If your giant predator eats everything, why hasn't everything gone extinct?”
+
+**Visual:** The Grimmaw in profile on the meadow of the Isle, mossbacks grazing around it; WORLD ENGINE boots top-right as the island ripples.
+
+**Camera:** Long-lens hero shot (fov 16.5 from dist 54, el 8, az 24), slow drift; the last 0.7 s returns to this exact pose.
+
+**Layers:** foreground: kinetic question; midground: the Grimmaw and herd; background: the Isle's peak and the void
+
+**Light / palette / composition:** Day mood; warm key from the south-east, hard pixel shadows.
+
+**On-screen text:** IF IT EATS / EVERYTHING then WHY ISN'T / EVERYTHING / EXTINCT?
+
+**Motion graphics:** `kinetic`, `kinetic`, `sting`
+
+**Captions:** off (text is on screen verbatim)
+
+**Transition out:** Continuous camera into the setup.
+
+**Sound:** chime (-11 dB); worldRipple (-17 dB); roar (-12 dB); stompHit (-13 dB). Music: Hook: the series theme on celesta over strings and a harp sweep; a hit on 'extinct?'.
+
+### 2. `setup` · 0:04.50 → 0:09.10 (4.6 s)
+
+**Purpose:** Meet the subject and its one dangerous claim, then press RUN.
+
+**Narration:** “Let's test it. This is the Grimmaw. It eats anything that moves.” “Press run.”
+
+**Visual:** Field card intro (sprite x3, GRIMMAW, APEX PREDATOR, DIET anything that moves) over the Grimmaw walking in profile; the sim bar slides in and RUN is pressed.
+
+**Camera:** Hero close orbit (az 8), then rise to wide on 'run'.
+
+**Layers:** foreground: field card, sim bar; midground: the Grimmaw walking; background: herd and lake
+
+**Light / palette / composition:** Day.
+
+**On-screen text:** Field card; RUN.
+
+**Motion graphics:** `fieldCard`, `simBar`
+
+**Captions:** word-timed, emphasis: grimmaw., anything, run.
+
+**Transition out:** Ripple + rise to the wide on 'run'.
+
+**Sound:** stomp (-17 dB); cardSlide (-17 dB); check (-20 dB); runPress (-11 dB); worldRipple (-16 dB). Music: Pulse: pizzicato eighths, the theme's answer on celesta, a soft kick.
+
+### 3. `run1` · 0:09.10 → 0:13.68 (4.6 s)
+
+**Purpose:** The naive design runs and fails, in numbers.
+
+**Narration:** “Year one: mossbacks everywhere. Year three: thinning. Year five: gone.”
+
+**Visual:** The whole Isle; clock 0→5, MOSSBACKS 120→0 while the graph falls; herds thin everywhere.
+
+**Camera:** Wide (dist 192, el 44).
+
+**Layers:** foreground: sim bar + graph; midground: the thinning herds; background: the island in the void
+
+**Light / palette / composition:** Day.
+
+**On-screen text:** YEAR 01..05; counters; graph YEARS 0–5.
+
+**Motion graphics:** `simGraph`
+
+**Captions:** word-timed, emphasis: mossbacks, gone.
+
+**Transition out:** Swoop down to the lone predator.
+
+**Sound:** simTicks (-21 dB); losses (-23 dB). Music: Drive: 16th marimba and quiet square-lead arps, pizzicato, bass, drums.
+
+### 4. `starve` · 0:13.68 → 0:16.19 (2.5 s)
+
+**Purpose:** Hunger shown as an empty range, never a kill.
+
+**Narration:** “With nothing to hunt, the Grimmaw starves too.”
+
+**Visual:** The Grimmaw walks an empty meadow at dusk, then lies down and greys. Pin: FOOD IN RANGE / NONE.
+
+**Camera:** Close (dist 32, az 140).
+
+**Layers:** foreground: pin; midground: the Grimmaw; background: empty meadow
+
+**Light / palette / composition:** Dusk to gloom.
+
+**On-screen text:** FOOD IN RANGE: NONE
+
+**Motion graphics:** `pin`
+
+**Captions:** word-timed, emphasis: starves
+
+**Transition out:** Pull back.
+
+**Sound:** stomp (-18 dB); crash (-19 dB). Music: Drop: cello pedal, a timpani heartbeat, a slowed music-box echo of the theme.
+
+### 5. `ends` · 0:16.19 → 0:20.31 (4.1 s)
+
+**Purpose:** The punchline of the failure.
+
+**Narration:** “A monster that eats everything doesn't rule your world. It ends it.”
+
+**Visual:** The whole island desaturated and empty; EXTINCT stamp; 'IT ENDS IT.' in rust.
+
+**Camera:** Long pull back (dist 200).
+
+**Layers:** foreground: stamp, kinetic; midground: empty island; background: void
+
+**Light / palette / composition:** Gloom (saturation 0.35).
+
+**On-screen text:** EXTINCT · EVERYTHING · YEAR 5; IT ENDS IT.
+
+**Motion graphics:** `stamp`, `kinetic`
+
+**Captions:** word-timed, emphasis: rule, ends
+
+**Transition out:** Rewind + block wipe.
+
+**Sound:** stamp (-10 dB). Music: Near silence; a taiko boom on 'It ends it.'
+
+### 6. `rehook` · 0:20.31 → 0:24.92 (4.6 s)
+
+**Purpose:** Re-hook: rewind the world and open a loop (four easy rules, one locked twist).
+
+**Narration:** “Real predators live inside limits. Four are easy. The fifth is the twist.”
+
+**Visual:** REWIND chip and scanlines; clock and herd run back; the checklist card with a blinking locked row 5.
+
+**Camera:** Medium (dist 92).
+
+**Layers:** foreground: rewind, checklist card; midground: herd returning; background: island
+
+**Light / palette / composition:** Back to day.
+
+**On-screen text:** DESIGN CHECK 0/5, row 5 '??? the twist'.
+
+**Motion graphics:** `rewind`, `blockWipe`, `fieldCard`
+
+**Captions:** word-timed, emphasis: limits., twist.
+
+**Transition out:** Cut on 'One'.
+
+**Sound:** rewind (-11 dB); cardSlide (-17 dB). Music: Mystery: celesta arpeggios and harp; a reverse-cymbal riser peaks on 'the twist'.
+
+### 7. `prey` · 0:24.92 → 0:27.25 (2.3 s)
+
+**Purpose:** Rule 1: prey that breeds faster than it is eaten.
+
+**Narration:** “One: prey that breeds faster than it's eaten.”
+
+**Visual:** Close on a herd; lambs pop in small and grow; pin SPRING +55 BORN; row 1 ticks.
+
+**Camera:** Close on the herd (dist 46).
+
+**Layers:** foreground: pin; midground: herd and lambs; background: meadow
+
+**Light / palette / composition:** Day.
+
+**On-screen text:** 1 PREY · breeds faster than it's eaten
+
+**Motion graphics:** `pin`
+
+**Captions:** word-timed, emphasis: breeds, faster
+
+**Transition out:** Rise to top-down.
+
+**Sound:** check (-13 dB); births (-20 dB). Music: Build 1 (F major): marimba and strings.
+
+### 8. `range` · 0:27.25 → 0:30.22 (3.0 s)
+
+**Purpose:** Rule 2: territory; the island only fits three.
+
+**Narration:** “Two: territory. One Grimmaw needs a whole valley.”
+
+**Visual:** Top-down Isle; three territory rings painted on the voxels (outside dimmed); two more Grimmaws appear, one per valley; card folds.
+
+**Camera:** Near top-down wide (el 66, dist 182).
+
+**Layers:** foreground: pin, folded card; midground: three rings; background: island
+
+**Light / palette / composition:** Day.
+
+**On-screen text:** 2 RANGE · one valley per Grimmaw; TERRITORY / 1 VALLEY EACH
+
+**Motion graphics:** `pin`
+
+**Captions:** word-timed, emphasis: territory., valley.
+
+**Transition out:** Down to the den.
+
+**Sound:** check (-13 dB); ringOn (-15 dB); ringOn (-19 dB); ringOn (-19 dB). Music: Build 2: bass and pizzicato join.
+
+### 9. `energy` · 0:30.22 → 0:33.86 (3.6 s)
+
+**Purpose:** Rule 3: a big body hunts rarely and sleeps a lot.
+
+**Narration:** “Three: energy. A body this big hunts rarely and sleeps a lot.”
+
+**Visual:** The Grimmaw walks to its den at the foot of the peak and lies down to sleep; Zs.
+
+**Camera:** Close profile (dist 40).
+
+**Layers:** foreground: pin, Zs; midground: sleeping Grimmaw; background: rock face
+
+**Light / palette / composition:** Day.
+
+**On-screen text:** 3 ENERGY · hunts rarely, sleeps a lot; BIG BODY / HUNTS RARELY
+
+**Motion graphics:** `pin`, `zzz`
+
+**Captions:** word-timed, emphasis: energy., rarely
+
+**Transition out:** Orbit.
+
+**Sound:** check (-13 dB); stomp (-18 dB); sleepZ (-14 dB); sleepZ (-18 dB). Music: Build 3: light drums join.
+
+### 10. `breed` · 0:33.86 → 0:37.20 (3.3 s)
+
+**Purpose:** Rule 4: slow breeding.
+
+**Narration:** “Four: slow breeding. One cub every few winters.”
+
+**Visual:** Winter falls over the den (snow on voxels and trees); one cub pops in beside the sleeping Grimmaw.
+
+**Camera:** Close (dist 34, az 108).
+
+**Layers:** foreground: pin; midground: cub and parent; background: snowy rocks
+
+**Light / palette / composition:** Winter mood.
+
+**On-screen text:** 4 BREEDING · one cub, every few winters; 1 CUB
+
+**Motion graphics:** `pin`
+
+**Captions:** word-timed, emphasis: slow, cub
+
+**Transition out:** Rise to the wide on 'Run'.
+
+**Sound:** check (-13 dB); snowAir (-15 dB); cubPop (-12 dB). Music: Build 4: the theme on glockenspiel.
+
+### 11. `run2` · 0:37.20 → 0:41.44 (4.2 s)
+
+**Purpose:** The fixed world runs: it cycles instead of collapsing.
+
+**Narration:** “Run it again.” “Now the numbers rise and fall, but nothing vanishes.”
+
+**Visual:** Wide Isle, winters flicker past, years 3→23; graph shows prey and predators rising and falling; STABLE stamp.
+
+**Camera:** Wide (dist 196).
+
+**Layers:** foreground: folded card, graph, stamp; midground: herds and three predators; background: island
+
+**Light / palette / composition:** Day.
+
+**On-screen text:** YEARS 3–23; STABLE · NOTHING VANISHES
+
+**Motion graphics:** `simGraph`, `stamp`
+
+**Captions:** word-timed, emphasis: again., nothing, vanishes.
+
+**Transition out:** Hold the wide.
+
+**Sound:** runPress (-11 dB); worldRipple (-16 dB); simTicks (-21 dB); stamp (-13 dB). Music: Drive with the theme on flute and glockenspiel; a stab and cymbal on 'nothing'.
+
+### 12. `twist` · 0:41.44 → 0:46.56 (5.1 s)
+
+**Purpose:** The locked rule, as an experiment: delete the monster.
+
+**Narration:** “Rule five? Delete the monster.” “The mossbacks boom, strip the meadow bare, then starve.”
+
+**Visual:** RULE 5? then selection brackets + DEL: the three Grimmaws fly apart into voxels; mossbacks boom to 380, strip the meadow to dirt, the forest thins, then the herd crashes.
+
+**Camera:** Wide (dist 170).
+
+**Layers:** foreground: kinetic, DEL, graph, pin; midground: boom and bare earth; background: island
+
+**Light / palette / composition:** Gloom on 'bare'.
+
+**On-screen text:** RULE 5?; DEL; NO PREDATOR graph; MEADOW / STRIPPED BARE
+
+**Motion graphics:** `kinetic`, `deleteFx`, `simGraph`, `pin`
+
+**Captions:** word-timed, emphasis: delete, boom,, starve.
+
+**Transition out:** Restore.
+
+**Sound:** delete (-9 dB); runPress (-14 dB); boomPop (-13 dB); simTicks (-22 dB); losses (-20 dB); crash (-15 dB). Music: A held A7♭9 with a timpani roll, a hard stop on 'Delete', a frenzy for the boom, a chromatic crash into 'starve'.
+
+### 13. `role` · 0:46.56 → 0:50.35 (3.8 s)
+
+**Purpose:** Unlock rule 5: its job.
+
+**Narration:** “Rule five is its job. The Grimmaw holds the island together.”
+
+**Visual:** Row 5 unlocks (ROLE · keeps the grazers in check); the Grimmaws re-appear, the meadow and forest heal, the island ripples on 'together'.
+
+**Camera:** Medium-wide (dist 170).
+
+**Layers:** foreground: unlocked card; midground: healing island; background: void
+
+**Light / palette / composition:** Day.
+
+**On-screen text:** 5/5
+
+**Motion graphics:** `followChip`
+
+**Captions:** word-timed, emphasis: job., together.
+
+**Transition out:** Card goes full.
+
+**Sound:** unlock (-10 dB); restore (-12 dB); worldRipple (-14 dB). Music: Swell: strings and harp rise, a timpani roll into a big D-major hit on 'together'.
+
+### 14. `lesson` · 0:50.35 → 0:53.48 (3.1 s)
+
+**Purpose:** The takeaway: the full design check, screenshot-able.
+
+**Narration:** “Don't design a monster. Design its place in the world.”
+
+**Visual:** The complete field card (BEFORE YOU DESIGN A MONSTER / GRIMMAW / 5 rows ticked) with 'Design its place in the world.' in serif italic.
+
+**Camera:** Wide orbit (dist 190).
+
+**Layers:** foreground: full card; midground: island at golden hour; background: stars
+
+**Light / palette / composition:** Golden hour.
+
+**On-screen text:** Full card.
+
+**Motion graphics:** `fieldCard`
+
+**Captions:** off (text is on screen verbatim)
+
+**Transition out:** Block wipe to the end card.
+
+**Sound:** engineWind (-15 dB); chime (-10 dB); cardSlide (-18 dB). Music: Anthem: the theme in D major on flute, horns and glockenspiel; the World Engine chime as the card lands.
+
+### 15. `cta` · 0:53.48 → 0:55.23 (1.8 s)
+
+**Purpose:** Share CTA.
+
+**Narration:** “Send this to a monster designer.”
+
+**Visual:** End card: logo, PART 26 / 50, title, SEND THIS to a monster designer.
+
+**Camera:** Cut (under the block wipe) to the hook pose.
+
+**Layers:** foreground: end card; midground: the Isle; background: void
+
+**Light / palette / composition:** Golden hour (the loop frame).
+
+**On-screen text:** End card.
+
+**Motion graphics:** `blockWipe`, `endCardS2`
+
+**Captions:** off (text is on screen verbatim)
+
+**Transition out:** The card lifts on 'Part'.
+
+**Sound:** restore (-21 dB). Music: Outro: the theme's answer on celesta and music box.
+
+### 16. `next` · 0:55.23 → 1:00.97 (5.7 s)
+
+**Purpose:** Say the part number, ask for the follow with a specific reason (part 27), and open the next loop: a dragon's shadow crosses the Isle.
+
+**Narration:** “Part 26 of 50. Follow for part 27: a dragon lands here.”
+
+**Visual:** The end card lifts onto the hook frame at golden hour; PART 26/50 with a 50-segment season bar; a pixel FOLLOW FOR PART 27 button pressed on 'Follow'; NEXT RUN 27 · DRAGONS with a dragon sprite; a huge winged shadow sweeps over the meadow and the Grimmaw looks up; then the hook title returns for the loop.
+
+**Camera:** The hook pose (long lens), still.
+
+**Layers:** foreground: progress bar, follow button, next-run card; midground: the Grimmaw and its herd under the dragon's shadow; background: the Isle at golden hour
+
+**Light / palette / composition:** Golden hour (low sun from the east, long shadows).
+
+**On-screen text:** PART 26/50 · FOLLOW FOR PART 27 · NEXT RUN: DRAGONS · A DRAGON LANDS HERE.
+
+**Motion graphics:** `seasonBar`, `followButton`, `nextRun`, `kinetic`
+
+**Captions:** off (text is on screen verbatim)
+
+**Transition out:** Loop to frame 0.
+
+**Sound:** simTicks (-22 dB); engineWind (-15 dB); followPress (-11 dB); chime (-11 dB); cardSlide (-18 dB); unlock (-15 dB); dragonPass (-9 dB); engineWind (-14 dB). Music: Tease: the theme's opening as a question over a held A (the dominant), wingbeats on the shadow, the engine chime on 'Follow'; it resolves into frame 0's D minor on the loop.
+
+## Platform metadata
+
+### Youtube
+- **title:** Don't Design a Monster. Design an Ecosystem. (Worldbuilding)
+- **titleAlternate:** Why your apex predator would starve
+- **description:** If your giant predator eats everything, why hasn't everything gone extinct?
+
+We ran it. The Grimmaw eats anything that moves. By year five the mossbacks are gone, and then the Grimmaw starves too. A monster that eats everything doesn't rule your world. It ends it.
+
+Real predators live inside limits: prey that breeds faster than it's eaten, one territory per predator, a big body that hunts rarely and sleeps a lot, and slow breeding. Then the twist: delete the monster, and the grazers strip the meadow bare and starve instead. The predator was holding the island together.
+
+Don't design a monster. Design its place in the world.
+
+Send this to a monster designer.
+
+Part 26 of 50. Follow for part 27: a dragon lands on the Isle.
+
+Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 6: Creatures and Species.
+
+#Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts
+- **pinnedComment:** Design check: which of the five does your monster break? Prey, range, energy, breeding, or its role? Name the creature and the rule. (Part 27 drops a dragon on the Isle.)
+- **uploadSettings:** Altered or synthetic content: Yes (synthetic narration and an AI-generated creature sprite; the island and creatures are drawn in code). Not made for kids. Category: Education.
+
+### Tiktok
+- **caption:** Your apex predator would starve 🦖 We ran it: it eats everything, then there's nothing left, then it's gone too. 5 rules for a believable monster, and #5 is the twist. Part 26/50 · follow for part 27: a dragon lands 🐉 #Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts
+- **pinnedComment:** Which rule does your monster break: prey, range, energy, breeding, or its role?
+- **uploadSettings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook
+- **caption:** If your giant predator eats everything, why hasn't everything gone extinct?
+
+We ran it. The Grimmaw eats anything that moves. By year five the mossbacks are gone, and then the Grimmaw starves too. A monster that eats everything doesn't rule your world. It ends it.
+
+Real predators live inside limits: prey that breeds faster than it's eaten, one territory per predator, a big body that hunts rarely and sleeps a lot, and slow breeding. Then the twist: delete the monster, and the grazers strip the meadow bare and starve instead. The predator was holding the island together.
+
+Don't design a monster. Design its place in the world.
+
+Send this to a monster designer.
+
+Part 26 of 50. Follow for part 27: a dragon lands on the Isle.
+
+Worldcraft Shorts · Season 2: The World Engine.
+
+#Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts
+- **pinnedComment:** What keeps the scariest creature in your world from eating everything? Prey, territory, energy, breeding, or something it's needed for?
+- **uploadSettings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram
+- **caption:** Your monster would starve.
+
+If your giant predator eats everything, why hasn't everything gone extinct?
+
+We ran it. The Grimmaw eats anything that moves. By year five the mossbacks are gone, and then the Grimmaw starves too. A monster that eats everything doesn't rule your world. It ends it.
+
+Real predators live inside limits: prey that breeds faster than it's eaten, one territory per predator, a big body that hunts rarely and sleeps a lot, and slow breeding. Then the twist: delete the monster, and the grazers strip the meadow bare and starve instead. The predator was holding the island together.
+
+Don't design a monster. Design its place in the world.
+
+Send this to a monster designer.
+
+Part 26 of 50. Follow for part 27: a dragon lands on the Isle.
+
+Worldcraft Shorts · Season 2
+
+#Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts
+- **hookCheck:** First 26 characters: 'Your monster would starve.'
+- **pinnedComment:** Save the five-rule checklist, then tell us: which rule is your monster missing?
+- **uploadSettings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

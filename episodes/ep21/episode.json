@@ -1,0 +1,1578 @@
+{
+ "id": "ep21",
+ "number": 21,
+ "title": "The Three Questions Every Magic System Needs",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "A calm, practical guide with a hint of delight. The hook is an invitation, not a warning. Each question ('One', 'Two', 'Three') gets a short beat before its answer, said plainly like filling in a form. 'Then the queen's crown shatters' drops low; 'A thief.' lands with a small smile. 'Can. Can't. Costs.' is three even taps. The save CTA is friendly. No trailer voice."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "Before inventing a spell, answer these three questions.",
+   "pauseAfter": 0.5,
+   "emphasis": [
+    "spell,",
+    "three"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "can",
+   "text": "One: what can it do? Menders fix anything broken.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "can",
+    "anything"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "cant",
+   "text": "Two: what stops it? Only what they touched before it broke.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "stops",
+    "touched"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "cost",
+   "text": "Three: what does it cost? Each mend cracks something they own.",
+   "pauseAfter": 0.5,
+   "emphasis": [
+    "cost?",
+    "cracks"
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "crown",
+   "text": "Then the queen's crown shatters.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "shatters."
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "thief",
+   "text": "The only mender who ever held it? A thief.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "thief."
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "thief",
+   "text": "Three answers, and the story writes itself.",
+   "pauseAfter": 0.55,
+   "emphasis": [
+    "story"
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "lesson",
+   "text": "Can. Can't. Costs. Answer all three before your first spell.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "can.",
+    "can't.",
+    "costs."
+   ]
+  },
+  {
+   "id": "L9",
+   "shot": "cta",
+   "text": "Save this before designing your next magic system.",
+   "pauseAfter": 0.0,
+   "emphasis": [
+    "save"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.06,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.5,
+   "purpose": "Stop the scroll on the promise: a blank spell page with three empty lines over a mender's workshop full of broken things. Before the spell, the three questions.",
+   "visual": "A lamplit workshop crowded with broken jars and bowls, the old mender at her bench, dimmed under a code-drawn spell page: 'A NEW SPELL', three numbered empty lines, an unlit three-point sigil.",
+   "camera": "Slow push (1.00 to 1.06).",
+   "layers": {
+    "foreground": "spell page and type",
+    "midground": "the subject",
+    "background": "the world"
+   },
+   "lighting": "Natural to the scene.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a lamplit stone workshop at night, a living old woman mender in a patched indigo apron and copper bracelets sitting at a long workbench crowded with broken clay jars, cracked bowls and a split lute, shelves of shards behind her, wide view, warm lamplight, cold blue window. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "a lamplit stone workshop at night, a living old woman mender in a patched indigo apron and copper bracelets sitting at a long workbench crowded with broken clay jars, cracked bowls and a split lute, shelves of shards behind her, wide view, warm lamplight, cold blue window",
+   "graphics": [
+    {
+     "type": "spellPage",
+     "title": "Mending",
+     "kicker": "A new spell",
+     "rows": [
+      {
+       "num": "I",
+       "label": "Can",
+       "q": "What can it do?",
+       "a": "Mend anything broken.",
+       "qAt": {
+        "line": "L2",
+        "word": "one",
+        "offset": -0.1
+       },
+       "aAt": {
+        "line": "L2",
+        "word": "menders",
+        "offset": -0.05
+       }
+      },
+      {
+       "num": "II",
+       "label": "Can't",
+       "q": "What stops it?",
+       "a": "Only what you touched before it broke.",
+       "qAt": {
+        "line": "L3",
+        "word": "two",
+        "offset": -0.1
+       },
+       "aAt": {
+        "line": "L3",
+        "word": "only",
+        "offset": -0.05
+       }
+      },
+      {
+       "num": "III",
+       "label": "Costs",
+       "q": "What does it cost?",
+       "a": "Each mend cracks something you own.",
+       "qAt": {
+        "line": "L4",
+        "word": "three",
+        "offset": -0.1
+       },
+       "aAt": {
+        "line": "L4",
+        "word": "each",
+        "offset": -0.05
+       }
+      }
+     ],
+     "motif": "#d6c2ff",
+     "start": {
+      "line": "L1",
+      "word": "before",
+      "offset": -0.1
+     },
+     "at": {
+      "x": 140,
+      "y": 380,
+      "s": 1.0
+     },
+     "pulseAt": {
+      "line": "L1",
+      "word": "three"
+     },
+     "dim": 0.62
+    }
+   ],
+   "onScreenText": "Spell page: 'A NEW SPELL' / 'Mending' title line blank; I · II · III with empty lines; sigil unlit.",
+   "transition": "Hard cut on 'One': the page shrinks to the top-left corner and the first line is asked.",
+   "sfx": [
+    {
+     "sound": "room",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "can",
+      "offset": 0.3
+     },
+     "gain": -34
+    },
+    {
+     "sound": "paper",
+     "at": {
+      "line": "L1",
+      "word": "before",
+      "offset": -0.05
+     },
+     "gain": -24
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L1",
+      "word": "three",
+      "offset": -1.0
+     },
+     "gain": -25
+    }
+   ],
+   "music": "F minor, low and hushed."
+  },
+  {
+   "id": "can",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.1,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "Question one, capabilities: menders fix anything broken. The mend is shown, drawn in code on the jar.",
+   "visual": "A painted clay jar on the bench. A crack splits it top to bottom, then mend light runs along the crack and leaves a thin lilac seam. Page row I: CAN · Mend anything broken.",
+   "camera": "Slow push (1.04 to 1.10).",
+   "layers": {
+    "foreground": "spell page and type",
+    "midground": "the subject",
+    "background": "the world"
+   },
+   "lighting": "Natural to the scene.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. close view of a large round clay water jar painted with a band of little blue fish, standing alone on a scarred wooden workbench, warm lamplight from the left, dark workshop behind, shallow depth of field, no people. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "close view of a large round clay water jar painted with a band of little blue fish, standing alone on a scarred wooden workbench, warm lamplight from the left, dark workshop behind, shallow depth of field, no people",
+   "graphics": [
+    {
+     "type": "spellPage",
+     "title": "Mending",
+     "kicker": "A new spell",
+     "rows": [
+      {
+       "num": "I",
+       "label": "Can",
+       "q": "What can it do?",
+       "a": "Mend anything broken.",
+       "qAt": {
+        "line": "L2",
+        "word": "one",
+        "offset": -0.1
+       },
+       "aAt": {
+        "line": "L2",
+        "word": "menders",
+        "offset": -0.05
+       }
+      },
+      {
+       "num": "II",
+       "label": "Can't",
+       "q": "What stops it?",
+       "a": "Only what you touched before it broke.",
+       "qAt": {
+        "line": "L3",
+        "word": "two",
+        "offset": -0.1
+       },
+       "aAt": {
+        "line": "L3",
+        "word": "only",
+        "offset": -0.05
+       }
+      },
+      {
+       "num": "III",
+       "label": "Costs",
+       "q": "What does it cost?",
+       "a": "Each mend cracks something you own.",
+       "qAt": {
+        "line": "L4",
+        "word": "three",
+        "offset": -0.1
+       },
+       "aAt": {
+        "line": "L4",
+        "word": "each",
+        "offset": -0.05
+       }
+      }
+     ],
+     "motif": "#d6c2ff",
+     "start": {
+      "shot": "can"
+     },
+     "instant": true,
+     "at": {
+      "x": 90,
+      "y": 336,
+      "s": 0.7
+     },
+     "show": 1,
+     "active": 0
+    },
+    {
+     "type": "mendSeam",
+     "local": true,
+     "crack": [
+      [
+       760,
+       330
+      ],
+      [
+       740,
+       460
+      ],
+      [
+       785,
+       610
+      ],
+      [
+       720,
+       790
+      ],
+      [
+       745,
+       960
+      ],
+      [
+       690,
+       1140
+      ],
+      [
+       720,
+       1310
+      ]
+     ],
+     "branches": [
+      [
+       [
+        785,
+        610
+       ],
+       [
+        860,
+        660
+       ]
+      ],
+      [
+       [
+        720,
+        790
+       ],
+       [
+        640,
+        835
+       ]
+      ],
+      [
+       [
+        690,
+        1140
+       ],
+       [
+        610,
+        1185
+       ]
+      ]
+     ],
+     "width": 8,
+     "crackAt": {
+      "shot": "can"
+     },
+     "crackDur": 0.0,
+     "mendAt": {
+      "line": "L2",
+      "word": "fix",
+      "offset": -0.1
+     },
+     "mendDur": 0.9,
+     "motif": "#d6c2ff"
+    }
+   ],
+   "onScreenText": "Page row I: 'CAN · What can it do?' → 'Mend anything broken.'",
+   "transition": "Hard cut on the next line.",
+   "sfx": [
+    {
+     "sound": "room",
+     "from": {
+      "shot": "can"
+     },
+     "to": {
+      "shot": "cant",
+      "offset": 0.2
+     },
+     "gain": -36
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L2",
+      "word": "menders",
+      "offset": -0.05
+     },
+     "gain": -26
+    },
+    {
+     "sound": "mendKnit",
+     "at": {
+      "line": "L2",
+      "word": "fix",
+      "offset": -0.1
+     },
+     "gain": -20
+    }
+   ],
+   "music": "F minor, a soft pulse starts."
+  },
+  {
+   "id": "cant",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "Question two, limitations: only what they touched before it broke. A stranger's wheel: the mend light starts, sputters and dies.",
+   "visual": "A broken cart wheel in a dusk lane, a traveller with a lantern. The mend light runs a little way along the break, flickers rust and goes out. Page row II: CAN'T · Only what you touched before it broke.",
+   "camera": "Slow push (1.04 to 1.08).",
+   "layers": {
+    "foreground": "spell page and type",
+    "midground": "the subject",
+    "background": "the world"
+   },
+   "lighting": "Natural to the scene.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a broken wooden cart wheel with snapped spokes lying in a muddy village lane at dusk, a tired traveller in a long rust coat standing by an overturned cart holding a lantern, thatched cottages behind, wide view. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "a broken wooden cart wheel with snapped spokes lying in a muddy village lane at dusk, a tired traveller in a long rust coat standing by an overturned cart holding a lantern, thatched cottages behind, wide view",
+   "graphics": [
+    {
+     "type": "spellPage",
+     "title": "Mending",
+     "kicker": "A new spell",
+     "rows": [
+      {
+       "num": "I",
+       "label": "Can",
+       "q": "What can it do?",
+       "a": "Mend anything broken.",
+       "qAt": {
+        "line": "L2",
+        "word": "one",
+        "offset": -0.1
+       },
+       "aAt": {
+        "line": "L2",
+        "word": "menders",
+        "offset": -0.05
+       }
+      },
+      {
+       "num": "II",
+       "label": "Can't",
+       "q": "What stops it?",
+       "a": "Only what you touched before it broke.",
+       "qAt": {
+        "line": "L3",
+        "word": "two",
+        "offset": -0.1
+       },
+       "aAt": {
+        "line": "L3",
+        "word": "only",
+        "offset": -0.05
+       }
+      },
+      {
+       "num": "III",
+       "label": "Costs",
+       "q": "What does it cost?",
+       "a": "Each mend cracks something you own.",
+       "qAt": {
+        "line": "L4",
+        "word": "three",
+        "offset": -0.1
+       },
+       "aAt": {
+        "line": "L4",
+        "word": "each",
+        "offset": -0.05
+       }
+      }
+     ],
+     "motif": "#d6c2ff",
+     "start": {
+      "shot": "cant"
+     },
+     "instant": true,
+     "at": {
+      "x": 90,
+      "y": 336,
+      "s": 0.7
+     },
+     "show": 2,
+     "active": 1
+    },
+    {
+     "type": "mendSeam",
+     "local": true,
+     "crack": [
+      [
+       525,
+       1030
+      ],
+      [
+       580,
+       980
+      ],
+      [
+       612,
+       962
+      ],
+      [
+       662,
+       905
+      ],
+      [
+       722,
+       852
+      ]
+     ],
+     "branches": [
+      [
+       [
+        612,
+        962
+       ],
+       [
+        650,
+        990
+       ]
+      ]
+     ],
+     "width": 10,
+     "crackAt": {
+      "shot": "cant"
+     },
+     "crackDur": 0.0,
+     "mendAt": {
+      "line": "L3",
+      "word": "touched",
+      "offset": -0.2
+     },
+     "mendDur": 0.9,
+     "fail": true,
+     "motif": "#d6c2ff"
+    }
+   ],
+   "onScreenText": "Page row II: 'CAN'T · What stops it?' → 'Only what you touched before it broke.'",
+   "transition": "Hard cut on the next line.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "cant"
+     },
+     "to": {
+      "shot": "cost",
+      "offset": 0.3
+     },
+     "gain": -36
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L3",
+      "word": "only",
+      "offset": -0.05
+     },
+     "gain": -26
+    },
+    {
+     "sound": "mendKnit",
+     "at": {
+      "line": "L3",
+      "word": "touched",
+      "offset": -0.2
+     },
+     "gain": -22
+    },
+    {
+     "sound": "mendFizzle",
+     "at": {
+      "line": "L3",
+      "word": "touched",
+      "offset": 0.35
+     },
+     "gain": -24
+    }
+   ],
+   "music": "D-flat major 7, open."
+  },
+  {
+   "id": "cost",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "Question three, consequences: each mend cracks something they own. Back home, a crack runs across her window.",
+   "visual": "Her cottage at night. A crack runs across the window panes as the line is spoken. Page row III: COSTS · Each mend cracks something you own.",
+   "camera": "Slow push (1.04 to 1.08).",
+   "layers": {
+    "foreground": "spell page and type",
+    "midground": "the subject",
+    "background": "the world"
+   },
+   "lighting": "Natural to the scene.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. inside a small cosy stone cottage at night, a large round window of small glass panes above a wooden table with an oil lamp, a teapot and a folded shawl, dried herbs hanging, warm and lived-in, no people. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "inside a small cosy stone cottage at night, a large round window of small glass panes above a wooden table with an oil lamp, a teapot and a folded shawl, dried herbs hanging, warm and lived-in, no people",
+   "graphics": [
+    {
+     "type": "spellPage",
+     "title": "Mending",
+     "kicker": "A new spell",
+     "rows": [
+      {
+       "num": "I",
+       "label": "Can",
+       "q": "What can it do?",
+       "a": "Mend anything broken.",
+       "qAt": {
+        "line": "L2",
+        "word": "one",
+        "offset": -0.1
+       },
+       "aAt": {
+        "line": "L2",
+        "word": "menders",
+        "offset": -0.05
+       }
+      },
+      {
+       "num": "II",
+       "label": "Can't",
+       "q": "What stops it?",
+       "a": "Only what you touched before it broke.",
+       "qAt": {
+        "line": "L3",
+        "word": "two",
+        "offset": -0.1
+       },
+       "aAt": {
+        "line": "L3",
+        "word": "only",
+        "offset": -0.05
+       }
+      },
+      {
+       "num": "III",
+       "label": "Costs",
+       "q": "What does it cost?",
+       "a": "Each mend cracks something you own.",
+       "qAt": {
+        "line": "L4",
+        "word": "three",
+        "offset": -0.1
+       },
+       "aAt": {
+        "line": "L4",
+        "word": "each",
+        "offset": -0.05
+       }
+      }
+     ],
+     "motif": "#d6c2ff",
+     "start": {
+      "shot": "cost"
+     },
+     "instant": true,
+     "at": {
+      "x": 90,
+      "y": 336,
+      "s": 0.7
+     },
+     "show": 3,
+     "active": 2
+    },
+    {
+     "type": "mendSeam",
+     "local": true,
+     "crack": [
+      [
+       790,
+       470
+      ],
+      [
+       735,
+       620
+      ],
+      [
+       775,
+       760
+      ],
+      [
+       700,
+       900
+      ],
+      [
+       740,
+       1060
+      ],
+      [
+       705,
+       1180
+      ]
+     ],
+     "branches": [
+      [
+       [
+        775,
+        760
+       ],
+       [
+        840,
+        800
+       ]
+      ],
+      [
+       [
+        700,
+        900
+       ],
+       [
+        640,
+        945
+       ]
+      ],
+      [
+       [
+        735,
+        620
+       ],
+       [
+        680,
+        590
+       ]
+      ]
+     ],
+     "width": 7,
+     "crackAt": {
+      "line": "L4",
+      "word": "cracks",
+      "offset": -0.05
+     },
+     "crackDur": 0.45,
+     "motif": "#d6c2ff"
+    }
+   ],
+   "onScreenText": "Page row III: 'COSTS · What does it cost?' → 'Each mend cracks something you own.'",
+   "transition": "Hard cut on the next line.",
+   "sfx": [
+    {
+     "sound": "hearth",
+     "from": {
+      "shot": "cost"
+     },
+     "to": {
+      "shot": "crown",
+      "offset": 0.2
+     },
+     "gain": -36
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L4",
+      "word": "each",
+      "offset": -0.05
+     },
+     "gain": -26
+    },
+    {
+     "sound": "costCrack",
+     "at": {
+      "line": "L4",
+      "word": "cracks",
+      "offset": -0.05
+     },
+     "gain": -20
+    }
+   ],
+   "music": "B-flat minor, a darker colour."
+  },
+  {
+   "id": "crown",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.1,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "The three answers generate a story at once: the queen's crown shatters.",
+   "visual": "A jeweled crown on a velvet cushion in a vault; on 'shatters' code-drawn fractures burst across it. Tag 'THEN · The queen's crown.'",
+   "camera": "Slow push (1.04 to 1.10).",
+   "layers": {
+    "foreground": "spell page and type",
+    "midground": "the subject",
+    "background": "the world"
+   },
+   "lighting": "Natural to the scene.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a jeweled gold crown lying on a dark red velvet cushion on a stone plinth in a dim stone vault, candlelight, heavy shadows, a few loose gems, close view, no people. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "a jeweled gold crown lying on a dark red velvet cushion on a stone plinth in a dim stone vault, candlelight, heavy shadows, a few loose gems, close view, no people",
+   "graphics": [
+    {
+     "type": "mendSeam",
+     "local": true,
+     "crack": [
+      [
+       290,
+       800
+      ],
+      [
+       370,
+       880
+      ],
+      [
+       440,
+       860
+      ],
+      [
+       505,
+       950
+      ],
+      [
+       580,
+       930
+      ],
+      [
+       650,
+       1010
+      ],
+      [
+       740,
+       990
+      ]
+     ],
+     "branches": [
+      [
+       [
+        440,
+        860
+       ],
+       [
+        470,
+        760
+       ]
+      ],
+      [
+       [
+        505,
+        950
+       ],
+       [
+        480,
+        1060
+       ]
+      ],
+      [
+       [
+        650,
+        1010
+       ],
+       [
+        690,
+        1090
+       ]
+      ]
+     ],
+     "width": 10,
+     "crackAt": {
+      "line": "L5",
+      "word": "shatters.",
+      "offset": -0.05
+     },
+     "crackDur": 0.2,
+     "motif": "#d6c2ff"
+    },
+    {
+     "type": "tag",
+     "kicker": "Then",
+     "text": "The queen's crown.",
+     "start": {
+      "line": "L5",
+      "word": "then",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Tag 'THEN' / 'The queen's crown.'",
+   "transition": "Hard cut on the next line.",
+   "sfx": [
+    {
+     "sound": "cave",
+     "from": {
+      "shot": "crown"
+     },
+     "to": {
+      "shot": "thief",
+      "offset": 0.2
+     },
+     "gain": -36
+    },
+    {
+     "sound": "impact",
+     "at": {
+      "line": "L5",
+      "word": "shatters.",
+      "offset": -0.05
+     },
+     "gain": -24
+    },
+    {
+     "sound": "costCrack",
+     "at": {
+      "line": "L5",
+      "word": "shatters.",
+      "offset": -0.05
+     },
+     "gain": -26
+    }
+   ],
+   "music": "Music drops to a held low note."
+  },
+  {
+   "id": "thief",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.35,
+     "y": 300
+    },
+    "to": {
+     "s": 1.38,
+     "y": 300
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "The twist that only works because of the answers: the one mender who ever held it is a thief. Three story questions spring from the three rows.",
+   "visual": "A hooded thief on a moonlit rooftop. Tag 'THE ONLY MENDER WHO HELD IT / A thief.' Then three ember question chips, each tied to a row: 'Why did a thief hold it?' 'Will she mend it?' 'What will crack at home?'",
+   "camera": "Slow push (1.04 to 1.08).",
+   "layers": {
+    "foreground": "spell page and type",
+    "midground": "the subject",
+    "background": "the world"
+   },
+   "lighting": "Natural to the scene.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a living young woman thief in a dark grey hooded cloak crouching on a slate rooftop at night, a moonlit city of towers and chimneys below her, her face half in shadow, wide view, cold blue moonlight. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "a living young woman thief in a dark grey hooded cloak crouching on a slate rooftop at night, a moonlit city of towers and chimneys below her, her face half in shadow, wide view, cold blue moonlight",
+   "graphics": [
+    {
+     "type": "tag",
+     "kicker": "Who ever held it",
+     "text": "A thief.",
+     "start": {
+      "line": "L6",
+      "word": "thief.",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "storyQuestions",
+     "top": 520,
+     "gap": 92,
+     "size": 52,
+     "items": [
+      {
+       "num": "II",
+       "text": "Why did a thief hold it?",
+       "at": {
+        "line": "L7",
+        "word": "three",
+        "offset": -0.05
+       }
+      },
+      {
+       "num": "I",
+       "text": "Will she mend it?",
+       "at": {
+        "line": "L7",
+        "word": "answers,",
+        "offset": 0.05
+       }
+      },
+      {
+       "num": "III",
+       "text": "What cracks at home?",
+       "at": {
+        "line": "L7",
+        "word": "story",
+        "offset": -0.1
+       }
+      }
+     ]
+    }
+   ],
+   "onScreenText": "Tag 'WHO EVER HELD IT' / 'A thief.'; three question chips.",
+   "transition": "Hard cut on the next line.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "thief"
+     },
+     "to": {
+      "shot": "lesson",
+      "offset": 0.3
+     },
+     "gain": -35
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L6",
+      "word": "thief."
+     },
+     "gain": -23
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L7",
+      "word": "three",
+      "offset": -0.05
+     },
+     "gain": -27
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L7",
+      "word": "answers,",
+      "offset": 0.05
+     },
+     "gain": -27
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L7",
+      "word": "story",
+      "offset": -0.1
+     },
+     "gain": -27
+    }
+   ],
+   "music": "F minor returns with the pulse; lifts on 'story'."
+  },
+  {
+   "id": "lesson",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.45
+   },
+   "plateFrom": "hook",
+   "plateFrame": {
+    "from": {
+     "s": 1.08,
+     "y": 0
+    },
+    "to": {
+     "s": 1.04,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.85,
+   "purpose": "The lesson: the whole page, all three rows written. Only now does the sigil ignite. The spell works. 'Can. Can't. Costs.'",
+   "visual": "Midnight backdrop over the dimmed workshop; the spell page full size, all three answers written; the three-point sigil lights point by point on 'Can.', 'Can't.', 'Costs.' and ignites. Lesson line under it: 'Answer all three before your first spell.'",
+   "camera": "Settles (1.08 to 1.04).",
+   "layers": {
+    "foreground": "spell page and type",
+    "midground": "the subject",
+    "background": "the world"
+   },
+   "lighting": "Natural to the scene.",
+   "imagePrompt": "(No plate: code-drawn diagram over the dimmed hook plate.)",
+   "videoPrompt": "(Not used.)",
+   "graphics": [
+    {
+     "type": "spellPage",
+     "title": "Mending",
+     "kicker": "A new spell",
+     "rows": [
+      {
+       "num": "I",
+       "label": "Can",
+       "q": "What can it do?",
+       "a": "Mend anything broken.",
+       "qAt": {
+        "line": "L2",
+        "word": "one",
+        "offset": -0.1
+       },
+       "aAt": {
+        "line": "L2",
+        "word": "menders",
+        "offset": -0.05
+       }
+      },
+      {
+       "num": "II",
+       "label": "Can't",
+       "q": "What stops it?",
+       "a": "Only what you touched before it broke.",
+       "qAt": {
+        "line": "L3",
+        "word": "two",
+        "offset": -0.1
+       },
+       "aAt": {
+        "line": "L3",
+        "word": "only",
+        "offset": -0.05
+       }
+      },
+      {
+       "num": "III",
+       "label": "Costs",
+       "q": "What does it cost?",
+       "a": "Each mend cracks something you own.",
+       "qAt": {
+        "line": "L4",
+        "word": "three",
+        "offset": -0.1
+       },
+       "aAt": {
+        "line": "L4",
+        "word": "each",
+        "offset": -0.05
+       }
+      }
+     ],
+     "motif": "#d6c2ff",
+     "start": {
+      "shot": "lesson"
+     },
+     "at": {
+      "x": 140,
+      "y": 340,
+      "s": 1.0
+     },
+     "show": 3,
+     "written": true,
+     "dim": 0.88,
+     "litAt": [
+      {
+       "line": "L8",
+       "word": "can."
+      },
+      {
+       "line": "L8",
+       "word": "can't."
+      },
+      {
+       "line": "L8",
+       "word": "costs."
+      }
+     ],
+     "igniteAt": {
+      "line": "L8",
+      "word": "costs.",
+      "offset": 0.35
+     },
+     "lessonAt": {
+      "line": "L8",
+      "word": "costs.",
+      "offset": 0.5
+     },
+     "lessonText": [
+      "Answer all three",
+      "before your *first spell.*"
+     ],
+     "lessonTop": 1000
+    }
+   ],
+   "onScreenText": "Spell page, all three rows; sigil ignites; 'Answer all three / before your first spell.'",
+   "transition": "Dissolve to the workshop in morning light for the CTA.",
+   "sfx": [
+    {
+     "sound": "mendKnit",
+     "at": {
+      "line": "L8",
+      "word": "costs.",
+      "offset": 0.35
+     },
+     "gain": -20
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L8",
+      "word": "can."
+     },
+     "gain": -28
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L8",
+      "word": "can't."
+     },
+     "gain": -28
+    },
+    {
+     "sound": "tally",
+     "at": {
+      "line": "L8",
+      "word": "costs."
+     },
+     "gain": -28
+    }
+   ],
+   "music": "F major arrives as the sigil ignites; bells."
+  },
+  {
+   "id": "cta",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "plateFrom": "hook",
+   "plateLook": {
+    "from": "warm"
+   },
+   "captions": false,
+   "hideLogoBug": true,
+   "plateFrame": {
+    "from": {
+     "s": 1.25,
+     "x": 110,
+     "y": 180
+    },
+    "to": {
+     "s": 1.22,
+     "x": 110,
+     "y": 180
+    }
+   },
+   "plateScrim": 0.4,
+   "purpose": "Save CTA over the hook's workshop in a changed state: warm morning, the bench's jar mended with a lilac seam. Loops back to the night workshop.",
+   "visual": "The same workshop in a warm grade. Full logo, Episode 21 / 50, the CTA, a 'Save this' pill with a bookmark icon.",
+   "camera": "Reframed right and down so the mender sits clear of the title (1.25 to 1.22).",
+   "layers": {
+    "foreground": "spell page and type",
+    "midground": "the subject",
+    "background": "the world"
+   },
+   "lighting": "Natural to the scene.",
+   "imagePrompt": "(No plate: code-drawn diagram over the dimmed hook plate.)",
+   "videoPrompt": "(Not used.)",
+   "graphics": [
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L9",
+      "word": "save"
+     },
+     "episode": "Episode 21 / 50",
+     "title": "The three questions every magic system needs",
+     "kicker": "Keep it close",
+     "size": 76,
+     "lines": [
+      "Save this before",
+      "designing your next",
+      "*magic system.*"
+     ],
+     "button": "Save this",
+     "icon": "save"
+    }
+   ],
+   "onScreenText": "Full logo, 'EPISODE 21 / 50', title, 'KEEP IT CLOSE', 'Save this before designing your next magic system.', pill 'Save this'.",
+   "transition": "Cross-fade into the hook's first frame for a seamless loop.",
+   "sfx": [
+    {
+     "sound": "room",
+     "from": {
+      "shot": "cta"
+     },
+     "to": {
+      "line": "L9",
+      "word": "system.",
+      "offset": 1.0
+     },
+     "gain": -36
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "shot": "cta",
+      "offset": -0.3
+     },
+     "gain": -25
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L9",
+      "word": "system.",
+      "offset": 0.2
+     },
+     "gain": -24
+    }
+   ],
+   "music": "D-flat to F major, warm; fades fully before the last frame."
+  }
+ ],
+ "lesson": "Before inventing a spell, answer three questions: what can the magic do (capabilities), what stops it from doing everything (limitations), and what does using it cost (consequences). Together the three answers immediately generate story: menders fix anything broken, but only what they touched before it broke, and each mend cracks something they own, so when the queen's crown shatters and the only mender who ever held it is a thief, the plot is already there.",
+ "captionReplace": {},
+ "music": {
+  "key": "F minor, resolving to F major",
+  "drone": [
+   "F2",
+   "C3"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L5",
+     "word": "shatters."
+    },
+    "pre": 0.1,
+    "dur": 1.4,
+    "gain": 0.55
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L8",
+     "word": "can."
+    },
+    "pre": 0.1,
+    "dur": 1.6,
+    "gain": 0.65
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "F1",
+      "C2",
+      "Ab2",
+      "C3",
+      "G3"
+     ]
+    ],
+    "level": 0.46,
+    "dark": true
+   },
+   "can": {
+    "chords": [
+     [
+      "F2",
+      "C3",
+      "Ab3",
+      "Eb4"
+     ]
+    ],
+    "level": 0.5,
+    "pulse": 72
+   },
+   "cant": {
+    "chords": [
+     [
+      "Db2",
+      "Ab2",
+      "F3",
+      "C4"
+     ]
+    ],
+    "level": 0.53,
+    "pulse": 72
+   },
+   "cost": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "Db3",
+      "Ab3"
+     ]
+    ],
+    "level": 0.54,
+    "pulse": 72
+   },
+   "crown": {
+    "chords": [
+     [
+      "C2",
+      "G2",
+      "E3",
+      "Bb3"
+     ]
+    ],
+    "level": 0.42,
+    "dark": true
+   },
+   "thief": {
+    "chords": [
+     [
+      "F2",
+      "C3",
+      "Ab3",
+      "C4"
+     ],
+     [
+      "Db2",
+      "Ab2",
+      "F3",
+      "C4"
+     ]
+    ],
+    "level": 0.56,
+    "pulse": 72
+   },
+   "lesson": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "A3"
+     ],
+     [
+      "F2",
+      "C3",
+      "A3",
+      "C4",
+      "G4"
+     ]
+    ],
+    "level": 0.62,
+    "bells": true
+   },
+   "cta": {
+    "chords": [
+     [
+      "Db2",
+      "Ab2",
+      "F3",
+      "C4"
+     ],
+     [
+      "F2",
+      "C3",
+      "A3",
+      "C4",
+      "F4"
+     ]
+    ],
+    "level": 0.58,
+    "bells": true
+   }
+  }
+ },
+ "metadata": {
+  "youtube": {
+   "title": "The 3 Questions Every Magic System Needs (Worldbuilding)",
+   "titleAlternate": "Answer these 3 questions before inventing a spell",
+   "description": "Before inventing a spell, answer these three questions.\n\nOne: what can it do? Menders fix anything broken. Two: what stops it? Only what they touched before it broke. Three: what does it cost? Each mend cracks something they own.\n\nThen the queen's crown shatters, and the only mender who ever held it is a thief. Why did a thief hold the crown? Will she mend it? What will crack in her own home? Three answers, and the story writes itself.\n\nCapabilities, limitations, consequences: can, can't, costs. Answer all three before your first spell, and your magic starts making plot instead of solving it.\n\nSave this before designing your next magic system.\n\nEpisode 21 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators. This episode opens Arc 5: Magic and Its Rules.\n\n#Worldbuilding #FantasyWriting #WritingTips #MagicSystem #WorldcraftShorts",
+   "pinnedComment": "Your turn: give your magic system one line each. Can: ... Can't: ... Costs: ...",
+   "uploadSettings": "Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "Can. Can't. Costs. 🪄 Answer all three before your first spell, and the story writes itself. Save this before designing your next magic system. #Worldbuilding #FantasyWriting #WritingTips #MagicSystem #WorldcraftShorts",
+   "pinnedComment": "Write your magic in three lines: what it can do, what it can't, and what it costs.",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "Before inventing a spell, answer these three questions.\n\nOne: what can it do? Menders fix anything broken. Two: what stops it? Only what they touched before it broke. Three: what does it cost? Each mend cracks something they own.\n\nThen the queen's crown shatters, and the only mender who ever held it is a thief. Why did a thief hold the crown? Will she mend it? What will crack in her own home? Three answers, and the story writes itself.\n\nCapabilities, limitations, consequences: can, can't, costs. Answer all three before your first spell, and your magic starts making plot instead of solving it.\n\nSave this before designing your next magic system.\n\nEpisode 21 of 50.\n\n#Worldbuilding #FantasyWriting #WritingTips #MagicSystem #WorldcraftShorts",
+   "pinnedComment": "Which question do most magic systems skip: what it can't do, or what it costs?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "Can. Can't. Costs.\n\nBefore inventing a spell, answer these three questions.\n\nOne: what can it do? Menders fix anything broken. Two: what stops it? Only what they touched before it broke. Three: what does it cost? Each mend cracks something they own.\n\nThen the queen's crown shatters, and the only mender who ever held it is a thief. Why did a thief hold the crown? Will she mend it? What will crack in her own home? Three answers, and the story writes itself.\n\nCapabilities, limitations, consequences: can, can't, costs. Answer all three before your first spell, and your magic starts making plot instead of solving it.\n\nSave this before designing your next magic system.\n\nEpisode 21 of 50 · Worldcraft Shorts\n\n#Worldbuilding #FantasyWriting #WritingTips #MagicSystem #WorldcraftShorts",
+   "hookCheck": "First 18 characters: 'Can. Can't. Costs.'",
+   "pinnedComment": "Three lines, one magic: tell us what yours can do, can't do, and costs.",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  },
+  "cover": "The hook at about 3.4 s: the spell page with its three empty lines over the workshop, plus the title.",
+  "followUpQuestion": "EP22 asks what happens to a whole society when magic is cheap: if healing is free, why does anyone die of an injury?"
+ }
+}

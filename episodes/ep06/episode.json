@@ -1,0 +1,2021 @@
+{
+ "id": "ep06",
+ "number": 6,
+ "title": "Mountains Can Change the Fate of Kingdoms",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "Confident documentary narrator letting the audience in on a strategist's secret. Assured on the hook with weight on 'empire', brisk and concrete through the three effects (snow, valleys, roads), a beat of quiet satisfaction on 'long before an army marched', the three 'who' phrases evenly spaced like a rule being laid down, warm and casual on the CTA. No trailer voice."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "A mountain range can decide which kingdom becomes an empire.",
+   "pauseAfter": 0.9,
+   "emphasis": [
+    "mountain",
+    "empire"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "veyra",
+   "text": "Take Veyra, sheltered behind the Ashspine.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "Veyra",
+    "Ashspine"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "snow",
+   "text": "Invaders stall in the snow, so Veyra builds farms, not walls.",
+   "pauseAfter": 0.5,
+   "emphasis": [
+    "stall",
+    "farms"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "valleys",
+   "text": "North of the peaks, cut-off valleys grow apart and never unite.",
+   "pauseAfter": 0.5,
+   "emphasis": [
+    "apart",
+    "unite"
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "caravan",
+   "text": "And every caravan must cross the few roads Veyra guards.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "every",
+    "few",
+    "guards"
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "empire",
+   "text": "It became an empire long before an army marched.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "empire",
+    "before"
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "empire",
+   "text": "Mountains decide who moves, who stays apart, and who gets paid.",
+   "pauseAfter": 0.8,
+   "emphasis": [
+    "moves",
+    "apart",
+    "paid"
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "cta",
+   "text": "Send this to someone drawing a fantasy map.",
+   "pauseAfter": 0,
+   "emphasis": [
+    "fantasy",
+    "map"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.07,
+     "y": -30
+    }
+   },
+   "plateScrim": 0.5,
+   "purpose": "Stop the scroll with the claim over the proof: a sheltered golden kingdom under an unbroken wall of peaks. An amber line traces the range as it is named, so the plate already reads as a map.",
+   "visual": "Golden lowland (fields, river, a walled town with a round tower) under a colossal snow-capped range. An amber line draws along the skyline on 'mountain range'; 'empire?' lands in the sky.",
+   "camera": "Slow push (1.00 to 1.07), frame rises 30 px.",
+   "layers": {
+    "foreground": "grassy hill",
+    "midground": "fields, river, walled town",
+    "background": "the Ashspine wall and a hazy sky"
+   },
+   "lighting": "Warm low sun from the left, cool shadow in the gorges; top scrim for the logo and the word.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. A vast fertile lowland kingdom at golden late afternoon, seen from a gentle grassy hill. Lower third: a patchwork of golden wheat fields, orchards and hedgerows, a winding silver river, and a small walled town of pale stone with terracotta roofs and one slender round watchtower beside the river. Middle of the frame: behind the plain, filling the entire width, a colossal unbroken wall of jagged snow-capped mountains of dark grey rock and ash-coloured scree, rising steeply like the spine of a giant, peaks catching warm light, long blue shadows in the gorges. Upper third: a pale hazy sky with soft clouds, room above the peaks. Sense of a kingdom sheltered by an impassable natural wall. No people visible. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used: no image-to-video available. Motion is a Remotion push.) Slow push toward the range, cloud shadows drifting over the fields, 4 seconds",
+   "graphics": [
+    {
+     "type": "ghostLines",
+     "local": true,
+     "width": 3.2,
+     "start": {
+      "line": "L1",
+      "word": "mountain",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L1",
+      "word": "kingdom",
+      "offset": 0.1
+     },
+     "pulse": {
+      "line": "L1",
+      "word": "empire"
+     },
+     "shapes": [
+      {
+       "d": "M0,668 L30,652 L60,645 L100,660 L130,690 L165,692 L200,712 L230,685 L270,668 L305,653 L330,670 L360,688 L400,710 L430,712 L462,680 L490,690 L520,670 L560,660 L580,643 L610,660 L650,680 L680,665 L720,680 L770,645 L800,610 L830,590 L858,557 L890,565 L920,590 L950,640 L965,645 L990,610 L1015,597 L1050,620 L1080,640"
+      }
+     ]
+    },
+    {
+     "type": "oversizedWord",
+     "text": "empire?",
+     "y": 300,
+     "size": 190,
+     "start": {
+      "line": "L1",
+      "word": "kingdom",
+      "offset": 0.15
+     }
+    }
+   ],
+   "onScreenText": "Amber skyline trace across the range; 'empire?' in large serif italic over the sky.",
+   "transition": "Dissolve (0.4 s) into the map: the traced skyline becomes the Ashspine drawn on parchment.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "veyra",
+      "offset": 0.8
+     },
+     "gain": -26
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L1",
+      "word": "mountain",
+      "offset": -0.1
+     },
+     "gain": -24
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L1",
+      "word": "empire",
+      "offset": -0.9
+     },
+     "gain": -21
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L1",
+      "word": "empire"
+     },
+     "gain": -19
+    }
+   ],
+   "music": "G-minor drone, open and dark: a question."
+  },
+  {
+   "id": "veyra",
+   "scene": "atlas",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.4
+   },
+   "atlas": {
+    "zoom": {
+     "from": 1.07,
+     "to": 1.0,
+     "origin": "50% 45%"
+    },
+    "show": [
+     {
+      "id": "ashspine",
+      "at": {
+       "shot": "veyra",
+       "offset": -0.3
+      },
+      "dur": 1.4
+     },
+     {
+      "id": "spurW",
+      "at": {
+       "shot": "veyra",
+       "offset": 0.4
+      },
+      "dur": 1.0
+     },
+     {
+      "id": "spurE",
+      "at": {
+       "shot": "veyra",
+       "offset": 0.5
+      },
+      "dur": 1.0
+     },
+     {
+      "id": "townW",
+      "at": {
+       "shot": "veyra",
+       "offset": 0.8
+      },
+      "dur": 0.5
+     },
+     {
+      "id": "townM",
+      "at": {
+       "shot": "veyra",
+       "offset": 0.9
+      },
+      "dur": 0.5
+     },
+     {
+      "id": "townE",
+      "at": {
+       "shot": "veyra",
+       "offset": 1.0
+      },
+      "dur": 0.5
+     },
+     {
+      "id": "southland",
+      "at": {
+       "line": "L2",
+       "word": "veyra"
+      },
+      "dur": 0.8
+     },
+     {
+      "id": "veyra",
+      "at": {
+       "line": "L2",
+       "word": "veyra",
+       "offset": -0.05
+      },
+      "dur": 0.5
+     },
+     {
+      "id": "lblVeyra",
+      "at": {
+       "line": "L2",
+       "word": "veyra"
+      },
+      "dur": 0.5
+     },
+     {
+      "id": "river",
+      "at": {
+       "line": "L2",
+       "word": "sheltered",
+       "offset": -0.1
+      },
+      "dur": 1.0
+     },
+     {
+      "id": "fields",
+      "at": {
+       "line": "L2",
+       "word": "sheltered"
+      },
+      "dur": 1.2
+     },
+     {
+      "id": "lblAsh",
+      "at": {
+       "line": "L2",
+       "word": "ashspine",
+       "offset": -0.05
+      },
+      "dur": 0.5,
+      "pulse": {
+       "line": "L2",
+       "word": "ashspine"
+      }
+     }
+    ]
+   },
+   "purpose": "Name the one example and put it on a map: Veyra in the south, the Ashspine between it and everyone else.",
+   "visual": "Parchment map draws itself: the Ashspine rises west to east with three narrow gaps, two spurs split the north into three vales with a town each; Veyra, its river and farm plots appear south of the wall.",
+   "camera": "Map settles from 1.07 to 1.00.",
+   "layers": {
+    "foreground": "labels",
+    "midground": "range glyphs, towns",
+    "background": "parchment, frame, graticule"
+   },
+   "lighting": "Dark parchment; amber for Veyra, parchment line-work, snow caps on the peaks.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [],
+   "onScreenText": "Map lettering 'THE ASHSPINE' and 'Veyra' (ember serif italic).",
+   "transition": "Hard cut on 'Invaders' to the blizzard.",
+   "sfx": [
+    {
+     "sound": "mountainRise",
+     "at": {
+      "shot": "veyra",
+      "offset": -0.3
+     },
+     "gain": -19
+    },
+    {
+     "sound": "paper",
+     "at": {
+      "shot": "veyra",
+      "offset": 0.1
+     },
+     "gain": -26
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L2",
+      "word": "sheltered",
+      "offset": -0.1
+     },
+     "gain": -25
+    }
+   ],
+   "music": "E-flat major add9 over the drone: the land itself."
+  },
+  {
+   "id": "snow",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.12,
+     "y": -110
+    },
+    "to": {
+     "s": 1.17,
+     "y": -150
+    }
+   },
+   "plateScrim": 0.45,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Effect 1, protection: an invading army is beaten by the range, not by Veyra. So Veyra spends on farms instead of walls.",
+   "visual": "From above, a long column of fur-clad soldiers, horses and wagons stalled in a blizzard under a mountain wall; an overturned wagon, a huddle around a weak fire. Drawn snow blows across the frame.",
+   "camera": "Slow push (1.12 to 1.17) with the frame raised so the fire huddle sits above the caption band.",
+   "layers": {
+    "foreground": "overturned wagon, campfire huddle",
+    "midground": "the stalled column",
+    "background": "jagged mountain wall in streaming snow"
+   },
+   "lighting": "Cold blue-grey, one warm ember of firelight.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. A high mountain valley in a blizzard, seen from above at a distance. A long winding column of an invading army, hundreds of small dark figures in heavy furs with plain dark banners, horses and supply wagons, stalled and sinking in deep snow below a sheer wall of jagged grey mountains of dark rock and ash-coloured scree. An overturned wagon and a fallen horse in the foreground drift, some soldiers huddled around a weak campfire, others turning back. Snow streaming sideways in the wind, the far end of the column vanishing into white haze. Upper third: snow-filled pale grey sky and the looming mountain wall. Cold blue-grey light, a sense of an army defeated by the land, not by an enemy. Figures small, faces not visible. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original clothing. No text, no letters, no symbols on banners, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.) Snow streaming sideways past the stalled column, banners whipping, 4 seconds",
+   "graphics": [
+    {
+     "type": "snowfall",
+     "density": 0.75,
+     "wind": 320,
+     "opacity": 0.8
+    },
+    {
+     "type": "tag",
+     "kicker": "Protection",
+     "text": "No walls needed.",
+     "start": {
+      "line": "L3",
+      "word": "snow",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Chip 'PROTECTION' + 'No walls needed.'",
+   "transition": "Hard cut on 'North' to the ridge.",
+   "sfx": [
+    {
+     "sound": "blizzard",
+     "from": {
+      "shot": "snow"
+     },
+     "to": {
+      "shot": "valleys",
+      "offset": 0.3
+     },
+     "gain": -21
+    },
+    {
+     "sound": "warHorn",
+     "at": {
+      "line": "L3",
+      "word": "invaders",
+      "offset": -0.3
+     },
+     "gain": -25
+    },
+    {
+     "sound": "impact",
+     "at": {
+      "line": "L3",
+      "word": "stall",
+      "offset": 0.05
+     },
+     "gain": -24
+    }
+   ],
+   "music": "C minor, 66 bpm pulse enters: pressure from outside."
+  },
+  {
+   "id": "valleys",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": -40
+    }
+   },
+   "plateScrim": 0.5,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Effect 2, isolation: north of the range, a knife-edge ridge splits two valleys that grew into different worlds and never joined.",
+   "visual": "Aerial down a snowy knife-edge ridge: left, sunlit terraces and white domed houses; right, black pine, a dark lake and steep black longhouses. An amber line runs up the ridge crest; a rust ✕ marks the crossing that never happened.",
+   "camera": "Slow push (1.00 to 1.08) up the ridge.",
+   "layers": {
+    "foreground": "snowy ridge crest",
+    "midground": "the two valleys and their villages",
+    "background": "haze-blue peaks"
+   },
+   "lighting": "Morning light, warm left and cool right, so the split reads in colour as well as shape.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. High aerial view straight down a long, steep, snow-dusted knife-edge mountain ridge of dark grey rock that runs from the bottom centre of the frame up into the distance, splitting the world into two deep, separate valleys. LEFT valley, far below: sunlit green terraced fields stepping down the slopes, clusters of round whitewashed houses with domed roofs, thin smoke, a turquoise stream. RIGHT valley, far below: dark pine forest, a cold black lake, tall steep-roofed black timber longhouses with carved gables, mist. The two valleys look like two different civilizations, with no road or bridge crossing the ridge between them. Further peaks fade into haze in the upper third under a pale sky. Late morning light, the left valley warmer, the right valley cooler. No people visible. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.) Slow drone push up the ridge, mist drifting in the right valley, 4 seconds",
+   "graphics": [
+    {
+     "type": "ghostLines",
+     "local": true,
+     "width": 3.4,
+     "start": {
+      "line": "L4",
+      "word": "peaks",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L4",
+      "word": "apart",
+      "offset": 0.1
+     },
+     "shapes": [
+      {
+       "d": "M560,1920 L520,1500 L495,1200 L510,960 L540,720 L565,500 L580,360"
+      }
+     ]
+    },
+    {
+     "type": "ghostLines",
+     "local": true,
+     "color": "#d0663f",
+     "width": 7,
+     "start": {
+      "line": "L4",
+      "word": "never",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L4",
+      "word": "unite",
+      "offset": 0.25
+     },
+     "shapes": [
+      {
+       "d": "M478,868 L548,938"
+      },
+      {
+       "d": "M548,868 L478,938"
+      }
+     ]
+    },
+    {
+     "type": "tag",
+     "kicker": "Isolation",
+     "text": "Two valleys, two worlds.",
+     "start": {
+      "line": "L4",
+      "word": "valleys",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Chip 'ISOLATION' + 'Two valleys, two worlds.'; amber ridge line, rust ✕ on 'never unite'.",
+   "transition": "Hard cut on 'And' to the road.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "valleys"
+     },
+     "to": {
+      "shot": "caravan",
+      "offset": 0.4
+     },
+     "gain": -25
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L4",
+      "word": "peaks",
+      "offset": -0.1
+     },
+     "gain": -25
+    },
+    {
+     "sound": "tonalDrop",
+     "at": {
+      "line": "L4",
+      "word": "unite",
+      "offset": -0.1
+     },
+     "gain": -21
+    }
+   ],
+   "music": "A-flat major over the pulse: two separate, self-contained worlds."
+  },
+  {
+   "id": "caravan",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.2,
+     "y": -120
+    },
+    "to": {
+     "s": 1.3,
+     "y": -260
+    }
+   },
+   "plateScrim": 0.45,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Effect 3, trade: the few roads through the range all end at Veyra's waystations, so every caravan pays Veyra.",
+   "visual": "A caravan of pack mules and carts winds down switchbacks cut into the rock toward a pale stone waystation; guards inspect goods and a merchant pays at a table; golden lowland far below. An amber dashed line runs down the road; a survey ring closes on the gate.",
+   "camera": "Descend with the caravan (1.20 to 1.30; frame rises 140 px so the gate lands above the captions).",
+   "layers": {
+    "foreground": "carts and cloaked traders",
+    "midground": "switchback road and waystation",
+    "background": "snow peak and golden lowland"
+   },
+   "lighting": "Golden late sun from the right, dust in the air, deep blue sky.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. A narrow switchback stone road cut into a steep mountainside of dark grey rock, zig-zagging down from snowy heights in the upper third toward a warm golden lowland of fields and a river far below in the lower distance. A long caravan of laden pack mules, ox carts and traders in hooded travelling cloaks with bundles, bales and casks winds down the switchbacks in single file, the only way through. In the lower middle of the frame the road passes under a modest fortified stone waystation with a pale stone arch, a small round tower and a wooden barrier, where a few guards with spears inspect the goods and a merchant hands over coins at a table. Golden late-afternoon light from the right, long shadows, dust on the road. Figures small to medium, faces not visible. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.) Caravan plodding down the switchbacks, dust lifting, 4 seconds",
+   "graphics": [
+    {
+     "type": "ghostLines",
+     "local": true,
+     "dash": "16 12",
+     "width": 4,
+     "start": {
+      "line": "L5",
+      "word": "caravan",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L5",
+      "word": "roads"
+     },
+     "shapes": [
+      {
+       "d": "M320,350 L540,450 L240,580 L320,640 L500,760 L600,840 L520,940 L300,1060 L300,1200 L540,1380 L700,1300"
+      }
+     ]
+    },
+    {
+     "type": "evidenceRing",
+     "local": true,
+     "at": [
+      722,
+      1250
+     ],
+     "r": 120,
+     "start": {
+      "line": "L5",
+      "word": "guards",
+      "offset": -0.3
+     }
+    },
+    {
+     "type": "tag",
+     "kicker": "Trade",
+     "text": "Every road pays Veyra.",
+     "start": {
+      "line": "L5",
+      "word": "caravan",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Chip 'TRADE' + 'Every road pays Veyra.'; dashed amber road line, survey ring on the waystation.",
+   "transition": "Dissolve (0.5 s) back to the map, now complete.",
+   "sfx": [
+    {
+     "sound": "caravan",
+     "from": {
+      "shot": "caravan"
+     },
+     "to": {
+      "shot": "empire",
+      "offset": 0.3
+     },
+     "gain": -24
+    },
+    {
+     "sound": "coin",
+     "at": {
+      "line": "L5",
+      "word": "guards",
+      "offset": -0.05
+     },
+     "gain": -21
+    }
+   ],
+   "music": "B-flat major, 76 bpm with arpeggios: the wealth arrives."
+  },
+  {
+   "id": "empire",
+   "scene": "atlas",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.5
+   },
+   "atlas": {
+    "zoom": {
+     "from": 1.0,
+     "to": 1.04,
+     "origin": "45% 50%"
+    },
+    "show": [
+     "southland",
+     "river",
+     "fields",
+     "spurW",
+     "spurE",
+     "ashspine",
+     "townW",
+     "townM",
+     "townE",
+     "lblAsh",
+     {
+      "id": "lblVeyra",
+      "until": {
+       "line": "L6",
+       "word": "empire",
+       "offset": -0.05
+      }
+     },
+     {
+      "id": "invadeW",
+      "at": {
+       "line": "L6",
+       "word": "it",
+       "offset": -0.1
+      },
+      "dur": 0.75,
+      "pulse": {
+       "line": "L7",
+       "word": "moves",
+       "offset": -0.05
+      }
+     },
+     {
+      "id": "invadeM",
+      "at": {
+       "line": "L6",
+       "word": "it",
+       "offset": 0.01999999999999999
+      },
+      "dur": 0.75,
+      "pulse": {
+       "line": "L7",
+       "word": "moves",
+       "offset": -0.05
+      }
+     },
+     {
+      "id": "invadeE",
+      "at": {
+       "line": "L6",
+       "word": "it",
+       "offset": 0.13999999999999999
+      },
+      "dur": 0.75,
+      "pulse": {
+       "line": "L7",
+       "word": "moves",
+       "offset": -0.05
+      }
+     },
+     {
+      "id": "westVale",
+      "at": {
+       "line": "L6",
+       "word": "became",
+       "offset": -0.05
+      },
+      "dur": 0.6,
+      "pulse": {
+       "line": "L7",
+       "word": "apart",
+       "offset": -0.05
+      }
+     },
+     {
+      "id": "midVale",
+      "at": {
+       "line": "L6",
+       "word": "became",
+       "offset": -0.05
+      },
+      "dur": 0.6,
+      "pulse": {
+       "line": "L7",
+       "word": "apart",
+       "offset": -0.05
+      }
+     },
+     {
+      "id": "eastVale",
+      "at": {
+       "line": "L6",
+       "word": "became",
+       "offset": -0.05
+      },
+      "dur": 0.6,
+      "pulse": {
+       "line": "L7",
+       "word": "apart",
+       "offset": -0.05
+      }
+     },
+     {
+      "id": "cultW",
+      "at": {
+       "line": "L6",
+       "word": "became",
+       "offset": 0.05
+      },
+      "dur": 0.5
+     },
+     {
+      "id": "cultM",
+      "at": {
+       "line": "L6",
+       "word": "became",
+       "offset": 0.05
+      },
+      "dur": 0.5
+     },
+     {
+      "id": "cultE",
+      "at": {
+       "line": "L6",
+       "word": "became",
+       "offset": 0.05
+      },
+      "dur": 0.5
+     },
+     {
+      "id": "linkWM",
+      "at": {
+       "line": "L6",
+       "word": "became"
+      },
+      "dur": 0.4
+     },
+     {
+      "id": "linkME",
+      "at": {
+       "line": "L6",
+       "word": "became"
+      },
+      "dur": 0.4
+     },
+     {
+      "id": "cutWM",
+      "at": {
+       "line": "L6",
+       "word": "an"
+      },
+      "dur": 0.4,
+      "pulse": {
+       "line": "L7",
+       "word": "apart",
+       "offset": -0.05
+      }
+     },
+     {
+      "id": "cutME",
+      "at": {
+       "line": "L6",
+       "word": "an"
+      },
+      "dur": 0.4,
+      "pulse": {
+       "line": "L7",
+       "word": "apart",
+       "offset": -0.05
+      }
+     },
+     {
+      "id": "roadW",
+      "at": {
+       "line": "L6",
+       "word": "an",
+       "offset": -0.1
+      },
+      "dur": 0.9,
+      "pulse": {
+       "line": "L7",
+       "word": "paid",
+       "offset": -0.05
+      }
+     },
+     {
+      "id": "roadM",
+      "at": {
+       "line": "L6",
+       "word": "an",
+       "offset": -0.020000000000000004
+      },
+      "dur": 0.9,
+      "pulse": {
+       "line": "L7",
+       "word": "paid",
+       "offset": -0.05
+      }
+     },
+     {
+      "id": "roadE",
+      "at": {
+       "line": "L6",
+       "word": "an",
+       "offset": 0.06
+      },
+      "dur": 0.9,
+      "pulse": {
+       "line": "L7",
+       "word": "paid",
+       "offset": -0.05
+      }
+     },
+     {
+      "id": "gateW",
+      "at": {
+       "line": "L6",
+       "word": "an",
+       "offset": 0.2
+      },
+      "dur": 0.4
+     },
+     {
+      "id": "gateM",
+      "at": {
+       "line": "L6",
+       "word": "an",
+       "offset": 0.2
+      },
+      "dur": 0.4
+     },
+     {
+      "id": "gateE",
+      "at": {
+       "line": "L6",
+       "word": "an",
+       "offset": 0.2
+      },
+      "dur": 0.4
+     },
+     {
+      "id": "coinW",
+      "at": {
+       "line": "L6",
+       "word": "an",
+       "offset": 0.35
+      },
+      "dur": 0.5,
+      "pulse": {
+       "line": "L7",
+       "word": "paid",
+       "offset": -0.05
+      }
+     },
+     {
+      "id": "coinM",
+      "at": {
+       "line": "L6",
+       "word": "an",
+       "offset": 0.44999999999999996
+      },
+      "dur": 0.5,
+      "pulse": {
+       "line": "L7",
+       "word": "paid",
+       "offset": -0.05
+      }
+     },
+     {
+      "id": "coinE",
+      "at": {
+       "line": "L6",
+       "word": "an",
+       "offset": 0.55
+      },
+      "dur": 0.5,
+      "pulse": {
+       "line": "L7",
+       "word": "paid",
+       "offset": -0.05
+      }
+     },
+     {
+      "id": "reach",
+      "at": {
+       "line": "L6",
+       "word": "empire",
+       "offset": -0.05
+      },
+      "dur": 2.4
+     },
+     "veyra",
+     {
+      "id": "lblEmpire",
+      "at": {
+       "line": "L6",
+       "word": "empire",
+       "offset": 0.05
+      },
+      "dur": 0.6
+     },
+     {
+      "id": "key",
+      "at": {
+       "line": "L7",
+       "word": "mountains",
+       "offset": -0.15
+      },
+      "dur": 0.5
+     }
+    ]
+   },
+   "purpose": "Payoff and lesson on the same map: the three effects stack up in seconds and Veyra's reach spreads before a single soldier moves. The map key spells out the rule.",
+   "visual": "The map returns. Rust invasion arrows halt at the snow line; the three northern vales tint in different colours and their links are cut; amber roads flow through the three gaps to Veyra with tolls at each gate; an amber wash spreads from Veyra and 'Veyra' becomes 'The Empire of Veyra'. A map key lights row by row: Who moves. Who stays apart. Who gets paid.",
+   "camera": "Gentle push (1.00 to 1.04).",
+   "layers": {
+    "foreground": "map key, lettering",
+    "midground": "arrows, tints, roads, coins",
+    "background": "parchment map"
+   },
+   "lighting": "Amber wash takes over the dark parchment from Veyra outward.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [],
+   "onScreenText": "'The Empire of Veyra'; map key 'MOUNTAINS DECIDE': 'Who moves.' (rust halt arrow), 'Who stays apart.' (rust ✕), 'Who gets paid.' (coin).",
+   "transition": "Dissolve (0.6 s) to the opening view at dusk.",
+   "sfx": [
+    {
+     "sound": "paper",
+     "at": {
+      "shot": "empire",
+      "offset": -0.2
+     },
+     "gain": -26
+    },
+    {
+     "sound": "warHorn",
+     "at": {
+      "line": "L6",
+      "word": "it",
+      "offset": -0.2
+     },
+     "gain": -30
+    },
+    {
+     "sound": "whoosh",
+     "at": {
+      "line": "L6",
+      "word": "became",
+      "offset": -0.1
+     },
+     "gain": -27
+    },
+    {
+     "sound": "coin",
+     "at": {
+      "line": "L6",
+      "word": "an",
+      "offset": 0.25
+     },
+     "gain": -25
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L6",
+      "word": "empire",
+      "offset": -0.8
+     },
+     "gain": -22
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L6",
+      "word": "empire"
+     },
+     "gain": -19
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L7",
+      "word": "moves",
+      "offset": -0.05
+     },
+     "gain": -21
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L7",
+      "word": "apart",
+      "offset": -0.05
+     },
+     "gain": -21
+    },
+    {
+     "sound": "coin",
+     "at": {
+      "line": "L7",
+      "word": "paid",
+      "offset": -0.05
+     },
+     "gain": -19
+    }
+   ],
+   "music": "E-flat to C major to D major with bells: the rule resolves toward G."
+  },
+  {
+   "id": "cta",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "plateFrame": {
+    "from": {
+     "s": 1.03,
+     "y": -10
+    },
+    "to": {
+     "s": 1.0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.35,
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "captions": false,
+   "hideLogoBug": true,
+   "purpose": "Share CTA over the opening kingdom at dusk with the range still traced in amber; ends on the opening frame for a loop.",
+   "visual": "The opening view at ember dusk, the skyline trace glowing faintly. Full logo, Episode 06 / 50, the CTA in large serif type, a 'Share this' pill.",
+   "camera": "Settles to the hook's first framing (1.03 to 1.00).",
+   "layers": {
+    "foreground": "logo and CTA type",
+    "midground": "range with amber trace",
+    "background": "dusk sky"
+   },
+   "lighting": "Ember dusk grade in code; the last 0.6 s cross-fades into the golden first frame.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "emberDusk",
+     "local": true,
+     "horizon": 640
+    },
+    {
+     "type": "ghostLines",
+     "local": true,
+     "instant": true,
+     "opacity": 0.7,
+     "width": 3.2,
+     "shapes": [
+      {
+       "d": "M0,668 L30,652 L60,645 L100,660 L130,690 L165,692 L200,712 L230,685 L270,668 L305,653 L330,670 L360,688 L400,710 L430,712 L462,680 L490,690 L520,670 L560,660 L580,643 L610,660 L650,680 L680,665 L720,680 L770,645 L800,610 L830,590 L858,557 L890,565 L920,590 L950,640 L965,645 L990,610 L1015,597 L1050,620 L1080,640"
+      }
+     ]
+    },
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L8",
+      "word": "send"
+     },
+     "episode": "Episode 06 / 50",
+     "title": "Mountains can change the fate of kingdoms",
+     "kicker": "Pass it on",
+     "lines": [
+      "Send this to",
+      "*someone drawing*",
+      "a fantasy map."
+     ],
+     "button": "Share this",
+     "icon": "share"
+    }
+   ],
+   "onScreenText": "Full logo, 'EPISODE 06 / 50', title, 'PASS IT ON', 'Send this to someone drawing a fantasy map.', pill 'Share this'.",
+   "transition": "Cross-fade into the hook's first frame for a seamless loop.",
+   "sfx": [
+    {
+     "sound": "swell",
+     "at": {
+      "shot": "cta",
+      "offset": -0.3
+     },
+     "gain": -25
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L8",
+      "word": "map.",
+      "offset": 0.2
+     },
+     "gain": -24
+    }
+   ],
+   "music": "G major, warm and open; fades fully before the last frame."
+  }
+ ],
+ "atlas": {
+  "features": [
+   {
+    "id": "southland",
+    "kind": "region",
+    "d": "M76,700 L200,690 L330,712 L460,672 L600,698 L740,662 L880,690 L1004,672 L1004,1186 L76,1186 Z",
+    "color": "#e9a94b",
+    "opacity": 0.07
+   },
+   {
+    "id": "westVale",
+    "kind": "region",
+    "d": "M76,334 L372,334 L372,400 L392,470 L365,540 L380,630 L200,640 L76,670 Z",
+    "color": "#7fb2cf",
+    "opacity": 0.2
+   },
+   {
+    "id": "midVale",
+    "kind": "region",
+    "d": "M372,334 L706,334 L706,400 L686,470 L714,540 L700,620 L600,650 L460,625 L380,630 L365,540 L392,470 L372,400 Z",
+    "color": "#9cc68a",
+    "opacity": 0.2
+   },
+   {
+    "id": "eastVale",
+    "kind": "region",
+    "d": "M706,334 L1004,334 L1004,640 L880,645 L740,620 L700,620 L714,540 L686,470 L706,400 Z",
+    "color": "#c79ac0",
+    "opacity": 0.2
+   },
+   {
+    "id": "river",
+    "kind": "river",
+    "pts": [
+     [
+      541,
+      668
+     ],
+     [
+      530,
+      740
+     ],
+     [
+      470,
+      800
+     ],
+     [
+      390,
+      850
+     ],
+     [
+      330,
+      900
+     ],
+     [
+      250,
+      980
+     ],
+     [
+      170,
+      1060
+     ],
+     [
+      90,
+      1150
+     ]
+    ],
+    "width": 18
+   },
+   {
+    "id": "fields",
+    "kind": "fields",
+    "box": [
+     100,
+     745,
+     1000,
+     1170
+    ],
+    "count": 96,
+    "seed": 12,
+    "avoid": [
+     [
+      330,
+      900,
+      95
+     ],
+     [
+      190,
+      760,
+      110
+     ],
+     [
+      330,
+      990,
+      70
+     ],
+     [
+      230,
+      990,
+      70
+     ],
+     [
+      440,
+      990,
+      70
+     ],
+     [
+      760,
+      960,
+      250
+     ],
+     [
+      600,
+      960,
+      80
+     ],
+     [
+      700,
+      1120,
+      60
+     ],
+     [
+      900,
+      1100,
+      60
+     ]
+    ]
+   },
+   {
+    "id": "spurW",
+    "kind": "range",
+    "pts": [
+     [
+      380,
+      630
+     ],
+     [
+      365,
+      540
+     ],
+     [
+      392,
+      470
+     ],
+     [
+      372,
+      400
+     ],
+     [
+      380,
+      350
+     ]
+    ],
+    "rows": 1,
+    "scale": 0.95,
+    "seed": 5
+   },
+   {
+    "id": "spurE",
+    "kind": "range",
+    "pts": [
+     [
+      700,
+      620
+     ],
+     [
+      714,
+      540
+     ],
+     [
+      686,
+      470
+     ],
+     [
+      706,
+      400
+     ],
+     [
+      698,
+      350
+     ]
+    ],
+    "rows": 1,
+    "scale": 0.95,
+    "seed": 9
+   },
+   {
+    "id": "ashspine",
+    "kind": "range",
+    "pts": [
+     [
+      40,
+      700
+     ],
+     [
+      200,
+      668
+     ],
+     [
+      330,
+      690
+     ],
+     [
+      460,
+      650
+     ],
+     [
+      600,
+      676
+     ],
+     [
+      740,
+      640
+     ],
+     [
+      880,
+      668
+     ],
+     [
+      1040,
+      650
+     ]
+    ],
+    "gaps": [
+     [
+      300,
+      352
+     ],
+     [
+      515,
+      567
+     ],
+     [
+      735,
+      787
+     ]
+    ],
+    "rows": 3,
+    "scale": 1.1,
+    "seed": 21
+   },
+   {
+    "id": "townW",
+    "kind": "town",
+    "at": [
+     215,
+     520
+    ],
+    "size": 0.8
+   },
+   {
+    "id": "townM",
+    "kind": "town",
+    "at": [
+     540,
+     490
+    ],
+    "size": 0.8
+   },
+   {
+    "id": "townE",
+    "kind": "town",
+    "at": [
+     860,
+     520
+    ],
+    "size": 0.8
+   },
+   {
+    "id": "cultW",
+    "kind": "pattern",
+    "pattern": "wave",
+    "at": [
+     215,
+     590
+    ],
+    "w": 130,
+    "color": "#a9cfe4"
+   },
+   {
+    "id": "cultM",
+    "kind": "pattern",
+    "pattern": "zig",
+    "at": [
+     540,
+     560
+    ],
+    "w": 130,
+    "color": "#bfe0ad"
+   },
+   {
+    "id": "cultE",
+    "kind": "pattern",
+    "pattern": "dots",
+    "at": [
+     860,
+     590
+    ],
+    "w": 130,
+    "color": "#e0bedb"
+   },
+   {
+    "id": "linkWM",
+    "kind": "route",
+    "pts": [
+     [
+      262,
+      512
+     ],
+     [
+      372,
+      500
+     ],
+     [
+      495,
+      490
+     ]
+    ],
+    "color": "#efe6d2",
+    "dash": "8 10",
+    "width": 3
+   },
+   {
+    "id": "linkME",
+    "kind": "route",
+    "pts": [
+     [
+      585,
+      490
+     ],
+     [
+      700,
+      500
+     ],
+     [
+      812,
+      514
+     ]
+    ],
+    "color": "#efe6d2",
+    "dash": "8 10",
+    "width": 3
+   },
+   {
+    "id": "cutWM",
+    "kind": "cut",
+    "at": [
+     376,
+     500
+    ]
+   },
+   {
+    "id": "cutME",
+    "kind": "cut",
+    "at": [
+     702,
+     500
+    ]
+   },
+   {
+    "id": "invadeW",
+    "kind": "arrow",
+    "pts": [
+     [
+      130,
+      345
+     ],
+     [
+      142,
+      460
+     ],
+     [
+      140,
+      572
+     ]
+    ],
+    "color": "#d0663f",
+    "stop": true
+   },
+   {
+    "id": "invadeM",
+    "kind": "arrow",
+    "pts": [
+     [
+      440,
+      345
+     ],
+     [
+      428,
+      450
+     ],
+     [
+      440,
+      560
+     ]
+    ],
+    "color": "#d0663f",
+    "stop": true
+   },
+   {
+    "id": "invadeE",
+    "kind": "arrow",
+    "pts": [
+     [
+      640,
+      345
+     ],
+     [
+      648,
+      450
+     ],
+     [
+      640,
+      552
+     ]
+    ],
+    "color": "#d0663f",
+    "stop": true
+   },
+   {
+    "id": "roadW",
+    "kind": "route",
+    "pts": [
+     [
+      195,
+      334
+     ],
+     [
+      230,
+      440
+     ],
+     [
+      300,
+      600
+     ],
+     [
+      326,
+      694
+     ],
+     [
+      334,
+      790
+     ],
+     [
+      332,
+      850
+     ]
+    ],
+    "flow": true
+   },
+   {
+    "id": "roadM",
+    "kind": "route",
+    "pts": [
+     [
+      575,
+      334
+     ],
+     [
+      590,
+      430
+     ],
+     [
+      548,
+      590
+     ],
+     [
+      541,
+      672
+     ],
+     [
+      470,
+      780
+     ],
+     [
+      372,
+      872
+     ]
+    ],
+    "flow": true
+   },
+   {
+    "id": "roadE",
+    "kind": "route",
+    "pts": [
+     [
+      880,
+      334
+     ],
+     [
+      870,
+      440
+     ],
+     [
+      800,
+      580
+     ],
+     [
+      761,
+      652
+     ],
+     [
+      620,
+      760
+     ],
+     [
+      380,
+      890
+     ]
+    ],
+    "flow": true
+   },
+   {
+    "id": "gateW",
+    "kind": "gate",
+    "at": [
+     326,
+     706
+    ]
+   },
+   {
+    "id": "gateM",
+    "kind": "gate",
+    "at": [
+     541,
+     682
+    ]
+   },
+   {
+    "id": "gateE",
+    "kind": "gate",
+    "at": [
+     761,
+     660
+    ]
+   },
+   {
+    "id": "coinW",
+    "kind": "coin",
+    "at": [
+     380,
+     740
+    ]
+   },
+   {
+    "id": "coinM",
+    "kind": "coin",
+    "at": [
+     590,
+     720
+    ]
+   },
+   {
+    "id": "coinE",
+    "kind": "coin",
+    "at": [
+     810,
+     700
+    ]
+   },
+   {
+    "id": "reach",
+    "kind": "wash",
+    "at": [
+     330,
+     900
+    ],
+    "r": 760
+   },
+   {
+    "id": "veyra",
+    "kind": "town",
+    "at": [
+     330,
+     900
+    ],
+    "size": 1.15,
+    "capital": true
+   },
+   {
+    "id": "lblAsh",
+    "kind": "label",
+    "at": [
+     94,
+     758
+    ],
+    "text": "The Ashspine",
+    "size": 24,
+    "anchor": "start"
+   },
+   {
+    "id": "lblVeyra",
+    "kind": "label",
+    "at": [
+     330,
+     994
+    ],
+    "text": "Veyra",
+    "serif": true,
+    "size": 62,
+    "color": "#f4c46e"
+   },
+   {
+    "id": "lblEmpire",
+    "kind": "label",
+    "at": [
+     318,
+     994
+    ],
+    "text": "The Empire of Veyra",
+    "serif": true,
+    "size": 44,
+    "color": "#f4c46e"
+   },
+   {
+    "id": "key",
+    "kind": "key",
+    "at": [
+     516,
+     862
+    ],
+    "title": "Mountains decide",
+    "gap": 56,
+    "width": 370,
+    "rows": [
+     {
+      "text": "Who moves.",
+      "symbol": "arrow",
+      "color": "#d0663f",
+      "at": {
+       "line": "L7",
+       "word": "moves",
+       "offset": -0.05
+      }
+     },
+     {
+      "text": "Who stays apart.",
+      "symbol": "cut",
+      "color": "#b9543a",
+      "at": {
+       "line": "L7",
+       "word": "apart",
+       "offset": -0.05
+      }
+     },
+     {
+      "text": "Who gets paid.",
+      "symbol": "coin",
+      "at": {
+       "line": "L7",
+       "word": "paid",
+       "offset": -0.05
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "lesson": "Geography is power before anyone fights: a mountain range decides who can move, who stays apart, and who gets paid. Draw the range first, then ask what it does to everyone on either side.",
+ "captionReplace": {},
+ "music": {
+  "key": "G minor, resolving to G major",
+  "drone": [
+   "G1",
+   "D2"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L6",
+     "word": "empire"
+    },
+    "pre": 0.15,
+    "dur": 1.2,
+    "gain": 0.5
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L7",
+     "word": "paid"
+    },
+    "pre": 0.15,
+    "dur": 1.0,
+    "gain": 0.55
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "G1",
+      "D2",
+      "Bb2",
+      "D3",
+      "G3"
+     ]
+    ],
+    "level": 0.5,
+    "dark": true
+   },
+   "veyra": {
+    "chords": [
+     [
+      "Eb2",
+      "Bb2",
+      "G3",
+      "Bb3",
+      "F4"
+     ]
+    ],
+    "level": 0.55
+   },
+   "snow": {
+    "chords": [
+     [
+      "C2",
+      "G2",
+      "Eb3",
+      "G3"
+     ]
+    ],
+    "level": 0.62,
+    "pulse": 66,
+    "dark": true
+   },
+   "valleys": {
+    "chords": [
+     [
+      "Ab1",
+      "Eb2",
+      "C3",
+      "Eb3",
+      "G3"
+     ]
+    ],
+    "level": 0.64,
+    "pulse": 66
+   },
+   "caravan": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "F3",
+      "Bb3"
+     ]
+    ],
+    "level": 0.7,
+    "pulse": 76,
+    "arp": true
+   },
+   "empire": {
+    "chords": [
+     [
+      "Eb2",
+      "Bb2",
+      "G3",
+      "Bb3"
+     ],
+     [
+      "C2",
+      "G2",
+      "E3",
+      "G3",
+      "C4"
+     ],
+     [
+      "D2",
+      "A2",
+      "F#3",
+      "A3",
+      "D4"
+     ]
+    ],
+    "level": 0.72,
+    "bells": true
+   },
+   "cta": {
+    "chords": [
+     [
+      "G1",
+      "D2",
+      "B2",
+      "D3",
+      "G3"
+     ]
+    ],
+    "level": 0.62,
+    "bells": true
+   }
+  }
+ },
+ "metadata": {
+  "youtube": {
+   "title": "Mountains Can Change the Fate of Kingdoms (Worldbuilding)",
+   "titleAlternate": "How a mountain range turns a kingdom into an empire",
+   "description": "A mountain range can decide which kingdom becomes an empire.\n\nMountains slow invaders, so a sheltered kingdom can spend on farms instead of walls. They cut valleys off from each other, so neighbours grow apart and never unite. And they force trade onto a few roads, so whoever guards those roads gets paid.\n\nGeography creates power long before an army marches. Draw the range first, then ask what it does to everyone on either side.\n\nSend this to someone drawing a fantasy map.\n\nEpisode 6 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.\n\n#Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts",
+   "pinnedComment": "Your turn: what's the biggest mountain range, desert, sea or wall on your map, and who does it protect, cut off, or make rich?",
+   "uploadSettings": "Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "One mountain range can turn a kingdom into an empire: it stops invaders, splits rivals apart, and forces every caravan onto your roads. Send this to someone drawing a fantasy map 🗺️ #Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts",
+   "pinnedComment": "Name one mountain or barrier on your map. We'll tell you who it secretly makes powerful.",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "A mountain range can decide which kingdom becomes an empire.\n\nMountains slow invaders, so a sheltered kingdom can spend on farms instead of walls. They cut valleys off from each other, so neighbours grow apart and never unite. And they force trade onto a few roads, so whoever guards those roads gets paid.\n\nGeography creates power long before an army marches. Draw the range first, then ask what it does to everyone on either side.\n\nSend this to someone drawing a fantasy map.\n\nEpisode 6 of 50.\n\n#Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts",
+   "pinnedComment": "What's the one mountain range or barrier on your map, and which side of it is winning because of it?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "One mountain range can make an empire.\n\nA mountain range can decide which kingdom becomes an empire.\n\nMountains slow invaders, so a sheltered kingdom can spend on farms instead of walls. They cut valleys off from each other, so neighbours grow apart and never unite. And they force trade onto a few roads, so whoever guards those roads gets paid.\n\nGeography creates power long before an army marches. Draw the range first, then ask what it does to everyone on either side.\n\nSend this to someone drawing a fantasy map.\n\nEpisode 6 of 50 · Worldcraft Shorts\n\n#Worldbuilding #FantasyMap #WritingTips #FantasyWriting #WorldcraftShorts",
+   "hookCheck": "First 39 characters: 'One mountain range can make an empire.'",
+   "pinnedComment": "Which barrier on your map does the most work: mountains, desert, sea or wall?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  },
+  "cover": "Worldcraft_Short_E06_cover.jpg: the golden kingdom under the Ashspine with the amber skyline trace and 'empire?' in Cormorant Garamond over the sky, corner logo.",
+  "followUpQuestion": "Look at your own map: which border is a mountain range, and which side of it should be winning?"
+ }
+}

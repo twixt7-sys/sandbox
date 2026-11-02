@@ -1,0 +1,1079 @@
+{
+ "id": "ep12",
+ "number": 12,
+ "title": "Invent a Tradition With a Dark History",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "Warm storyteller with a secret. Light and fond on the hook and the festival list, almost smiling on 'bells, bonfires', then a quiet drop on 'Three hundred years ago'; plain and unhurried on the two purposes; a held beat before 'A head count.' The lesson laid down gently, warm and curious on the CTA. No trailer voice, no horror voice."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "What if a kingdom's most beloved festival began as a punishment?",
+   "pauseAfter": 0.7,
+   "emphasis": [
+    "beloved",
+    "punishment"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "festival",
+   "text": "On Bellnight, Dunmere camps outside its own walls: bells, bonfires, a cheer when the gates open at dawn.",
+   "pauseAfter": 0.7,
+   "emphasis": [
+    "Bellnight",
+    "outside",
+    "dawn"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "then",
+   "text": "Three hundred years ago, a king locked them out for one winter night.",
+   "pauseAfter": 0.8,
+   "emphasis": [
+    "locked",
+    "winter"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "mirror",
+   "text": "Bells, to find each other in the snow. Fires, to live till morning.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "find",
+    "live"
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "count",
+   "text": "The cheer at dawn? A head count.",
+   "pauseAfter": 0.75,
+   "emphasis": [
+    "head",
+    "count."
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "lesson",
+   "text": "The custom survived. The reason was forgotten.",
+   "pauseAfter": 0.8,
+   "emphasis": [
+    "survived.",
+    "forgotten."
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "cta",
+   "text": "Invent a tradition and tell us how it began.",
+   "pauseAfter": 0,
+   "emphasis": [
+    "tradition",
+    "began."
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.06,
+     "y": -20
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "Stop the scroll on pure joy, and undercut it in one line: this happy night began as a punishment.",
+   "visual": "Bellnight outside the walls of Dunmere: bonfires on the snow, children dancing in a ring, bells raised, garlands on the shut gate. 'THE KINGDOM'S FAVOURITE NIGHT / began as a punishment.' over the starry sky.",
+   "camera": "Slow push (1.00 to 1.06), frame rises 20 px.",
+   "layers": {
+    "foreground": "dancers and bonfires",
+    "midground": "garlanded gate and towers",
+    "background": "starry night sky"
+   },
+   "lighting": "Warm firelight on snow under a deep blue night; top scrim for the title.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. A winter festival night outside a walled town, seen from a snowy meadow at a distance. In the middle of the frame: a tall weathered grey stone town wall running across the whole width, with one great arched wooden gate in the centre, firmly shut, flanked by two squat round towers with conical slate roofs. Long strips of red and cream cloth and evergreen garlands are tied along the gate and the top of the wall. In the lower half: open snowy ground in front of the gate, crowded with townsfolk in thick quilted coats of saffron, plum and teal with long tasselled hoods, gathered around three large crackling bonfires, many raising small brass hand bells, children dancing in a ring, warm golden firelight on the snow and the wall. Upper third: a clear dark blue night sky with stars and gentle falling snow, open space above the towers. Joyful, festive, communal mood. Figures small, faces not visible. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used: no image-to-video available. Motion is a Remotion push.) Slow push toward the gate, flames flickering, 4 seconds",
+   "graphics": [
+    {
+     "type": "snowfall",
+     "density": 0.35,
+     "wind": 120,
+     "opacity": 0.5
+    },
+    {
+     "type": "titleLockup",
+     "kicker": "A kingdom's favourite night",
+     "text": "began as a punishment.",
+     "y": 330,
+     "size": 104,
+     "start": {
+      "line": "L1",
+      "word": "most",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L1",
+      "word": "punishment?",
+      "offset": 0.7
+     }
+    }
+   ],
+   "onScreenText": "Kicker 'A KINGDOM'S FAVOURITE NIGHT' + 'began as a punishment.' (ember serif italic).",
+   "transition": "Hard cut on 'On Bellnight' to a tighter framing of the same night.",
+   "sfx": [
+    {
+     "sound": "procession",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "then",
+      "offset": 0.6
+     },
+     "gain": -30
+    },
+    {
+     "sound": "hearth",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "then",
+      "offset": 0.4
+     },
+     "gain": -31
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L1",
+      "word": "punishment?",
+      "offset": -0.9
+     },
+     "gain": -23
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L1",
+      "word": "punishment?",
+      "offset": 0.05
+     },
+     "gain": -20
+    }
+   ],
+   "music": "D major add9 with bells: a happy night, questioned."
+  },
+  {
+   "id": "festival",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.1,
+     "y": -40
+    },
+    "to": {
+     "s": 1.15,
+     "y": -50
+    }
+   },
+   "plateScrim": 0.4,
+   "purpose": "Name the festival and its three customs, plainly and cheerfully, on the NOW side of a ledger that will later fill in.",
+   "visual": "Same festival, closer. A two-column ledger card opens at the top with only its NOW column: bell, bonfire and dawn-gate icons write in with 'Bells', 'Bonfires', 'A cheer at dawn' as they are spoken.",
+   "camera": "Push continues (1.10 to 1.15).",
+   "layers": {
+    "foreground": "ledger card",
+    "midground": "crowd and bonfires",
+    "background": "gate and towers"
+   },
+   "lighting": "Warm firelight.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "snowfall",
+     "density": 0.35,
+     "wind": 120,
+     "opacity": 0.5
+    },
+    {
+     "type": "originLedger",
+     "nowLabel": "Bellnight, today",
+     "thenLabel": "The first one",
+     "rows": [
+      {
+       "icon": "bell",
+       "now": "Bells",
+       "then": "to find each other",
+       "nowAt": {
+        "line": "L2",
+        "word": "bells,",
+        "offset": -0.05
+       },
+       "thenAt": {
+        "line": "L4",
+        "word": "find",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "fire",
+       "now": "Bonfires",
+       "then": "to live till morning",
+       "nowAt": {
+        "line": "L2",
+        "word": "bonfires,",
+        "offset": -0.05
+       },
+       "thenAt": {
+        "line": "L4",
+        "word": "live",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "dawn",
+       "now": "A cheer at dawn",
+       "then": "a head count",
+       "nowAt": {
+        "line": "L2",
+        "word": "cheer",
+        "offset": -0.05
+       },
+       "thenAt": {
+        "line": "L5",
+        "word": "head",
+        "offset": -0.05
+       }
+      }
+     ],
+     "thenHeaderAt": {
+      "line": "L4",
+      "word": "bells,",
+      "offset": -0.1
+     },
+     "start": {
+      "line": "L2",
+      "word": "on",
+      "offset": -0.15
+     }
+    }
+   ],
+   "onScreenText": "Ledger header 'BELLNIGHT, TODAY'; rows 'Bells', 'Bonfires', 'A cheer at dawn' with line icons.",
+   "transition": "Cut to the same view three centuries earlier, which dissolves in on 'years ago'.",
+   "sfx": [
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L2",
+      "word": "bells,",
+      "offset": -0.05
+     },
+     "gain": -26
+    },
+    {
+     "sound": "paper",
+     "at": {
+      "line": "L2",
+      "word": "on",
+      "offset": -0.15
+     },
+     "gain": -28
+    }
+   ],
+   "music": "G major, pulse and bright arpeggio: the party."
+  },
+  {
+   "id": "then",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.05,
+     "y": -15
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "The turn: the same frame, three hundred years earlier. The festival dissolves out of the plate, leaving the shut gate and a few huddled people in a blizzard.",
+   "visual": "Opens on the festival (matching plate), then the decorations, bonfires and crowd dissolve away into the same gate barred in a snowstorm, scattered figures by two tiny fires. Tag 'THREE HUNDRED YEARS EARLIER / Locked out.'",
+   "camera": "Slow push (1.00 to 1.05); both plates share it, so they stay registered.",
+   "layers": {
+    "foreground": "snow and footprints",
+    "midground": "huddled figures",
+    "background": "barred gate"
+   },
+   "lighting": "The warm festival plate cools and blurs slightly as it fades; cold blue moonlight remains.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. A bitter winter night outside a walled town, centuries ago, seen from a snowy meadow at a distance. In the middle of the frame: a tall weathered grey stone town wall running across the whole width, with one great arched wooden gate in the centre, firmly shut and barred, flanked by two squat round towers with conical slate roofs; no decorations, dark arrow slits, no light behind the wall. In the lower half: open snowy ground in front of the gate, almost empty: a few small scattered groups of people huddled together under dark blankets and plain grey cloaks around two tiny weak fires in the snow, one small figure holding up a small brass hand bell, long trails of footprints, wide empty spaces. Upper third: a dark blue-grey sky thick with driving snow. Cold blue moonlight, bleak, quiet, desperate mood. Figures small, seen from behind or in silhouette, faces not visible. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.) Snow driving across the frame, 4 seconds",
+   "graphics": [
+    {
+     "type": "eraShift",
+     "local": true,
+     "src": "ep12/plates/hook.jpg",
+     "from": 1,
+     "keys": [
+      {
+       "at": {
+        "line": "L3",
+        "word": "hundred",
+        "offset": -0.1
+       },
+       "to": 0,
+       "dur": 1.5
+      }
+     ]
+    },
+    {
+     "type": "snowfall",
+     "density": 0.8,
+     "wind": 520,
+     "opacity": 0.75
+    },
+    {
+     "type": "tag",
+     "kicker": "Three hundred years earlier",
+     "text": "Locked out.",
+     "start": {
+      "line": "L3",
+      "word": "locked",
+      "offset": -0.05
+     }
+    }
+   ],
+   "onScreenText": "Tag 'THREE HUNDRED YEARS EARLIER' / 'Locked out.'",
+   "transition": "Cut to the bonfire close-up, which dissolves the same way.",
+   "sfx": [
+    {
+     "sound": "timeFold",
+     "at": {
+      "line": "L3",
+      "word": "three",
+      "offset": -0.3
+     },
+     "gain": -21
+    },
+    {
+     "sound": "blizzard",
+     "from": {
+      "shot": "then"
+     },
+     "to": {
+      "shot": "lesson",
+      "offset": 0.5
+     },
+     "gain": -27
+    },
+    {
+     "sound": "gateSlam",
+     "at": {
+      "line": "L3",
+      "word": "locked",
+      "offset": -0.42
+     },
+     "gain": -18
+    }
+   ],
+   "music": "D minor, the bells gone: the original night."
+  },
+  {
+   "id": "mirror",
+   "scene": "nightSky",
+   "plateFrom": "fireThen",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.05,
+     "y": -10
+    }
+   },
+   "plateScrim": 0.4,
+   "purpose": "The mirror: each happy custom gets its original purpose, written beside it in the ledger, while the bonfire party dissolves into the huddle around a weak fire.",
+   "visual": "Opens on the laughing ring around the bonfire, which dissolves into hooded figures huddled around a few sticks. The ledger returns with its THEN column: 'Bells → to find each other', 'Bonfires → to live till morning'.",
+   "camera": "Slow push (1.00 to 1.05) on both registered plates.",
+   "layers": {
+    "foreground": "ledger",
+    "midground": "the ring of people and the fire",
+    "background": "town wall"
+   },
+   "lighting": "Gold firelight cooling to blue moonlight with a faint orange ember glow.",
+   "imagePrompt": "Vertical 9:16 cinematic fantasy documentary still. A closer view of a bitter winter night centuries ago, just outside a grey stone town wall. In the centre of the lower half: one small weak fire of a few sticks on the snow, and around it a loose ring of six or seven people huddled close together under plain dark grey blankets and cloaks with hoods up, shoulders hunched against the wind, one holding a small brass hand bell low in a mittened hand, a bare wooden pole beside the fire. Behind them in the middle of the frame: the rough stone wall, dark and bare, its gate shut. Upper third: dark blue-grey sky thick with driving snow. Cold blue moonlight with a faint orange glow from the small fire. Bleak, quiet, desperate but enduring mood. Figures at a modest distance, natural hands, faces hidden in shadow under hoods. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no watermark.",
+   "videoPrompt": "(Not used.) Embers glowing, snow falling, 4 seconds",
+   "graphics": [
+    {
+     "type": "eraShift",
+     "local": true,
+     "src": "ep12/plates/fire.jpg",
+     "from": 1,
+     "keys": [
+      {
+       "at": {
+        "shot": "mirror",
+        "offset": 0.05
+       },
+       "to": 0,
+       "dur": 1.0
+      }
+     ]
+    },
+    {
+     "type": "snowfall",
+     "density": 0.7,
+     "wind": 420,
+     "opacity": 0.7
+    },
+    {
+     "type": "originLedger",
+     "nowLabel": "Bellnight, today",
+     "thenLabel": "The first one",
+     "rows": [
+      {
+       "icon": "bell",
+       "now": "Bells",
+       "then": "to find each other",
+       "nowAt": {
+        "line": "L2",
+        "word": "bells,",
+        "offset": -0.05
+       },
+       "thenAt": {
+        "line": "L4",
+        "word": "find",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "fire",
+       "now": "Bonfires",
+       "then": "to live till morning",
+       "nowAt": {
+        "line": "L2",
+        "word": "bonfires,",
+        "offset": -0.05
+       },
+       "thenAt": {
+        "line": "L4",
+        "word": "live",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "dawn",
+       "now": "A cheer at dawn",
+       "then": "a head count",
+       "nowAt": {
+        "line": "L2",
+        "word": "cheer",
+        "offset": -0.05
+       },
+       "thenAt": {
+        "line": "L5",
+        "word": "head",
+        "offset": -0.05
+       }
+      }
+     ],
+     "thenHeaderAt": {
+      "line": "L4",
+      "word": "bells,",
+      "offset": -0.1
+     },
+     "start": {
+      "shot": "mirror",
+      "offset": 0.1
+     }
+    }
+   ],
+   "onScreenText": "Ledger: 'THE FIRST ONE' column; 'to find each other', 'to live till morning' (ember italic) beside 'Bells', 'Bonfires'.",
+   "transition": "Cut back to the wide gate at night.",
+   "sfx": [
+    {
+     "sound": "timeFold",
+     "at": {
+      "shot": "mirror",
+      "offset": -0.45
+     },
+     "gain": -24
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L4",
+      "word": "find",
+      "offset": -0.1
+     },
+     "gain": -26
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L4",
+      "word": "live",
+      "offset": -0.1
+     },
+     "gain": -26
+    }
+   ],
+   "music": "Bb major to A: the meaning turns."
+  },
+  {
+   "id": "count",
+   "scene": "nightSky",
+   "plateFrom": "then",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.08,
+     "y": 30
+    },
+    "to": {
+     "s": 1.13,
+     "y": 30
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "The last custom flips and lands the dark turn without showing harm: at dawn they counted, and some places stay empty.",
+   "visual": "The barred gate in the snow. The ledger's last row fills ('A cheer at dawn → a head count'), and below it two rows of small hooded figures light amber one by one; the last four stay as empty dashed outlines.",
+   "camera": "Slow push toward the gate (1.08 to 1.13).",
+   "layers": {
+    "foreground": "head-count figures",
+    "midground": "snow and the scattered few",
+    "background": "gate"
+   },
+   "lighting": "Cold blue; amber figures.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "snowfall",
+     "density": 0.55,
+     "wind": 300,
+     "opacity": 0.6
+    },
+    {
+     "type": "originLedger",
+     "nowLabel": "Bellnight, today",
+     "thenLabel": "The first one",
+     "rows": [
+      {
+       "icon": "bell",
+       "now": "Bells",
+       "then": "to find each other",
+       "nowAt": {
+        "line": "L2",
+        "word": "bells,",
+        "offset": -0.05
+       },
+       "thenAt": {
+        "line": "L4",
+        "word": "find",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "fire",
+       "now": "Bonfires",
+       "then": "to live till morning",
+       "nowAt": {
+        "line": "L2",
+        "word": "bonfires,",
+        "offset": -0.05
+       },
+       "thenAt": {
+        "line": "L4",
+        "word": "live",
+        "offset": -0.05
+       }
+      },
+      {
+       "icon": "dawn",
+       "now": "A cheer at dawn",
+       "then": "a head count",
+       "nowAt": {
+        "line": "L2",
+        "word": "cheer",
+        "offset": -0.05
+       },
+       "thenAt": {
+        "line": "L5",
+        "word": "head",
+        "offset": -0.05
+       }
+      }
+     ],
+     "thenHeaderAt": {
+      "line": "L4",
+      "word": "bells,",
+      "offset": -0.1
+     },
+     "instant": true
+    },
+    {
+     "type": "headCount",
+     "y": 1010,
+     "cols": 10,
+     "rows": 2,
+     "gap": 66,
+     "missing": 4,
+     "start": {
+      "line": "L5",
+      "word": "cheer",
+      "offset": -0.05
+     },
+     "dur": 1.1
+    }
+   ],
+   "onScreenText": "Ledger row 3: 'a head count' (ember italic). 20 figures: 16 lit amber, 4 empty dashed outlines.",
+   "transition": "Cut to the same gate, dimmed for the lesson.",
+   "sfx": [
+    {
+     "sound": "headCount",
+     "at": {
+      "line": "L5",
+      "word": "cheer",
+      "offset": -0.05
+     },
+     "gain": -22
+    },
+    {
+     "sound": "tonalDrop",
+     "at": {
+      "line": "L5",
+      "word": "count.",
+      "offset": 0.5
+     },
+     "gain": -24
+    }
+   ],
+   "music": "F minor, held almost still under the count."
+  },
+  {
+   "id": "lesson",
+   "scene": "nightSky",
+   "plateFrom": "then",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.72,
+   "purpose": "Spell out the rule while the picture does it: the festival grows back over the punishment, so the origin is literally covered up.",
+   "visual": "The barred gate in the snow, dark. 'The custom survived.' On 'The reason was forgotten.' the festival dissolves back over the punishment: garlands, bonfires and the crowd return.",
+   "camera": "Slow pull (1.04 to 1.00) on both registered plates.",
+   "layers": {
+    "foreground": "lesson type",
+    "midground": "the night returning to a party",
+    "background": "gate and sky"
+   },
+   "lighting": "Heavy top scrim for the lesson type; cold turning warm.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "eraShift",
+     "local": true,
+     "src": "ep12/plates/hook.jpg",
+     "from": 0,
+     "tint": "rgba(244,196,110,0.16)",
+     "keys": [
+      {
+       "at": {
+        "line": "L6",
+        "word": "reason",
+        "offset": -0.2
+       },
+       "to": 1,
+       "dur": 1.6
+      }
+     ]
+    },
+    {
+     "type": "snowfall",
+     "density": 0.4,
+     "wind": 200,
+     "opacity": 0.5
+    },
+    {
+     "type": "lessonStack",
+     "top": 400,
+     "size": 92,
+     "restSize": 82,
+     "items": [
+      {
+       "text": "The custom survived.",
+       "at": {
+        "line": "L6",
+        "word": "custom",
+        "offset": -0.1
+       }
+      },
+      {
+       "text": "The reason was forgotten.",
+       "at": {
+        "line": "L6",
+        "word": "reason",
+        "offset": -0.1
+       }
+      }
+     ]
+    }
+   ],
+   "onScreenText": "'The custom survived.' then an arrow down to 'The reason was forgotten.' (ember serif italic).",
+   "transition": "Dissolve (0.6 s) into the festival for the CTA.",
+   "sfx": [
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L6",
+      "word": "reason",
+      "offset": -0.05
+     },
+     "gain": -20
+    },
+    {
+     "sound": "timeFold",
+     "at": {
+      "line": "L6",
+      "word": "reason",
+      "offset": -0.9
+     },
+     "gain": -26
+    },
+    {
+     "sound": "procession",
+     "from": {
+      "line": "L6",
+      "word": "reason",
+      "offset": -0.2
+     },
+     "to": {
+      "shot": "cta",
+      "offset": 2.0
+     },
+     "gain": -33
+    }
+   ],
+   "music": "Bb major to A sus, then A: the rule."
+  },
+  {
+   "id": "cta",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "plateFrame": {
+    "from": {
+     "s": 1.03,
+     "y": -10
+    },
+    "to": {
+     "s": 1.0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.55,
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "captions": false,
+   "hideLogoBug": true,
+   "purpose": "Comment CTA over the festival as everyone knows it, now that the viewer knows what it hides. Ends on the opening frame for a loop.",
+   "visual": "Bellnight outside the walls. Full logo, Episode 12 / 50, the CTA in large serif type, a 'Comment below' pill.",
+   "camera": "Settles to the hook's first framing (1.03 to 1.00).",
+   "layers": {
+    "foreground": "logo and CTA type",
+    "midground": "festival crowd",
+    "background": "gate and sky"
+   },
+   "lighting": "Warm firelight; the last 0.6 s cross-fades into the first frame.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "snowfall",
+     "density": 0.3,
+     "wind": 120,
+     "opacity": 0.45
+    },
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L7",
+      "word": "invent"
+     },
+     "episode": "Episode 12 / 50",
+     "title": "Invent a tradition with a dark history",
+     "kicker": "Your turn",
+     "lines": [
+      "Invent a tradition",
+      "*and tell us*",
+      "how it began."
+     ],
+     "button": "Comment below"
+    }
+   ],
+   "onScreenText": "Full logo, 'EPISODE 12 / 50', title, 'YOUR TURN', 'Invent a tradition and tell us how it began.', pill 'Comment below'.",
+   "transition": "Cross-fade into the hook's first frame for a seamless loop.",
+   "sfx": [
+    {
+     "sound": "swell",
+     "at": {
+      "shot": "cta",
+      "offset": -0.3
+     },
+     "gain": -25
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L7",
+      "word": "began.",
+      "offset": 0.2
+     },
+     "gain": -24
+    }
+   ],
+   "music": "D major, warm; fades fully before the last frame."
+  }
+ ],
+ "lesson": "A tradition gets interesting when what it means now is not what it meant then. Keep the custom and lose the reason: bells that once found the lost, fires that once kept people alive, a cheer that was once a head count. Write both meanings, and let your characters know only one.",
+ "captionReplace": {},
+ "music": {
+  "key": "D major, through D minor, resolving to D major",
+  "drone": [
+   "D2",
+   "A2"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L3",
+     "word": "locked"
+    },
+    "pre": 0.2,
+    "dur": 1.0,
+    "gain": 0.5
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L5",
+     "word": "head"
+    },
+    "pre": 0.3,
+    "dur": 1.6,
+    "gain": 0.45
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F#3",
+      "A3",
+      "E4"
+     ]
+    ],
+    "level": 0.5,
+    "bells": true
+   },
+   "festival": {
+    "chords": [
+     [
+      "G2",
+      "D3",
+      "B3",
+      "D4",
+      "A4"
+     ],
+     [
+      "D2",
+      "A2",
+      "F#3",
+      "A3",
+      "D4"
+     ]
+    ],
+    "level": 0.62,
+    "pulse": 84,
+    "arp": true,
+    "bells": true
+   },
+   "then": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F3",
+      "A3",
+      "D4"
+     ]
+    ],
+    "level": 0.5,
+    "dark": true
+   },
+   "mirror": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "F3",
+      "Bb3"
+     ],
+     [
+      "A1",
+      "E2",
+      "C#3",
+      "E3",
+      "A3"
+     ]
+    ],
+    "level": 0.56,
+    "pulse": 64
+   },
+   "count": {
+    "chords": [
+     [
+      "F1",
+      "C2",
+      "Ab2",
+      "C3",
+      "F3"
+     ]
+    ],
+    "level": 0.42,
+    "dark": true
+   },
+   "lesson": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "F3",
+      "C4"
+     ],
+     [
+      "A1",
+      "E2",
+      "A2",
+      "D3",
+      "E3"
+     ]
+    ],
+    "level": 0.6,
+    "bells": true
+   },
+   "cta": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F#3",
+      "A3",
+      "D4"
+     ],
+     [
+      "G2",
+      "D3",
+      "B3",
+      "D4",
+      "F#4"
+     ]
+    ],
+    "level": 0.6,
+    "bells": true
+   }
+  }
+ },
+ "metadata": {
+  "youtube": {
+   "title": "Invent a Tradition With a Dark History (Worldbuilding)",
+   "titleAlternate": "This festival began as a punishment",
+   "description": "What if a kingdom's most beloved festival began as a punishment?\n\nOn Bellnight, the town of Dunmere camps outside its own walls: bells, bonfires, a cheer when the gates open at dawn. Three hundred years ago, a king locked the town out for one winter night. The bells were how people found each other in the snow, the fires kept them alive, and the cheer at dawn was a head count.\n\nThe custom survived. The reason was forgotten. Give your traditions two meanings, the one they began with and the one people celebrate now, and let your characters know only one.\n\nInvent a tradition and tell us how it began, in the comments.\n\nEpisode 12 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, game designers and tabletop RPG creators.\n\n#Worldbuilding #FantasyWriting #WritingTips #WritingCommunity #WorldcraftShorts",
+   "pinnedComment": "Your turn: name a tradition in your world, what people think it's for today, and what it was really for when it began.",
+   "uploadSettings": "Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "Their favourite festival began as a punishment. The bells found the lost, the fires kept them alive, the dawn cheer was a head count 🕯️ Invent a tradition and tell us how it began. #Worldbuilding #FantasyWriting #WritingTips #WritingCommunity #WorldcraftShorts",
+   "pinnedComment": "Drop a tradition from your world: what it means now, and how it began. Best dark origins get a reply.",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "What if a kingdom's most beloved festival began as a punishment?\n\nOn Bellnight, the town of Dunmere camps outside its own walls: bells, bonfires, a cheer when the gates open at dawn. Three hundred years ago, a king locked the town out for one winter night. The bells were how people found each other in the snow, the fires kept them alive, and the cheer at dawn was a head count.\n\nThe custom survived. The reason was forgotten. Give your traditions two meanings, the one they began with and the one people celebrate now, and let your characters know only one.\n\nInvent a tradition and tell us how it began, in the comments.\n\nEpisode 12 of 50.\n\n#Worldbuilding #FantasyWriting #WritingTips #WritingCommunity #WorldcraftShorts",
+   "pinnedComment": "What's a tradition in your world whose original reason nobody remembers?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "The best festival began as a punishment.\n\nWhat if a kingdom's most beloved festival began as a punishment?\n\nOn Bellnight, the town of Dunmere camps outside its own walls: bells, bonfires, a cheer when the gates open at dawn. Three hundred years ago, a king locked the town out for one winter night. The bells were how people found each other in the snow, the fires kept them alive, and the cheer at dawn was a head count.\n\nThe custom survived. The reason was forgotten. Give your traditions two meanings, the one they began with and the one people celebrate now, and let your characters know only one.\n\nInvent a tradition and tell us how it began, in the comments.\n\nEpisode 12 of 50 · Worldcraft Shorts\n\n#Worldbuilding #FantasyWriting #WritingTips #WritingCommunity #WorldcraftShorts",
+   "hookCheck": "First 40 characters: 'The best festival began as a punishment.'",
+   "pinnedComment": "Now vs then: give us one custom and its forgotten reason.",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  },
+  "cover": "Worldcraft_Short_E12_cover.jpg: the Bellnight festival outside the walls, bonfires and dancers, with 'THE KINGDOM'S FAVOURITE NIGHT / began as a punishment.' in the sky, corner logo.",
+  "followUpQuestion": "Pick one custom in your world and ask: what did it mean the first time anyone did it?"
+ }
+}

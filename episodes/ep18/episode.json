@@ -1,0 +1,959 @@
+{
+ "id": "ep18",
+ "number": 18,
+ "title": "Laws Reveal What a Society Fears",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "A calm, curious guide. The hook is a genuine 'imagine'; 'Absurd?' is a light, raised eyebrow, not mockery. The origin is told quietly, almost hushed on 'and nobody mentioned'. 'A lie can be argued with. Silence can't.' is plain and certain. The lesson is clear and warm; 'Find the wound' lands softly. The CTA is friendly. No trailer voice."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "Imagine a kingdom where lying is legal, but silence is a crime.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "legal,",
+    "crime."
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "fine",
+   "text": "Here, a magistrate fines a man for saying nothing.",
+   "pauseAfter": 0.55,
+   "emphasis": [
+    "fines",
+    "nothing."
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "law",
+   "text": "Absurd? Read the law.",
+   "pauseAfter": 0.8,
+   "emphasis": [
+    "absurd?"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "law",
+   "text": "Two hundred years ago, the city fell to a plot that everyone noticed, and nobody mentioned.",
+   "pauseAfter": 0.7,
+   "emphasis": [
+    "everyone",
+    "nobody"
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "lesson",
+   "text": "So they outlawed silence. A lie can be argued with. Silence can't.",
+   "pauseAfter": 0.7,
+   "emphasis": [
+    "outlawed",
+    "argued",
+    "can't."
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "lesson",
+   "text": "Laws show what a people fear. Every strange law is a scar. Find the wound.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "fear.",
+    "scar.",
+    "wound."
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "cta",
+   "text": "Invent one law that would make outsiders fear your kingdom.",
+   "pauseAfter": 0.0,
+   "emphasis": [
+    "invent",
+    "fear"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.06,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.5,
+   "purpose": "Stop the scroll on an upside-down law: a kingdom where lying is legal and silence is a crime, over a magistrate's table in a busy square.",
+   "visual": "A woman magistrate at a stone table under an awning; a cloaked man stands silent before her; townsfolk watch. 'LYING IS LEGAL / Silence is a crime.'",
+   "camera": "Slow push (1.00 to 1.06).",
+   "layers": {
+    "foreground": "title",
+    "midground": "the silent man and the magistrate",
+    "background": "the square"
+   },
+   "lighting": "Bright midday; top scrim for the title.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. wide shot of a sunlit stone square, an old woman magistrate in a long dark teal and bronze robe, bareheaded, sits on a raised stone seat under a canvas awning, a man in a grey hooded cloak stands before her with his back to us, silent, townsfolk watching. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "wide shot of a sunlit stone square, an old woman magistrate in a long dark teal and bronze robe, bareheaded, sits on a raised stone seat under a canvas awning, a man in a grey hooded cloak stands before her with his back to us, silent, townsfolk watching",
+   "graphics": [
+    {
+     "type": "titleLockup",
+     "kicker": "Lying is legal",
+     "text": "Silence is a crime.",
+     "y": 340,
+     "size": 104,
+     "start": {
+      "line": "L1",
+      "word": "imagine",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L1",
+      "word": "crime.",
+      "offset": 0.55
+     }
+    }
+   ],
+   "onScreenText": "Kicker 'LYING IS LEGAL' + 'Silence is a crime.'",
+   "transition": "Hard cut on 'Here' to a punch-in on the silent man.",
+   "sfx": [
+    {
+     "sound": "market",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "law"
+     },
+     "gain": -36
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L1",
+      "word": "crime.",
+      "offset": -1.0
+     },
+     "gain": -25
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L1",
+      "word": "crime."
+     },
+     "gain": -21
+    }
+   ],
+   "music": "C minor, low; a held question."
+  },
+  {
+   "id": "fine",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.3,
+     "x": -150,
+     "y": 40
+    },
+    "to": {
+     "s": 1.34,
+     "x": -165,
+     "y": 40
+    }
+   },
+   "plateScrim": 0.35,
+   "purpose": "The law as absurd: a man fined for saying nothing.",
+   "visual": "Punch-in on the silent man before the magistrate; tag 'FINED · THREE SILVER / for saying nothing.'",
+   "camera": "Slow push on the pair.",
+   "layers": {
+    "foreground": "tag",
+    "midground": "the silent man",
+    "background": "the magistrate"
+   },
+   "lighting": "As the hook.",
+   "graphics": [
+    {
+     "type": "tag",
+     "kicker": "Fined · three silver",
+     "text": "for saying nothing.",
+     "start": {
+      "line": "L2",
+      "word": "fines",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Tag 'FINED · THREE SILVER' + 'for saying nothing.'",
+   "transition": "Dissolve (0.4 s) into the law card.",
+   "sfx": [
+    {
+     "sound": "coin",
+     "at": {
+      "line": "L2",
+      "word": "fines",
+      "offset": 0.0
+     },
+     "gain": -24
+    },
+    {
+     "sound": "strike",
+     "at": {
+      "line": "L2",
+      "word": "nothing.",
+      "offset": 0.1
+     },
+     "gain": -30
+    }
+   ],
+   "music": "C minor with a slow pulse.",
+   "imagePrompt": "",
+   "videoPrompt": ""
+  },
+  {
+   "id": "law",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.4
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.1,
+     "y": 0
+    },
+    "to": {
+     "s": 1.12,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.85,
+   "plateLook": {
+    "from": "saturate(0.5) brightness(0.5)"
+   },
+   "purpose": "Read the law itself: three short clauses, written in code clause by clause. Still absurd.",
+   "visual": "A dark vellum card: VELMARCH · BY ROYAL DECREE / The Law of Answers; I. Answer every question asked aloud. II. To keep silent is a crime. III. A lie is no crime. A rust wax seal.",
+   "camera": "Near still.",
+   "layers": {
+    "foreground": "the law card",
+    "midground": "",
+    "background": "the square, dimmed"
+   },
+   "lighting": "Dimmed and cooled under the card.",
+   "graphics": [
+    {
+     "type": "lawText",
+     "kicker": "Velmarch · by royal decree",
+     "title": "The Law of Answers",
+     "clauses": [
+      {
+       "n": "I",
+       "text": "Answer every question asked aloud.",
+       "at": {
+        "line": "L3",
+        "word": "read",
+        "offset": -0.1
+       },
+       "litAt": {
+        "line": "L5",
+        "word": "silence.",
+        "offset": 0.05
+       },
+       "fear": "the question nobody asked"
+      },
+      {
+       "n": "II",
+       "text": "To keep silent is a crime.",
+       "at": {
+        "line": "L3",
+        "word": "read",
+        "offset": 0.45
+       },
+       "litAt": {
+        "line": "L5",
+        "word": "outlawed",
+        "offset": -0.05
+       },
+       "fear": "the night nobody spoke"
+      },
+      {
+       "n": "III",
+       "text": "A lie is no crime.",
+       "at": {
+        "line": "L3",
+        "word": "law.",
+        "offset": 0.35
+       },
+       "litAt": {
+        "line": "L5",
+        "word": "argued",
+        "offset": -0.1
+       },
+       "fear": "silence, more than lies"
+      }
+     ]
+    }
+   ],
+   "onScreenText": "The law text, clause by clause.",
+   "transition": "Hard cut on 'the city fell' to the night street.",
+   "sfx": [
+    {
+     "sound": "paper",
+     "at": {
+      "shot": "law",
+      "offset": 0.1
+     },
+     "gain": -27
+    },
+    {
+     "sound": "quill",
+     "at": {
+      "line": "L3",
+      "word": "read",
+      "offset": -0.1
+     },
+     "gain": -24
+    },
+    {
+     "sound": "quill",
+     "at": {
+      "line": "L3",
+      "word": "read",
+      "offset": 0.45
+     },
+     "gain": -24
+    },
+    {
+     "sound": "quill",
+     "at": {
+      "line": "L3",
+      "word": "law.",
+      "offset": 0.35
+     },
+     "gain": -24
+    },
+    {
+     "sound": "stake",
+     "at": {
+      "line": "L3",
+      "word": "law.",
+      "offset": 1.0
+     },
+     "gain": -30
+    }
+   ],
+   "music": "C minor; the pulse holds.",
+   "imagePrompt": "",
+   "videoPrompt": ""
+  },
+  {
+   "id": "origin",
+   "scene": "nightSky",
+   "startAt": {
+    "line": "L4",
+    "word": "the"
+   },
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.02,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.4,
+   "purpose": "The wound behind the law: two hundred years ago the city fell to a plot everyone saw and nobody mentioned. Shown as watchers behind shutters and a street running into the dark; no violence.",
+   "visual": "Night street of shuttered houses; slits of light come on in window after window (everyone noticed); the street runs on into the dark. Callout at its far end: THE PLOT / Everyone saw., struck, then rust Nobody spoke.",
+   "camera": "Slow push down the street.",
+   "layers": {
+    "foreground": "tag and callout",
+    "midground": "the shuttered windows",
+    "background": "the far end of the street"
+   },
+   "lighting": "Cold night mist; warm slits in the shutters.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. night, a narrow street of tall half timbered houses with closed wooden shutters, thin cracks of warm candlelight in every shutter, faint faces peering through the cracks, at the far end a massive city gate standing wide open onto darkness, cold blue mist, no street lamps, empty street. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "night, a narrow street of tall half timbered houses with closed wooden shutters, thin cracks of warm candlelight in every shutter, faint faces peering through the cracks, at the far end a massive city gate standing wide open onto darkness, cold blue mist, no street lamps, empty street",
+   "graphics": [
+    {
+     "type": "tag",
+     "kicker": "Two hundred years ago",
+     "text": "The quiet night",
+     "start": {
+      "line": "L4",
+      "word": "the",
+      "offset": -0.05
+     }
+    },
+    {
+     "type": "glints",
+     "local": true,
+     "points": [
+      [
+       230,
+       330
+      ],
+      [
+       860,
+       560
+      ],
+      [
+       340,
+       500
+      ],
+      [
+       750,
+       780
+      ],
+      [
+       470,
+       740
+      ],
+      [
+       660,
+       920
+      ],
+      [
+       370,
+       1080
+      ]
+     ],
+     "start": {
+      "line": "L4",
+      "word": "everyone",
+      "offset": -0.15
+     },
+     "dur": 0.9,
+     "outAt": {
+      "line": "L4",
+      "word": "nobody",
+      "offset": 0.0
+     },
+     "dimTo": 0.25,
+     "size": 1.8
+    },
+    {
+     "type": "callout",
+     "local": true,
+     "at": [
+      640,
+      1010
+     ],
+     "label": "The plot",
+     "note": "Everyone saw.",
+     "side": "up",
+     "rise": -300,
+     "dx": -80,
+     "backdrop": true,
+     "noteSize": 58,
+     "start": {
+      "line": "L4",
+      "word": "plot",
+      "offset": 0.1
+     },
+     "then": {
+      "note": "Nobody spoke.",
+      "color": "rust",
+      "at": {
+       "line": "L4",
+       "word": "nobody",
+       "offset": 0.0
+      }
+     }
+    }
+   ],
+   "onScreenText": "Tag 'TWO HUNDRED YEARS AGO' + 'The quiet night'; callout 'THE PLOT / Everyone saw.' re-captioned in rust 'Nobody spoke.'",
+   "transition": "Dissolve (0.45 s) back to the law card.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "origin"
+     },
+     "to": {
+      "shot": "lesson",
+      "offset": 0.6
+     },
+     "gain": -33
+    },
+    {
+     "sound": "headCount",
+     "at": {
+      "line": "L4",
+      "word": "everyone",
+      "offset": -0.15
+     },
+     "gain": -30
+    },
+    {
+     "sound": "strike",
+     "at": {
+      "line": "L4",
+      "word": "nobody",
+      "offset": 0.0
+     },
+     "gain": -27
+    },
+    {
+     "sound": "tonalDrop",
+     "at": {
+      "line": "L4",
+      "word": "mentioned.",
+      "offset": 0.1
+     },
+     "gain": -26
+    }
+   ],
+   "music": "C minor, thin and cold; the pulse stops."
+  },
+  {
+   "id": "lesson",
+   "scene": "nightSky",
+   "plateFrom": "origin",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.45
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.1,
+     "y": 0
+    },
+    "to": {
+     "s": 1.06,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.88,
+   "plateLook": {
+    "from": "saturate(0.45) brightness(0.45)"
+   },
+   "purpose": "The turn and the lesson: each clause of the absurd law lights with the fear behind it, then the card lifts and the shareable thought lands.",
+   "visual": "The law card returns over the dimmed night street. II lights (← FEAR · the night nobody spoke), then I (← the question nobody asked), then III (← silence, more than lies). The card lifts; 'LAWS SHOW WHAT A PEOPLE FEAR / Every strange law is a scar. Find the wound.'",
+   "camera": "Gentle pull (1.10 to 1.06) on the dimmed street.",
+   "layers": {
+    "foreground": "law card and lesson",
+    "midground": "",
+    "background": "the night street, dimmed"
+   },
+   "lighting": "Dimmed and cooled under the card; ember on lit clauses.",
+   "graphics": [
+    {
+     "type": "lawText",
+     "kicker": "Velmarch · by royal decree",
+     "title": "The Law of Answers",
+     "clauses": [
+      {
+       "n": "I",
+       "text": "Answer every question asked aloud.",
+       "at": {
+        "line": "L3",
+        "word": "read",
+        "offset": -0.1
+       },
+       "litAt": {
+        "line": "L5",
+        "word": "silence.",
+        "offset": 0.05
+       },
+       "fear": "the question nobody asked"
+      },
+      {
+       "n": "II",
+       "text": "To keep silent is a crime.",
+       "at": {
+        "line": "L3",
+        "word": "read",
+        "offset": 0.45
+       },
+       "litAt": {
+        "line": "L5",
+        "word": "outlawed",
+        "offset": -0.05
+       },
+       "fear": "the night nobody spoke"
+      },
+      {
+       "n": "III",
+       "text": "A lie is no crime.",
+       "at": {
+        "line": "L3",
+        "word": "law.",
+        "offset": 0.35
+       },
+       "litAt": {
+        "line": "L5",
+        "word": "argued",
+        "offset": -0.1
+       },
+       "fear": "silence, more than lies"
+      }
+     ],
+     "instant": false,
+     "start": {
+      "shot": "lesson",
+      "offset": -0.45
+     },
+     "liftAt": {
+      "line": "L6",
+      "word": "every",
+      "offset": -0.15
+     },
+     "lessonKicker": "Laws show what a people fear",
+     "lessonText": [
+      "Every strange law is a scar.",
+      "*Find* *the* *wound.*"
+     ],
+     "lessonAt": {
+      "line": "L6",
+      "word": "every",
+      "offset": 0.1
+     },
+     "lessonLineAt": [
+      {
+       "line": "L6",
+       "word": "every",
+       "offset": 0.2
+      },
+      {
+       "line": "L6",
+       "word": "find",
+       "offset": -0.1
+      }
+     ]
+    }
+   ],
+   "onScreenText": "Clauses lit with their fears; then 'LAWS SHOW WHAT A PEOPLE FEAR' / 'Every strange law is a scar. Find the wound.'",
+   "transition": "Dissolve (0.6 s) to the same square at dusk, loud and crowded, the magistrate's table empty.",
+   "sfx": [
+    {
+     "sound": "clauseLight",
+     "at": {
+      "line": "L5",
+      "word": "outlawed",
+      "offset": -0.05
+     },
+     "gain": -23
+    },
+    {
+     "sound": "clauseLight",
+     "at": {
+      "line": "L5",
+      "word": "silence.",
+      "offset": 0.05
+     },
+     "gain": -25
+    },
+    {
+     "sound": "clauseLight",
+     "at": {
+      "line": "L5",
+      "word": "argued",
+      "offset": -0.1
+     },
+     "gain": -24
+    },
+    {
+     "sound": "paper",
+     "at": {
+      "line": "L6",
+      "word": "every",
+      "offset": -0.15
+     },
+     "gain": -28
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L6",
+      "word": "wound.",
+      "offset": -0.1
+     },
+     "gain": -21
+    }
+   ],
+   "music": "A-flat → C major with bells: the answer.",
+   "imagePrompt": "",
+   "videoPrompt": ""
+  },
+  {
+   "id": "cta",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.0,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.4,
+   "captions": false,
+   "hideLogoBug": true,
+   "purpose": "Comment CTA over the hook's square in a changed state: dusk, crowded, everyone talking, the magistrate's table empty. Loops back to the silent man.",
+   "visual": "The same kind of square at golden dusk, loud with talk, an empty stone table under the awning. Full logo, Episode 18 / 50, the CTA, a 'Comment below' pill.",
+   "camera": "Settles (1.04 to 1.00).",
+   "layers": {
+    "foreground": "logo and CTA type",
+    "midground": "the crowd",
+    "background": "the square"
+   },
+   "lighting": "Warm dusk; the last 0.6 s cross-fades to the midday hook.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a sunlit stone market square at golden dusk, crowded and lively, townsfolk talking and laughing in groups, merchants calling out, an empty carved stone table under a striped awning in the middle, hanging lanterns, warm and noisy, invented fantasy city, wide view. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "videoPrompt": "(Not used.)",
+   "sdxlPrompt": "a sunlit stone market square at golden dusk, crowded and lively, townsfolk talking and laughing in groups, merchants calling out, an empty carved stone table under a striped awning in the middle, hanging lanterns, warm and noisy, invented fantasy city, wide view",
+   "graphics": [
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L7",
+      "word": "invent"
+     },
+     "episode": "Episode 18 / 50",
+     "title": "Laws reveal what a society fears",
+     "kicker": "Your turn",
+     "size": 78,
+     "lines": [
+      "Invent one law",
+      "that would make outsiders",
+      "*fear your kingdom.*"
+     ],
+     "button": "Comment below"
+    }
+   ],
+   "onScreenText": "Full logo, 'EPISODE 18 / 50', title, 'YOUR TURN', 'Invent one law that would make outsiders fear your kingdom.', pill 'Comment below'.",
+   "transition": "Cross-fade into the hook's first frame for a seamless loop.",
+   "sfx": [
+    {
+     "sound": "market",
+     "from": {
+      "shot": "cta"
+     },
+     "to": {
+      "line": "L7",
+      "word": "kingdom.",
+      "offset": 1.0
+     },
+     "gain": -33
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "shot": "cta",
+      "offset": -0.3
+     },
+     "gain": -25
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L7",
+      "word": "kingdom.",
+      "offset": 0.2
+     },
+     "gain": -24
+    }
+   ],
+   "music": "F to C major, warm; fades fully before the last frame."
+  }
+ ],
+ "lesson": "A law shows what the society that wrote it fears, holds sacred or won't tolerate. A strange law becomes believable when it answers a specific historical problem: Velmarch outlawed silence (and left lying legal) because its city once fell to a plot that everyone noticed and nobody mentioned. Every strange law is a scar; find the wound.",
+ "captionReplace": {},
+ "music": {
+  "key": "C minor, resolving to C major",
+  "drone": [
+   "C2",
+   "G2"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L4",
+     "word": "nobody"
+    },
+    "pre": 0.15,
+    "dur": 1.4,
+    "gain": 0.55
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L6",
+     "word": "every"
+    },
+    "pre": 0.15,
+    "dur": 1.4,
+    "gain": 0.6
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "C2",
+      "G2",
+      "Eb3",
+      "G3",
+      "D4"
+     ]
+    ],
+    "level": 0.46,
+    "dark": true
+   },
+   "fine": {
+    "chords": [
+     [
+      "Ab1",
+      "Eb2",
+      "C3",
+      "G3"
+     ]
+    ],
+    "level": 0.5,
+    "pulse": 64
+   },
+   "law": {
+    "chords": [
+     [
+      "F1",
+      "C2",
+      "Ab2",
+      "Eb3",
+      "G3"
+     ]
+    ],
+    "level": 0.52,
+    "pulse": 64
+   },
+   "origin": {
+    "chords": [
+     [
+      "C2",
+      "G2",
+      "Eb3",
+      "G3"
+     ]
+    ],
+    "level": 0.44,
+    "dark": true
+   },
+   "lesson": {
+    "chords": [
+     [
+      "Ab1",
+      "Eb2",
+      "C3",
+      "G3"
+     ],
+     [
+      "C2",
+      "G2",
+      "E3",
+      "G3",
+      "D4"
+     ]
+    ],
+    "level": 0.62,
+    "bells": true
+   },
+   "cta": {
+    "chords": [
+     [
+      "F1",
+      "C2",
+      "A2",
+      "C3",
+      "G3"
+     ],
+     [
+      "C2",
+      "G2",
+      "E3",
+      "G3",
+      "C4"
+     ]
+    ],
+    "level": 0.58,
+    "bells": true
+   }
+  }
+ },
+ "metadata": {
+  "youtube": {
+   "title": "Laws Reveal What a Society Fears (Worldbuilding)",
+   "titleAlternate": "A kingdom where lying is legal but silence is a crime",
+   "description": "Imagine a kingdom where lying is legal, but silence is a crime.\n\nIn Velmarch, a magistrate fines a man for saying nothing. Absurd, until you read why. Two hundred years ago, the city fell to a plot that everyone noticed and nobody mentioned. So they outlawed silence. A lie can be argued with. Silence can't.\n\nLaws show what a people fear, what they hold sacred and what they won't tolerate. A strange law becomes believable when it answers a specific disaster in your world's history. Every strange law is a scar. Find the wound.\n\nInvent one law that would make outsiders fear your kingdom.\n\nEpisode 18 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts",
+   "pinnedComment": "Your turn: write one law from your kingdom that would scare a visitor, and the disaster it answers.",
+   "uploadSettings": "Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "Lying: legal. Silence: a crime. 🤐 Every strange law is a scar from something that went wrong. Find the wound. What law would make outsiders fear YOUR kingdom? #Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts",
+   "pinnedComment": "Drop one law from your world and the disaster that made it 👇",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "Imagine a kingdom where lying is legal, but silence is a crime.\n\nIn Velmarch, a magistrate fines a man for saying nothing. Absurd, until you read why. Two hundred years ago, the city fell to a plot that everyone noticed and nobody mentioned. So they outlawed silence. A lie can be argued with. Silence can't.\n\nLaws show what a people fear, what they hold sacred and what they won't tolerate. A strange law becomes believable when it answers a specific disaster in your world's history. Every strange law is a scar. Find the wound.\n\nInvent one law that would make outsiders fear your kingdom.\n\nEpisode 18 of 50.\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts",
+   "pinnedComment": "What's the strangest law in your kingdom, and what went wrong to make it?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "Silence is a crime here.\n\nImagine a kingdom where lying is legal, but silence is a crime.\n\nIn Velmarch, a magistrate fines a man for saying nothing. Absurd, until you read why. Two hundred years ago, the city fell to a plot that everyone noticed and nobody mentioned. So they outlawed silence. A lie can be argued with. Silence can't.\n\nLaws show what a people fear, what they hold sacred and what they won't tolerate. A strange law becomes believable when it answers a specific disaster in your world's history. Every strange law is a scar. Find the wound.\n\nInvent one law that would make outsiders fear your kingdom.\n\nEpisode 18 of 50 · Worldcraft Shorts\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyKingdoms #WorldcraftShorts",
+   "hookCheck": "First 24 characters: 'Silence is a crime here.'",
+   "pinnedComment": "One law, one wound: what's yours?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  },
+  "cover": "Worldcraft_Short_E18_cover.jpg: the magistrate's table and the silent man, 'LYING IS LEGAL / Silence is a crime.' above, corner logo.",
+  "followUpQuestion": "Pick one law in your kingdom. What disaster does it answer, who still remembers it, and what would an outsider think it means?"
+ }
+}

@@ -1,0 +1,906 @@
+{
+ "id": "ep02",
+ "number": 2,
+ "title": "Start With One Impossible Question",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "Warm, intelligent, cinematic. Mysterious on the hook, lifting in energy through the city, market and ritual, thoughtful and clear on the lesson, conversational on the CTA. No trailer voice. Lean on 'one hour', 'underground', 'sixty minutes', 'missing sun', 'one impossible rule'."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "What if the sun disappeared for exactly one hour every night?",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "disappeared",
+    "one",
+    "hour"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "rule",
+   "text": "Every night, on schedule. Here, darkness isn't a disaster.",
+   "pauseAfter": 0.12,
+   "emphasis": [
+    "every",
+    "night"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "rule",
+   "text": "It's a way of life.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "life"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "city",
+   "text": "Underground cities open their gates.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "underground",
+    "cities"
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "market",
+   "text": "Merchants run markets that exist for only sixty minutes.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "sixty",
+    "minutes"
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "ritual",
+   "text": "And whole religions worship the missing sun.",
+   "pauseAfter": 0.5,
+   "emphasis": [
+    "missing",
+    "sun"
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "lesson",
+   "text": "One impossible rule just shaped a civilization.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "one",
+    "impossible",
+    "rule"
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "method",
+   "text": "Don't start with a hundred facts. Start with one impossible question.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "one",
+    "question"
+   ]
+  },
+  {
+   "id": "L9",
+   "shot": "cta",
+   "text": "Now it's your turn. Comment your own impossible worldbuilding question.",
+   "pauseAfter": 0,
+   "emphasis": [
+    "comment"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "nightSky",
+   "plateMotion": "push",
+   "plateScrim": 0.0,
+   "purpose": "The impossible question over an arresting first frame: a brilliant golden sun over a plateau city vanishes unnaturally fast and night floods the land.",
+   "visual": "Golden plateau city above a river canyon, carved gates in the cliff below. A brilliant code-drawn sun hangs in the open sky; on 'disappeared' it collapses to a point with a gold shock ring, and blue-black darkness spreads outward from where it was. Stars appear; the cliff gates begin to glow.",
+   "camera": "Slow push toward the horizon (scale 1.00 to 1.08). The sun and darkness are pinned to the plate so they move with the camera.",
+   "layers": {
+    "foreground": "rocky ledge and scrub",
+    "midground": "terraced sandstone city, carved cliff gates",
+    "background": "river valley, mountain range, open golden sky with the sun"
+   },
+   "lighting": "Golden late-afternoon key from the sun (upper right) to deep blue-black (rgb 5,10,24 at 86%) in about 1.3 s; warm amber glow wakes in the cliff gates.",
+   "imagePrompt": "Ultra-wide establishing view over a vast high plateau landscape at late afternoon: a terraced pale sandstone city on the plateau edge in the midground, with tall slender stone towers, and at the base of the cliff below it enormous carved stone gates leading into the rock. A wide river valley stretches to a distant mountain horizon. The upper 45% of the frame is a clean, open, warm golden sky with a few thin high clouds and NO visible sun disc (the sun is above the frame, out of view); warm golden directional light rakes across the stone. Horizon at the middle of the frame. Gold and amber highlights, deep blue shadows, original architecture, no people",
+   "videoPrompt": "(Not used: no image-to-video available. Motion is a Remotion push-in plus a code-drawn sun that vanishes.) Slow forward dolly toward the horizon, haze drifting in the valley, the sun collapses to a point and darkness spreads across the land, 4 seconds",
+   "graphics": [
+    {
+     "type": "sunCycle",
+     "mode": "vanish",
+     "local": true,
+     "x": 740,
+     "y": 330,
+     "r": 62,
+     "glow": [
+      480,
+      1330
+     ],
+     "start": {
+      "line": "L1",
+      "word": "disappeared",
+      "offset": 0.05
+     },
+     "level": 0.8
+    },
+    {
+     "type": "oversizedWord",
+     "text": "one hour.",
+     "y": 470,
+     "size": 170,
+     "start": {
+      "line": "L1",
+      "word": "one",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Captions only, with 'disappeared', 'one hour' in amber; oversized serif 'one hour.' lands in the dark sky.",
+   "transition": "Cut on 'Every' to the same landscape by night; the celestial clock grows out of the dark sky.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "city"
+     },
+     "gain": -30
+    },
+    {
+     "sound": "shimmer",
+     "at": {
+      "line": "L1",
+      "word": "disappeared",
+      "offset": -0.25
+     },
+     "gain": -13
+    },
+    {
+     "sound": "tonalDrop",
+     "at": {
+      "line": "L1",
+      "word": "disappeared",
+      "offset": 0.2
+     },
+     "gain": -11
+    }
+   ],
+   "music": "High, open C-minor pad with a shimmer; the bed ducks as the sun vanishes so the tonal drop lands."
+  },
+  {
+   "id": "rule",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "plateMotion": "still",
+   "plateScrim": 0.0,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Establish the rule: it is predictable, every night, exactly sixty minutes.",
+   "visual": "The same landscape in night grade. A 24-hour celestial clock: a sun glyph orbits three times in time-lapse and disappears every time it crosses the one-hour dark sector at midnight. A counter reads Night 1, 2, 3, then '… 10,000'. The sun settles inside the dark sector; '60 minutes of dark', '1 hour of 24'.",
+   "camera": "Locked off; the dial scales up 0.94 to 1.0 as it appears.",
+   "layers": {
+    "foreground": "clock dial, sun glyph, labels",
+    "midground": "dark plateau city with glowing gates",
+    "background": "stars"
+   },
+   "lighting": "Deep midnight blue with gold lines; the dark sector is the only black on screen.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "sunCycle",
+     "mode": "night",
+     "local": true,
+     "glow": [
+      480,
+      1330
+     ],
+     "level": 0.8
+    },
+    {
+     "type": "celestialClock",
+     "y": 800,
+     "laps": 3,
+     "kicker": "Every night · same hour",
+     "start": {
+      "line": "L2",
+      "word": "every",
+      "offset": 0.05
+     },
+     "end": {
+      "line": "L3",
+      "word": "life"
+     }
+    }
+   ],
+   "onScreenText": "'EVERY NIGHT · SAME HOUR', 'Night 1…3 … 10,000', '60 minutes of dark', '1 hour of 24'.",
+   "transition": "Two carved stone doors fade up over the dial (dissolve), closed.",
+   "sfx": [
+    {
+     "sound": "clock",
+     "from": {
+      "line": "L2",
+      "word": "every"
+     },
+     "to": {
+      "line": "L3",
+      "word": "life",
+      "offset": 0.6
+     },
+     "gain": -24
+    }
+   ],
+   "music": "Ab major 7 pad, a slow pulse begins (64 bpm): order, routine."
+  },
+  {
+   "id": "city",
+   "scene": "nightSky",
+   "plateMotion": "descend",
+   "plateScrim": 0.5,
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.35
+   },
+   "purpose": "Consequence 1, architecture: because the dark is predictable, whole cities are built below ground. The gates opening shows cause and effect.",
+   "visual": "Carved stone doors with a split sun-ring emblem swing open on 'cities' with light leaking through the seam, revealing an immense cavern city: tiered houses cut into the walls, monumental arch bridges over a chasm, streets of amber lanterns.",
+   "camera": "Doors swing in 3D (rotateY to 84 degrees); then a slow descending move (frame rises 150 px to -150 px at 1.16 to 1.2 scale) that reveals the depth.",
+   "layers": {
+    "foreground": "doors, then the nearest bridge",
+    "midground": "tiers of lantern-lit homes and stairways",
+    "background": "cavern ceiling lost in blue-black haze"
+   },
+   "lighting": "Warm amber lanterns against midnight-blue stone; light shaft from the cavern roof.",
+   "imagePrompt": "A magnificent subterranean city carved inside an enormous cavern, seen from high above looking down: many layered tiers of practical stone houses with doors, windows and balconies cut into the cavern walls, long monumental stone arch bridges spanning a deep chasm, stairways and terraces, and glowing streets lit by hundreds of warm amber lanterns far below. The cavern ceiling is lost in deep blue-black darkness at the top of the frame, with faint mist. Believable lived-in architecture, immense scale, tiny distant people only",
+   "videoPrompt": "(Not used.) Slow descending crane into the cavern city, lanterns flickering gently, mist drifting under the bridges, 3 seconds",
+   "graphics": [
+    {
+     "type": "gates",
+     "start": {
+      "line": "L4",
+      "word": "cities",
+      "offset": -0.15
+     },
+     "duration": 1.3
+    },
+    {
+     "type": "tag",
+     "kicker": "Architecture",
+     "text": "Cities built for the dark hour",
+     "start": {
+      "line": "L4",
+      "word": "gates",
+      "offset": 0.05
+     }
+    }
+   ],
+   "onScreenText": "Chip 'ARCHITECTURE' + 'Cities built for the dark hour'.",
+   "transition": "Cut on 'Merchants' into the market street (the lanterns carry over).",
+   "sfx": [
+    {
+     "sound": "doors",
+     "at": {
+      "line": "L4",
+      "word": "cities",
+      "offset": -0.2
+     },
+     "gain": -14
+    },
+    {
+     "sound": "cave",
+     "from": {
+      "shot": "city"
+     },
+     "to": {
+      "shot": "lesson"
+     },
+     "gain": -25
+    }
+   ],
+   "music": "F minor to Ab, pulse 72 bpm enters: the build starts."
+  },
+  {
+   "id": "market",
+   "scene": "nightSky",
+   "plateMotion": "push",
+   "plateScrim": 0.75,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Consequence 2, economy: a market that exists only during the missing hour.",
+   "visual": "Lantern-lit market street in the cavern: a merchant lifts a lantern onto his stall while two hooded customers look at goods; baskets, pottery, dyed cloth.",
+   "camera": "Slow push-in (1.00 to 1.08) toward the merchant and his lantern.",
+   "layers": {
+    "foreground": "baskets and pottery on the stall",
+    "midground": "merchant and two customers",
+    "background": "strings of lanterns under a stone arch, more stalls into haze"
+   },
+   "lighting": "Warm amber lantern pools, blue-black stone overhead, colourful cloth for life.",
+   "imagePrompt": "A narrow lantern-lit night market street inside a stone cavern city: wooden market stalls with cloth awnings, baskets of fruit, bolts of dyed cloth, brass scales and pottery, warm paper and brass lanterns strung overhead. In the midground a merchant in layered indigo and ochre robes lifts a lantern to hang it on his stall while two customers in hooded cloaks look at goods; a few more figures further back. Figures at a modest distance, faces partly in shadow, hands relaxed and natural. Carved stone walls and arches rise into deep blue-black darkness. Not crowded, no writing on signs",
+   "videoPrompt": "(Not used.) Slow push-in, lanterns swaying slightly, merchant finishes hanging the lantern, customers turn toward the stall, no new people appearing, 3 seconds",
+   "graphics": [
+    {
+     "type": "tag",
+     "kicker": "Economy",
+     "text": "A market that lasts one hour",
+     "start": {
+      "line": "L5",
+      "word": "markets",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Chip 'ECONOMY' + 'A market that lasts one hour'.",
+   "transition": "Cut on 'And' to the hall of the missing sun.",
+   "sfx": [
+    {
+     "sound": "market",
+     "from": {
+      "shot": "market"
+     },
+     "to": {
+      "shot": "ritual",
+      "offset": 0.6
+     },
+     "gain": -21
+    },
+    {
+     "sound": "coin",
+     "at": {
+      "line": "L5",
+      "word": "sixty"
+     },
+     "gain": -21
+    }
+   ],
+   "music": "Cm, Ab, Eb, Bb with plucked arpeggios: the most energetic stretch."
+  },
+  {
+   "id": "ritual",
+   "scene": "nightSky",
+   "plateMotion": "push",
+   "plateScrim": 0.5,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Consequence 3, culture and belief: a faith built around the missing sun.",
+   "visual": "A stone hall with a monumental carved sun-ring whose centre is empty. An elder raises a small bowl of light; rows of citizens hold candles. On 'missing sun' a gold line traces the ring and a soft light fills its empty centre.",
+   "camera": "Slow push-in toward the ring and the elder.",
+   "layers": {
+    "foreground": "rows of cloaked citizens with candles, seen from behind",
+    "midground": "the elder on low steps",
+    "background": "carved sun-ring on the rock wall"
+   },
+   "lighting": "Candle gold points against deep midnight blue; the ring glow is the brightest element at the end of the shot.",
+   "imagePrompt": "A quiet ceremonial gathering in a vast dark stone hall carved into rock. On the far wall in the upper half of the frame, a monumental carved stone ring symbol of the sun with an empty hollow center, its rim inlaid with faint gold, rays carved around it. Below it, a robed community elder in deep blue and gold vestments stands on low steps, arms gently raised, holding a small golden bowl of light. In the foreground, rows of citizens seen from behind in simple hooded cloaks, each holding a small warm golden candle light. Reverent, calm, respectful",
+   "videoPrompt": "(Not used.) Slow push toward the carved ring, candle flames flickering softly, elder holds still with raised arms, 3 seconds",
+   "graphics": [
+    {
+     "type": "ringGlow",
+     "local": true,
+     "at": [
+      540,
+      602
+     ],
+     "r": 110,
+     "start": {
+      "line": "L6",
+      "word": "missing",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "tag",
+     "kicker": "Culture",
+     "text": "Faith in the missing sun",
+     "start": {
+      "line": "L6",
+      "word": "religions"
+     }
+    }
+   ],
+   "onScreenText": "Chip 'CULTURE' + 'Faith in the missing sun'; gold line traces the empty ring.",
+   "transition": "Cross-dissolve to the midnight diagram background; the three scenes return as medallions.",
+   "sfx": [
+    {
+     "sound": "ritualBell",
+     "at": {
+      "line": "L6",
+      "word": "worship",
+      "offset": -0.1
+     },
+     "gain": -15
+    },
+    {
+     "sound": "ritualBell",
+     "at": {
+      "line": "L6",
+      "word": "sun",
+      "offset": 0.35
+     },
+     "gain": -21
+    }
+   ],
+   "music": "Ab major 9 with bell plucks: warm, reverent peak."
+  },
+  {
+   "id": "lesson",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.5
+   },
+   "purpose": "The lesson as a diagram: one rule branches into architecture, economy and culture, which add up to a civilization.",
+   "visual": "Midnight backdrop with a slowly turning astrolabe. A hollow sun glyph and ONE IMPOSSIBLE RULE; amber lines draw down and branch into three circular medallions holding the city, market and ritual plates, labelled ARCHITECTURE / ECONOMY / CULTURE; then '= a whole civilization'.",
+   "camera": "Static; medallions scale down from 1.7 to 1.0 as they land (the full shots shrink into the diagram).",
+   "layers": {
+    "foreground": "diagram",
+    "midground": "astrolabe rings",
+    "background": "star field and stone grain"
+   },
+   "lighting": "Gold line work on midnight blue.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "plate": false,
+   "graphics": [
+    {
+     "type": "consequenceTree",
+     "start": {
+      "line": "L7",
+      "word": "one"
+     },
+     "branch": {
+      "line": "L7",
+      "word": "rule"
+     },
+     "beats": [
+      {
+       "line": "L7",
+       "word": "just"
+      },
+      {
+       "line": "L7",
+       "word": "shaped"
+      },
+      {
+       "line": "L7",
+       "word": "a"
+      }
+     ],
+     "sum": {
+      "line": "L7",
+      "word": "civilization"
+     },
+     "items": [
+      {
+       "label": "Architecture",
+       "plate": "ep02/plates/city.jpg",
+       "pos": "50% 70%"
+      },
+      {
+       "label": "Economy",
+       "plate": "ep02/plates/market.jpg",
+       "pos": "62% 55%"
+      },
+      {
+       "label": "Culture",
+       "plate": "ep02/plates/ritual.jpg",
+       "pos": "50% 32%"
+      }
+     ],
+     "sumText": "= a whole civilization"
+    }
+   ],
+   "onScreenText": "ONE IMPOSSIBLE RULE ↓ ARCHITECTURE · ECONOMY · CULTURE = a whole civilization.",
+   "transition": "Diagram fades; the method card appears on the same backdrop.",
+   "sfx": [
+    {
+     "sound": "whoosh",
+     "at": {
+      "shot": "lesson",
+      "offset": -0.3
+     },
+     "gain": -22
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L7",
+      "word": "rule"
+     },
+     "gain": -22
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L7",
+      "word": "civilization"
+     },
+     "gain": -23
+    }
+   ],
+   "music": "F minor 9 to G (dominant) with arpeggios: the idea clicks."
+  },
+  {
+   "id": "method",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.35
+   },
+   "captions": false,
+   "purpose": "The practical technique, stated plainly: not a hundred facts, one impossible question.",
+   "visual": "A scatter of random-fact chips (12 moons, a dragon war, an elf queen…) gets struck through: 'Don't start with 100 facts'. It lifts away and 'Start with one impossible question.' lands word by word.",
+   "camera": "Static.",
+   "layers": {
+    "foreground": "type",
+    "midground": "fact chips",
+    "background": "midnight backdrop"
+   },
+   "lighting": "Rust strike for the don't, amber for the do.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "plate": false,
+   "graphics": [
+    {
+     "type": "method",
+     "start": {
+      "line": "L8",
+      "word": "don't"
+     },
+     "strike": {
+      "line": "L8",
+      "word": "facts.",
+      "offset": -0.15
+     },
+     "second": {
+      "line": "L8",
+      "word": "start",
+      "nth": 2
+     },
+     "facts": [
+      "12 moons",
+      "a dragon war",
+      "an elf queen",
+      "the 3rd dynasty",
+      "a cursed sword",
+      "a tax on salt",
+      "a lost god",
+      "7 kingdoms"
+     ],
+     "question": "one *impossible* *question.*"
+    }
+   ],
+   "onScreenText": "'DON'T start with 100 facts' (struck through) → 'START WITH one impossible question.'",
+   "transition": "Fade back to the landscape, still dark, as the sun begins to return.",
+   "sfx": [
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L8",
+      "word": "facts.",
+      "offset": -0.15
+     },
+     "gain": -19
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L8",
+      "word": "start",
+      "nth": 2,
+      "offset": -0.5
+     },
+     "gain": -22
+    }
+   ],
+   "music": "Thins to an Ab pad so the line is clear."
+  },
+  {
+   "id": "cta",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "plateMotion": "pull",
+   "plateScrim": 0.0,
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "captions": false,
+   "hideLogoBug": true,
+   "purpose": "CTA over the opening landscape as the sun returns, closing the loop back into the first frame.",
+   "visual": "The opening landscape, still dark. The sun re-ignites at the same spot and the darkness recedes; the full series logo, Episode 02 / 50, and the CTA in large serif type with a 'Comment below' pill.",
+   "camera": "Slow pull-back (1.10 to 1.00) ending on exactly the hook's first framing for the loop.",
+   "layers": {
+    "foreground": "logo, CTA type",
+    "midground": "plateau city",
+    "background": "returning sun"
+   },
+   "lighting": "Blue-black lifts toward gold; the last 0.6 s cross-fades into the hook's first frame.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "sunCycle",
+     "mode": "return",
+     "local": true,
+     "x": 740,
+     "y": 330,
+     "r": 62,
+     "glow": [
+      480,
+      1330
+     ],
+     "start": {
+      "line": "L9",
+      "word": "now",
+      "offset": -0.3
+     },
+     "endLevel": 0.72,
+     "level": 0.8
+    },
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L9",
+      "word": "comment"
+     },
+     "episode": "Episode 02 / 50",
+     "title": "Start with one impossible question",
+     "kicker": "Your turn",
+     "lines": [
+      "Comment your own",
+      "*impossible*",
+      "worldbuilding question."
+     ],
+     "button": "Comment below"
+    }
+   ],
+   "onScreenText": "Full logo, 'EPISODE 02 / 50', 'Start with one impossible question', 'YOUR TURN', 'Comment your own impossible worldbuilding question.', pill 'Comment below'.",
+   "transition": "Cross-fade into the hook's first frame (sun shining) for a seamless loop.",
+   "sfx": [
+    {
+     "sound": "sunrise",
+     "at": {
+      "line": "L9",
+      "word": "now",
+      "offset": -0.4
+     },
+     "gain": -15
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L9",
+      "word": "question.",
+      "offset": 0.2
+     },
+     "gain": -24
+    }
+   ],
+   "music": "Resolves to C major (a lift from the C-minor opening); fades fully before the last frame."
+  }
+ ],
+ "lesson": "Don't start with a hundred facts. Start with one impossible question and follow its consequences.",
+ "captionReplace": {
+  "sixty": "60"
+ },
+ "music": {
+  "key": "C minor, resolving to C major",
+  "drone": [
+   "C1",
+   "G1"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L1",
+     "word": "disappeared"
+    },
+    "pre": 0.1,
+    "dur": 1.6,
+    "gain": 0.3
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "C2",
+      "G2",
+      "C3",
+      "Eb3",
+      "G3",
+      "D4"
+     ]
+    ],
+    "level": 0.5,
+    "dark": true
+   },
+   "rule": {
+    "chords": [
+     [
+      "Ab1",
+      "Eb2",
+      "C3",
+      "G3"
+     ]
+    ],
+    "level": 0.55,
+    "pulse": 64
+   },
+   "city": {
+    "chords": [
+     [
+      "F1",
+      "C2",
+      "Ab2",
+      "C3",
+      "F3"
+     ],
+     [
+      "Ab1",
+      "Eb2",
+      "C3",
+      "Eb3",
+      "Ab3"
+     ]
+    ],
+    "level": 0.7,
+    "pulse": 72
+   },
+   "market": {
+    "chords": [
+     [
+      "C2",
+      "G2",
+      "Eb3",
+      "G3"
+     ],
+     [
+      "Ab1",
+      "Eb2",
+      "C3",
+      "Eb3"
+     ],
+     [
+      "Eb2",
+      "Bb2",
+      "G3",
+      "Bb3"
+     ],
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "F3"
+     ]
+    ],
+    "level": 0.8,
+    "pulse": 72,
+    "arp": true
+   },
+   "ritual": {
+    "chords": [
+     [
+      "Ab1",
+      "Eb2",
+      "C3",
+      "G3",
+      "Bb3"
+     ]
+    ],
+    "level": 0.8,
+    "bells": true
+   },
+   "lesson": {
+    "chords": [
+     [
+      "F2",
+      "C3",
+      "Ab3",
+      "C4",
+      "G4"
+     ],
+     [
+      "G2",
+      "D3",
+      "G3",
+      "B3",
+      "D4"
+     ]
+    ],
+    "level": 0.82,
+    "pulse": 72,
+    "arp": true
+   },
+   "method": {
+    "chords": [
+     [
+      "Ab1",
+      "Eb2",
+      "C3",
+      "Eb3"
+     ]
+    ],
+    "level": 0.55
+   },
+   "cta": {
+    "chords": [
+     [
+      "F2",
+      "C3",
+      "A3",
+      "C4"
+     ],
+     [
+      "C2",
+      "G2",
+      "E3",
+      "G3",
+      "C4"
+     ]
+    ],
+    "level": 0.7,
+    "bells": true
+   }
+  }
+ },
+ "metadata": {
+  "youtube": {
+   "title": "What if the sun vanished for one hour every night? A worldbuilding trick",
+   "titleAlternate": "One impossible rule can build a whole fantasy civilization",
+   "description": "Don't start your world with a hundred facts. Start with one impossible question.\n\nWhat if the sun disappeared for exactly one hour every night? Cities move underground, merchants run a market that only exists in the dark, and whole religions grow around the missing sun. One rule, and you get architecture, economy and culture for free.\n\nEpisode 2 of 50 in Worldbuilding, from the ground up: short lessons for fantasy writers, novelists and tabletop RPG creators.\n\n#worldbuilding #fantasywriting #writingtips",
+   "pinnedComment": "Your turn: what's your impossible worldbuilding question? Give the rule in one line, then one thing that changes because of it.",
+   "uploadSettings": "AI use: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "What if the sun vanished for one hour every night? One impossible rule = a whole civilization. Drop your own impossible question 👇 #worldbuilding #fantasywriting #writingtok #dnd #ttrpg",
+   "pinnedComment": "Comment your impossible question as a rule plus one consequence. Example: 'Rain falls upward on holy days, so roofs are built on the ground.'",
+   "uploadSettings": "Turn on 'AI-generated content' in More options before posting (see docs/DISTRIBUTION.md)."
+  },
+  "facebook": {
+   "caption": "What if the sun disappeared for exactly one hour every night?\n\nUnderground cities. A market that only exists in the dark. A faith built around the missing sun. One impossible rule shaped a whole civilization.\n\nWriters and GMs: what's your impossible worldbuilding question?\n\nEpisode 2 of 50.\n\n#worldbuilding #fantasywriting #writingcommunity",
+   "pinnedComment": "Give us your impossible rule, and tell us one thing ordinary people would do differently because of it.",
+   "uploadSettings": "Turn on the AI label when posting (see docs/DISTRIBUTION.md)."
+  },
+  "followUpQuestion": "If you lived in this world, what would you do during the missing hour?"
+ }
+}

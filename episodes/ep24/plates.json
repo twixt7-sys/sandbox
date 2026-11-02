@@ -1,0 +1,8 @@
+{
+ "cargo": "plates/cargo.jpg",
+ "courier": "plates/courier.jpg",
+ "gate": "plates/gate.jpg",
+ "hook": "plates/hook.jpg",
+ "queue": "plates/queue.jpg",
+ "village": "plates/village.jpg"
+}

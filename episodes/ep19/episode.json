@@ -1,0 +1,930 @@
+{
+ "id": "ep19",
+ "number": 19,
+ "title": "How Does a Kingdom Collapse?",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "A calm, clear guide tracing a chain of events, never doom-laden. The hook is gently contrarian. Each 'So…' line is plain and a touch quicker than the last, as if the chain is gathering speed. 'Then the emperor dies with two heirs' is quiet and matter-of-fact: the small thing. The lesson is slow and sure; the CTA a friendly, real question. No trailer voice."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "Empires rarely fall because one person woke up and decided to be evil.",
+   "pauseAfter": 0.5,
+   "emphasis": [
+    "rarely",
+    "evil."
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "harvest",
+   "text": "Usually, it starts with a bad harvest.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "harvest."
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "taxes",
+   "text": "So taxes rise, and collectors skim more.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "taxes",
+    "skim"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "provinces",
+   "text": "So the provinces refuse to pay.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "refuse"
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "army",
+   "text": "So the army marches out, and feeding it empties the granaries.",
+   "pauseAfter": 0.9,
+   "emphasis": [
+    "army",
+    "granaries."
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "loop",
+   "text": "Then the emperor dies with two heirs.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "two",
+    "heirs."
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "loop",
+   "text": "No single crack brings down an empire. Cracks that feed each other do.",
+   "pauseAfter": 0.6,
+   "emphasis": [
+    "single",
+    "feed"
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "cta",
+   "text": "Which would destroy your empire first: famine, civil war, or corruption?",
+   "pauseAfter": 0.0,
+   "emphasis": [
+    "famine,",
+    "civil",
+    "corruption?"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "nightSky",
+   "plateFrame": {
+    "from": {
+     "s": 1.0,
+     "y": 0
+    },
+    "to": {
+     "s": 1.06,
+     "y": -10
+    }
+   },
+   "plateScrim": 0.5,
+   "purpose": "Stop the scroll on an empire at its height, and deny the cliché: there's no villain in this fall.",
+   "visual": "A vast golden capital on a plateau above a river at sunset. 'TOLMERE · AT ITS HEIGHT / No villain required.'",
+   "camera": "Slow push (1.00 to 1.06).",
+   "layers": {
+    "foreground": "title",
+    "midground": "the city",
+    "background": "the palace and the sky"
+   },
+   "lighting": "Warm sunset; top scrim for the title.",
+   "sdxlPrompt": "a vast imperial capital city on a high plateau at golden sunset, an immense pale sandstone palace with round domes and long arched colonnades rising above a sprawling city of red tile roofs, a wide river with stone bridges in the foreground, grand and prosperous, seen from far away, empty sky above, no flags, no banners",
+   "graphics": [
+    {
+     "type": "titleLockup",
+     "kicker": "Tolmere · at its height",
+     "text": "No villain required.",
+     "y": 340,
+     "size": 112,
+     "start": {
+      "line": "L1",
+      "word": "empires",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L1",
+      "word": "evil.",
+      "offset": 0.5
+     }
+    }
+   ],
+   "onScreenText": "Kicker 'TOLMERE · AT ITS HEIGHT' + 'No villain required.' (ember serif italic).",
+   "transition": "Hard cut on 'Usually' to the dry fields.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "harvest",
+      "offset": 2.0
+     },
+     "gain": -34
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L1",
+      "word": "evil.",
+      "offset": -1.0
+     },
+     "gain": -25
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L1",
+      "word": "evil."
+     },
+     "gain": -22
+    }
+   ],
+   "music": "C minor, warm but low.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a vast imperial capital city on a high plateau at golden sunset, an immense pale sandstone palace with round domes and long arched colonnades rising above a sprawling city of red tile roofs, a wide river with stone bridges in the foreground, grand and prosperous, seen from far away, empty sky above, no flags, no banners. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "videoPrompt": "(Not used.)"
+  },
+  {
+   "id": "harvest",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.4,
+   "purpose": "Crack I: a bad harvest. Nobody's fault, and it starts everything.",
+   "visual": "Cracked dry earth, withered wheat and a granary with its doors open on nothing. Crack tag I · FAMINE / A bad harvest.",
+   "camera": "Slow push.",
+   "layers": {
+    "foreground": "crack tag",
+    "midground": "the withered field",
+    "background": "the empty granary"
+   },
+   "lighting": "Pale, hazy, dusty.",
+   "sdxlPrompt": "a drought-stricken farm valley, cracked dry earth in the foreground, rows of withered brown wheat, a large old stone granary barn with its wide wooden doors open and nothing inside, a lone farmer standing small in the distance seen from behind, pale hazy sky, dust in the air, desolate, wide view",
+   "graphics": [
+    {
+     "type": "crackTag",
+     "numeral": "I",
+     "kicker": "Famine",
+     "text": "A bad harvest",
+     "start": {
+      "line": "L2",
+      "word": "usually",
+      "offset": -0.15
+     }
+    }
+   ],
+   "onScreenText": "Crack tag 'CRACK I · FAMINE' / 'A bad harvest'.",
+   "transition": "Hard cut on 'So' to the tax table.",
+   "sfx": [
+    {
+     "sound": "crackTick",
+     "at": {
+      "line": "L2",
+      "word": "harvest.",
+      "offset": 0.05
+     },
+     "gain": -24
+    }
+   ],
+   "music": "C minor with a slow pulse.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a drought-stricken farm valley, cracked dry earth in the foreground, rows of withered brown wheat, a large old stone granary barn with its wide wooden doors open and nothing inside, a lone farmer standing small in the distance seen from behind, pale hazy sky, dust in the air, desolate, wide view. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "videoPrompt": "(Not used.)"
+  },
+  {
+   "id": "taxes",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "Crack II: the shortfall is made up with taxes, and the collectors take a cut. Famine feeds corruption.",
+   "visual": "A collector at a candlelit table of coins, a queue of thin villagers with small sacks. Crack tag II · CORRUPTION / Taxes rise.",
+   "camera": "Slow push.",
+   "layers": {
+    "foreground": "crack tag",
+    "midground": "the table of coins",
+    "background": "the queue"
+   },
+   "lighting": "Warm candlelight in a dim hall.",
+   "sdxlPrompt": "inside a dim village hall, a stout tax collector in a dark embroidered robe seated at a heavy wooden table with stacks of coins and an open iron strongbox, a line of thin weary villagers in patched wool clothes holding small sacks waiting before him, warm candlelight, deep shadows, medium wide shot",
+   "graphics": [
+    {
+     "type": "crackTag",
+     "numeral": "II",
+     "kicker": "Corruption",
+     "text": "Taxes rise",
+     "start": {
+      "line": "L3",
+      "word": "so",
+      "offset": -0.15
+     }
+    }
+   ],
+   "onScreenText": "Crack tag 'CRACK II · CORRUPTION' / 'Taxes rise'.",
+   "transition": "Hard cut on 'So' to the shut gate.",
+   "sfx": [
+    {
+     "sound": "coin",
+     "at": {
+      "line": "L3",
+      "word": "skim"
+     },
+     "gain": -26
+    },
+    {
+     "sound": "crackTick",
+     "at": {
+      "line": "L3",
+      "word": "more.",
+      "offset": 0.1
+     },
+     "gain": -23
+    }
+   ],
+   "music": "A-flat, the pulse continues.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. inside a dim village hall, a stout tax collector in a dark embroidered robe seated at a heavy wooden table with stacks of coins and an open iron strongbox, a line of thin weary villagers in patched wool clothes holding small sacks waiting before him, warm candlelight, deep shadows, medium wide shot. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "videoPrompt": "(Not used.)"
+  },
+  {
+   "id": "provinces",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "Crack III: squeezed provinces stop paying. Revolt shown as a shut gate, never as fighting.",
+   "visual": "A walled hill town at dusk, its gate shut, torches lit on the walls, an empty road. Crack tag III · REVOLT / The provinces refuse.",
+   "camera": "Slow push.",
+   "layers": {
+    "foreground": "crack tag",
+    "midground": "the shut gate",
+    "background": "the walled town"
+   },
+   "lighting": "Dusk, torchlight.",
+   "sdxlPrompt": "front view of a massive closed wooden town gate with iron bands, set in a tall old stone wall of a provincial town at dusk, torches burning on both sides of the shut gate, an empty dirt road in the foreground leading to it, small dark silhouettes watching from the top of the wall, tense and quiet, no flags, no banners",
+   "graphics": [
+    {
+     "type": "crackTag",
+     "numeral": "III",
+     "kicker": "Revolt",
+     "text": "The provinces refuse",
+     "start": {
+      "line": "L4",
+      "word": "so",
+      "offset": -0.15
+     }
+    }
+   ],
+   "onScreenText": "Crack tag 'CRACK III · REVOLT' / 'The provinces refuse'.",
+   "transition": "Hard cut on 'So' to the marching column.",
+   "sfx": [
+    {
+     "sound": "gateSlam",
+     "at": {
+      "line": "L4",
+      "word": "refuse"
+     },
+     "gain": -25
+    }
+   ],
+   "music": "F minor, the pulse continues.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. front view of a massive closed wooden town gate with iron bands, set in a tall old stone wall of a provincial town at dusk, torches burning on both sides of the shut gate, an empty dirt road in the foreground leading to it, small dark silhouettes watching from the top of the wall, tense and quiet, no flags, no banners. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "videoPrompt": "(Not used.)"
+  },
+  {
+   "id": "army",
+   "scene": "nightSky",
+   "transitionIn": {
+    "type": "cut"
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.04,
+     "y": 0
+    },
+    "to": {
+     "s": 1.08,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "purpose": "Crack IV: the army marches out to hold the provinces, and it has to be fed. Its supply wagons point back at crack I.",
+   "visual": "A long column marching away over bare hills behind supply wagons. Crack tag IV · OVERREACH / The army marches.",
+   "camera": "Slow push.",
+   "layers": {
+    "foreground": "crack tag",
+    "midground": "the column and wagons",
+    "background": "the hills"
+   },
+   "lighting": "Overcast.",
+   "sdxlPrompt": "a long column of soldiers in plain grey wool cloaks and round iron helmets marching away from the viewer along a winding road over bare brown hills, ox-drawn supply wagons with grain sacks, seen from behind, overcast sky, vast distance, small figures, melancholy, no flags, no banners",
+   "graphics": [
+    {
+     "type": "crackTag",
+     "numeral": "IV",
+     "kicker": "Overreach",
+     "text": "The army marches",
+     "start": {
+      "line": "L5",
+      "word": "so",
+      "offset": -0.15
+     }
+    }
+   ],
+   "onScreenText": "Crack tag 'CRACK IV · OVERREACH' / 'The army marches'.",
+   "transition": "Dissolve on 'empties' to the loop: the four cracks join.",
+   "sfx": [
+    {
+     "sound": "footsteps",
+     "from": {
+      "shot": "army"
+     },
+     "to": {
+      "shot": "loop",
+      "offset": 0.4
+     },
+     "gain": -32
+    }
+   ],
+   "music": "E-flat, the pulse continues.",
+   "imagePrompt": "(Generated locally: see sdxlPrompt; Figma credits are out until 1 Nov 2026.) Vertical 9:16 cinematic fantasy documentary still. a long column of soldiers in plain grey wool cloaks and round iron helmets marching away from the viewer along a winding road over bare brown hills, ox-drawn supply wagons with grain sacks, seen from behind, overcast sky, vast distance, small figures, melancholy, no flags, no banners. Painterly realism, atmospheric perspective, 35mm anamorphic look, soft film grain, original architecture and clothing. No text, no letters, no signage, no logos, no flags, no watermark.",
+   "videoPrompt": "(Not used.)"
+  },
+  {
+   "id": "loop",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "startAt": {
+    "line": "L5",
+    "word": "empties",
+    "offset": -0.1
+   },
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.35
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.1,
+     "y": 0
+    },
+    "to": {
+     "s": 1.14,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.85,
+   "plateLook": {
+    "from": "saturate(0.4) brightness(0.42)"
+   },
+   "purpose": "The mechanism: the four cracks are one loop. Feeding the army empties the granaries, so famine starts it again, faster each lap, until one ordinary event (a death with two heirs) splits the empire's seal. Then the shareable thought.",
+   "visual": "Four medallions (the plates) on a ring around the empire's seal; arrows join them and the last arrow closes the loop back to FAMINE; a pulse runs round faster and faster, cracks spreading through the seal on every pass; on 'two heirs' the seal splits in two. The loop lifts; 'NO SINGLE CRACK / Cracks that feed each other do.'",
+   "camera": "Near still on the dimmed capital.",
+   "layers": {
+    "foreground": "crack loop and lesson",
+    "midground": "",
+    "background": "the capital, dimmed"
+   },
+   "lighting": "Dimmed and cooled under the diagram.",
+   "graphics": [
+    {
+     "type": "crackLoop",
+     "label": "Tolmere",
+     "nodes": [
+      {
+       "label": "Famine",
+       "note": "a bad harvest",
+       "src": "ep19/plates/harvest.jpg",
+       "x": 535,
+       "y": 960,
+       "zoom": 0.5
+      },
+      {
+       "label": "Corruption",
+       "note": "taxes rise",
+       "src": "ep19/plates/taxes.jpg",
+       "x": 560,
+       "y": 700,
+       "zoom": 0.42
+      },
+      {
+       "label": "Revolt",
+       "note": "provinces refuse",
+       "src": "ep19/plates/provinces.jpg",
+       "x": 540,
+       "y": 1080,
+       "zoom": 0.36
+      },
+      {
+       "label": "Overreach",
+       "note": "the army marches",
+       "src": "ep19/plates/army.jpg",
+       "x": 520,
+       "y": 1250,
+       "zoom": 0.4
+      }
+     ],
+     "center": [
+      540,
+      762
+     ],
+     "radius": 282,
+     "medallion": 106,
+     "sealRadius": 148,
+     "liftScale": 0.62,
+     "lessonTop": 895,
+     "lessonSize": 80,
+     "start": {
+      "shot": "loop",
+      "offset": -0.3
+     },
+     "nodesAt": [
+      {
+       "shot": "loop",
+       "offset": -0.15
+      },
+      {
+       "shot": "loop",
+       "offset": -0.03
+      },
+      {
+       "shot": "loop",
+       "offset": 0.09
+      },
+      {
+       "shot": "loop",
+       "offset": 0.21
+      }
+     ],
+     "arrowsAt": [
+      {
+       "shot": "loop",
+       "offset": 0.12
+      },
+      {
+       "shot": "loop",
+       "offset": 0.24
+      },
+      {
+       "shot": "loop",
+       "offset": 0.36
+      }
+     ],
+     "closeAt": {
+      "line": "L5",
+      "word": "granaries.",
+      "offset": -0.05
+     },
+     "spinAt": {
+      "line": "L5",
+      "word": "granaries.",
+      "offset": 0.6
+     },
+     "w0": 1.6,
+     "k": 0.95,
+     "breakAt": {
+      "line": "L6",
+      "word": "two",
+      "offset": -0.05
+     },
+     "liftAt": {
+      "line": "L7",
+      "word": "no",
+      "offset": -0.15
+     },
+     "lessonKicker": "No single crack",
+     "kickerAt": {
+      "line": "L7",
+      "word": "single"
+     },
+     "lessonText": [
+      "Cracks that",
+      "*feed each other* do."
+     ],
+     "lessonAt": {
+      "line": "L7",
+      "word": "cracks",
+      "offset": -0.1
+     }
+    }
+   ],
+   "onScreenText": "Ring FAMINE → CORRUPTION → REVOLT → OVERREACH → FAMINE around the seal of TOLMERE; then 'NO SINGLE CRACK' / 'Cracks that feed each other do.'",
+   "transition": "Dissolve (0.6 s) to the capital at dusk.",
+   "sfx": [
+    {
+     "sound": "crackTick",
+     "at": {
+      "line": "L5",
+      "word": "granaries.",
+      "offset": 1.294
+     },
+     "gain": -24.0
+    },
+    {
+     "sound": "crackTick",
+     "at": {
+      "line": "L5",
+      "word": "granaries.",
+      "offset": 1.708
+     },
+     "gain": -23.4
+    },
+    {
+     "sound": "crackTick",
+     "at": {
+      "line": "L5",
+      "word": "granaries.",
+      "offset": 2.005
+     },
+     "gain": -22.8
+    },
+    {
+     "sound": "crackTick",
+     "at": {
+      "line": "L5",
+      "word": "granaries.",
+      "offset": 2.236
+     },
+     "gain": -22.2
+    },
+    {
+     "sound": "crackTick",
+     "at": {
+      "line": "L5",
+      "word": "granaries.",
+      "offset": 2.425
+     },
+     "gain": -21.6
+    },
+    {
+     "sound": "crackTick",
+     "at": {
+      "line": "L5",
+      "word": "granaries.",
+      "offset": 2.586
+     },
+     "gain": -21.0
+    },
+    {
+     "sound": "sealSplit",
+     "at": {
+      "line": "L6",
+      "word": "two",
+      "offset": -0.1
+     },
+     "gain": -20
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "line": "L7",
+      "word": "cracks",
+      "offset": -1.0
+     },
+     "gain": -27
+    }
+   ],
+   "music": "C minor driving, then a held breath on the split; A-flat to C major on the lesson.",
+   "imagePrompt": "",
+   "videoPrompt": ""
+  },
+  {
+   "id": "cta",
+   "scene": "nightSky",
+   "plateFrom": "hook",
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "plateFrame": {
+    "from": {
+     "s": 1.06,
+     "y": -10
+    },
+    "to": {
+     "s": 1.02,
+     "y": 0
+    }
+   },
+   "plateScrim": 0.45,
+   "plateLook": {
+    "from": "saturate(0.55) brightness(0.62) sepia(0.2)"
+   },
+   "captions": false,
+   "hideLogoBug": true,
+   "purpose": "Comment CTA over the hook's capital in a changed state: the same city, its light going out. Loops back to the golden hook.",
+   "visual": "The same capital, dimmed to a cold dusk. Full logo, Episode 19 / 50, the CTA, a 'Comment below' pill.",
+   "camera": "Settles (1.06 to 1.02).",
+   "layers": {
+    "foreground": "logo and CTA type",
+    "midground": "the city",
+    "background": "the palace"
+   },
+   "lighting": "Dusk, drained; the last 0.6 s cross-fades to the golden hook.",
+   "graphics": [
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L8",
+      "word": "which"
+     },
+     "episode": "Episode 19 / 50",
+     "title": "How does a kingdom collapse?",
+     "kicker": "Your turn",
+     "size": 76,
+     "lines": [
+      "Which would destroy",
+      "your empire first?",
+      "*Famine, civil war, or corruption?*"
+     ],
+     "button": "Comment below"
+    }
+   ],
+   "onScreenText": "Full logo, 'EPISODE 19 / 50', title, 'YOUR TURN', 'Which would destroy your empire first? Famine, civil war, or corruption?', pill 'Comment below'.",
+   "transition": "Cross-fade into the hook's first frame (the golden capital) for a seamless loop.",
+   "sfx": [
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "cta"
+     },
+     "to": {
+      "line": "L8",
+      "word": "corruption?",
+      "offset": 1.0
+     },
+     "gain": -36
+    },
+    {
+     "sound": "swell",
+     "at": {
+      "shot": "cta",
+      "offset": -0.3
+     },
+     "gain": -26
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L8",
+      "word": "corruption?",
+      "offset": 0.2
+     },
+     "gain": -25
+    }
+   ],
+   "music": "A-flat to C major, warm; fades fully before the last frame.",
+   "imagePrompt": "",
+   "videoPrompt": ""
+  }
+ ],
+ "lesson": "Collapse is a feedback loop, not a villain or a single disaster. Economic strain, corruption, revolt, military overreach, succession crises and lost legitimacy each make the next worse, until an ordinary event breaks a system that's already cracked.",
+ "captionReplace": {},
+ "music": {
+  "key": "C minor, resolving to C major",
+  "drone": [
+   "C2",
+   "G2"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L6",
+     "word": "two"
+    },
+    "pre": 0.2,
+    "dur": 1.6,
+    "gain": 0.45
+   },
+   {
+    "type": "duck",
+    "at": {
+     "line": "L7",
+     "word": "cracks"
+    },
+    "pre": 0.15,
+    "dur": 1.2,
+    "gain": 0.6
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "C2",
+      "G2",
+      "Eb3",
+      "G3",
+      "D4"
+     ]
+    ],
+    "level": 0.46
+   },
+   "harvest": {
+    "chords": [
+     [
+      "C2",
+      "G2",
+      "Eb3",
+      "Bb3"
+     ]
+    ],
+    "level": 0.5,
+    "pulse": 72
+   },
+   "taxes": {
+    "chords": [
+     [
+      "Ab1",
+      "Eb2",
+      "C3",
+      "G3"
+     ]
+    ],
+    "level": 0.53,
+    "pulse": 76
+   },
+   "provinces": {
+    "chords": [
+     [
+      "F1",
+      "C2",
+      "Ab2",
+      "Eb3",
+      "G3"
+     ]
+    ],
+    "level": 0.55,
+    "pulse": 80
+   },
+   "army": {
+    "chords": [
+     [
+      "Eb2",
+      "Bb2",
+      "G3",
+      "D4"
+     ]
+    ],
+    "level": 0.57,
+    "pulse": 84
+   },
+   "loop": {
+    "chords": [
+     [
+      "C2",
+      "G2",
+      "Eb3",
+      "Bb3"
+     ],
+     [
+      "G1",
+      "D2",
+      "B2",
+      "F3"
+     ],
+     [
+      "Ab1",
+      "Eb2",
+      "C3",
+      "G3"
+     ],
+     [
+      "C2",
+      "G2",
+      "E3",
+      "G3",
+      "D4"
+     ]
+    ],
+    "level": 0.6,
+    "pulse": 92,
+    "bells": true
+   },
+   "cta": {
+    "chords": [
+     [
+      "Ab1",
+      "Eb2",
+      "C3",
+      "G3"
+     ],
+     [
+      "C2",
+      "G2",
+      "E3",
+      "G3",
+      "C4"
+     ]
+    ],
+    "level": 0.56,
+    "bells": true
+   }
+  }
+ },
+ "metadata": {
+  "youtube": {
+   "title": "How Does a Kingdom Collapse? (Worldbuilding)",
+   "titleAlternate": "No single crack brings down an empire",
+   "description": "Empires rarely fall because one person woke up and decided to be evil.\n\nUsually, it starts with a bad harvest. In Tolmere, the shortfall is made up with taxes, and the collectors skim a little more. Squeezed, the provinces refuse to pay. The army marches out to hold them, and feeding it empties the granaries, so the next lean year hits harder. Then the old emperor dies with two heirs, and an empire that would once have shrugged that off splits in two.\n\nFamine, corruption, revolt, overreach: each strain makes the next worse. Real collapses usually look like this, with economic strain, succession crises, military overextension, corruption, disasters and fading legitimacy feeding one another until something ordinary breaks a system that's already cracked. No single crack brings down an empire. Cracks that feed each other do.\n\nWhich would destroy your empire first: famine, civil war, or corruption?\n\nEpisode 19 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Short lessons for fantasy writers, novelists, mapmakers and tabletop RPG creators.\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts",
+   "pinnedComment": "Your turn: famine, civil war or corruption? Name the first crack in your empire, and the one it would widen next.",
+   "uploadSettings": "Altered or synthetic content: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "No villain needed to end an empire 🏚️ A bad harvest → higher taxes → revolt → an overstretched army → empty granaries. Round and round, until one death breaks it. Famine, civil war or corruption: which hits yours first? #Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts",
+   "pinnedComment": "Which crack starts the loop in your world, and what does it break next?",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "Empires rarely fall because one person woke up and decided to be evil.\n\nUsually, it starts with a bad harvest. In Tolmere, the shortfall is made up with taxes, and the collectors skim a little more. Squeezed, the provinces refuse to pay. The army marches out to hold them, and feeding it empties the granaries, so the next lean year hits harder. Then the old emperor dies with two heirs.\n\nFamine, corruption, revolt, overreach: each strain makes the next worse, until something ordinary breaks a system that's already cracked. No single crack brings down an empire. Cracks that feed each other do.\n\nWhich would destroy your empire first: famine, civil war, or corruption?\n\nEpisode 19 of 50.\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts",
+   "pinnedComment": "Famine, civil war or corruption: which one breaks your empire, and which crack feeds it?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "Cracks that feed each other.\n\nEmpires rarely fall because one person woke up and decided to be evil.\n\nUsually, it starts with a bad harvest. In Tolmere, the shortfall is made up with taxes, and the collectors skim a little more. Squeezed, the provinces refuse to pay. The army marches out to hold them, and feeding it empties the granaries, so the next lean year hits harder. Then the old emperor dies with two heirs.\n\nFamine, corruption, revolt, overreach: each strain makes the next worse, until something ordinary breaks a system that's already cracked. No single crack brings down an empire. Cracks that feed each other do.\n\nWhich would destroy your empire first: famine, civil war, or corruption?\n\nEpisode 19 of 50 · Worldcraft Shorts\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyEmpire #WorldcraftShorts",
+   "hookCheck": "First 28 characters: 'Cracks that feed each other.'",
+   "pinnedComment": "Draw your empire's loop: which strain starts it, and which three does it feed?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  },
+  "cover": "Worldcraft_Short_E19_cover.jpg: the loop at full speed, four medallions round the cracked seal of Tolmere, 'HOW DOES A KINGDOM / collapse?' above, corner logo.",
+  "followUpQuestion": "Pick four strains your empire is under. For each, write one line: 'X makes Y worse because…'. If the four lines close into a circle, you have your collapse."
+ }
+}

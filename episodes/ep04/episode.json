@@ -1,0 +1,994 @@
+{
+ "id": "ep04",
+ "number": 4,
+ "title": "The One Detail That Makes Fiction Feel Real",
+ "lesson": "Small, ordinary details make a fictional world feel inhabited: what people eat, how they greet strangers, what they do when it rains.",
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.55,
+    "similarity_boost": 0.75,
+    "style": 0.15,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "Warm, thoughtful, conversational; intimate and observant, never dramatic. Slightly curious on the hook. Gentle emphasis on 'upside down'. Clear and deliberate on the three examples (food, greetings, habits). Confident but natural on the CTA."
+ },
+ "timing": {
+  "leadIn": 0.25,
+  "tail": 1.5,
+  "shotLead": 0.12
+ },
+ "captionReplace": {},
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "You don't need to describe an entire kingdom to make it believable.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "entire",
+    "kingdom"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "custom",
+   "text": "In this town, when the first rain falls, everyone turns their doorstep bowl upside down.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "upside",
+    "down."
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "child",
+   "text": "Children learn it before they can read.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "read."
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "food",
+   "text": "Show me what people eat.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "what",
+    "people",
+    "eat."
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "greet",
+   "text": "How they greet a stranger.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "greet"
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "lesson",
+   "text": "Food hints at climate. Greetings, at culture. Habits, at history.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "climate.",
+    "culture.",
+    "history."
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "street",
+   "text": "Small, ordinary details tell us this world has a life beyond the story.",
+   "pauseAfter": 0.55,
+   "emphasis": [
+    "ordinary",
+    "details",
+    "beyond"
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "cta",
+   "text": "Follow for practical worldbuilding techniques, not just lore dumps.",
+   "pauseAfter": 0,
+   "emphasis": [
+    "practical"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "valley",
+   "plateMotion": "push",
+   "plateScrim": 0.5,
+   "purpose": "The grand setting: a whole kingdom's worth of scenery, held just long enough to feel how much there could be to describe.",
+   "visual": "Bellweather from above the road: steep slate roofs, timber balconies, narrow stepped streets, warm shop windows, mountains vanishing into a gathering storm.",
+   "camera": "Slow, controlled push-in (scale 1.00 to 1.08) toward the lit heart of the town.",
+   "layers": {
+    "foreground": "the wet mountain road and a low stone wall, lower third",
+    "midground": "the town climbing the slope: slate roofs, balconies, amber windows",
+    "background": "jagged peaks half hidden by low storm cloud"
+   },
+   "lighting": "Cool overcast daylight, slate-blue and teal, against small warm amber windows. Upper third kept darker for the corner logo and labels.",
+   "imagePrompt": "Cinematic wide establishing view of an original mountain town built along a steep rain-soaked mountain road, steep dark slate stone roofs with deep overhanging eaves, timber balconies, narrow stepped cobblestone streets, chimneys with thin smoke, small warm amber lights glowing from shop windows and doorways, distant jagged mountain peaks half hidden by a gathering grey rainstorm, low clouds rolling over the ridges, the wet road winding from the lower foreground up into the town, tiny distant figures, the town in the middle of the frame, storm clouds in the upper third, vertical 9:16 composition",
+   "videoPrompt": "Slow forward dolly toward the town, low clouds drifting over the ridges, light rain starting, chimney smoke drifting, no camera shake, buildings stay rigid, 4 seconds",
+   "graphics": [
+    {
+     "type": "rain",
+     "density": 0.35,
+     "opacity": 0.22
+    },
+    {
+     "type": "dateLabel",
+     "text": "Bellweather",
+     "at": [
+      620,
+      880
+     ],
+     "start": {
+      "line": "L1",
+      "word": "entire"
+     }
+    }
+   ],
+   "onScreenText": "Small place label 'Bellweather' on a leader line pinned to the town.",
+   "transition": "Hard cut on 'to make it believable' from the whole town to one wooden bowl on a doorstep (grand to ordinary).",
+   "sfx": [
+    {
+     "sound": "rain",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "cta",
+      "offset": 4.5
+     },
+     "gain": -27
+    },
+    {
+     "sound": "wind",
+     "from": {
+      "shot": "hook"
+     },
+     "to": {
+      "shot": "bowl",
+      "offset": 0.6
+     },
+     "gain": -30
+    }
+   ],
+   "music": "Low D-minor add9 pad, sparse and cool."
+  },
+  {
+   "id": "bowl",
+   "scene": "valley",
+   "startAt": {
+    "line": "L1",
+    "word": "to",
+    "nth": 2
+   },
+   "plateMotion": "push",
+   "plateScrim": 0.45,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "The central detail, first seen: one weathered bowl on a doorstep as the first drops hit the stone. The cut itself is the lesson (kingdom to bowl).",
+   "visual": "Ground-level close-up of a weathered wooden bowl on a worn stone step beside a shop door; first raindrops darken the paving; a shopkeeper's hand, soft and partly out of focus, reaches to turn it over.",
+   "camera": "Intimate close-up, shallow depth of field, very slow push.",
+   "layers": {
+    "foreground": "wet paving stones with the first drop splashes",
+    "midground": "the wooden bowl on the step, sharp wood grain",
+    "background": "warm amber doorway, out of focus"
+   },
+   "lighting": "Warm amber spill from the doorway across the step; cool slate-blue daylight outside.",
+   "imagePrompt": "Intimate ground-level close-up of a weathered round wooden bowl sitting on a worn stone doorstep beside the timber door of a small shop, rich wood grain and fine old cracks, the first fat raindrops darkening the grey paving stones with tiny splashes, a shopkeeper's hand reaching in from the upper right toward the rim of the bowl, the hand soft and partly out of focus in shallow depth of field, warm amber light from the open doorway behind falling across the step, cool slate-blue daylight outside, wet stone texture, the bowl in the center of the frame, vertical 9:16",
+   "videoPrompt": "Very slow push-in on the bowl, raindrops landing on the stone, the hand slowly turns the bowl upside down in one practiced motion, shallow focus, no camera shake, 4 seconds",
+   "graphics": [
+    {
+     "type": "rain",
+     "density": 0.45,
+     "opacity": 0.26,
+     "splashes": [
+      180,
+      1180,
+      900,
+      1560
+     ]
+    },
+    {
+     "type": "tag",
+     "kicker": "Ordinary detail",
+     "text": "One wooden bowl",
+     "start": {
+      "shot": "bowl",
+      "offset": 0.2
+     }
+    }
+   ],
+   "onScreenText": "Chip 'ORDINARY DETAIL' + 'One wooden bowl'.",
+   "transition": "Cut-in to a tighter framing of the same bowl as the custom is named.",
+   "sfx": [
+    {
+     "sound": "footsteps",
+     "from": {
+      "shot": "bowl",
+      "offset": -0.5
+     },
+     "to": {
+      "line": "L2",
+      "word": "rain"
+     },
+     "gain": -30
+    }
+   ],
+   "music": "B-flat major 7 opens: first warmth."
+  },
+  {
+   "id": "custom",
+   "scene": "valley",
+   "plateFrom": "bowl",
+   "plateFrame": {
+    "from": {
+     "s": 1.22,
+     "x": 0,
+     "y": 40
+    },
+    "to": {
+     "s": 1.3,
+     "x": 0,
+     "y": 30
+    }
+   },
+   "plateScrim": 0.5,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Name the custom plainly and make it unmistakable: a line-drawn bowl flips on 'upside down' while drops bounce off it.",
+   "visual": "Tighter on the bowl and the shopkeeper's hand; a small line-art diagram shows the bowl turning over, rain glancing off.",
+   "camera": "Cut-in, then a slow push (1.22 to 1.30).",
+   "layers": {
+    "foreground": "rain splashes on the step",
+    "midground": "the bowl and the soft-focus hand",
+    "background": "amber doorway bokeh"
+   },
+   "lighting": "Same as the bowl shot; slightly darker top for the diagram.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "rain",
+     "density": 0.55,
+     "opacity": 0.28,
+     "splashes": [
+      180,
+      1180,
+      900,
+      1560
+     ]
+    },
+    {
+     "type": "tag",
+     "kicker": "Custom",
+     "text": "First rain: bowls go upside down",
+     "start": {
+      "line": "L2",
+      "word": "first",
+      "offset": 0.05
+     }
+    },
+    {
+     "type": "bowlFlip",
+     "x": 250,
+     "y": 720,
+     "size": 230,
+     "start": {
+      "line": "L2",
+      "word": "rain"
+     },
+     "flip": {
+      "line": "L2",
+      "word": "upside",
+      "offset": -0.05
+     }
+    }
+   ],
+   "onScreenText": "Chip 'CUSTOM' + 'First rain: bowls go upside down'; line-art bowl diagram flips on 'upside down'.",
+   "transition": "Cut to the child at another doorstep.",
+   "sfx": [
+    {
+     "sound": "bowlKnock",
+     "at": {
+      "line": "L2",
+      "word": "upside",
+      "offset": -0.02
+     },
+     "gain": -15
+    }
+   ],
+   "music": "B-flat major 7 continues; a short dip lets the bowl knock land."
+  },
+  {
+   "id": "child",
+   "scene": "valley",
+   "plateScrim": 0.5,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "The habit passed between generations, without dialogue or sentimentality.",
+   "visual": "An older woman turns a bowl on her step while a small child beside her copies the gesture with a smaller bowl; both seen from behind and to the side, faces turned away.",
+   "camera": "Gentle lateral drift left to right, as if a passer-by glances over.",
+   "layers": {
+    "foreground": "rain-wet cobbles",
+    "midground": "the woman and the child at the doorstep, two bowls",
+    "background": "timber door frame, stone wall, warm lamplight inside"
+   },
+   "lighting": "Warm amber lamplight from the doorway, cool slate daylight in the lane.",
+   "imagePrompt": "A narrow rain-wet cobblestone lane in a mountain town, seen from a few steps away, an older woman in a wool shawl and a small child at a stone doorstep, both seen from behind and the side with faces turned away, the woman bending to turn a wooden bowl upside down on the step while the small child crouches beside her copying the same gesture with a smaller wooden bowl, hands soft and indistinct, figures small in the middle of the frame, gentle rain, warm amber lamplight glowing from the open doorway, weathered timber door frame and rough stone walls, cool slate-blue daylight, quiet and ordinary, vertical 9:16",
+   "videoPrompt": "Gentle lateral drift, light rain falling, the woman and child slowly turn their bowls over, no faces toward camera, 3 seconds",
+   "graphics": [
+    {
+     "type": "rain",
+     "density": 0.5,
+     "opacity": 0.24
+    },
+    {
+     "type": "tag",
+     "kicker": "Habit",
+     "text": "Learned before reading",
+     "start": {
+      "line": "L3",
+      "word": "children",
+      "offset": 0.1
+     }
+    }
+   ],
+   "onScreenText": "Chip 'HABIT' + 'Learned before reading'.",
+   "transition": "Cut to steam rising off a food stall.",
+   "sfx": [
+    {
+     "sound": "bowlKnock",
+     "at": {
+      "line": "L3",
+      "word": "learn",
+      "offset": 0.1
+     },
+     "gain": -21
+    }
+   ],
+   "music": "G minor add9, soft.",
+   "plateFrame": {
+    "from": {
+     "s": 1.22,
+     "x": -25,
+     "y": -190
+    },
+    "to": {
+     "s": 1.24,
+     "x": 25,
+     "y": -200
+    }
+   }
+  },
+  {
+   "id": "food",
+   "scene": "valley",
+   "plateFrame": {
+    "from": {
+     "s": 1.22,
+     "x": 0,
+     "y": -180
+    },
+    "to": {
+     "s": 1.27,
+     "x": 0,
+     "y": -200
+    }
+   },
+   "plateScrim": 0.5,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Food as worldbuilding: a hot root broth served in the rain says cold, wet, mountain soil.",
+   "visual": "A vendor ladles steaming root-vegetable broth from an iron pot into a plain ceramic bowl under a timber awning; steam rises into the damp air.",
+   "camera": "Close on the pot and ladle, slow push.",
+   "layers": {
+    "foreground": "the iron pot and rising steam",
+    "midground": "the ladle, the ceramic bowl, the vendor's shawl",
+    "background": "dried roots hanging from the awning beam, rain beyond the edge"
+   },
+   "lighting": "Warm lantern light inside the stall against the cool blue-grey street.",
+   "imagePrompt": "A small covered street food stall under a deep timber awning in a rainy mountain town, a vendor in a wool shawl ladling steaming root vegetable broth from a large blackened iron pot into a plain ceramic bowl, thick steam rising into the cold damp air, chunks of carrot and turnip with herbs, bundles of dried roots and garlic hanging from the awning beam, a hooded traveler in a wet cloak standing at the sheltered dry side of the stall, the vendor's other hand gesturing toward the dry spot under the awning, rain falling just beyond the awning edge, warm amber lantern light inside the stall against the cool blue-grey street, the stall in the middle of the frame, hands partly in shadow, vertical 9:16",
+   "videoPrompt": "Slow push toward the pot, steam rising and curling, broth pouring from the ladle into the bowl, rain falling beyond the awning, 3 seconds",
+   "graphics": [
+    {
+     "type": "steam",
+     "local": true,
+     "x": 500,
+     "y": 1230,
+     "width": 280,
+     "height": 520
+    },
+    {
+     "type": "rain",
+     "density": 0.4,
+     "opacity": 0.18
+    },
+    {
+     "type": "tag",
+     "kicker": "Food",
+     "text": "Hot root broth, served in the rain",
+     "start": {
+      "line": "L4",
+      "word": "show",
+      "offset": 0.1
+     }
+    }
+   ],
+   "onScreenText": "Chip 'FOOD' + 'Hot root broth, served in the rain'.",
+   "transition": "Cut wider on the same stall to the traveler being shown the dry side.",
+   "sfx": [
+    {
+     "sound": "market",
+     "from": {
+      "shot": "food"
+     },
+     "to": {
+      "shot": "lesson",
+      "offset": 0.3
+     },
+     "gain": -32
+    },
+    {
+     "sound": "ladle",
+     "at": {
+      "line": "L4",
+      "word": "show",
+      "offset": -0.1
+     },
+     "gain": -19
+    }
+   ],
+   "music": "F major: the lift begins, a soft pulse enters."
+  },
+  {
+   "id": "greet",
+   "scene": "valley",
+   "plateFrom": "food",
+   "plateFrame": {
+    "from": {
+     "s": 1.1,
+     "x": -50,
+     "y": -60
+    },
+    "to": {
+     "s": 1.14,
+     "x": -60,
+     "y": -70
+    }
+   },
+   "plateScrim": 0.5,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Greeting as worldbuilding: strangers are shown to the dry side of the stall, hospitality shaped by the weather.",
+   "visual": "The same stall, wider: the hooded traveler arrives and the vendor's hand points to the sheltered spot under the awning.",
+   "camera": "Cut wider, slow pull and drift toward the traveler.",
+   "layers": {
+    "foreground": "rain beyond the awning edge",
+    "midground": "vendor and traveler, the gesture toward the dry spot",
+    "background": "the wet street, warm windows"
+   },
+   "lighting": "Same as the food shot.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "steam",
+     "local": true,
+     "x": 500,
+     "y": 1230,
+     "width": 280,
+     "height": 520
+    },
+    {
+     "type": "rain",
+     "density": 0.45,
+     "opacity": 0.2
+    },
+    {
+     "type": "tag",
+     "kicker": "Greeting",
+     "text": "Strangers get the dry side",
+     "start": {
+      "line": "L5",
+      "word": "how",
+      "offset": 0.1
+     }
+    }
+   ],
+   "onScreenText": "Chip 'GREETING' + 'Strangers get the dry side'.",
+   "transition": "Dissolve: the town wide returns, dimmed, behind the lesson diagram.",
+   "sfx": [
+    {
+     "sound": "footsteps",
+     "from": {
+      "shot": "greet",
+      "offset": -0.3
+     },
+     "to": {
+      "line": "L5",
+      "word": "stranger.",
+      "offset": 0.3
+     },
+     "gain": -29
+    }
+   ],
+   "music": "C major, pulse continues."
+  },
+  {
+   "id": "lesson",
+   "scene": "valley",
+   "plateFrom": "hook",
+   "plateMotion": "pull",
+   "plateScrim": 0.4,
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.45
+   },
+   "captions": false,
+   "purpose": "The worldbuilding principle in one glance: each small detail implies something larger.",
+   "visual": "The town wide, darkened, behind three rows: a plate medallion (broth, greeting, bowl), the detail name, an arrow drawing to what it implies.",
+   "camera": "Slow pull on the dimmed town; the diagram is static apart from word-synced reveals.",
+   "layers": {
+    "foreground": "the three-row diagram",
+    "midground": "medallions cropped from the food, greeting and bowl plates",
+    "background": "the dimmed town wide with light rain"
+   },
+   "lighting": "Plate dimmed to about 30%; parchment type, amber for the implications.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "rain",
+     "density": 0.3,
+     "opacity": 0.16
+    },
+    {
+     "type": "detailChain",
+     "kicker": "Small detail → larger world",
+     "dim": 0.62,
+     "top": 470,
+     "rows": [
+      {
+       "detail": "Food",
+       "implies": "climate",
+       "img": "ep04/plates/food.jpg",
+       "zoom": 2.4,
+       "at": {
+        "line": "L6",
+        "word": "food"
+       },
+       "impliesAt": {
+        "line": "L6",
+        "word": "climate."
+       },
+       "focus": [
+        0.5,
+        0.68
+       ]
+      },
+      {
+       "detail": "Greetings",
+       "implies": "culture",
+       "img": "ep04/plates/food.jpg",
+       "zoom": 2.6,
+       "at": {
+        "line": "L6",
+        "word": "greetings,"
+       },
+       "impliesAt": {
+        "line": "L6",
+        "word": "culture."
+       },
+       "focus": [
+        0.72,
+        0.43
+       ]
+      },
+      {
+       "detail": "Habits",
+       "implies": "history",
+       "img": "ep04/plates/bowl.jpg",
+       "zoom": 2.0,
+       "at": {
+        "line": "L6",
+        "word": "habits,"
+       },
+       "impliesAt": {
+        "line": "L6",
+        "word": "history."
+       },
+       "focus": [
+        0.55,
+        0.53
+       ]
+      }
+     ]
+    }
+   ],
+   "onScreenText": "Kicker 'SMALL DETAIL → LARGER WORLD'; rows FOOD → climate, GREETINGS → culture, HABITS → history (each lands on its word).",
+   "transition": "Diagram fades; cut down into the rain-soaked street.",
+   "sfx": [
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L6",
+      "word": "food"
+     },
+     "gain": -25
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L6",
+      "word": "greetings,"
+     },
+     "gain": -25
+    },
+    {
+     "sound": "ink",
+     "at": {
+      "line": "L6",
+      "word": "habits,"
+     },
+     "gain": -25
+    },
+    {
+     "sound": "drum",
+     "at": {
+      "line": "L6",
+      "word": "history."
+     },
+     "gain": -20
+    }
+   ],
+   "music": "D minor, B-flat, F with plucked arpeggios at 70 bpm (EP01's map lift)."
+  },
+  {
+   "id": "street",
+   "scene": "valley",
+   "plateMotion": "push",
+   "plateScrim": 0.45,
+   "transitionIn": {
+    "type": "cut"
+   },
+   "purpose": "Emotional resolution: the town was here before the camera and will go on after it. Answers the hook: no kingdom-sized description needed.",
+   "visual": "Medium-wide rain-soaked stepped street; amber light from doorways on wet cobbles; bowls upside down on doorsteps; a resident closing a shutter, a vendor wiping a counter, two people sharing a doorway.",
+   "camera": "Slow push down the street.",
+   "layers": {
+    "foreground": "glistening wet cobbles and an upturned bowl on a step",
+    "midground": "residents at their routines, small and unposed",
+    "background": "street climbing into mist, mountains in cloud"
+   },
+   "lighting": "Late-afternoon slate-blue with warm amber pools from doorways.",
+   "imagePrompt": "Medium-wide view down a rain-soaked stepped stone street in a mountain town in late afternoon, steep slate roofs and timber balconies, warm amber light spilling from open doorways and shop windows onto wet glistening cobblestones, wooden bowls turned upside down on the doorsteps, a few small residents going about their routines seen from a distance with faces turned away, one closing a wooden shutter, a vendor wiping down a counter, two people sharing the shelter of a doorway, steady gentle rain, low mist, distant mountains fading into cloud, the street leading the eye from the lower foreground into the distance, calm and lived-in, vertical 9:16",
+   "videoPrompt": "Slow push down the street, steady rain, a shutter closing, people moving unhurriedly, no one looking at the camera, 4 seconds",
+   "graphics": [
+    {
+     "type": "rain",
+     "density": 0.55,
+     "opacity": 0.26,
+     "splashes": [
+      120,
+      1300,
+      960,
+      1700
+     ]
+    },
+    {
+     "type": "tag",
+     "kicker": "Living world",
+     "text": "It was here before the camera",
+     "start": {
+      "line": "L7",
+      "word": "small,",
+      "offset": 0.1
+     }
+    }
+   ],
+   "onScreenText": "Tag 'LIVING WORLD' + 'It was here before the camera'.",
+   "transition": "Dissolve to the same street, pulled back, behind the CTA card.",
+   "sfx": [
+    {
+     "sound": "footsteps",
+     "from": {
+      "shot": "street",
+      "offset": 0.4
+     },
+     "to": {
+      "shot": "cta"
+     },
+     "gain": -31
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L7",
+      "word": "beyond"
+     },
+     "gain": -24
+    }
+   ],
+   "music": "Brightest moment: F add9 to C/E with bell plucks."
+  },
+  {
+   "id": "cta",
+   "scene": "valley",
+   "plateFrom": "street",
+   "plateMotion": "pull",
+   "plateScrim": 0.3,
+   "transitionIn": {
+    "type": "dissolve",
+    "duration": 0.6
+   },
+   "captions": false,
+   "hideLogoBug": true,
+   "purpose": "Series promise and follow CTA over the living street; the last 0.6 s cross-fades into the hook's first frame so the Short loops.",
+   "visual": "The rain-soaked street, pulled back and darkened, under the full logo, episode line and CTA.",
+   "camera": "Slow pull-back; rain continues.",
+   "layers": {
+    "foreground": "full logo, CTA lines, amber pill",
+    "midground": "rain streaks",
+    "background": "the street with warm doorways"
+   },
+   "lighting": "Darkened street, warm doorways; fades into the cool town wide for the loop.",
+   "imagePrompt": "",
+   "videoPrompt": "",
+   "graphics": [
+    {
+     "type": "rain",
+     "density": 0.45,
+     "opacity": 0.2
+    },
+    {
+     "type": "ctaCard",
+     "start": {
+      "shot": "cta"
+     },
+     "ctaAt": {
+      "line": "L8",
+      "word": "follow"
+     },
+     "episode": "Episode 04 / 50",
+     "title": "The one detail that makes fiction feel real",
+     "kicker": "Worldcraft Shorts",
+     "size": 80,
+     "lines": [
+      "Follow for practical",
+      "*worldbuilding techniques,*",
+      "not just lore dumps."
+     ],
+     "button": "Follow",
+     "icon": "follow"
+    }
+   ],
+   "onScreenText": "Full logo, 'Episode 04 / 50', episode title, CTA 'Follow for practical worldbuilding techniques, not just lore dumps.' and an amber 'Follow' pill.",
+   "transition": "Loop tail: the last 0.6 s cross-fades into the hook's first frame.",
+   "sfx": [
+    {
+     "sound": "swell",
+     "at": {
+      "shot": "cta",
+      "offset": -0.3
+     },
+     "gain": -25
+    },
+    {
+     "sound": "chimes",
+     "at": {
+      "line": "L8",
+      "word": "dumps.",
+      "offset": 0.2
+     },
+     "gain": -25
+    }
+   ],
+   "music": "Resolves to D major; fades fully before the last frame."
+  }
+ ],
+ "music": {
+  "key": "D minor, resolving to D major",
+  "drone": [
+   "D1",
+   "A1"
+  ],
+  "events": [
+   {
+    "type": "duck",
+    "at": {
+     "line": "L2",
+     "word": "upside"
+    },
+    "pre": 0.2,
+    "dur": 1.2,
+    "gain": 0.6
+   }
+  ],
+  "sections": {
+   "hook": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "D3",
+      "F3",
+      "A3",
+      "E4"
+     ]
+    ],
+    "level": 0.5,
+    "dark": true
+   },
+   "bowl": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "A3",
+      "C4"
+     ]
+    ],
+    "level": 0.55
+   },
+   "custom": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "F3",
+      "A3"
+     ]
+    ],
+    "level": 0.55
+   },
+   "child": {
+    "chords": [
+     [
+      "G1",
+      "D2",
+      "Bb2",
+      "A3",
+      "D4"
+     ]
+    ],
+    "level": 0.58
+   },
+   "food": {
+    "chords": [
+     [
+      "F2",
+      "C3",
+      "A3",
+      "C4"
+     ]
+    ],
+    "level": 0.65,
+    "pulse": 70
+   },
+   "greet": {
+    "chords": [
+     [
+      "C2",
+      "G2",
+      "E3",
+      "G3"
+     ]
+    ],
+    "level": 0.65,
+    "pulse": 70
+   },
+   "lesson": {
+    "chords": [
+     [
+      "D2",
+      "A2",
+      "F3",
+      "A3"
+     ],
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "F3"
+     ],
+     [
+      "F2",
+      "C3",
+      "A3",
+      "C4"
+     ]
+    ],
+    "level": 0.75,
+    "pulse": 70,
+    "arp": true
+   },
+   "street": {
+    "chords": [
+     [
+      "F2",
+      "C3",
+      "G3",
+      "A3",
+      "C4"
+     ],
+     [
+      "E2",
+      "C3",
+      "G3",
+      "C4",
+      "E4"
+     ]
+    ],
+    "level": 0.82,
+    "bells": true
+   },
+   "cta": {
+    "chords": [
+     [
+      "Bb1",
+      "F2",
+      "D3",
+      "F3"
+     ],
+     [
+      "D2",
+      "A2",
+      "F#3",
+      "A3",
+      "D4"
+     ]
+    ],
+    "level": 0.7,
+    "bells": true
+   }
+  }
+ },
+ "metadata": {
+  "youtube": {
+   "title": "The one detail that makes a fantasy world feel real",
+   "titleAlternate": "You don't need a whole kingdom to make your world believable",
+   "description": "You don't need to describe an entire kingdom. Show what people eat, how they greet strangers, and what they do when it rains.\n\nIn one mountain town, everyone turns their doorstep bowl upside down when the first rain falls, and children learn it before they can read. Food hints at climate. Greetings hint at culture. Habits hint at history. One ordinary detail implies a whole world beyond the frame.\n\nEpisode 4 of 50 in Worldbuilding, from the ground up: short lessons for fantasy writers, novelists and tabletop RPG creators.\n\n#worldbuilding #fantasywriting #writingtips",
+   "hashtagsNote": "YouTube shows up to 3 description hashtags above the title, so the 3 that matter come first. More than 60 and all are ignored.",
+   "pinnedComment": "Your turn: what's one small, ordinary thing people in your world do without thinking? A meal, a greeting, a habit when it rains. One detail is enough.",
+   "uploadSettings": "AI use: Yes (AI-generated stills and synthetic narration; see docs/DISTRIBUTION.md). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "You don't need a whole kingdom. You need one ordinary detail. 🌧️ #worldbuilding #fantasywriting #writingtok #ttrpg",
+   "pinnedComment": "Drop one small, everyday detail from your world: what people eat, how they greet strangers, or what they do when it rains.",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "You don't need to describe an entire kingdom to make it believable.\n\nIn one mountain town, everyone turns their doorstep bowl upside down when the first rain falls. Children learn it before they can read. That one habit says more about the place than a page of history.\n\nWriters and GMs: what's one ordinary detail from your world?\n\nEpisode 4 of 50.\n\n#worldbuilding #fantasywriting #writingcommunity",
+   "pinnedComment": "Tell us one small, ordinary detail from your world, and what it quietly says about the place.",
+   "uploadSettings": "Turn on the AI label when posting (see docs/DISTRIBUTION.md)."
+  },
+  "followUpQuestion": "Why do you think Bellweather started turning its bowls over? Make up the history behind the habit."
+ }
+}

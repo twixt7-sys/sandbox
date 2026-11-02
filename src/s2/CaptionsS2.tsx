@@ -17,6 +17,8 @@ export const buildGroupsS2 = (timing: Timing, episode: Episode): G[] => {
 	// [{line, from}]: drop that line's captions from the word `from` on (a kinetic title says it instead)
 	const offs: {line: string; from: string; to?: string}[] = (episode as any).captionsOff ?? [];
 	const groups: G[] = [];
+	// Where a kinetic title takes over a line's words, the caption before it must be gone by the first taken word.
+	const takeovers: number[] = [];
 	for (const line of timing.lines) {
 		if (off.has(line.shot) || offLines.has(line.id)) continue;
 		const em = new Set(line.emphasis.map(norm));
@@ -33,6 +35,9 @@ export const buildGroupsS2 = (timing: Timing, episode: Episode): G[] => {
 				const b = c.to ? line.words.findIndex((w) => norm(w.text) === norm(c.to!)) : line.words.length;
 				return [a, b < 0 ? line.words.length : b] as [number, number];
 			});
+		cuts.forEach(([a]) => {
+			if (a >= 0) takeovers.push(line.words[a].start - 0.04);
+		});
 		line.words.forEach((w, wi) => {
 			if (cuts.some(([a, b]) => a >= 0 && wi >= a && wi < b)) {
 				flush();
@@ -50,7 +55,8 @@ export const buildGroupsS2 = (timing: Timing, episode: Episode): G[] => {
 	return groups.map((g, i) => {
 		const next = groups[i + 1];
 		const hold = next && next.start - g.end < 0.5 ? next.start - 0.02 : g.end + 0.3;
-		return {...g, start: g.start - 0.06, end: hold};
+		const cap = Math.min(hold, ...takeovers.filter((x) => x > g.start));
+		return {...g, start: g.start - 0.06, end: cap};
 	});
 };
 
@@ -72,7 +78,7 @@ export const CaptionsS2: React.FC<{timing: Timing; episode: Episode; t: number; 
 								marginRight: i < g.words.length - 1 ? '0.24em' : 0,
 								color: w.em ? S2.ember : S2.parchment,
 								opacity: spoken ? 1 : 0.0,
-								transform: `scale(${spoken ? 1 + (1 - k) * 0.22 : 0.9}) translateY(${(1 - k) * 6}px)`,
+								transform: `scale(${spoken ? 1 + (1 - k) * 0.12 : 0.92}) translateY(${(1 - k) * 6}px)`,
 								textShadow: outline('#050912', 7),
 							}}
 						>

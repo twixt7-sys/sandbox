@@ -66,6 +66,8 @@ export const grimmawPose = (island: Island, keys: World['predators'][number], t:
 		if (prev?.state === 'sleep') rest = 1;
 	}
 	if (p.state === 'appear') dissolve = 1 - clamp(since / 1.0);
+	// a display call: rises in 0.25 s, holds, settles by 1.4 s
+	const roar = p.state === 'roar' ? smoothstep(0, 0.25, since) * (1 - smoothstep(0.85, 1.4, since)) : 0;
 	// spawn / despawn: a quick scale pop (births, deaths in a cycle), not the "deleted" fly-apart
 	let pop = 1;
 	if (p.state === 'spawn') pop = 1 - (1 - clamp(since / 0.45)) ** 3;
@@ -84,6 +86,7 @@ export const grimmawPose = (island: Island, keys: World['predators'][number], t:
 		roll,
 		pale,
 		dissolve,
+		roar,
 		breath: Math.sin(t * (rest > 0.5 ? 1.6 : 2.6) + idx),
 		seed: idx * 7 + Math.floor(p.since * 10),
 	};
@@ -130,6 +133,26 @@ const PixelStars: React.FC<{t: number; level: number}> = ({t, level}) => (
 		})}
 	</div>
 );
+
+/** A ring of voxel dust puffs (a stomp, a landing): expands, rises a little and fades over `life` seconds. */
+const DUST_BOX = new THREE.BoxGeometry(1, 1, 1);
+const Dust: React.FC<{t: number; at: number; x: number; z: number; y: number; r?: number; life?: number}> = ({t, at, x, z, y, r = 2.6, life = 1.0}) => {
+	const age = t - at;
+	if (age < 0 || age > life) return null;
+	const p = age / life;
+	const ease = 1 - (1 - p) ** 2;
+	return (
+		<group position={[x, y, z]}>
+			{Array.from({length: 14}, (_, k) => {
+				const a = (k / 14) * Math.PI * 2 + hash2(k, 3, 9) * 0.4;
+				const rr = 0.6 + ease * r * (0.7 + hash2(k, 4, 9) * 0.5);
+				const s = (0.55 - 0.4 * p) * (0.8 + hash2(k, 5, 9) * 0.5);
+				const m = new THREE.MeshLambertMaterial({color: '#d8c49a', transparent: true, opacity: 0.85 * (1 - p)});
+				return <mesh key={k} geometry={DUST_BOX} material={m} position={[Math.cos(a) * rr, 0.2 + ease * 0.7 * (0.5 + hash2(k, 6, 9)), Math.sin(a) * rr]} scale={[s, s, s]} />;
+			})}
+		</group>
+	);
+};
 
 export type WorldSceneProps = {world: World; t: number; herdCenters: [number, number][]; herdBase: number};
 
@@ -248,6 +271,9 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 				}}
 			/>
 			{poses.map((p, i) => (p ? <Grimmaw key={i} pose={p} /> : null))}
+			{world.dust.map((d, i) => (
+				<Dust key={`d${i}`} t={t} at={d.t} x={d.x} z={d.z} y={island.heightAt(d.x, d.z)} r={d.r} />
+			))}
 		</Stage>
 	);
 };

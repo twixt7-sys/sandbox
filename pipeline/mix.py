@@ -47,6 +47,34 @@ def duck_curve(voice, attack=0.04, release=0.45):
     return 10 ** (DUCK_DB * out / 20)
 
 
+def peaking(x, f0, gain_db, q):
+    """RBJ peaking EQ biquad."""
+    from scipy.signal import lfilter
+    a_ = 10 ** (gain_db / 40)
+    w0 = 2 * np.pi * f0 / SR
+    alpha = np.sin(w0) / (2 * q)
+    b = np.array([1 + alpha * a_, -2 * np.cos(w0), 1 - alpha * a_])
+    a = np.array([1 + alpha / a_, -2 * np.cos(w0), 1 - alpha / a_])
+    return lfilter(b / a[0], a / a[0], x, axis=0)
+
+
+def voice_polish(v):
+    """Phone-speaker clarity for narration (opt-in per episode, `mix.voiceFx`): high-pass at 85 Hz, +2.5 dB presence at
+    3.2 kHz, a little air, and gentle 2.5:1 compression above -24 dBFS RMS (smoothed gain, no pumping)."""
+    from scipy.ndimage import uniform_filter1d
+    v = sosfilt(butter(2, 85, "high", fs=SR, output="sos"), v, axis=0)
+    v = peaking(v, 3200, 2.5, 0.9)
+    v = peaking(v, 9000, 1.5, 0.7)
+    mono = v.mean(axis=1) if v.ndim == 2 else v
+    rms = np.sqrt(uniform_filter1d(mono ** 2, int(0.012 * SR)) + 1e-12)
+    lvl = 20 * np.log10(rms)
+    over = np.clip(lvl - (-24.0), 0, None)
+    gr = -over * (1 - 1 / 2.5)
+    gr = sosfilt(butter(1, 18, "low", fs=SR, output="sos"), gr)
+    g = 10 ** (gr / 20)
+    return v * (g[:, None] if v.ndim == 2 else g)
+
+
 def ffmpeg_loudnorm(src, dst, target, tp):
     base = f"loudnorm=I={target}:TP={tp}:LRA=11"
     probe = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(src), "-af", base + ":print_format=json", "-f", "null", "-"],
@@ -76,6 +104,8 @@ def main():
     over = load_episode(ep_id).get("mix", {})
     global DUCK_DB
     DUCK_DB = over.get("duckDb", DUCK_DB)
+    if over.get("voiceFx"):
+        voice = voice_polish(voice)
     voice = gain_to(voice, VOICE_LUFS, meter)
     music = gain_to(music, over.get("musicLufs", MUSIC_LUFS), meter) * duck_curve(voice)[:, None]
     sfx = gain_to(sfx, over.get("sfxLufs", SFX_LUFS), meter)

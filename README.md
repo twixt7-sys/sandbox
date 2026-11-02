@@ -29,7 +29,8 @@ episodes/<ep>/episode.json  ──►  pipeline/build.sh  ──►  remotion re
 | `src/captions/` | Phrase-chunked, word-timed captions with selective emphasis, inside the safe area |
 | `.github/workflows/render.yml` | Cloud render on push or manual dispatch; uploads MP4, QA report and contact sheet |
 | `src/s2/` | **Season 2 (World Engine):** `EpisodeS2.tsx` (selected by `"season": 2`), the 3D stage, the Isle, creatures, timeline, overlays, `CaptionsS2` |
-| `pipeline/score_s2.py` | Season 2 beat-grid score and World Engine SFX palette (used only for season 2 episodes) |
+| `pipeline/score_s2.py` | Season 2 World Engine SFX palette and the original beat-grid synth score (used only for season 2 episodes) |
+| `pipeline/music_s2.py` | Season 2 **composed score**: the series theme arranged from story cues on a tempo map fitted to the narration, written as MIDI and played by FluidSynth on the MuseScore General SoundFont (`"music": {"engine": "s2-score"}`) |
 | `pipeline/pixelate.py` | Re-grids generated "pixel art" onto a true pixel grid, with a small palette and a keyed background (field-card sprites) |
 | `pipeline/stills.mjs`, `pipeline/tile.py` | Render chosen frames in one browser session (S2 needs `swangle` WebGL) and tile them into a review sheet |
 
@@ -197,7 +198,11 @@ Selected by `"season": 2` in `episode.json`; the timeline lives in `episode.worl
 | captions | `CaptionsS2` | 1–3-word bursts popping per word; `captionsOff: [{line, from, to?}]` where a title says the words |
 | sfx | `sting`, `runPress`, `simTicks`, `births`, `losses`, `stamp`, `rewind`, `ringOn`, `snowAir`, `sleepZ`, `cubPop`, `delete`, `restore`, `cardSlide`, `check`, `unlock`, `worldRipple`, `stomp`, `crash`, `boomPop` | The World Engine palette (`pipeline/score_s2.py`), one sound per event, reused every episode |
 | lab | `S2Lab` composition (`src/s2/Lab.tsx`) | The bare Isle on a slow orbit, for testing the diorama look and render speed without an episode (`npx remotion still S2Lab out/lab.jpg --gl=swangle`) |
-| music | `music.engine: "s2"` | Beat-grid score: sections from cues with chords and layers (pad, arp 8 / 16, bass, kick four / half / heart / one, hats, clap, bells), drones, ducks and `fadeOut` before the loop |
+| music | `music.engine: "s2-score"` (default from EP26 v2) | Composed score on sampled instruments: sections on cues (`style`: hook, pulse, drive, drop, void, mystery, build 1–4, twist, rest, frenzy, crash, swell, anthem, outro), the series theme, `accents` (hit, boom, stab, cymbal, riser), `rests`, `fadeOut` |
+| music | `music.engine: "s2"` | The first synth engine: beat-grid layers (pad, arp, bass, kick, hats, clap, bells), drones, ducks, `fadeOut` |
+| sfx | `roar`, `stompHit` | A creature's display call (a rough growl through moving formants) and the thud of its stomp |
+| world | `roar` state, `dust` layer | Head up, jaw open, body rocks back; a ring of voxel dust puffs at a point that expands and fades |
+| mix | `mix.voiceFx` | Narration polish for phone speakers (high-pass, presence, air, gentle compression), opt-in per episode |
 
 ## Local / Claude-session commands
 

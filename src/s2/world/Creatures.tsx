@@ -88,6 +88,8 @@ export type GrimmawPose = {
 	pale: number;
 	/** 0 whole .. 1 fully dissolved into flying voxels */
 	dissolve: number;
+	/** 0 .. 1 display call: head up, jaw open, body rocks back */
+	roar?: number;
 	breath: number;
 	seed: number;
 };
@@ -100,6 +102,7 @@ const greyOf = (hex: string, p: number) => {
 
 export const Grimmaw: React.FC<{pose: GrimmawPose}> = ({pose}) => {
 	const {rest, roll, pale, dissolve, gait, stride, breath} = pose;
+	const roar = pose.roar ?? 0;
 	if (dissolve >= 1) return null;
 	const bob = Math.abs(Math.sin(gait)) * 0.06 * stride;
 	const drop = rest * 0.72;
@@ -119,13 +122,14 @@ export const Grimmaw: React.FC<{pose: GrimmawPose}> = ({pose}) => {
 	};
 	return (
 		<group position={[pose.x, pose.y, pose.z]} rotation={[0, (pose.face * Math.PI) / 180, 0]} scale={pose.scale}>
-			<group position={[0, bob - drop, 0]} rotation={[roll * 1.25, 0, 0]}>
+			<group position={[0, bob - drop, 0]} rotation={[roll * 1.25, 0, roar * 0.12]}>
 				{GRIMMAW_BODY.map((pt, k) => {
 					const f = fly(k);
 					if (f.s <= 0.01) return null;
 					// Head parts dip when resting; torso breathes.
 					const isHead = pt.p[0] > 1.0 && pt.p[1] > 1.0;
-					const headDip = isHead ? rest * 0.55 : 0;
+					const isJaw = isHead && pt.c === BONE2;
+					const headDip = isHead ? rest * 0.55 - roar * 0.32 + (isJaw ? roar * 0.3 : 0) : 0;
 					const by = pt.p[0] > -1.2 && pt.p[0] < 1.0 ? 1 + breath * 0.025 : 1;
 					return (
 						<group key={k} position={[pt.p[0] + f.dx, pt.p[1] - headDip + f.dy, pt.p[2] + f.dz]} rotation={[(pt.r?.[0] ?? 0) + f.rot, (pt.r?.[1] ?? 0) + f.rot, pt.r?.[2] ?? 0]}>

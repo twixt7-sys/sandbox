@@ -187,11 +187,30 @@ def blip(f0, f1, dur, bright=1.0):
     return sig * bright
 
 
-S2_HITS = {"sting", "runPress", "stamp", "rewind", "ringOn", "snowAir", "sleepZ", "cubPop", "delete", "restore", "cardSlide", "check", "unlock", "worldRipple", "crash", "boomPop"}
+S2_HITS = {"roar", "stompHit", "sting", "runPress", "stamp", "rewind", "ringOn", "snowAir", "sleepZ", "cubPop", "delete", "restore", "cardSlide", "check", "unlock", "worldRipple", "crash", "boomPop"}
 S2_BEDS = {"simTicks", "births", "losses", "stomp"}
 
 
 def s2_hit(kind):
+    if kind == "roar":
+        # The Grimmaw's display call: a low, rough growl (saw with vibrato through two moving formants) that swells and
+        # drops away. A call, not an attack.
+        n = int(1.4 * SR)
+        t = np.arange(n) / SR
+        f = 78 * (1 + 0.18 * np.interp(t, [0, 0.3, 0.9, 1.4], [0, 1, 0.7, -0.2])) * (1 + 0.025 * np.sin(2 * np.pi * 7.5 * t))
+        ph = np.cumsum(f) / SR
+        saw = 2 * (ph % 1) - 1
+        rough = saw * (1 + 0.35 * lp(noise(n), 60, 1) * 8)
+        body = bp(rough, 120, 900) * 1.2 + bp(rough, 900, 2400) * np.interp(t, [0, 0.35, 1.0, 1.4], [0.1, 0.6, 0.3, 0])
+        breath = bp(noise(n), 300, 3000) * 0.25
+        shape = np.interp(t, [0, 0.18, 0.95, 1.4], [0, 1, 0.7, 0])
+        return st((body + breath) * shape, 0.5)
+    if kind == "stompHit":
+        n = int(1.0 * SR)
+        t = np.arange(n) / SR
+        thud = np.sin(2 * np.pi * np.cumsum(46 * (1 + 0.9 * np.exp(-t * 26))) / SR) * np.exp(-t * 8)
+        grit = bp(noise(n), 200, 2500) * np.exp(-t * 14) * 0.5
+        return st(thud + grit, 0.4)
     if kind == "sting":
         # Series sting: a rising four-note square arpeggio (D5 F#5 A5 D6) over a soft low "power-on" swell + sparkle.
         out = np.zeros(int(1.5 * SR))

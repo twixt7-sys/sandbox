@@ -20,7 +20,7 @@ export type WorldRaw = {
 	/** HUD predator count (the agents on screen follow it, but the HUD reads this) */
 	pred?: RawKey[];
 	predators?: PredatorRaw[];
-	layers?: {graze?: RawKey[]; snow?: RawKey[]; forest?: RawKey[]; ripple?: Cue[]; rings?: RingRaw[]};
+	layers?: {graze?: RawKey[]; snow?: RawKey[]; forest?: RawKey[]; ripple?: Cue[]; rings?: RingRaw[]; dust?: {at: Cue; x: number; z: number; r?: number}[]};
 };
 
 export type PredKey = {t: number; x: number; z: number; state: string; face?: number; dur: number};
@@ -41,6 +41,7 @@ export type World = {
 	forest: Key[];
 	ripples: number[];
 	rings: Ring[];
+	dust: {t: number; x: number; z: number; r?: number}[];
 };
 
 export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
@@ -61,6 +62,7 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 	snow: resolveKeys(timing, raw.layers?.snow),
 	forest: resolveKeys(timing, raw.layers?.forest),
 	ripples: (raw.layers?.ripple ?? []).map((c) => cueTime(timing, c)),
+	dust: (raw.layers?.dust ?? []).map((d) => ({t: cueTime(timing, d.at), x: d.x, z: d.z, r: d.r})),
 	rings: (raw.layers?.rings ?? []).map((r) => ({x: r.x, z: r.z, r: r.r, on: cueTime(timing, r.on), off: r.off ? cueTime(timing, r.off) : Infinity, color: r.color ?? '#f4c46e'})),
 });
 

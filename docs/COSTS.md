@@ -357,6 +357,8 @@ On the paid primary stack, with 4 stills: about **$1.05 (₱67)**, or about $2.2
 | Render, QA, encodes | Claude cloud container | $0 |
 | **Total** | | **$0 cash (₱0)**, 1 Figma generation |
 
+**EP26 v2 (2 Nov 2026):** the music is now a composed score played by FluidSynth on the MuseScore General SoundFont (MIT, free from the Ubuntu archive). Still **$0** and no further Figma generations.
+
 On the paid primary stack: no stills are needed any more (the world is code), so the only paid item would be ElevenLabs narration (about 900 characters, inside the $6 (₱380) a month Starter allowance), at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
 ## Alternatives

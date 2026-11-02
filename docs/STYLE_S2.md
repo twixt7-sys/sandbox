@@ -66,11 +66,12 @@ Re-hook around 20–25 s and twist around 43–47 s are deliberate; keep them ne
 ## Motion vocabulary (reuse; don't invent new ones per episode)
 | Event | Visual | Sound (`pipeline/score_s2.py`) |
 |---|---|---|
-| Series sting (t = 0) | `sting` label typing in + world ripple | `sting` + `worldRipple` |
+| Series sting (t = 0) | `sting` label typing in + world ripple | the score opens on the theme (celesta + harp sweep), with `sting` and `worldRipple` underneath |
 | RUN | Button press, `RUNNING` blink, world ripple, clock racing | `runPress` + `worldRipple` + `simTicks` bed |
 | Births | Small agents pop in and grow over 4.5 s | `births` bed |
 | Losses | Agents shrink out | `losses` bed |
-| Failure | Mood → gloom, rust `stamp` | `stamp`, music drop + drone |
+| Failure | Mood → gloom, rust `stamp` | `stamp`, music drop to near-silence + a `boom` accent on the punchline |
+| A creature's display (hook) | `roar` state (head up, jaw open, body rocks back) + `dust` ring at its feet | `roar` + `stompHit` |
 | Rewind | `rewind` overlay + `blockWipe`, clock and populations run back | `rewind` |
 | Card in / out | Slide 0.35 s | `cardSlide` |
 | Row ticks | Checkbox fills, text slides in | `check` |
@@ -87,8 +88,20 @@ Re-hook around 20–25 s and twist around 43–47 s are deliberate; keep them ne
 - **Numbers on screen must match the world.** The HUD, graphs and visible agents all read the same keys (`herd.count`, `pred`, `clock`).
 
 ## Sound
-- **Music** (`music.engine: "s2"`): a beat grid (default 100 BPM) with sections from cues. Each section names chords and layers (`pad`, `arp` 8/16, `bass`, `kick` four/half/heart/one, `hats` 8/16, `clap`, `bells`). The arc: sparse hook → driving run → drop to drone → rebuild layer by layer as fixes switch on → full groove on run 2 → dark twist → major resolution → soft outro, faded out (`fadeOut`) before the loop point.
-- **Mix:** `episode.mix` (`musicLufs` −28, `duckDb` −6, `sfxLufs` −29) puts the music about 15 LU under the voice, hotter than Season 1's ~19 LU. Season 1 episodes don't set `mix`, so their mix is unchanged (verified bit-identical for EP25).
+- **Music, default from EP26 v2 (`music.engine: "s2-score"`, `pipeline/music_s2.py`):** a composed score played on sampled instruments (FluidSynth + the MuseScore General SoundFont, MIT).
+  - **The series theme:** a 4-bar melody (D A D F E | D E F A, then B A F E D | E F E D in D major). It recurs every episode, in minor for the problem and in major for the payoff. It's the sonic logo, so keep it.
+  - **Tempo map to picture:** each section starts on a spoken cue, and the beat stretches slightly (±5 BPM around 100) so every change lands exactly on its story beat.
+  - **Styles:** `hook`, `pulse`, `drive` (16th marimba + chip arps + pizzicato + bass + drums; `theme: true` adds the melody), `drop`, `void`, `mystery`, `build` with `layer` 1–4 (one instrument family joins per rule), `twist`, `rest`, `frenzy`, `crash`, `swell`, `anthem`, `outro`.
+  - **Accents on exact cues:** `hit`, `boom`, `stab`, `cymbal`, `riser`.
+  - **Rests:** `rests` silences windows such as the beat after "Delete".
+  - **Fade:** `fadeOut` ends the music before the loop point.
+  - **The arc:** curious hook → driving run → drop to near-silence → layered build as the fixes switch on → full groove on run 2 → dark twist with a hard stop → big hit on the resolution → anthem lesson → soft outro.
+  - **Setup:** `apt-get install fluidsynth musescore-general-soundfont-small` and `pip install mido`.
+  - **Fallback:** the original synth engine (`"engine": "s2"`, `score_s2.py`) still works.
+- **Mix:** `episode.mix` sets `musicLufs` −25, `duckDb` −8, `sfxLufs` −29 and `voiceFx: true`.
+  - The music sits about 14 LU under the voice, ducks 8 dB while she speaks and swells in the gaps.
+  - `voiceFx` is phone clarity: high-pass 85 Hz, +2.5 dB at 3.2 kHz, a touch of air, gentle 2.5:1 compression.
+  - Season 1 episodes set no `mix`, so their audio is bit-identical (verified for EP24 and EP25).
 - **SFX:** synthesised only, from the palette table above, one sound per event, reused every episode.
 
 ## Captions

@@ -976,7 +976,11 @@ def main():
     d = out_dir(ep_id)
     timing = json.loads((d / "timing.json").read_text())
     # Season 2 episodes use the World Engine score; EP01-EP25 are unchanged.
-    music = build_music_s2(ep, timing) if ep.get("season") == 2 else build_music(ep, timing)
+    if ep.get("music", {}).get("engine") == "s2-score":  # composed score on sampled instruments (pipeline/music_s2.py)
+        from music_s2 import build_music_score
+        music = build_music_score(ep, timing)
+    else:
+        music = build_music_s2(ep, timing) if ep.get("season") == 2 else build_music(ep, timing)
     sfx = build_sfx(ep, timing)
     sf.write(d / "music.wav", (music / (np.abs(music).max() + 1e-9) * 0.7).astype(np.float32), SR, subtype="PCM_16")
     sf.write(d / "sfx.wav", np.clip(sfx, -1, 1).astype(np.float32), SR, subtype="PCM_16")

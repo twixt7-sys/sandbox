@@ -527,6 +527,172 @@ export const EndCardS2: React.FC<OP> = ({g, t}) => {
 	);
 };
 
+// ---------------------------------------------------------------- the Season 2 ending (part number, follow, next run)
+
+const GLYPHS = '#%@$&?*';
+
+/** The episode number, spoken and shown: PART nn / 50 and a season bar of `of` segments that fills to the part on its cue. */
+export const SeasonBar: React.FC<OP> = ({g, t}) => {
+	const {o, a, timing} = useWin(g, t, 0.2, g.fadeOut ?? 0.3);
+	if (o <= 0) return null;
+	const part: number = g.part ?? 26;
+	const of: number = g.of ?? 50;
+	const fillAt = g.fillAt ? cueTime(timing, g.fillAt) : a;
+	const ofAt = g.ofAt ? cueTime(timing, g.ofAt) : fillAt + 0.6;
+	const lit = Math.round(clamp((t - fillAt) / (g.fillDur ?? 0.6)) * part);
+	const full = lit >= part;
+	const blink = full && Math.floor((t - fillAt) * 5) % 2 === 0;
+	const seg = 12;
+	const gap = 3;
+	const barW = of * seg + (of - 1) * gap;
+	const W = 804;
+	const y = g.y ?? 372;
+	const rise = (1 - ease(t, a, 0.25)) * 26;
+	return (
+		<AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>
+			<div style={{position: 'absolute', left: 96, top: y + rise, width: W, height: 158, ...panel({edge: S2.ember})}}>
+				<div style={{position: 'absolute', left: 30, top: 18, display: 'flex', alignItems: 'baseline', gap: 16, fontFamily: F2.pixel}}>
+					<span style={{fontSize: 34, color: S2.amber, letterSpacing: '0.1em'}}>{g.label ?? 'PART'}</span>
+					<span style={{fontWeight: 700, fontSize: 72, lineHeight: 1, color: full ? S2.ember : S2.parchment}}>{String(lit).padStart(2, '0')}</span>
+					<span style={{fontSize: 34, color: 'rgba(239,230,210,0.75)', opacity: clamp((t - ofAt) / 0.15)}}>/ {of}</span>
+				</div>
+				<div style={{position: 'absolute', right: 30, top: 24, textAlign: 'right', fontFamily: F2.pixel, fontSize: 21, lineHeight: 1.3, color: S2.sky, letterSpacing: '0.08em'}}>
+					{g.season ?? 'SEASON 2'}
+					<br />
+					{g.seasonName ?? 'THE WORLD ENGINE'}
+				</div>
+				<div style={{position: 'absolute', left: (W - barW) / 2, top: 112, width: barW, height: 24, display: 'flex', gap}}>
+					{Array.from({length: of}, (_, i) => {
+						const cur = i === part - 1 && full;
+						const on = i < lit;
+						return <div key={i} style={{width: seg, height: 24, flex: 'none', background: cur ? (blink ? S2.parchment : S2.ember) : on ? S2.ember : 'rgba(239,230,210,0.14)'}} />;
+					})}
+				</div>
+			</div>
+		</AbsoluteFill>
+	);
+};
+
+/**
+ * The follow ask as a pixel button ("+ FOLLOW / FOR PART 27"). A pointer glides in and taps it on its cue: the
+ * button presses, flashes, throws sparks and flips to FOLLOWING, the platform's own follow animation in pixels.
+ */
+export const FollowButton: React.FC<OP> = ({g, t}) => {
+	const {o, a, timing} = useWin(g, t, 0.2, g.fadeOut ?? 0.3);
+	if (o <= 0) return null;
+	const at = cueTime(timing, g.pressAt);
+	const dp = t - at;
+	const down = dp >= -0.04 && dp < 0.16;
+	const done = dp >= 0.08;
+	const flash = dp >= 0 ? Math.max(0, 1 - dp / 0.3) : 0;
+	const inK = ease(t, a, 0.28);
+	const bounce = done ? Math.sin(clamp((dp - 0.08) / 0.32) * Math.PI) * 0.07 : 0;
+	const scale = (0.72 + 0.28 * inK) * (1 + bounce);
+	const y: number = g.y ?? 588;
+	const cx0 = 498;
+	const cy0 = y + 82;
+	// the pointer: glides in over 0.45 s, taps, then drifts away
+	const cin = ease(t, at - 0.55, 0.45);
+	const cout = clamp((dp - 0.45) / 0.3);
+	const handX = 650 + (1 - cin) * 240 + cout * 120;
+	const handY = cy0 + 8 + (1 - cin) * 300 + (down ? 10 : 0) + cout * 90;
+	const sparks =
+		dp >= 0 && dp < 0.6
+			? Array.from({length: 14}, (_, i) => {
+					const q = dp / 0.6;
+					const ang = (i / 14) * Math.PI * 2 + 0.25;
+					const r = 150 + 300 * (1 - (1 - q) ** 2);
+					const sz = Math.round((15 * (1 - q) + 3) / 3) * 3;
+					return (
+						<div key={i} style={{position: 'absolute', left: cx0 + Math.cos(ang) * r * 1.25 - sz / 2, top: cy0 + Math.sin(ang) * r * 0.5 - sz / 2, width: sz, height: sz, background: i % 2 ? S2.ember : S2.parchment}} />
+					);
+				})
+			: null;
+	return (
+		<AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>
+			<div style={{position: 'absolute', left: 96, width: 804, top: y, display: 'flex', justifyContent: 'center'}}>
+				<div
+					style={{
+						position: 'relative',
+						width: 640,
+						height: 164,
+						boxSizing: 'border-box',
+						transform: `translateY(${down ? 10 : 0}px) scale(${scale})`,
+						transformOrigin: '50% 50%',
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
+						gap: 30,
+						background: done ? 'rgba(10,20,48,0.94)' : S2.ember,
+						color: done ? S2.ember : S2.ink,
+						boxShadow: `0 0 0 6px ${done ? S2.ember : S2.ink}, 0 ${down ? 4 : 14}px 0 6px ${done ? 'rgba(3,6,14,0.8)' : '#7d5218'}`,
+					}}
+				>
+					<PixelSprite name={done ? 'check' : 'plus'} px={done ? 10 : 12} />
+					<div style={{display: 'flex', flexDirection: 'column', lineHeight: 1, gap: 10}}>
+						<span style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: done ? 62 : 80, letterSpacing: '0.02em'}}>{done ? (g.doneText ?? 'FOLLOWING') : (g.text ?? 'FOLLOW')}</span>
+						<span style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: 34, letterSpacing: '0.1em', color: done ? S2.parchment : S2.ink}}>{g.sub ?? 'FOR PART 27'}</span>
+					</div>
+					{flash > 0 && <div style={{position: 'absolute', left: -6, top: -6, right: -6, bottom: -6, background: `rgba(255,248,232,${(flash * 0.85).toFixed(3)})`}} />}
+				</div>
+			</div>
+			{sparks}
+			{cin > 0.01 && cout < 1 && (
+				<div style={{position: 'absolute', left: handX, top: handY, opacity: 1 - cout, transform: `scale(${down ? 0.88 : 1})`, transformOrigin: '30% 0%'}}>
+					<PixelSprite name="hand" px={9} />
+				</div>
+			)}
+		</AbsoluteFill>
+	);
+};
+
+/** The next episode as a locked run that decodes on its cue: NEXT RUN · 27 / ??? → DRAGONS, silhouette → sprite. */
+export const NextRun: React.FC<OP> = ({g, t}) => {
+	const {o, a, timing} = useWin(g, t, 0.2, g.fadeOut ?? 0.3);
+	if (o <= 0) return null;
+	const at = cueTime(timing, g.revealAt);
+	const k = clamp((t - at) / 0.42);
+	const title: string = g.title ?? 'DRAGONS';
+	const fr = Math.floor(t * 30);
+	const n = Math.floor(k * title.length + 1e-6);
+	const shown = t < at ? '???' : title.split('').map((c, i) => (i < n ? c : GLYPHS[(fr + i * 3) % GLYPHS.length])).join('');
+	const flash = t >= at ? Math.max(0, 1 - (t - at) / 0.35) : 0;
+	const sub = clamp((t - at - 0.35) / 0.2);
+	const y: number = g.y ?? 772;
+	const rise = (1 - ease(t, a, 0.25)) * 30;
+	const locked = t < at;
+	return (
+		<AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>
+			<div style={{position: 'absolute', left: 96, top: y + rise, width: 804, height: 186, ...panel({edge: locked ? 'rgba(239,230,210,0.9)' : S2.rust})}}>
+				<div style={{position: 'absolute', left: 20, top: 18, width: 150, height: 150, background: locked ? 'rgba(239,230,210,0.08)' : 'rgba(208,96,63,0.18)', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+					<PixelSprite name="dragon" px={7} mono={locked ? '#46507a' : undefined} />
+					{locked && <div style={{position: 'absolute', fontFamily: F2.pixel, fontWeight: 700, fontSize: 60, color: S2.parchment, opacity: Math.floor(t * 3) % 2 ? 1 : 0.55, textShadow: pixelShadow('#050912', 2)}}>?</div>}
+					{flash > 0 && <div style={{position: 'absolute', left: 0, top: 0, right: 0, bottom: 0, background: `rgba(255,248,232,${(flash * 0.9).toFixed(3)})`}} />}
+				</div>
+				<div style={{position: 'absolute', left: 196, top: 22, fontFamily: F2.pixel, fontSize: 26, color: S2.sky, letterSpacing: '0.1em'}}>{g.kicker ?? 'NEXT RUN · 27'}</div>
+				<div style={{position: 'absolute', left: 192, top: 58, fontFamily: F2.pixel, fontWeight: 700, fontSize: 80, lineHeight: 1, color: locked ? 'rgba(239,230,210,0.55)' : S2.rust, textShadow: pixelShadow('#050912', 2)}}>{shown}</div>
+				<div style={{position: 'absolute', left: 196, top: 144, fontFamily: F2.pixel, fontSize: 22, color: S2.parchment, letterSpacing: '0.06em', opacity: sub}}>{g.sub ?? 'A DRAGON LANDS HERE.'}</div>
+			</div>
+		</AbsoluteFill>
+	);
+};
+
+/** A light mid-video follow nudge in the top-right (where the sting booted): "+ FOLLOW · PART 26/50". */
+export const FollowChip: React.FC<OP> = ({g, t}) => {
+	const {o, a} = useWin(g, t, 0.2, g.fadeOut ?? 0.3);
+	if (o <= 0) return null;
+	const k = ease(t, a, 0.3);
+	return (
+		<AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>
+			<div style={{position: 'absolute', right: 166, top: 246, transform: `translateX(${Math.round((1 - k) * 60)}px)`, display: 'flex', alignItems: 'center', gap: 12, padding: '10px 16px 8px', ...panel({edge: S2.ember})}}>
+				<PixelSprite name="plus" px={5} color={S2.ember} />
+				<span style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: 30, color: S2.ember}}>{g.text ?? 'FOLLOW'}</span>
+				<span style={{fontFamily: F2.pixel, fontSize: 22, color: S2.parchment, letterSpacing: '0.06em'}}>{g.sub ?? 'PART 26/50'}</span>
+			</div>
+		</AbsoluteFill>
+	);
+};
+
 export const S2_OVERLAYS: Record<string, React.FC<OP>> = {
 	kinetic: Kinetic,
 	simBar: SimBar,
@@ -540,4 +706,8 @@ export const S2_OVERLAYS: Record<string, React.FC<OP>> = {
 	blockWipe: BlockWipe,
 	sting: Sting,
 	endCardS2: EndCardS2,
+	seasonBar: SeasonBar,
+	followButton: FollowButton,
+	nextRun: NextRun,
+	followChip: FollowChip,
 };

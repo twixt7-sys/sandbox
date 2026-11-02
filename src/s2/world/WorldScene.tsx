@@ -6,7 +6,7 @@ import {sample} from '../keys';
 import {buildHerd, Grimmaw, GrimmawPose, Herd, HerdAgent} from './Creatures';
 import {Column, Island, isle} from './island';
 import {BIOME_COLORS, DIRT, IslandMesh} from './IslandMesh';
-import {Cam, camPose, Lights, Stage} from './Stage';
+import {Cam, camPose, Lights, Stage, sunDir} from './Stage';
 import {cameraAt, herdCount, moodAt, predatorAt, simTime, World} from './timeline';
 
 export type S2State = {world: World; t: number; cam: Cam; island: Island; agents: HerdAgent[]};
@@ -30,6 +30,7 @@ export const project = (cam: Cam, p: [number, number, number], width = 1080, hei
 };
 
 const DIRT_C = DIRT.map((h) => new THREE.Color(h));
+const GLINT = new THREE.Color('#fff8e8');
 const SNOW_C = new THREE.Color('#eef4f6');
 const ICE_C = new THREE.Color('#a9d3e6');
 const ringCol = new THREE.Color();
@@ -68,6 +69,9 @@ export const grimmawPose = (island: Island, keys: World['predators'][number], t:
 	if (p.state === 'appear') dissolve = 1 - clamp(since / 1.0);
 	// a display call: rises in 0.25 s, holds, settles by 1.4 s
 	const roar = p.state === 'roar' ? smoothstep(0, 0.25, since) * (1 - smoothstep(0.85, 1.4, since)) : 0;
+	// alert: the head comes up to watch the sky, then settles back over `until`
+	const span = p.until - p.since;
+	const alert = p.state === 'alert' ? smoothstep(0, 0.35, since) * (Number.isFinite(span) ? 1 - smoothstep(Math.max(0.35, span - 0.45), Math.max(0.4, span), since) : 1) : 0;
 	// spawn / despawn: a quick scale pop (births, deaths in a cycle), not the "deleted" fly-apart
 	let pop = 1;
 	if (p.state === 'spawn') pop = 1 - (1 - clamp(since / 0.45)) ** 3;
@@ -87,6 +91,7 @@ export const grimmawPose = (island: Island, keys: World['predators'][number], t:
 		pale,
 		dissolve,
 		roar,
+		alert,
 		breath: Math.sin(t * (rest > 0.5 ? 1.6 : 2.6) + idx),
 		seed: idx * 7 + Math.floor(p.since * 10),
 	};
@@ -154,6 +159,104 @@ const Dust: React.FC<{t: number; at: number; x: number; z: number; y: number; r?
 	);
 };
 
+// ---------------------------------------------------------------- ambient life (Season 2 default)
+
+const BIRD_BOX = new THREE.BoxGeometry(1, 1, 1);
+const BIRD_MAT = new THREE.MeshLambertMaterial({color: '#2b2a33'});
+/** Small voxel birds circling the island in two loose flocks, wings flapping. */
+const Birds: React.FC<{t: number; n: number}> = ({t, n}) => (
+	<group>
+		{Array.from({length: n}, (_, i) => {
+			const f = i % 2;
+			const R = (f ? 25 : 19) + (i % 3) * 1.4;
+			const w = (f ? -0.085 : 0.11) * (1 + (i % 4) * 0.02);
+			const a = (f ? 2.1 : 0.4) + w * t + i * 0.09;
+			const y = (f ? 19 : 16) + Math.sin(t * 1.1 + i) * 0.7 + (i % 3) * 0.6;
+			const flap = Math.sin(t * 8.5 + i * 1.7) * 0.75;
+			const heading = -a + (w > 0 ? 0 : Math.PI);
+			return (
+				<group key={i} position={[Math.cos(a) * R, y, Math.sin(a) * R]} rotation={[0, heading, 0]} scale={0.9}>
+					<mesh geometry={BIRD_BOX} material={BIRD_MAT} scale={[0.2, 0.16, 0.55]} castShadow />
+					<group rotation={[0, 0, flap]}>
+						<mesh geometry={BIRD_BOX} material={BIRD_MAT} position={[0.38, 0, 0]} scale={[0.62, 0.05, 0.26]} />
+					</group>
+					<group rotation={[0, 0, -flap]}>
+						<mesh geometry={BIRD_BOX} material={BIRD_MAT} position={[-0.38, 0, 0]} scale={[0.62, 0.05, 0.26]} />
+					</group>
+				</group>
+			);
+		})}
+	</group>
+);
+
+const MOTE_BOX = new THREE.BoxGeometry(1, 1, 1);
+const moteM4 = new THREE.Matrix4();
+const moteQ = new THREE.Quaternion();
+const moteV = new THREE.Vector3();
+const moteS = new THREE.Vector3();
+/** Drifting pollen / firefly motes over the meadows: one or two pixels each at the stage's resolution, twinkling. */
+const Motes: React.FC<{t: number; n: number; island: Island; warm: number}> = ({t, n, island, warm}) => {
+	const ref = React.useRef<THREE.InstancedMesh>(null);
+	const mat = useMemo(() => new THREE.MeshBasicMaterial({color: '#fff4cf'}), []);
+	const homes = useMemo(() => {
+		const out: [number, number, number][] = [];
+		let k = 0;
+		while (out.length < n && k < n * 20) {
+			const x = (hash2(k, 1, 71) - 0.5) * 36;
+			const z = (hash2(k, 2, 71) - 0.5) * 36;
+			const c = island.columnAt(x, z);
+			if (c && (c.biome === 'meadow' || c.biome === 'forest' || c.biome === 'sand')) out.push([x, z, c.top]);
+			k++;
+		}
+		return out;
+	}, [island, n]);
+	React.useLayoutEffect(() => {
+		const m = ref.current!;
+		mat.color.set(warm > 0.6 ? '#ffd889' : '#f4f7dc');
+		homes.forEach(([hx, hz, top], i) => {
+			const x = hx + Math.sin(t * 0.21 + i * 1.3) * 1.6;
+			const z = hz + Math.cos(t * 0.17 + i * 2.1) * 1.6;
+			const y = top + 1.1 + Math.sin(t * 0.6 + i) * 0.9 + (i % 3) * 0.4;
+			const tw = 0.6 + 0.4 * Math.max(0, Math.sin(t * 2.4 + i * 1.9));
+			moteM4.compose(moteV.set(x, y, z), moteQ.identity(), moteS.setScalar(0.16 * tw));
+			m.setMatrixAt(i, moteM4);
+		});
+		m.instanceMatrix.needsUpdate = true;
+	});
+	return <instancedMesh ref={ref} args={[MOTE_BOX, mat, homes.length]} frustumCulled={false} />;
+};
+
+/**
+ * A shadow-only flyer (the next episode's dragon): invisible to the camera, it still casts its winged shadow. It is
+ * kept flat and only ripples its wingtips: under a low sun any height change throws the shadow a long way.
+ */
+const SHADOW_ONLY = new THREE.MeshBasicMaterial({colorWrite: false, depthWrite: false});
+const Flyer: React.FC<{t: number; f: World['flyers'][number]; sun: [number, number, number]; island: Island}> = ({t, f, sun, island}) => {
+	const p = (t - f.t) / f.dur;
+	if (p < 0 || p > 1) return null;
+	const gx = f.from[0] + (f.to[0] - f.from[0]) * p;
+	const gz = f.from[1] + (f.to[1] - f.from[1]) * p;
+	const gy = Math.max(island.waterLevel, island.heightAt(gx, gz));
+	const q: [number, number, number] = [gx + sun[0] * f.height, gy + sun[1] * f.height, gz + sun[2] * f.height];
+	const heading = Math.atan2(-(f.to[1] - f.from[1]), f.to[0] - f.from[0]);
+	const flap = 0.88 + 0.12 * Math.sin(t * 6.2);
+	return (
+		<group position={q} rotation={[0, heading, 0]} scale={f.scale}>
+			<mesh geometry={BIRD_BOX} material={SHADOW_ONLY} scale={[6.5, 0.35, 1.4]} castShadow />
+			<mesh geometry={BIRD_BOX} material={SHADOW_ONLY} position={[4.3, 0, 0]} scale={[2.3, 0.3, 0.75]} castShadow />
+			<mesh geometry={BIRD_BOX} material={SHADOW_ONLY} position={[-5.6, 0, 0]} scale={[5.6, 0.25, 0.5]} castShadow />
+			<mesh geometry={BIRD_BOX} material={SHADOW_ONLY} position={[-8.7, 0, 0]} scale={[1.0, 0.25, 1.1]} castShadow />
+			{[1, -1].map((side) => (
+				<group key={side} scale={[1, 1, flap]}>
+					<mesh geometry={BIRD_BOX} material={SHADOW_ONLY} position={[0.5, 0, side * 3.7]} scale={[3.8, 0.2, 6.2]} castShadow />
+					<mesh geometry={BIRD_BOX} material={SHADOW_ONLY} position={[-0.8, 0, side * 7.8]} scale={[2.4, 0.2, 2.6]} castShadow />
+					<mesh geometry={BIRD_BOX} material={SHADOW_ONLY} position={[-2.2, 0, side * 5.2]} scale={[1.4, 0.2, 1.2]} castShadow />
+				</group>
+			))}
+		</group>
+	);
+};
+
 export type WorldSceneProps = {world: World; t: number; herdCenters: [number, number][]; herdBase: number};
 
 export const useWorldState = (world: World, t: number, herdCenters: [number, number][], herdBase: number): S2State => {
@@ -196,6 +299,10 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 
 	const tint = (c: Column, base: THREE.Color, out: THREE.Color) => {
 		out.copy(base);
+		if (world.ambient.glints && c.biome === 'water') {
+			const g = hash2(c.i, c.j, Math.floor(t * 6) + 77);
+			if (g > 0.9) out.lerp(GLINT, ((g - 0.9) / 0.1) * 0.75);
+		}
 		if (graze > 0 && (c.biome === 'meadow' || (c.biome === 'forest' && graze > 0.5))) {
 			const thr = c.biome === 'forest' ? (graze - 0.5) * 1.6 : graze * 1.08;
 			if (c.r < thr) out.copy(DIRT_C[Math.floor(c.r * 97) % DIRT_C.length]);
@@ -256,7 +363,7 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 		>
 			{/* Distance haze in the void's colour: the far side of the island recedes a little (diorama depth). */}
 			<fog attach="fog" args={[mood.sky[1], cam.dist * 0.98, cam.dist + 120]} />
-			<Lights sun={mood.sun} warm={mood.warm} hemi={mood.hemi} />
+			<Lights sun={mood.sun} warm={mood.warm} hemi={mood.hemi} az={mood.az} el={mood.el} />
 			<IslandMesh island={island} t={t} tint={tint} treeScale={treeScale} treeTint={treeTint} lift={lift} />
 			<Herd
 				island={island}
@@ -271,6 +378,11 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 				}}
 			/>
 			{poses.map((p, i) => (p ? <Grimmaw key={i} pose={p} /> : null))}
+			{world.ambient.birds > 0 && <Birds t={t} n={world.ambient.birds} />}
+			{world.ambient.motes > 0 && <Motes t={t} n={world.ambient.motes} island={island} warm={mood.warm} />}
+			{world.flyers.map((f, i) => (
+				<Flyer key={`f${i}`} t={t} f={f} sun={sunDir(mood.az, mood.el)} island={island} />
+			))}
 			{world.dust.map((d, i) => (
 				<Dust key={`d${i}`} t={t} at={d.t} x={d.x} z={d.z} y={island.heightAt(d.x, d.z)} r={d.r} />
 			))}

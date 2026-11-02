@@ -5,7 +5,7 @@ import {integrate, Key, RawKey, resolveKeys, sample} from '../keys';
 import type {Cam} from './Stage';
 
 export type CamKey = {at: Cue; dur?: number; cut?: boolean; az: number; el: number; dist: number; target: [number, number, number]; fov?: number; drift?: number};
-export type Mood = 'day' | 'dusk' | 'gloom' | 'winter' | 'night';
+export type Mood = 'day' | 'dusk' | 'gloom' | 'winter' | 'night' | 'golden';
 export type LightKey = {at: Cue; dur?: number; mood: Mood};
 export type PredKeyRaw = {at: Cue; x: number; z: number; state?: string; face?: number; dur?: number};
 export type PredatorRaw = {id: string; scale?: number; keys: PredKeyRaw[]};
@@ -21,6 +21,10 @@ export type WorldRaw = {
 	pred?: RawKey[];
 	predators?: PredatorRaw[];
 	layers?: {graze?: RawKey[]; snow?: RawKey[]; forest?: RawKey[]; ripple?: Cue[]; rings?: RingRaw[]; dust?: {at: Cue; x: number; z: number; r?: number}[]};
+	/** Ambient life, on by default in Season 2: birds circling, pollen motes, glints on water. */
+	ambient?: {birds?: number; motes?: number; glints?: boolean};
+	/** Shadow-only flyers (a teaser): invisible to the camera, but their shadow crosses the ground from `from` to `to`. */
+	flyers?: {kind?: string; at: Cue; dur: number; from: [number, number]; to: [number, number]; height?: number; scale?: number}[];
 };
 
 export type PredKey = {t: number; x: number; z: number; state: string; face?: number; dur: number};
@@ -42,6 +46,8 @@ export type World = {
 	ripples: number[];
 	rings: Ring[];
 	dust: {t: number; x: number; z: number; r?: number}[];
+	ambient: {birds: number; motes: number; glints: boolean};
+	flyers: {kind: string; t: number; dur: number; from: [number, number]; to: [number, number]; height: number; scale: number}[];
 };
 
 export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
@@ -63,6 +69,8 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 	forest: resolveKeys(timing, raw.layers?.forest),
 	ripples: (raw.layers?.ripple ?? []).map((c) => cueTime(timing, c)),
 	dust: (raw.layers?.dust ?? []).map((d) => ({t: cueTime(timing, d.at), x: d.x, z: d.z, r: d.r})),
+	ambient: {birds: raw.ambient?.birds ?? 9, motes: raw.ambient?.motes ?? 40, glints: raw.ambient?.glints ?? true},
+	flyers: (raw.flyers ?? []).map((f) => ({kind: f.kind ?? 'dragon', t: cueTime(timing, f.at), dur: f.dur, from: f.from, to: f.to, height: f.height ?? 30, scale: f.scale ?? 1})),
 	rings: (raw.layers?.rings ?? []).map((r) => ({x: r.x, z: r.z, r: r.r, on: cueTime(timing, r.on), off: r.off ? cueTime(timing, r.off) : Infinity, color: r.color ?? '#f4c46e'})),
 });
 
@@ -104,12 +112,15 @@ export const cameraAt = (w: World, t: number): Cam => {
 	};
 };
 
-export const MOODS: Record<Mood, {sun: number; warm: number; hemi: number; sky: [string, string, string]; sat: number}> = {
-	day: {sun: 1.0, warm: 0.35, hemi: 0.95, sky: ['#22375e', '#13244a', '#091228'], sat: 1},
-	dusk: {sun: 0.85, warm: 1.0, hemi: 0.75, sky: ['#4a3150', '#24203f', '#0d1024'], sat: 0.95},
-	gloom: {sun: 0.45, warm: 0.15, hemi: 0.55, sky: ['#1a2230', '#11161f', '#070a10'], sat: 0.35},
-	winter: {sun: 0.9, warm: 0.0, hemi: 1.05, sky: ['#2e4669', '#1a2c4c', '#0b162c'], sat: 0.85},
-	night: {sun: 0.35, warm: 0.0, hemi: 0.5, sky: ['#141d38', '#0b1228', '#050812'], sat: 0.8},
+/** Lighting moods. `el` / `az` place the sun (degrees): golden hour is a low sun from the east for long shadows and a warm rim. */
+export const MOODS: Record<Mood, {sun: number; warm: number; hemi: number; sky: [string, string, string]; sat: number; el: number; az: number}> = {
+	day: {sun: 1.0, warm: 0.35, hemi: 0.95, sky: ['#22375e', '#13244a', '#091228'], sat: 1, el: 49, az: 35},
+	dusk: {sun: 0.85, warm: 1.0, hemi: 0.75, sky: ['#4a3150', '#24203f', '#0d1024'], sat: 0.95, el: 30, az: 60},
+	gloom: {sun: 0.45, warm: 0.15, hemi: 0.55, sky: ['#1a2230', '#11161f', '#070a10'], sat: 0.35, el: 49, az: 35},
+	winter: {sun: 0.9, warm: 0.0, hemi: 1.05, sky: ['#2e4669', '#1a2c4c', '#0b162c'], sat: 0.85, el: 40, az: 35},
+	night: {sun: 0.35, warm: 0.0, hemi: 0.5, sky: ['#141d38', '#0b1228', '#050812'], sat: 0.8, el: 49, az: 35},
+	// golden hour: a low sun from the camera's right (the hook pose looks from az 24), long shadows, a warm glow
+	golden: {sun: 1.3, warm: 1.0, hemi: 0.85, sky: ['#b8704a', '#4e3354', '#151634'], sat: 1.08, el: 16, az: 58},
 };
 
 const mixHex = (a: string, b: string, p: number) => {
@@ -134,6 +145,8 @@ export const moodAt = (w: World, t: number) => {
 		warm: l(from.warm, to.warm),
 		hemi: l(from.hemi, to.hemi),
 		sat: l(from.sat, to.sat),
+		el: l(from.el, to.el),
+		az: l(from.az, to.az),
 		sky: [mixHex(from.sky[0], to.sky[0], p), mixHex(from.sky[1], to.sky[1], p), mixHex(from.sky[2], to.sky[2], p)] as [string, string, string],
 	};
 };

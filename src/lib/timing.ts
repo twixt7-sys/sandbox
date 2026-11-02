@@ -17,6 +17,7 @@ const norm = (w: string) => w.toLowerCase().replace(/[^a-z0-9']/g, '');
 export const cueTime = (timing: Timing, cue: Cue | undefined, fallback = 0): number => {
 	if (!cue) return fallback;
 	const offset = cue.offset ?? 0;
+	if (cue.end) return timing.duration + offset;
 	if (cue.shot) {
 		const s = timing.shots.find((x) => x.id === cue.shot);
 		if (!s) throw new Error(`Unknown shot cue ${cue.shot}`);

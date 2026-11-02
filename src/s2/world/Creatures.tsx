@@ -90,6 +90,8 @@ export type GrimmawPose = {
 	dissolve: number;
 	/** 0 .. 1 display call: head up, jaw open, body rocks back */
 	roar?: number;
+	/** 0 .. 1 alert: head up, mouth shut (looking at the sky) */
+	alert?: number;
 	breath: number;
 	seed: number;
 };
@@ -103,10 +105,16 @@ const greyOf = (hex: string, p: number) => {
 export const Grimmaw: React.FC<{pose: GrimmawPose}> = ({pose}) => {
 	const {rest, roll, pale, dissolve, gait, stride, breath} = pose;
 	const roar = pose.roar ?? 0;
+	const alert = pose.alert ?? 0;
 	if (dissolve >= 1) return null;
 	const bob = Math.abs(Math.sin(gait)) * 0.06 * stride;
 	const drop = rest * 0.72;
-	const mats = (hex: string, e?: boolean) => (pale > 0.01 ? new THREE.MeshLambertMaterial({color: greyOf(hex, pale), emissive: e ? greyOf(hex, pale) : undefined}) : mat(hex, e));
+	// greying (starving) parts get their own material; `emissive` only when set (three.js warns on undefined values)
+	const mats = (hex: string, e?: boolean) => {
+		if (pale <= 0.01) return mat(hex, e);
+		const c = greyOf(hex, pale);
+		return new THREE.MeshLambertMaterial(e ? {color: c, emissive: c} : {color: c});
+	};
 	// Flying-apart offsets for the dissolve: each part rises and spins away, staggered by a per-part delay.
 	const fly = (k: number) => {
 		if (dissolve <= 0) return {dy: 0, dx: 0, dz: 0, s: 1, rot: 0};
@@ -122,18 +130,18 @@ export const Grimmaw: React.FC<{pose: GrimmawPose}> = ({pose}) => {
 	};
 	return (
 		<group position={[pose.x, pose.y, pose.z]} rotation={[0, (pose.face * Math.PI) / 180, 0]} scale={pose.scale}>
-			<group position={[0, bob - drop, 0]} rotation={[roll * 1.25, 0, roar * 0.12]}>
+			<group position={[0, bob - drop, 0]} rotation={[roll * 1.25, 0, roar * 0.12 + alert * 0.07]}>
 				{GRIMMAW_BODY.map((pt, k) => {
 					const f = fly(k);
 					if (f.s <= 0.01) return null;
 					// Head parts dip when resting; torso breathes.
 					const isHead = pt.p[0] > 1.0 && pt.p[1] > 1.0;
 					const isJaw = isHead && pt.c === BONE2;
-					const headDip = isHead ? rest * 0.55 - roar * 0.32 + (isJaw ? roar * 0.3 : 0) : 0;
+					const headDip = isHead ? rest * 0.55 - roar * 0.32 - alert * 0.36 + (isJaw ? roar * 0.3 : 0) : 0;
 					const by = pt.p[0] > -1.2 && pt.p[0] < 1.0 ? 1 + breath * 0.025 : 1;
 					return (
 						<group key={k} position={[pt.p[0] + f.dx, pt.p[1] - headDip + f.dy, pt.p[2] + f.dz]} rotation={[(pt.r?.[0] ?? 0) + f.rot, (pt.r?.[1] ?? 0) + f.rot, pt.r?.[2] ?? 0]}>
-							<mesh geometry={BOX} material={mats(pt.c, pt.e && rest < 0.5)} scale={[pt.s[0] * f.s, pt.s[1] * by * f.s, pt.s[2] * f.s]} castShadow />
+							<mesh geometry={BOX} material={mats(pt.c, pt.e && rest < 0.5)} scale={[pt.s[0] * f.s, pt.s[1] * by * f.s, pt.s[2] * f.s]} castShadow receiveShadow />
 							{!pt.e && f.s > 0.5 && <mesh geometry={BOX} material={OUTLINE} scale={[pt.s[0] * f.s + OL, pt.s[1] * by * f.s + OL, pt.s[2] * f.s + OL]} />}
 						</group>
 					);
@@ -145,9 +153,9 @@ export const Grimmaw: React.FC<{pose: GrimmawPose}> = ({pose}) => {
 					const fold = rest * 1.35;
 					return (
 						<group key={`l${k}`} position={[lg.pivot[0] + f.dx, lg.pivot[1] + f.dy, lg.pivot[2] + f.dz]} rotation={[0, 0, swing + (k < 2 ? fold : -fold)]} scale={f.s}>
-							<mesh geometry={BOX} material={mats(k < 2 ? HIDE : HIDE2)} position={[0, -lg.len / 2, 0]} scale={[lg.w, lg.len, lg.w]} castShadow />
+							<mesh geometry={BOX} material={mats(k < 2 ? HIDE : HIDE2)} position={[0, -lg.len / 2, 0]} scale={[lg.w, lg.len, lg.w]} castShadow receiveShadow />
 							<mesh geometry={BOX} material={OUTLINE} position={[0, -lg.len / 2, 0]} scale={[lg.w + OL, lg.len + OL, lg.w + OL]} />
-							<mesh geometry={BOX} material={mats(BONE)} position={[0.14, -lg.len + 0.05, 0]} scale={[0.34, 0.1, lg.w * 0.95]} castShadow />
+							<mesh geometry={BOX} material={mats(BONE)} position={[0.14, -lg.len + 0.05, 0]} scale={[0.34, 0.1, lg.w * 0.95]} castShadow receiveShadow />
 						</group>
 					);
 				})}
@@ -272,8 +280,9 @@ export const Herd: React.FC<{island: Island; agents: HerdAgent[]; count: number;
 	return (
 		<group>
 			{refs.map((r, k) => (
-				// only the wool body casts a shadow (the legs, moss and head are too small to read in one; this halves the shadow pass)
-				<instancedMesh key={k} ref={r} args={[BOX, m, agents.length]} castShadow={k === 1} frustumCulled={false} />
+				// only the wool body casts a shadow (the legs, moss and head are too small to read in one; this halves the shadow
+				// pass); every part receives one (shade under trees, the island's shadows, a passing dragon)
+				<instancedMesh key={k} ref={r} args={[BOX, m, agents.length]} castShadow={k === 1} receiveShadow frustumCulled={false} />
 			))}
 			<instancedMesh ref={outline} args={[BOX, OUTLINE, agents.length]} frustumCulled={false} />
 		</group>

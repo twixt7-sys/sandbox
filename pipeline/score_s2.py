@@ -10,7 +10,8 @@ silence before the loop point.
 
 SFX: one sound per World Engine event, reused every episode (see docs/STYLE_S2.md): sting, runPress, simTicks,
 births, losses, stamp, rewind, ringOn, snowAir, sleepZ, cubPop, delete, restore, cardSlide, check, unlock,
-worldRipple, stomp, crash.
+worldRipple, stomp, crash; and the sound logo and ending formula: chime (the World Engine chime, rendered from the
+score's SoundFont), engineWind (its wind-up), followPress and dragonPass (EP26's next-episode tease).
 """
 from __future__ import annotations
 
@@ -187,7 +188,8 @@ def blip(f0, f1, dur, bright=1.0):
     return sig * bright
 
 
-S2_HITS = {"roar", "stompHit", "sting", "runPress", "stamp", "rewind", "ringOn", "snowAir", "sleepZ", "cubPop", "delete", "restore", "cardSlide", "check", "unlock", "worldRipple", "crash", "boomPop"}
+S2_HITS = {"roar", "stompHit", "sting", "runPress", "stamp", "rewind", "ringOn", "snowAir", "sleepZ", "cubPop", "delete", "restore", "cardSlide", "check", "unlock", "worldRipple", "crash", "boomPop",
+           "engineWind", "dragonPass", "followPress", "chime"}
 S2_BEDS = {"simTicks", "births", "losses", "stomp"}
 
 
@@ -339,6 +341,56 @@ def s2_hit(kind):
             i = int(g * SR)
             out[i:i + len(b)] += b[: n - i]
         return st(out, 0.8)
+    if kind == "chime":
+        # The World Engine chime, Season 2's sound logo: the same clip every time (pipeline/music_s2.render_chime).
+        from music_s2 import render_chime
+        return render_chime()
+    if kind == "engineWind":
+        # The World Engine winding up: a clockwork ratchet that speeds up over a rising whirr, ending in a bright catch
+        # exactly 0.5 s in, where the chime (music_s2 accent "chime") starts. Place it 0.5 s before the chime.
+        n = int(0.62 * SR)
+        t = np.arange(n) / SR
+        out = np.zeros(n)
+        for k in range(10):
+            c0 = 0.5 * (1 - (1 - k / 9) ** 1.3)
+            m = int(0.035 * SR)
+            tt = np.arange(m) / SR
+            last = k == 9
+            cl = bp(noise(m), 2200, 9000) * np.exp(-tt * (200 if last else 280)) * (1.3 if last else 0.75)
+            cl += np.sin(2 * np.pi * (2600 + k * 140 + (900 if last else 0)) * tt) * np.exp(-tt * 110) * (0.45 if last else 0.25)
+            i = int(c0 * SR)
+            out[i:i + m] += cl[: max(0, n - i)]
+        whirr = np.sign(np.sin(2 * np.pi * np.cumsum(np.geomspace(160, 820, n)) / SR)) * np.interp(t, [0, 0.3, 0.5, 0.56], [0, 0.03, 0.06, 0])
+        return st(out + lp(whirr, 2400), 0.35)
+    if kind == "dragonPass":
+        # Something huge flies over (the next episode's tease): a deep moving whoosh with heavy wingbeats, panning
+        # left to right with the shadow across the Isle.
+        n = int(2.4 * SR)
+        t = np.arange(n) / SR
+        e = np.interp(t, [0, 0.45, 0.95, 1.6, 2.4], [0, 0.7, 1.0, 0.45, 0])
+        air = bp(noise(n), 80, 800) * e * 0.9 + bp(noise(n), 800, 2800) * e * 0.16
+        beats = np.zeros(n)
+        for b0, g in ((0.25, 0.8), (0.75, 1.0), (1.27, 0.9), (1.82, 0.55)):
+            m = int(0.5 * SR)
+            tt = np.arange(m) / SR
+            thump = np.sin(2 * np.pi * np.cumsum(52 * (1 + 0.6 * np.exp(-tt * 20))) / SR) * np.exp(-tt * 9)
+            flap = bp(noise(m), 140, 1100) * np.interp(tt, [0, 0.05, 0.18, 0.5], [0, 1, 0.3, 0]) * 0.8
+            i = int(b0 * SR)
+            beats[i:i + m] += (thump + flap)[: max(0, n - i)] * g
+        sig = air + beats
+        pan = np.interp(t, [0, 2.4], [-0.7, 0.7])
+        return np.stack([sig * (1 - pan) / 1.7, sig * (1 + pan) / 1.7], axis=1)
+    if kind == "followPress":
+        # The follow button: a chunky key press, a quick rising "bip" and a little sparkle as it flips to FOLLOWING.
+        n = int(0.7 * SR)
+        t = np.arange(n) / SR
+        click = bp(noise(n), 1200, 7000) * np.exp(-t * 300) * 0.9
+        thock = np.sin(2 * np.pi * 150 * t) * np.exp(-t * 40) * 0.6
+        bip = np.zeros(n)
+        b = blip(520, 1500, 0.12, 0.9)
+        bip[int(0.015 * SR):int(0.015 * SR) + len(b)] += b
+        sparkle = hp(noise(n), 7000) * np.interp(t, [0, 0.1, 0.18, 0.6], [0, 0, 0.12, 0])
+        return st(click + thock + bip + sparkle, 0.5)
     raise KeyError(kind)
 
 

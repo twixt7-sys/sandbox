@@ -13,7 +13,9 @@ How it works
      glockenspiel, music box, timpani, taiko, a square "chip" lead for the World Engine colour, drums).
      The series theme (a 4-bar melody) recurs in minor for the problem and in major for the payoff.
   3. Accents. One-shots on exact cues: `hit` (timpani + string stab + crash), `boom` (taiko + low strings),
-     `stab`, `cymbal`, `riser` (a reverse cymbal that peaks on the cue).
+     `stab`, `cymbal`, `riser` (a reverse cymbal that peaks on the cue), `call` (a horn call in open fifths) and
+     `roll` (a timpani roll that swells into the cue). The World Engine chime (Season 2's sound logo) is rendered
+     here from the same SoundFont by `render_chime()` but plays as the SFX "chime", so ducking never buries it.
   4. Render. The MIDI is played by FluidSynth with the MuseScore General SoundFont (MIT; Debian package
      musescore-general-soundfont-small), then `rests` windows are silenced and the end fades out before the loop.
 
@@ -21,6 +23,7 @@ Install: apt-get install fluidsynth musescore-general-soundfont-small; pip insta
 """
 from __future__ import annotations
 
+import functools
 import subprocess
 import tempfile
 from pathlib import Path
@@ -46,12 +49,13 @@ PC = {"C": 0, "C#": 1, "Db": 1, "D": 2, "D#": 3, "Eb": 3, "E": 4, "F": 5, "F#": 
 
 
 def chord_tones(name: str):
-    """'Dm' -> (2, [2, 5, 9]); supports m, dim, aug, 7, maj7, m7, 7b9, sus4, sus2."""
+    """'Dm' -> (2, [2, 5, 9]); supports m, dim, aug, 7, maj7, m7, 7b9, sus4, sus2, m9 and 5 (open fifth)."""
     root = name[:2] if len(name) > 1 and name[1] in "#b" else name[:1]
     q = name[len(root):]
     r = PC[root]
     table = {"": [0, 4, 7], "m": [0, 3, 7], "dim": [0, 3, 6], "aug": [0, 4, 8], "7": [0, 4, 7, 10], "maj7": [0, 4, 7, 11],
-             "m7": [0, 3, 7, 10], "7b9": [0, 4, 7, 10, 13], "sus4": [0, 5, 7], "sus2": [0, 2, 7], "m9": [0, 3, 7, 10, 14]}
+             "m7": [0, 3, 7, 10], "7b9": [0, 4, 7, 10, 13], "sus4": [0, 5, 7], "sus2": [0, 2, 7], "m9": [0, 3, 7, 10, 14],
+             "5": [0, 7]}
     return r, [(r + i) % 12 for i in table[q]], table[q]
 
 
@@ -427,9 +431,76 @@ def style_outro(c: Ctx):
     c.root("cello", 36, 48, 50)
 
 
+def style_tease(c: Ctx):
+    """The next-episode tease (the last line): the dominant held as open fifths under the theme's first bar, asked as a
+    question. It never resolves; the loop does, into frame 0's tonic. A `call` accent and a `roll` finish it."""
+    c.pad("strings", 45, 69, 46)
+    c.root("cello", 36, 48, 56)
+    c.theme("celesta", vel=76, bars=(0, 1))
+    c.theme("mbox", vel=42, bars=(0, 1), octave=1)
+    c.arp("harp", 1.0, 57, 81, 42, pattern=(0, 1, 2, 3))
+
+
 STYLES = {"hook": style_hook, "pulse": style_pulse, "drive": style_drive, "drop": style_drop, "void": style_void,
           "mystery": style_mystery, "build": style_build, "twist": style_twist, "rest": style_rest, "frenzy": style_frenzy,
-          "crash": style_crash, "swell": style_swell, "anthem": style_anthem, "outro": style_outro}
+          "crash": style_crash, "swell": style_swell, "anthem": style_anthem, "outro": style_outro, "tease": style_tease}
+
+# The World Engine chime: Season 2's sound signature (Season 1 had its sine bells). A rising open fifth on music box
+# with 8-bit blips, ringing out two octaves up: (seconds after the cue, semitones above D5).
+CHIME = [(0.0, 0), (0.075, 7), (0.15, 12), (0.225, 19)]
+CHIME_RING = (0.3, 24)
+
+
+@functools.lru_cache(maxsize=None)
+def render_chime() -> np.ndarray:
+    """The chime as a stereo clip at SR (D5 A5 D6 A6, ringing D7) from the score's SoundFont: music box, square-lead blips
+    and a glockenspiel ring. It plays as the SFX "chime" (pipeline/score_s2.py) rather than inside the score, so voice
+    ducking and a busy arrangement never bury it, and it is the same sound every time, always on D: a sound logo."""
+    tps = PPQ * 2  # 120 BPM: 2 beats a second
+    ev = []
+    for ch, prog, vol, pan in ((0, 10, 112, 64), (1, 80, 72, 60), (2, 9, 92, 68)):
+        ev += [(0, 0, mido.Message("program_change", channel=ch, program=prog)),
+               (0, 0, mido.Message("control_change", channel=ch, control=7, value=vol)),
+               (0, 0, mido.Message("control_change", channel=ch, control=10, value=pan)),
+               (0, 0, mido.Message("control_change", channel=ch, control=91, value=48))]
+
+    def note(t, dur, ch, p, v):
+        ev.append((int(round(t * tps)), 2, mido.Message("note_on", channel=ch, note=p, velocity=v)))
+        ev.append((int(round((t + dur) * tps)), 1, mido.Message("note_off", channel=ch, note=p, velocity=0)))
+
+    base = 74  # D5
+    for dt, iv in CHIME:
+        note(dt, 0.3, 0, base + iv, 104)
+        note(dt, 0.06, 1, base + iv, 54)
+    dt, iv = CHIME_RING
+    note(dt, 2.2, 0, base + iv, 114)
+    note(dt, 2.2, 2, base + iv, 76)
+    note(dt, 0.08, 1, base + iv, 46)
+    ev.sort(key=lambda e: (e[0], e[1]))
+    mid = mido.MidiFile(ticks_per_beat=PPQ)
+    tr = mido.MidiTrack()
+    mid.tracks.append(tr)
+    tr.append(mido.MetaMessage("set_tempo", tempo=500000, time=0))
+    last = 0
+    for tick, _, msg in ev:
+        tr.append(msg.copy(time=tick - last))
+        last = tick
+    tr.append(mido.MetaMessage("end_of_track", time=int(0.6 * tps)))
+    sf2 = next((p for p in SOUNDFONTS if Path(p).exists()), None)
+    if not sf2:
+        raise SystemExit("No General MIDI SoundFont found: apt-get install fluidsynth musescore-general-soundfont-small")
+    with tempfile.TemporaryDirectory() as td:
+        midp, wav = Path(td) / "chime.mid", Path(td) / "chime.wav"
+        mid.save(str(midp))
+        subprocess.run(["fluidsynth", "-ni", "-q", "-g", "0.5", "-r", "48000", "-o", "synth.reverb.room-size=0.55",
+                        "-o", "synth.reverb.level=0.45", "-F", str(wav), sf2, str(midp)], check=True, capture_output=True)
+        audio, sr = sf.read(wav, always_2d=True)
+    if sr != SR:
+        audio = resample_poly(audio, SR, sr, axis=0)
+    audio = audio[: int(2.9 * SR), :2].copy()
+    f = int(0.35 * SR)
+    audio[-f:] *= np.linspace(1, 0, f)[:, None] ** 2
+    return audio
 
 
 def accent(score: Score, kind: str, t: float, chord: str = "Dm"):
@@ -452,6 +523,21 @@ def accent(score: Score, kind: str, t: float, chord: str = "Dm"):
     if kind == "riser":
         # the GM reverse cymbal swells for ~1.6 s; start it so the swell peaks on the cue
         score.at_time(max(0.0, t - 1.55), 1.7, "fx", 60, 110)
+    if kind == "call":
+        # a horn call in open fifths (the next creature's announcement)
+        p = in_range(r, 52, 63)[0]
+        score.at_time(t, 2.4, "horns", p, 78)
+        score.at_time(t, 2.4, "horns", p + 7, 70)
+        score.at_time(t, 2.6, "cello", in_range(r, 36, 47)[0], 72)
+    if kind == "roll":
+        # a timpani roll that swells into the cue (the loop point), on the chord's root
+        p = in_range(r, 40, 52)[0]
+        dur = 1.5
+        k = 0
+        while t - dur + k * 0.065 < t - 0.04:
+            q = k * 0.065 / dur
+            score.at_time(t - dur + k * 0.065, 0.12, "timp", p, int(34 + 60 * q * q))
+            k += 1
 
 
 def build_music_score(ep: dict, timing: dict) -> np.ndarray:
@@ -498,9 +584,14 @@ def build_music_score(ep: dict, timing: dict) -> np.ndarray:
         g[max(0, a - f): a] = np.linspace(1, 0, min(f, a))
         g[b: min(n, b + f)] = np.linspace(0, 1, min(f, n - b))
         out *= g[:, None]
-    fo = resolve_cue(spec["fadeOut"]["at"], timing) if spec.get("fadeOut") else total - 2.0
+    fade = spec.get("fadeOut", {})
+    if "fromEnd" in fade:  # play to the loop point, with only a click-free fade over the last `fromEnd` seconds
+        fo, fdur = total - fade["fromEnd"], fade["fromEnd"]
+    else:
+        fo = resolve_cue(fade["at"], timing) if fade.get("at") else total - 2.0
+        fdur = fade.get("dur", 1.6)
     i0 = int(fo * SR)
-    i1 = min(n, int((fo + spec.get("fadeOut", {}).get("dur", 1.6)) * SR))
+    i1 = min(n, int((fo + fdur) * SR))
     if i0 < n:
         out[i0:i1] *= np.linspace(1, 0, i1 - i0)[:, None] ** 2
         out[i1:] = 0

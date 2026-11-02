@@ -182,10 +182,13 @@ Selected by `"season": 2` in `episode.json`; the timeline lives in `episode.worl
 
 | Kind | Name | What it does |
 |---|---|---|
-| world | `Stage` (`src/s2/world/Stage.tsx`) | `@remotion/three` canvas rendered at ⅓ size and upscaled ×3 nearest-neighbour (the pixel diorama look); camera rig from az / el / dist / target / fov; warm key light with hard shadows; backdrop slot (pixel starfield) |
+| world | `Stage` (`src/s2/world/Stage.tsx`) | `@remotion/three` canvas rendered at ⅓ size and upscaled ×3 nearest-neighbour (the pixel diorama look); camera rig from az / el / dist / target / fov; warm key light whose direction follows the mood, with hard shadows over the whole island (±38-unit shadow box); backdrop slot (pixel starfield) |
 | world | the Isle (`island.ts`, `IslandMesh.tsx`) | Seeded 46×46 voxel island (peak, forest, lake, meadows) with soil / clay / rock strata on the cut sides. Per-frame layers: `graze` (meadow to dirt), `forest` (trees thin), `snow`, territory `rings` (outside dimmed), world `ripple` |
 | world | `Grimmaw`, `Herd` (`Creatures.tsx`) | Voxel predator (walk, sleep, lie / starve, dissolve, appear, spawn / despawn; inverted-hull outline) and an instanced mossback herd (up to 380) wandering in simulation time, born small and growing |
-| world | timeline (`timeline.ts`, `keys.ts`) | `clock`, `speed` (integrated into sim time, negative = rewind), `camera` keys with eased moves, cuts and drift, `light` moods (day / dusk / gloom / winter / night), `herd.count`, `pred`, `predators[].keys`, `layers` — all keyed to spoken words |
+| world | timeline (`timeline.ts`, `keys.ts`) | `clock`, `speed` (integrated into sim time, negative = rewind), `camera` keys with eased moves, cuts and drift, `light` moods (day / dusk / gloom / winter / night / golden, each with a sun elevation and azimuth), `herd.count`, `pred`, `predators[].keys`, `layers`, `ambient`, `flyers` — all keyed to spoken words, or to the episode's end with `{"end": true, "offset": -0.5}` |
+| world | `ambient` (default on) | Voxel birds circling in two flocks, pollen motes over the meadows (warm in golden light), glints on the water |
+| world | `flyers` | A shadow-only creature crossing the Isle (invisible to the camera, it casts its shadow): the next episode's tease (EP26: a dragon) |
+| world | `alert` state | The predator lifts its head to the sky (mouth shut) and settles back before its next key |
 | overlay | `sting` | Series sting (≤1.5 s) over the hook: WORLD ENGINE typing in, `RUN NN · ARC` |
 | overlay | `simBar` | ▶ RUN button (press and RUNNING states on `runAt` cues), clock, prey / predator counters read from the world |
 | overlay | `simGraph` | Pixel population chart drawn up to "now" between `from` and `to` (`series` with colour / max / label) |
@@ -194,11 +197,13 @@ Selected by `"season": 2` in `episode.json`; the timeline lives in `episode.worl
 | overlay | `stamp` | A slammed verdict (EXTINCT, STABLE) |
 | overlay | `pin` | A label pinned to a world point or a predator, projected through the stage camera every frame |
 | overlay | `zzz`, `deleteFx`, `rewind`, `blockWipe` | Sleeping Zs; selection brackets and a DEL key; scanline rewind; diagonal pixel-block transition |
-| overlay | `endCardS2` | Full logo, `EPISODE NN / 50`, serif title, a pixel panel with the ask, footer; fades into the loop frame |
+| overlay | `endCardS2` | Full logo, `PART NN / 50`, serif title, a pixel panel with the ask (`SEND THIS`, `SHARE THIS`…), footer |
+| overlay | `seasonBar`, `followButton`, `nextRun`, `followChip` | The ending formula: PART NN / 50 with a 50-segment bar filling to NN; a pixel "+ FOLLOW / FOR PART NN+1" button a pointer taps on its cue (flash, sparks, ✓ FOLLOWING); NEXT RUN · NN+1 with a locked silhouette and ??? decoding to the title; a light top-right follow chip for mid-video |
 | captions | `CaptionsS2` | 1–3-word bursts popping per word; `captionsOff: [{line, from, to?}]` where a title says the words |
 | sfx | `sting`, `runPress`, `simTicks`, `births`, `losses`, `stamp`, `rewind`, `ringOn`, `snowAir`, `sleepZ`, `cubPop`, `delete`, `restore`, `cardSlide`, `check`, `unlock`, `worldRipple`, `stomp`, `crash`, `boomPop` | The World Engine palette (`pipeline/score_s2.py`), one sound per event, reused every episode |
+| sfx | `chime`, `engineWind`, `followPress`, `dragonPass` | **The World Engine chime**, Season 2's sound logo (D5 A5 D6 A6 on music box with 8-bit blips, ringing D7; rendered once from the score's SoundFont by `music_s2.render_chime()`, never ducked) at frame 0, the lesson card and the follow press; its clockwork wind-up; the follow button; a huge wingbeat pass panning with the dragon's shadow |
 | lab | `S2Lab` composition (`src/s2/Lab.tsx`) | The bare Isle on a slow orbit, for testing the diorama look and render speed without an episode (`npx remotion still S2Lab out/lab.jpg --gl=swangle`) |
-| music | `music.engine: "s2-score"` (default from EP26 v2) | Composed score on sampled instruments: sections on cues (`style`: hook, pulse, drive, drop, void, mystery, build 1–4, twist, rest, frenzy, crash, swell, anthem, outro), the series theme, `accents` (hit, boom, stab, cymbal, riser), `rests`, `fadeOut` |
+| music | `music.engine: "s2-score"` (default from EP26 v2) | Composed score on sampled instruments: sections on cues (`style`: hook, pulse, drive, drop, void, mystery, build 1–4, twist, rest, frenzy, crash, swell, anthem, outro, tease), the series theme, `accents` (hit, boom, stab, cymbal, riser, call, roll), `rests`, `fadeOut` (`{"fromEnd": 0.08}` plays to the loop point) |
 | music | `music.engine: "s2"` | The first synth engine: beat-grid layers (pad, arp, bass, kick, hats, clap, bells), drones, ducks, `fadeOut` |
 | sfx | `roar`, `stompHit` | A creature's display call (a rough growl through moving formants) and the thud of its stomp |
 | world | `roar` state, `dust` layer | Head up, jaw open, body rocks back; a ring of voxel dust puffs at a point that expands and fades |

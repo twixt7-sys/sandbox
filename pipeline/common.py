@@ -28,8 +28,10 @@ def norm(word: str) -> str:
 
 
 def resolve_cue(cue: dict, timing: dict) -> float:
-    """Resolve {"line","word","nth","offset"} or {"shot","offset"} to seconds (nth: 1-based repeat of the word)."""
+    """Resolve {"line","word","nth","offset"}, {"shot","offset"} or {"end": true, "offset"} to seconds (nth: 1-based repeat of the word)."""
     offset = cue.get("offset", 0.0)
+    if cue.get("end"):  # {"end": true, "offset": -0.5}: relative to the end of the episode (the loop point)
+        return timing["duration"] + offset
     if "shot" in cue:
         shot = next(s for s in timing["shots"] if s["id"] == cue["shot"])
         return shot["start"] + offset

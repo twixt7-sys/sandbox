@@ -22,9 +22,21 @@ export const SPRITES: Record<string, {rows: string[]; colors: Record<string, str
 	},
 	heart: {rows: ['.XX.XX.', 'XXXXXXX', 'XXXXXXX', '.XXXXX.', '..XXX..', '...X...'], colors: {X: 'currentColor'}},
 	z: {rows: ['XXXX', '..X.', '.X..', 'XXXX'], colors: {X: 'currentColor'}},
+	plus: {rows: ['..XX..', '..XX..', 'XXXXXX', 'XXXXXX', '..XX..', '..XX..'], colors: {X: 'currentColor'}},
+	// the classic pointer hand (the follow button's "tap")
+	hand: {
+		rows: ['....XX......', '...XWWX.....', '...XWWX.....', '...XWWX.....', '...XWWXXX...', '...XWWXWWXX.', '.XXXWWXWWXWX', 'XWWXWWWWWWWX', 'XWWXWWWWWWWX', '.XWWWWWWWWWX', '..XWWWWWWWWX', '..XWWWWWWWX.', '...XWWWWWWX.', '...XXXXXXXX.'],
+		colors: {X: '#050912', W: '#efe6d2'},
+	},
+	// a dragon seen from above: the same silhouette as its shadow on the Isle (the EP27 tease)
+	dragon: {
+		rows: ['........H.H........', '.........H.........', '........HEH........', '.........B.........', 'WW.......B.......WW', '.WWW....BBB....WWW.', '..WWWW..BBB..WWWW..', '..WWWWWBBBBBWWWWW..', '...WWWWWBBBWWWWW...', '...WWWWWBBBWWWWW...', '....W.W.WBW.W.W....', '.........B.........', '.........B.........', '..........B........', '..........B........', '.........TT........'],
+		colors: {H: '#c95a3c', E: '#f4c46e', B: '#b34a35', W: '#d0603f', T: '#8f3a2c'},
+	},
 };
 
-export const PixelSprite: React.FC<{name: string; px?: number; color?: string; style?: React.CSSProperties}> = ({name, px = 6, color, style}) => {
+/** `mono` paints every pixel one colour (a locked silhouette, e.g. the next episode's creature before its reveal). */
+export const PixelSprite: React.FC<{name: string; px?: number; color?: string; mono?: string; style?: React.CSSProperties}> = ({name, px = 6, color, mono, style}) => {
 	const sp = SPRITES[name];
 	if (!sp) return null;
 	const w = Math.max(...sp.rows.map((r) => r.length));
@@ -32,7 +44,7 @@ export const PixelSprite: React.FC<{name: string; px?: number; color?: string; s
 	return (
 		<svg width={w * px} height={h * px} viewBox={`0 0 ${w} ${h}`} shapeRendering="crispEdges" style={{display: 'block', color, ...style}}>
 			{sp.rows.flatMap((row, y) =>
-				row.split('').map((ch, x) => (ch === '.' || ch === ' ' ? null : <rect key={`${x}-${y}`} x={x} y={y} width={1} height={1} fill={sp.colors[ch] ?? 'currentColor'} />)),
+				row.split('').map((ch, x) => (ch === '.' || ch === ' ' ? null : <rect key={`${x}-${y}`} x={x} y={y} width={1} height={1} fill={mono ?? sp.colors[ch] ?? 'currentColor'} />)),
 			)}
 		</svg>
 	);

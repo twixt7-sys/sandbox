@@ -1,4 +1,5 @@
-export type Cue = {line?: string; word?: string; nth?: number; shot?: string; offset?: number};
+/** A time: a word or line start, a shot start, or (Season 2) `end: true` for the episode's end; plus `offset` seconds. */
+export type Cue = {line?: string; word?: string; nth?: number; shot?: string; offset?: number; end?: boolean};
 
 export type Word = {text: string; start: number; end: number};
 export type TimedLine = {id: string; shot: string; text: string; start: number; end: number; words: Word[]; emphasis: string[]};

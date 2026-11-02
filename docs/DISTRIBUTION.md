@@ -1706,7 +1706,7 @@ Source of truth: `episodes/ep25/episode.json` → `metadata`. The AI label goes 
 
 ## Episode 26 captions (ready to paste) — Season 2 relaunch
 
-Source of truth: `episodes/ep26/episode.json` → `metadata`. The AI label goes on for all four platforms. Cover: `episodes/ep26/Worldcraft_Short_E26_cover.jpg`. Subtitles: `episodes/ep26/ep26.srt`.
+Source of truth: `episodes/ep26/episode.json` → `metadata` (v3, 2 Nov 2026: the descriptions now end with the Season 2 ending formula, "Part 26 of 50. Follow for part 27: …", matching the video's last line). The AI label goes on for all four platforms. Cover: `episodes/ep26/Worldcraft_Short_E26_cover.jpg`. Subtitles: `episodes/ep26/ep26.srt`.
 
 **Disclosure.** This is the first World Engine episode, and it's mostly code: the island, the creatures, the HUD and every number are drawn and simulated in code. Two things are AI-made:
 - the narration (Kokoro synthetic voice);
@@ -1714,7 +1714,9 @@ Source of truth: `episodes/ep26/episode.json` → `metadata`. The AI label goes 
 
 YouTube's rules only require disclosure for realistic content, and this is clearly animated. Meta names realistic AI voice-overs as label-worthy. So, per series policy, the AI label stays on everywhere (research: `docs/SEASON2_RESEARCH.md` §1). The episode shows no kills: prey loss is a falling counter, and the starving predator lies down, greys and dissolves out of the simulation.
 
-**The 60-second format.** Sixty seconds is fine on every platform (Shorts allow up to 3 minutes since Oct 2024). The video loops: the last 0.7 s returns to the exact opening frame.
+**The 60-second format.** Sixty seconds is fine on every platform (Shorts allow up to 3 minutes since Oct 2024). The video loops: the last frame returns to the exact opening frame, and the World Engine chime on frame 0 answers the wind-up at the end.
+
+**Posting part 27.** The video promises "a dragon lands here". When EP27 goes up, reply to the top comments on EP26 with its link, and pin it in EP26's comments where the platform allows a second pin.
 
 ### YouTube Shorts
 - **Title** (60/100 chars): `Don't Design a Monster. Design an Ecosystem. (Worldbuilding)`
@@ -1729,17 +1731,19 @@ YouTube's rules only require disclosure for realistic content, and this is clear
 >
 > Don't design a monster. Design its place in the world.
 >
-> Share this with someone designing fantasy monsters.
+> Send this to a monster designer.
 >
-> Episode 26 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 6: Creatures and Species.
+> Part 26 of 50. Follow for part 27: a dragon lands on the Isle.
+>
+> Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 6: Creatures and Species.
 >
 > #Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts
 
-- **Pinned comment:** Design check: which of the five does your monster break? Prey, range, energy, breeding, or its role? Name the creature and the rule.
+- **Pinned comment:** Design check: which of the five does your monster break? Prey, range, energy, breeding, or its role? Name the creature and the rule. (Part 27 drops a dragon on the Isle.)
 - **Upload settings:** Altered or synthetic content: Yes (synthetic narration and an AI-generated creature sprite; the island and creatures are drawn in code). Not made for kids. Category: Education.
 
 ### TikTok
-- **Caption** (244 chars): `Your apex predator would starve 🦖 We ran it: it eats everything, then there's nothing left, then it's gone too. 5 rules for a believable monster, and #5 is the twist. #Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts`
+- **Caption** (294 chars): `Your apex predator would starve 🦖 We ran it: it eats everything, then there's nothing left, then it's gone too. 5 rules for a believable monster, and #5 is the twist. Part 26/50 · follow for part 27: a dragon lands 🐉 #Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts`
 - **Pinned comment:** Which rule does your monster break: prey, range, energy, breeding, or its role?
 - **Upload settings:** Turn on 'AI-generated content' under More options before posting.
 
@@ -1754,9 +1758,11 @@ YouTube's rules only require disclosure for realistic content, and this is clear
 >
 > Don't design a monster. Design its place in the world.
 >
-> Share this with someone designing fantasy monsters.
+> Send this to a monster designer.
 >
-> Episode 26 of 50. Season 2: The World Engine.
+> Part 26 of 50. Follow for part 27: a dragon lands on the Isle.
+>
+> Worldcraft Shorts · Season 2: The World Engine.
 >
 > #Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts
 
@@ -1776,9 +1782,11 @@ YouTube's rules only require disclosure for realistic content, and this is clear
 >
 > Don't design a monster. Design its place in the world.
 >
-> Share this with someone designing fantasy monsters.
+> Send this to a monster designer.
 >
-> Episode 26 of 50 · Worldcraft Shorts · Season 2
+> Part 26 of 50. Follow for part 27: a dragon lands on the Isle.
+>
+> Worldcraft Shorts · Season 2
 >
 > #Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts
 

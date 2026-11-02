@@ -359,6 +359,8 @@ On the paid primary stack, with 4 stills: about **$1.05 (₱67)**, or about $2.2
 
 **EP26 v2 (2 Nov 2026):** the music is now a composed score played by FluidSynth on the MuseScore General SoundFont (MIT, free from the Ubuntu archive). Still **$0** and no further Figma generations.
 
+**EP26 v3 (2 Nov 2026):** the ending formula (part number, follow button, next-run card, a dragon's shadow), golden-hour light, ambient life and the World Engine chime are all code and the same free SoundFont. The dragon icon is hand-placed pixels in `Pixel.tsx`, not generated. Still **$0**, and no further Figma generations (EP26's total stays at 1).
+
 On the paid primary stack: no stills are needed any more (the world is code), so the only paid item would be ElevenLabs narration (about 900 characters, inside the $6 (₱380) a month Starter allowance), at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
 ## Alternatives

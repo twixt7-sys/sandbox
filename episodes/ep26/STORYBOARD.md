@@ -2,34 +2,35 @@
 
 **Series:** Worldcraft Shorts · Episode 26  
 **Lesson:** A creature becomes believable when it has a place in its environment: prey that out-breeds it, a territory, an energy budget, slow breeding, and a job the ecosystem needs it for.  
-**Measured runtime:** 60.31 s · 159 spoken words · voice `kokoro`
+**Measured runtime:** 60.97 s · 169 spoken words · voice `kokoro`
 
 ## Narration (exactly as spoken)
 
 - `0:00.20–0:04.24` If your giant predator eats everything, why hasn't everything gone extinct?
-- `0:04.69–0:08.08` Let's test it. This is the Grimmaw. It eats anything that moves.
-- `0:08.33–0:09.05` Press run.
-- `0:09.35–0:13.61` Year one: mossbacks everywhere. Year three: thinning. Year five: gone.
-- `0:13.96–0:16.48` With nothing left to hunt, the Grimmaw starves too.
-- `0:16.78–0:20.34` A monster that eats everything doesn't rule your world. It ends it.
-- `0:21.04–0:25.37` Real predators live inside limits. Four are easy. The fifth is the twist.
-- `0:25.72–0:27.86` One: prey that breeds faster than it's eaten.
-- `0:28.05–0:30.85` Two: territory. One Grimmaw needs a whole valley.
-- `0:31.05–0:34.55` Three: energy. A body this big hunts rarely and sleeps a lot.
-- `0:34.75–0:37.78` Four: slow breeding. One cub every few winters.
-- `0:38.13–0:38.91` Run it again.
-- `0:39.16–0:42.06` Now the numbers rise and fall, but nothing vanishes.
-- `0:42.51–0:44.23` Rule five? Delete the monster.
-- `0:44.53–0:47.33` The mossbacks boom, strip the meadow bare, then starve.
-- `0:47.68–0:51.09` Rule five is its job. The Grimmaw holds the island together.
-- `0:51.54–0:54.39` Don't design a monster. Design its place in the world.
-- `0:54.79–0:57.61` Share this with someone designing fantasy monsters.
+- `0:04.62–0:07.96` Let's test it. This is the Grimmaw. It eats anything that moves.
+- `0:08.21–0:08.92` Press run.
+- `0:09.22–0:13.45` Year one: mossbacks everywhere. Year three: thinning. Year five: gone.
+- `0:13.79–0:16.01` With nothing to hunt, the Grimmaw starves too.
+- `0:16.31–0:19.83` A monster that eats everything doesn't rule your world. It ends it.
+- `0:20.43–0:24.69` Real predators live inside limits. Four are easy. The fifth is the twist.
+- `0:25.04–0:27.18` One: prey that breeds faster than it's eaten.
+- `0:27.38–0:30.14` Two: territory. One Grimmaw needs a whole valley.
+- `0:30.34–0:33.78` Three: energy. A body this big hunts rarely and sleeps a lot.
+- `0:33.98–0:36.97` Four: slow breeding. One cub every few winters.
+- `0:37.32–0:38.08` Run it again.
+- `0:38.33–0:41.18` Now the numbers rise and fall, but nothing vanishes.
+- `0:41.56–0:43.27` Rule five? Delete the monster.
+- `0:43.57–0:46.33` The mossbacks boom, strip the meadow bare, then starve.
+- `0:46.68–0:50.09` Rule five is its job. The Grimmaw holds the island together.
+- `0:50.47–0:53.24` Don't design a monster. Design its place in the world.
+- `0:53.59–0:55.10` Send this to a monster designer.
+- `0:55.35–0:59.87` Part 26 of 50. Follow for part 27: a dragon lands here.
 
 **Voice direction:** A curious lab-host energy: brisk, warm, a little playful. The hook is a genuine puzzle. 'Press run' is a small grin. The year count is a quick, flat countdown. 'It ends it' lands low and slow. 'The fifth is the twist' teases. Rules one to four are crisp list beats. 'Rule five? Delete the monster' is mischievous; the lesson is sure and warm.
 
 ## Shots
 
-### 1. `hook` · 0:00.00 → 0:04.57 (4.6 s)
+### 1. `hook` · 0:00.00 → 0:04.50 (4.5 s)
 
 **Purpose:** Stop the scroll on a question with the answer already on screen: a giant predator among its prey.
 
@@ -51,9 +52,9 @@
 
 **Transition out:** Continuous camera into the setup.
 
-**Sound:** sting (-13 dB); worldRipple (-17 dB); roar (-12 dB); stompHit (-13 dB). Music: Hook: the series theme on celesta over strings and a harp sweep; a hit on 'extinct?'.
+**Sound:** chime (-11 dB); worldRipple (-17 dB); roar (-12 dB); stompHit (-13 dB). Music: Hook: the series theme on celesta over strings and a harp sweep; a hit on 'extinct?'.
 
-### 2. `setup` · 0:04.57 → 0:09.23 (4.7 s)
+### 2. `setup` · 0:04.50 → 0:09.10 (4.6 s)
 
 **Purpose:** Meet the subject and its one dangerous claim, then press RUN.
 
@@ -77,7 +78,7 @@
 
 **Sound:** stomp (-17 dB); cardSlide (-17 dB); check (-20 dB); runPress (-11 dB); worldRipple (-16 dB). Music: Pulse: pizzicato eighths, the theme's answer on celesta, a soft kick.
 
-### 3. `run1` · 0:09.23 → 0:13.84 (4.6 s)
+### 3. `run1` · 0:09.10 → 0:13.68 (4.6 s)
 
 **Purpose:** The naive design runs and fails, in numbers.
 
@@ -101,11 +102,11 @@
 
 **Sound:** simTicks (-21 dB); losses (-23 dB). Music: Drive: 16th marimba and quiet square-lead arps, pizzicato, bass, drums.
 
-### 4. `starve` · 0:13.84 → 0:16.66 (2.8 s)
+### 4. `starve` · 0:13.68 → 0:16.19 (2.5 s)
 
 **Purpose:** Hunger shown as an empty range, never a kill.
 
-**Narration:** “With nothing left to hunt, the Grimmaw starves too.”
+**Narration:** “With nothing to hunt, the Grimmaw starves too.”
 
 **Visual:** The Grimmaw walks an empty meadow at dusk, then lies down and greys. Pin: FOOD IN RANGE / NONE.
 
@@ -125,7 +126,7 @@
 
 **Sound:** stomp (-18 dB); crash (-19 dB). Music: Drop: cello pedal, a timpani heartbeat, a slowed music-box echo of the theme.
 
-### 5. `ends` · 0:16.66 → 0:20.91 (4.3 s)
+### 5. `ends` · 0:16.19 → 0:20.31 (4.1 s)
 
 **Purpose:** The punchline of the failure.
 
@@ -149,7 +150,7 @@
 
 **Sound:** stamp (-10 dB). Music: Near silence; a taiko boom on 'It ends it.'
 
-### 6. `rehook` · 0:20.91 → 0:25.60 (4.7 s)
+### 6. `rehook` · 0:20.31 → 0:24.92 (4.6 s)
 
 **Purpose:** Re-hook: rewind the world and open a loop (four easy rules, one locked twist).
 
@@ -173,7 +174,7 @@
 
 **Sound:** rewind (-11 dB); cardSlide (-17 dB). Music: Mystery: celesta arpeggios and harp; a reverse-cymbal riser peaks on 'the twist'.
 
-### 7. `prey` · 0:25.60 → 0:27.93 (2.3 s)
+### 7. `prey` · 0:24.92 → 0:27.25 (2.3 s)
 
 **Purpose:** Rule 1: prey that breeds faster than it is eaten.
 
@@ -197,7 +198,7 @@
 
 **Sound:** check (-13 dB); births (-20 dB). Music: Build 1 (F major): marimba and strings.
 
-### 8. `range` · 0:27.93 → 0:30.93 (3.0 s)
+### 8. `range` · 0:27.25 → 0:30.22 (3.0 s)
 
 **Purpose:** Rule 2: territory; the island only fits three.
 
@@ -221,7 +222,7 @@
 
 **Sound:** check (-13 dB); ringOn (-15 dB); ringOn (-19 dB); ringOn (-19 dB). Music: Build 2: bass and pizzicato join.
 
-### 9. `energy` · 0:30.93 → 0:34.63 (3.7 s)
+### 9. `energy` · 0:30.22 → 0:33.86 (3.6 s)
 
 **Purpose:** Rule 3: a big body hunts rarely and sleeps a lot.
 
@@ -245,7 +246,7 @@
 
 **Sound:** check (-13 dB); stomp (-18 dB); sleepZ (-14 dB); sleepZ (-18 dB). Music: Build 3: light drums join.
 
-### 10. `breed` · 0:34.63 → 0:38.01 (3.4 s)
+### 10. `breed` · 0:33.86 → 0:37.20 (3.3 s)
 
 **Purpose:** Rule 4: slow breeding.
 
@@ -269,7 +270,7 @@
 
 **Sound:** check (-13 dB); snowAir (-15 dB); cubPop (-12 dB). Music: Build 4: the theme on glockenspiel.
 
-### 11. `run2` · 0:38.01 → 0:42.39 (4.4 s)
+### 11. `run2` · 0:37.20 → 0:41.44 (4.2 s)
 
 **Purpose:** The fixed world runs: it cycles instead of collapsing.
 
@@ -293,7 +294,7 @@
 
 **Sound:** runPress (-11 dB); worldRipple (-16 dB); simTicks (-21 dB); stamp (-13 dB). Music: Drive with the theme on flute and glockenspiel; a stab and cymbal on 'nothing'.
 
-### 12. `twist` · 0:42.39 → 0:47.56 (5.2 s)
+### 12. `twist` · 0:41.44 → 0:46.56 (5.1 s)
 
 **Purpose:** The locked rule, as an experiment: delete the monster.
 
@@ -317,7 +318,7 @@
 
 **Sound:** delete (-9 dB); runPress (-14 dB); boomPop (-13 dB); simTicks (-22 dB); losses (-20 dB); crash (-15 dB). Music: A held A7♭9 with a timpani roll, a hard stop on 'Delete', a frenzy for the boom, a chromatic crash into 'starve'.
 
-### 13. `role` · 0:47.56 → 0:51.42 (3.9 s)
+### 13. `role` · 0:46.56 → 0:50.35 (3.8 s)
 
 **Purpose:** Unlock rule 5: its job.
 
@@ -333,7 +334,7 @@
 
 **On-screen text:** 5/5
 
-**Motion graphics:** 
+**Motion graphics:** `followChip`
 
 **Captions:** word-timed, emphasis: job., together.
 
@@ -341,7 +342,7 @@
 
 **Sound:** unlock (-10 dB); restore (-12 dB); worldRipple (-14 dB). Music: Swell: strings and harp rise, a timpani roll into a big D-major hit on 'together'.
 
-### 14. `lesson` · 0:51.42 → 0:54.67 (3.3 s)
+### 14. `lesson` · 0:50.35 → 0:53.48 (3.1 s)
 
 **Purpose:** The takeaway: the full design check, screenshot-able.
 
@@ -351,9 +352,9 @@
 
 **Camera:** Wide orbit (dist 190).
 
-**Layers:** foreground: full card; midground: island at dusk; background: stars
+**Layers:** foreground: full card; midground: island at golden hour; background: stars
 
-**Light / palette / composition:** Dusk.
+**Light / palette / composition:** Golden hour.
 
 **On-screen text:** Full card.
 
@@ -363,31 +364,55 @@
 
 **Transition out:** Block wipe to the end card.
 
-**Sound:** cardSlide (-18 dB). Music: Anthem: the theme in D major on flute, horns and glockenspiel.
+**Sound:** engineWind (-15 dB); chime (-10 dB); cardSlide (-18 dB). Music: Anthem: the theme in D major on flute, horns and glockenspiel; the World Engine chime as the card lands.
 
-### 15. `cta` · 0:54.67 → 1:00.31 (5.6 s)
+### 15. `cta` · 0:53.48 → 0:55.23 (1.8 s)
 
-**Purpose:** Share CTA, then loop to frame 0.
+**Purpose:** Share CTA.
 
-**Narration:** “Share this with someone designing fantasy monsters.”
+**Narration:** “Send this to a monster designer.”
 
-**Visual:** End card: logo, EPISODE 26 / 50, title, SHARE THIS with someone designing fantasy monsters; it lifts to reveal the hook frame and title again.
+**Visual:** End card: logo, PART 26 / 50, title, SEND THIS to a monster designer.
 
-**Camera:** Cut (under the card) to the hook pose.
+**Camera:** Cut (under the block wipe) to the hook pose.
 
 **Layers:** foreground: end card; midground: the Isle; background: void
 
-**Light / palette / composition:** Day for the loop frame.
+**Light / palette / composition:** Golden hour (the loop frame).
 
-**On-screen text:** End card; then the hook title.
+**On-screen text:** End card.
 
-**Motion graphics:** `blockWipe`, `endCardS2`, `kinetic`
+**Motion graphics:** `blockWipe`, `endCardS2`
 
 **Captions:** off (text is on screen verbatim)
 
-**Transition out:** Loop.
+**Transition out:** The card lifts on 'Part'.
 
-**Sound:** restore (-21 dB). Music: Outro: the theme's answer on celesta and music box, faded to silence by 59.7 s.
+**Sound:** restore (-21 dB). Music: Outro: the theme's answer on celesta and music box.
+
+### 16. `next` · 0:55.23 → 1:00.97 (5.7 s)
+
+**Purpose:** Say the part number, ask for the follow with a specific reason (part 27), and open the next loop: a dragon's shadow crosses the Isle.
+
+**Narration:** “Part 26 of 50. Follow for part 27: a dragon lands here.”
+
+**Visual:** The end card lifts onto the hook frame at golden hour; PART 26/50 with a 50-segment season bar; a pixel FOLLOW FOR PART 27 button pressed on 'Follow'; NEXT RUN 27 · DRAGONS with a dragon sprite; a huge winged shadow sweeps over the meadow and the Grimmaw looks up; then the hook title returns for the loop.
+
+**Camera:** The hook pose (long lens), still.
+
+**Layers:** foreground: progress bar, follow button, next-run card; midground: the Grimmaw and its herd under the dragon's shadow; background: the Isle at golden hour
+
+**Light / palette / composition:** Golden hour (low sun from the east, long shadows).
+
+**On-screen text:** PART 26/50 · FOLLOW FOR PART 27 · NEXT RUN: DRAGONS · A DRAGON LANDS HERE.
+
+**Motion graphics:** `seasonBar`, `followButton`, `nextRun`, `kinetic`
+
+**Captions:** off (text is on screen verbatim)
+
+**Transition out:** Loop to frame 0.
+
+**Sound:** simTicks (-22 dB); engineWind (-15 dB); followPress (-11 dB); chime (-11 dB); cardSlide (-18 dB); unlock (-15 dB); dragonPass (-9 dB); engineWind (-14 dB). Music: Tease: the theme's opening as a question over a held A (the dominant), wingbeats on the shadow, the engine chime on 'Follow'; it resolves into frame 0's D minor on the loop.
 
 ## Platform metadata
 
@@ -402,16 +427,18 @@ Real predators live inside limits: prey that breeds faster than it's eaten, one 
 
 Don't design a monster. Design its place in the world.
 
-Share this with someone designing fantasy monsters.
+Send this to a monster designer.
 
-Episode 26 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 6: Creatures and Species.
+Part 26 of 50. Follow for part 27: a dragon lands on the Isle.
+
+Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 6: Creatures and Species.
 
 #Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts
-- **pinnedComment:** Design check: which of the five does your monster break? Prey, range, energy, breeding, or its role? Name the creature and the rule.
+- **pinnedComment:** Design check: which of the five does your monster break? Prey, range, energy, breeding, or its role? Name the creature and the rule. (Part 27 drops a dragon on the Isle.)
 - **uploadSettings:** Altered or synthetic content: Yes (synthetic narration and an AI-generated creature sprite; the island and creatures are drawn in code). Not made for kids. Category: Education.
 
 ### Tiktok
-- **caption:** Your apex predator would starve 🦖 We ran it: it eats everything, then there's nothing left, then it's gone too. 5 rules for a believable monster, and #5 is the twist. #Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts
+- **caption:** Your apex predator would starve 🦖 We ran it: it eats everything, then there's nothing left, then it's gone too. 5 rules for a believable monster, and #5 is the twist. Part 26/50 · follow for part 27: a dragon lands 🐉 #Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts
 - **pinnedComment:** Which rule does your monster break: prey, range, energy, breeding, or its role?
 - **uploadSettings:** Turn on 'AI-generated content' under More options before posting.
 
@@ -424,9 +451,11 @@ Real predators live inside limits: prey that breeds faster than it's eaten, one 
 
 Don't design a monster. Design its place in the world.
 
-Share this with someone designing fantasy monsters.
+Send this to a monster designer.
 
-Episode 26 of 50. Season 2: The World Engine.
+Part 26 of 50. Follow for part 27: a dragon lands on the Isle.
+
+Worldcraft Shorts · Season 2: The World Engine.
 
 #Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts
 - **pinnedComment:** What keeps the scariest creature in your world from eating everything? Prey, territory, energy, breeding, or something it's needed for?
@@ -443,9 +472,11 @@ Real predators live inside limits: prey that breeds faster than it's eaten, one 
 
 Don't design a monster. Design its place in the world.
 
-Share this with someone designing fantasy monsters.
+Send this to a monster designer.
 
-Episode 26 of 50 · Worldcraft Shorts · Season 2
+Part 26 of 50. Follow for part 27: a dragon lands on the Isle.
+
+Worldcraft Shorts · Season 2
 
 #Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts
 - **hookCheck:** First 26 characters: 'Your monster would starve.'

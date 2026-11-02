@@ -11,6 +11,7 @@ import math
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+TIMING = HERE.parent.parent / "public" / "ep26" / "timing.json"
 
 
 def cue(line, word=None, offset=0.0, nth=None):
@@ -24,28 +25,46 @@ def cue(line, word=None, offset=0.0, nth=None):
     return c
 
 
+# The block wipe into the end card. Everything that must jump (the camera cut to frame 0's pose, the Grimmaw back to
+# its spot, the herd back to 120) jumps on this frame, while the blocks cover the screen.
+WIPE = cue("L18", "Send", -0.3)
+
+
+def loop_span():
+    """Seconds from the wipe to the end of the episode, so the end camera's drift lands exactly on frame 0's pose.
+    Needs public/ep26/timing.json: run tts.py first, then this script (build.sh does both, in that order, on a rerun)."""
+    if not TIMING.exists():
+        print("[make_ep26] no timing.json yet: using an estimate for the loop camera; rerun after tts.py")
+        return 7.65
+    tm = json.loads(TIMING.read_text())
+    words = next(l for l in tm["lines"] if l["id"] == "L18")["words"]
+    send = next(w for w in words if w["text"].strip(".,!?:;").lower() == "send")["start"] - 0.3
+    return round(tm["duration"] - send, 3)
+
+
 LINES = [
-    ("L1", "hook", "If your giant predator eats everything, why hasn't everything gone extinct?", 0.45, ["everything,", "extinct?"]),
+    ("L1", "hook", "If your giant predator eats everything, why hasn't everything gone extinct?", 0.38, ["everything,", "extinct?"]),
     ("L2", "setup", "Let's test it. This is the Grimmaw. It eats anything that moves.", 0.25, ["grimmaw.", "anything"]),
     ("L3", "setup", "Press run.", 0.3, ["run."]),
     ("L4", "run1", "Year one: mossbacks everywhere. Year three: thinning. Year five: gone.", 0.35, ["mossbacks", "gone."]),
-    ("L5", "starve", "With nothing left to hunt, the Grimmaw starves too.", 0.3, ["starves"]),
-    ("L6", "ends", "A monster that eats everything doesn't rule your world. It ends it.", 0.7, ["rule", "ends"]),
+    ("L5", "starve", "With nothing to hunt, the Grimmaw starves too.", 0.3, ["starves"]),
+    ("L6", "ends", "A monster that eats everything doesn't rule your world. It ends it.", 0.6, ["rule", "ends"]),
     ("L7", "rehook", "Real predators live inside limits. Four are easy. The fifth is the twist.", 0.35, ["limits.", "twist."]),
     ("L8", "prey", "One: prey that breeds faster than it's eaten.", 0.2, ["breeds", "faster"]),
     ("L9", "range", "Two: territory. One Grimmaw needs a whole valley.", 0.2, ["territory.", "valley."]),
     ("L10", "energy", "Three: energy. A body this big hunts rarely and sleeps a lot.", 0.2, ["energy.", "rarely"]),
     ("L11", "breed", "Four: slow breeding. One cub every few winters.", 0.35, ["slow", "cub"]),
     ("L12", "run2", "Run it again.", 0.25, ["again."]),
-    ("L13", "run2", "Now the numbers rise and fall, but nothing vanishes.", 0.45, ["nothing", "vanishes."]),
+    ("L13", "run2", "Now the numbers rise and fall, but nothing vanishes.", 0.38, ["nothing", "vanishes."]),
     ("L14", "twist", "Rule five? Delete the monster.", 0.3, ["delete"]),
     ("L15", "twist", "The mossbacks boom, strip the meadow bare, then starve.", 0.35, ["boom,", "starve."]),
-    ("L16", "role", "Rule five is its job. The Grimmaw holds the island together.", 0.45, ["job.", "together."]),
-    ("L17", "lesson", "Don't design a monster. Design its place in the world.", 0.4, ["monster.", "place"]),
-    ("L18", "cta", "Share this with someone designing fantasy monsters.", 0.3, ["share"]),
+    ("L16", "role", "Rule five is its job. The Grimmaw holds the island together.", 0.38, ["job.", "together."]),
+    ("L17", "lesson", "Don't design a monster. Design its place in the world.", 0.35, ["monster.", "place"]),
+    ("L18", "cta", "Send this to a monster designer.", 0.25, ["send"]),
+    ("L19", "next", "Part 26 of 50. Follow for part 27: a dragon lands here.", 0.25, ["follow", "dragon"]),
 ]
 
-SHOTS = ["hook", "setup", "run1", "starve", "ends", "rehook", "prey", "range", "energy", "breed", "run2", "twist", "role", "lesson", "cta"]
+SHOTS = ["hook", "setup", "run1", "starve", "ends", "rehook", "prey", "range", "energy", "breed", "run2", "twist", "role", "lesson", "cta", "next"]
 
 
 # ---------------------------------------------------------------- the world (Season 2 timeline)
@@ -112,7 +131,11 @@ def world():
         pk(cue("L16", "Grimmaw"), 11.0, -2.0, "appear", face=200),
         pk(cue("L16", "together.", 0.2), 11.0, -2.0, "idle", face=200),
         pk(cue("L17", "Design", 0.0), 9.0, -1.5, "walk", dur=2.5),
-        pk({"shot": "cta", "offset": 3.2}, *G1_HOME, "idle", face=10),
+        # back to its frame-0 spot at the block wipe (the frame where the blocks cover everything)
+        pk(WIPE, *G1_HOME, "idle", face=10),
+        # the dragon's shadow passes: it looks up, then settles into frame 0's pose for the loop
+        pk(cue("L19", "dragon", 0.35), *G1_HOME, "alert", face=10),
+        pk({"end": True, "offset": -0.12}, *G1_HOME, "idle", face=10),
     ]
     g2 = [
         pk(cue("L9", "One", 0.1), RING_B[0], RING_B[1], "hidden"),
@@ -126,7 +149,7 @@ def world():
         pk(cue("L14", "monster.", 0.7), RING_B[0], RING_B[1] + 2, "hidden"),
         pk(cue("L16", "Grimmaw", 0.15), RING_B[0], RING_B[1], "appear", face=250),
         pk(cue("L16", "together.", 0.3), RING_B[0], RING_B[1], "idle", face=250),
-        pk({"shot": "cta", "offset": 3.2}, RING_B[0], RING_B[1], "hidden"),
+        pk(WIPE, RING_B[0], RING_B[1], "hidden"),
     ]
     g3 = [
         pk(cue("L9", "One", 0.1), RING_C[0], RING_C[1], "hidden"),
@@ -143,7 +166,7 @@ def world():
         pk(cue("L14", "monster.", 0.8), RING_C[0] - 1, RING_C[1] + 1, "hidden"),
         pk(cue("L16", "Grimmaw", 0.3), RING_C[0], RING_C[1], "appear", face=150),
         pk(cue("L16", "together.", 0.4), RING_C[0], RING_C[1], "idle", face=150),
-        pk({"shot": "cta", "offset": 3.2}, RING_C[0], RING_C[1], "hidden"),
+        pk(WIPE, RING_C[0], RING_C[1], "hidden"),
     ]
     cub = [
         pk(cue("L11", "One", 0.0), DEN[0] + 1.6, DEN[1] + 1.4, "hidden"),
@@ -177,8 +200,8 @@ def world():
         [cue("L15", "starve.", 0.35), 28, "in"],
         [cue("L16", "Grimmaw"), 28],
         [cue("L16", "together.", 0.2), 150, "out"],
-        [cue("L18", "Share", 0.6), 150],
-        [{"shot": "cta", "offset": 3.0}, 120, "linear"],
+        [WIPE, 150],
+        [cue("L18", "Send", -0.28), 120, "step"],
     ]
     pred = [
         [shot("hook"), 1],
@@ -287,10 +310,11 @@ def world():
         cam(cue("L14", "Rule", -0.1), 50, 42, 170, (4.0, 12.0, -1.0), fov=26, dur=0.8, drift=1.0),
         cam(cue("L16", "Rule", -0.1), 30, 36, 170, (3.0, 13.5, -1.0), fov=26, dur=1.4, drift=1.5),
         cam(cue("L17", "Don't", -0.25), 15, 30, 190, (2.0, 2.0, 0.0), fov=26, dur=1.6, drift=3.0),
-        cam({"shot": "cta", "offset": 3.6}, hook_pose["az"] - 1.2 * 2.1, hook_pose["el"], hook_pose["dist"], hook_pose["target"], fov=hook_pose["fov"], cut=True, drift=1.2),
+        cam(WIPE, hook_pose["az"] - 1.2 * loop_span(), hook_pose["el"], hook_pose["dist"], hook_pose["target"], fov=hook_pose["fov"], cut=True, drift=1.2),
     ]
     light = [
-        {"at": shot("hook"), "mood": "day"},
+        {"at": shot("hook"), "mood": "golden"},
+        {"at": cue("L2", "Let's", -0.3), "mood": "day", "dur": 1.3},
         {"at": cue("L5", "With", -0.2), "mood": "dusk", "dur": 1.0},
         {"at": cue("L5", "starves"), "mood": "gloom", "dur": 1.8},
         {"at": cue("L6", "it.", 0.45), "mood": "day", "dur": 0.8},
@@ -298,9 +322,13 @@ def world():
         {"at": cue("L12", "Run", -0.2), "mood": "day", "dur": 0.6},
         {"at": cue("L15", "bare,"), "mood": "gloom", "dur": 0.8},
         {"at": cue("L16", "Grimmaw"), "mood": "day", "dur": 0.9},
-        {"at": cue("L17", "Don't"), "mood": "dusk", "dur": 2.0},
-        {"at": {"shot": "cta", "offset": 3.6}, "mood": "day", "dur": 0.1},
+        {"at": cue("L17", "Don't", -0.3), "mood": "golden", "dur": 2.2},
     ]
+    # EP27's tease: a dragon's shadow (the flyer itself is invisible) crosses the meadow over the Grimmaw, left to
+    # right on screen, while the narration says "a dragon lands here".
+    # The path runs along the hook pose's screen-right axis through the Grimmaw (20 units either side); a wingspan of
+    # about 30 units, three hook frames wide, so its shadow sweeps the whole view. Centred on the Grimmaw at ~59.5 s.
+    flyers = [{"kind": "dragon", "at": cue("L19", "dragon", -0.5), "dur": 2.4, "from": [-10.3, 7.2], "to": [26.3, -9.2], "height": 30, "scale": 1.6}]
     return {
         "clock": {"label": "YEAR", "keys": clock},
         "speed": speed,
@@ -315,6 +343,8 @@ def world():
             {"id": "cub", "scale": 0.45, "keys": cub},
         ],
         "layers": {"graze": graze, "forest": forest, "snow": snow, "rings": rings, "ripple": ripple, "dust": dust},
+        "ambient": {"birds": 9, "motes": 40, "glints": True},
+        "flyers": flyers,
     }
 
 
@@ -390,15 +420,29 @@ def overlays():
     G["role"] += []
     G["lesson"] += [
         {"type": "fieldCard", "mode": "full", "y": 452, "rows": [dict(r, at=cue("L17", "Don't", -0.3), **({"unlockAt": cue("L17", "Don't", -0.3)} if r.get("locked") else {})) for r in ROWS],
-         "start": cue("L17", "Don't", -0.3), "end": cue("L18", "Share", -0.25), "kicker": "BEFORE YOU DESIGN A MONSTER", "title": "GRIMMAW",
+         "start": cue("L17", "Don't", -0.3), "end": WIPE, "kicker": "BEFORE YOU DESIGN A MONSTER", "title": "GRIMMAW",
          "subtitle": "Design its place in the world.", "subtitleAt": cue("L17", "Design")},
     ]
+    G["role"] += [
+        # a light mid-video follow nudge right after the payoff (~78% through), where the sting booted
+        {"type": "followChip", "start": cue("L16", "job.", 0.3), "end": cue("L17", "Don't", -0.45), "text": "FOLLOW", "sub": "PART 26/50"},
+    ]
     G["cta"] += [
-        {"type": "blockWipe", "at": cue("L18", "Share", -0.3), "dur": 0.34},
-        {"type": "endCardS2", "start": cue("L18", "Share", -0.3), "end": {"shot": "cta", "offset": 4.85}, "fadeOut": 0.3, "kicker": "EPISODE 26 / 50",
-         "title": "Don't Design a Monster. Design an Ecosystem.", "cta": "SHARE THIS", "with": "with someone designing fantasy monsters"},
-        # The loop: the hook's opening words fade back in as the end card lifts, matching frame 0.
-        {"type": "kinetic", "parts": hook_text, "y": 452, "size": 100, "start": {"shot": "cta", "offset": 5.1}, "fadeIn": 0.4, "preShow": True},
+        {"type": "blockWipe", "at": WIPE, "dur": 0.34},
+        {"type": "endCardS2", "start": WIPE, "end": cue("L19", "Part", -0.12), "fadeOut": 0.3, "kicker": "PART 26 / 50",
+         "title": "Don't Design a Monster. Design an Ecosystem.", "cta": "SEND THIS", "with": "to a monster designer"},
+    ]
+    # The ending formula: say the part number, ask for the follow with a reason (part 27), open the next loop.
+    gone = cue("L19", "here.", 0.75)
+    G["next"] += [
+        {"type": "seasonBar", "y": 350, "part": 26, "of": 50, "start": cue("L19", "Part", -0.1), "fillAt": cue("L19", "Part", -0.05), "fillDur": 0.6,
+         "ofAt": cue("L19", "50."), "end": gone},
+        {"type": "followButton", "y": 556, "start": cue("L19", "Follow", -0.6), "pressAt": cue("L19", "Follow"), "end": gone,
+         "text": "FOLLOW", "doneText": "FOLLOWING", "sub": "FOR PART 27"},
+        {"type": "nextRun", "y": 772, "start": cue("L19", "27:", -0.1), "revealAt": cue("L19", "dragon"), "end": gone,
+         "kicker": "NEXT RUN · 27", "title": "DRAGONS", "sub": "A DRAGON LANDS HERE."},
+        # The loop: the hook's opening words fade back in as the ending clears, matching frame 0.
+        {"type": "kinetic", "parts": hook_text, "y": 452, "size": 100, "start": cue("L19", "here.", 0.85), "fadeIn": 0.4, "preShow": True},
     ]
     return G
 
@@ -442,9 +486,16 @@ NOTES = {
     "role": ("Unlock rule 5: its job.", "Row 5 unlocks (ROLE · keeps the grazers in check); the Grimmaws re-appear, the meadow and forest heal, the island ripples on 'together'.",
              "Medium-wide (dist 170).", ("unlocked card", "healing island", "void"), "Day.", "5/5", "Card goes full.", "Swell: strings and harp rise, a timpani roll into a big D-major hit on 'together'."),
     "lesson": ("The takeaway: the full design check, screenshot-able.", "The complete field card (BEFORE YOU DESIGN A MONSTER / GRIMMAW / 5 rows ticked) with 'Design its place in the world.' in serif italic.",
-               "Wide orbit (dist 190).", ("full card", "island at dusk", "stars"), "Dusk.", "Full card.", "Block wipe to the end card.", "Anthem: the theme in D major on flute, horns and glockenspiel."),
-    "cta": ("Share CTA, then loop to frame 0.", "End card: logo, EPISODE 26 / 50, title, SHARE THIS with someone designing fantasy monsters; it lifts to reveal the hook frame and title again.",
-            "Cut (under the card) to the hook pose.", ("end card", "the Isle", "void"), "Day for the loop frame.", "End card; then the hook title.", "Loop.", "Outro: the theme's answer on celesta and music box, faded to silence by 59.7 s."),
+               "Wide orbit (dist 190).", ("full card", "island at golden hour", "stars"), "Golden hour.", "Full card.", "Block wipe to the end card.",
+               "Anthem: the theme in D major on flute, horns and glockenspiel; the World Engine chime as the card lands."),
+    "next": ("Say the part number, ask for the follow with a specific reason (part 27), and open the next loop: a dragon's shadow crosses the Isle.",
+             "The end card lifts onto the hook frame at golden hour; PART 26/50 with a 50-segment season bar; a pixel FOLLOW FOR PART 27 button pressed on 'Follow'; NEXT RUN 27 · DRAGONS with a dragon sprite; a huge winged shadow sweeps over the meadow and the Grimmaw looks up; then the hook title returns for the loop.",
+             "The hook pose (long lens), still.", ("progress bar, follow button, next-run card", "the Grimmaw and its herd under the dragon's shadow", "the Isle at golden hour"),
+             "Golden hour (low sun from the east, long shadows).", "PART 26/50 · FOLLOW FOR PART 27 · NEXT RUN: DRAGONS · A DRAGON LANDS HERE.", "Loop to frame 0.",
+             "Tease: the theme's opening as a question over a held A (the dominant), wingbeats on the shadow, the engine chime on 'Follow'; it resolves into frame 0's D minor on the loop."),
+    "cta": ("Share CTA.", "End card: logo, PART 26 / 50, title, SEND THIS to a monster designer.",
+            "Cut (under the block wipe) to the hook pose.", ("end card", "the Isle", "void"), "Golden hour (the loop frame).", "End card.", "The card lifts on 'Part'.",
+            "Outro: the theme's answer on celesta and music box."),
 }
 
 
@@ -458,14 +509,14 @@ def build():
         "format": {"version": "s2", "qa": {"min": 55.0, "max": 62.0}},
         "voice": {
             "provider": "kokoro",
-            "kokoro": {"voice": "af_heart", "lang": "a", "speed": 1.05},
+            "kokoro": {"voice": "af_heart", "lang": "a", "speed": 1.07},
             "elevenlabs": {"voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID", "model": "eleven_multilingual_v2",
                            "settings": {"stability": 0.5, "similarity_boost": 0.75, "style": 0.2, "use_speaker_boost": True}},
             "direction": "A curious lab-host energy: brisk, warm, a little playful. The hook is a genuine puzzle. 'Press run' is a small grin. "
                          "The year count is a quick, flat countdown. 'It ends it' lands low and slow. 'The fifth is the twist' teases. "
                          "Rules one to four are crisp list beats. 'Rule five? Delete the monster' is mischievous; the lesson is sure and warm.",
         },
-        "timing": {"leadIn": 0.2, "tail": 2.4, "shotLead": 0.12},
+        "timing": {"leadIn": 0.2, "tail": 0.85, "shotLead": 0.12},
         "captionY": 1238,
         "captionsOff": [{"line": "L6", "from": "It"}, {"line": "L14", "from": "Rule", "to": "Delete"}],
         "lines": [{"id": i, "shot": s, "text": t, "pauseAfter": p, "emphasis": em} for i, s, t, p, em in LINES],
@@ -478,11 +529,11 @@ def build():
         shot = {"id": s, "scene": "world", "purpose": n[0], "visual": n[1], "camera": n[2],
                 "layers": {"foreground": n[3][0], "midground": n[3][1], "background": n[3][2]}, "lighting": n[4],
                 "onScreenText": n[5], "transition": n[6], "music": n[7], "graphics": G[s], "sfx": SFX.get(s, [])}
-        if s in ("hook", "lesson", "cta"):
+        if s in ("hook", "lesson", "cta", "next"):
             shot["captions"] = False
         if s == "cta":
             shot["hideLogoBug"] = True
-            shot["hideLogoBugUntil"] = {"shot": "cta", "offset": 4.95}
+            shot["hideLogoBugUntil"] = cue("L19", "Part", 0.0)
         ep["shots"].append(shot)
     ep["music"] = MUSIC
     ep["mix"] = {"musicLufs": -25.0, "duckDb": -8.0, "sfxLufs": -29.0, "voiceFx": True}
@@ -501,7 +552,9 @@ def bed(sound, a, b, gain):
 
 
 SFX = {
-    "hook": [hit("sting", {"shot": "hook"}, -13), hit("worldRipple", {"shot": "hook", "offset": 0.05}, -17),
+    # The World Engine chime (SFX "chime"), Season 2's sound logo, at the same three moments every episode: frame 0
+    # (and so every loop), the lesson card, the follow press. On frame 0 it replaces v2's square-wave sting sound.
+    "hook": [hit("chime", {"shot": "hook"}, -11), hit("worldRipple", {"shot": "hook", "offset": 0.05}, -17),
              hit("roar", cue("L1", "eats", -0.15), -12), hit("stompHit", cue("L1", "eats", -0.15), -13)],
     "setup": [bed("stomp", cue("L2", "This"), cue("L2", "This", 2.2), -17), hit("cardSlide", cue("L2", "This", -0.1), -17),
               hit("check", cue("L2", "eats"), -20), hit("runPress", cue("L3", "run."), -11), hit("worldRipple", cue("L3", "run."), -16)],
@@ -521,8 +574,16 @@ SFX = {
               bed("simTicks", cue("L15", "The", 0.2), cue("L15", "starve.", 0.4), -22), bed("losses", cue("L15", "then"), cue("L15", "starve.", 0.5), -20),
               hit("crash", cue("L15", "starve."), -15)],
     "role": [hit("unlock", cue("L16", "job."), -10), hit("restore", cue("L16", "Grimmaw"), -12), hit("worldRipple", cue("L16", "together."), -14)],
-    "lesson": [hit("cardSlide", cue("L17", "Don't", -0.3), -18)],
-    "cta": [hit("restore", cue("L18", "Share", -0.3), -21)],
+    "lesson": [hit("engineWind", cue("L17", "Don't", -0.8), -15), hit("chime", cue("L17", "Don't", -0.3), -10),
+               hit("cardSlide", cue("L17", "Don't", -0.3), -18)],
+    "cta": [hit("restore", WIPE, -21)],
+    "next": [bed("simTicks", cue("L19", "Part", -0.05), cue("L19", "Part", 0.55), -22),
+             hit("engineWind", cue("L19", "Follow", -0.5), -15), hit("followPress", cue("L19", "Follow"), -11),
+             hit("chime", cue("L19", "Follow", 0.02), -11),
+             hit("cardSlide", cue("L19", "27:", -0.1), -18), hit("unlock", cue("L19", "dragon"), -15),
+             hit("dragonPass", cue("L19", "dragon", -0.15), -9),
+             # the wind-up into the loop: its catch lands 40 ms before the end, and frame 0 answers with the chime
+             hit("engineWind", {"end": True, "offset": -0.54}, -14)],
 }
 
 def msec(at, style, chords, key, **kw):
@@ -554,7 +615,8 @@ MUSIC = {
         msec(cue("L15", "then", -0.05), "crash", ["Dm"], "D minor"),
         msec(cue("L16", "Rule"), "swell", ["Bb", "F", "C", "A"], "D minor", beatsPerChord=2),
         msec(cue("L16", "together.", 0.0), "anthem", ["D", "G", "Bm", "A"], "D major"),
-        msec(cue("L18", "Share", -0.2), "outro", ["G", "D"], "D major"),
+        msec(cue("L18", "Send", -0.2), "outro", ["G", "D"], "D major"),
+        msec(cue("L19", "Part", -0.1), "tease", ["A5"], "D minor", beatsPerChord=32),
     ],
     "accents": [
         {"kind": "hit", "at": cue("L1", "extinct?"), "chord": "Dm"},
@@ -563,10 +625,14 @@ MUSIC = {
         {"kind": "stab", "at": cue("L13", "nothing"), "chord": "F"},
         {"kind": "cymbal", "at": cue("L13", "nothing")},
         {"kind": "hit", "at": cue("L16", "together."), "chord": "D"},
+        {"kind": "call", "at": cue("L19", "dragon"), "chord": "A"},           # the next creature
+        {"kind": "roll", "at": {"end": True, "offset": -0.05}, "chord": "A"}, # into the loop point
     ],
     # the half-second of silence after "Delete" (the glitch SFX owns it)
     "rests": [{"from": cue("L14", "Delete", 0.05), "to": cue("L15", "The", -0.02)}],
-    "fadeOut": {"at": {"shot": "cta", "offset": 3.5}, "dur": 1.5},
+    # no fade-out: the tease holds the dominant to the loop point (a click-free 80 ms at the very end), and the loop
+    # resolves it into frame 0's D minor
+    "fadeOut": {"fromEnd": 0.08},
     "gain": 0.55,
 }
 
@@ -579,29 +645,32 @@ BODY = (
     "and sleeps a lot, and slow breeding. Then the twist: delete the monster, and the grazers strip the meadow bare and starve instead. "
     "The predator was holding the island together.\n\n"
     "Don't design a monster. Design its place in the world.\n\n"
-    "Share this with someone designing fantasy monsters."
+    "Send this to a monster designer.\n\n"
+    "Part 26 of 50. Follow for part 27: a dragon lands on the Isle."
 )
 METADATA = {
     "youtube": {
         "title": "Don't Design a Monster. Design an Ecosystem. (Worldbuilding)",
         "titleAlternate": "Why your apex predator would starve",
-        "description": BODY + "\n\nEpisode 26 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: "
+        "description": BODY + "\n\nWorldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: "
         "every idea gets tested on one living island. Arc 6: Creatures and Species.\n\n" + TAGS,
-        "pinnedComment": "Design check: which of the five does your monster break? Prey, range, energy, breeding, or its role? Name the creature and the rule.",
+        "pinnedComment": "Design check: which of the five does your monster break? Prey, range, energy, breeding, or its role? Name the creature and the rule. "
+                         "(Part 27 drops a dragon on the Isle.)",
         "uploadSettings": "Altered or synthetic content: Yes (synthetic narration and an AI-generated creature sprite; the island and creatures are drawn in code). Not made for kids. Category: Education.",
     },
     "tiktok": {
-        "caption": "Your apex predator would starve 🦖 We ran it: it eats everything, then there's nothing left, then it's gone too. 5 rules for a believable monster, and #5 is the twist. " + TAGS,
+        "caption": "Your apex predator would starve 🦖 We ran it: it eats everything, then there's nothing left, then it's gone too. 5 rules for a believable monster, and #5 is the twist. "
+                   "Part 26/50 · follow for part 27: a dragon lands 🐉 " + TAGS,
         "pinnedComment": "Which rule does your monster break: prey, range, energy, breeding, or its role?",
         "uploadSettings": "Turn on 'AI-generated content' under More options before posting.",
     },
     "facebook": {
-        "caption": BODY + "\n\nEpisode 26 of 50. Season 2: The World Engine.\n\n" + TAGS,
+        "caption": BODY + "\n\nWorldcraft Shorts · Season 2: The World Engine.\n\n" + TAGS,
         "pinnedComment": "What keeps the scariest creature in your world from eating everything? Prey, territory, energy, breeding, or something it's needed for?",
         "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).",
     },
     "instagram": {
-        "caption": "Your monster would starve.\n\n" + BODY + "\n\nEpisode 26 of 50 · Worldcraft Shorts · Season 2\n\n" + TAGS,
+        "caption": "Your monster would starve.\n\n" + BODY + "\n\nWorldcraft Shorts · Season 2\n\n" + TAGS,
         "hookCheck": "First 26 characters: 'Your monster would starve.'",
         "pinnedComment": "Save the five-rule checklist, then tell us: which rule is your monster missing?",
         "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).",

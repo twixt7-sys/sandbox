@@ -16,7 +16,7 @@
   "kokoro": {
    "voice": "af_heart",
    "lang": "a",
-   "speed": 1.05
+   "speed": 1.07
   },
   "elevenlabs": {
    "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
@@ -32,7 +32,7 @@
  },
  "timing": {
   "leadIn": 0.2,
-  "tail": 2.4,
+  "tail": 0.85,
   "shotLead": 0.12
  },
  "captionY": 1238,
@@ -52,7 +52,7 @@
    "id": "L1",
    "shot": "hook",
    "text": "If your giant predator eats everything, why hasn't everything gone extinct?",
-   "pauseAfter": 0.45,
+   "pauseAfter": 0.38,
    "emphasis": [
     "everything,",
     "extinct?"
@@ -90,7 +90,7 @@
   {
    "id": "L5",
    "shot": "starve",
-   "text": "With nothing left to hunt, the Grimmaw starves too.",
+   "text": "With nothing to hunt, the Grimmaw starves too.",
    "pauseAfter": 0.3,
    "emphasis": [
     "starves"
@@ -100,7 +100,7 @@
    "id": "L6",
    "shot": "ends",
    "text": "A monster that eats everything doesn't rule your world. It ends it.",
-   "pauseAfter": 0.7,
+   "pauseAfter": 0.6,
    "emphasis": [
     "rule",
     "ends"
@@ -169,7 +169,7 @@
    "id": "L13",
    "shot": "run2",
    "text": "Now the numbers rise and fall, but nothing vanishes.",
-   "pauseAfter": 0.45,
+   "pauseAfter": 0.38,
    "emphasis": [
     "nothing",
     "vanishes."
@@ -198,7 +198,7 @@
    "id": "L16",
    "shot": "role",
    "text": "Rule five is its job. The Grimmaw holds the island together.",
-   "pauseAfter": 0.45,
+   "pauseAfter": 0.38,
    "emphasis": [
     "job.",
     "together."
@@ -208,7 +208,7 @@
    "id": "L17",
    "shot": "lesson",
    "text": "Don't design a monster. Design its place in the world.",
-   "pauseAfter": 0.4,
+   "pauseAfter": 0.35,
    "emphasis": [
     "monster.",
     "place"
@@ -217,10 +217,20 @@
   {
    "id": "L18",
    "shot": "cta",
-   "text": "Share this with someone designing fantasy monsters.",
-   "pauseAfter": 0.3,
+   "text": "Send this to a monster designer.",
+   "pauseAfter": 0.25,
    "emphasis": [
-    "share"
+    "send"
+   ]
+  },
+  {
+   "id": "L19",
+   "shot": "next",
+   "text": "Part 26 of 50. Follow for part 27: a dragon lands here.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "follow",
+    "dragon"
    ]
   }
  ],
@@ -318,11 +328,11 @@
    ],
    "sfx": [
     {
-     "sound": "sting",
+     "sound": "chime",
      "at": {
       "shot": "hook"
      },
-     "gain": -13
+     "gain": -11
     },
     {
      "sound": "worldRipple",
@@ -1488,7 +1498,23 @@
    "onScreenText": "5/5",
    "transition": "Card goes full.",
    "music": "Swell: strings and harp rise, a timpani roll into a big D-major hit on 'together'.",
-   "graphics": [],
+   "graphics": [
+    {
+     "type": "followChip",
+     "start": {
+      "line": "L16",
+      "word": "job.",
+      "offset": 0.3
+     },
+     "end": {
+      "line": "L17",
+      "word": "Don't",
+      "offset": -0.45
+     },
+     "text": "FOLLOW",
+     "sub": "PART 26/50"
+    }
+   ],
    "sfx": [
     {
      "sound": "unlock",
@@ -1524,13 +1550,13 @@
    "camera": "Wide orbit (dist 190).",
    "layers": {
     "foreground": "full card",
-    "midground": "island at dusk",
+    "midground": "island at golden hour",
     "background": "stars"
    },
-   "lighting": "Dusk.",
+   "lighting": "Golden hour.",
    "onScreenText": "Full card.",
    "transition": "Block wipe to the end card.",
-   "music": "Anthem: the theme in D major on flute, horns and glockenspiel.",
+   "music": "Anthem: the theme in D major on flute, horns and glockenspiel; the World Engine chime as the card lands.",
    "graphics": [
     {
      "type": "fieldCard",
@@ -1601,8 +1627,8 @@
      },
      "end": {
       "line": "L18",
-      "word": "Share",
-      "offset": -0.25
+      "word": "Send",
+      "offset": -0.3
      },
      "kicker": "BEFORE YOU DESIGN A MONSTER",
      "title": "GRIMMAW",
@@ -1614,6 +1640,24 @@
     }
    ],
    "sfx": [
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L17",
+      "word": "Don't",
+      "offset": -0.8
+     },
+     "gain": -15
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L17",
+      "word": "Don't",
+      "offset": -0.3
+     },
+     "gain": -10
+    },
     {
      "sound": "cardSlide",
      "at": {
@@ -1629,24 +1673,24 @@
   {
    "id": "cta",
    "scene": "world",
-   "purpose": "Share CTA, then loop to frame 0.",
-   "visual": "End card: logo, EPISODE 26 / 50, title, SHARE THIS with someone designing fantasy monsters; it lifts to reveal the hook frame and title again.",
-   "camera": "Cut (under the card) to the hook pose.",
+   "purpose": "Share CTA.",
+   "visual": "End card: logo, PART 26 / 50, title, SEND THIS to a monster designer.",
+   "camera": "Cut (under the block wipe) to the hook pose.",
    "layers": {
     "foreground": "end card",
     "midground": "the Isle",
     "background": "void"
    },
-   "lighting": "Day for the loop frame.",
-   "onScreenText": "End card; then the hook title.",
-   "transition": "Loop.",
-   "music": "Outro: the theme's answer on celesta and music box, faded to silence by 59.7 s.",
+   "lighting": "Golden hour (the loop frame).",
+   "onScreenText": "End card.",
+   "transition": "The card lifts on 'Part'.",
+   "music": "Outro: the theme's answer on celesta and music box.",
    "graphics": [
     {
      "type": "blockWipe",
      "at": {
       "line": "L18",
-      "word": "Share",
+      "word": "Send",
       "offset": -0.3
      },
      "dur": 0.34
@@ -1655,18 +1699,122 @@
      "type": "endCardS2",
      "start": {
       "line": "L18",
-      "word": "Share",
+      "word": "Send",
       "offset": -0.3
      },
      "end": {
-      "shot": "cta",
-      "offset": 4.85
+      "line": "L19",
+      "word": "Part",
+      "offset": -0.12
      },
      "fadeOut": 0.3,
-     "kicker": "EPISODE 26 / 50",
+     "kicker": "PART 26 / 50",
      "title": "Don't Design a Monster. Design an Ecosystem.",
-     "cta": "SHARE THIS",
-     "with": "with someone designing fantasy monsters"
+     "cta": "SEND THIS",
+     "with": "to a monster designer"
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L18",
+      "word": "Send",
+      "offset": -0.3
+     },
+     "gain": -21
+    }
+   ],
+   "captions": false,
+   "hideLogoBug": true,
+   "hideLogoBugUntil": {
+    "line": "L19",
+    "word": "Part"
+   }
+  },
+  {
+   "id": "next",
+   "scene": "world",
+   "purpose": "Say the part number, ask for the follow with a specific reason (part 27), and open the next loop: a dragon's shadow crosses the Isle.",
+   "visual": "The end card lifts onto the hook frame at golden hour; PART 26/50 with a 50-segment season bar; a pixel FOLLOW FOR PART 27 button pressed on 'Follow'; NEXT RUN 27 \u00b7 DRAGONS with a dragon sprite; a huge winged shadow sweeps over the meadow and the Grimmaw looks up; then the hook title returns for the loop.",
+   "camera": "The hook pose (long lens), still.",
+   "layers": {
+    "foreground": "progress bar, follow button, next-run card",
+    "midground": "the Grimmaw and its herd under the dragon's shadow",
+    "background": "the Isle at golden hour"
+   },
+   "lighting": "Golden hour (low sun from the east, long shadows).",
+   "onScreenText": "PART 26/50 \u00b7 FOLLOW FOR PART 27 \u00b7 NEXT RUN: DRAGONS \u00b7 A DRAGON LANDS HERE.",
+   "transition": "Loop to frame 0.",
+   "music": "Tease: the theme's opening as a question over a held A (the dominant), wingbeats on the shadow, the engine chime on 'Follow'; it resolves into frame 0's D minor on the loop.",
+   "graphics": [
+    {
+     "type": "seasonBar",
+     "y": 350,
+     "part": 26,
+     "of": 50,
+     "start": {
+      "line": "L19",
+      "word": "Part",
+      "offset": -0.1
+     },
+     "fillAt": {
+      "line": "L19",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "fillDur": 0.6,
+     "ofAt": {
+      "line": "L19",
+      "word": "50."
+     },
+     "end": {
+      "line": "L19",
+      "word": "here.",
+      "offset": 0.75
+     }
+    },
+    {
+     "type": "followButton",
+     "y": 556,
+     "start": {
+      "line": "L19",
+      "word": "Follow",
+      "offset": -0.6
+     },
+     "pressAt": {
+      "line": "L19",
+      "word": "Follow"
+     },
+     "end": {
+      "line": "L19",
+      "word": "here.",
+      "offset": 0.75
+     },
+     "text": "FOLLOW",
+     "doneText": "FOLLOWING",
+     "sub": "FOR PART 27"
+    },
+    {
+     "type": "nextRun",
+     "y": 772,
+     "start": {
+      "line": "L19",
+      "word": "27:",
+      "offset": -0.1
+     },
+     "revealAt": {
+      "line": "L19",
+      "word": "dragon"
+     },
+     "end": {
+      "line": "L19",
+      "word": "here.",
+      "offset": 0.75
+     },
+     "kicker": "NEXT RUN \u00b7 27",
+     "title": "DRAGONS",
+     "sub": "A DRAGON LANDS HERE."
     },
     {
      "type": "kinetic",
@@ -1682,8 +1830,9 @@
      "y": 452,
      "size": 100,
      "start": {
-      "shot": "cta",
-      "offset": 5.1
+      "line": "L19",
+      "word": "here.",
+      "offset": 0.85
      },
      "fadeIn": 0.4,
      "preShow": true
@@ -1691,21 +1840,81 @@
    ],
    "sfx": [
     {
-     "sound": "restore",
-     "at": {
-      "line": "L18",
-      "word": "Share",
-      "offset": -0.3
+     "sound": "simTicks",
+     "from": {
+      "line": "L19",
+      "word": "Part",
+      "offset": -0.05
      },
-     "gain": -21
+     "to": {
+      "line": "L19",
+      "word": "Part",
+      "offset": 0.55
+     },
+     "gain": -22
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L19",
+      "word": "Follow",
+      "offset": -0.5
+     },
+     "gain": -15
+    },
+    {
+     "sound": "followPress",
+     "at": {
+      "line": "L19",
+      "word": "Follow"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L19",
+      "word": "Follow",
+      "offset": 0.02
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L19",
+      "word": "27:",
+      "offset": -0.1
+     },
+     "gain": -18
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L19",
+      "word": "dragon"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "dragonPass",
+     "at": {
+      "line": "L19",
+      "word": "dragon",
+      "offset": -0.15
+     },
+     "gain": -9
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "end": true,
+      "offset": -0.54
+     },
+     "gain": -14
     }
    ],
-   "captions": false,
-   "hideLogoBug": true,
-   "hideLogoBugUntil": {
-    "shot": "cta",
-    "offset": 4.95
-   }
+   "captions": false
   }
  ],
  "world": {
@@ -2222,10 +2431,11 @@
    },
    {
     "at": {
-     "shot": "cta",
-     "offset": 3.6
+     "line": "L18",
+     "word": "Send",
+     "offset": -0.3
     },
-    "az": 21.48,
+    "az": 14.8176,
     "el": 8,
     "dist": 54,
     "target": [
@@ -2244,7 +2454,16 @@
     "at": {
      "shot": "hook"
     },
-    "mood": "day"
+    "mood": "golden"
+   },
+   {
+    "at": {
+     "line": "L2",
+     "word": "Let's",
+     "offset": -0.3
+    },
+    "mood": "day",
+    "dur": 1.3
    },
    {
     "at": {
@@ -2309,18 +2528,11 @@
    {
     "at": {
      "line": "L17",
-     "word": "Don't"
+     "word": "Don't",
+     "offset": -0.3
     },
-    "mood": "dusk",
-    "dur": 2.0
-   },
-   {
-    "at": {
-     "shot": "cta",
-     "offset": 3.6
-    },
-    "mood": "day",
-    "dur": 0.1
+    "mood": "golden",
+    "dur": 2.2
    }
   ],
   "herd": {
@@ -2530,18 +2742,19 @@
     [
      {
       "line": "L18",
-      "word": "Share",
-      "offset": 0.6
+      "word": "Send",
+      "offset": -0.3
      },
      150
     ],
     [
      {
-      "shot": "cta",
-      "offset": 3.0
+      "line": "L18",
+      "word": "Send",
+      "offset": -0.28
      },
      120,
-     "linear"
+     "step"
     ]
    ],
    "max": 380,
@@ -3140,8 +3353,30 @@
      },
      {
       "at": {
-       "shot": "cta",
-       "offset": 3.2
+       "line": "L18",
+       "word": "Send",
+       "offset": -0.3
+      },
+      "x": 8.0,
+      "z": -1.0,
+      "state": "idle",
+      "face": 10
+     },
+     {
+      "at": {
+       "line": "L19",
+       "word": "dragon",
+       "offset": 0.35
+      },
+      "x": 8.0,
+      "z": -1.0,
+      "state": "alert",
+      "face": 10
+     },
+     {
+      "at": {
+       "end": true,
+       "offset": -0.12
       },
       "x": 8.0,
       "z": -1.0,
@@ -3295,8 +3530,9 @@
      },
      {
       "at": {
-       "shot": "cta",
-       "offset": 3.2
+       "line": "L18",
+       "word": "Send",
+       "offset": -0.3
       },
       "x": 4.0,
       "z": -14.0,
@@ -3446,8 +3682,9 @@
      },
      {
       "at": {
-       "shot": "cta",
-       "offset": 3.2
+       "line": "L18",
+       "word": "Send",
+       "offset": -0.3
       },
       "x": 10.0,
       "z": 12.0,
@@ -3798,7 +4035,33 @@
      "r": 2.8
     }
    ]
-  }
+  },
+  "ambient": {
+   "birds": 9,
+   "motes": 40,
+   "glints": true
+  },
+  "flyers": [
+   {
+    "kind": "dragon",
+    "at": {
+     "line": "L19",
+     "word": "dragon",
+     "offset": -0.5
+    },
+    "dur": 2.4,
+    "from": [
+     -10.3,
+     7.2
+    ],
+    "to": [
+     26.3,
+     -9.2
+    ],
+    "height": 30,
+    "scale": 1.6
+   }
+  ]
  },
  "music": {
   "engine": "s2-score",
@@ -4049,7 +4312,7 @@
    {
     "from": {
      "line": "L18",
-     "word": "Share",
+     "word": "Send",
      "offset": -0.2
     },
     "style": "outro",
@@ -4058,6 +4321,19 @@
      "D"
     ],
     "key": "D major"
+   },
+   {
+    "from": {
+     "line": "L19",
+     "word": "Part",
+     "offset": -0.1
+    },
+    "style": "tease",
+    "chords": [
+     "A5"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 32
    }
   ],
   "accents": [
@@ -4107,6 +4383,22 @@
      "word": "together."
     },
     "chord": "D"
+   },
+   {
+    "kind": "call",
+    "at": {
+     "line": "L19",
+     "word": "dragon"
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "roll",
+    "at": {
+     "end": true,
+     "offset": -0.05
+    },
+    "chord": "A"
    }
   ],
   "rests": [
@@ -4124,11 +4416,7 @@
    }
   ],
   "fadeOut": {
-   "at": {
-    "shot": "cta",
-    "offset": 3.5
-   },
-   "dur": 1.5
+   "fromEnd": 0.08
   },
   "gain": 0.55
  },
@@ -4142,22 +4430,22 @@
   "youtube": {
    "title": "Don't Design a Monster. Design an Ecosystem. (Worldbuilding)",
    "titleAlternate": "Why your apex predator would starve",
-   "description": "If your giant predator eats everything, why hasn't everything gone extinct?\n\nWe ran it. The Grimmaw eats anything that moves. By year five the mossbacks are gone, and then the Grimmaw starves too. A monster that eats everything doesn't rule your world. It ends it.\n\nReal predators live inside limits: prey that breeds faster than it's eaten, one territory per predator, a big body that hunts rarely and sleeps a lot, and slow breeding. Then the twist: delete the monster, and the grazers strip the meadow bare and starve instead. The predator was holding the island together.\n\nDon't design a monster. Design its place in the world.\n\nShare this with someone designing fantasy monsters.\n\nEpisode 26 of 50 in Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 6: Creatures and Species.\n\n#Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts",
-   "pinnedComment": "Design check: which of the five does your monster break? Prey, range, energy, breeding, or its role? Name the creature and the rule.",
+   "description": "If your giant predator eats everything, why hasn't everything gone extinct?\n\nWe ran it. The Grimmaw eats anything that moves. By year five the mossbacks are gone, and then the Grimmaw starves too. A monster that eats everything doesn't rule your world. It ends it.\n\nReal predators live inside limits: prey that breeds faster than it's eaten, one territory per predator, a big body that hunts rarely and sleeps a lot, and slow breeding. Then the twist: delete the monster, and the grazers strip the meadow bare and starve instead. The predator was holding the island together.\n\nDon't design a monster. Design its place in the world.\n\nSend this to a monster designer.\n\nPart 26 of 50. Follow for part 27: a dragon lands on the Isle.\n\nWorldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 6: Creatures and Species.\n\n#Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts",
+   "pinnedComment": "Design check: which of the five does your monster break? Prey, range, energy, breeding, or its role? Name the creature and the rule. (Part 27 drops a dragon on the Isle.)",
    "uploadSettings": "Altered or synthetic content: Yes (synthetic narration and an AI-generated creature sprite; the island and creatures are drawn in code). Not made for kids. Category: Education."
   },
   "tiktok": {
-   "caption": "Your apex predator would starve \ud83e\udd96 We ran it: it eats everything, then there's nothing left, then it's gone too. 5 rules for a believable monster, and #5 is the twist. #Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts",
+   "caption": "Your apex predator would starve \ud83e\udd96 We ran it: it eats everything, then there's nothing left, then it's gone too. 5 rules for a believable monster, and #5 is the twist. Part 26/50 \u00b7 follow for part 27: a dragon lands \ud83d\udc09 #Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts",
    "pinnedComment": "Which rule does your monster break: prey, range, energy, breeding, or its role?",
    "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
   },
   "facebook": {
-   "caption": "If your giant predator eats everything, why hasn't everything gone extinct?\n\nWe ran it. The Grimmaw eats anything that moves. By year five the mossbacks are gone, and then the Grimmaw starves too. A monster that eats everything doesn't rule your world. It ends it.\n\nReal predators live inside limits: prey that breeds faster than it's eaten, one territory per predator, a big body that hunts rarely and sleeps a lot, and slow breeding. Then the twist: delete the monster, and the grazers strip the meadow bare and starve instead. The predator was holding the island together.\n\nDon't design a monster. Design its place in the world.\n\nShare this with someone designing fantasy monsters.\n\nEpisode 26 of 50. Season 2: The World Engine.\n\n#Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts",
+   "caption": "If your giant predator eats everything, why hasn't everything gone extinct?\n\nWe ran it. The Grimmaw eats anything that moves. By year five the mossbacks are gone, and then the Grimmaw starves too. A monster that eats everything doesn't rule your world. It ends it.\n\nReal predators live inside limits: prey that breeds faster than it's eaten, one territory per predator, a big body that hunts rarely and sleeps a lot, and slow breeding. Then the twist: delete the monster, and the grazers strip the meadow bare and starve instead. The predator was holding the island together.\n\nDon't design a monster. Design its place in the world.\n\nSend this to a monster designer.\n\nPart 26 of 50. Follow for part 27: a dragon lands on the Isle.\n\nWorldcraft Shorts \u00b7 Season 2: The World Engine.\n\n#Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts",
    "pinnedComment": "What keeps the scariest creature in your world from eating everything? Prey, territory, energy, breeding, or something it's needed for?",
    "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
   },
   "instagram": {
-   "caption": "Your monster would starve.\n\nIf your giant predator eats everything, why hasn't everything gone extinct?\n\nWe ran it. The Grimmaw eats anything that moves. By year five the mossbacks are gone, and then the Grimmaw starves too. A monster that eats everything doesn't rule your world. It ends it.\n\nReal predators live inside limits: prey that breeds faster than it's eaten, one territory per predator, a big body that hunts rarely and sleeps a lot, and slow breeding. Then the twist: delete the monster, and the grazers strip the meadow bare and starve instead. The predator was holding the island together.\n\nDon't design a monster. Design its place in the world.\n\nShare this with someone designing fantasy monsters.\n\nEpisode 26 of 50 \u00b7 Worldcraft Shorts \u00b7 Season 2\n\n#Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts",
+   "caption": "Your monster would starve.\n\nIf your giant predator eats everything, why hasn't everything gone extinct?\n\nWe ran it. The Grimmaw eats anything that moves. By year five the mossbacks are gone, and then the Grimmaw starves too. A monster that eats everything doesn't rule your world. It ends it.\n\nReal predators live inside limits: prey that breeds faster than it's eaten, one territory per predator, a big body that hunts rarely and sleeps a lot, and slow breeding. Then the twist: delete the monster, and the grazers strip the meadow bare and starve instead. The predator was holding the island together.\n\nDon't design a monster. Design its place in the world.\n\nSend this to a monster designer.\n\nPart 26 of 50. Follow for part 27: a dragon lands on the Isle.\n\nWorldcraft Shorts \u00b7 Season 2\n\n#Worldbuilding #FantasyWriting #CreatureDesign #WritingTips #WorldcraftShorts",
    "hookCheck": "First 26 characters: 'Your monster would starve.'",
    "pinnedComment": "Save the five-rule checklist, then tell us: which rule is your monster missing?",
    "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."

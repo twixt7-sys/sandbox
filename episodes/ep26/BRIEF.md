@@ -5,9 +5,9 @@
 **Plan entry** (`docs/SERIES_PLAN.md`):
 - Hook: "If your giant predator eats everything, why hasn't everything gone extinct?"
 - Topic: creature ecology.
-- CTA (a share CTA): "Share this with someone designing fantasy monsters."
+- CTA (a share CTA): "Share this with someone designing fantasy monsters." v3 tightens it to "Send this to a monster designer." and adds the ending formula: "Part 26 of 50. Follow for part 27: a dragon lands here."
 
-**Deliverable:** a 60.3 s vertical Short (1080×1920, 30 fps) for YouTube Shorts, TikTok and Facebook Reels, plus Instagram Reels captions. The AI disclosure is on everywhere.
+**Deliverable:** a 60.97 s vertical Short (1080×1920, 30 fps; v1/v2 ran 60.3 s) for YouTube Shorts, TikTok and Facebook Reels, plus Instagram Reels captions. The AI disclosure is on everywhere.
 
 **Shot list and timings:** [`STORYBOARD.md`](STORYBOARD.md), generated from `episode.json` and the measured `timing.json`. The script that writes `episode.json`, including the whole world timeline, is `make_ep26.py`.
 
@@ -42,6 +42,43 @@ Checked objectively, since I can't hear:
 - the theme is checked against every chord it plays over;
 - the score's loudness envelope follows the story arc;
 - EP25's audio is still bit-identical.
+
+## v3 (2 Nov 2026): the viral ending, golden hour, ambient life, the engine chime
+
+The user's request (verbatim): "do 1 2 and 3 and try to put in a recursive audio like in season 1 with the bells but make it different in this season. verbalize the episode number and urge a follow in the most effective way you can research and apply. make this video truly viral worthy and repeatable."
+
+Items 1–3 were from my list of next improvements: (1) a next-episode tease, (2) golden-hour light for the hook and the lesson, (3) ambient life on the Isle.
+
+What changed in v3:
+
+1. **The ending formula** (now a Season 2 rule; see `docs/STYLE_S2.md` → "The ending formula"). The research behind it is in `docs/SEASON2_RESEARCH.md` §6; the key claims were re-read on the source pages, and one widely repeated number turned out not to be on the page it was attributed to.
+   - **New last line:** "Part 26 of 50. Follow for part 27: a dragon lands here." The share ask became "Send this to a monster designer."
+   - **Part number, said and shown:** a 50-segment season bar fills to 26 as "Part 26" is spoken.
+   - **The follow:** a pixel pointer taps "+ FOLLOW / FOR PART 27" exactly on the word "Follow". The button presses, flashes, throws sparks and flips to "✓ FOLLOWING", the platform's own follow animation in World Engine pixels.
+   - **The next run:** a NEXT RUN · 27 card shows a locked dragon silhouette and "???", which decodes to DRAGONS on the word "dragon".
+   - **The tease, in the world:** a dragon's shadow, about three frames wide, sweeps over the meadow. The herd and the Grimmaw go dark, the Grimmaw looks up at the sky (new `alert` state), wingbeats pan across, and a horn call sounds in open fifths. The dragon itself is never shown; EP27 closes that loop.
+   - **A light mid-video nudge:** "+ FOLLOW · PART 26/50" sits top-right for about 2 s, right *after* "Rule five is its job." lands (78 % through), never before the payoff.
+2. **The World Engine chime: Season 2's sound logo**, the answer to Season 1's bells.
+   - **The sound:** a rising open fifth (D5 A5 D6 A6) on a sampled music box with 8-bit square blips, ringing D7 on music box and glockenspiel.
+   - **Its wind-up:** a clockwork ratchet that winds into it.
+   - **Different from S1 by design:** S1's bells were inharmonic sine partials rung over intro/outro chords. This is mechanical, 8-bit and tied to *actions*.
+   - **Three fixed moments every episode:** frame 0 (and so every loop), the lesson card landing, and the follow press.
+   - **Placement in the mix:** rendered once from the score's SoundFont and played as an SFX, so the voice ducking never buries it. It sits about 6–7 LU under the voice and above the music at all three moments.
+   - **The loop seam:** the last 0.54 s winds the engine up, so a looping viewer hears the ratchet land on frame 0's chime.
+   - **Music under the ending:** a new `tease` style holds the dominant (A, open fifths) under the theme's first bar, asked as a question, with a timpani roll swelling into the loop point. The loop resolves it into frame 0's D minor.
+3. **Golden hour:**
+   - frame 0 and the ending are now `golden`: a low sun from the camera's front-right, warm faces, long shadows and an amber glow behind the island;
+   - the light turns to day on "Let's test it." and back to golden for the lesson;
+   - the last frame still matches frame 0 (same camera pose to 0.04°, same light, hook title back).
+4. **Real shadows everywhere (a bug fix).** The shadow camera never received its ±38-unit bounds: R3F sets them, but three.js needs the projection rebuilt. So v1 and v2 only had cast shadows within about 5 units of the island's centre, and the Grimmaw never cast one. `Lights` now rebuilds it, and creatures also *receive* shadows (shade under trees, the island's shadows, the dragon's).
+5. **Ambient life** on every shot, by default:
+   - two loose flocks of voxel birds circling the Isle;
+   - pollen motes drifting over the meadows (warm in golden light);
+   - glints twinkling on the lake.
+6. **Smaller things:**
+   - a cue relative to the episode's end (`{"end": true, "offset": …}`), in both Python and Remotion;
+   - the loop camera computes its drift from the measured timing (`loop_span()`), so it lands exactly on frame 0's pose;
+   - narration speed is 1.07, with shorter pauses on four lines, so 169 words fit in 60.97 s.
 
 ## The brief
 
@@ -114,17 +151,23 @@ Everything is in `docs/SEASON2_RESEARCH.md` (sources read 1 Nov 2026, with unver
 - **Art:** one Figma generation (§5), re-gridded by the new `pipeline/pixelate.py`.
 - **Fonts** (Fontsource, SIL OFL, self-hosted in `public/fonts/`): Silkscreen, Pixelify Sans and Inter 900 are new; Cormorant Garamond is kept for the two serif lines.
 
-## 3. Narration (159 words, measured 51.55 s of speech, 60.3 s total)
+## 3. Narration (v3: 169 words, measured 53.9 s of speech, 60.97 s total)
 
-> If your giant predator eats everything, why hasn't everything gone extinct? Let's test it. This is the Grimmaw. It eats anything that moves. Press run. Year one: mossbacks everywhere. Year three: thinning. Year five: gone. With nothing left to hunt, the Grimmaw starves too. A monster that eats everything doesn't rule your world. It ends it. Real predators live inside limits. Four are easy. The fifth is the twist. One: prey that breeds faster than it's eaten. Two: territory. One Grimmaw needs a whole valley. Three: energy. A body this big hunts rarely and sleeps a lot. Four: slow breeding. One cub every few winters. Run it again. Now the numbers rise and fall, but nothing vanishes. Rule five? Delete the monster. The mossbacks boom, strip the meadow bare, then starve. Rule five is its job. The Grimmaw holds the island together. Don't design a monster. Design its place in the world. Share this with someone designing fantasy monsters.
+> If your giant predator eats everything, why hasn't everything gone extinct? Let's test it. This is the Grimmaw. It eats anything that moves. Press run. Year one: mossbacks everywhere. Year three: thinning. Year five: gone. With nothing to hunt, the Grimmaw starves too. A monster that eats everything doesn't rule your world. It ends it. Real predators live inside limits. Four are easy. The fifth is the twist. One: prey that breeds faster than it's eaten. Two: territory. One Grimmaw needs a whole valley. Three: energy. A body this big hunts rarely and sleeps a lot. Four: slow breeding. One cub every few winters. Run it again. Now the numbers rise and fall, but nothing vanishes. Rule five? Delete the monster. The mossbacks boom, strip the meadow bare, then starve. Rule five is its job. The Grimmaw holds the island together. Don't design a monster. Design its place in the world. Send this to a monster designer. Part 26 of 50. Follow for part 27: a dragon lands here.
 
-- **Measured with the real TTS** before any cue was set. At speed 1.0 it ran 61.86 s; at **1.05** it runs **60.30 s**, a brisker host read.
-- **G2P checked:** "Grimmaw" → ɡɹˈɪmɔ (GRIM-aw), "mossbacks" → mˈɔsbˌæks.
-- **Landmarks:**
-  - re-hook "The fifth is the twist" at **24.1 s**;
-  - "Delete" at **43.24 s**;
-  - "together" at **50.56 s**;
-  - CTA ends at **57.6 s**, then a 2.4 s tail under the end card and the loop.
+- **Measured with the real TTS** before any cue was set.
+  - v1/v2: 159 words at speed 1.05 ran 60.30 s.
+  - v3 adds the ending formula (+10 words net). At **1.07**, with four pauses trimmed and "nothing left to hunt" → "nothing to hunt", it runs **60.97 s**, inside the 55–62 s window.
+- **G2P checked:** "Grimmaw" → ɡɹˈɪmɔ (GRIM-aw), "mossbacks" → mˈɔsbˌæks; "26", "50" and "27:" read as numbers.
+- **Landmarks (v3):**
+  - re-hook "The fifth is the twist" at about 24 s;
+  - "Delete" at about 43 s;
+  - "together" at **49.56 s**;
+  - "Send" at **53.62 s**;
+  - "Part" at **55.35 s**;
+  - "Follow" at **57.06 s**;
+  - "dragon" at **58.80 s**;
+  - the line ends at 59.87 s, then a 1.1 s tail (shadow pass, wind-up) into the loop.
 
 ## 4. Timed storyboard
 
@@ -155,6 +198,7 @@ Everything is in `docs/SEASON2_RESEARCH.md` (sources read 1 Nov 2026, with unver
 - **Code-drawn:** everything else.
   - The island and its strata, every creature (the voxel Grimmaw was built to match the sprite's palette and silhouette), the herd and its births, territory rings, snow, overgrazing, the forest thinning.
   - The HUD, graphs, cards, stamps, sting, end card, all type.
+  - v3: the season bar, follow button, pointer, next-run card, the top-down `dragon` icon (hand-placed pixels in `Pixel.tsx`), the dragon's shadow, birds, pollen and water glints, and the World Engine chime (rendered from the free SoundFont). No new generations.
 - **No readable text in any generated image.** The creatures are original.
 
 ## 6. Final video and verification
@@ -215,6 +259,12 @@ All are documented in `README.md` (Season 2 building blocks) and `docs/STYLE_S2.
 - **Music (v2):** `music_s2.py`, the composed-score engine (tempo map to picture, the series theme, 14 arrangement styles, accents, rests, fade).
 - **Mix (v2):** `mix.voiceFx` narration polish.
 - **World (v2):** the `roar` predator state and the `dust` layer.
+- **v3:**
+  - **World:** the `golden` mood (and a sun direction per mood); the shadow-camera fix and creature shadows; `ambient` (birds, motes, water glints); `flyers` (shadow-only creatures); the `alert` predator state.
+  - **Ending overlays:** `seasonBar`, `followButton`, `nextRun`, `followChip`; sprites `plus`, `hand`, `dragon`, and `mono` silhouettes in `PixelSprite`.
+  - **Sound:** `chime` (the World Engine chime, `music_s2.render_chime()`), `engineWind`, `followPress`, `dragonPass`.
+  - **Music:** the `tease` style, `call` and `roll` accents, `fadeOut.fromEnd`, the `5` (open-fifth) chord.
+  - **Cues:** `{"end": true}` in `common.resolve_cue` and `cueTime`.
 - **Sound:** `score_s2.py` (beat-grid music with layered sections, drones and fade-out, plus the SFX palette: `sting`, `runPress`, `simTicks`, `births`, `losses`, `stamp`, `rewind`, `ringOn`, `snowAir`, `sleepZ`, `cubPop`, `delete`, `restore`, `cardSlide`, `check`, `unlock`, `worldRipple`, `stomp`, `crash`, `boomPop`).
 - **Pipeline:**
   - `pixelate.py`;
@@ -227,7 +277,7 @@ All are documented in `README.md` (Season 2 building blocks) and `docs/STYLE_S2.
 
 ## 8. Cost (₱63.35 = $1)
 
-**$0 cash.** One Figma AI generation (of the ~12 allowed for EP26). Everything else is free and open: Kokoro, fonts, three.js, the container. Details in `docs/COSTS.md`.
+**$0 cash.** One Figma AI generation (of the ~12 allowed for EP26), none in v2 or v3. Everything else is free and open: Kokoro, the MuseScore General SoundFont, fonts, three.js, the container. Details in `docs/COSTS.md`.
 
 ## 9. Platform metadata
 
@@ -236,6 +286,7 @@ In `episode.json → metadata`, and ready to paste in `docs/DISTRIBUTION.md` ("E
 - TikTok caption: 244 characters.
 - Instagram hook: "Your monster would starve."
 - Pinned comments ask which of the five rules the viewer's monster breaks.
+- v3: every description now ends with the ending formula ("Send this to a monster designer. Part 26 of 50. Follow for part 27: a dragon lands on the Isle."). The TikTok caption carries "Part 26/50 · follow for part 27: a dragon lands 🐉", and the YouTube pinned comment adds "(Part 27 drops a dragon on the Isle.)".
 - AI label ON on all four platforms.
 
 ## 10. Experiments and metrics
@@ -247,7 +298,12 @@ In `episode.json → metadata`, and ready to paste in `docs/DISTRIBUTION.md` ("E
   - **replays** (the loop).
 - **Re-hook check:** in YouTube Studio's retention curve, look for a dip at about 20 s and a recovery after "The fifth is the twist". A cliff instead means the run-1 / drop section is too long.
 - **Save signal:** the full card at 51–55 s is designed as the screenshot moment. If comments quote the five rules, keep the card format; if not, try a "save this" kicker on the card.
-- **A/B idea for EP27:** the same format with the Isle seen at golden hour, to test whether warmer light lifts the first-second hold.
+- **Golden hour (v3):** EP26 now opens at golden hour, so compare its "viewed vs swiped away" with EP27 (also golden) against the day-lit v1/v2 look, if v2 was ever posted. If not, alternate golden and day hooks across EP27–EP30.
+- **The ending formula (v3):**
+  - **Follows per 1,000 views:** EP26–EP30 against EP21–EP25. The number is said and shown, the ask is specific, and the button press is on the word.
+  - **Retention at 55 s:** if many viewers leave at the share card, swap its order with the follow line in EP27.
+  - **The mid-video chip:** if it costs watch time at 48–50 s, drop it.
+- **The chime:** after 3–4 episodes, check whether comments mention it ("the ding"); recognisable sound logos tend to get named.
 
 ## 11. How to produce EP27 ("What Would Dragons Actually Change?", Arc 6)
 
@@ -263,7 +319,8 @@ In `episode.json → metadata`, and ready to paste in `docs/DISTRIBUTION.md` ("E
    - CTA (a comment CTA): "What would your civilization invent to survive dragons?"
 
 3. **Story on the Isle** (it grows: EP27 adds the first village):
-   - **Hook:** a naive village on the meadow (thatched roofs, open pens, a hilltop hall) and a dragon's shadow sweeping the island.
+   - **Close EP26's open loop first.** EP26 ends on "a dragon lands here" with its shadow crossing the meadow. EP27's frame 0 is the payoff: the dragon *landing* on the Isle, in golden light, with the Grimmaw looking up (the same hook pose, so returning viewers recognise the spot).
+   - **Hook:** a naive village on the meadow (thatched roofs, open pens, a hilltop hall) and the dragon's shadow sweeping the island.
    - **Run 1:** the dragon flies its route, roofs char (voxels turn black and smoke, nobody shown), the LIVESTOCK counter falls, and the trade road empties.
    - **Re-hook:** a field card for the DRAGON (one Figma pixel sprite, then `pixelate.py`), with four easy rows and one locked.
    - **The fixes, each one visible in the world:**
@@ -279,25 +336,36 @@ In `episode.json → metadata`, and ready to paste in `docs/DISTRIBUTION.md` ("E
 
 4. **New pieces this needs** (add to `src/s2/world/`; outline them like the Grimmaw):
    - voxel buildings with a roof material switch (thatch → slate) and a `char` amount;
-   - a flying dragon (wing-flap gait, flight keys with altitude, a ground shadow);
+   - a flying dragon (wing-flap gait, flight keys with altitude). Its ground shadow already exists: `flyers` in `timeline.ts` / `Flyer` in `WorldScene.tsx` (keep the wings flat under a low sun, or the shadow jumps). Match the top-down silhouette of the `dragon` sprite in `Pixel.tsx`, which EP26's NEXT RUN card showed;
    - livestock (re-skin `Herd`: white sheep with dark heads);
    - a `settlement` layer.
    - Reuse everything else: sim bar counters (e.g. ROOFS, LIVESTOCK, TRADE), graphs, field card, stamps, rewind, end card.
    - Use a comment CTA on `endCardS2` (`cta: "COMMENT"` with a speech-bubble sprite, which you'll need to add to `Pixel.tsx`).
 
-5. **Music:** copy EP26's `MUSIC` plan (`"engine": "s2-score"`). Keep the series theme (it's the sonic logo), pick a style per beat (a `drive` for each run, `build` layers as the fixes switch on, `anthem` for the lesson), and put an accent (`hit` / `boom` / `stab`) on each punchline. Check the loudness envelope and the instrument list as in §v2, since you can't listen either.
+5. **Music and the sound logo:**
+   - Copy EP26's `MUSIC` plan (`"engine": "s2-score"`) and keep the series theme.
+   - Pick a style per beat: a `drive` for each run, `build` layers as the fixes switch on, `anthem` for the lesson, `outro` under the ask, and `tease` for the last line.
+   - Put an accent (`hit` / `boom` / `stab`) on each punchline, and a `call` + `roll` on the tease.
+   - Keep the **World Engine chime** (SFX `chime`) at its three moments: frame 0, the lesson card and the follow press. Put `engineWind` 0.5 s before the lesson chime and the follow chime, and at `{"end": true, "offset": -0.54}`.
+   - Check the loudness envelope, the instrument list and the chime's level against the voice (§v3), since you can't listen either.
+6. **The ending formula** (`docs/STYLE_S2.md`):
+   - **Last line:** "Part 27 of 50. Follow for part 28: <tease>". EP28 is intelligent species, so for example "something on the Isle learns to build."
+   - **Overlays:** copy EP26's `G["next"]` block and change the numbers (PART 27 / 50, FOR PART 28, NEXT RUN · 28) and the title.
+   - **The in-world tease:** pick one for EP28, such as stacked stones appearing overnight or a mossback carrying a stick.
+   - **The ask before it:** EP27's plan has a comment CTA, so the end card carries it: `cta: "COMMENT"` with a speech-bubble sprite.
+   - **Mid-video:** keep `followChip` after the payoff.
 
-6. **Art:** Figma credits need the user's go-ahead for each new episode (`CLAUDE.md`), and in EP26 this session's permission check blocked 2 of 3 generate calls. **Ask first** with AskUserQuestion: 1–2 generations for the dragon sprite. Fallback: local SDXL (`pipeline/local_stills.py`, prompt for a pixel-art sprite on a flat navy background), then `pixelate.py`.
+7. **Art:** Figma credits need the user's go-ahead for each new episode (`CLAUDE.md`), and in EP26 this session's permission check blocked 2 of 3 generate calls. **Ask first** with AskUserQuestion: 1–2 generations for the dragon sprite. Fallback: local SDXL (`pipeline/local_stills.py`, prompt for a pixel-art sprite on a flat navy background), then `pixelate.py`.
 
-7. **Narration:** 140–160 words, Kokoro `af_heart` at speed 1.05, measured before cueing. Check "dragon" names in the G2P if you invent one.
+8. **Narration:** about 160–170 words including the ending formula, Kokoro `af_heart` at speed 1.05–1.07, measured before cueing. Run `tts.py` *before* `make_ep27.py` (the loop camera reads the timing). Check "dragon" names in the G2P if you invent one.
 
-8. **Then:**
+9. **Then:**
    - `python episodes/ep27/make_ep27.py` → `pipeline/build.sh ep27`;
    - beat stills with `node pipeline/stills.mjs` and `tile.py`;
-   - render with `--gl=swangle` (EP26: 10.5 min), then `qa.py` (55–62 s), the sheet and beat frames including the loop tail;
+   - render with `--gl=swangle` (EP26 v3: about 20 min with full shadows), then `qa.py` (55–62 s), the sheet and beat frames including the loop tail;
    - `pipeline/encode.sh ep27` (1600k download), with `qa.py` on each;
    - `srt.py`, `storyboard.py`, the cover, the 11-section brief, docs (COSTS, DISTRIBUTION, README, STYLE_S2 if a rule changes);
    - a **new** preview page (same pattern as EP26's) with the Download button, then SendUserFile;
    - push to the episode branch.
 
-9. **Scope after EP27:** EP28 intelligent species, EP29 immortality, EP30 a monster people worship. The Isle keeps what earlier episodes added (village, roads), so plan landmarks with `island.ts` `LANDMARKS`.
+10. **Scope after EP27:** EP28 intelligent species, EP29 immortality, EP30 a monster people worship. The Isle keeps what earlier episodes added (village, roads), so plan landmarks with `island.ts` `LANDMARKS`.

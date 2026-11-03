@@ -12,7 +12,9 @@ on:
   workflow_run:
     workflows: ["Instagram daily post"]
     types: [completed]
-  # Fallback in case the Instagram run didn't happen. The 12-hour gap stops a second post.
+  # Catch-up in case the run after Instagram was missed. It only posts an episode Instagram has
+  # already posted (tiktok.followInstagram), so it never gets TikTok ahead; the 12-hour gap stops a
+  # second post.
   schedule:
     - cron: "47 22 * * *" # 22:47 UTC = 06:47 Manila
   workflow_dispatch:

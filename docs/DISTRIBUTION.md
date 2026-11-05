@@ -1793,3 +1793,93 @@ YouTube's rules only require disclosure for realistic content, and this is clear
 - **Hook check:** First 26 characters: 'Your monster would starve.'
 - **Pinned comment:** Save the five-rule checklist, then tell us: which rule is your monster missing?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 27 captions (ready to paste) — Season 2, Arc 6
+
+Source of truth: `episodes/ep27/episode.json` → `metadata`. Every description ends with the Season 2 ending formula ("Part 27 of 50. Follow for part 28: …"), matching the video's last line. The AI label goes on for all four platforms. Cover: `episodes/ep27/Worldcraft_Short_E27_cover.jpg`. Subtitles: `episodes/ep27/ep27.srt`.
+
+**Disclosure.** As in EP26, the island, the village, the dragon model, the HUD and every number are drawn and simulated in code. Two things are AI-made:
+- the narration (Kokoro synthetic voice);
+- the field card's dragon sprite (Figma `generate_image`, re-gridded by `pipeline/pixelate.py`).
+
+The AI label stays on everywhere (series policy). No one is harmed on screen: no people appear, roofs char with nobody in them, and lost livestock is a falling counter.
+
+**Closing EP26's loop.** EP26 ended "a dragon lands here". EP27 opens with the dragon perched on the Grimmaw's meadow. When EP27 goes up, reply to the top comments on EP26 with its link, and pin it in EP26's comments where the platform allows a second pin. The comment CTA ("What would your civilization invent to survive dragons?") is EP27's experiment: compare comments per 1,000 views with EP26's share CTA.
+
+**Posting part 28.** The video promises "something on the Isle learns to build" (a cairn stacks itself on the lake shore). Do the same reply-and-pin on EP27 when EP28 is posted.
+
+### YouTube Shorts
+- **Title** (51/100 chars): `What Would Dragons Actually Change? (Worldbuilding)`
+- **Alternate title** (38 chars): `Your village wouldn't survive a dragon`
+- **Description:**
+
+> If dragons existed, your world's architecture would look very different.
+>
+> We ran it. A village built before the dragon came: thatch roofs, open pens, a trade road across open meadow. Week one, the thatch burns. Week two, the pens are empty. Week three, no one travels. Nobody fought a war; the village just stopped working.
+>
+> So rebuild it: slate and turf roofs, flocks in covered barns, the village moved into a valley out of sight, and trade at night under the trees. Then the twist: someone has to watch the sky. A tower rises with a bell, and whoever rings it decides when everyone hides. The dragon changed who's in charge.
+>
+> Don't just add a dragon. Ask what ordinary people do differently.
+>
+> What would your civilization invent to survive dragons? Comment below.
+>
+> Part 27 of 50. Follow for part 28: something on the Isle learns to build.
+>
+> Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 6: Creatures and Species.
+>
+> #Worldbuilding #FantasyWriting #Dragons #WritingTips #WorldcraftShorts
+
+- **Pinned comment:** Comment check: what would YOUR civilization invent to survive dragons? Roofs, barns, tunnels, bells, something stranger? (Part 28: something on the Isle learns to build.)
+- **Upload settings:** Altered or synthetic content: Yes (synthetic narration and an AI-generated dragon sprite; the island, village and creatures are drawn in code). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (329 chars): `Dragons wouldn't need to fight you. Your village would just stop working 🐉 We ran it: thatch burns, pens empty, roads empty. 4 fixes, and #5 is the twist: whoever rings the bell holds the power. What would your world invent? Part 27/50 · follow for part 28 🪨 #Worldbuilding #FantasyWriting #Dragons #WritingTips #WorldcraftShorts`
+- **Pinned comment:** What would your civilization invent to survive dragons?
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> If dragons existed, your world's architecture would look very different.
+>
+> We ran it. A village built before the dragon came: thatch roofs, open pens, a trade road across open meadow. Week one, the thatch burns. Week two, the pens are empty. Week three, no one travels. Nobody fought a war; the village just stopped working.
+>
+> So rebuild it: slate and turf roofs, flocks in covered barns, the village moved into a valley out of sight, and trade at night under the trees. Then the twist: someone has to watch the sky. A tower rises with a bell, and whoever rings it decides when everyone hides. The dragon changed who's in charge.
+>
+> Don't just add a dragon. Ask what ordinary people do differently.
+>
+> What would your civilization invent to survive dragons? Comment below.
+>
+> Part 27 of 50. Follow for part 28: something on the Isle learns to build.
+>
+> Worldcraft Shorts · Season 2: The World Engine.
+>
+> #Worldbuilding #FantasyWriting #Dragons #WritingTips #WorldcraftShorts
+
+- **Pinned comment:** If dragons were real where you live, what would change first: roofs, farms, roads, or who's in charge?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Dragons change architecture.
+>
+> If dragons existed, your world's architecture would look very different.
+>
+> We ran it. A village built before the dragon came: thatch roofs, open pens, a trade road across open meadow. Week one, the thatch burns. Week two, the pens are empty. Week three, no one travels. Nobody fought a war; the village just stopped working.
+>
+> So rebuild it: slate and turf roofs, flocks in covered barns, the village moved into a valley out of sight, and trade at night under the trees. Then the twist: someone has to watch the sky. A tower rises with a bell, and whoever rings it decides when everyone hides. The dragon changed who's in charge.
+>
+> Don't just add a dragon. Ask what ordinary people do differently.
+>
+> What would your civilization invent to survive dragons? Comment below.
+>
+> Part 27 of 50. Follow for part 28: something on the Isle learns to build.
+>
+> Worldcraft Shorts · Season 2
+>
+> #Worldbuilding #FantasyWriting #Dragons #WritingTips #WorldcraftShorts
+
+- **Hook check:** First 28 characters: 'Dragons change architecture.'
+- **Pinned comment:** Save the dragon-proof checklist, then tell us: what would your civilization invent to survive dragons?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

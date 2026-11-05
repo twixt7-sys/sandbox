@@ -7,9 +7,11 @@ import {buildHerd, Grimmaw, GrimmawPose, Herd, HerdAgent} from './Creatures';
 import {Column, Island, isle} from './island';
 import {BIOME_COLORS, DIRT, IslandMesh} from './IslandMesh';
 import {Cam, camPose, Lights, Stage, sunDir} from './Stage';
-import {cameraAt, herdCount, moodAt, predatorAt, simTime, World} from './timeline';
+import {cameraAt, dragonAt, herdCount, moodAt, predatorAt, simTime, World} from './timeline';
+import {Dragon} from './Dragon';
+import {Cairn, roadAt, SettlementLayer} from './Settlement';
 
-export type S2State = {world: World; t: number; cam: Cam; island: Island; agents: HerdAgent[]};
+export type S2State = {world: World; t: number; cam: Cam; island: Island; agents: HerdAgent[]; agentsB?: HerdAgent[]};
 export const S2Context = createContext<S2State | null>(null);
 export const useS2 = () => {
 	const c = useContext(S2Context);
@@ -71,7 +73,8 @@ export const grimmawPose = (island: Island, keys: World['predators'][number], t:
 	const roar = p.state === 'roar' ? smoothstep(0, 0.25, since) * (1 - smoothstep(0.85, 1.4, since)) : 0;
 	// alert: the head comes up to watch the sky, then settles back over `until`
 	const span = p.until - p.since;
-	const alert = p.state === 'alert' ? smoothstep(0, 0.35, since) * (Number.isFinite(span) ? 1 - smoothstep(Math.max(0.35, span - 0.45), Math.max(0.4, span), since) : 1) : 0;
+	// gaze (EP27+): the alert pose held from its first frame (frame 0 and the loop frame look up at the dragon)
+	const alert = p.state === 'gaze' ? 1 : p.state === 'alert' ? smoothstep(0, 0.35, since) * (Number.isFinite(span) ? 1 - smoothstep(Math.max(0.35, span - 0.45), Math.max(0.4, span), since) : 1) : 0;
 	// spawn / despawn: a quick scale pop (births, deaths in a cycle), not the "deleted" fly-apart
 	let pop = 1;
 	if (p.state === 'spawn') pop = 1 - (1 - clamp(since / 0.45)) ** 3;
@@ -269,7 +272,8 @@ export type WorldSceneProps = {world: World; t: number; herdCenters: [number, nu
 export const useWorldState = (world: World, t: number, herdCenters: [number, number][], herdBase: number): S2State => {
 	const island = isle();
 	const agents = useMemo(() => buildHerd(island, world.herdMax, herdBase, herdCenters), [island, world.herdMax, herdBase, herdCenters]);
-	return {world, t, cam: cameraAt(world, t), island, agents};
+	const agentsB = useMemo(() => (world.herdCentersB ? buildHerd(island, world.herdMax, herdBase, world.herdCentersB) : undefined), [island, world.herdMax, herdBase, world.herdCentersB]);
+	return {world, t, cam: cameraAt(world, t), island, agents, agentsB};
 };
 
 /** For each herd index, the times its slot was (re)filled: count crossing i upwards. Babies grow from these. */
@@ -285,8 +289,34 @@ const birthTimes = (w: World, max: number) => {
 };
 
 export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
-	const {world, t, cam, island, agents} = state;
+	const {world, t, cam, island, agents, agentsB} = state;
+	const ROAD_C = useMemo(() => new THREE.Color('#a88458'), []);
 	const births = useMemo(() => birthTimes(world, world.herdMax), [world]);
+	// EP27+: land cleared for the village (both sites, the pens and the tower): no trees inside the buildings
+	const cleared = useMemo(() => {
+		const out = new Set<number>();
+		const st = world.settlement;
+		if (!st) return out;
+		const spots: [number, number, number][] = [];
+		for (const b of st.buildings) {
+			const r = b.kind === 'hall' ? 2.4 : 1.6;
+			spots.push([b.a[0], b.a[1], r]);
+			if (b.b) spots.push([b.b[0], b.b[1], r]);
+		}
+		for (const p of st.pens) {
+			spots.push([p.a[0], p.a[1], (p.r ?? 2.4) + 1.2]);
+			if (p.b) spots.push([p.b[0], p.b[1], (p.r ?? 2.4) + 1.2]);
+		}
+		if (st.tower) spots.push([st.tower.x, st.tower.z, 1.6]);
+		// a lane through the trees along each road (the carts must be seen under the canopy)
+		for (const road of [st.roads.a, st.roads.b])
+			for (let i = 0; i + 1 < road.length; i++)
+				for (let f = 0; f <= 1; f += 0.1) spots.push([road[i][0] + (road[i + 1][0] - road[i][0]) * f, road[i][1] + (road[i + 1][1] - road[i][1]) * f, 0.8]);
+		island.trees.forEach((tr, k) => {
+			if (spots.some(([x, z, r]) => Math.hypot(tr.x - x, tr.z - z) < r)) out.add(k);
+		});
+		return out;
+	}, [world, island]);
 	const mood = moodAt(world, t);
 	const s = simTime(world, t);
 	const graze = sample(world.graze, t, 0);
@@ -315,6 +345,10 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 			if (c.r < thr) out.copy(DIRT_C[Math.floor(c.r * 97) % DIRT_C.length]);
 			else if (c.r < thr + 0.12) out.lerp(DIRT_C[0], 0.45);
 		}
+		if (world.settlement && c.biome !== 'water') {
+			const r = roadAt(world.settlement, t, c.x, c.z);
+			if (r > 0) out.lerp(ROAD_C, r * (0.75 + 0.15 * c.r));
+		}
 		if (snow > 0 && c.biome !== 'snow') {
 			const k = smoothstep(c.r * 0.85, c.r * 0.85 + 0.15, snow);
 			if (k > 0) out.lerp(c.biome === 'water' ? ICE_C : SNOW_C, k * (c.biome === 'water' ? 0.55 : 0.88));
@@ -337,6 +371,7 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 	};
 	const treeScale = (k: number) => {
 		const tr = island.trees[k];
+		if (cleared.has(k)) return 0;
 		if (forest >= 1) return 1;
 		return smoothstep(tr.r - 0.08, tr.r + 0.08, forest);
 	};
@@ -380,12 +415,21 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 				t={t}
 				loopT={world.loopT}
 				pale={herdPale}
+				skin={world.herdSkin}
+				agentsB={agentsB}
+				site={world.settlement ? sample(world.settlement.place, t, 0) : 0}
 				born={(i) => {
 					const b = births[i].filter((x) => x <= t).pop();
 					return b === undefined ? 1 : clamp((t - b) / 4.5);
 				}}
 			/>
 			{poses.map((p, i) => (p ? <Grimmaw key={i} pose={p} /> : null))}
+			{world.settlement && <SettlementLayer world={world} island={island} t={t} s={s} />}
+			{world.dragons.map((d) => {
+				const dp = dragonAt(d.keys, t, (x, z) => Math.max(island.waterLevel, island.heightAt(x, z)));
+				return dp ? <Dragon key={d.id} pose={dp} scale={d.scale} t={t} loopT={world.loopT} /> : null;
+			})}
+			{world.props.map((p, i) => (p.kind === 'cairn' ? <Cairn key={`c${i}`} x={p.x} z={p.z} y={island.heightAt(p.x, p.z)} stones={sample(p.stones, t, 0)} /> : null))}
 			{world.ambient.birds > 0 && <Birds t={t} n={world.ambient.birds} loopT={world.loopT} />}
 			{world.ambient.motes > 0 && <Motes t={t} n={world.ambient.motes} island={island} warm={mood.warm} loopT={world.loopT} />}
 			{world.flyers.map((f, i) => (

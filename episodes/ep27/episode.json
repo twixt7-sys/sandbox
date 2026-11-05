@@ -1,0 +1,4645 @@
+{
+ "id": "ep27",
+ "number": 27,
+ "season": 2,
+ "title": "What Would Dragons Actually Change?",
+ "lesson": "A monster changes a world through what ordinary people must do differently: what they roof with, where they keep their animals, where they build, how they travel, and who holds power once someone has to watch the sky.",
+ "format": {
+  "version": "s2",
+  "qa": {
+   "min": 55.0,
+   "max": 62.0
+  }
+ },
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.07
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.2,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "The same curious lab host as EP26: brisk, warm, a little playful. The hook is a confident claim. The week count is quick and flat. 'Nobody fought a war' lands low; 'just stopped working' is a shrug. The four changes are crisp list beats. 'Someone has to watch the sky' is a quiet aha; 'Rule five is power' is sure. The comment ask is genuinely curious."
+ },
+ "timing": {
+  "leadIn": 0.2,
+  "tail": 0.85,
+  "shotLead": 0.12
+ },
+ "captionY": 1238,
+ "captionsOff": [
+  {
+   "line": "L5",
+   "from": "just"
+  },
+  {
+   "line": "L13",
+   "from": "Rule",
+   "to": "five?"
+  }
+ ],
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "If dragons existed, your world's architecture would look very different.",
+   "pauseAfter": 0.32,
+   "emphasis": [
+    "dragons",
+    "different."
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "setup",
+   "text": "Let's test it. This village was built before the dragon came.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "village",
+    "dragon"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "setup",
+   "text": "Press run.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "run."
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "run1",
+   "text": "Week one: thatch burns. Week two: open pens, empty. Week three: no one travels.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "burns.",
+    "empty."
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "drop",
+   "text": "Nobody fought a war. The village just stopped working.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "war.",
+    "stopped"
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "rehook",
+   "text": "So rebuild it. Four changes are easy. The fifth is the twist.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "rebuild",
+    "twist."
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "roofs",
+   "text": "One: roofs. Slate and turf don't burn.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "slate",
+    "burn."
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "pens",
+   "text": "Two: pens. Flocks sleep in covered barns.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "covered"
+   ]
+  },
+  {
+   "id": "L9",
+   "shot": "place",
+   "text": "Three: place. Move into the valley, out of sight.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "valley,",
+    "sight."
+   ]
+  },
+  {
+   "id": "L10",
+   "shot": "travel",
+   "text": "Four: travel. Trade moves at night, under the trees.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "night,",
+    "trees."
+   ]
+  },
+  {
+   "id": "L11",
+   "shot": "run2",
+   "text": "Run it again.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "again."
+   ]
+  },
+  {
+   "id": "L12",
+   "shot": "run2",
+   "text": "Now the roofs hold, the flocks grow, and trade returns.",
+   "pauseAfter": 0.32,
+   "emphasis": [
+    "hold,",
+    "returns."
+   ]
+  },
+  {
+   "id": "L13",
+   "shot": "twist",
+   "text": "Rule five? Someone has to watch the sky.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "watch"
+   ]
+  },
+  {
+   "id": "L14",
+   "shot": "twist",
+   "text": "A tower rises, with a bell. Whoever rings it decides when everyone hides.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "bell.",
+    "decides"
+   ]
+  },
+  {
+   "id": "L15",
+   "shot": "role",
+   "text": "Rule five is power. The dragon changed who's in charge.",
+   "pauseAfter": 0.32,
+   "emphasis": [
+    "power.",
+    "charge."
+   ]
+  },
+  {
+   "id": "L16",
+   "shot": "lesson",
+   "text": "Don't just add a dragon. Ask what ordinary people do differently.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "dragon.",
+    "ordinary"
+   ]
+  },
+  {
+   "id": "L17",
+   "shot": "cta",
+   "text": "What would your civilization invent to survive dragons? Comment below.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "invent",
+    "comment"
+   ]
+  },
+  {
+   "id": "L18",
+   "shot": "next",
+   "text": "Part 27 of 50. Follow for part 28: something on the Isle learns to build.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "follow",
+    "build."
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "world",
+   "purpose": "Pay off EP26's open loop and stop the scroll: the dragon has landed on the Isle.",
+   "visual": "The dragon perched on the Grimmaw's meadow in golden light, wings raised; the Grimmaw looks up at it; the open thatched village behind. It rears on 'dragons' (dust ring). WORLD ENGINE boots top-right.",
+   "camera": "Long lens (fov 17 from dist 66, el 9, az 14), slow drift and push; the last 10 s return to this exact pose.",
+   "layers": {
+    "foreground": "kinetic question",
+    "midground": "dragon, Grimmaw, cairn",
+    "background": "the naive village, the peak"
+   },
+   "lighting": "Golden hour (low sun from the east, long shadows).",
+   "onScreenText": "IF DRAGONS / EXISTED then YOUR WORLD / WOULD LOOK / DIFFERENT.",
+   "transition": "Continuous camera into the setup.",
+   "music": "Hook: the series theme on celesta over strings; a hit on 'different'.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "IF DRAGONS",
+       "color": "ember"
+      },
+      {
+       "text": "EXISTED"
+      }
+     ],
+     "y": 452,
+     "size": 100,
+     "start": {
+      "shot": "hook"
+     },
+     "end": {
+      "line": "L1",
+      "word": "your",
+      "offset": -0.08
+     },
+     "preShow": true
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "YOUR WORLD",
+       "at": {
+        "line": "L1",
+        "word": "your"
+       }
+      },
+      {
+       "text": "WOULD LOOK",
+       "at": {
+        "line": "L1",
+        "word": "would"
+       }
+      },
+      {
+       "text": "DIFFERENT.",
+       "at": {
+        "line": "L1",
+        "word": "different."
+       },
+       "color": "rust"
+      }
+     ],
+     "y": 452,
+     "size": 100,
+     "start": {
+      "line": "L1",
+      "word": "your",
+      "offset": -0.02
+     },
+     "end": {
+      "line": "L2",
+      "word": "Let's",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "sting",
+     "label": "WORLD ENGINE",
+     "run": "RUN 27 \u00b7 CREATURES",
+     "dur": 1.4,
+     "start": {
+      "shot": "hook"
+     },
+     "front": true
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "chime",
+     "at": {
+      "shot": "hook"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "shot": "hook",
+      "offset": 0.05
+     },
+     "gain": -17
+    },
+    {
+     "sound": "roar",
+     "at": {
+      "line": "L1",
+      "word": "dragons",
+      "offset": 0.05
+     },
+     "gain": -12
+    },
+    {
+     "sound": "stompHit",
+     "at": {
+      "line": "L1",
+      "word": "dragons",
+      "offset": 0.1
+     },
+     "gain": -14
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "setup",
+   "scene": "world",
+   "purpose": "Meet the subject (the dragon) and the naive village it lands on, then press RUN.",
+   "visual": "Field card intro (DRAGON sprite x3, FLYING APEX, HUNTS anything in the open) over the village: thatch roofs, open pens, the hall at the top of the slope, the trade road. The sim bar slides in with ROOFS / FLOCK / TRADE; RUN is pressed and the dragon takes off.",
+   "camera": "Medium on the village (dist 62), then rise to the wide on 'run'.",
+   "layers": {
+    "foreground": "field card, sim bar",
+    "midground": "village, sheep, carts",
+    "background": "the peak"
+   },
+   "lighting": "Day.",
+   "onScreenText": "Field card; RUN.",
+   "transition": "Ripple + rise to the wide on 'run'.",
+   "music": "Pulse: pizzicato eighths, the theme's answer on celesta.",
+   "graphics": [
+    {
+     "type": "fieldCard",
+     "mode": "intro",
+     "y": 440,
+     "start": {
+      "line": "L2",
+      "word": "This",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L3",
+      "word": "Press",
+      "offset": -0.1
+     },
+     "dietAt": {
+      "line": "L2",
+      "word": "dragon"
+     },
+     "kicker": "FIELD CARD \u00b7 NO. 002",
+     "kind": "FLYING APEX",
+     "name": "DRAGON",
+     "dietLabel": "HUNTS",
+     "diet": "anything in the open",
+     "sprite": "ep27/dragon_sprite.png",
+     "spriteW": 168,
+     "spriteH": 116
+    },
+    {
+     "type": "simBar",
+     "compact": true,
+     "counters": [
+      {
+       "icon": "house",
+       "label": "ROOFS",
+       "key": "roofs",
+       "color": "ember",
+       "digits": 2
+      },
+      {
+       "icon": "sheep",
+       "label": "FLOCK",
+       "key": "herd",
+       "color": "prey",
+       "digits": 3
+      },
+      {
+       "icon": "cart",
+       "label": "TRADE",
+       "key": "trade",
+       "color": "sky",
+       "digits": 2
+      }
+     ],
+     "start": {
+      "line": "L3",
+      "word": "Press",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L16",
+      "word": "Don't",
+      "offset": -0.3
+     },
+     "runAt": [
+      {
+       "line": "L3",
+       "word": "run."
+      },
+      {
+       "line": "L11",
+       "word": "Run"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "dragonPass",
+     "at": {
+      "line": "L2",
+      "word": "Let's",
+      "offset": -0.1
+     },
+     "gain": -15
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L2",
+      "word": "This",
+      "offset": -0.1
+     },
+     "gain": -17
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L2",
+      "word": "dragon"
+     },
+     "gain": -20
+    },
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L3",
+      "word": "run."
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L3",
+      "word": "run."
+     },
+     "gain": -16
+    },
+    {
+     "sound": "dragonPass",
+     "at": {
+      "line": "L3",
+      "word": "run.",
+      "offset": 0.4
+     },
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "run1",
+   "scene": "world",
+   "purpose": "The naive village runs and fails, in numbers.",
+   "visual": "The whole Isle; the dragon circles the open village; thatch roofs char one by one and smoke; FLOCK 60\u21929; carts leave the road; WEEK 0\u21923; ROOFS 07\u219200.",
+   "camera": "Wide (dist 192, el 46).",
+   "layers": {
+    "foreground": "sim bar + graph, pin",
+    "midground": "dragon, smoking roofs, empty road",
+    "background": "island"
+   },
+   "lighting": "Day.",
+   "onScreenText": "WEEK 01..03; graph WEEKS 0\u20133; TRADE ROAD: EMPTY.",
+   "transition": "Push into the burnt village.",
+   "music": "Drive: 16th marimba, square-lead arps, pizzicato, bass, drums; a burn crackle bed.",
+   "graphics": [
+    {
+     "type": "simGraph",
+     "y": 456,
+     "h": 214,
+     "from": {
+      "line": "L3",
+      "word": "run."
+     },
+     "to": {
+      "line": "L4",
+      "word": "travels.",
+      "offset": 0.4
+     },
+     "start": {
+      "line": "L4",
+      "word": "Week",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L5",
+      "word": "Nobody",
+      "offset": -0.1
+     },
+     "caption": "WEEKS 0\u20133",
+     "series": [
+      {
+       "key": "roofs",
+       "color": "#f4c46e",
+       "max": 8,
+       "label": "ROOFS"
+      },
+      {
+       "key": "herd",
+       "color": "#9bd16a",
+       "max": 66,
+       "label": "FLOCK"
+      },
+      {
+       "key": "trade",
+       "color": "#8fc8ff",
+       "max": 7,
+       "label": "TRADE"
+      }
+     ]
+    },
+    {
+     "type": "pin",
+     "at": [
+      11.2,
+      null,
+      -14.6
+     ],
+     "kicker": "TRADE ROAD",
+     "text": "EMPTY",
+     "color": "rust",
+     "lift": 90,
+     "start": {
+      "line": "L4",
+      "word": "travels.",
+      "offset": 0.1
+     },
+     "end": {
+      "line": "L5",
+      "word": "Nobody",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L3",
+      "word": "run.",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L4",
+      "word": "travels.",
+      "offset": 0.2
+     },
+     "gain": -21
+    },
+    {
+     "sound": "burn",
+     "from": {
+      "line": "L4",
+      "word": "thatch",
+      "offset": -0.1
+     },
+     "to": {
+      "line": "L4",
+      "word": "travels.",
+      "offset": 0.4
+     },
+     "gain": -19
+    },
+    {
+     "sound": "losses",
+     "from": {
+      "line": "L4",
+      "word": "two:",
+      "offset": 0.1
+     },
+     "to": {
+      "line": "L4",
+      "word": "empty.",
+      "offset": 0.2
+     },
+     "gain": -23
+    }
+   ]
+  },
+  {
+   "id": "drop",
+   "scene": "world",
+   "purpose": "The punchline of the failure: no battle, the way of life just stops working.",
+   "visual": "Close on the burnt, empty village in gloom; the dragon glides home to its lair under the peak. COLLAPSED stamp; IT JUST STOPPED.",
+   "camera": "Close (dist 52, az 38).",
+   "layers": {
+    "foreground": "stamp, kinetic",
+    "midground": "charred roofs, empty pens",
+    "background": "the peak"
+   },
+   "lighting": "Gloom.",
+   "onScreenText": "COLLAPSED \u00b7 NO WAR \u00b7 WEEK 3; IT JUST STOPPED.",
+   "transition": "Rewind + block wipe.",
+   "music": "Drop: near silence, a taiko boom on 'stopped'.",
+   "graphics": [
+    {
+     "type": "stamp",
+     "text": "COLLAPSED",
+     "sub": "NO WAR \u00b7 WEEK 3",
+     "color": "rust",
+     "y": 560,
+     "size": 96,
+     "start": {
+      "line": "L5",
+      "word": "war."
+     },
+     "end": {
+      "line": "L5",
+      "word": "The",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "IT JUST",
+       "at": {
+        "line": "L5",
+        "word": "just"
+       }
+      },
+      {
+       "text": "STOPPED.",
+       "at": {
+        "line": "L5",
+        "word": "stopped"
+       },
+       "color": "rust"
+      }
+     ],
+     "font": "pixel",
+     "size": 100,
+     "y": 1110,
+     "start": {
+      "line": "L5",
+      "word": "just",
+      "offset": -0.02
+     },
+     "end": {
+      "line": "L5",
+      "word": "working.",
+      "offset": 0.5
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "dragonPass",
+     "at": {
+      "line": "L5",
+      "word": "Nobody",
+      "offset": -0.2
+     },
+     "gain": -17
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L5",
+      "word": "war."
+     },
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "rehook",
+   "scene": "world",
+   "purpose": "Re-hook: rewind and open a loop (four easy changes, one locked twist).",
+   "visual": "REWIND chip and scanlines; roofs un-char, sheep and carts return; the DRAGON-PROOF checklist with a blinking locked row 5.",
+   "camera": "Medium (dist 96).",
+   "layers": {
+    "foreground": "rewind, checklist",
+    "midground": "the restored village",
+    "background": "island"
+   },
+   "lighting": "Back to day.",
+   "onScreenText": "DESIGN CHECK 0/5, row 5 '??? the twist'.",
+   "transition": "Cut on 'One'.",
+   "music": "Mystery: celesta arpeggios and harp; a riser into 'the twist'.",
+   "graphics": [
+    {
+     "type": "rewind",
+     "y": 620,
+     "start": {
+      "line": "L5",
+      "word": "working.",
+      "offset": 0.5
+     },
+     "end": {
+      "line": "L6",
+      "word": "So",
+      "offset": 0.3
+     }
+    },
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L5",
+      "word": "working.",
+      "offset": 0.48
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "fieldCard",
+     "mode": "checklist",
+     "y": 448,
+     "rows": [
+      {
+       "n": 1,
+       "label": "ROOFS",
+       "text": "slate and turf, not thatch",
+       "at": {
+        "line": "L7",
+        "word": "roofs."
+       }
+      },
+      {
+       "n": 2,
+       "label": "PENS",
+       "text": "flocks sleep under cover",
+       "at": {
+        "line": "L8",
+        "word": "pens."
+       }
+      },
+      {
+       "n": 3,
+       "label": "PLACE",
+       "text": "in a valley, out of sight",
+       "at": {
+        "line": "L9",
+        "word": "place."
+       }
+      },
+      {
+       "n": 4,
+       "label": "TRAVEL",
+       "text": "by night, under the trees",
+       "at": {
+        "line": "L10",
+        "word": "travel."
+       }
+      },
+      {
+       "n": 5,
+       "label": "POWER",
+       "text": "whoever rings the bell",
+       "at": {
+        "line": "L6",
+        "word": "easy."
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L15",
+        "word": "power."
+       }
+      }
+     ],
+     "start": {
+      "line": "L6",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L16",
+      "word": "Don't",
+      "offset": -0.3
+     },
+     "kicker": "DESIGN CHECK",
+     "title": "DRAGON-PROOF",
+     "blinkAt": {
+      "line": "L6",
+      "word": "twist."
+     },
+     "lockedText": "the twist",
+     "sprite": "ep27/dragon_sprite.png",
+     "spriteW": 168,
+     "spriteH": 116,
+     "collapse": [
+      [
+       {
+        "line": "L9",
+        "word": "place.",
+        "offset": 0.3
+       },
+       0
+      ],
+      [
+       {
+        "line": "L9",
+        "word": "place.",
+        "offset": 0.65
+       },
+       1
+      ],
+      [
+       {
+        "line": "L10",
+        "word": "Four:",
+        "offset": -0.25
+       },
+       1
+      ],
+      [
+       {
+        "line": "L10",
+        "word": "Four:",
+        "offset": 0.1
+       },
+       0
+      ],
+      [
+       {
+        "line": "L11",
+        "word": "Run",
+        "offset": -0.2
+       },
+       0
+      ],
+      [
+       {
+        "line": "L11",
+        "word": "Run",
+        "offset": 0.15
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "Rule",
+        "offset": -0.3
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "Rule",
+        "offset": 0.05
+       },
+       0
+      ]
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L5",
+      "word": "working.",
+      "offset": 0.45
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L6",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "gain": -17
+    }
+   ]
+  },
+  {
+   "id": "roofs",
+   "scene": "world",
+   "purpose": "Change 1: roofs that don't burn.",
+   "visual": "Close on the houses; thatch roofs flip to slate and turf one by one; pin THATCH \u2192 SLATE / WON'T CATCH; row 1 ticks.",
+   "camera": "Close (dist 46).",
+   "layers": {
+    "foreground": "pin",
+    "midground": "houses re-roofing",
+    "background": "meadow"
+   },
+   "lighting": "Day.",
+   "onScreenText": "1 ROOFS \u00b7 slate and turf, not thatch",
+   "transition": "Pan to the pens.",
+   "music": "Build 1 (F major): marimba and strings.",
+   "graphics": [
+    {
+     "type": "pin",
+     "at": [
+      6.2,
+      null,
+      -7.0
+     ],
+     "kicker": "THATCH \u2192 SLATE",
+     "text": "WON'T CATCH",
+     "color": "ember",
+     "lift": 110,
+     "start": {
+      "line": "L7",
+      "word": "Slate",
+      "offset": 0.1
+     },
+     "end": {
+      "line": "L8",
+      "word": "Two:",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L7",
+      "word": "roofs."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L7",
+      "word": "Slate"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "stompHit",
+     "at": {
+      "line": "L7",
+      "word": "burn.",
+      "offset": 0.1
+     },
+     "gain": -20
+    }
+   ]
+  },
+  {
+   "id": "pens",
+   "scene": "world",
+   "purpose": "Change 2: livestock under cover.",
+   "visual": "Close on the open pen; a covered barn rises beside it; pin FLOCKS / UNDER COVER; row 2 ticks.",
+   "camera": "Close (dist 40).",
+   "layers": {
+    "foreground": "pin",
+    "midground": "pen, barn, sheep",
+    "background": "village"
+   },
+   "lighting": "Day.",
+   "onScreenText": "2 PENS \u00b7 flocks sleep under cover",
+   "transition": "Rise to top-down.",
+   "music": "Build 2: bass and pizzicato join.",
+   "graphics": [
+    {
+     "type": "pin",
+     "at": [
+      11.2,
+      null,
+      -7.5
+     ],
+     "kicker": "FLOCKS",
+     "text": "UNDER COVER",
+     "color": "prey",
+     "lift": 120,
+     "start": {
+      "line": "L8",
+      "word": "covered",
+      "offset": 0.1
+     },
+     "end": {
+      "line": "L9",
+      "word": "Three:",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L8",
+      "word": "pens."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L8",
+      "word": "covered",
+      "offset": -0.2
+     },
+     "gain": -15
+    },
+    {
+     "sound": "stomp",
+     "from": {
+      "line": "L8",
+      "word": "covered",
+      "offset": -0.2
+     },
+     "to": {
+      "line": "L8",
+      "word": "barns.",
+      "offset": 0.2
+     },
+     "gain": -22
+    }
+   ]
+  },
+  {
+   "id": "place",
+   "scene": "world",
+   "purpose": "Change 3: settle out of the sky's sight lines.",
+   "visual": "Near top-down; a rust ring marks the open site (SEEN FROM THE SKY); each building unbuilds and rises again in the valley under the cliff, the flock follows; an ember ring and OUT OF SIGHT.",
+   "camera": "Near top-down (el 62, dist 160).",
+   "layers": {
+    "foreground": "pins, folded card",
+    "midground": "village moving",
+    "background": "island"
+   },
+   "lighting": "Day.",
+   "onScreenText": "3 PLACE \u00b7 in a valley, out of sight",
+   "transition": "Down to the forest road.",
+   "music": "Build 3: light drums join.",
+   "graphics": [
+    {
+     "type": "pin",
+     "at": [
+      7.0,
+      null,
+      -9.0
+     ],
+     "kicker": "OPEN MEADOW",
+     "text": "SEEN FROM THE SKY",
+     "color": "rust",
+     "lift": 80,
+     "size": 28,
+     "start": {
+      "line": "L9",
+      "word": "place.",
+      "offset": 0.05
+     },
+     "end": {
+      "line": "L9",
+      "word": "Move",
+      "offset": 0.25
+     }
+    },
+    {
+     "type": "pin",
+     "at": [
+      -2.4,
+      null,
+      -3.6
+     ],
+     "kicker": "THE VALLEY",
+     "text": "OUT OF SIGHT",
+     "color": "ember",
+     "lift": 80,
+     "start": {
+      "line": "L9",
+      "word": "sight."
+     },
+     "end": {
+      "line": "L10",
+      "word": "Four:",
+      "offset": -0.15
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L9",
+      "word": "place."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "ringOn",
+     "at": {
+      "line": "L9",
+      "word": "place."
+     },
+     "gain": -16
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L9",
+      "word": "Move"
+     },
+     "gain": -14
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L9",
+      "word": "valley,"
+     },
+     "gain": -17
+    },
+    {
+     "sound": "ringOn",
+     "at": {
+      "line": "L9",
+      "word": "valley,"
+     },
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "scene": "world",
+   "purpose": "Change 4: travel at night, under the trees.",
+   "visual": "Night; the road moves into the forest; carts with lit lanterns roll under the canopy; pin NIGHT ROAD / UNDER THE TREES.",
+   "camera": "Medium (dist 64).",
+   "layers": {
+    "foreground": "pin",
+    "midground": "carts with lanterns",
+    "background": "forest"
+   },
+   "lighting": "Night.",
+   "onScreenText": "4 TRAVEL \u00b7 by night, under the trees",
+   "transition": "Rise to the wide on 'Run'.",
+   "music": "Build 4: the theme on glockenspiel.",
+   "graphics": [
+    {
+     "type": "pin",
+     "at": [
+      -8.2,
+      null,
+      6.0
+     ],
+     "kicker": "NIGHT ROAD",
+     "text": "UNDER THE TREES",
+     "color": "sky",
+     "lift": 110,
+     "start": {
+      "line": "L10",
+      "word": "night,",
+      "offset": 0.1
+     },
+     "end": {
+      "line": "L11",
+      "word": "Run",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L10",
+      "word": "travel."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "snowAir",
+     "at": {
+      "line": "L10",
+      "word": "Four:",
+      "offset": -0.2
+     },
+     "gain": -20
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L10",
+      "word": "Trade"
+     },
+     "gain": -17
+    }
+   ]
+  },
+  {
+   "id": "run2",
+   "scene": "world",
+   "purpose": "The dragon-proof village runs: it holds.",
+   "visual": "Wide Isle; the dragon circles the valley and finds nothing in the open; roofs stay 07, FLOCK 60\u219292, TRADE 6\u21929; THRIVING stamp.",
+   "camera": "Wide (dist 196).",
+   "layers": {
+    "foreground": "folded card, graph, pin, stamp",
+    "midground": "dragon over the valley",
+    "background": "island"
+   },
+   "lighting": "Day.",
+   "onScreenText": "WEEKS 0\u201312; HUNTING: NOTHING IN THE OPEN; THRIVING \u00b7 NO ROOF LOST",
+   "transition": "Down to the valley.",
+   "music": "Drive with the theme on flute and glockenspiel; a stab and cymbal on 'grow'.",
+   "graphics": [
+    {
+     "type": "simGraph",
+     "y": 566,
+     "h": 214,
+     "from": {
+      "line": "L11",
+      "word": "Run"
+     },
+     "to": {
+      "line": "L12",
+      "word": "returns.",
+      "offset": 0.5
+     },
+     "start": {
+      "line": "L11",
+      "word": "Run",
+      "offset": 0.1
+     },
+     "end": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.1
+     },
+     "caption": "WEEKS 0\u201312",
+     "series": [
+      {
+       "key": "roofs",
+       "color": "#f4c46e",
+       "max": 8,
+       "label": "ROOFS"
+      },
+      {
+       "key": "herd",
+       "color": "#9bd16a",
+       "max": 100,
+       "label": "FLOCK"
+      },
+      {
+       "key": "trade",
+       "color": "#8fc8ff",
+       "max": 10,
+       "label": "TRADE"
+      }
+     ]
+    },
+    {
+     "type": "pin",
+     "dragon": "dragon",
+     "kicker": "HUNTING",
+     "text": "NOTHING IN THE OPEN",
+     "color": "rust",
+     "lift": 70,
+     "size": 28,
+     "start": {
+      "line": "L12",
+      "word": "Now"
+     },
+     "end": {
+      "line": "L12",
+      "word": "grow,",
+      "offset": 0.2
+     }
+    },
+    {
+     "type": "stamp",
+     "text": "THRIVING",
+     "sub": "NO ROOF LOST",
+     "color": "stable",
+     "rotate": -4,
+     "y": 900,
+     "size": 92,
+     "start": {
+      "line": "L12",
+      "word": "grow,"
+     },
+     "end": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L11",
+      "word": "Run"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L11",
+      "word": "Run"
+     },
+     "gain": -16
+    },
+    {
+     "sound": "dragonPass",
+     "at": {
+      "line": "L11",
+      "word": "Run",
+      "offset": 0.3
+     },
+     "gain": -13
+    },
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L11",
+      "word": "Run",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L12",
+      "word": "returns.",
+      "offset": 0.5
+     },
+     "gain": -21
+    },
+    {
+     "sound": "births",
+     "from": {
+      "line": "L12",
+      "word": "the",
+      "nth": 2
+     },
+     "to": {
+      "line": "L12",
+      "word": "grow,",
+      "offset": 0.4
+     },
+     "gain": -22
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L12",
+      "word": "grow,"
+     },
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "twist",
+   "scene": "world",
+   "purpose": "The locked rule: someone has to watch the sky.",
+   "visual": "RULE 5?, then a stone watchtower rises on the cliff with a bell; its watch ring covers the valley; the dragon passes, the bell swings, the carts vanish (everyone hides); pin THE BELL-RINGER / DECIDES WHEN WE HIDE.",
+   "camera": "Medium on the valley (dist 74).",
+   "layers": {
+    "foreground": "kinetic, pin",
+    "midground": "tower, bell, dragon",
+    "background": "valley"
+   },
+   "lighting": "Day.",
+   "onScreenText": "RULE 5?; THE BELL-RINGER \u00b7 DECIDES WHEN WE HIDE",
+   "transition": "Push to the bell.",
+   "music": "A held A7\u266d9 and a timpani roll, the tower bell on 'bell' and 'rings', a hard stop on 'hides'.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "RULE 5?",
+       "at": {
+        "line": "L13",
+        "word": "Rule"
+       },
+       "color": "ember"
+      }
+     ],
+     "size": 150,
+     "y": 640,
+     "start": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.02
+     },
+     "end": {
+      "line": "L13",
+      "word": "Someone",
+      "offset": -0.08
+     }
+    },
+    {
+     "type": "pin",
+     "at": [
+      -6.4,
+      14.6,
+      -5.6
+     ],
+     "kicker": "THE BELL-RINGER",
+     "text": "DECIDES WHEN WE HIDE",
+     "color": "ember",
+     "lift": 90,
+     "size": 30,
+     "start": {
+      "line": "L14",
+      "word": "Whoever"
+     },
+     "end": {
+      "line": "L15",
+      "word": "Rule",
+      "offset": -0.15
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "dragonPass",
+     "at": {
+      "line": "L13",
+      "word": "Someone",
+      "offset": -0.2
+     },
+     "gain": -13
+    },
+    {
+     "sound": "stompHit",
+     "at": {
+      "line": "L14",
+      "word": "tower"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L14",
+      "word": "tower"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "ringOn",
+     "at": {
+      "line": "L14",
+      "word": "rises,",
+      "offset": 0.1
+     },
+     "gain": -16
+    },
+    {
+     "sound": "towerBell",
+     "at": {
+      "line": "L14",
+      "word": "bell."
+     },
+     "gain": -10
+    },
+    {
+     "sound": "towerBell",
+     "at": {
+      "line": "L14",
+      "word": "rings"
+     },
+     "gain": -12
+    },
+    {
+     "sound": "dragonPass",
+     "at": {
+      "line": "L14",
+      "word": "bell.",
+      "offset": -0.3
+     },
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "role",
+   "scene": "world",
+   "purpose": "Unlock rule 5: power.",
+   "visual": "Row 5 unlocks (POWER \u00b7 whoever rings the bell); close on the tower and bell; NEW POWER / THE TOWER; trade comes back; the island ripples on 'charge'.",
+   "camera": "Close (dist 46).",
+   "layers": {
+    "foreground": "unlocked card, pin, follow chip",
+    "midground": "tower",
+    "background": "valley"
+   },
+   "lighting": "Day.",
+   "onScreenText": "5/5",
+   "transition": "Card goes full.",
+   "music": "Swell into a big D-major hit on 'charge'.",
+   "graphics": [
+    {
+     "type": "pin",
+     "at": [
+      -6.4,
+      14.6,
+      -5.6
+     ],
+     "kicker": "NEW POWER",
+     "text": "THE TOWER",
+     "color": "ember",
+     "lift": 110,
+     "start": {
+      "line": "L15",
+      "word": "power."
+     },
+     "end": {
+      "line": "L16",
+      "word": "Don't",
+      "offset": -0.3
+     }
+    },
+    {
+     "type": "followChip",
+     "start": {
+      "line": "L15",
+      "word": "power.",
+      "offset": 0.4
+     },
+     "end": {
+      "line": "L16",
+      "word": "Don't",
+      "offset": -0.45
+     },
+     "text": "FOLLOW",
+     "sub": "PART 27/50"
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L15",
+      "word": "power."
+     },
+     "gain": -10
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L15",
+      "word": "charge."
+     },
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "lesson",
+   "scene": "world",
+   "purpose": "The takeaway: the full design check, screenshot-able.",
+   "visual": "The complete DRAGON-PROOF card (BEFORE YOU ADD A DRAGON, 5 rows ticked) with 'Ask what ordinary people change.' in serif italic.",
+   "camera": "Wide orbit (dist 190).",
+   "layers": {
+    "foreground": "full card",
+    "midground": "the island at golden hour",
+    "background": "stars"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "Full card.",
+   "transition": "Block wipe to the end card.",
+   "music": "Anthem: the theme in D major on flute, horns and glockenspiel; the World Engine chime as the card lands.",
+   "graphics": [
+    {
+     "type": "fieldCard",
+     "mode": "full",
+     "y": 452,
+     "rows": [
+      {
+       "n": 1,
+       "label": "ROOFS",
+       "text": "slate and turf, not thatch",
+       "at": {
+        "line": "L16",
+        "word": "Don't",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 2,
+       "label": "PENS",
+       "text": "flocks sleep under cover",
+       "at": {
+        "line": "L16",
+        "word": "Don't",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 3,
+       "label": "PLACE",
+       "text": "in a valley, out of sight",
+       "at": {
+        "line": "L16",
+        "word": "Don't",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 4,
+       "label": "TRAVEL",
+       "text": "by night, under the trees",
+       "at": {
+        "line": "L16",
+        "word": "Don't",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 5,
+       "label": "POWER",
+       "text": "whoever rings the bell",
+       "at": {
+        "line": "L16",
+        "word": "Don't",
+        "offset": -0.3
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L16",
+        "word": "Don't",
+        "offset": -0.3
+       }
+      }
+     ],
+     "start": {
+      "line": "L16",
+      "word": "Don't",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.52
+     },
+     "kicker": "BEFORE YOU ADD A DRAGON",
+     "title": "VILLAGE",
+     "sprite": "ep27/dragon_sprite.png",
+     "spriteW": 168,
+     "spriteH": 116,
+     "subtitle": "Ask what ordinary people change.",
+     "subtitleAt": {
+      "line": "L16",
+      "word": "Ask"
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L16",
+      "word": "Don't",
+      "offset": -0.8
+     },
+     "gain": -15
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L16",
+      "word": "Don't",
+      "offset": -0.3
+     },
+     "gain": -10
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L16",
+      "word": "Don't",
+      "offset": -0.3
+     },
+     "gain": -18
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "cta",
+   "scene": "world",
+   "purpose": "Comment CTA.",
+   "visual": "End card: logo, PART 27 / 50, title, a speech-bubble COMMENT panel: What would your civilization invent to survive dragons?",
+   "camera": "Cut (under the block wipe) to the hook pose.",
+   "layers": {
+    "foreground": "end card",
+    "midground": "the Isle",
+    "background": "void"
+   },
+   "lighting": "Golden hour (the loop frame).",
+   "onScreenText": "End card.",
+   "transition": "The card lifts on 'Part'.",
+   "music": "Outro: the theme's answer on celesta and music box.",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "endCardS2",
+     "start": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.12
+     },
+     "fadeOut": 0.3,
+     "kicker": "PART 27 / 50",
+     "title": "What Would Dragons Actually Change?",
+     "cta": "COMMENT",
+     "icon": "bubble",
+     "with": "What would your civilization invent to survive dragons?"
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "gain": -21
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.1
+     },
+     "gain": -20
+    }
+   ],
+   "captions": false,
+   "hideLogoBug": true,
+   "hideLogoBugUntil": {
+    "line": "L18",
+    "word": "Part"
+   }
+  },
+  {
+   "id": "next",
+   "scene": "world",
+   "purpose": "Say the part number, ask for the follow with a specific reason (part 28), and open the next loop: stones stack themselves on the lake shore.",
+   "visual": "The end card lifts onto the hook frame; PART 27/50 season bar; FOLLOW FOR PART 28 pressed on 'Follow'; NEXT RUN 28 \u00b7 BUILDERS decodes from a locked cairn; on the shore a cairn's three stones stack themselves; then the hook title returns for the loop.",
+   "camera": "The hook pose (long lens), drifting onto frame 0.",
+   "layers": {
+    "foreground": "progress bar, follow button, next-run card",
+    "midground": "dragon, Grimmaw, the cairn",
+    "background": "the village at golden hour"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "PART 27/50 \u00b7 FOLLOW FOR PART 28 \u00b7 NEXT RUN: BUILDERS \u00b7 SOMETHING LEARNS TO BUILD.",
+   "transition": "Loop to frame 0.",
+   "music": "Tease: the theme's opening as a question over a held A, a horn call, the engine chime on 'Follow'; it resolves into frame 0's D minor on the loop.",
+   "graphics": [
+    {
+     "type": "seasonBar",
+     "y": 350,
+     "part": 27,
+     "of": 50,
+     "start": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.1
+     },
+     "fillAt": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "fillDur": 0.6,
+     "ofAt": {
+      "line": "L18",
+      "word": "50."
+     },
+     "end": {
+      "line": "L18",
+      "word": "build.",
+      "offset": 0.6
+     }
+    },
+    {
+     "type": "followButton",
+     "y": 556,
+     "start": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.6
+     },
+     "pressAt": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "end": {
+      "line": "L18",
+      "word": "build.",
+      "offset": 0.6
+     },
+     "text": "FOLLOW",
+     "doneText": "FOLLOWING",
+     "sub": "FOR PART 28"
+    },
+    {
+     "type": "nextRun",
+     "y": 772,
+     "start": {
+      "line": "L18",
+      "word": "28:",
+      "offset": -0.1
+     },
+     "revealAt": {
+      "line": "L18",
+      "word": "learns"
+     },
+     "end": {
+      "line": "L18",
+      "word": "build.",
+      "offset": 0.6
+     },
+     "kicker": "NEXT RUN \u00b7 28",
+     "title": "BUILDERS",
+     "sub": "SOMETHING LEARNS TO BUILD.",
+     "sprite": "cairn",
+     "spritePx": 7
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "IF DRAGONS",
+       "color": "ember"
+      },
+      {
+       "text": "EXISTED"
+      }
+     ],
+     "y": 452,
+     "size": 100,
+     "start": {
+      "line": "L18",
+      "word": "build.",
+      "offset": 0.92
+     },
+     "fadeIn": 0.35,
+     "preShow": true
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "to": {
+      "line": "L18",
+      "word": "Part",
+      "offset": 0.55
+     },
+     "gain": -22
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.5
+     },
+     "gain": -15
+    },
+    {
+     "sound": "followPress",
+     "at": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": 0.02
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L18",
+      "word": "28:",
+      "offset": -0.1
+     },
+     "gain": -18
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L18",
+      "word": "learns"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "cubPop",
+     "at": {
+      "line": "L18",
+      "word": "Isle"
+     },
+     "gain": -17
+    },
+    {
+     "sound": "cubPop",
+     "at": {
+      "line": "L18",
+      "word": "learns",
+      "offset": 0.05
+     },
+     "gain": -16
+    },
+    {
+     "sound": "stompHit",
+     "at": {
+      "line": "L18",
+      "word": "build."
+     },
+     "gain": -18
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "end": true,
+      "offset": -0.54
+     },
+     "gain": -14
+    }
+   ],
+   "captions": false
+  }
+ ],
+ "world": {
+  "clock": {
+   "label": "WEEK",
+   "keys": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "run."
+     },
+     0
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "one:",
+      "offset": 0.2
+     },
+     1,
+     "linear"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "two:",
+      "offset": 0.2
+     },
+     2,
+     "linear"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "three:",
+      "offset": 0.2
+     },
+     3,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "working.",
+      "offset": 0.4
+     },
+     3
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "So",
+      "offset": 0.2
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "Run",
+      "offset": 0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "returns.",
+      "offset": 0.6
+     },
+     12,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     12
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.28
+     },
+     0,
+     "step"
+    ]
+   ]
+  },
+  "speed": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L3",
+     "word": "run."
+    },
+    1
+   ],
+   [
+    {
+     "line": "L3",
+     "word": "run.",
+     "offset": 0.35
+    },
+    9
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "travels.",
+     "offset": 0.3
+    },
+    9
+   ],
+   [
+    {
+     "line": "L5",
+     "word": "Nobody"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L5",
+     "word": "working.",
+     "offset": 0.4
+    },
+    1
+   ],
+   [
+    {
+     "line": "L5",
+     "word": "working.",
+     "offset": 0.6
+    },
+    -10
+   ],
+   [
+    {
+     "line": "L6",
+     "word": "So",
+     "offset": 0.15
+    },
+    -10
+   ],
+   [
+    {
+     "line": "L6",
+     "word": "So",
+     "offset": 0.35
+    },
+    1
+   ],
+   [
+    {
+     "line": "L11",
+     "word": "Run",
+     "offset": 0.1
+    },
+    1
+   ],
+   [
+    {
+     "line": "L11",
+     "word": "Run",
+     "offset": 0.4
+    },
+    9
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "returns.",
+     "offset": 0.5
+    },
+    9
+   ],
+   [
+    {
+     "line": "L13",
+     "word": "Rule"
+    },
+    1
+   ]
+  ],
+  "camera": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "az": 20,
+    "el": 8,
+    "dist": 88,
+    "target": [
+     6.4,
+     10.0,
+     -1.4
+    ],
+    "fov": 18,
+    "dur": 1.4,
+    "drift": 1.0
+   },
+   {
+    "at": {
+     "line": "L1",
+     "word": "If"
+    },
+    "az": 20.4,
+    "el": 8,
+    "dist": 78,
+    "target": [
+     6.4,
+     9.6,
+     -1.4
+    ],
+    "fov": 18,
+    "dur": 3.8,
+    "drift": 1.0
+   },
+   {
+    "at": {
+     "line": "L2",
+     "word": "Let's",
+     "offset": -0.2
+    },
+    "az": 20,
+    "el": 24,
+    "dist": 64,
+    "target": [
+     6.2,
+     10.5,
+     -8.6
+    ],
+    "fov": 22,
+    "dur": 1.6,
+    "drift": 1.5
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "run.",
+     "offset": 0.05
+    },
+    "az": 22,
+    "el": 46,
+    "dist": 192,
+    "target": [
+     2.0,
+     10.5,
+     -2.0
+    ],
+    "fov": 26,
+    "dur": 1.3,
+    "drift": 2.0
+   },
+   {
+    "at": {
+     "line": "L5",
+     "word": "Nobody",
+     "offset": -0.25
+    },
+    "az": 38,
+    "el": 24,
+    "dist": 52,
+    "target": [
+     6.6,
+     7.0,
+     -8.8
+    ],
+    "fov": 22,
+    "dur": 1.3,
+    "drift": 2.5
+   },
+   {
+    "at": {
+     "line": "L5",
+     "word": "working.",
+     "offset": 0.5
+    },
+    "az": 20,
+    "el": 30,
+    "dist": 96,
+    "target": [
+     4.0,
+     9.0,
+     -5.0
+    ],
+    "fov": 24,
+    "dur": 0.9,
+    "drift": 2.0
+   },
+   {
+    "at": {
+     "line": "L7",
+     "word": "One:",
+     "offset": -0.2
+    },
+    "az": 18,
+    "el": 22,
+    "dist": 46,
+    "target": [
+     6.6,
+     7.6,
+     -9.0
+    ],
+    "fov": 22,
+    "dur": 1.1,
+    "drift": 1.5
+   },
+   {
+    "at": {
+     "line": "L8",
+     "word": "Two:",
+     "offset": -0.2
+    },
+    "az": 40,
+    "el": 26,
+    "dist": 40,
+    "target": [
+     11.0,
+     6.0,
+     -5.4
+    ],
+    "fov": 22,
+    "dur": 1.1,
+    "drift": 1.5
+   },
+   {
+    "at": {
+     "line": "L9",
+     "word": "Three:",
+     "offset": -0.15
+    },
+    "az": 12,
+    "el": 62,
+    "dist": 160,
+    "target": [
+     2.4,
+     12.0,
+     -5.0
+    ],
+    "fov": 26,
+    "dur": 1.1,
+    "drift": 1.0
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "Four:",
+     "offset": -0.15
+    },
+    "az": 32,
+    "el": 44,
+    "dist": 66,
+    "target": [
+     -7.6,
+     10.0,
+     5.4
+    ],
+    "fov": 24,
+    "dur": 1.3,
+    "drift": 2.0
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "Run",
+     "offset": -0.05
+    },
+    "az": 25,
+    "el": 44,
+    "dist": 196,
+    "target": [
+     0.0,
+     12.0,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 1.0,
+    "drift": 3.0
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "az": 22,
+    "el": 20,
+    "dist": 74,
+    "target": [
+     -4.2,
+     12.0,
+     -3.8
+    ],
+    "fov": 24,
+    "dur": 1.0,
+    "drift": 1.5
+   },
+   {
+    "at": {
+     "line": "L15",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "az": 28,
+    "el": 12,
+    "dist": 50,
+    "target": [
+     -6.2,
+     18.0,
+     -5.2
+    ],
+    "fov": 22,
+    "dur": 1.2,
+    "drift": 2.0
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Don't",
+     "offset": -0.25
+    },
+    "az": 15,
+    "el": 30,
+    "dist": 190,
+    "target": [
+     2.0,
+     2.0,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 1.6,
+    "drift": 3.0
+   },
+   {
+    "at": {
+     "line": "L17",
+     "word": "What",
+     "offset": -0.3
+    },
+    "az": 9.618,
+    "el": 8,
+    "dist": 88,
+    "target": [
+     6.4,
+     10.0,
+     -1.4
+    ],
+    "fov": 18,
+    "dur": 1.4,
+    "drift": 1.0,
+    "cut": true
+   }
+  ],
+  "light": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "mood": "golden"
+   },
+   {
+    "at": {
+     "line": "L2",
+     "word": "Let's",
+     "offset": -0.3
+    },
+    "mood": "day",
+    "dur": 1.3
+   },
+   {
+    "at": {
+     "line": "L5",
+     "word": "Nobody",
+     "offset": -0.2
+    },
+    "mood": "gloom",
+    "dur": 1.2
+   },
+   {
+    "at": {
+     "line": "L5",
+     "word": "working.",
+     "offset": 0.5
+    },
+    "mood": "day",
+    "dur": 0.8
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "Four:",
+     "offset": -0.2
+    },
+    "mood": "night",
+    "dur": 0.8
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "Run",
+     "offset": -0.2
+    },
+    "mood": "day",
+    "dur": 0.6
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Don't",
+     "offset": -0.3
+    },
+    "mood": "golden",
+    "dur": 2.2
+   }
+  ],
+  "herd": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     60
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "two:",
+      "offset": 0.1
+     },
+     60
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "empty.",
+      "offset": 0.2
+     },
+     12,
+     "linear"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "travels.",
+      "offset": 0.3
+     },
+     9,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "working.",
+      "offset": 0.45
+     },
+     9
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "So",
+      "offset": 0.2
+     },
+     60,
+     "out"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "the",
+      "nth": 2
+     },
+     60
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "grow,",
+      "offset": 0.4
+     },
+     92,
+     "out"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     92
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.28
+     },
+     60,
+     "step"
+    ]
+   ],
+   "max": 100,
+   "base": 60,
+   "centers": [
+    [
+     11.2,
+     -4.6
+    ],
+    [
+     9.6,
+     -5.6
+    ]
+   ],
+   "centersB": [
+    [
+     2.2,
+     -6.4
+    ],
+    [
+     3.4,
+     -7.8
+    ]
+   ],
+   "skin": "sheep"
+  },
+  "pred": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ]
+  ],
+  "predators": [
+   {
+    "id": "g1",
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 8.0,
+      "z": -1.0,
+      "state": "gaze",
+      "face": 200
+     },
+     {
+      "at": {
+       "line": "L2",
+       "word": "Let's"
+      },
+      "x": 8.0,
+      "z": -1.0,
+      "state": "idle",
+      "face": 200
+     },
+     {
+      "at": {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      "x": 8.0,
+      "z": -1.0,
+      "state": "gaze",
+      "face": 200
+     }
+    ]
+   }
+  ],
+  "dragons": [
+   {
+    "id": "dragon",
+    "scale": 1.35,
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 4.4,
+      "z": -1.8,
+      "state": "perch",
+      "face": 20
+     },
+     {
+      "at": {
+       "line": "L1",
+       "word": "dragons",
+       "offset": 0.05
+      },
+      "x": 4.4,
+      "z": -1.8,
+      "state": "roar",
+      "face": 20
+     },
+     {
+      "at": {
+       "line": "L1",
+       "word": "your",
+       "offset": 0.2
+      },
+      "x": 4.4,
+      "z": -1.8,
+      "state": "perch",
+      "face": 20
+     },
+     {
+      "at": {
+       "line": "L2",
+       "word": "Let's",
+       "offset": -0.15
+      },
+      "x": 4.4,
+      "z": -1.8,
+      "state": "perch",
+      "face": 20
+     },
+     {
+      "at": {
+       "line": "L2",
+       "word": "Let's",
+       "offset": 0.45
+      },
+      "x": 0.4,
+      "z": -9.8,
+      "state": "fly",
+      "y": 13.0,
+      "dur": 0.9
+     },
+     {
+      "at": {
+       "line": "L2",
+       "word": "This",
+       "offset": 0.1
+      },
+      "x": -22.0,
+      "z": -30.0,
+      "state": "fly",
+      "y": 30.0,
+      "dur": 1.2
+     },
+     {
+      "at": {
+       "line": "L2",
+       "word": "This",
+       "offset": 0.15
+      },
+      "x": -22.0,
+      "z": -30.0,
+      "state": "hidden",
+      "y": 30.0
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run."
+      },
+      "x": -24.0,
+      "z": -22.0,
+      "state": "fly",
+      "y": 26.0
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 0.05
+      },
+      "x": -24.0,
+      "z": -22.0,
+      "state": "fly",
+      "y": 26.0
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 1.25
+      },
+      "x": 1.838,
+      "z": -4.272,
+      "state": "fly",
+      "y": 14.0,
+      "dur": 1.2
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 1.45
+      },
+      "x": 0.663,
+      "z": -6.027,
+      "state": "fly",
+      "y": 14.178,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 1.65
+      },
+      "x": 0.064,
+      "z": -8.053,
+      "state": "fly",
+      "y": 14.347,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 1.85
+      },
+      "x": 0.098,
+      "z": -10.165,
+      "state": "fly",
+      "y": 14.499,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 2.05
+      },
+      "x": 0.76,
+      "z": -12.171,
+      "state": "fly",
+      "y": 14.625,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 2.25
+      },
+      "x": 1.99,
+      "z": -13.889,
+      "state": "fly",
+      "y": 14.721,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 2.45
+      },
+      "x": 3.676,
+      "z": -15.161,
+      "state": "fly",
+      "y": 14.78,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 2.65
+      },
+      "x": 5.666,
+      "z": -15.872,
+      "state": "fly",
+      "y": 14.8,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 2.85
+      },
+      "x": 7.776,
+      "z": -15.957,
+      "state": "fly",
+      "y": 14.78,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 3.05
+      },
+      "x": 9.816,
+      "z": -15.408,
+      "state": "fly",
+      "y": 14.721,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 3.25
+      },
+      "x": 11.6,
+      "z": -14.276,
+      "state": "fly",
+      "y": 14.625,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 3.45
+      },
+      "x": 12.965,
+      "z": -12.664,
+      "state": "fly",
+      "y": 14.499,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 3.65
+      },
+      "x": 13.786,
+      "z": -10.718,
+      "state": "fly",
+      "y": 14.347,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 3.85
+      },
+      "x": 13.989,
+      "z": -8.615,
+      "state": "fly",
+      "y": 14.178,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 4.05
+      },
+      "x": 13.556,
+      "z": -6.547,
+      "state": "fly",
+      "y": 14.0,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 4.25
+      },
+      "x": 12.526,
+      "z": -4.703,
+      "state": "fly",
+      "y": 13.822,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 4.45
+      },
+      "x": 10.993,
+      "z": -3.25,
+      "state": "fly",
+      "y": 13.653,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 4.65
+      },
+      "x": 9.095,
+      "z": -2.321,
+      "state": "fly",
+      "y": 13.501,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 4.85
+      },
+      "x": 7.008,
+      "z": -2.0,
+      "state": "fly",
+      "y": 13.375,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 5.05
+      },
+      "x": 4.919,
+      "z": -2.317,
+      "state": "fly",
+      "y": 13.279,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 5.25
+      },
+      "x": 3.02,
+      "z": -3.242,
+      "state": "fly",
+      "y": 13.22,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 5.45
+      },
+      "x": 1.483,
+      "z": -4.691,
+      "state": "fly",
+      "y": 13.2,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 5.65
+      },
+      "x": 0.449,
+      "z": -6.533,
+      "state": "fly",
+      "y": 13.22,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 5.85
+      },
+      "x": 0.011,
+      "z": -8.6,
+      "state": "fly",
+      "y": 13.279,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 6.05
+      },
+      "x": 0.21,
+      "z": -10.703,
+      "state": "fly",
+      "y": 13.375,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 6.25
+      },
+      "x": 1.028,
+      "z": -12.651,
+      "state": "fly",
+      "y": 13.501,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 6.45
+      },
+      "x": 2.389,
+      "z": -14.267,
+      "state": "fly",
+      "y": 13.653,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 6.65
+      },
+      "x": 4.17,
+      "z": -15.402,
+      "state": "fly",
+      "y": 13.822,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "run.",
+       "offset": 6.85
+      },
+      "x": 6.209,
+      "z": -15.955,
+      "state": "fly",
+      "y": 14.0,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L5",
+       "word": "Nobody"
+      },
+      "x": -2.5,
+      "z": -12.5,
+      "state": "glide",
+      "y": 18.0,
+      "dur": 1.4
+     },
+     {
+      "at": {
+       "line": "L5",
+       "word": "war."
+      },
+      "x": -2.5,
+      "z": -12.5,
+      "state": "perch",
+      "face": 300,
+      "dur": 0.7
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 0.15
+      },
+      "x": -2.5,
+      "z": -12.5,
+      "state": "perch",
+      "face": 300
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 0.4
+      },
+      "x": 3.79,
+      "z": 0.635,
+      "state": "fly",
+      "y": 15.0,
+      "dur": 1.0
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 1.6
+      },
+      "x": 2.178,
+      "z": 2.34,
+      "state": "fly",
+      "y": 15.274,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 1.8
+      },
+      "x": 0.119,
+      "z": 3.464,
+      "state": "fly",
+      "y": 15.514,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 2.0
+      },
+      "x": -2.188,
+      "z": 3.897,
+      "state": "fly",
+      "y": 15.693,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 2.2
+      },
+      "x": -4.515,
+      "z": 3.596,
+      "state": "fly",
+      "y": 15.788,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 2.4
+      },
+      "x": -6.635,
+      "z": 2.59,
+      "state": "fly",
+      "y": 15.788,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 2.6
+      },
+      "x": -8.34,
+      "z": 0.978,
+      "state": "fly",
+      "y": 15.693,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 2.8
+      },
+      "x": -9.464,
+      "z": -1.081,
+      "state": "fly",
+      "y": 15.514,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 3.0
+      },
+      "x": -9.897,
+      "z": -3.388,
+      "state": "fly",
+      "y": 15.274,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 3.2
+      },
+      "x": -9.596,
+      "z": -5.715,
+      "state": "fly",
+      "y": 15.0,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 3.4
+      },
+      "x": -8.59,
+      "z": -7.835,
+      "state": "fly",
+      "y": 14.726,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 3.6
+      },
+      "x": -6.978,
+      "z": -9.54,
+      "state": "fly",
+      "y": 14.486,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 3.8
+      },
+      "x": -4.919,
+      "z": -10.664,
+      "state": "fly",
+      "y": 14.307,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 4.0
+      },
+      "x": -2.612,
+      "z": -11.097,
+      "state": "fly",
+      "y": 14.212,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 4.2
+      },
+      "x": -0.285,
+      "z": -10.796,
+      "state": "fly",
+      "y": 14.212,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 4.4
+      },
+      "x": 1.835,
+      "z": -9.79,
+      "state": "fly",
+      "y": 14.307,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 4.6
+      },
+      "x": 3.54,
+      "z": -8.178,
+      "state": "fly",
+      "y": 14.486,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 4.8
+      },
+      "x": 4.664,
+      "z": -6.119,
+      "state": "fly",
+      "y": 14.726,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L11",
+       "word": "Run",
+       "offset": 5.0
+      },
+      "x": 5.097,
+      "z": -3.812,
+      "state": "fly",
+      "y": 15.0,
+      "dur": 0.2,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L13",
+       "word": "Someone"
+      },
+      "x": 9.0,
+      "z": 2.0,
+      "state": "glide",
+      "y": 17.0,
+      "dur": 1.0
+     },
+     {
+      "at": {
+       "line": "L14",
+       "word": "bell.",
+       "offset": -0.2
+      },
+      "x": -14.0,
+      "z": -6.0,
+      "state": "fly",
+      "y": 13.0,
+      "dur": 2.3,
+      "ease": "linear"
+     },
+     {
+      "at": {
+       "line": "L14",
+       "word": "decides",
+       "offset": 0.2
+      },
+      "x": -10.0,
+      "z": -16.0,
+      "state": "fly",
+      "y": 15.0,
+      "dur": 1.4
+     },
+     {
+      "at": {
+       "line": "L15",
+       "word": "Rule"
+      },
+      "x": -2.5,
+      "z": -12.5,
+      "state": "perch",
+      "face": 300,
+      "dur": 1.0
+     },
+     {
+      "at": {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      "x": 4.4,
+      "z": -1.8,
+      "state": "perch",
+      "face": 20
+     }
+    ]
+   }
+  ],
+  "series": {
+   "trade": [
+    [
+     {
+      "shot": "hook"
+     },
+     6
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "three:"
+     },
+     6
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "travels.",
+      "offset": 0.35
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "working.",
+      "offset": 0.45
+     },
+     0
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "So",
+      "offset": 0.2
+     },
+     6,
+     "out"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "trade"
+     },
+     6
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "returns.",
+      "offset": 0.4
+     },
+     9,
+     "out"
+    ],
+    [
+     {
+      "line": "L14",
+      "word": "hides.",
+      "offset": -0.3
+     },
+     9
+    ],
+    [
+     {
+      "line": "L14",
+      "word": "hides.",
+      "offset": 0.15
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "power."
+     },
+     0
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "charge."
+     },
+     9,
+     "out"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     9
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.28
+     },
+     6,
+     "step"
+    ]
+   ]
+  },
+  "settlement": {
+   "buildings": [
+    {
+     "kind": "hall",
+     "a": [
+      3.6,
+      -10.4
+     ],
+     "b": [
+      -3.6,
+      -4.6
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      6.2,
+      -7.0
+     ],
+     "b": [
+      -1.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      8.7,
+      -8.2
+     ],
+     "b": [
+      -4.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      5.6,
+      -10.6
+     ],
+     "b": [
+      -1.0,
+      -5.8
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      9.2,
+      -11.2
+     ],
+     "b": [
+      -5.6,
+      -0.9
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      3.9,
+      -7.6
+     ],
+     "b": [
+      -3.4,
+      -0.7
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      7.6,
+      -12.4
+     ],
+     "b": [
+      0.4,
+      -4.2
+     ],
+     "face": 0
+    }
+   ],
+   "roof": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L7",
+      "word": "Slate",
+      "offset": -0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L7",
+      "word": "burn.",
+      "offset": 0.2
+     },
+     1,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     1
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.28
+     },
+     0,
+     "step"
+    ]
+   ],
+   "char": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "thatch",
+      "offset": -0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "burns.",
+      "offset": 0.5
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "travels.",
+      "offset": 0.2
+     },
+     1.0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "working.",
+      "offset": 0.45
+     },
+     1.0
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "So",
+      "offset": 0.2
+     },
+     0,
+     "linear"
+    ]
+   ],
+   "smoke": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "thatch",
+      "offset": -0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "burns."
+     },
+     1
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "working.",
+      "offset": 0.4
+     },
+     1
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "So",
+      "offset": 0.1
+     },
+     0,
+     "linear"
+    ]
+   ],
+   "pens": [
+    {
+     "a": [
+      11.2,
+      -4.4
+     ],
+     "b": [
+      2.2,
+      -6.4
+     ],
+     "r": 2.2
+    }
+   ],
+   "cover": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "covered",
+      "offset": -0.3
+     },
+     0
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "barns.",
+      "offset": 0.3
+     },
+     1,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     1
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.28
+     },
+     0,
+     "step"
+    ]
+   ],
+   "place": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "Move",
+      "offset": -0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "sight.",
+      "offset": 0.5
+     },
+     1,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     1
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.28
+     },
+     0,
+     "step"
+    ]
+   ],
+   "roads": {
+    "a": [
+     [
+      5.6,
+      -9.0
+     ],
+     [
+      8.2,
+      -12.2
+     ],
+     [
+      11.2,
+      -14.6
+     ],
+     [
+      14.2,
+      -16.2
+     ]
+    ],
+    "b": [
+     [
+      -3.4,
+      -1.6
+     ],
+     [
+      -5.6,
+      2.0
+     ],
+     [
+      -8.2,
+      6.0
+     ],
+     [
+      -11.0,
+      10.0
+     ],
+     [
+      -13.0,
+      14.0
+     ],
+     [
+      -14.6,
+      17.0
+     ]
+    ]
+   },
+   "route": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "Trade",
+      "offset": -0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "night,",
+      "offset": 0.1
+     },
+     1,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     1
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.28
+     },
+     0,
+     "step"
+    ]
+   ],
+   "tradeKey": "trade",
+   "lanterns": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "Trade"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "night,"
+     },
+     1,
+     "linear"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "Run",
+      "offset": -0.2
+     },
+     1
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "Run",
+      "offset": 0.2
+     },
+     0,
+     "linear"
+    ]
+   ],
+   "tower": {
+    "x": -6.4,
+    "z": -5.6,
+    "h": 6.0,
+    "keys": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "tower",
+       "offset": -0.05
+      },
+      0
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "rises,",
+       "offset": 0.35
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.28
+      },
+      0,
+      "step"
+     ]
+    ],
+    "rings": [
+     {
+      "line": "L14",
+      "word": "bell."
+     },
+     {
+      "line": "L14",
+      "word": "rings"
+     }
+    ]
+   }
+  },
+  "props": [
+   {
+    "kind": "cairn",
+    "x": 11.8,
+    "z": -0.8,
+    "stones": [
+     [
+      {
+       "shot": "hook"
+      },
+      3
+     ],
+     [
+      {
+       "line": "L2",
+       "word": "Let's",
+       "offset": -0.25
+      },
+      3
+     ],
+     [
+      {
+       "line": "L2",
+       "word": "Let's",
+       "offset": -0.2
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "something"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "Isle"
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "learns",
+       "offset": 0.05
+      },
+      2,
+      "linear"
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "build."
+      },
+      3,
+      "linear"
+     ]
+    ]
+   }
+  ],
+  "layers": {
+   "rings": [
+    {
+     "x": 7.0,
+     "z": -9.0,
+     "r": 6.0,
+     "on": {
+      "line": "L9",
+      "word": "place."
+     },
+     "off": {
+      "line": "L9",
+      "word": "Move",
+      "offset": 0.3
+     },
+     "color": "#d0603f"
+    },
+    {
+     "x": -2.4,
+     "z": -3.6,
+     "r": 5.5,
+     "on": {
+      "line": "L9",
+      "word": "valley,"
+     },
+     "off": {
+      "line": "L10",
+      "word": "Four:",
+      "offset": -0.15
+     },
+     "color": "#f4c46e"
+    },
+    {
+     "x": -6.4,
+     "z": -5.6,
+     "r": 9.0,
+     "on": {
+      "line": "L14",
+      "word": "rises,",
+      "offset": 0.1
+     },
+     "off": {
+      "line": "L16",
+      "word": "Don't",
+      "offset": -0.3
+     },
+     "color": "#f4c46e"
+    }
+   ],
+   "ripple": [
+    {
+     "shot": "hook",
+     "offset": 0.05
+    },
+    {
+     "line": "L3",
+     "word": "run."
+    },
+    {
+     "line": "L11",
+     "word": "Run"
+    },
+    {
+     "line": "L15",
+     "word": "charge."
+    }
+   ],
+   "dust": [
+    {
+     "at": {
+      "line": "L1",
+      "word": "dragons",
+      "offset": 0.05
+     },
+     "x": 5.0,
+     "z": -1.8,
+     "r": 3.4
+    }
+   ]
+  },
+  "ambient": {
+   "birds": 9,
+   "motes": 40,
+   "glints": true
+  },
+  "simLoop": {
+   "line": "L17",
+   "word": "What",
+   "offset": -0.3
+  }
+ },
+ "music": {
+  "engine": "s2-score",
+  "key": "D minor, resolving to D major",
+  "bpm": 100,
+  "sections": [
+   {
+    "from": {
+     "shot": "hook"
+    },
+    "style": "hook",
+    "chords": [
+     "Dm",
+     "Bb"
+    ],
+    "key": "D minor"
+   },
+   {
+    "from": {
+     "line": "L2",
+     "word": "Let's",
+     "offset": -0.1
+    },
+    "style": "pulse",
+    "chords": [
+     "Dm",
+     "Bb",
+     "F",
+     "C"
+    ],
+    "key": "D minor"
+   },
+   {
+    "from": {
+     "line": "L3",
+     "word": "run."
+    },
+    "style": "drive",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "intensity": 0.8
+   },
+   {
+    "from": {
+     "line": "L5",
+     "word": "Nobody",
+     "offset": -0.2
+    },
+    "style": "drop",
+    "chords": [
+     "Dm"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 8
+   },
+   {
+    "from": {
+     "line": "L5",
+     "word": "The"
+    },
+    "style": "void",
+    "chords": [
+     "Dm"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 8
+   },
+   {
+    "from": {
+     "line": "L5",
+     "word": "working.",
+     "offset": 0.45
+    },
+    "style": "mystery",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "A"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 2
+   },
+   {
+    "from": {
+     "line": "L7",
+     "word": "One:",
+     "offset": -0.1
+    },
+    "style": "build",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 1
+   },
+   {
+    "from": {
+     "line": "L8",
+     "word": "Two:",
+     "offset": -0.1
+    },
+    "style": "build",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 2
+   },
+   {
+    "from": {
+     "line": "L9",
+     "word": "Three:",
+     "offset": -0.1
+    },
+    "style": "build",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 3
+   },
+   {
+    "from": {
+     "line": "L10",
+     "word": "Four:",
+     "offset": -0.1
+    },
+    "style": "build",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 4
+   },
+   {
+    "from": {
+     "line": "L11",
+     "word": "Run"
+    },
+    "style": "drive",
+    "chords": [
+     "F",
+     "C",
+     "Bb",
+     "F"
+    ],
+    "key": "F major",
+    "intensity": 1.0,
+    "theme": true
+   },
+   {
+    "from": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.05
+    },
+    "style": "twist",
+    "chords": [
+     "A7b9"
+    ],
+    "key": "D minor"
+   },
+   {
+    "from": {
+     "line": "L14",
+     "word": "Whoever",
+     "offset": -0.1
+    },
+    "style": "mystery",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "A"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 2
+   },
+   {
+    "from": {
+     "line": "L14",
+     "word": "hides."
+    },
+    "style": "rest",
+    "chords": [
+     "Dm"
+    ],
+    "key": "D minor"
+   },
+   {
+    "from": {
+     "line": "L15",
+     "word": "Rule"
+    },
+    "style": "swell",
+    "chords": [
+     "Bb",
+     "F",
+     "C",
+     "A"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 2
+   },
+   {
+    "from": {
+     "line": "L15",
+     "word": "charge."
+    },
+    "style": "anthem",
+    "chords": [
+     "D",
+     "G",
+     "Bm",
+     "A"
+    ],
+    "key": "D major"
+   },
+   {
+    "from": {
+     "line": "L17",
+     "word": "What",
+     "offset": -0.2
+    },
+    "style": "outro",
+    "chords": [
+     "G",
+     "D"
+    ],
+    "key": "D major"
+   },
+   {
+    "from": {
+     "line": "L18",
+     "word": "Part",
+     "offset": -0.1
+    },
+    "style": "tease",
+    "chords": [
+     "A5"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 32
+   }
+  ],
+  "accents": [
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L1",
+     "word": "different."
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L5",
+     "word": "stopped"
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "riser",
+    "at": {
+     "line": "L6",
+     "word": "twist."
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "stab",
+    "at": {
+     "line": "L12",
+     "word": "grow,"
+    },
+    "chord": "F"
+   },
+   {
+    "kind": "cymbal",
+    "at": {
+     "line": "L12",
+     "word": "grow,"
+    }
+   },
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L15",
+     "word": "charge."
+    },
+    "chord": "D"
+   },
+   {
+    "kind": "call",
+    "at": {
+     "line": "L18",
+     "word": "learns"
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "roll",
+    "at": {
+     "end": true,
+     "offset": -0.05
+    },
+    "chord": "A"
+   }
+  ],
+  "rests": [
+   {
+    "from": {
+     "line": "L14",
+     "word": "hides.",
+     "offset": 0.05
+    },
+    "to": {
+     "line": "L15",
+     "word": "Rule",
+     "offset": -0.02
+    }
+   }
+  ],
+  "fadeOut": {
+   "fromEnd": 0.08
+  },
+  "gain": 0.55
+ },
+ "mix": {
+  "musicLufs": -25.0,
+  "duckDb": -8.0,
+  "sfxLufs": -29.0,
+  "voiceFx": true
+ },
+ "metadata": {
+  "youtube": {
+   "title": "What Would Dragons Actually Change? (Worldbuilding)",
+   "titleAlternate": "Your village wouldn't survive a dragon",
+   "description": "If dragons existed, your world's architecture would look very different.\n\nWe ran it. A village built before the dragon came: thatch roofs, open pens, a trade road across open meadow. Week one, the thatch burns. Week two, the pens are empty. Week three, no one travels. Nobody fought a war; the village just stopped working.\n\nSo rebuild it: slate and turf roofs, flocks in covered barns, the village moved into a valley out of sight, and trade at night under the trees. Then the twist: someone has to watch the sky. A tower rises with a bell, and whoever rings it decides when everyone hides. The dragon changed who's in charge.\n\nDon't just add a dragon. Ask what ordinary people do differently.\n\nWhat would your civilization invent to survive dragons? Comment below.\n\nPart 27 of 50. Follow for part 28: something on the Isle learns to build.\n\nWorldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 6: Creatures and Species.\n\n#Worldbuilding #FantasyWriting #Dragons #WritingTips #WorldcraftShorts",
+   "pinnedComment": "Comment check: what would YOUR civilization invent to survive dragons? Roofs, barns, tunnels, bells, something stranger? (Part 28: something on the Isle learns to build.)",
+   "uploadSettings": "Altered or synthetic content: Yes (synthetic narration and an AI-generated dragon sprite; the island, village and creatures are drawn in code). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "Dragons wouldn't need to fight you. Your village would just stop working \ud83d\udc09 We ran it: thatch burns, pens empty, roads empty. 4 fixes, and #5 is the twist: whoever rings the bell holds the power. What would your world invent? Part 27/50 \u00b7 follow for part 28 \ud83e\udea8 #Worldbuilding #FantasyWriting #Dragons #WritingTips #WorldcraftShorts",
+   "pinnedComment": "What would your civilization invent to survive dragons?",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "If dragons existed, your world's architecture would look very different.\n\nWe ran it. A village built before the dragon came: thatch roofs, open pens, a trade road across open meadow. Week one, the thatch burns. Week two, the pens are empty. Week three, no one travels. Nobody fought a war; the village just stopped working.\n\nSo rebuild it: slate and turf roofs, flocks in covered barns, the village moved into a valley out of sight, and trade at night under the trees. Then the twist: someone has to watch the sky. A tower rises with a bell, and whoever rings it decides when everyone hides. The dragon changed who's in charge.\n\nDon't just add a dragon. Ask what ordinary people do differently.\n\nWhat would your civilization invent to survive dragons? Comment below.\n\nPart 27 of 50. Follow for part 28: something on the Isle learns to build.\n\nWorldcraft Shorts \u00b7 Season 2: The World Engine.\n\n#Worldbuilding #FantasyWriting #Dragons #WritingTips #WorldcraftShorts",
+   "pinnedComment": "If dragons were real where you live, what would change first: roofs, farms, roads, or who's in charge?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "Dragons change architecture.\n\nIf dragons existed, your world's architecture would look very different.\n\nWe ran it. A village built before the dragon came: thatch roofs, open pens, a trade road across open meadow. Week one, the thatch burns. Week two, the pens are empty. Week three, no one travels. Nobody fought a war; the village just stopped working.\n\nSo rebuild it: slate and turf roofs, flocks in covered barns, the village moved into a valley out of sight, and trade at night under the trees. Then the twist: someone has to watch the sky. A tower rises with a bell, and whoever rings it decides when everyone hides. The dragon changed who's in charge.\n\nDon't just add a dragon. Ask what ordinary people do differently.\n\nWhat would your civilization invent to survive dragons? Comment below.\n\nPart 27 of 50. Follow for part 28: something on the Isle learns to build.\n\nWorldcraft Shorts \u00b7 Season 2\n\n#Worldbuilding #FantasyWriting #Dragons #WritingTips #WorldcraftShorts",
+   "hookCheck": "First 28 characters: 'Dragons change architecture.'",
+   "pinnedComment": "Save the dragon-proof checklist, then tell us: what would your civilization invent to survive dragons?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  }
+ }
+}

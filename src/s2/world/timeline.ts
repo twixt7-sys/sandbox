@@ -16,7 +16,7 @@ export type WorldRaw = {
 	speed?: RawKey[];
 	camera: CamKey[];
 	light?: LightKey[];
-	herd?: {count: RawKey[]; max?: number; base?: number; centers?: [number, number][]};
+	herd?: {count: RawKey[]; max?: number; base?: number; centers?: [number, number][]; skin?: 'mossback' | 'sheep'; centersB?: [number, number][]};
 	/** HUD predator count (the agents on screen follow it, but the HUD reads this) */
 	pred?: RawKey[];
 	predators?: PredatorRaw[];
@@ -28,6 +28,69 @@ export type WorldRaw = {
 	/** Seamless loop: at this cue (hide it under a wipe) sim time jumps so it reaches 0 exactly at the episode's end, so
 	 * the herd is back where frame 0 has it when the video loops. */
 	simLoop?: Cue;
+	/** EP27+: extra keyed numbers for the HUD and graphs (e.g. "trade"); the world reads the same keys. */
+	series?: Record<string, RawKey[]>;
+	/** EP27+: flying voxel dragons (keys may carry an altitude `y`; without it the dragon stands on the ground). */
+	dragons?: DragonRaw[];
+	/** EP27+: the village layer (buildings, roofs, char, pens/barns, the move to a second site, roads, carts, a tower). */
+	settlement?: SettlementRaw;
+	/** EP27+: small props, e.g. a cairn whose stones stack on their keys (`stones`). */
+	props?: {kind: 'cairn'; x: number; z: number; stones: RawKey[]}[];
+};
+
+export type DragonKeyRaw = {at: Cue; x: number; z: number; y?: number; state?: string; face?: number; dur?: number; ease?: string};
+export type DragonRaw = {id: string; scale?: number; keys: DragonKeyRaw[]};
+export type DragonKey = {t: number; x: number; z: number; y: number | null; state: string; face?: number; dur: number; ease: string};
+
+export type BuildingRaw = {
+	kind?: 'house' | 'hall' | 'barn' | 'tower';
+	/** site A (before the move) and optional site B (after it); without `b` the building stays at `a` */
+	a: [number, number];
+	b?: [number, number];
+	w?: number;
+	d?: number;
+	h?: number;
+	face?: number;
+	/** visible only at one site: 'a' leaves at the move, 'b' arrives with it */
+	only?: 'a' | 'b';
+};
+export type SettlementRaw = {
+	buildings: BuildingRaw[];
+	/** 0 thatch .. 1 slate/turf (each building switches at its own moment as the value passes it) */
+	roof?: RawKey[];
+	/** 0 whole .. 1 every roof burnt (each building chars as the value passes it) */
+	char?: RawKey[];
+	/** smoke intensity over charred roofs */
+	smoke?: RawKey[];
+	/** pens: 0 open fences .. 1 covered barns over them */
+	pens?: {a: [number, number]; b?: [number, number]; r?: number}[];
+	cover?: RawKey[];
+	/** 0 at site A .. 1 at site B (buildings, pens and herd move, staggered) */
+	place?: RawKey[];
+	roads?: {a?: [number, number][]; b?: [number, number][]};
+	/** 0 road A .. 1 road B */
+	route?: RawKey[];
+	/** carts on the road: the visible count follows this series (also the HUD's TRADE) */
+	tradeKey?: string;
+	/** lanterns on the carts (night travel) 0..1 */
+	lanterns?: RawKey[];
+	/** a watchtower with a bell: rises with `tower` (0..1); the bell swings on each `rings` cue */
+	tower?: {x: number; z: number; h?: number; keys: RawKey[]; rings?: Cue[]};
+};
+
+export type Settlement = {
+	buildings: BuildingRaw[];
+	roof: Key[];
+	char: Key[];
+	smoke: Key[];
+	pens: {a: [number, number]; b?: [number, number]; r?: number}[];
+	cover: Key[];
+	place: Key[];
+	roads: {a: [number, number][]; b: [number, number][]};
+	route: Key[];
+	tradeKey: string;
+	lanterns: Key[];
+	tower: {x: number; z: number; h: number; keys: Key[]; rings: number[]} | null;
 };
 
 export type PredKey = {t: number; x: number; z: number; state: string; face?: number; dur: number};
@@ -54,6 +117,12 @@ export type World = {
 	simLoop: number | null;
 	/** the episode's length: ambient motion repeats over it, so the loop has no seam */
 	loopT: number;
+	series: Record<string, Key[]>;
+	herdSkin: 'mossback' | 'sheep';
+	herdCentersB: [number, number][] | null;
+	dragons: {id: string; scale: number; keys: DragonKey[]}[];
+	settlement: Settlement | null;
+	props: {kind: 'cairn'; x: number; z: number; stones: Key[]}[];
 };
 
 export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
@@ -79,6 +148,35 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 	flyers: (raw.flyers ?? []).map((f) => ({kind: f.kind ?? 'dragon', t: cueTime(timing, f.at), dur: f.dur, from: f.from, to: f.to, height: f.height ?? 30, scale: f.scale ?? 1})),
 	simLoop: raw.simLoop ? cueTime(timing, raw.simLoop) : null,
 	loopT: timing.duration,
+	herdSkin: raw.herd?.skin ?? 'mossback',
+	herdCentersB: raw.herd?.centersB ?? null,
+	series: Object.fromEntries(Object.entries(raw.series ?? {}).map(([k, v]) => [k, resolveKeys(timing, v)])),
+	dragons: (raw.dragons ?? []).map((d) => ({
+		id: d.id,
+		scale: d.scale ?? 1,
+		keys: d.keys
+			.map((k) => ({t: cueTime(timing, k.at), x: k.x, z: k.z, y: k.y ?? null, state: k.state ?? 'perch', face: k.face, dur: k.dur ?? 0, ease: k.ease ?? 'smooth'}))
+			.sort((a, b) => a.t - b.t),
+	})),
+	settlement: raw.settlement
+		? {
+				buildings: raw.settlement.buildings,
+				roof: resolveKeys(timing, raw.settlement.roof),
+				char: resolveKeys(timing, raw.settlement.char),
+				smoke: resolveKeys(timing, raw.settlement.smoke),
+				pens: raw.settlement.pens ?? [],
+				cover: resolveKeys(timing, raw.settlement.cover),
+				place: resolveKeys(timing, raw.settlement.place),
+				roads: {a: raw.settlement.roads?.a ?? [], b: raw.settlement.roads?.b ?? []},
+				route: resolveKeys(timing, raw.settlement.route),
+				tradeKey: raw.settlement.tradeKey ?? 'trade',
+				lanterns: resolveKeys(timing, raw.settlement.lanterns),
+				tower: raw.settlement.tower
+					? {x: raw.settlement.tower.x, z: raw.settlement.tower.z, h: raw.settlement.tower.h ?? 7, keys: resolveKeys(timing, raw.settlement.tower.keys), rings: (raw.settlement.tower.rings ?? []).map((c) => cueTime(timing, c))}
+					: null,
+			}
+		: null,
+	props: (raw.props ?? []).map((p) => ({kind: p.kind, x: p.x, z: p.z, stones: resolveKeys(timing, p.stones)})),
 	rings: (raw.layers?.rings ?? []).map((r) => ({x: r.x, z: r.z, r: r.r, on: cueTime(timing, r.on), off: r.off ? cueTime(timing, r.off) : Infinity, color: r.color ?? '#f4c46e'})),
 });
 
@@ -209,3 +307,71 @@ const findFace = (keys: PredKey[], i: number): number => {
 	}
 	return 0;
 };
+
+// ---------------------------------------------------------------- EP27+: the dragon's flight
+
+const AIR_STATES = new Set(['fly', 'glide', 'dive']);
+export type DragonPose = {x: number; y: number; z: number; heading: number; air: number; bank: number; state: string; since: number; roar: number};
+
+const dragonPos = (keys: DragonKey[], t: number, ground: (x: number, z: number) => number): [number, number, number, number] | null => {
+	if (!keys.length || t < keys[0].t) return null;
+	let i = 0;
+	while (i + 1 < keys.length && keys[i + 1].t <= t) i++;
+	const k = keys[i];
+	const yOf = (kk: DragonKey) => (kk.y === null ? ground(kk.x, kk.z) : kk.y);
+	if (k.dur > 0 && i > 0) {
+		const pk = keys[i - 1];
+		const p = Math.min(1, (t - k.t) / k.dur);
+		const e = k.ease === 'linear' ? p : smooth(p);
+		return [pk.x + (k.x - pk.x) * e, yOf(pk) + (yOf(k) - yOf(pk)) * e, pk.z + (k.z - pk.z) * e, i];
+	}
+	return [k.x, yOf(k), k.z, i];
+};
+
+/** A dragon's pose at t: position (keys with `dur` move from the previous key), heading from its motion (or `face`),
+ * `air` 0 perched .. 1 flying (blended over 0.5 s), and a bank into turns. */
+export const dragonAt = (keys: DragonKey[], t: number, ground: (x: number, z: number) => number): DragonPose | null => {
+	const p = dragonPos(keys, t, ground);
+	if (!p) return null;
+	const k = keys[p[3]];
+	if (k.state === 'hidden') return null;
+	const a = dragonPos(keys, t - 0.08, ground) ?? p;
+	const b = dragonPos(keys, t + 0.08, ground) ?? p;
+	const dx = b[0] - a[0];
+	const dz = b[2] - a[2];
+	const moving = Math.hypot(dx, dz) > 0.02;
+	const heading = moving ? (Math.atan2(-dz, dx) * 180) / Math.PI : (k.face ?? findDragonFace(keys, p[3]));
+	// bank: heading change rate (deg/s) -> roll
+	let bank = 0;
+	if (moving) {
+		const a2 = dragonPos(keys, t - 0.2, ground) ?? a;
+		const h0 = Math.atan2(-(a[2] - a2[2]), a[0] - a2[0]);
+		const h1 = Math.atan2(-dz, dx);
+		let dh = h1 - h0;
+		while (dh > Math.PI) dh -= 2 * Math.PI;
+		while (dh < -Math.PI) dh += 2 * Math.PI;
+		bank = Math.max(-0.5, Math.min(0.5, dh * 2.2));
+	}
+	const prev = p[3] > 0 ? keys[p[3] - 1] : k;
+	const since = t - k.t;
+	const airNow = AIR_STATES.has(k.state) ? 1 : 0;
+	const airPrev = AIR_STATES.has(prev.state) ? 1 : 0;
+	const air = airPrev + (airNow - airPrev) * smooth(Math.min(1, since / 0.5));
+	const roar = k.state === 'roar' ? smooth(Math.min(1, since / 0.25)) * (1 - smooth(Math.min(1, Math.max(0, (since - 0.9) / 0.5)))) : 0;
+	return {x: p[0], y: p[1], z: p[2], heading, air, bank: bank * air, state: k.state, since, roar};
+};
+
+const findDragonFace = (keys: DragonKey[], i: number): number => {
+	for (let j = i; j >= 0; j--) {
+		if (keys[j].face !== undefined) return keys[j].face!;
+		if (j > 0) {
+			const dx = keys[j].x - keys[j - 1].x;
+			const dz = keys[j].z - keys[j - 1].z;
+			if (Math.hypot(dx, dz) > 0.05) return (Math.atan2(-dz, dx) * 180) / Math.PI;
+		}
+	}
+	return 0;
+};
+
+/** A HUD series by key: the herd, the predator count, or an episode's extra `series` (EP27: trade). */
+export const seriesAt = (w: World, key: string, t: number) => (key === 'herd' ? herdCount(w, t) : key === 'pred' ? sample(w.pred, t, 0) : sample(w.series[key] ?? [], t, 0));

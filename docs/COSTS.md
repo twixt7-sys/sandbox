@@ -361,6 +361,17 @@ On the paid primary stack, with 4 stills: about **$1.05 (₱67)**, or about $2.2
 
 **EP26 v3 (2 Nov 2026):** the ending formula (part number, follow button, next-run card, a dragon's shadow), golden-hour light, ambient life and the World Engine chime are all code and the same free SoundFont. The dragon icon is hand-placed pixels in `Pixel.tsx`, not generated. Still **$0**, and no further Figma generations (EP26's total stays at 1).
 
+## What Episode 27 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| Field card sprite (the dragon) | **Figma AI, 1 generation** (the user approved up to 2 for EP27): `generate_image` with `gpt-image-2.5-sunburst`, 1536×1024, in "Worldcraft Shorts EP26 art". Right first time; re-gridded to 168×116 with `pipeline/pixelate.py` | $0 cash (1 generation) |
+| The voxel dragon, the village (roofs, char, barns, the move, roads, carts, tower and bell), sheep, cairn, HUD, cards | Remotion + three.js code, software WebGL (`swangle`) | $0 |
+| Narration | Kokoro-82M (`af_heart`, speed 1.07), 170 words, 61.3 s total | $0 |
+| Score + SFX | `pipeline/music_s2.py` (FluidSynth + MuseScore General SoundFont), `pipeline/score_s2.py` (+ `towerBell`, `burn`) | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, 1 Figma generation |
+
 On the paid primary stack: no stills are needed any more (the world is code), so the only paid item would be ElevenLabs narration (about 900 characters, inside the $6 (₱380) a month Starter allowance), at ₱63.35 = $1 (BSP, 22 Oct 2026).
 
 ## Alternatives

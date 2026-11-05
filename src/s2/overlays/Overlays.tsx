@@ -9,7 +9,11 @@ import {sample} from '../keys';
 import {clamp, hash2} from '../rng';
 import {F2, outline, panel, pixelShadow, PX, S2} from '../style';
 import {grimmawPose, project, useS2} from '../world/WorldScene';
-import {clockAt, herdCount, simTime} from '../world/timeline';
+import {clockAt, dragonAt, herdCount, seriesAt, simTime, World} from '../world/timeline';
+import {roofsIntact} from '../world/Settlement';
+
+/** A HUD value by key: herd, pred, roofs (EP27: standing, unburnt roofs, read from the village itself) or a world series. */
+const hudValue = (w: World, key: string, t: number) => (key === 'roofs' ? roofsIntact(w, t) : seriesAt(w, key, t));
 import {PixelSprite} from './Pixel';
 
 type OP = {g: Graphic; t: number};
@@ -75,13 +79,13 @@ export const Kinetic: React.FC<OP> = ({g, t}) => {
 
 // ---------------------------------------------------------------- HUD: the sim bar
 
-const Counter: React.FC<{icon: string; label: string; value: number; color: string; flash: number}> = ({icon, label, value, color, flash}) => (
-	<div style={{display: 'flex', alignItems: 'center', gap: 14}}>
-		<PixelSprite name={icon} px={6} />
+const Counter: React.FC<{icon: string; label: string; value: number; color: string; flash: number; compact?: boolean; digits?: number}> = ({icon, label, value, color, flash, compact, digits = 3}) => (
+	<div style={{display: 'flex', alignItems: 'center', gap: compact ? 10 : 14}}>
+		<PixelSprite name={icon} px={compact ? 4 : 6} />
 		<div style={{display: 'flex', flexDirection: 'column', lineHeight: 1}}>
-			<span style={{fontFamily: F2.pixel, fontSize: 21, color: 'rgba(239,230,210,0.75)', letterSpacing: '0.06em'}}>{label}</span>
-			<span style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: 46, color: value === 0 ? S2.rust : color, textShadow: flash > 0 ? `0 0 ${12 * flash}px ${color}` : undefined}}>
-				{String(Math.round(value)).padStart(3, '0')}
+			<span style={{fontFamily: F2.pixel, fontSize: compact ? 18 : 21, color: 'rgba(239,230,210,0.75)', letterSpacing: '0.06em'}}>{label}</span>
+			<span style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: compact ? 40 : 46, color: value === 0 ? S2.rust : color, textShadow: flash > 0 ? `0 0 ${12 * flash}px ${color}` : undefined}}>
+				{String(Math.round(value)).padStart(digits, '0')}
 			</span>
 		</div>
 	</div>
@@ -101,15 +105,17 @@ export const SimBar: React.FC<OP> = ({g, t}) => {
 	const pred = sample(world.pred, t, 0);
 	const herdPrev = herdCount(world, t - 0.15);
 	const rise = interpolate(o, [0, 1], [-30, 0]);
+	// EP27+: `compact` fits three counters and the clock in the same 804 px bar
+	const cp: boolean = Boolean(g.compact);
 	return (
 		<AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>
-			<div style={{position: 'absolute', left: 90 + 6, top: 340 + rise, width: 804, height: 92, display: 'flex', alignItems: 'center', gap: 22, padding: '0 22px', boxSizing: 'border-box', ...panel()}}>
+			<div style={{position: 'absolute', left: 90 + 6, top: 340 + rise, width: 804, height: 92, display: 'flex', alignItems: 'center', gap: cp ? 14 : 22, padding: cp ? '0 16px' : '0 22px', boxSizing: 'border-box', ...panel()}}>
 				<div
 					style={{
 						display: 'flex',
 						alignItems: 'center',
 						gap: 10,
-						padding: '0 16px',
+						padding: cp ? '0 12px' : '0 16px',
 						height: 58,
 						background: running || pressed ? S2.ember : 'rgba(239,230,210,0.12)',
 						color: running || pressed ? S2.ink : S2.ember,
@@ -117,19 +123,29 @@ export const SimBar: React.FC<OP> = ({g, t}) => {
 						transform: `translateY(${pressed ? 6 : 0}px)`,
 						fontFamily: F2.pixel,
 						fontWeight: 700,
-						fontSize: 30,
+						fontSize: cp ? 24 : 30,
 					}}
 				>
-					<PixelSprite name={running ? 'ffwd' : 'play'} px={6} style={{opacity: running ? (Math.floor(t * 6) % 2 ? 1 : 0.45) : 1}} />
+					<PixelSprite name={running ? 'ffwd' : 'play'} px={cp ? 5 : 6} style={{opacity: running ? (Math.floor(t * 6) % 2 ? 1 : 0.45) : 1}} />
 					<span>{running ? 'RUNNING' : 'RUN'}</span>
 				</div>
-				<div style={{display: 'flex', flexDirection: 'column', lineHeight: 1, minWidth: 128}}>
-					<span style={{fontFamily: F2.pixel, fontSize: 21, color: 'rgba(239,230,210,0.75)', letterSpacing: '0.06em'}}>{world.clockLabel}</span>
-					<span style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: 46, color: S2.parchment}}>{String(Math.floor(year + 1e-6)).padStart(2, '0')}</span>
+				<div style={{display: 'flex', flexDirection: 'column', lineHeight: 1, minWidth: cp ? 76 : 128}}>
+					<span style={{fontFamily: F2.pixel, fontSize: cp ? 18 : 21, color: 'rgba(239,230,210,0.75)', letterSpacing: '0.06em'}}>{world.clockLabel}</span>
+					<span style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: cp ? 40 : 46, color: S2.parchment}}>{String(Math.floor(year + 1e-6)).padStart(2, '0')}</span>
 				</div>
 				<div style={{flex: 1}} />
-				<Counter icon="mossback" label={g.preyLabel ?? 'MOSSBACKS'} value={herd} color={S2.prey} flash={Math.abs(herd - herdPrev) > 0.5 ? 1 : 0} />
-				<Counter icon="grimmaw" label={g.predLabel ?? 'GRIMMAW'} value={pred} color={S2.pred} flash={0} />
+				{g.counters ? (
+					(g.counters as {icon: string; label: string; key: string; color?: string; digits?: number}[]).map((c) => {
+						const v = hudValue(world, c.key, t);
+						const vp = hudValue(world, c.key, t - 0.15);
+						return <Counter key={c.key} icon={c.icon} label={c.label} value={v} color={col(c.color ?? 'prey')} flash={Math.abs(v - vp) > 0.5 ? 1 : 0} compact={cp} digits={c.digits} />;
+					})
+				) : (
+					<>
+						<Counter icon="mossback" label={g.preyLabel ?? 'MOSSBACKS'} value={herd} color={S2.prey} flash={Math.abs(herd - herdPrev) > 0.5 ? 1 : 0} />
+						<Counter icon="grimmaw" label={g.predLabel ?? 'GRIMMAW'} value={pred} color={S2.pred} flash={0} />
+					</>
+				)}
 			</div>
 		</AbsoluteFill>
 	);
@@ -153,7 +169,7 @@ export const SimGraph: React.FC<OP> = ({g, t}) => {
 		{key: 'herd', color: S2.prey, max: 400, label: 'MOSSBACKS'},
 		{key: 'pred', color: S2.pred, max: 4, label: 'GRIMMAW'},
 	];
-	const val = (key: string, tt: number) => (key === 'herd' ? herdCount(world, tt) : sample(world.pred, tt, 0));
+	const val = (key: string, tt: number) => (key === 'herd' ? herdCount(world, tt) : key === 'pred' ? sample(world.pred, tt, 0) : hudValue(world, key, tt));
 	const plotH = H - 66;
 	return (
 		<AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>
@@ -246,18 +262,22 @@ export const FieldCard: React.FC<OP> = ({g, t}) => {
 	const W = 804;
 	const active = times.reduce((acc, at, i) => (t >= at ? i : acc), -1);
 	const sprite = staticFile(g.sprite ?? 'ep26/grimmaw_sprite.png');
+	// sprite size in sprite pixels (EP26's Grimmaw is 168x108); a taller sprite pushes the intro card's text down
+	const spW: number = g.spriteW ?? 168;
+	const spH: number = g.spriteH ?? 108;
+	const dy = (spH - 108) * 3;
 	if (mode === 'intro') {
 		const dietAt = g.dietAt ? cueTime(timing, g.dietAt) : Infinity;
 		const dk = clamp((t - dietAt) / 0.2);
 		return (
 			<AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>
-				<div style={{position: 'absolute', left: 96, top: y + slide, width: W, height: 530, ...panel()}}>
+				<div style={{position: 'absolute', left: 96, top: y + slide, width: W, height: 530 + dy, ...panel()}}>
 					<div style={{position: 'absolute', left: 24, top: 18, fontFamily: F2.pixel, fontSize: 24, color: S2.amber, letterSpacing: '0.08em'}}>{g.kicker ?? 'FIELD CARD · NO. 001'}</div>
 					<div style={{position: 'absolute', right: 24, top: 18, fontFamily: F2.pixel, fontSize: 24, color: 'rgba(239,230,210,0.6)', letterSpacing: '0.08em'}}>{g.kind ?? 'APEX PREDATOR'}</div>
-					<Img src={sprite} style={{position: 'absolute', left: (W - 168 * 3) / 2, top: 58, width: 168 * 3, height: 108 * 3, imageRendering: 'pixelated'}} />
-					<div style={{position: 'absolute', left: 24, top: 398, fontFamily: F2.pixel, fontWeight: 700, fontSize: 64, color: S2.parchment, textShadow: pixelShadow('#050912', 2)}}>{g.name ?? 'GRIMMAW'}</div>
-					<div style={{position: 'absolute', left: 24, right: 24, top: 470, display: 'flex', alignItems: 'center', gap: 16, opacity: dk, transform: `translateX(${(1 - dk) * 30}px)`}}>
-						<span style={{fontFamily: F2.pixel, fontSize: 26, color: 'rgba(239,230,210,0.7)', letterSpacing: '0.08em'}}>DIET</span>
+					<Img src={sprite} style={{position: 'absolute', left: (W - spW * 3) / 2, top: 58, width: spW * 3, height: spH * 3, imageRendering: 'pixelated'}} />
+					<div style={{position: 'absolute', left: 24, top: 398 + dy, fontFamily: F2.pixel, fontWeight: 700, fontSize: 64, color: S2.parchment, textShadow: pixelShadow('#050912', 2)}}>{g.name ?? 'GRIMMAW'}</div>
+					<div style={{position: 'absolute', left: 24, right: 24, top: 470 + dy, display: 'flex', alignItems: 'center', gap: 16, opacity: dk, transform: `translateX(${(1 - dk) * 30}px)`}}>
+						<span style={{fontFamily: F2.pixel, fontSize: 26, color: 'rgba(239,230,210,0.7)', letterSpacing: '0.08em'}}>{g.dietLabel ?? 'DIET'}</span>
 						<span style={{fontFamily: F2.pixelSans, fontWeight: 600, fontSize: 36, color: S2.rust}}>{g.diet ?? 'anything that moves'}</span>
 					</div>
 				</div>
@@ -276,7 +296,7 @@ export const FieldCard: React.FC<OP> = ({g, t}) => {
 			<div style={{position: 'absolute', left: 96, top: y + slide, width: W, height: H, overflow: 'hidden', ...panel()}}>
 				<Img
 					src={sprite}
-					style={{position: 'absolute', left: 16, top: big ? 14 : 8, width: 168 * (big ? 0.9 : 0.5) * 1.0 * (big ? 1 : 1), height: 108 * (big ? 0.9 : 0.5), imageRendering: 'pixelated', transform: big ? 'scale(1)' : undefined}}
+					style={{position: 'absolute', left: 16, top: big ? 14 : 8, width: spW * (big ? 0.9 : 0.5) * (108 / spH), height: 108 * (big ? 0.9 : 0.5), imageRendering: 'pixelated', transform: big ? 'scale(1)' : undefined}}
 				/>
 				<div style={{position: 'absolute', left: big ? 186 : 112, top: big ? 22 : 16, fontFamily: F2.pixel, fontSize: big ? 26 : 21, color: S2.amber, letterSpacing: '0.08em'}}>{g.kicker ?? 'DESIGN CHECK'}</div>
 				<div style={{position: 'absolute', left: big ? 186 : 112, top: big ? 56 : 42, fontFamily: F2.pixel, fontWeight: 700, fontSize: big ? 50 : 36, color: S2.parchment}}>{g.title ?? 'GRIMMAW'}</div>
@@ -317,6 +337,12 @@ export const FieldCard: React.FC<OP> = ({g, t}) => {
 // ---------------------------------------------------------------- labels pinned to the world
 
 const pinTarget = (g: Graphic, s: ReturnType<typeof useS2>): [number, number, number] | null => {
+	if (g.dragon) {
+		const d = s.world.dragons.find((dd) => dd.id === g.dragon);
+		const dp = d ? dragonAt(d.keys, s.t, (x, z) => Math.max(s.island.waterLevel, s.island.heightAt(x, z))) : null;
+		if (!d || !dp) return null;
+		return [dp.x, dp.y + (g.dy ?? 3.6) * d.scale, dp.z];
+	}
 	if (g.pred) {
 		const idx = s.world.predators.findIndex((p) => p.id === g.pred);
 		if (idx < 0) return null;
@@ -515,7 +541,7 @@ export const EndCardS2: React.FC<OP> = ({g, t}) => {
 			</div>
 			<div style={{position: 'absolute', left: 96, width: 804, top: 800, height: 330, opacity: k(0.35), transform: `translateY(${(1 - k(0.35)) * 24}px)`, ...panel({edge: S2.ember})}}>
 				<div style={{position: 'absolute', left: 0, right: 0, top: 44, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 22}}>
-					<PixelSprite name="share" px={9} color={S2.ember} />
+					<PixelSprite name={g.icon ?? 'share'} px={9} color={S2.ember} />
 					<span style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: 78, color: S2.ember, textShadow: pixelShadow('#050912', 2)}}>{g.cta ?? 'SHARE THIS'}</span>
 				</div>
 				<div style={{position: 'absolute', left: 30, right: 30, top: 160, textAlign: 'center', fontFamily: F2.caption, fontWeight: 800, fontSize: 46, lineHeight: 1.15, color: S2.parchment}}>{g.with}</div>
@@ -665,7 +691,7 @@ export const NextRun: React.FC<OP> = ({g, t}) => {
 		<AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>
 			<div style={{position: 'absolute', left: 96, top: y + rise, width: 804, height: 186, ...panel({edge: locked ? 'rgba(239,230,210,0.9)' : S2.rust})}}>
 				<div style={{position: 'absolute', left: 20, top: 18, width: 150, height: 150, background: locked ? 'rgba(239,230,210,0.08)' : 'rgba(208,96,63,0.18)', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-					<PixelSprite name="dragon" px={7} mono={locked ? '#46507a' : undefined} />
+					<PixelSprite name={g.sprite ?? 'dragon'} px={g.spritePx ?? 7} mono={locked ? '#46507a' : undefined} />
 					{locked && <div style={{position: 'absolute', fontFamily: F2.pixel, fontWeight: 700, fontSize: 60, color: S2.parchment, opacity: Math.floor(t * 3) % 2 ? 1 : 0.55, textShadow: pixelShadow('#050912', 2)}}>?</div>}
 					{flash > 0 && <div style={{position: 'absolute', left: 0, top: 0, right: 0, bottom: 0, background: `rgba(255,248,232,${(flash * 0.9).toFixed(3)})`}} />}
 				</div>

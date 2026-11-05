@@ -96,8 +96,12 @@ The ending stack (55–61 s, captions off): `seasonBar` y 350–508, `followButt
 | Part number | `seasonBar`: PART NN / 50 counts up as a 50-segment bar fills to NN; the current segment blinks | `simTicks` bed for the fill |
 | Follow | `followButton`: a pixel pointer glides in and taps "+ FOLLOW / FOR PART NN+1" on the word "Follow"; flash, sparks, flips to ✓ FOLLOWING | `followPress` + `chime` |
 | Next run | `nextRun`: NEXT RUN · NN+1 with a locked silhouette and ???, decoding to the title on its cue | `cardSlide` in, `unlock` on the reveal |
+| A dragon (EP27+) | `dragons`: perched in the sprite's pose (wings raised), `roar` on the hook, takes off and circles in `fly`, `glide` for passes; it hunts *things in the open*, never people | `roar` + `stompHit` on its display, `dragonPass` on each takeoff / pass |
+| Roofs burn (EP27+) | `settlement.char`: thatch blackens and breaks one roof at a time, smoke rises; no people anywhere | `burn` bed |
+| A change switches on in the village (EP27+) | `roof` (thatch → slate / turf), `cover` (barns rise), `place` (unbuild at A, rise at B), `route` + `lanterns` (night road), `tower` (rises, bell swings) | `restore`, `check`; `towerBell` for the bell |
 | The next creature, teased in-world | `flyers`: a shadow-only creature crosses the Isle (EP26: a dragon's shadow sweeps the meadow and the Grimmaw looks up) | `dragonPass` (whoosh + wingbeats, panning with it) |
 
+- **Settlements (EP27+):** the Isle now has a village (`settlement` in `episode.world`). Frame 0 and the loop frame show the *naive* village (thatch, open pens, the road over the open meadow); everything the episode changes resets under the share card's wipe. Later episodes can start from either site; plan landmarks with the constants at the top of `make_ep27.py`.
 - **Deaths are never shown as violence.** A starving creature lies down, greys and dissolves out of the simulation. Prey loss is a falling counter and agents shrinking away, never a kill.
 - **Numbers on screen must match the world.** The HUD, graphs and visible agents all read the same keys (`herd.count`, `pred`, `clock`).
 

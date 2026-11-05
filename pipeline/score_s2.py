@@ -189,8 +189,8 @@ def blip(f0, f1, dur, bright=1.0):
 
 
 S2_HITS = {"roar", "stompHit", "sting", "runPress", "stamp", "rewind", "ringOn", "snowAir", "sleepZ", "cubPop", "delete", "restore", "cardSlide", "check", "unlock", "worldRipple", "crash", "boomPop",
-           "engineWind", "dragonPass", "followPress", "chime"}
-S2_BEDS = {"simTicks", "births", "losses", "stomp"}
+           "engineWind", "dragonPass", "followPress", "chime", "towerBell"}
+S2_BEDS = {"simTicks", "births", "losses", "stomp", "burn"}
 
 
 def s2_hit(kind):
@@ -391,6 +391,18 @@ def s2_hit(kind):
         bip[int(0.015 * SR):int(0.015 * SR) + len(b)] += b
         sparkle = hp(noise(n), 7000) * np.interp(t, [0, 0.1, 0.18, 0.6], [0, 0, 0.12, 0])
         return st(click + thock + bip + sparkle, 0.5)
+    if kind == "towerBell":
+        # EP27: the village's watchtower bell. A low cast bell (inharmonic church-bell partials on G3: hum, prime,
+        # minor-third tierce, quint, nominal), struck once with a short metallic clang, ringing ~3 s. Deliberately
+        # unlike the World Engine chime (a high music box), so the sound logo stays unique.
+        n = int(3.2 * SR)
+        t = np.arange(n) / SR
+        f0 = 196.0
+        sig = np.zeros(n)
+        for ratio, amp, dec in ((0.5, 0.55, 0.9), (1.0, 0.8, 1.4), (1.19, 0.6, 1.9), (1.5, 0.35, 2.4), (2.0, 0.5, 2.0), (2.52, 0.22, 3.5), (3.01, 0.15, 5.0)):
+            sig += amp * np.sin(2 * np.pi * f0 * ratio * t + ratio) * np.exp(-t * dec)
+        clang = bp(noise(n), 1500, 6000) * np.exp(-t * 60) * 0.35
+        return st((sig + clang) * np.minimum(1, t / 0.003), 0.4)
     raise KeyError(kind)
 
 
@@ -420,6 +432,18 @@ def s2_bed(kind, dur):
             i = int(k * 0.5 * SR)
             out[i:i + m] += thud[: n - i] * (0.8 + 0.2 * (k % 2))
             k += 1
+    elif kind == "burn":
+        # EP27: roofs catching (no voices, no screams): a low roar of flame plus dry crackles. Its own seeded RNG, so
+        # adding it never shifts the shared RNG other sounds draw from.
+        rng = np.random.default_rng(27)
+        t = np.arange(n) / SR
+        swell = np.interp(t, [0, min(0.6, dur / 3), max(0.7, dur - 0.5), dur], [0, 1, 1, 0])
+        out += lp(rng.standard_normal(n), 420) * 0.5 * swell
+        for g in np.sort(rng.uniform(0, max(0.1, dur - 0.05), int(26 * dur))):
+            m = int(0.012 * SR)
+            i = int(g * SR)
+            pop = bp(rng.standard_normal(m), 1800, 7000) * np.exp(-np.arange(m) / SR * 400) * rng.uniform(0.3, 1.0)
+            out[i:i + m] += pop[: max(0, n - i)]
     else:
         raise KeyError(kind)
     return st(out, 0.5)

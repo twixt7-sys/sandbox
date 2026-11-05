@@ -217,23 +217,47 @@ const MB_PARTS: {s: [number, number, number]; p: [number, number, number]}[] = [
 	{s: [0.3, 0.3, 0.3], p: [0.5, 0.46, 0]},
 ];
 const MB_COLORS = ['#3a2c20', '#ece2c6', '', '#4a3828'];
+// EP27+ livestock: white sheep with dark heads and legs (the same parts, re-skinned)
+const SHEEP_COLORS = ['#2b2622', '#f3efe4', '', '#24201d'];
+const WOOL = ['#e9e3d3', '#f7f3ea', '#ddd6c4', '#efe9dc'];
 
 /**
  * The herd: `count` agents visible (fractional = the last one fading), wandering around their homes in simulation
  * time `s`. Agents beyond `base` are born small and grow. `pale` greys them (a starving boom).
  */
-export const Herd: React.FC<{island: Island; agents: HerdAgent[]; count: number; s: number; t: number; pale?: number; born?: (i: number) => number; loopT?: number}> = ({island, agents, count, s, t, pale = 0, born, loopT}) => {
+export const Herd: React.FC<{
+	island: Island;
+	agents: HerdAgent[];
+	count: number;
+	s: number;
+	t: number;
+	pale?: number;
+	born?: (i: number) => number;
+	loopT?: number;
+	/** EP27+: 'sheep' re-skins the herd as livestock */
+	skin?: 'mossback' | 'sheep';
+	/** EP27+: a second set of homes, and how far (0..1) the herd has moved to them (staggered per agent) */
+	agentsB?: HerdAgent[];
+	site?: number;
+}> = ({island, agents, count, s, t, pale = 0, born, loopT, skin = 'mossback', agentsB, site = 0}) => {
+	const sheep = skin === 'sheep';
 	const refs = [useRef<THREE.InstancedMesh>(null), useRef<THREE.InstancedMesh>(null), useRef<THREE.InstancedMesh>(null), useRef<THREE.InstancedMesh>(null)];
 	const outline = useRef<THREE.InstancedMesh>(null);
 	const m = useMemo(() => new THREE.MeshLambertMaterial(), []);
 	useLayoutEffect(() => {
 		const grazeW = loopFreq(1.3, loopT);
-		agents.forEach((a, i) => {
+		agents.forEach((a0, i) => {
+			let a = a0;
 			const vis = Math.max(0, Math.min(1, count - i));
 			const grow = born ? born(i) : 1;
 			const sc = vis <= 0 ? 0.0001 : (0.35 + 0.65 * vis) * (a.baby ? 0.55 + 0.45 * grow : 1) * (0.92 + a.r * 0.16);
 			// wander in sim time around home, herd centre drifting slowly
 			const w = 0.13 + a.r * 0.05;
+			const bk = agentsB && site > 0 ? Math.min(1, Math.max(0, (site - a.r * 0.4) / 0.6)) : 0;
+			const bkE = bk * bk * (3 - 2 * bk);
+			const hx = agentsB ? a.hx + (agentsB[i].hx - a.hx) * bkE : a.hx;
+			const hz = agentsB ? a.hz + (agentsB[i].hz - a.hz) * bkE : a.hz;
+			a = {...a, hx, hz};
 			let x = a.hx + wander(s * w, i * 2 + 1) * 1.8 + wander(s * 0.03, a.herd + 50) * 2.2;
 			let z = a.hz + wander(s * w, i * 2 + 2) * 1.8 + wander(s * 0.03, a.herd + 70) * 2.2;
 			const c = island.columnAt(x, z);
@@ -258,7 +282,7 @@ export const Herd: React.FC<{island: Island; agents: HerdAgent[]; count: number;
 				const mm = m4.clone().multiply(m4b);
 				const r = refs[k].current!;
 				r.setMatrixAt(i, mm);
-				const hex = k === 2 ? MOSS[Math.floor(a.r * MOSS.length)] : MB_COLORS[k];
+				const hex = sheep ? (k === 2 ? WOOL[Math.floor(a.r * WOOL.length)] : SHEEP_COLORS[k]) : k === 2 ? MOSS[Math.floor(a.r * MOSS.length)] : MB_COLORS[k];
 				col.set(hex);
 				if (pale > 0) {
 					const g = col.r * 0.3 + col.g * 0.59 + col.b * 0.11;

@@ -10,6 +10,27 @@ export const SPRITES: Record<string, {rows: string[]; colors: Record<string, str
 		rows: ['....R.R.R.....', '..RRRRRRRR.W..', '.DDDDDDDDDWWW.', 'DDSDDSDDDDWWWW', '.DDDDDDDDDDW..', '.DD.D...DD.D..'],
 		colors: {D: '#686c78', S: '#3a3d46', R: '#cf7038', W: '#d6c6a5'},
 	},
+	// EP27: livestock, a roof, a trade cart, a speech bubble (the comment ask), stacked stones (the EP28 tease)
+	sheep: {
+		rows: ['..WWWWWW....', '.WWWWWWWW.HH', 'WWWWWWWWWHHH', 'WWWWWWWWW.HE', '.WWWWWWWW...', '..L.L..L.L..'],
+		colors: {W: '#f3efe4', H: '#24201d', E: '#24201d', L: '#2b2622'},
+	},
+	house: {
+		rows: ['.....RR.....', '...RRRRRR...', '.RRRRRRRRRR.', 'RRRRRRRRRRRR', '.WWWWWWWWWW.', '.WWWWDDWWWW.', '.WWWWDDWWWW.'],
+		colors: {R: '#d8b25a', W: '#e3d4b3', D: '#6b4a30'},
+	},
+	cart: {
+		rows: ['..CCCCC.....', '.CCCCCCC..PP', '.CCCCCCC.PPP', 'BBBBBBBBBPP.', 'BBBBBBBBB.P.', '.K....K..P.P'],
+		colors: {C: '#efe3c4', B: '#8a5a36', K: '#2c2420', P: '#5a3c28'},
+	},
+	bubble: {
+		rows: ['.XXXXXXXXX.', 'XXXXXXXXXXX', 'XX.X.X.X.XX', 'XXXXXXXXXXX', '.XXXXXXXXX.', '...XX......', '..XX.......', '.X.........'],
+		colors: {X: 'currentColor'},
+	},
+	cairn: {
+		rows: ['.......LLLL.......', '......LMMMML......', '.....LMMMMMML.....', '.....LLLLLLLL.....', '...LKKKKKKKKKL....', '..LKKKKKKKKKKKL...', '..LLLLLLLLLLLLL...', 'LGGGGGGGGGGGGGGGL.', 'LGGGGGGGGGGGGGGGGL', 'LGGGGGGGGGGGGGGGGL', '.LLLLLLLLLLLLLLLL.'],
+		colors: {L: '#2a2d36', M: '#8c877f', K: '#b2ada3', G: '#9a968e'},
+	},
 	play: {rows: ['X....', 'XXX..', 'XXXXX', 'XXX..', 'X....'], colors: {X: 'currentColor'}},
 	ffwd: {rows: ['X...X...', 'XX..XX..', 'XXX.XXX.', 'XX..XX..', 'X...X...'], colors: {X: 'currentColor'}},
 	rewind: {rows: ['...X...X', '..XX..XX', '.XXX.XXX', '..XX..XX', '...X...X'], colors: {X: 'currentColor'}},

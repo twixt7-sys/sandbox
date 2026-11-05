@@ -189,8 +189,8 @@ def blip(f0, f1, dur, bright=1.0):
 
 
 S2_HITS = {"roar", "stompHit", "sting", "runPress", "stamp", "rewind", "ringOn", "snowAir", "sleepZ", "cubPop", "delete", "restore", "cardSlide", "check", "unlock", "worldRipple", "crash", "boomPop",
-           "engineWind", "dragonPass", "followPress", "chime", "towerBell"}
-S2_BEDS = {"simTicks", "births", "losses", "stomp", "burn"}
+           "engineWind", "dragonPass", "followPress", "chime", "towerBell", "eyeOn"}
+S2_BEDS = {"simTicks", "births", "losses", "stomp", "burn", "lockOn"}
 
 
 def s2_hit(kind):
@@ -403,6 +403,18 @@ def s2_hit(kind):
             sig += amp * np.sin(2 * np.pi * f0 * ratio * t + ratio) * np.exp(-t * dec)
         clang = bp(noise(n), 1500, 6000) * np.exp(-t * 60) * 0.35
         return st((sig + clang) * np.minimum(1, t / 0.003), 0.4)
+    if kind == "eyeOn":
+        # EP27: the view switches to the dragon's eye: a low breathy swell and a descending square sweep that lands on
+        # a soft pulse, like a lens focusing. Its own seed (no shared-RNG draw).
+        n = int(1.1 * SR)
+        t = np.arange(n) / SR
+        rng = np.random.default_rng(271)
+        swell = bp(rng.standard_normal(n), 120, 900) * np.interp(t, [0, 0.35, 0.7, 1.1], [0, 0.8, 0.3, 0])
+        sweep = blip(1400, 180, 0.55, 0.7)
+        sw = np.zeros(n)
+        sw[: len(sweep)] += sweep
+        thump = np.sin(2 * np.pi * 70 * t) * np.exp(-np.maximum(0, t - 0.5) * 9) * (t > 0.5) * 0.7
+        return st(swell * 0.6 + sw + thump, 0.5)
     raise KeyError(kind)
 
 
@@ -444,6 +456,16 @@ def s2_bed(kind, dur):
             i = int(g * SR)
             pop = bp(rng.standard_normal(m), 1800, 7000) * np.exp(-np.arange(m) / SR * 400) * rng.uniform(0.3, 1.0)
             out[i:i + m] += pop[: max(0, n - i)]
+    elif kind == "lockOn":
+        # EP27: target locks: a quick 8-bit double beep every 0.12 s, rising a little through the run
+        k = 0
+        while k * 0.12 < dur - 0.05:
+            f = 1100 + min(12, k) * 35
+            for d0 in (0.0, 0.045):
+                b = blip(f, f, 0.03, 0.4)
+                i = int((k * 0.12 + d0) * SR)
+                out[i:i + len(b)] += b[: max(0, n - i)]
+            k += 1
     else:
         raise KeyError(kind)
     return st(out, 0.5)

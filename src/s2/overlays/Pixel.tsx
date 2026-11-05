@@ -31,6 +31,7 @@ export const SPRITES: Record<string, {rows: string[]; colors: Record<string, str
 		rows: ['.......LLLL.......', '......LMMMML......', '.....LMMMMMML.....', '.....LLLLLLLL.....', '...LKKKKKKKKKL....', '..LKKKKKKKKKKKL...', '..LLLLLLLLLLLLL...', 'LGGGGGGGGGGGGGGGL.', 'LGGGGGGGGGGGGGGGGL', 'LGGGGGGGGGGGGGGGGL', '.LLLLLLLLLLLLLLLL.'],
 		colors: {L: '#2a2d36', M: '#8c877f', K: '#b2ada3', G: '#9a968e'},
 	},
+	eye: {rows: ['...XXXXX...', '.XX.....XX.', 'X...XXX...X', 'X..XXOXX..X', 'X...XXX...X', '.XX.....XX.', '...XXXXX...'], colors: {X: 'currentColor', O: '#050912'}},
 	play: {rows: ['X....', 'XXX..', 'XXXXX', 'XXX..', 'X....'], colors: {X: 'currentColor'}},
 	ffwd: {rows: ['X...X...', 'XX..XX..', 'XXX.XXX.', 'XX..XX..', 'X...X...'], colors: {X: 'currentColor'}},
 	rewind: {rows: ['...X...X', '..XX..XX', '.XXX.XXX', '..XX..XX', '...X...X'], colors: {X: 'currentColor'}},

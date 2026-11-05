@@ -1796,28 +1796,32 @@ YouTube's rules only require disclosure for realistic content, and this is clear
 
 ## Episode 27 captions (ready to paste) — Season 2, Arc 6
 
-Source of truth: `episodes/ep27/episode.json` → `metadata`. Every description ends with the Season 2 ending formula ("Part 27 of 50. Follow for part 28: …"), matching the video's last line. The AI label goes on for all four platforms. Cover: `episodes/ep27/Worldcraft_Short_E27_cover.jpg`. Subtitles: `episodes/ep27/ep27.srt`.
+Source of truth: `episodes/ep27/episode.json` → `metadata` (v2, 5 Nov 2026: the dragon's-eye cut). Every description ends with the Season 2 ending formula ("Part 27 of 50. Follow for part 28: …"), matching the video's last line. The AI label goes on for all four platforms. Cover: `episodes/ep27/Worldcraft_Short_E27_cover.jpg`. Subtitles: `episodes/ep27/ep27.srt`.
 
 **Disclosure.** As in EP26, the island, the village, the dragon model, the HUD and every number are drawn and simulated in code. Two things are AI-made:
 - the narration (Kokoro synthetic voice);
 - the field card's dragon sprite (Figma `generate_image`, re-gridded by `pipeline/pixelate.py`).
 
-The AI label stays on everywhere (series policy). No one is harmed on screen: no people appear, roofs char with nobody in them, and lost livestock is a falling counter.
+The AI label stays on everywhere (series policy). No people appear and no one is harmed on screen: roofs burn empty, and lost livestock is a falling counter.
 
-**Closing EP26's loop.** EP26 ended "a dragon lands here". EP27 opens with the dragon perched on the Grimmaw's meadow. When EP27 goes up, reply to the top comments on EP26 with its link, and pin it in EP26's comments where the platform allows a second pin. The comment CTA ("What would your civilization invent to survive dragons?") is EP27's experiment: compare comments per 1,000 views with EP26's share CTA.
+**The hook.** "This is what a dragon sees" is the episode's own idea, and the strongest first line for every caption, so the Instagram and TikTok captions open with it.
 
-**Posting part 28.** The video promises "something on the Isle learns to build" (a cairn stacks itself on the lake shore). Do the same reply-and-pin on EP27 when EP28 is posted.
+**Closing EP26's loop.** EP26 ended "a dragon lands here"; EP27 opens riding on that dragon over the Grimmaw's meadow. When EP27 goes up, reply to the top comments on EP26 with its link, and pin it in EP26's comments where the platform allows a second pin. The comment CTA is EP27's experiment: compare comments per 1,000 views with EP26's share CTA.
+
+**Posting part 28.** The video promises "something on the Isle learns to build" (a cairn stacks itself below the dragon). Do the same reply-and-pin on EP27 when EP28 is posted.
 
 ### YouTube Shorts
 - **Title** (51/100 chars): `What Would Dragons Actually Change? (Worldbuilding)`
-- **Alternate title** (38 chars): `Your village wouldn't survive a dragon`
+- **Alternate title** (26 chars): `This is what a dragon sees`
 - **Description:**
 
-> If dragons existed, your world's architecture would look very different.
+> If dragons existed, your world's architecture would look very different. Because this is what a dragon sees: every thatch roof, every open pen, every cart on the road is a target.
 >
-> We ran it. A village built before the dragon came: thatch roofs, open pens, a trade road across open meadow. Week one, the thatch burns. Week two, the pens are empty. Week three, no one travels. Nobody fought a war; the village just stopped working.
+> We ran it. Week one, the roofs burn. Week two, the flocks are gone. Week three, nobody travels. Nobody fought a war; they just lived in plain sight.
 >
-> So rebuild it: slate and turf roofs, flocks in covered barns, the village moved into a valley out of sight, and trade at night under the trees. Then the twist: someone has to watch the sky. A tower rises with a bell, and whoever rings it decides when everyone hides. The dragon changed who's in charge.
+> So hide the village: slate and turf roofs, flocks in covered barns, the village moved into the valley under the cliff, and travel at night under the trees. Run it again, and the dragon looks down and finds nothing.
+>
+> Then the twist: look back. A watchtower sees the dragon first; one bell, and everyone hides. Whoever rings it runs the village. The dragon changed who's in charge.
 >
 > Don't just add a dragon. Ask what ordinary people do differently.
 >
@@ -1833,18 +1837,20 @@ The AI label stays on everywhere (series policy). No one is harmed on screen: no
 - **Upload settings:** Altered or synthetic content: Yes (synthetic narration and an AI-generated dragon sprite; the island, village and creatures are drawn in code). Not made for kids. Category: Education.
 
 ### TikTok
-- **Caption** (329 chars): `Dragons wouldn't need to fight you. Your village would just stop working 🐉 We ran it: thatch burns, pens empty, roads empty. 4 fixes, and #5 is the twist: whoever rings the bell holds the power. What would your world invent? Part 27/50 · follow for part 28 🪨 #Worldbuilding #FantasyWriting #Dragons #WritingTips #WorldcraftShorts`
+- **Caption** (305 chars): `This is what a dragon sees 🐉 Every thatch roof, open pen and cart: a target. We hid the village in 4 moves, and #5 is the twist: whoever watches the sky runs the village. What would your world invent? Part 27/50 · follow for part 28 🪨 #Worldbuilding #FantasyWriting #Dragons #WritingTips #WorldcraftShorts`
 - **Pinned comment:** What would your civilization invent to survive dragons?
 - **Upload settings:** Turn on 'AI-generated content' under More options before posting.
 
 ### Facebook Reels
 - **Caption:**
 
-> If dragons existed, your world's architecture would look very different.
+> If dragons existed, your world's architecture would look very different. Because this is what a dragon sees: every thatch roof, every open pen, every cart on the road is a target.
 >
-> We ran it. A village built before the dragon came: thatch roofs, open pens, a trade road across open meadow. Week one, the thatch burns. Week two, the pens are empty. Week three, no one travels. Nobody fought a war; the village just stopped working.
+> We ran it. Week one, the roofs burn. Week two, the flocks are gone. Week three, nobody travels. Nobody fought a war; they just lived in plain sight.
 >
-> So rebuild it: slate and turf roofs, flocks in covered barns, the village moved into a valley out of sight, and trade at night under the trees. Then the twist: someone has to watch the sky. A tower rises with a bell, and whoever rings it decides when everyone hides. The dragon changed who's in charge.
+> So hide the village: slate and turf roofs, flocks in covered barns, the village moved into the valley under the cliff, and travel at night under the trees. Run it again, and the dragon looks down and finds nothing.
+>
+> Then the twist: look back. A watchtower sees the dragon first; one bell, and everyone hides. Whoever rings it runs the village. The dragon changed who's in charge.
 >
 > Don't just add a dragon. Ask what ordinary people do differently.
 >
@@ -1862,13 +1868,15 @@ The AI label stays on everywhere (series policy). No one is harmed on screen: no
 ### Instagram Reels
 - **Caption:**
 
-> Dragons change architecture.
+> This is what a dragon sees.
 >
-> If dragons existed, your world's architecture would look very different.
+> If dragons existed, your world's architecture would look very different. Because this is what a dragon sees: every thatch roof, every open pen, every cart on the road is a target.
 >
-> We ran it. A village built before the dragon came: thatch roofs, open pens, a trade road across open meadow. Week one, the thatch burns. Week two, the pens are empty. Week three, no one travels. Nobody fought a war; the village just stopped working.
+> We ran it. Week one, the roofs burn. Week two, the flocks are gone. Week three, nobody travels. Nobody fought a war; they just lived in plain sight.
 >
-> So rebuild it: slate and turf roofs, flocks in covered barns, the village moved into a valley out of sight, and trade at night under the trees. Then the twist: someone has to watch the sky. A tower rises with a bell, and whoever rings it decides when everyone hides. The dragon changed who's in charge.
+> So hide the village: slate and turf roofs, flocks in covered barns, the village moved into the valley under the cliff, and travel at night under the trees. Run it again, and the dragon looks down and finds nothing.
+>
+> Then the twist: look back. A watchtower sees the dragon first; one bell, and everyone hides. Whoever rings it runs the village. The dragon changed who's in charge.
 >
 > Don't just add a dragon. Ask what ordinary people do differently.
 >
@@ -1880,6 +1888,6 @@ The AI label stays on everywhere (series policy). No one is harmed on screen: no
 >
 > #Worldbuilding #FantasyWriting #Dragons #WritingTips #WorldcraftShorts
 
-- **Hook check:** First 28 characters: 'Dragons change architecture.'
-- **Pinned comment:** Save the dragon-proof checklist, then tell us: what would your civilization invent to survive dragons?
+- **Hook check:** First 27 characters: 'This is what a dragon sees.'
+- **Pinned comment:** Save the sky-proof checklist, then tell us: what would your civilization invent to survive dragons?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

@@ -441,9 +441,71 @@ def style_tease(c: Ctx):
     c.arp("harp", 1.0, 57, 81, 42, pattern=(0, 1, 2, 3))
 
 
+# ---- EP27 colours (additive; earlier episodes never name them). The same series theme, a different band around it.
+
+def style_soar(c: Ctx):
+    """A dragon in the air: horns in open fifths swelling under a tremolo string pad, the theme low on horns, and a
+    taiko heartbeat on beats 1 and 3 like slow wingbeats; harp glissandi on each chord."""
+    c.pad("strings", 45, 64, 42)
+    c.root("cello", 36, 48, 56)
+    for b, d, ch in c.chord_spans():
+        r, _, _ = chord_tones(ch)
+        low = in_range(r, 43, 55)[0]
+        c.add("horns", b, max(0.5, d - 0.1), low, 58)
+        c.add("horns", b, max(0.5, d - 0.1), low + 7, 52)
+        for k, pch in enumerate(voicing(ch, 60, 84)[:6]):
+            c.add("harp", b + k * 0.08, 1.2, pch, 50)
+    for b in range(0, c.n, 2):
+        c.add("taiko", b, 0.8, 50, 78)
+        c.add("taiko", b + 0.5, 0.5, 50, 46)
+    c.theme("horns", vel=66, bars=(0, 2), octave=-1)
+    c.theme("celesta", vel=56, bars=(0, 2), octave=1)
+
+
+def style_raid(c: Ctx):
+    """The naive village under the dragon (run 1): war drums. Taiko eighths with an accent pattern, low horn stabs on
+    every chord, muted marimba sixteenths, driving bass; the World Engine chip arps stay, quietly."""
+    c.pad("strings", 50, 67, 38)
+    c.arp("marimba", 0.25, 60, 76, 58, pattern=(0, 0, 2, 0, 1, 0, 2, 3))
+    c.arp("chip", 0.25, 74, 93, 34, pattern=(0, 2, 1, 3))
+    for b, d, ch in c.chord_spans():
+        r, _, _ = chord_tones(ch)
+        p = in_range(r, 33, 45)[0]
+        k = 0.0
+        while k < d - 1e-6:
+            c.add("bass", b + k, 0.4, p, 86)
+            k += 0.5
+        for q in voicing(ch, 50, 66)[:3]:
+            c.add("horns", b, 0.35, q, 84)
+            c.add("horns", b + 1.5, 0.3, q, 70)
+    k = 0.0
+    while k < c.n - 1e-6:
+        acc = 104 if k % 2 == 0 else (86 if k % 1 == 0 else 62)
+        c.add("taiko", k, 0.45, 50, acc)
+        k += 0.5
+    c.drums(kick=(0, 1.5, 2), snare=(1, 3), hats=0.25, hat_vel=40, kick_vel=96, snare_vel=80)
+
+
+def style_stealth(c: Ctx):
+    """Hiding the village (the four changes): a tiptoe pizzicato figure with rests, celesta and harp, very little
+    low end. `layer` 1-4 adds one family per change (bass, brushes, the theme on glockenspiel, a flute counterline)."""
+    layer = c.spec.get("layer", 1)
+    c.pad("strings", 55, 69, 34, max_notes=3)
+    c.arp("pizz", 0.5, 55, 72, 64, pattern=(0, 2, 1, 2, 3, 2, 1, 2))
+    c.arp("harp", 1.0, 60, 79, 40, pattern=(0, 1, 2))
+    if layer >= 2:
+        c.root("bass", 33, 45, 70, every=1.0, dur=0.4)
+    if layer >= 3:
+        c.drums(kick=(0,), snare=(2,), hats=0.5, hat_vel=30, kick_vel=62, snare_vel=48, sticks=True)
+    if layer >= 4:
+        c.theme("glock", vel=64, bars=(0, 2))
+        c.arp("celesta", 0.5, 72, 88, 40, pattern=(2, 1, 0, 1))
+
+
 STYLES = {"hook": style_hook, "pulse": style_pulse, "drive": style_drive, "drop": style_drop, "void": style_void,
           "mystery": style_mystery, "build": style_build, "twist": style_twist, "rest": style_rest, "frenzy": style_frenzy,
-          "crash": style_crash, "swell": style_swell, "anthem": style_anthem, "outro": style_outro, "tease": style_tease}
+          "crash": style_crash, "swell": style_swell, "anthem": style_anthem, "outro": style_outro, "tease": style_tease,
+          "soar": style_soar, "raid": style_raid, "stealth": style_stealth}
 
 # The World Engine chime: Season 2's sound signature (Season 1 had its sine bells). A rising open fifth on music box
 # with 8-bit blips, ringing out two octaves up: (seconds after the cue, semitones above D5).

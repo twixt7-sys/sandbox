@@ -4,7 +4,20 @@ import type {Cue, Timing} from '../../types';
 import {integrate, Key, RawKey, resolveKeys, sample} from '../keys';
 import type {Cam} from './Stage';
 
-export type CamKey = {at: Cue; dur?: number; cut?: boolean; az: number; el: number; dist: number; target: [number, number, number]; fov?: number; drift?: number};
+export type CamKey = {
+	at: Cue;
+	dur?: number;
+	cut?: boolean;
+	az: number;
+	el: number;
+	dist: number;
+	target: [number, number, number];
+	fov?: number;
+	drift?: number;
+	/** EP27+: ride with a dragon. The target becomes the dragon's position (+ `ahead` units along its heading, + `up`),
+	 * and `az` is measured from directly behind it (0 = over its tail, positive = orbit to the camera's right). */
+	follow?: {dragon: string; ahead?: number; up?: number; look?: [number, number, number]; back?: number};
+};
 export type Mood = 'day' | 'dusk' | 'gloom' | 'winter' | 'night' | 'golden';
 export type LightKey = {at: Cue; dur?: number; mood: Mood};
 export type PredKeyRaw = {at: Cue; x: number; z: number; state?: string; face?: number; dur?: number};
@@ -119,6 +132,7 @@ export type World = {
 	loopT: number;
 	series: Record<string, Key[]>;
 	herdSkin: 'mossback' | 'sheep';
+	herdCenters: [number, number][];
 	herdCentersB: [number, number][] | null;
 	dragons: {id: string; scale: number; keys: DragonKey[]}[];
 	settlement: Settlement | null;
@@ -149,6 +163,7 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 	simLoop: raw.simLoop ? cueTime(timing, raw.simLoop) : null,
 	loopT: timing.duration,
 	herdSkin: raw.herd?.skin ?? 'mossback',
+	herdCenters: raw.herd?.centers ?? [[8, -2]],
 	herdCentersB: raw.herd?.centersB ?? null,
 	series: Object.fromEntries(Object.entries(raw.series ?? {}).map(([k, v]) => [k, resolveKeys(timing, v)])),
 	dragons: (raw.dragons ?? []).map((d) => ({
@@ -187,8 +202,8 @@ const lerpAngle = (a: number, b: number, p: number) => {
 };
 
 /** Camera at time t: eases from the previous pose to each key over `dur` s (or cuts), plus a slow orbit drift. */
-export const cameraAt = (w: World, t: number): Cam => {
-	const cams = w.cams;
+export const cameraAt = (w: World, t: number, ground?: (x: number, z: number) => number): Cam => {
+	const cams = w.cams.map((k) => followKey(w, k, t, ground));
 	let cur = cams[0];
 	let prev = cams[0];
 	for (const c of cams) {
@@ -216,6 +231,29 @@ export const cameraAt = (w: World, t: number): Cam => {
 		at: [lerp(from.target[0], cur.target[0]), lerp(from.target[1], cur.target[1]), lerp(from.target[2], cur.target[2])],
 		fov: lerp(from.fov ?? 24, cur.fov ?? 24),
 	};
+};
+
+/** A follow key resolved at time t: its target and azimuth follow the dragon (other keys pass through unchanged). */
+const followKey = (w: World, k: World['cams'][number], t: number, ground?: (x: number, z: number) => number): World['cams'][number] => {
+	if (!k.follow || !ground) return k;
+	const d = w.dragons.find((dd) => dd.id === k.follow!.dragon);
+	const p = d ? dragonAt(d.keys, t, ground) : null;
+	if (!p) return k;
+	if (k.follow.look) {
+		// over the shoulder at a fixed point: the camera sits `back` units behind the dragon on the line from `look`
+		// through it, `up` above it, aimed at `look` (so the dragon is in the foreground and the point stays framed)
+		const L = k.follow.look;
+		const D = Math.hypot(p.x - L[0], p.z - L[2]);
+		const H = D + (k.follow.back ?? 9);
+		const V = p.y + (k.follow.up ?? 4) - L[1];
+		const az = (Math.atan2(p.x - L[0], p.z - L[2]) * 180) / Math.PI;
+		return {...k, az: az + k.az, el: (Math.atan2(V, H) * 180) / Math.PI, dist: Math.hypot(H, V), drift: 0, target: [L[0] + k.target[0], L[1] + k.target[1], L[2] + k.target[2]]};
+	}
+	const h = (p.heading * Math.PI) / 180;
+	const dir = [Math.cos(h), -Math.sin(h)];
+	const ahead = k.follow.ahead ?? 4;
+	const behindAz = (Math.atan2(-dir[0], -dir[1]) * 180) / Math.PI;
+	return {...k, az: behindAz + k.az, drift: 0, target: [p.x + dir[0] * ahead + k.target[0], p.y + (k.follow.up ?? 0) + k.target[1], p.z + dir[1] * ahead + k.target[2]]};
 };
 
 /** Lighting moods. `el` / `az` place the sun (degrees): golden hour is a low sun from the east for long shadows and a warm rim. */
@@ -344,9 +382,14 @@ export const dragonAt = (keys: DragonKey[], t: number, ground: (x: number, z: nu
 	// bank: heading change rate (deg/s) -> roll
 	let bank = 0;
 	if (moving) {
-		const a2 = dragonPos(keys, t - 0.2, ground) ?? a;
-		const h0 = Math.atan2(-(a[2] - a2[2]), a[0] - a2[0]);
-		const h1 = Math.atan2(-dz, dx);
+		// turn rate from two short chords; when there's no history before the first key (frame 0), the window shifts
+		// forward, so a steady circle banks the same on frame 0 as on the loop's last frame
+		const shift = Math.max(0, keys[0].t - (t - 0.2));
+		const q1 = dragonPos(keys, t - 0.2 + shift, ground) ?? p;
+		const q2 = dragonPos(keys, t - 0.08 + shift, ground) ?? p;
+		const q3 = dragonPos(keys, t + 0.08 + shift, ground) ?? p;
+		const h0 = Math.atan2(-(q2[2] - q1[2]), q2[0] - q1[0]);
+		const h1 = Math.atan2(-(q3[2] - q2[2]), q3[0] - q2[0]);
 		let dh = h1 - h0;
 		while (dh > Math.PI) dh -= 2 * Math.PI;
 		while (dh < -Math.PI) dh += 2 * Math.PI;

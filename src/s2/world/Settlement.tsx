@@ -113,6 +113,60 @@ const pathPoint = (pts: [number, number][], u: number): [number, number, number]
 	return [pts[0][0], pts[0][1], 0];
 };
 
+/** Where cart i of N is on a road at sim time s (wraps cleanly for negative s, e.g. after the loop reset). */
+export const cartPose = (path: [number, number][], i: number, N: number, s: number) => {
+	const dir = i % 2 ? -1 : 1;
+	const raw = s * 0.035 * (0.9 + (i % 3) * 0.1) + i / Math.max(4, N) + hash2(i, 2, 9) * 0.1;
+	let u = ((raw % 1) + 1) % 1;
+	if (dir < 0) u = 1 - u;
+	const [x, z, a] = pathPoint(path, u);
+	return {x, z, a, dir};
+};
+
+export type Target = {kind: 'roof' | 'flock' | 'village' | 'cart'; p: [number, number, number]; r: number; on: boolean};
+
+/**
+ * What the dragon can see from the sky at t (EP27's dragon's-eye view). Every target is read from the same state the
+ * world draws, so the TARGETS count on screen always matches the village: thatch roofs still standing, flocks in open
+ * pens, the village itself while it sits on the open meadow, and carts on the open road by day.
+ */
+export const dragonTargets = (w: World, island: Island, t: number, s: number): Target[] => {
+	const st = w.settlement;
+	if (!st) return [];
+	const out: Target[] = [];
+	const g = (x: number, z: number) => Math.max(island.waterLevel, island.heightAt(x, z));
+	for (const b of buildingStates(st, t)) {
+		if (!isHome(b.b)) continue;
+		out.push({kind: 'roof', p: [b.x, g(b.x, b.z) + 2.0, b.z], r: b.b.kind === 'hall' ? 2.0 : 1.3, on: b.roof < 0.5 && b.char < 0.5 && b.rise > 0.5});
+	}
+	const place = sample(st.place, t, 0);
+	const cover = sample(st.cover, t, 0);
+	const herd = sample(w.herd, t, 0);
+	w.herdCenters.forEach(([x, z], i) => {
+		const bx = w.herdCentersB?.[i]?.[0] ?? x;
+		const bz = w.herdCentersB?.[i]?.[1] ?? z;
+		const k = clamp(place);
+		const hx = x + (bx - x) * k;
+		const hz = z + (bz - z) * k;
+		out.push({kind: 'flock', p: [hx, g(hx, hz) + 0.6, hz], r: 3.0, on: cover < 0.5 && herd > 1});
+	});
+	const homes = st.buildings.map((b) => b.a);
+	const cx = homes.reduce((a, b) => a + b[0], 0) / homes.length;
+	const cz = homes.reduce((a, b) => a + b[1], 0) / homes.length;
+	out.push({kind: 'village', p: [cx, g(cx, cz) + 1.5, cz], r: 5.5, on: place < 0.5});
+	const route = sample(st.route, t, 0);
+	const lantern = sample(st.lanterns, t, 0);
+	const trade = sample(w.series[st.tradeKey] ?? [], t, 0);
+	const path = route < 0.5 ? st.roads.a : st.roads.b;
+	const N = Math.ceil(trade);
+	if (path.length > 1)
+		for (let i = 0; i < N; i++) {
+			const c = cartPose(path, i, N, s);
+			out.push({kind: 'cart', p: [c.x, g(c.x, c.z) + 0.6, c.z], r: 0.9, on: route < 0.5 && lantern < 0.5 && trade - i > 0.5});
+		}
+	return out;
+};
+
 // ---------------------------------------------------------------- pieces
 
 const Roof: React.FC<{w: number; d: number; y: number; colors: string[]; holes: number; tall?: number}> = ({w, d, y, colors, holes, tall = 1}) => (
@@ -313,10 +367,7 @@ export const SettlementLayer: React.FC<{world: World; island: Island; t: number;
 			{path.length > 1 &&
 				Array.from({length: N}, (_, i) => {
 					const vis = clamp(trade - i);
-					const dir = i % 2 ? -1 : 1;
-					let u = (s * 0.035 * (0.9 + (i % 3) * 0.1) + i / Math.max(4, N) + hash2(i, 2, 9) * 0.1) % 1;
-					if (dir < 0) u = 1 - u;
-					const [x, z, a] = pathPoint(path, u);
+					const {x, z, a, dir} = cartPose(path, i, N, s);
 					const y = island.heightAt(x, z);
 					return (
 						<group key={`c${i}`} position={[x, y, z]} rotation={[0, a + (dir < 0 ? Math.PI : 0), 0]} scale={0.85 * (0.3 + 0.7 * vis)}>

@@ -273,7 +273,7 @@ export const useWorldState = (world: World, t: number, herdCenters: [number, num
 	const island = isle();
 	const agents = useMemo(() => buildHerd(island, world.herdMax, herdBase, herdCenters), [island, world.herdMax, herdBase, herdCenters]);
 	const agentsB = useMemo(() => (world.herdCentersB ? buildHerd(island, world.herdMax, herdBase, world.herdCentersB) : undefined), [island, world.herdMax, herdBase, world.herdCentersB]);
-	return {world, t, cam: cameraAt(world, t), island, agents, agentsB};
+	return {world, t, cam: cameraAt(world, t, (x, z) => Math.max(island.waterLevel, island.heightAt(x, z))), island, agents, agentsB};
 };
 
 /** For each herd index, the times its slot was (re)filled: count crossing i upwards. Babies grow from these. */

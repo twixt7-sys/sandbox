@@ -10,7 +10,7 @@ import {clamp, hash2} from '../rng';
 import {F2, outline, panel, pixelShadow, PX, S2} from '../style';
 import {grimmawPose, project, useS2} from '../world/WorldScene';
 import {clockAt, dragonAt, herdCount, seriesAt, simTime, World} from '../world/timeline';
-import {roofsIntact} from '../world/Settlement';
+import {dragonTargets, roofsIntact, Target} from '../world/Settlement';
 
 /** A HUD value by key: herd, pred, roofs (EP27: standing, unburnt roofs, read from the village itself) or a world series. */
 const hudValue = (w: World, key: string, t: number) => (key === 'roofs' ? roofsIntact(w, t) : seriesAt(w, key, t));
@@ -719,7 +719,143 @@ export const FollowChip: React.FC<OP> = ({g, t}) => {
 	);
 };
 
+
+// ---------------------------------------------------------------- EP27: the dragon's-eye view
+
+const EYE = {dragon: '#ff5a4e', tower: '#8fc8ff'};
+
+/** Screen size (px) of a world radius r at p: projects p and a point r units above it. */
+const screenSize = (cam: ReturnType<typeof useS2>['cam'], p: [number, number, number], r: number) => {
+	const a = project(cam, p);
+	const b = project(cam, [p[0], p[1] + r, p[2]]);
+	return {a, px: Math.abs(a.y - b.y)};
+};
+
+const Bracket: React.FC<{x: number; y: number; size: number; color: string; k: number; label?: string; blink?: boolean; t: number}> = ({x, y, size, color, k, label, blink, t}) => {
+	const sz = Math.round((size * (1 + (1 - k) * 1.2)) / PX) * PX;
+	const arm = Math.max(PX * 3, Math.round(sz / 3 / PX) * PX);
+	const on = blink ? Math.floor(t * 12) % 2 === 0 : true;
+	const corners = [
+		{left: 0, top: 0, bl: 1, bt: 1},
+		{right: 0, top: 0, br: 1, bt: 1},
+		{left: 0, bottom: 0, bl: 1, bb: 1},
+		{right: 0, bottom: 0, br: 1, bb: 1},
+	];
+	return (
+		<div style={{position: 'absolute', left: x - sz / 2, top: y - sz / 2, width: sz, height: sz, opacity: (0.35 + 0.65 * k) * (on ? 1 : 0.4)}}>
+			{corners.map((c, j) => (
+				<div
+					key={j}
+					style={{
+						position: 'absolute',
+						width: arm,
+						height: arm,
+						...c,
+						borderLeft: c.bl ? `${PX}px solid ${color}` : undefined,
+						borderRight: c.br ? `${PX}px solid ${color}` : undefined,
+						borderTop: c.bt ? `${PX}px solid ${color}` : undefined,
+						borderBottom: c.bb ? `${PX}px solid ${color}` : undefined,
+						filter: 'drop-shadow(0 0 0 #050912)',
+					}}
+				/>
+			))}
+			{label && k > 0.6 && (
+				<div style={{position: 'absolute', left: '50%', bottom: sz + 6, transform: 'translateX(-50%)', whiteSpace: 'nowrap', fontFamily: F2.pixel, fontWeight: 700, fontSize: 20, color, letterSpacing: '0.08em', textShadow: pixelShadow('#050912', 1)}}>
+					{label}
+				</div>
+			)}
+		</div>
+	);
+};
+
+const TARGET_LABEL: Record<Target['kind'], string> = {roof: 'ROOF', flock: 'FLOCK', village: 'VILLAGE', cart: 'CART'};
+
+/**
+ * The dragon's-eye view (EP27): the world as a flying predator scans it. `mode: "dragon"` tints the frame and locks
+ * red brackets onto every target it can see (read from the world: thatch roofs, flocks in open pens, the open village,
+ * carts on the open road by day), staggered from `lockAt`; a TARGETS readout counts them. `mode: "light"` keeps only
+ * the brackets and the readout (a target that disappears flashes green, HIDDEN). `mode: "tower"` is the village
+ * looking back: a sky-blue tint and one bracket on the dragon, DRAGON · SPOTTED.
+ */
+export const DragonEye: React.FC<OP> = ({g, t}) => {
+	const {o, a, timing} = useWin(g, t, g.fadeIn ?? 0.2, g.fadeOut ?? 0.25);
+	const S = useS2();
+	if (o <= 0) return null;
+	const mode: 'dragon' | 'light' | 'tower' = g.mode ?? 'dragon';
+	const color = mode === 'tower' ? EYE.tower : EYE.dragon;
+	const lockAt = g.lockAt ? cueTime(timing, g.lockAt) : a;
+	const stagger: number = g.stagger ?? 0.06;
+	const s = simTime(S.world, t);
+	const nodes: React.ReactNode[] = [];
+	let count = 0;
+	if (mode === 'tower') {
+		const d = S.world.dragons.find((dd) => dd.id === (g.dragon ?? 'dragon'));
+		const dp = d ? dragonAt(d.keys, t, (x, z) => Math.max(S.island.waterLevel, S.island.heightAt(x, z))) : null;
+		if (dp && d) {
+			const {a: sc, px} = screenSize(S.cam, [dp.x, dp.y + 1.6 * d.scale, dp.z], 3.2 * d.scale);
+			if (!sc.behind) {
+				const k = clamp((t - lockAt) / 0.22);
+				if (k > 0) nodes.push(<Bracket key="d" x={sc.x} y={sc.y} size={Math.max(72, px * 2)} color={color} k={k} label={g.label ?? 'DRAGON · SPOTTED'} blink={t - lockAt < 0.4} t={t} />);
+			}
+		}
+	} else {
+		const now = dragonTargets(S.world, S.island, t, s);
+		const before = [0.15, 0.3, 0.45, 0.6].map((dt) => dragonTargets(S.world, S.island, t - dt, simTime(S.world, t - dt)));
+		const shownLabels = new Set<string>();
+		now.forEach((tg, i) => {
+			const lt = lockAt + i * stagger;
+			const {a: sc, px} = screenSize(S.cam, tg.p, tg.r);
+			if (tg.on) {
+				if (t < lt) return;
+				count++;
+				if (sc.behind || sc.x < -60 || sc.x > 1140 || sc.y < (g.minY ?? 200) || sc.y > 1900) return;
+				const k = clamp((t - lt) / 0.2);
+				const label = !shownLabels.has(tg.kind) && tg.kind !== 'cart' ? TARGET_LABEL[tg.kind] : undefined;
+				if (label) shownLabels.add(tg.kind);
+				nodes.push(<Bracket key={i} x={sc.x} y={sc.y} size={Math.max(30, px * 2)} color={color} k={k} label={label} blink={t - lt < 0.35} t={t} />);
+			} else if (!sc.behind && t >= lt && sc.y >= (g.minY ?? 200)) {
+				// recently hidden: a green bracket that fades over 0.6 s
+				const j = before.findIndex((b) => b[i]?.on);
+				if (j >= 0) {
+					const age = (j + 1) * 0.15;
+					nodes.push(<Bracket key={`h${i}`} x={sc.x} y={sc.y} size={Math.max(30, px * 2)} color={S2.prey} k={1 - age / 0.75} label={tg.kind === 'village' || tg.kind === 'flock' ? 'HIDDEN' : undefined} t={t} />);
+				}
+			}
+		});
+	}
+	const tint = mode === 'light' ? null : (
+		<>
+			<AbsoluteFill style={{background: `radial-gradient(ellipse at 50% 55%, transparent 38%, ${mode === 'tower' ? 'rgba(20,70,140,0.42)' : 'rgba(150,18,12,0.5)'} 100%)`}} />
+			<AbsoluteFill style={{background: 'repeating-linear-gradient(0deg, rgba(5,9,18,0.16) 0px, rgba(5,9,18,0.16) 3px, transparent 3px, transparent 9px)'}} />
+		</>
+	);
+	const chip = mode === 'light' ? null : (
+		<div style={{position: 'absolute', right: 166, top: 246, display: 'flex', alignItems: 'center', gap: 12, padding: '10px 16px 8px', ...panel({edge: color})}}>
+			<PixelSprite name="eye" px={5} color={color} />
+			<span style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: 26, color, letterSpacing: '0.06em'}}>{g.title ?? (mode === 'tower' ? "WATCHTOWER VIEW" : "DRAGON'S-EYE VIEW")}</span>
+		</div>
+	);
+	const zero = count === 0;
+	const readout =
+		mode === 'tower' || g.readout === false || t < lockAt ? null : (
+			<div style={{position: 'absolute', left: 96, top: g.readoutY ?? 1420, display: 'flex', alignItems: 'baseline', gap: 16, padding: '12px 20px 8px', ...panel({edge: zero ? S2.prey : color})}}>
+				<span style={{fontFamily: F2.pixel, fontSize: 24, color: 'rgba(239,230,210,0.8)', letterSpacing: '0.1em'}}>TARGETS</span>
+				<span style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: 60, lineHeight: 1, color: zero ? S2.prey : color}}>{String(count).padStart(2, '0')}</span>
+				{zero && g.zeroText && <span style={{fontFamily: F2.pixel, fontSize: 22, color: S2.prey, letterSpacing: '0.06em'}}>{g.zeroText}</span>}
+			</div>
+		);
+	return (
+		<AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>
+			{tint}
+			{nodes}
+			{chip}
+			{readout}
+		</AbsoluteFill>
+	);
+};
+
 export const S2_OVERLAYS: Record<string, React.FC<OP>> = {
+	dragonEye: DragonEye,
 	kinetic: Kinetic,
 	simBar: SimBar,
 	simGraph: SimGraph,

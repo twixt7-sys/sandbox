@@ -106,15 +106,15 @@ Unchanged (Remotion 4 + `@remotion/three` + three.js in software WebGL, `swangle
 - **G2P checked:** "Undying" → ˌʌndˈIɪŋ; "coronation" → kˌɔɹənˈAʃən; "grandchildren", "library", "rewrite" and "immortality" are fine; "29", "50" and "30:" read as numbers.
 - **Landmarks:**
   - "lazy" 6.2 s (the reset);
-  - "run" 9.9 s;
+  - "run" 9.8 s;
   - "coronation" 15.2 s;
-  - "the twist" 21.2 s;
+  - "the twist" 21.0 s;
   - "Rule five?" 41.6 s;
-  - "library" 48.5 s;
+  - "library" 48.4 s;
   - "Would" (wipe −0.3) 53.2 s;
   - "Part" 56.1 s;
   - "Follow" 57.7 s;
-  - "monster" 59.8 s.
+  - "monster" 59.6 s.
 
 ## 4. Timed storyboard
 
@@ -130,7 +130,55 @@ See [`STORYBOARD.md`](STORYBOARD.md).
 
 ## 6. Final video and verification
 
-RESULTS_PLACEHOLDER
+- **QA:** `qa.py` **passed** on all four copies, each 61.33 s, −14.0 LUFS, TP −1.4 dB:
+  - master: 24.6 MB;
+  - compat: 21.8 MB;
+  - download (two-pass 1,600k): 14.5 MB;
+  - player (two-pass 1,300k): 12.2 MB.
+- **The loop:** the last frame against frame 0 differs by **0.82/255**, about one ordinary frame step at the end of the video (0.65; EP28's seam was 0.76).
+  - The first check read 2.76, but that was my mistake, not the render's. Re-muxing the audio with `-shortest` had cut the master's last three frames.
+  - Re-muxed without it: all 1,840 frames.
+- **Audio re-mux:** run 1's music was raised (`drive` in the harpsichord colour; louder `clockwork` layers) after the render had started. Remotion bundles `public/` at render start, so the master's video stream was kept as rendered and its audio was re-encoded from the final `mix.wav` (AAC 256k, 48 kHz, as Remotion writes it). The frames don't depend on the audio.
+- **Preview page:** https://claude.ai/artifact/SEsYHsB8t8LEbYvdETrgnT (new; EP26's, EP27's and EP28's pages are untouched).
+  - It declares `downloads` and `assets` and has a Download MP4 button.
+  - The download reads back byte-identical (sha256 `eace7e25…`) and passes `qa.py`.
+  - The player is asset `/_blob/769a99f39c71c356e8872b2af7fb9ff6`.
+- **Render:** 18 min 1 s with `--gl=swangle` (1,840 frames). The crowd and the court cost about 5 minutes over EP28. Part of the render ran alongside the regression TTS jobs.
+- **Inspected:**
+  - beat stills on four rounds (28 frames in the last);
+  - five hook candidates (the chosen frame: a long lens, fov 13 from 44 units at az 20, the Queen in profile on her dais with the sun at the camera's right, the waiting heir beside her and the crowd behind);
+  - the QA contact sheet;
+  - frame 0 against the last frame, with a per-region difference map;
+  - caption and tease frames from the master;
+  - the cover.
+- **Fixes made after looking:**
+  1. **The first hook was far too close:** a wall of people with the Queen on the edge of the frame. The crowd now lives behind her (north), and a long lens makes her the subject.
+  2. **The court first sat beside the valley,** crowded against the lake. An overhead still showed the open east meadow, so the court moved there.
+  3. **The drop stamp ran off both sides** at 76 px; it's now 58.
+  4. **Captions doubled the kinetic titles** (the drop, the thesis, RULE 5?, HISTORY =). `captionsOff`'s `to` word is exclusive, and the ranges now say so.
+  5. **The checklist's INHERITANCE label ran into its text.** The rows are now HEIRS / POWER / MARRIAGE / TITLES / MEMORY.
+  6. **The power tableau looked through the Fenn's hall** on the lake. The camera moved to the south-east.
+  7. **The marriage close-up was cropped by the card.** The card now folds for the marriage and titles tableaux, and the camera pulled back.
+  8. **The twist kinetics sat on the checklist.** It folds for the whole twist.
+  9. **The twist at night was too dark to read the Queen.** It's at dusk until "Unless it's written down", then night for the library's lit windows.
+  10. **The EP30 candles were first behind the crowd,** then under the next-run card. A projection check put them in the clear meadow right of the dais, at 1.6× size.
+  11. **The lesson card's kicker collided with 5/5.** It's now BEFORE YOU WRITE ONE.
+  12. **Run 1's music sat at −28.8 LUFS** (EP28's run 1 was −21.5). It's now `drive` in the harpsichord colour.
+- **Sound (measured):**
+  - −14.05 LUFS, voice/music 14.0 LU;
+  - the chime windows on the SFX track are within 0.2 dB of EP28's (−22.0 / −21.1 / −23.2 against −22.0 / −21.2 / −23.0 LUFS);
+  - the score follows the story: reign hook −20.5, the lazy version's clockwork −29.3, run 1 −20.6, drop −20.3, mystery −24.9, clockwork 1 −29.1 rising to clockwork 4 −24.2 as the fixes switch on, run 2 −16.4, twist −22.3, reign (memory) −23.6, anthem −16.9, outro −25.3, tease −23.0.
+- **Regression, all with the final EP29 code:**
+  - EP25's and EP28's `music.wav`, `sfx.wav` and `mix.wav` are **bit-identical** to `claude/worldcraft-ep28` (narration and timing fixed);
+  - EP28 stills at 0, 8.8, 26.8, 42.5 and 60.4 s are **byte-identical** to `claude/worldcraft-ep28`;
+  - `src/Episode.tsx` (Season 1) is untouched.
+- **Cover:** `Worldcraft_Short_E29_cover.jpg`, the marriage tableau at 31.5 s (the unchanged Queen, her ageing consort, the lineage strip, "EVERY HUSBAND").
+- **Not verifiable by me:** how anything sounds. In particular, listen to the church organ under the hook and the twist, the harpsichord and woodblock clockwork, the tick-tock bed, and the faint growl under "monster" into the loop.
+- **Accepted compromises:**
+  - at run distance, the people are a few pixels each, so the turnover reads in the close tableaux and in the strip rather than in the wides;
+  - in the fastest time-lapses (about 200 years a second), the crowd shimmers rather than visibly aging; the strip carries the generations there;
+  - the lineage strip's mortal and elder icons are small (5×7 sprite pixels);
+  - the consort's replacement is a cut in place (the next husband stands where the last one stood), by design.
 
 ## 7. Reusable components added
 
@@ -160,7 +208,7 @@ In `episode.json → metadata`, and ready to paste in `docs/DISTRIBUTION.md` ("E
 - **The device:** retention at 10–16 s (run 1 and the drop) and 21–38 s (the four tableaux). If they hold, use a generations or time-lapse device again for Arc 7 (history and mythology).
 - **The camera language:** EP29 is the first episode without a moving hook. Compare "viewed vs swiped away" with EP27 (a moving ride) and EP28 (a slow push).
 - **Comments:** a yes/no CTA with "explain why" against EP28's "invent one". Compare comment count, length and replies-to-comments.
-- **The re-hook:** check for a dip around 15 s (the drop) and a recovery after "The fifth is the twist" at 21.2 s.
+- **The re-hook:** check for a dip around 15 s (the drop) and a recovery after "The fifth is the twist" at 21.0 s.
 - **Follows per 1,000 views:** EP26–EP30 against EP21–EP25.
 
 ## 11. How to produce EP30 ("Make a Monster That People Worship", Arc 6)

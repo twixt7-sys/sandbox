@@ -323,12 +323,101 @@ export const FieldCard: React.FC<OP> = ({g, t}) => {
 							<span style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: big ? 25 : 22, color: locked ? S2.ember : shown ? S2.parchment : 'rgba(239,230,210,0.35)', width: big ? 222 : 196, flex: 'none', letterSpacing: '0.02em', whiteSpace: 'nowrap', opacity: locked ? blink : 1}}>
 								{r.n} {locked ? '???' : r.label}
 							</span>
+							{g.sliders && <TraitSlider k={locked ? 0 : shown ? reveal : 0} locked={!!locked} w={big ? 120 : 104} color={g.sliderColor ? col(g.sliderColor) : MOTIF} />}
 							<span style={{fontFamily: F2.pixelSans, fontWeight: 500, fontSize: big ? 29 : 26, color: locked ? 'rgba(244,196,110,0.75)' : 'rgba(239,230,210,0.92)', opacity: locked ? blink : reveal, transform: `translateX(${(1 - reveal) * 20}px)`, whiteSpace: 'nowrap'}}>
 								{locked ? (g.lockedText ?? 'the twist') : shown ? r.text : ''}
 							</span>
 						</div>
 					);
 				})}
+			</div>
+		</AbsoluteFill>
+	);
+};
+
+// ---------------------------------------------------------------- EP28: trait sliders (the species editor)
+
+const MOTIF = '#5fe0c0';
+
+/** A pixel slider from HUMAN (left) to the species' own value (right); `k` 0..1 is the knob. */
+const TraitSlider: React.FC<{k: number; locked?: boolean; w?: number; color?: string}> = ({k, locked, w = 104, color = MOTIF}) => {
+	const knob = 18;
+	const x = Math.round(((w - knob) * k) / PX) * PX;
+	return (
+		<div style={{position: 'relative', width: w, height: 24, flex: 'none'}}>
+			<div style={{position: 'absolute', left: 0, right: 0, top: 9, height: 6, background: 'rgba(239,230,210,0.18)'}} />
+			<div style={{position: 'absolute', left: 0, width: x + knob / 2, top: 9, height: 6, background: color, opacity: 0.8}} />
+			<div style={{position: 'absolute', left: x, top: 0, width: knob, height: 24, background: locked ? 'rgba(244,196,110,0.4)' : k > 0.5 ? color : S2.parchment, boxShadow: `0 0 0 ${PX}px #050912`}} />
+		</div>
+	);
+};
+
+/**
+ * The species editor (EP28): a character-creator panel. Each row is a trait slider from HUMAN to the species' own
+ * value; a row's knob slides on its `at` cue (`moved: true` rows start moved). Rows that stay on HUMAN are dimmed:
+ * the "lazy version" is one slider moved (EARS) and everything else left human.
+ */
+export const Editor: React.FC<OP> = ({g, t}) => {
+	const {o, a, timing} = useWin(g, t, 0.25, 0.25);
+	if (o <= 0) return null;
+	const rows: {label: string; left: string; right: string; at?: Cue; moved?: boolean}[] = g.rows ?? [];
+	const y: number = g.y ?? 448;
+	const slide = (1 - ease(t, a, 0.35)) * -60;
+	const rowH = 50;
+	const H = 92 + rows.length * rowH + 14;
+	return (
+		<AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>
+			<div style={{position: 'absolute', left: 96, top: y + slide, width: 804, height: H, ...panel({edge: MOTIF})}}>
+				<div style={{position: 'absolute', left: 22, top: 16, fontFamily: F2.pixel, fontSize: 21, color: MOTIF, letterSpacing: '0.1em'}}>{g.kicker ?? 'SPECIES EDITOR'}</div>
+				<div style={{position: 'absolute', left: 22, top: 42, fontFamily: F2.pixel, fontWeight: 700, fontSize: 36, color: S2.parchment}}>{g.title ?? 'FENN'}</div>
+				{rows.map((r, i) => {
+					const at = r.at ? cueTime(timing, r.at) : Infinity;
+					const k = r.moved ? 1 : clamp((t - at) / 0.35);
+					const active = k > 0;
+					return (
+						<div key={i} style={{position: 'absolute', left: 16, right: 16, top: 92 + i * rowH, height: rowH - 8, display: 'flex', alignItems: 'center', gap: 16, padding: '0 14px', background: active ? 'rgba(95,224,192,0.14)' : 'rgba(239,230,210,0.05)', boxShadow: active ? `inset 0 0 0 ${PX}px ${MOTIF}` : undefined, opacity: active ? 1 : 0.85}}>
+							<span style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: 26, color: active ? S2.parchment : 'rgba(239,230,210,0.85)', width: 170, flex: 'none'}}>{r.label}</span>
+							<span style={{fontFamily: F2.pixel, fontSize: 21, color: 'rgba(239,230,210,0.75)', width: 110, textAlign: 'right', flex: 'none'}}>{r.left}</span>
+							<TraitSlider k={k} w={200} />
+							<span style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: 21, color: active ? MOTIF : 'rgba(239,230,210,0.5)', whiteSpace: 'nowrap'}}>{r.right}</span>
+						</div>
+					);
+				})}
+			</div>
+		</AbsoluteFill>
+	);
+};
+
+/** A big readout with a 20-segment bar for a world series (EP28: HUMAN-LIKE %, falling as the traits change). */
+export const Readout: React.FC<OP> = ({g, t}) => {
+	const {o} = useWin(g, t, 0.25, 0.25);
+	const {world} = useS2();
+	if (o <= 0) return null;
+	const v = seriesAt(world, g.key, t);
+	const vp = seriesAt(world, g.key, t - 0.12);
+	const max: number = g.max ?? 100;
+	const f = clamp(v / max);
+	const hi = col(g.colorHi ?? 'rust');
+	const lo = col(g.colorLo ?? MOTIF);
+	const c = f > 0.5 ? hi : lo;
+	const segs = 20;
+	const flash = Math.abs(v - vp) > 0.3;
+	return (
+		<AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>
+			<div style={{position: 'absolute', left: 96, top: g.y ?? 1420, padding: '12px 20px 12px', ...panel({edge: c})}}>
+				<div style={{display: 'flex', alignItems: 'baseline', gap: 16}}>
+					<span style={{fontFamily: F2.pixel, fontSize: 24, color: 'rgba(239,230,210,0.8)', letterSpacing: '0.1em'}}>{g.label ?? 'HUMAN-LIKE'}</span>
+					<span style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: 60, lineHeight: 1, color: c, textShadow: flash ? `0 0 14px ${c}` : undefined}}>
+						{String(Math.round(v)).padStart(2, '0')}
+						{g.unit ?? '%'}
+					</span>
+					{g.sub && v <= (g.subBelow ?? 0.5) && <span style={{fontFamily: F2.pixel, fontSize: 22, color: lo, letterSpacing: '0.06em'}}>{g.sub}</span>}
+				</div>
+				<div style={{display: 'flex', gap: 3, marginTop: 8}}>
+					{Array.from({length: segs}, (_, i) => (
+						<div key={i} style={{width: 15, height: 15, background: i < Math.round(f * segs) ? c : 'rgba(239,230,210,0.14)'}} />
+					))}
+				</div>
 			</div>
 		</AbsoluteFill>
 	);
@@ -856,6 +945,8 @@ export const DragonEye: React.FC<OP> = ({g, t}) => {
 
 export const S2_OVERLAYS: Record<string, React.FC<OP>> = {
 	dragonEye: DragonEye,
+	editor: Editor,
+	readout: Readout,
 	kinetic: Kinetic,
 	simBar: SimBar,
 	simGraph: SimGraph,

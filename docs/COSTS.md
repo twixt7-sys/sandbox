@@ -76,6 +76,17 @@ The paid primary stack (Runway stills and clips + ElevenLabs) would still cost a
 | Render + QA | Claude cloud container | $0 |
 | **Total** | | **$0 cash (₱0)** plus 5 Figma image generations |
 
+## What Episode 28 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| Field card sprite (the Fenn) | **Figma AI, 1 generation** (the user approved up to 2 for EP28): `generate_image` with `gpt-image-2.5-sunburst`, 1536×1024, in "Worldcraft Shorts EP26 art"; right first time; re-gridded to 52×127 with `pipeline/pixelate.py` | $0 cash (1 generation) |
+| The voxel Fenn and their morphing bodies, both villages, the great hall on stilts, the light patterns, the species editor, the HUMAN-LIKE meter | Remotion + three.js code, software WebGL (`swangle`) | $0 |
+| Narration | Kokoro-82M (`af_heart`, speed 1.07), 171 words, 60.5 s total | $0 |
+| Score + SFX | `music_s2.py` (+ `folk`, `glow`; kalimba, ocarina, choir and vibraphone from the same free SoundFont), `score_s2.py` (+ `morph`, `slide`) | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, 1 Figma generation |
+
 On the paid primary stack (Runway stills and clips + ElevenLabs), EP04 would cost about **$1.25 (₱77)**, or **$2.30 (₱142)** with one retry per asset, because it has one more still than EP01. ElevenLabs Starter adds $6 (₱371) a month. Rate: ₱61.8 = $1 (Aug 2026).
 
 ## What Episode 05 actually used

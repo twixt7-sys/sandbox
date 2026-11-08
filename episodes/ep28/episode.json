@@ -1,0 +1,4326 @@
+{
+ "id": "ep28",
+ "number": 28,
+ "season": 2,
+ "title": "Intelligent Species Need More Than Different Ears",
+ "lesson": "A different species isn't a human in a costume. Its biology (what it senses, how long it lives, how its families work, what its body needs, how it talks) decides what it builds and how it understands the world.",
+ "format": {
+  "version": "s2",
+  "qa": {
+   "min": 55.0,
+   "max": 62.0
+  }
+ },
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.07
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.2,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "The same lab host, warmer and more wondering for a people rather than a monster. The hook is a friendly challenge. 'Now the lazy version' is a knowing grin. 'Spot the difference. There isn't one.' lands dry. The traits are crisp. 'The Fenn speak in light' is a quiet wonder; 'Ghost lights on the lake' is the reveal. The comment ask is curious."
+ },
+ "timing": {
+  "leadIn": 0.2,
+  "tail": 0.85,
+  "shotLead": 0.12
+ },
+ "captionY": 1238,
+ "captionsOff": [
+  {
+   "line": "L13",
+   "from": "Rule",
+   "to": "talk."
+  }
+ ],
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "Giving elves pointy ears doesn't make them a distinct civilization.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "ears",
+    "civilization."
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "hook",
+   "text": "Meet the Fenn. They stacked these stones.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "fenn.",
+    "stones."
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "setup",
+   "text": "Now the lazy version: humans, with different ears.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "lazy",
+    "ears."
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "setup",
+   "text": "Press run.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "run."
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "run1",
+   "text": "A hundred years later: same houses, same barns, same bell tower.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "same",
+    "tower."
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "drop",
+   "text": "Spot the difference. There isn't one.",
+   "pauseAfter": 0.45,
+   "emphasis": [
+    "difference.",
+    "isn't"
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "rehook",
+   "text": "Biology should change the build. Four traits are easy. The fifth is the twist.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "biology",
+    "twist."
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "senses",
+   "text": "One: senses. They see in the dark, so they live underground.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "dark,",
+    "underground."
+   ]
+  },
+  {
+   "id": "L9",
+   "shot": "lifespan",
+   "text": "Two: lifespan. Four hundred years, so they build in stone.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "hundred",
+    "stone."
+   ]
+  },
+  {
+   "id": "L10",
+   "shot": "family",
+   "text": "Three: family. One clan, one great hall.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "clan,",
+    "hall."
+   ]
+  },
+  {
+   "id": "L11",
+   "shot": "needs",
+   "text": "Four: needs. Their skin must stay wet, so they build on the lake.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "wet,",
+    "lake."
+   ]
+  },
+  {
+   "id": "L12",
+   "shot": "run2",
+   "text": "Run it again. Nothing here looks human now.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "nothing",
+    "human"
+   ]
+  },
+  {
+   "id": "L13",
+   "shot": "twist",
+   "text": "Rule five? How they talk. The Fenn speak in light.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "talk.",
+    "light."
+   ]
+  },
+  {
+   "id": "L14",
+   "shot": "twist",
+   "text": "So their hall has no walls, only windows.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "walls,",
+    "windows."
+   ]
+  },
+  {
+   "id": "L15",
+   "shot": "role",
+   "text": "And from the human valley? Ghost lights on the lake.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "ghost",
+    "lake."
+   ]
+  },
+  {
+   "id": "L16",
+   "shot": "lesson",
+   "text": "Pointy ears are a costume. Biology is a blueprint.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "costume.",
+    "blueprint."
+   ]
+  },
+  {
+   "id": "L17",
+   "shot": "cta",
+   "text": "Invent one biological trait that would completely change a species' society. Comment it.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "invent",
+    "comment"
+   ]
+  },
+  {
+   "id": "L18",
+   "shot": "next",
+   "text": "Part 28 of 50. Follow for part 29: someone on the Isle never dies.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "follow",
+    "dies."
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "world",
+   "purpose": "Close EP27's loop (who stacked the stones?) and stop the scroll on the claim.",
+   "visual": "At a Fenn's eye height in golden light: the small teal Fenn who stacked EP27's cairn, lifting a stone over its head; big night eyes, fin frills, glowing spots. POINTY EARS / AREN'T A / CIVILIZATION. Then the field card: FENN \u00b7 INTELLIGENT SPECIES \u00b7 BUILT: these stones.",
+   "camera": "Low and close (el 5, dist 17, fov 24), a slow push; the last 11 s return to this pose.",
+   "layers": {
+    "foreground": "kinetic, field card",
+    "midground": "the Fenn and the cairn",
+    "background": "the meadow, the peak"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "POINTY EARS / AREN'T A / CIVILIZATION.",
+   "transition": "Reset wipe into the lazy version.",
+   "music": "Folk: kalimba, ocarina theme, hand drums; a hit on 'civilization'.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "POINTY EARS",
+       "color": "ember",
+       "size": 84
+      },
+      {
+       "text": "AREN'T A",
+       "size": 84
+      }
+     ],
+     "y": 452,
+     "size": 96,
+     "start": {
+      "shot": "hook"
+     },
+     "end": {
+      "line": "L1",
+      "word": "doesn't",
+      "offset": -0.06
+     },
+     "preShow": true
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "POINTY EARS",
+       "color": "ember",
+       "size": 84
+      },
+      {
+       "text": "AREN'T A",
+       "size": 84
+      },
+      {
+       "text": "CIVILIZATION.",
+       "at": {
+        "line": "L1",
+        "word": "civilization."
+       },
+       "color": "rust",
+       "size": 78
+      }
+     ],
+     "y": 452,
+     "size": 96,
+     "start": {
+      "line": "L1",
+      "word": "doesn't",
+      "offset": -0.04
+     },
+     "end": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.1
+     },
+     "preShow": true
+    },
+    {
+     "type": "sting",
+     "label": "WORLD ENGINE",
+     "run": "RUN 28 \u00b7 CREATURES",
+     "dur": 1.4,
+     "start": {
+      "shot": "hook"
+     },
+     "front": true
+    },
+    {
+     "type": "fieldCard",
+     "mode": "intro",
+     "y": 440,
+     "start": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "dietAt": {
+      "line": "L2",
+      "word": "stacked"
+     },
+     "kicker": "FIELD CARD \u00b7 NO. 003",
+     "kind": "INTELLIGENT SPECIES",
+     "name": "FENN",
+     "dietLabel": "BUILT",
+     "diet": "these stones",
+     "sprite": "ep28/fenn_sprite.png",
+     "spriteW": 52,
+     "spriteH": 127
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "chime",
+     "at": {
+      "shot": "hook"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "shot": "hook",
+      "offset": 0.05
+     },
+     "gain": -17
+    },
+    {
+     "sound": "stompHit",
+     "at": {
+      "line": "L1",
+      "word": "ears"
+     },
+     "gain": -19
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.05
+     },
+     "gain": -18
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L2",
+      "word": "stacked"
+     },
+     "gain": -20
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "setup",
+   "scene": "world",
+   "purpose": "The lazy version, shown as a character editor: one slider moved, everything else left human.",
+   "visual": "A teal block wipe (RESET): the Fenn become humans with pointy ears in a copy of a human village on the east meadow. The SPECIES EDITOR: EARS slides ROUND \u2192 POINTY; EYES, LIFESPAN, FAMILY, SKIN, VOICE stay on HUMAN. HUMAN-LIKE 96 %. RUN.",
+   "camera": "Low at the copied village (el 6, dist 30), then the wide on 'run'.",
+   "layers": {
+    "foreground": "editor, meter, sim bar",
+    "midground": "elf-Fenn, copied houses",
+    "background": "meadow"
+   },
+   "lighting": "Day.",
+   "onScreenText": "SPECIES EDITOR \u00b7 FENN = HUMAN + EARS; HUMAN-LIKE 96%",
+   "transition": "Rise to the wide.",
+   "music": "Pulse; a slider tick on 'ears'.",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "dur": 0.34,
+     "color": "#06302a"
+    },
+    {
+     "type": "editor",
+     "y": 448,
+     "kicker": "SPECIES EDITOR \u00b7 THE LAZY VERSION",
+     "title": "FENN = HUMAN + EARS",
+     "rows": [
+      {
+       "label": "EARS",
+       "left": "ROUND",
+       "right": "POINTY",
+       "at": {
+        "line": "L3",
+        "word": "ears.",
+        "offset": -0.1
+       }
+      },
+      {
+       "label": "EYES",
+       "left": "HUMAN",
+       "right": "?"
+      },
+      {
+       "label": "LIFESPAN",
+       "left": "HUMAN",
+       "right": "?"
+      },
+      {
+       "label": "FAMILY",
+       "left": "HUMAN",
+       "right": "?"
+      },
+      {
+       "label": "SKIN",
+       "left": "HUMAN",
+       "right": "?"
+      },
+      {
+       "label": "VOICE",
+       "left": "HUMAN",
+       "right": "?"
+      }
+     ],
+     "start": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": 0.05
+     },
+     "end": {
+      "line": "L4",
+      "word": "Press",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "readout",
+     "key": "human",
+     "label": "HUMAN-LIKE",
+     "start": {
+      "line": "L3",
+      "word": "humans,",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L17",
+      "word": "Invent",
+      "offset": -0.52
+     },
+     "sub": "ITS OWN PEOPLE"
+    },
+    {
+     "type": "simBar",
+     "counters": [
+      {
+       "icon": "fenn",
+       "label": "FENN",
+       "key": "pop",
+       "color": "#5fe0c0"
+      }
+     ],
+     "start": {
+      "line": "L4",
+      "word": "Press",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L16",
+      "word": "Pointy",
+      "offset": -0.3
+     },
+     "runAt": [
+      {
+       "line": "L4",
+       "word": "run."
+      },
+      {
+       "line": "L12",
+       "word": "Run"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "gain": -15
+    },
+    {
+     "sound": "morph",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "gain": -13
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": 0.05
+     },
+     "gain": -18
+    },
+    {
+     "sound": "slide",
+     "at": {
+      "line": "L3",
+      "word": "ears.",
+      "offset": -0.1
+     },
+     "gain": -12
+    },
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L4",
+      "word": "run."
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L4",
+      "word": "run."
+     },
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "run1",
+   "scene": "world",
+   "purpose": "Run the lazy version: it grows exactly like a human village.",
+   "visual": "Whole Isle; YEAR 0\u2192100; the Fenn copy grows (two more houses, the bell tower rings); FENN 24\u219240; the graph's HUMAN-LIKE line stays flat at 96.",
+   "camera": "Wide (dist 192).",
+   "layers": {
+    "foreground": "sim bar + graph",
+    "midground": "two look-alike villages",
+    "background": "island"
+   },
+   "lighting": "Day.",
+   "onScreenText": "YEARS 0\u2013100",
+   "transition": "Down to both villages.",
+   "music": "Drive.",
+   "graphics": [
+    {
+     "type": "simGraph",
+     "y": 456,
+     "h": 214,
+     "from": {
+      "line": "L4",
+      "word": "run."
+     },
+     "to": {
+      "line": "L5",
+      "word": "tower.",
+      "offset": 0.4
+     },
+     "start": {
+      "line": "L5",
+      "word": "A",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L6",
+      "word": "Spot",
+      "offset": -0.1
+     },
+     "caption": "YEARS 0\u2013100",
+     "series": [
+      {
+       "key": "pop",
+       "color": "#5fe0c0",
+       "max": 44,
+       "label": "FENN"
+      },
+      {
+       "key": "human",
+       "color": "#d0603f",
+       "max": 100,
+       "label": "HUMAN-LIKE"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L5",
+      "word": "tower.",
+      "offset": 0.2
+     },
+     "gain": -21
+    },
+    {
+     "sound": "births",
+     "from": {
+      "line": "L5",
+      "word": "A"
+     },
+     "to": {
+      "line": "L5",
+      "word": "tower.",
+      "offset": 0.2
+     },
+     "gain": -24
+    },
+    {
+     "sound": "towerBell",
+     "at": {
+      "line": "L5",
+      "word": "bell"
+     },
+     "gain": -16
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L5",
+      "word": "same",
+      "nth": 2,
+      "offset": 0.2
+     },
+     "gain": -20
+    }
+   ]
+  },
+  {
+   "id": "drop",
+   "scene": "world",
+   "purpose": "The punchline: spot the difference, there isn't one.",
+   "visual": "Both villages side by side from the south, pinned HUMANS and FENN: slate roofs, barns, bell towers, the same. 0 DIFFERENCES \u00b7 HUMANS + EARS.",
+   "camera": "Medium (dist 110) on both villages.",
+   "layers": {
+    "foreground": "pins, stamp",
+    "midground": "the valley and the meadow",
+    "background": "the peak"
+   },
+   "lighting": "Gloom.",
+   "onScreenText": "0 DIFFERENCES \u00b7 HUMANS + EARS",
+   "transition": "Rewind + block wipe.",
+   "music": "Drop; a boom on 'isn't'.",
+   "graphics": [
+    {
+     "type": "pin",
+     "at": [
+      -2.4,
+      null,
+      -3.0
+     ],
+     "kicker": "THE VALLEY",
+     "text": "HUMANS",
+     "color": "parchment",
+     "lift": 70,
+     "size": 28,
+     "start": {
+      "line": "L6",
+      "word": "Spot",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L6",
+      "word": "one.",
+      "offset": 0.45
+     }
+    },
+    {
+     "type": "pin",
+     "at": [
+      13.6,
+      null,
+      -5.8
+     ],
+     "kicker": "THE MEADOW",
+     "text": "FENN",
+     "color": "#5fe0c0",
+     "lift": 70,
+     "size": 28,
+     "start": {
+      "line": "L6",
+      "word": "the"
+     },
+     "end": {
+      "line": "L6",
+      "word": "one.",
+      "offset": 0.45
+     }
+    },
+    {
+     "type": "stamp",
+     "text": "0 DIFFERENCES",
+     "sub": "HUMANS + EARS",
+     "color": "rust",
+     "y": 560,
+     "size": 80,
+     "start": {
+      "line": "L6",
+      "word": "isn't"
+     },
+     "end": {
+      "line": "L6",
+      "word": "one.",
+      "offset": 0.45
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L6",
+      "word": "isn't"
+     },
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "rehook",
+   "scene": "world",
+   "purpose": "Re-hook: the editor again, now with five real traits, four easy and one locked.",
+   "visual": "REWIND to year 0; the SPECIES EDITOR \u00b7 HUMAN \u2192 FENN checklist, each row a slider still on HUMAN, row 5 locked and blinking.",
+   "camera": "Medium.",
+   "layers": {
+    "foreground": "rewind, editor checklist",
+    "midground": "the copy village",
+    "background": "island"
+   },
+   "lighting": "Day.",
+   "onScreenText": "0/5",
+   "transition": "Cut on 'One'.",
+   "music": "Mystery; a riser into 'the twist'.",
+   "graphics": [
+    {
+     "type": "rewind",
+     "y": 620,
+     "start": {
+      "line": "L6",
+      "word": "one.",
+      "offset": 0.5
+     },
+     "end": {
+      "line": "L7",
+      "word": "Biology",
+      "offset": 0.3
+     }
+    },
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L6",
+      "word": "one.",
+      "offset": 0.48
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "fieldCard",
+     "mode": "checklist",
+     "y": 448,
+     "rows": [
+      {
+       "n": 1,
+       "label": "SENSES",
+       "text": "see in the dark",
+       "at": {
+        "line": "L8",
+        "word": "senses."
+       }
+      },
+      {
+       "n": 2,
+       "label": "LIFESPAN",
+       "text": "400 years: stone",
+       "at": {
+        "line": "L9",
+        "word": "lifespan."
+       }
+      },
+      {
+       "n": 3,
+       "label": "FAMILY",
+       "text": "one clan, one hall",
+       "at": {
+        "line": "L10",
+        "word": "family."
+       }
+      },
+      {
+       "n": 4,
+       "label": "NEEDS",
+       "text": "wet skin: the lake",
+       "at": {
+        "line": "L11",
+        "word": "needs."
+       }
+      },
+      {
+       "n": 5,
+       "label": "VOICE",
+       "text": "they speak in light",
+       "at": {
+        "line": "L7",
+        "word": "easy."
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L15",
+        "word": "Ghost"
+       }
+      }
+     ],
+     "start": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L16",
+      "word": "Pointy",
+      "offset": -0.3
+     },
+     "sliders": true,
+     "kicker": "SPECIES EDITOR \u00b7 HUMAN \u2192 FENN",
+     "title": "FENN",
+     "blinkAt": {
+      "line": "L7",
+      "word": "twist."
+     },
+     "lockedText": "the twist",
+     "sprite": "ep28/fenn_sprite.png",
+     "spriteW": 52,
+     "spriteH": 127,
+     "collapse": [
+      [
+       {
+        "line": "L11",
+        "word": "Four:",
+        "offset": -0.25
+       },
+       0
+      ],
+      [
+       {
+        "line": "L11",
+        "word": "Four:",
+        "offset": 0.1
+       },
+       1
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 0.4
+       },
+       1
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 0.7
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "lake.",
+        "offset": -0.1
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "lake.",
+        "offset": 0.25
+       },
+       0
+      ]
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L6",
+      "word": "one.",
+      "offset": 0.45
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "gain": -17
+    }
+   ]
+  },
+  {
+   "id": "senses",
+   "scene": "world",
+   "purpose": "Trait 1: night senses.",
+   "visual": "Night. The SENSES slider slides; the Fenn's eyes grow huge and dark; the houses sink into the earth as turf mounds with glowing doors. HUMAN-LIKE 96\u219278.",
+   "camera": "At eye height (el 4, dist 26).",
+   "layers": {
+    "foreground": "slider, meter",
+    "midground": "Fenn with night eyes, turf mounds",
+    "background": "night meadow"
+   },
+   "lighting": "Night.",
+   "onScreenText": "1 SENSES \u00b7 see in the dark",
+   "transition": "Next trait.",
+   "music": "Folk 1: kalimba alone.",
+   "graphics": [],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L8",
+      "word": "senses."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "slide",
+     "at": {
+      "line": "L8",
+      "word": "dark,",
+      "offset": -0.2
+     },
+     "gain": -13
+    },
+    {
+     "sound": "morph",
+     "at": {
+      "line": "L8",
+      "word": "dark,",
+      "offset": -0.1
+     },
+     "gain": -13
+    },
+    {
+     "sound": "snowAir",
+     "at": {
+      "line": "L8",
+      "word": "dark,",
+      "offset": -0.4
+     },
+     "gain": -21
+    },
+    {
+     "sound": "stompHit",
+     "at": {
+      "line": "L8",
+      "word": "underground."
+     },
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "lifespan",
+   "scene": "world",
+   "purpose": "Trait 2: a 400-year life.",
+   "visual": "Dusk. LIFESPAN slides; the mounds' walls turn to dressed stone and stand taller. 78\u219260.",
+   "camera": "Eye height (el 6, dist 30).",
+   "layers": {
+    "foreground": "slider, meter",
+    "midground": "stone mounds",
+    "background": "meadow"
+   },
+   "lighting": "Dusk.",
+   "onScreenText": "2 LIFESPAN \u00b7 400 years: stone",
+   "transition": "Next trait.",
+   "music": "Folk 2: hand drums join.",
+   "graphics": [],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L9",
+      "word": "lifespan."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "slide",
+     "at": {
+      "line": "L9",
+      "word": "hundred"
+     },
+     "gain": -13
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L9",
+      "word": "stone.",
+      "offset": -0.1
+     },
+     "gain": -14
+    },
+    {
+     "sound": "stomp",
+     "from": {
+      "line": "L9",
+      "word": "stone.",
+      "offset": -0.1
+     },
+     "to": {
+      "line": "L9",
+      "word": "stone.",
+      "offset": 0.5
+     },
+     "gain": -22
+    }
+   ]
+  },
+  {
+   "id": "family",
+   "scene": "world",
+   "purpose": "Trait 3: one clan.",
+   "visual": "Day. FAMILY slides; the houses, tower and road give way, and one great round hall rises in their place. 60\u219242.",
+   "camera": "Eye height, a little higher (el 10, dist 40).",
+   "layers": {
+    "foreground": "slider, meter",
+    "midground": "the great hall rising",
+    "background": "meadow"
+   },
+   "lighting": "Day.",
+   "onScreenText": "3 FAMILY \u00b7 one clan, one hall",
+   "transition": "Rise.",
+   "music": "Folk 3: bass joins.",
+   "graphics": [],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L10",
+      "word": "family."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "slide",
+     "at": {
+      "line": "L10",
+      "word": "clan,"
+     },
+     "gain": -13
+    },
+    {
+     "sound": "delete",
+     "at": {
+      "line": "L10",
+      "word": "one",
+      "nth": 2,
+      "offset": 0.1
+     },
+     "gain": -18
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L10",
+      "word": "great",
+      "offset": -0.1
+     },
+     "gain": -13
+    },
+    {
+     "sound": "stompHit",
+     "at": {
+      "line": "L10",
+      "word": "hall.",
+      "offset": 0.25
+     },
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "needs",
+   "scene": "world",
+   "purpose": "Trait 4: wet skin.",
+   "visual": "NEEDS slides; the Fenn's skin turns glossy teal and their ears become fins; the great hall unbuilds and rises again on stilts on the lake, and they follow. 42\u219222.",
+   "camera": "Medium over the lake (el 22, dist 70).",
+   "layers": {
+    "foreground": "slider, meter",
+    "midground": "the hall on stilts",
+    "background": "lake"
+   },
+   "lighting": "Day.",
+   "onScreenText": "4 NEEDS \u00b7 wet skin: the lake",
+   "transition": "Rise to the wide.",
+   "music": "Folk 4: the theme on ocarina.",
+   "graphics": [],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L11",
+      "word": "needs."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "slide",
+     "at": {
+      "line": "L11",
+      "word": "wet,",
+      "offset": -0.2
+     },
+     "gain": -13
+    },
+    {
+     "sound": "morph",
+     "at": {
+      "line": "L11",
+      "word": "wet,",
+      "offset": -0.1
+     },
+     "gain": -13
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L11",
+      "word": "build"
+     },
+     "gain": -14
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L11",
+      "word": "lake."
+     },
+     "gain": -17
+    }
+   ]
+  },
+  {
+   "id": "run2",
+   "scene": "world",
+   "purpose": "Run the real Fenn: nothing is copied any more.",
+   "visual": "Whole Isle; YEAR 0\u2192100; the hall on the lake; FENN 24\u219240; ORIGINAL \u00b7 NOTHING COPIED.",
+   "camera": "Wide (dist 196).",
+   "layers": {
+    "foreground": "stamp",
+    "midground": "island",
+    "background": "void"
+   },
+   "lighting": "Day.",
+   "onScreenText": "ORIGINAL \u00b7 NOTHING COPIED",
+   "transition": "Down to the lake at night.",
+   "music": "Folk at full, a stab and cymbal on 'nothing'.",
+   "graphics": [
+    {
+     "type": "stamp",
+     "text": "ORIGINAL",
+     "sub": "NOTHING COPIED",
+     "color": "#5fe0c0",
+     "rotate": -4,
+     "y": 860,
+     "size": 92,
+     "start": {
+      "line": "L12",
+      "word": "Nothing"
+     },
+     "end": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -16
+    },
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L12",
+      "word": "now.",
+      "offset": 0.5
+     },
+     "gain": -21
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L12",
+      "word": "Nothing"
+     },
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "twist",
+   "scene": "world",
+   "purpose": "The locked rule: how they talk.",
+   "visual": "Night, on the hall's deck at a Fenn's eye height: RULE 5? HOW THEY TALK; the Fenn's spots light up; the hall's walls open into pillars and its windows flicker in travelling waves of light.",
+   "camera": "Eye height on the deck (el 5, dist 22).",
+   "layers": {
+    "foreground": "kinetic",
+    "midground": "glowing Fenn, the open hall",
+    "background": "the night lake"
+   },
+   "lighting": "Night.",
+   "onScreenText": "RULE 5? HOW THEY TALK",
+   "transition": "Cross to the valley.",
+   "music": "Twist, then glow: choir, vibraphone ripples, celesta theme.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "RULE 5?",
+       "at": {
+        "line": "L13",
+        "word": "Rule"
+       },
+       "color": "ember"
+      },
+      {
+       "text": "HOW THEY TALK",
+       "at": {
+        "line": "L13",
+        "word": "How"
+       },
+       "size": 76
+      }
+     ],
+     "size": 150,
+     "y": 600,
+     "start": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.02
+     },
+     "end": {
+      "line": "L13",
+      "word": "The",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "morph",
+     "at": {
+      "line": "L13",
+      "word": "light.",
+      "offset": -0.1
+     },
+     "gain": -12
+    },
+    {
+     "sound": "ringOn",
+     "at": {
+      "line": "L14",
+      "word": "walls,",
+      "offset": -0.1
+     },
+     "gain": -17
+    },
+    {
+     "sound": "eyeOn",
+     "at": {
+      "line": "L14",
+      "word": "windows.",
+      "offset": -0.2
+     },
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "role",
+   "scene": "world",
+   "purpose": "Unlock rule 5, and the payoff: how another species understands them.",
+   "visual": "From the human valley at night, across the island: lights flicker on the lake. HUMAN LEGEND \u00b7 GHOST LIGHTS. Row 5 unlocks (VOICE \u00b7 they speak in light); HUMAN-LIKE 00 %, ITS OWN PEOPLE.",
+   "camera": "Long lens from the valley (el 7, dist 34, fov 22).",
+   "layers": {
+    "foreground": "pin, unlocked card, meter, follow chip",
+    "midground": "the ghost lights",
+    "background": "the night lake"
+   },
+   "lighting": "Night.",
+   "onScreenText": "GHOST LIGHTS; 5/5; 00%",
+   "transition": "Card goes full.",
+   "music": "Glow; a big D-major hit on 'lake'.",
+   "graphics": [
+    {
+     "type": "pin",
+     "at": [
+      6.0,
+      7.0,
+      4.6
+     ],
+     "kicker": "HUMAN LEGEND",
+     "text": "GHOST LIGHTS",
+     "color": "#5fe0c0",
+     "lift": 120,
+     "start": {
+      "line": "L15",
+      "word": "Ghost"
+     },
+     "end": {
+      "line": "L15",
+      "word": "lake.",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "followChip",
+     "start": {
+      "line": "L15",
+      "word": "Ghost",
+      "offset": 0.5
+     },
+     "end": {
+      "line": "L16",
+      "word": "costume.",
+      "offset": 0.1
+     },
+     "text": "FOLLOW",
+     "sub": "PART 28/50"
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L15",
+      "word": "Ghost"
+     },
+     "gain": -10
+    },
+    {
+     "sound": "ringOn",
+     "at": {
+      "line": "L15",
+      "word": "Ghost"
+     },
+     "gain": -18
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L15",
+      "word": "lake."
+     },
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "lesson",
+   "scene": "world",
+   "purpose": "The takeaway: the full editor card.",
+   "visual": "The complete FENN card (BEFORE YOU INVENT A SPECIES, all five sliders on FENN) with 'Biology is a blueprint.' in serif italic.",
+   "camera": "Wide orbit (dist 190).",
+   "layers": {
+    "foreground": "full card",
+    "midground": "the island at golden hour",
+    "background": "stars"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "Full card.",
+   "transition": "Block wipe to the end card.",
+   "music": "Anthem; the World Engine chime as the card lands.",
+   "graphics": [
+    {
+     "type": "fieldCard",
+     "mode": "full",
+     "y": 452,
+     "rows": [
+      {
+       "n": 1,
+       "label": "SENSES",
+       "text": "see in the dark",
+       "at": {
+        "line": "L16",
+        "word": "Pointy",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 2,
+       "label": "LIFESPAN",
+       "text": "400 years: stone",
+       "at": {
+        "line": "L16",
+        "word": "Pointy",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 3,
+       "label": "FAMILY",
+       "text": "one clan, one hall",
+       "at": {
+        "line": "L16",
+        "word": "Pointy",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 4,
+       "label": "NEEDS",
+       "text": "wet skin: the lake",
+       "at": {
+        "line": "L16",
+        "word": "Pointy",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 5,
+       "label": "VOICE",
+       "text": "they speak in light",
+       "at": {
+        "line": "L16",
+        "word": "Pointy",
+        "offset": -0.3
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L16",
+        "word": "Pointy",
+        "offset": -0.3
+       }
+      }
+     ],
+     "start": {
+      "line": "L16",
+      "word": "Pointy",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L17",
+      "word": "Invent",
+      "offset": -0.52
+     },
+     "kicker": "BEFORE YOU INVENT A SPECIES",
+     "title": "FENN",
+     "sliders": true,
+     "sprite": "ep28/fenn_sprite.png",
+     "spriteW": 52,
+     "spriteH": 127,
+     "subtitle": "Biology is a blueprint.",
+     "subtitleAt": {
+      "line": "L16",
+      "word": "Biology"
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L16",
+      "word": "Pointy",
+      "offset": -0.8
+     },
+     "gain": -15
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L16",
+      "word": "Pointy",
+      "offset": -0.3
+     },
+     "gain": -10
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L16",
+      "word": "Pointy",
+      "offset": -0.3
+     },
+     "gain": -18
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "cta",
+   "scene": "world",
+   "purpose": "Comment CTA.",
+   "visual": "End card: logo, PART 28 / 50, title, a speech-bubble COMMENT panel.",
+   "camera": "Cut (under the block wipe) back to the hook pose.",
+   "layers": {
+    "foreground": "end card",
+    "midground": "the Isle",
+    "background": "void"
+   },
+   "lighting": "Golden hour (the loop frame).",
+   "onScreenText": "End card.",
+   "transition": "The card lifts on 'Part'.",
+   "music": "Outro.",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L17",
+      "word": "Invent",
+      "offset": -0.3
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "endCardS2",
+     "start": {
+      "line": "L17",
+      "word": "Invent",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.12
+     },
+     "fadeOut": 0.3,
+     "kicker": "PART 28 / 50",
+     "title": "Intelligent Species Need More Than Different Ears",
+     "cta": "COMMENT",
+     "icon": "bubble",
+     "with": "Invent one biological trait that would change a whole society."
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L17",
+      "word": "Invent",
+      "offset": -0.3
+     },
+     "gain": -21
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L17",
+      "word": "Invent",
+      "offset": -0.1
+     },
+     "gain": -20
+    }
+   ],
+   "captions": false,
+   "hideLogoBug": true,
+   "hideLogoBugUntil": {
+    "line": "L18",
+    "word": "Part"
+   }
+  },
+  {
+   "id": "next",
+   "scene": "world",
+   "purpose": "Say the part number, ask for the follow with a reason (part 29), open the next loop.",
+   "visual": "The hook frame; PART 28/50; FOLLOW FOR PART 29; NEXT RUN 29 \u00b7 UNDYING from a locked hourglass; behind, years race (winters flicker, the forest thins and grows back) while the Fenn stacks its stone; the hook title returns.",
+   "camera": "The hook pose.",
+   "layers": {
+    "foreground": "progress bar, follow button, next-run card",
+    "midground": "the Fenn at the cairn",
+    "background": "the meadow in time-lapse"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "PART 28/50 \u00b7 FOLLOW FOR PART 29 \u00b7 NEXT RUN: UNDYING \u00b7 SOMEONE NEVER DIES.",
+   "transition": "Loop to frame 0.",
+   "music": "Tease over a held A, a horn call, the engine chime on 'Follow'.",
+   "graphics": [
+    {
+     "type": "seasonBar",
+     "y": 350,
+     "part": 28,
+     "of": 50,
+     "start": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.1
+     },
+     "fillAt": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "fillDur": 0.6,
+     "ofAt": {
+      "line": "L18",
+      "word": "50."
+     },
+     "end": {
+      "line": "L18",
+      "word": "dies.",
+      "offset": 0.6
+     }
+    },
+    {
+     "type": "followButton",
+     "y": 556,
+     "start": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.6
+     },
+     "pressAt": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "end": {
+      "line": "L18",
+      "word": "dies.",
+      "offset": 0.6
+     },
+     "text": "FOLLOW",
+     "doneText": "FOLLOWING",
+     "sub": "FOR PART 29"
+    },
+    {
+     "type": "nextRun",
+     "y": 772,
+     "start": {
+      "line": "L18",
+      "word": "29:",
+      "offset": -0.1
+     },
+     "revealAt": {
+      "line": "L18",
+      "word": "never"
+     },
+     "end": {
+      "line": "L18",
+      "word": "dies.",
+      "offset": 0.6
+     },
+     "kicker": "NEXT RUN \u00b7 29",
+     "title": "UNDYING",
+     "sub": "SOMEONE NEVER DIES.",
+     "sprite": "hourglass",
+     "spritePx": 11
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "POINTY EARS",
+       "color": "ember",
+       "size": 84
+      },
+      {
+       "text": "AREN'T A",
+       "size": 84
+      }
+     ],
+     "y": 452,
+     "size": 96,
+     "start": {
+      "line": "L18",
+      "word": "dies.",
+      "offset": 0.92
+     },
+     "fadeIn": 0.35,
+     "preShow": true
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "to": {
+      "line": "L18",
+      "word": "Part",
+      "offset": 0.55
+     },
+     "gain": -22
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.5
+     },
+     "gain": -15
+    },
+    {
+     "sound": "followPress",
+     "at": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": 0.02
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L18",
+      "word": "29:",
+      "offset": -0.1
+     },
+     "gain": -18
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L18",
+      "word": "never"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L18",
+      "word": "never",
+      "offset": -0.05
+     },
+     "to": {
+      "line": "L18",
+      "word": "dies.",
+      "offset": 0.4
+     },
+     "gain": -20
+    },
+    {
+     "sound": "snowAir",
+     "at": {
+      "line": "L18",
+      "word": "never"
+     },
+     "gain": -19
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "end": true,
+      "offset": -0.54
+     },
+     "gain": -14
+    }
+   ],
+   "captions": false
+  }
+ ],
+ "world": {
+  "clock": {
+   "label": "YEAR",
+   "keys": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "run."
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "tower.",
+      "offset": 0.4
+     },
+     100,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "one.",
+      "offset": 0.4
+     },
+     100
+    ],
+    [
+     {
+      "line": "L7",
+      "word": "Biology",
+      "offset": 0.3
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "now.",
+      "offset": 0.5
+     },
+     100,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Invent",
+      "offset": -0.3
+     },
+     100
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Invent",
+      "offset": -0.28
+     },
+     0,
+     "step"
+    ]
+   ]
+  },
+  "speed": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "run."
+    },
+    1
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.35
+    },
+    9
+   ],
+   [
+    {
+     "line": "L5",
+     "word": "tower.",
+     "offset": 0.3
+    },
+    9
+   ],
+   [
+    {
+     "line": "L6",
+     "word": "Spot"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L6",
+     "word": "one.",
+     "offset": 0.3
+    },
+    1
+   ],
+   [
+    {
+     "line": "L6",
+     "word": "one.",
+     "offset": 0.5
+    },
+    -10
+   ],
+   [
+    {
+     "line": "L7",
+     "word": "Biology",
+     "offset": 0.2
+    },
+    -10
+   ],
+   [
+    {
+     "line": "L7",
+     "word": "Biology",
+     "offset": 0.4
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.1
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.4
+    },
+    9
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "now.",
+     "offset": 0.5
+    },
+    9
+   ],
+   [
+    {
+     "line": "L13",
+     "word": "Rule"
+    },
+    1
+   ]
+  ],
+  "camera": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "az": 90,
+    "el": 8,
+    "dist": 16,
+    "target": [
+     8.9,
+     6.2,
+     -6.0
+    ],
+    "fov": 28,
+    "dur": 1.4,
+    "drift": 0.8
+   },
+   {
+    "at": {
+     "line": "L1",
+     "word": "Giving"
+    },
+    "az": 90.3,
+    "el": 8,
+    "dist": 14.0,
+    "target": [
+     8.9,
+     6.1,
+     -6.0
+    ],
+    "fov": 28,
+    "dur": 3.8,
+    "drift": 0.8
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "az": -10,
+    "el": 9,
+    "dist": 38,
+    "target": [
+     13.4,
+     9.0,
+     -6.0
+    ],
+    "fov": 24,
+    "dur": 0.01,
+    "drift": 1.5,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.05
+    },
+    "az": 18,
+    "el": 44,
+    "dist": 192,
+    "target": [
+     3.0,
+     10.5,
+     -2.0
+    ],
+    "fov": 26,
+    "dur": 1.3,
+    "drift": 2.0
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "Spot",
+     "offset": -0.25
+    },
+    "az": 2,
+    "el": 26,
+    "dist": 110,
+    "target": [
+     5.6,
+     9.0,
+     -4.6
+    ],
+    "fov": 26,
+    "dur": 1.2,
+    "drift": 0.8
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "one.",
+     "offset": 0.5
+    },
+    "az": 20,
+    "el": 30,
+    "dist": 96,
+    "target": [
+     8.0,
+     9.0,
+     -4.0
+    ],
+    "fov": 24,
+    "dur": 0.9,
+    "drift": 1.5
+   },
+   {
+    "at": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.2
+    },
+    "az": 20,
+    "el": 10,
+    "dist": 44,
+    "target": [
+     13.6,
+     8.6,
+     -6.0
+    ],
+    "fov": 24,
+    "dur": 1.1,
+    "drift": 1.5
+   },
+   {
+    "at": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.2
+    },
+    "az": 32,
+    "el": 9,
+    "dist": 40,
+    "target": [
+     13.6,
+     8.0,
+     -6.0
+    ],
+    "fov": 24,
+    "dur": 1.1,
+    "drift": 1.5
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.2
+    },
+    "az": 30,
+    "el": 14,
+    "dist": 52,
+    "target": [
+     13.4,
+     9.0,
+     -5.8
+    ],
+    "fov": 24,
+    "dur": 1.1,
+    "drift": 1.0
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.15
+    },
+    "az": 8,
+    "el": 22,
+    "dist": 70,
+    "target": [
+     9.0,
+     8.0,
+     0.0
+    ],
+    "fov": 24,
+    "dur": 1.3,
+    "drift": 1.5
+   },
+   {
+    "at": {
+     "line": "L12",
+     "word": "Run",
+     "offset": -0.05
+    },
+    "az": 25,
+    "el": 44,
+    "dist": 196,
+    "target": [
+     2.0,
+     12.0,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 1.0,
+    "drift": 3.0
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "az": 25,
+    "el": 7,
+    "dist": 34,
+    "target": [
+     6.0,
+     7.0,
+     4.199999999999999
+    ],
+    "fov": 30,
+    "dur": 1.0,
+    "drift": 1.5
+   },
+   {
+    "at": {
+     "line": "L15",
+     "word": "And",
+     "offset": -0.15
+    },
+    "az": -105,
+    "el": 14,
+    "dist": 26.0,
+    "target": [
+     6.0,
+     5.0,
+     4.6
+    ],
+    "fov": 34,
+    "dur": 1.0,
+    "drift": 0.6
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Pointy",
+     "offset": -0.25
+    },
+    "az": 15,
+    "el": 30,
+    "dist": 190,
+    "target": [
+     2.0,
+     2.0,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 1.6,
+    "drift": 3.0
+   },
+   {
+    "at": {
+     "line": "L17",
+     "word": "Invent",
+     "offset": -0.3
+    },
+    "az": 80.85040000000001,
+    "el": 8,
+    "dist": 16,
+    "target": [
+     8.9,
+     6.2,
+     -6.0
+    ],
+    "fov": 28,
+    "dur": 1.4,
+    "drift": 0.8,
+    "cut": true
+   }
+  ],
+  "light": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "mood": "golden"
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "mood": "day",
+    "dur": 0.4
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "Spot",
+     "offset": -0.2
+    },
+    "mood": "gloom",
+    "dur": 1.0
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "one.",
+     "offset": 0.5
+    },
+    "mood": "day",
+    "dur": 0.8
+   },
+   {
+    "at": {
+     "line": "L8",
+     "word": "dark,",
+     "offset": -0.4
+    },
+    "mood": "night",
+    "dur": 0.8
+   },
+   {
+    "at": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.2
+    },
+    "mood": "dusk",
+    "dur": 0.8
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.2
+    },
+    "mood": "day",
+    "dur": 0.8
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.2
+    },
+    "mood": "night",
+    "dur": 0.8
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Pointy",
+     "offset": -0.3
+    },
+    "mood": "golden",
+    "dur": 2.2
+   }
+  ],
+  "herd": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     40
+    ]
+   ],
+   "max": 60,
+   "base": 40,
+   "centers": [
+    [
+     2.2,
+     -6.4
+    ],
+    [
+     3.4,
+     -7.8
+    ]
+   ],
+   "skin": "sheep"
+  },
+  "pred": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ]
+  ],
+  "predators": [
+   {
+    "id": "g1",
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 15.5,
+      "z": 9.5,
+      "state": "idle",
+      "face": 200
+     }
+    ]
+   }
+  ],
+  "series": {
+   "pop": [
+    [
+     {
+      "shot": "hook"
+     },
+     40
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     24,
+     "step"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "run."
+     },
+     24
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "tower.",
+      "offset": 0.3
+     },
+     40,
+     "linear"
+    ],
+    [
+     {
+      "line": "L7",
+      "word": "Biology",
+      "offset": -0.2
+     },
+     40
+    ],
+    [
+     {
+      "line": "L7",
+      "word": "Biology",
+      "offset": 0.3
+     },
+     24,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.2
+     },
+     24
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "now.",
+      "offset": 0.3
+     },
+     40,
+     "linear"
+    ]
+   ],
+   "human": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     96,
+     "step"
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "dark,"
+     },
+     96
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "underground.",
+      "offset": 0.4
+     },
+     78,
+     "linear"
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "stone."
+     },
+     78
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "stone.",
+      "offset": 0.4
+     },
+     60,
+     "linear"
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "great"
+     },
+     60
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "hall.",
+      "offset": 0.4
+     },
+     42,
+     "linear"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "lake."
+     },
+     42
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "lake.",
+      "offset": 0.4
+     },
+     22,
+     "linear"
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "Ghost"
+     },
+     22
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "lake.",
+      "offset": 0.2
+     },
+     0,
+     "linear"
+    ]
+   ],
+   "tradeF": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     4,
+     "step"
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "one",
+      "nth": 2
+     },
+     4
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "hall."
+     },
+     0,
+     "linear"
+    ]
+   ],
+   "tradeH": [
+    [
+     {
+      "shot": "hook"
+     },
+     4
+    ]
+   ]
+  },
+  "settlement": {
+   "buildings": [
+    {
+     "kind": "hall",
+     "a": [
+      -3.6,
+      -4.6
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -1.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -4.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -1.0,
+      -5.8
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -5.6,
+      -0.9
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -3.4,
+      -0.7
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      0.4,
+      -4.2
+     ],
+     "face": 0
+    }
+   ],
+   "roof": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "pens": [
+    {
+     "a": [
+      2.2,
+      -6.4
+     ],
+     "r": 2.2
+    }
+   ],
+   "cover": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "roads": {
+    "b": [
+     [
+      -3.4,
+      -1.6
+     ],
+     [
+      -5.6,
+      2.0
+     ],
+     [
+      -8.2,
+      6.0
+     ],
+     [
+      -11.0,
+      10.0
+     ],
+     [
+      -13.0,
+      14.0
+     ],
+     [
+      -14.6,
+      17.0
+     ]
+    ]
+   },
+   "route": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "tradeKey": "tradeH",
+   "lanterns": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.3
+     },
+     0
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "Rule",
+      "offset": 0.3
+     },
+     1
+    ],
+    [
+     {
+      "line": "L16",
+      "word": "Pointy",
+      "offset": -0.3
+     },
+     1
+    ],
+    [
+     {
+      "line": "L16",
+      "word": "Pointy",
+      "offset": 0.3
+     },
+     0
+    ]
+   ],
+   "tower": {
+    "x": -6.4,
+    "z": -5.6,
+    "h": 6.0,
+    "keys": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   }
+  },
+  "settlements": [
+   {
+    "buildings": [
+     {
+      "kind": "hall",
+      "a": [
+       16.4,
+       -8.4
+      ],
+      "face": 0,
+      "show": [
+       [
+        {
+         "shot": "hook"
+        },
+        0
+       ],
+       [
+        {
+         "line": "L3",
+         "word": "lazy",
+         "offset": -0.15
+        },
+        1,
+        "step"
+       ],
+       [
+        {
+         "line": "L7",
+         "word": "Biology",
+         "offset": -0.2
+        },
+        1
+       ],
+       [
+        {
+         "line": "L10",
+         "word": "one",
+         "nth": 2,
+         "offset": 0.1
+        },
+        1
+       ],
+       [
+        {
+         "line": "L10",
+         "word": "hall."
+        },
+        0,
+        "linear"
+       ]
+      ]
+     },
+     {
+      "kind": "house",
+      "a": [
+       12.2,
+       -3.8
+      ],
+      "face": 0,
+      "show": [
+       [
+        {
+         "shot": "hook"
+        },
+        0
+       ],
+       [
+        {
+         "line": "L3",
+         "word": "lazy",
+         "offset": -0.15
+        },
+        1,
+        "step"
+       ],
+       [
+        {
+         "line": "L7",
+         "word": "Biology",
+         "offset": -0.2
+        },
+        1
+       ],
+       [
+        {
+         "line": "L10",
+         "word": "one",
+         "nth": 2,
+         "offset": 0.18
+        },
+        1
+       ],
+       [
+        {
+         "line": "L10",
+         "word": "hall.",
+         "offset": 0.05
+        },
+        0,
+        "linear"
+       ]
+      ]
+     },
+     {
+      "kind": "house",
+      "a": [
+       14.6,
+       -3.4
+      ],
+      "face": 0,
+      "show": [
+       [
+        {
+         "shot": "hook"
+        },
+        0
+       ],
+       [
+        {
+         "line": "L3",
+         "word": "lazy",
+         "offset": -0.15
+        },
+        1,
+        "step"
+       ],
+       [
+        {
+         "line": "L7",
+         "word": "Biology",
+         "offset": -0.2
+        },
+        1
+       ],
+       [
+        {
+         "line": "L10",
+         "word": "one",
+         "nth": 2,
+         "offset": 0.26
+        },
+        1
+       ],
+       [
+        {
+         "line": "L10",
+         "word": "hall.",
+         "offset": 0.1
+        },
+        0,
+        "linear"
+       ]
+      ]
+     },
+     {
+      "kind": "house",
+      "a": [
+       11.6,
+       -7.0
+      ],
+      "face": 0,
+      "show": [
+       [
+        {
+         "shot": "hook"
+        },
+        0
+       ],
+       [
+        {
+         "line": "L3",
+         "word": "lazy",
+         "offset": -0.15
+        },
+        1,
+        "step"
+       ],
+       [
+        {
+         "line": "L7",
+         "word": "Biology",
+         "offset": -0.2
+        },
+        1
+       ],
+       [
+        {
+         "line": "L10",
+         "word": "one",
+         "nth": 2,
+         "offset": 0.34
+        },
+        1
+       ],
+       [
+        {
+         "line": "L10",
+         "word": "hall.",
+         "offset": 0.15
+        },
+        0,
+        "linear"
+       ]
+      ]
+     },
+     {
+      "kind": "house",
+      "a": [
+       14.2,
+       -7.8
+      ],
+      "face": 0,
+      "show": [
+       [
+        {
+         "shot": "hook"
+        },
+        0
+       ],
+       [
+        {
+         "line": "L3",
+         "word": "lazy",
+         "offset": -0.15
+        },
+        1,
+        "step"
+       ],
+       [
+        {
+         "line": "L7",
+         "word": "Biology",
+         "offset": -0.2
+        },
+        1
+       ],
+       [
+        {
+         "line": "L10",
+         "word": "one",
+         "nth": 2,
+         "offset": 0.42
+        },
+        1
+       ],
+       [
+        {
+         "line": "L10",
+         "word": "hall.",
+         "offset": 0.2
+        },
+        0,
+        "linear"
+       ]
+      ]
+     },
+     {
+      "kind": "house",
+      "a": [
+       16.6,
+       -5.4
+      ],
+      "face": 0,
+      "show": [
+       [
+        {
+         "shot": "hook"
+        },
+        0
+       ],
+       [
+        {
+         "line": "L3",
+         "word": "lazy",
+         "offset": -0.15
+        },
+        0,
+        "step"
+       ],
+       [
+        {
+         "line": "L5",
+         "word": "same",
+         "nth": 2
+        },
+        0
+       ],
+       [
+        {
+         "line": "L5",
+         "word": "same",
+         "nth": 2,
+         "offset": 0.5
+        },
+        1,
+        "linear"
+       ],
+       [
+        {
+         "line": "L7",
+         "word": "Biology",
+         "offset": -0.2
+        },
+        1
+       ],
+       [
+        {
+         "line": "L7",
+         "word": "Biology",
+         "offset": 0.3
+        },
+        0,
+        "linear"
+       ]
+      ]
+     },
+     {
+      "kind": "house",
+      "a": [
+       12.8,
+       -10.0
+      ],
+      "face": 0,
+      "show": [
+       [
+        {
+         "shot": "hook"
+        },
+        0
+       ],
+       [
+        {
+         "line": "L3",
+         "word": "lazy",
+         "offset": -0.15
+        },
+        0,
+        "step"
+       ],
+       [
+        {
+         "line": "L5",
+         "word": "same",
+         "nth": 2
+        },
+        0
+       ],
+       [
+        {
+         "line": "L5",
+         "word": "same",
+         "nth": 2,
+         "offset": 0.9
+        },
+        1,
+        "linear"
+       ],
+       [
+        {
+         "line": "L7",
+         "word": "Biology",
+         "offset": -0.2
+        },
+        1
+       ],
+       [
+        {
+         "line": "L7",
+         "word": "Biology",
+         "offset": 0.3
+        },
+        0,
+        "linear"
+       ]
+      ]
+     },
+     {
+      "kind": "greathall",
+      "a": [
+       13.2,
+       -5.6
+      ],
+      "b": [
+       6.0,
+       4.6
+      ],
+      "stiltsB": 1.6,
+      "face": 0,
+      "show": [
+       [
+        {
+         "shot": "hook"
+        },
+        1
+       ],
+       [
+        {
+         "line": "L3",
+         "word": "lazy",
+         "offset": -0.15
+        },
+        0,
+        "step"
+       ],
+       [
+        {
+         "line": "L10",
+         "word": "great",
+         "offset": -0.1
+        },
+        0
+       ],
+       [
+        {
+         "line": "L10",
+         "word": "hall.",
+         "offset": 0.3
+        },
+        1,
+        "out"
+       ]
+      ]
+     }
+    ],
+    "roof": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "sink": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "underground.",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "underground.",
+       "offset": 0.6
+      },
+      1,
+      "linear"
+     ]
+    ],
+    "stone": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L9",
+       "word": "stone.",
+       "offset": -0.15
+      },
+      0
+     ],
+     [
+      {
+       "line": "L9",
+       "word": "stone.",
+       "offset": 0.5
+      },
+      1,
+      "linear"
+     ]
+    ],
+    "place": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L11",
+       "word": "build"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L11",
+       "word": "lake.",
+       "offset": 0.5
+      },
+      1,
+      "linear"
+     ]
+    ],
+    "open": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "walls,",
+       "offset": -0.2
+      },
+      0
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "walls,",
+       "offset": 0.5
+      },
+      1,
+      "linear"
+     ]
+    ],
+    "glow": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "windows.",
+       "offset": -0.2
+      },
+      0
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "windows.",
+       "offset": 0.4
+      },
+      1,
+      "linear"
+     ]
+    ],
+    "pens": [],
+    "roads": {
+     "a": [
+      [
+       11.6,
+       -5.2
+      ],
+      [
+       14.0,
+       -12.0
+      ],
+      [
+       15.6,
+       -15.6
+      ]
+     ]
+    },
+    "route": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ]
+    ],
+    "tradeKey": "tradeF",
+    "lanterns": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ]
+    ],
+    "tower": {
+     "x": 15.2,
+     "z": -11.2,
+     "h": 4.5,
+     "keys": [
+      [
+       {
+        "shot": "hook"
+       },
+       0
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       1,
+       "step"
+      ],
+      [
+       {
+        "line": "L10",
+        "word": "one",
+        "nth": 2,
+        "offset": 0.1
+       },
+       1
+      ],
+      [
+       {
+        "line": "L10",
+        "word": "hall.",
+        "offset": 0.2
+       },
+       0,
+       "linear"
+      ]
+     ],
+     "rings": [
+      {
+       "line": "L5",
+       "word": "bell"
+      }
+     ]
+    }
+   }
+  ],
+  "folk": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     40
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     24,
+     "step"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "run."
+     },
+     24
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "tower.",
+      "offset": 0.3
+     },
+     40,
+     "linear"
+    ],
+    [
+     {
+      "line": "L7",
+      "word": "Biology",
+      "offset": -0.2
+     },
+     40
+    ],
+    [
+     {
+      "line": "L7",
+      "word": "Biology",
+      "offset": 0.3
+     },
+     24,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.2
+     },
+     24
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "now.",
+      "offset": 0.3
+     },
+     40,
+     "linear"
+    ]
+   ],
+   "centers": [
+    [
+     13.4,
+     -5.6
+    ],
+    [
+     12.4,
+     -4.2
+    ],
+    [
+     14.6,
+     -7.0
+    ]
+   ],
+   "centersB": [
+    [
+     5.4,
+     4.0
+    ],
+    [
+     6.6,
+     5.0
+    ],
+    [
+     5.6,
+     5.2
+    ]
+   ],
+   "site": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "build"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "lake.",
+      "offset": 0.5
+     },
+     1,
+     "linear"
+    ]
+   ],
+   "eyes": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "dark,",
+      "offset": -0.2
+     },
+     0
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "dark,",
+      "offset": 0.4
+     },
+     1,
+     "linear"
+    ]
+   ],
+   "wet": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "wet,",
+      "offset": -0.2
+     },
+     0
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "wet,",
+      "offset": 0.4
+     },
+     1,
+     "linear"
+    ]
+   ],
+   "glow": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "light.",
+      "offset": -0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "light.",
+      "offset": 0.4
+     },
+     1,
+     "linear"
+    ]
+   ],
+   "hero": [
+    {
+     "at": {
+      "shot": "hook"
+     },
+     "x": 8.9,
+     "z": -6.6,
+     "state": "stack",
+     "face": -90
+    },
+    {
+     "at": {
+      "line": "L2",
+      "word": "stones.",
+      "offset": 0.3
+     },
+     "x": 8.9,
+     "z": -6.6,
+     "state": "idle",
+     "face": -90
+    },
+    {
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "x": 8.9,
+     "z": -6.6,
+     "state": "hidden"
+    },
+    {
+     "at": {
+      "line": "L17",
+      "word": "Invent",
+      "offset": -0.3
+     },
+     "x": 8.9,
+     "z": -6.6,
+     "state": "stack",
+     "face": -90
+    }
+   ],
+   "spread": 2.4
+  },
+  "props": [
+   {
+    "kind": "cairn",
+    "x": 8.95,
+    "z": -5.38,
+    "stones": [
+     [
+      {
+       "shot": "hook"
+      },
+      3
+     ]
+    ]
+   }
+  ],
+  "clearTrees": [
+   [
+    11.5,
+    -6.0,
+    2.2
+   ],
+   [
+    14.5,
+    -6.0,
+    2.2
+   ],
+   [
+    17.5,
+    -6.0,
+    2.2
+   ],
+   [
+    20.0,
+    -6.0,
+    2.0
+   ]
+  ],
+  "layers": {
+   "snow": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L18",
+      "word": "never",
+      "offset": -0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L18",
+      "word": "never"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L18",
+      "word": "never",
+      "offset": 0.14
+     },
+     0.7,
+     "linear"
+    ],
+    [
+     {
+      "line": "L18",
+      "word": "never",
+      "offset": 0.36
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L18",
+      "word": "never",
+      "offset": 0.42
+     },
+     0
+    ],
+    [
+     {
+      "line": "L18",
+      "word": "never",
+      "offset": 0.56
+     },
+     0.7,
+     "linear"
+    ],
+    [
+     {
+      "line": "L18",
+      "word": "never",
+      "offset": 0.78
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L18",
+      "word": "never",
+      "offset": 0.84
+     },
+     0
+    ],
+    [
+     {
+      "line": "L18",
+      "word": "never",
+      "offset": 0.98
+     },
+     0.7,
+     "linear"
+    ],
+    [
+     {
+      "line": "L18",
+      "word": "never",
+      "offset": 1.2
+     },
+     0,
+     "linear"
+    ]
+   ],
+   "forest": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L18",
+      "word": "never"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L18",
+      "word": "never",
+      "offset": 0.6
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L18",
+      "word": "dies.",
+      "offset": 0.5
+     },
+     1,
+     "linear"
+    ]
+   ],
+   "ripple": [
+    {
+     "shot": "hook",
+     "offset": 0.05
+    },
+    {
+     "line": "L4",
+     "word": "run."
+    },
+    {
+     "line": "L12",
+     "word": "Run"
+    },
+    {
+     "line": "L15",
+     "word": "Ghost"
+    }
+   ],
+   "rings": [
+    {
+     "x": 6.0,
+     "z": 4.6,
+     "r": 5.0,
+     "on": {
+      "line": "L15",
+      "word": "Ghost"
+     },
+     "off": {
+      "line": "L16",
+      "word": "Pointy",
+      "offset": -0.3
+     },
+     "color": "#5fe0c0"
+    }
+   ]
+  },
+  "ambient": {
+   "birds": 9,
+   "motes": 40,
+   "glints": true
+  },
+  "simLoop": {
+   "line": "L17",
+   "word": "Invent",
+   "offset": -0.3
+  }
+ },
+ "music": {
+  "engine": "s2-score",
+  "key": "D minor, resolving to D major",
+  "bpm": 98,
+  "sections": [
+   {
+    "from": {
+     "shot": "hook"
+    },
+    "style": "folk",
+    "chords": [
+     "Dm",
+     "Bb"
+    ],
+    "key": "D minor",
+    "layer": 4,
+    "programs": {
+     "marimba": 108,
+     "lead": 79
+    }
+   },
+   {
+    "from": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "style": "pulse",
+    "chords": [
+     "Dm",
+     "Bb",
+     "F",
+     "C"
+    ],
+    "key": "D minor",
+    "programs": {
+     "marimba": 12,
+     "lead": 73,
+     "strings": 48,
+     "glock": 9
+    }
+   },
+   {
+    "from": {
+     "line": "L4",
+     "word": "run."
+    },
+    "style": "drive",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "intensity": 0.8
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "Spot",
+     "offset": -0.2
+    },
+    "style": "drop",
+    "chords": [
+     "Dm"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 8
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "one.",
+     "offset": 0.45
+    },
+    "style": "mystery",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "A"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 2
+   },
+   {
+    "from": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.1
+    },
+    "style": "folk",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 1,
+    "programs": {
+     "marimba": 108,
+     "lead": 79
+    }
+   },
+   {
+    "from": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.1
+    },
+    "style": "folk",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 2
+   },
+   {
+    "from": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.1
+    },
+    "style": "folk",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 3
+   },
+   {
+    "from": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.1
+    },
+    "style": "folk",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 4
+   },
+   {
+    "from": {
+     "line": "L12",
+     "word": "Run"
+    },
+    "style": "drive",
+    "chords": [
+     "F",
+     "C",
+     "Bb",
+     "F"
+    ],
+    "key": "F major",
+    "intensity": 1.0,
+    "theme": true,
+    "programs": {
+     "marimba": 12,
+     "lead": 73,
+     "strings": 48,
+     "glock": 9
+    }
+   },
+   {
+    "from": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.05
+    },
+    "style": "twist",
+    "chords": [
+     "A7b9"
+    ],
+    "key": "D minor"
+   },
+   {
+    "from": {
+     "line": "L13",
+     "word": "The",
+     "offset": -0.1
+    },
+    "style": "glow",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 2,
+    "programs": {
+     "strings": 52,
+     "glock": 11
+    }
+   },
+   {
+    "from": {
+     "line": "L15",
+     "word": "Ghost",
+     "offset": -0.05
+    },
+    "style": "anthem",
+    "chords": [
+     "D",
+     "G",
+     "Bm",
+     "A"
+    ],
+    "key": "D major",
+    "programs": {
+     "marimba": 12,
+     "lead": 73,
+     "strings": 48,
+     "glock": 9
+    }
+   },
+   {
+    "from": {
+     "line": "L17",
+     "word": "Invent",
+     "offset": -0.2
+    },
+    "style": "outro",
+    "chords": [
+     "G",
+     "D"
+    ],
+    "key": "D major"
+   },
+   {
+    "from": {
+     "line": "L18",
+     "word": "Part",
+     "offset": -0.1
+    },
+    "style": "tease",
+    "chords": [
+     "A5"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 32
+   }
+  ],
+  "accents": [
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L1",
+     "word": "civilization."
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L6",
+     "word": "isn't"
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "riser",
+    "at": {
+     "line": "L7",
+     "word": "twist."
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "stab",
+    "at": {
+     "line": "L12",
+     "word": "Nothing"
+    },
+    "chord": "F"
+   },
+   {
+    "kind": "cymbal",
+    "at": {
+     "line": "L12",
+     "word": "Nothing"
+    }
+   },
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L15",
+     "word": "Ghost"
+    },
+    "chord": "D"
+   },
+   {
+    "kind": "call",
+    "at": {
+     "line": "L18",
+     "word": "never"
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "roll",
+    "at": {
+     "end": true,
+     "offset": -0.05
+    },
+    "chord": "A"
+   }
+  ],
+  "fadeOut": {
+   "fromEnd": 0.08
+  },
+  "gain": 0.55
+ },
+ "mix": {
+  "musicLufs": -25.0,
+  "duckDb": -8.0,
+  "sfxLufs": -29.0,
+  "voiceFx": true
+ },
+ "metadata": {
+  "youtube": {
+   "title": "Intelligent Species Need More Than Different Ears (Worldbuilding)",
+   "titleAlternate": "Your elves are just humans with ears",
+   "description": "Giving elves pointy ears doesn't make them a distinct civilization.\n\nMeet the Fenn: they stacked the stones on the Isle. The lazy version is humans with different ears, and we ran it: a hundred years later, same houses, same barns, same bell tower. Spot the difference. There isn't one.\n\nSo change their biology instead. They see in the dark, so they live underground. They live four hundred years, so they build in stone. One clan shares one great hall. Their skin must stay wet, so they build on the lake. Then the twist: they speak in light, so their hall has no walls, only windows. And to the humans in the valley? Ghost lights on the lake.\n\nPointy ears are a costume. Biology is a blueprint.\n\nInvent one biological trait that would completely change a species' society. Comment it.\n\nPart 28 of 50. Follow for part 29: someone on the Isle never dies.\n\nWorldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 6: Creatures and Species.\n\n#Worldbuilding #FantasyWriting #Elves #WritingTips #WorldcraftShorts",
+   "pinnedComment": "Comment one biological trait that would completely change a species' society. The weirder the better. (Part 29: someone on the Isle never dies.)",
+   "uploadSettings": "Altered or synthetic content: Yes (synthetic narration and an AI-generated Fenn sprite; the island, villages and creatures are drawn in code). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "Your elves are just humans with ears \ud83d\udc42 We ran it: same houses, same barns, same bell tower. Then we changed their biology, and their whole village rebuilt itself. Trait #5 makes ghost stories. What trait would you invent? Part 28/50 \u00b7 follow for part 29 \u23f3 #Worldbuilding #FantasyWriting #Elves #WritingTips #WorldcraftShorts",
+   "pinnedComment": "Invent one biological trait that would completely change a species' society.",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "Giving elves pointy ears doesn't make them a distinct civilization.\n\nMeet the Fenn: they stacked the stones on the Isle. The lazy version is humans with different ears, and we ran it: a hundred years later, same houses, same barns, same bell tower. Spot the difference. There isn't one.\n\nSo change their biology instead. They see in the dark, so they live underground. They live four hundred years, so they build in stone. One clan shares one great hall. Their skin must stay wet, so they build on the lake. Then the twist: they speak in light, so their hall has no walls, only windows. And to the humans in the valley? Ghost lights on the lake.\n\nPointy ears are a costume. Biology is a blueprint.\n\nInvent one biological trait that would completely change a species' society. Comment it.\n\nPart 28 of 50. Follow for part 29: someone on the Isle never dies.\n\nWorldcraft Shorts \u00b7 Season 2: The World Engine.\n\n#Worldbuilding #FantasyWriting #Elves #WritingTips #WorldcraftShorts",
+   "pinnedComment": "What's the most alien trait you've given a species, and what did it change about how they live?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "Your elves are just humans.\n\nGiving elves pointy ears doesn't make them a distinct civilization.\n\nMeet the Fenn: they stacked the stones on the Isle. The lazy version is humans with different ears, and we ran it: a hundred years later, same houses, same barns, same bell tower. Spot the difference. There isn't one.\n\nSo change their biology instead. They see in the dark, so they live underground. They live four hundred years, so they build in stone. One clan shares one great hall. Their skin must stay wet, so they build on the lake. Then the twist: they speak in light, so their hall has no walls, only windows. And to the humans in the valley? Ghost lights on the lake.\n\nPointy ears are a costume. Biology is a blueprint.\n\nInvent one biological trait that would completely change a species' society. Comment it.\n\nPart 28 of 50. Follow for part 29: someone on the Isle never dies.\n\nWorldcraft Shorts \u00b7 Season 2\n\n#Worldbuilding #FantasyWriting #Elves #WritingTips #WorldcraftShorts",
+   "hookCheck": "First 27 characters: 'Your elves are just humans.'",
+   "pinnedComment": "Save the species editor, then tell us: which biological trait would change a society the most?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  }
+ }
+}

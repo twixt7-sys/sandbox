@@ -32,6 +32,15 @@ export const SPRITES: Record<string, {rows: string[]; colors: Record<string, str
 		colors: {L: '#2a2d36', M: '#8c877f', K: '#b2ada3', G: '#9a968e'},
 	},
 	eye: {rows: ['...XXXXX...', '.XX.....XX.', 'X...XXX...X', 'X..XXOXX..X', 'X...XXX...X', '.XX.....XX.', '...XXXXX...'], colors: {X: 'currentColor', O: '#050912'}},
+	// EP28: a Fenn (the counter icon) and an hourglass (the EP29 tease)
+	fenn: {
+		rows: ['F..GG..F', 'FFGGGGFF', '.GEGGEG.', '.GGGGGG.', '..GGGG..', '.GGGGGG.', 'G.GSSG.G', '..G..G..', '.GG..GG.'],
+		colors: {G: '#3fa08a', F: '#2b7a69', E: '#0c1014', S: '#b89a5a'},
+	},
+	hourglass: {
+		rows: ['XXXXXXXXX', '.X.....X.', '.XSSSSSX.', '..XSSSX..', '...XSX...', '...XSX...', '..X.S.X..', '.X..S..X.', '.XSSSSSX.', 'XXXXXXXXX'],
+		colors: {X: '#c9a26a', S: '#f4c46e'},
+	},
 	play: {rows: ['X....', 'XXX..', 'XXXXX', 'XXX..', 'X....'], colors: {X: 'currentColor'}},
 	ffwd: {rows: ['X...X...', 'XX..XX..', 'XXX.XXX.', 'XX..XX..', 'X...X...'], colors: {X: 'currentColor'}},
 	rewind: {rows: ['...X...X', '..XX..XX', '.XXX.XXX', '..XX..XX', '...X...X'], colors: {X: 'currentColor'}},

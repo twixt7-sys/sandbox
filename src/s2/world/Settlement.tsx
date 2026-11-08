@@ -43,7 +43,22 @@ const Box: React.FC<{s: [number, number, number]; p: [number, number, number]; c
 
 // ---------------------------------------------------------------- state (shared with the HUD)
 
-export type BuildingState = {b: BuildingRaw; i: number; x: number; z: number; rise: number; char: number; roof: number};
+export type BuildingState = {
+	b: BuildingRaw;
+	i: number;
+	x: number;
+	z: number;
+	rise: number;
+	char: number;
+	roof: number;
+	/** EP28+: 0..1 sunk into the earth, stone walls, open walls, light patterns; stilt height at this site */
+	sink?: number;
+	stone?: number;
+	open?: number;
+	glow?: number;
+	stilts?: number;
+	t?: number;
+};
 
 const isHome = (b: BuildingRaw) => (b.kind ?? 'house') === 'house' || b.kind === 'hall';
 
@@ -52,6 +67,10 @@ export const buildingStates = (st: Settlement, t: number): BuildingState[] => {
 	const place = sample(st.place, t, 0);
 	const charV = sample(st.char, t, 0);
 	const roofV = sample(st.roof, t, 0);
+	const sink = sample(st.sink ?? [], t, 0);
+	const stone = sample(st.stone ?? [], t, 0);
+	const open = sample(st.open ?? [], t, 0);
+	const glow = sample(st.glow ?? [], t, 0);
 	const n = st.buildings.length;
 	return st.buildings.map((b, i) => {
 		// staggered move: unbuild at A over the first half of its window, rise at B over the second
@@ -66,7 +85,12 @@ export const buildingStates = (st: Settlement, t: number): BuildingState[] => {
 		const h = hash2(i, 5, 27);
 		const char = clamp((charV - h * 0.75) / 0.25);
 		const roof = clamp((roofV - h * 0.7) / 0.3);
-		return {b, i, x, z, rise, char, roof};
+		// EP28+: a building's own show keys (e.g. houses giving way to one great hall)
+		const sk = st.showK?.[i];
+		if (sk) rise *= clamp(sample(sk, t, 1));
+		const stilts = atB && b.stiltsB ? b.stiltsB : 0;
+		const stag = (k: number) => clamp((k - h * 0.5) / 0.5);
+		return {b, i, x, z, rise, char, roof, sink: stag(sink), stone: stag(stone), open, glow, stilts, t};
 	});
 };
 
@@ -177,31 +201,97 @@ const Roof: React.FC<{w: number; d: number; y: number; colors: string[]; holes: 
 	</group>
 );
 
+const STONE_W = ['#a9a49a', '#9b968c'];
+const GLOW_C = '#7ff5d8';
+const DOOR_GLOW = '#ffc96a';
+
+/** Light patterns on a wall line (a people who speak in light): dots switching on and off in travelling waves. */
+const Lights: React.FC<{w: number; d: number; y: number; t: number; level: number; seed: number}> = ({w, d, y, t, level, seed}) => {
+	if (level <= 0.02) return null;
+	const out: React.ReactNode[] = [];
+	const per = 2 * (w + d);
+	const n = Math.max(8, Math.round(per / 0.55));
+	for (let k = 0; k < n; k++) {
+		const u = (k / n) * per;
+		let x: number, z: number;
+		if (u < w) [x, z] = [-w / 2 + u, d / 2 + 0.06];
+		else if (u < w + d) [x, z] = [w / 2 + 0.06, d / 2 - (u - w)];
+		else if (u < 2 * w + d) [x, z] = [w / 2 - (u - w - d), -d / 2 - 0.06];
+		else [x, z] = [-w / 2 - 0.06, -d / 2 + (u - 2 * w - d)];
+		// a sentence: a travelling wave plus a flicker, so the wall seems to be talking
+		const wave = Math.sin(t * 5.5 - k * 0.9 + seed) + (hash2(k, Math.floor(t * 7), seed) - 0.5) * 1.4;
+		if (wave < 0.2) continue;
+		const sz = 0.16 + 0.12 * Math.min(1, wave) * level;
+		out.push(<Box key={k} s={[sz, sz * 1.4, sz]} p={[x, y + (k % 2) * 0.35, z]} c={GLOW_C} e o={false} cast={false} />);
+	}
+	return <group>{out}</group>;
+};
+
 const House: React.FC<{s: BuildingState}> = ({s}) => {
 	const b = s.b;
 	const kind = b.kind ?? 'house';
-	const w = b.w ?? (kind === 'hall' ? 3.2 : kind === 'barn' ? 3.6 : 1.7);
-	const d = b.d ?? (kind === 'hall' ? 2.2 : kind === 'barn' ? 2.4 : 1.4);
-	const h = b.h ?? (kind === 'hall' ? 1.7 : kind === 'barn' ? 1.15 : 1.1);
+	const great = kind === 'greathall';
+	const w = b.w ?? (great ? 5.6 : kind === 'hall' ? 3.2 : kind === 'barn' ? 3.6 : 1.7);
+	const d = b.d ?? (great ? 5.6 : kind === 'hall' ? 2.2 : kind === 'barn' ? 2.4 : 1.4);
+	const stone = s.stone ?? 0;
+	const sink = great ? 0 : (s.sink ?? 0);
+	const open = s.open ?? 0;
+	const glow = s.glow ?? 0;
+	const h = (b.h ?? (great ? 2.0 : kind === 'hall' ? 1.7 : kind === 'barn' ? 1.15 : 1.1)) * (1 + 0.35 * stone);
 	const newRoof = kind === 'barn' ? SLATE : s.i % 2 ? TURF : SLATE;
 	let roof = s.roof >= 0.5 ? newRoof : THATCH;
+	if (sink > 0.5 || great) roof = TURF;
 	if (s.char > 0.05) roof = [mix(roof[0], CHAR[0], s.char), mix(roof[1], CHAR[1], s.char)];
-	const wall = mix(kind === 'barn' ? WOOD : s.i % 3 ? WALL : WALL2, '#5a4a3e', s.char * 0.55);
+	let wall = mix(kind === 'barn' ? WOOD : s.i % 3 ? WALL : WALL2, '#5a4a3e', s.char * 0.55);
+	if (stone > 0) wall = mix(wall, STONE_W[s.i % 2], stone);
 	// a re-roofed building gives a little pop
 	const pop = s.roof > 0 && s.roof < 1 ? 1 + Math.sin(s.roof * Math.PI) * 0.12 : 1;
+	const dy = -(h + 0.1) * 0.85 * sink;
+	const wallK = 1 - open;
 	return (
-		<group position={[0, 0, 0]} scale={[1, Math.max(0.0001, s.rise), 1]}>
-			<Box s={[w + 0.12, 0.28, d + 0.12]} p={[0, 0.14, 0]} c={STONE} />
-			<Box s={[w, h, d]} p={[0, 0.28 + h / 2, 0]} c={wall} />
-			{kind !== 'barn' && <Box s={[0.12, 0.62, 0.42]} p={[w / 2 + 0.02, 0.6, 0]} c={BEAM} o={false} cast={false} />}
+		<group position={[0, dy, 0]} scale={[1, Math.max(0.0001, s.rise), 1]}>
+			<Box s={[w + 0.12, 0.28, d + 0.12]} p={[0, 0.14, 0]} c={great ? STONE_W[0] : STONE} />
+			{wallK > 0.02 && <Box s={[w * (great ? 1 : 1), h * wallK, d]} p={[0, 0.28 + (h * wallK) / 2, 0]} c={wall} />}
+			{great && wallK > 0.02 && (
+				<group rotation={[0, Math.PI / 4, 0]}>
+					<Box s={[w * 0.82, h * wallK, d * 0.82]} p={[0, 0.28 + (h * wallK) / 2, 0]} c={wall} />
+				</group>
+			)}
+			{open > 0.02 &&
+				[-1, -0.33, 0.33, 1].flatMap((fx) =>
+					[-1, 1].map((fz) => <Box key={`${fx}${fz}`} s={[0.32, h, 0.32]} p={[(fx * (w - 0.4)) / 2, 0.28 + h / 2, (fz * (d - 0.4)) / 2]} c={wall} />),
+				)}
+			{open > 0.02 && [-1, 1].map((fx) => <Box key={`s${fx}`} s={[0.32, h, 0.32]} p={[(fx * (w - 0.4)) / 2, 0.28 + h / 2, 0]} c={wall} />)}
+			{kind !== 'barn' && !great && <Box s={[0.12, 0.62, 0.42]} p={[w / 2 + 0.02, 0.6, 0]} c={sink > 0.5 ? DOOR_GLOW : BEAM} e={sink > 0.5} o={false} cast={false} />}
+			{great && wallK > 0.3 && <Box s={[0.12, 0.9, 0.7]} p={[w / 2 + 0.02, 0.73, 0]} c={DOOR_GLOW} e o={false} cast={false} />}
 			{kind === 'barn' && <Box s={[0.1, 0.8, 1.2]} p={[w / 2 + 0.02, 0.68, 0]} c={'#4a3020'} o={false} cast={false} />}
 			{kind === 'hall' && <Box s={[0.14, h, 0.14]} p={[0, 0.28 + h / 2, d / 2 + 0.02]} c={BEAM} o={false} cast={false} />}
+			<Lights w={w} d={d} y={0.28 + h * 0.45} t={s.t ?? 0} level={glow} seed={s.i * 7 + 3} />
 			<group scale={[1, pop, 1]} position={[0, 0.28 + h, 0]}>
-				<Roof w={w} d={d} y={0} colors={roof} holes={s.char} tall={kind === 'hall' ? 1.35 : 1} />
+				{great ? (
+					<group>
+						<Box s={[w + 0.4, 0.4, d + 0.4]} p={[0, 0.2, 0]} c={roof[0]} />
+						<Box s={[w * 0.72, 0.4, d * 0.72]} p={[0, 0.6, 0]} c={roof[1]} />
+						<Box s={[w * 0.44, 0.4, d * 0.44]} p={[0, 1.0, 0]} c={roof[0]} />
+						<Box s={[w * 0.18, 0.35, d * 0.18]} p={[0, 1.38, 0]} c={roof[1]} />
+					</group>
+				) : (
+					<Roof w={w} d={d} y={0} colors={roof} holes={s.char} tall={kind === 'hall' ? 1.35 : 1} />
+				)}
 			</group>
 		</group>
 	);
 };
+
+/** Stilts under a building standing on water: posts down to the ground (the lake bed shows as the water surface). */
+const Stilts: React.FC<{w: number; d: number; h: number}> = ({w, d, h}) => (
+	<group>
+		{[-1, 0, 1].flatMap((fx) =>
+			[-1, 0, 1].map((fz) => <Box key={`${fx}${fz}`} s={[0.26, h, 0.26]} p={[(fx * w) / 2.3, -h / 2, (fz * d) / 2.3]} c={WOOD} o={false} />),
+		)}
+		<Box s={[w + 1.6, 0.22, d + 1.6]} p={[0, -0.11, 0]} c={'#8a6a46'} />
+	</group>
+);
 
 const Fence: React.FC<{r: number}> = ({r}) => {
 	const n = 14;
@@ -320,8 +410,8 @@ export const Cairn: React.FC<{x: number; z: number; y: number; stones: number}> 
 
 // ---------------------------------------------------------------- the layer
 
-export const SettlementLayer: React.FC<{world: World; island: Island; t: number; s: number}> = ({world, island, t, s}) => {
-	const st = world.settlement;
+export const SettlementLayer: React.FC<{world: World; island: Island; t: number; s: number; settlement?: Settlement}> = ({world, island, t, s, settlement}) => {
+	const st = settlement ?? world.settlement;
 	if (!st) return null;
 	const states = buildingStates(st, t);
 	const smoke = sample(st.smoke, t, 0);
@@ -338,7 +428,8 @@ export const SettlementLayer: React.FC<{world: World; island: Island; t: number;
 		<group>
 			{states.map((bs) =>
 				bs.rise > 0.001 ? (
-					<group key={bs.i} position={[bs.x, island.heightAt(bs.x, bs.z), bs.z]} rotation={[0, ((bs.b.face ?? 0) * Math.PI) / 180, 0]}>
+					<group key={bs.i} position={[bs.x, Math.max(island.waterLevel, island.heightAt(bs.x, bs.z)) + (bs.stilts ?? 0), bs.z]} rotation={[0, ((bs.b.face ?? 0) * Math.PI) / 180, 0]}>
+						{(bs.stilts ?? 0) > 0 && <Stilts w={bs.b.w ?? (bs.b.kind === 'greathall' ? 5.6 : 1.7)} d={bs.b.d ?? (bs.b.kind === 'greathall' ? 5.6 : 1.4)} h={bs.stilts! + 1} />}
 						<House s={bs} />
 						{bs.char > 0.05 && smoke > 0.02 && <Smoke t={t} level={smoke * bs.char} seed={bs.i} />}
 					</group>

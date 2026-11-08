@@ -1891,3 +1891,89 @@ The AI label stays on everywhere (series policy). No people appear and no one is
 - **Hook check:** First 27 characters: 'This is what a dragon sees.'
 - **Pinned comment:** Save the sky-proof checklist, then tell us: what would your civilization invent to survive dragons?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 28 captions (ready to paste) — Season 2, Arc 6
+
+Source of truth: `episodes/ep28/episode.json` → `metadata`. Every description ends with the Season 2 ending formula ("Part 28 of 50. Follow for part 29: …"), matching the video's last line. The AI label goes on for all four platforms. Cover: `episodes/ep28/Worldcraft_Short_E28_cover.jpg`. Subtitles: `episodes/ep28/ep28.srt`.
+
+**Disclosure.** The island, both villages, the Fenn, the HUD and every number are drawn and simulated in code. Two things are AI-made: the narration (Kokoro synthetic voice) and the field card's Fenn sprite (Figma `generate_image`, re-gridded by `pipeline/pixelate.py`). AI label on everywhere (series policy). Nothing violent happens on screen.
+
+**Closing EP27's loop.** EP27 ended "something on the Isle learns to build" with a cairn stacking itself. EP28 opens on the Fenn who stacked it. When EP28 goes up, reply to the top comments on EP27 with its link and pin it where a second pin is allowed. The comment CTA asks for a trait: watch for long, inventive replies and pin the best one.
+
+**Posting part 29.** The video promises "someone on the Isle never dies" (years race past at the end). Do the same reply-and-pin on EP28 when EP29 is posted.
+
+### YouTube Shorts
+- **Title** (65/100 chars): `Intelligent Species Need More Than Different Ears (Worldbuilding)`
+- **Alternate title** (36 chars): `Your elves are just humans with ears`
+- **Description:**
+
+> Giving elves pointy ears doesn't make them a distinct civilization.
+>
+> Meet the Fenn: they stacked the stones on the Isle. The lazy version is humans with different ears, and we ran it: a hundred years later, same houses, same barns, same bell tower. Spot the difference. There isn't one.
+>
+> So change their biology instead. They see in the dark, so they live underground. They live four hundred years, so they build in stone. One clan shares one great hall. Their skin must stay wet, so they build on the lake. Then the twist: they speak in light, so their hall has no walls, only windows. And to the humans in the valley? Ghost lights on the lake.
+>
+> Pointy ears are a costume. Biology is a blueprint.
+>
+> Invent one biological trait that would completely change a species' society. Comment it.
+>
+> Part 28 of 50. Follow for part 29: someone on the Isle never dies.
+>
+> Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 6: Creatures and Species.
+>
+> #Worldbuilding #FantasyWriting #Elves #WritingTips #WorldcraftShorts
+
+- **Pinned comment:** Comment one biological trait that would completely change a species' society. The weirder the better. (Part 29: someone on the Isle never dies.)
+- **Upload settings:** Altered or synthetic content: Yes (synthetic narration and an AI-generated Fenn sprite; the island, villages and creatures are drawn in code). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (324 chars): `Your elves are just humans with ears 👂 We ran it: same houses, same barns, same bell tower. Then we changed their biology, and their whole village rebuilt itself. Trait #5 makes ghost stories. What trait would you invent? Part 28/50 · follow for part 29 ⏳ #Worldbuilding #FantasyWriting #Elves #WritingTips #WorldcraftShorts`
+- **Pinned comment:** Invent one biological trait that would completely change a species' society.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> Giving elves pointy ears doesn't make them a distinct civilization.
+>
+> Meet the Fenn: they stacked the stones on the Isle. The lazy version is humans with different ears, and we ran it: a hundred years later, same houses, same barns, same bell tower. Spot the difference. There isn't one.
+>
+> So change their biology instead. They see in the dark, so they live underground. They live four hundred years, so they build in stone. One clan shares one great hall. Their skin must stay wet, so they build on the lake. Then the twist: they speak in light, so their hall has no walls, only windows. And to the humans in the valley? Ghost lights on the lake.
+>
+> Pointy ears are a costume. Biology is a blueprint.
+>
+> Invent one biological trait that would completely change a species' society. Comment it.
+>
+> Part 28 of 50. Follow for part 29: someone on the Isle never dies.
+>
+> Worldcraft Shorts · Season 2: The World Engine.
+>
+> #Worldbuilding #FantasyWriting #Elves #WritingTips #WorldcraftShorts
+
+- **Pinned comment:** What's the most alien trait you've given a species, and what did it change about how they live?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Your elves are just humans.
+>
+> Giving elves pointy ears doesn't make them a distinct civilization.
+>
+> Meet the Fenn: they stacked the stones on the Isle. The lazy version is humans with different ears, and we ran it: a hundred years later, same houses, same barns, same bell tower. Spot the difference. There isn't one.
+>
+> So change their biology instead. They see in the dark, so they live underground. They live four hundred years, so they build in stone. One clan shares one great hall. Their skin must stay wet, so they build on the lake. Then the twist: they speak in light, so their hall has no walls, only windows. And to the humans in the valley? Ghost lights on the lake.
+>
+> Pointy ears are a costume. Biology is a blueprint.
+>
+> Invent one biological trait that would completely change a species' society. Comment it.
+>
+> Part 28 of 50. Follow for part 29: someone on the Isle never dies.
+>
+> Worldcraft Shorts · Season 2
+>
+> #Worldbuilding #FantasyWriting #Elves #WritingTips #WorldcraftShorts
+
+- **Hook check:** First 27 characters: 'Your elves are just humans.'
+- **Pinned comment:** Save the species editor, then tell us: which biological trait would change a society the most?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

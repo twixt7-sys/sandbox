@@ -47,6 +47,13 @@ export type WorldRaw = {
 	dragons?: DragonRaw[];
 	/** EP27+: the village layer (buildings, roofs, char, pens/barns, the move to a second site, roads, carts, a tower). */
 	settlement?: SettlementRaw;
+	/** EP28+: trees to clear (x, z, radius), e.g. along a hook's line of sight */
+	clearTrees?: [number, number, number][];
+	/** EP28+: more settlements on the Isle (e.g. the human valley beside a new species' village). */
+	settlements?: SettlementRaw[];
+	/** EP28+: a people walking the Isle (the Fenn): a crowd of `count` around their homes, a keyed `hero`, and their
+	 * look (`eyes`, `wet`, `glow`, each 0..1: night eyes, wet teal skin with fins instead of ears, glow spots). */
+	folk?: {count: RawKey[]; centers: [number, number][]; centersB?: [number, number][]; site?: RawKey[]; eyes?: RawKey[]; wet?: RawKey[]; glow?: RawKey[]; hero?: PredKeyRaw[]; spread?: number};
 	/** EP27+: small props, e.g. a cairn whose stones stack on their keys (`stones`). */
 	props?: {kind: 'cairn'; x: number; z: number; stones: RawKey[]}[];
 };
@@ -56,7 +63,7 @@ export type DragonRaw = {id: string; scale?: number; keys: DragonKeyRaw[]};
 export type DragonKey = {t: number; x: number; z: number; y: number | null; state: string; face?: number; dur: number; ease: string};
 
 export type BuildingRaw = {
-	kind?: 'house' | 'hall' | 'barn' | 'tower';
+	kind?: 'house' | 'hall' | 'barn' | 'tower' | 'greathall';
 	/** site A (before the move) and optional site B (after it); without `b` the building stays at `a` */
 	a: [number, number];
 	b?: [number, number];
@@ -66,6 +73,10 @@ export type BuildingRaw = {
 	face?: number;
 	/** visible only at one site: 'a' leaves at the move, 'b' arrives with it */
 	only?: 'a' | 'b';
+	/** EP28+: this building's own rise keys (0 unbuilt .. 1 standing), e.g. houses giving way to one great hall */
+	show?: RawKey[];
+	/** EP28+: at site B it stands on stilts this many units above the ground (a hall on a lake) */
+	stiltsB?: number;
 };
 export type SettlementRaw = {
 	buildings: BuildingRaw[];
@@ -89,6 +100,14 @@ export type SettlementRaw = {
 	lanterns?: RawKey[];
 	/** a watchtower with a bell: rises with `tower` (0..1); the bell swings on each `rings` cue */
 	tower?: {x: number; z: number; h?: number; keys: RawKey[]; rings?: Cue[]};
+	/** EP28+: 0..1 houses sink into the earth (turf mounds; a nocturnal people living underground) */
+	sink?: RawKey[];
+	/** EP28+: 0..1 walls turn to dressed stone and stand taller (built to last centuries) */
+	stone?: RawKey[];
+	/** EP28+: 0..1 walls open into pillars (a hall with no walls, only windows) */
+	open?: RawKey[];
+	/** EP28+: 0..1 light patterns flicker on the buildings (a people who speak in light) */
+	glow?: RawKey[];
 };
 
 export type Settlement = {
@@ -104,6 +123,12 @@ export type Settlement = {
 	tradeKey: string;
 	lanterns: Key[];
 	tower: {x: number; z: number; h: number; keys: Key[]; rings: number[]} | null;
+	/** EP28+ (empty for EP27) */
+	showK: (Key[] | null)[];
+	sink: Key[];
+	stone: Key[];
+	open: Key[];
+	glow: Key[];
 };
 
 export type PredKey = {t: number; x: number; z: number; state: string; face?: number; dur: number};
@@ -136,6 +161,10 @@ export type World = {
 	herdCentersB: [number, number][] | null;
 	dragons: {id: string; scale: number; keys: DragonKey[]}[];
 	settlement: Settlement | null;
+	clearTrees: [number, number, number][];
+	/** every settlement, the first one included (EP28+: more than one) */
+	settlements: Settlement[];
+	folk: {count: Key[]; centers: [number, number][]; centersB: [number, number][] | null; site: Key[]; eyes: Key[]; wet: Key[]; glow: Key[]; hero: PredKey[]; spread: number} | null;
 	props: {kind: 'cairn'; x: number; z: number; stones: Key[]}[];
 };
 
@@ -173,27 +202,47 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 			.map((k) => ({t: cueTime(timing, k.at), x: k.x, z: k.z, y: k.y ?? null, state: k.state ?? 'perch', face: k.face, dur: k.dur ?? 0, ease: k.ease ?? 'smooth'}))
 			.sort((a, b) => a.t - b.t),
 	})),
-	settlement: raw.settlement
+	settlement: raw.settlement ? resolveSettlement(raw.settlement, timing) : null,
+	clearTrees: raw.clearTrees ?? [],
+	settlements: [...(raw.settlement ? [raw.settlement] : []), ...(raw.settlements ?? [])].map((st) => resolveSettlement(st, timing)),
+	folk: raw.folk
 		? {
-				buildings: raw.settlement.buildings,
-				roof: resolveKeys(timing, raw.settlement.roof),
-				char: resolveKeys(timing, raw.settlement.char),
-				smoke: resolveKeys(timing, raw.settlement.smoke),
-				pens: raw.settlement.pens ?? [],
-				cover: resolveKeys(timing, raw.settlement.cover),
-				place: resolveKeys(timing, raw.settlement.place),
-				roads: {a: raw.settlement.roads?.a ?? [], b: raw.settlement.roads?.b ?? []},
-				route: resolveKeys(timing, raw.settlement.route),
-				tradeKey: raw.settlement.tradeKey ?? 'trade',
-				lanterns: resolveKeys(timing, raw.settlement.lanterns),
-				tower: raw.settlement.tower
-					? {x: raw.settlement.tower.x, z: raw.settlement.tower.z, h: raw.settlement.tower.h ?? 7, keys: resolveKeys(timing, raw.settlement.tower.keys), rings: (raw.settlement.tower.rings ?? []).map((c) => cueTime(timing, c))}
-					: null,
+				count: resolveKeys(timing, raw.folk.count),
+				centers: raw.folk.centers,
+				centersB: raw.folk.centersB ?? null,
+				site: resolveKeys(timing, raw.folk.site),
+				eyes: resolveKeys(timing, raw.folk.eyes),
+				wet: resolveKeys(timing, raw.folk.wet),
+				glow: resolveKeys(timing, raw.folk.glow),
+				hero: (raw.folk.hero ?? []).map((k) => ({t: cueTime(timing, k.at), x: k.x, z: k.z, state: k.state ?? 'idle', face: k.face, dur: k.dur ?? 0})).sort((a, b) => a.t - b.t),
+				spread: raw.folk.spread ?? 2.6,
 			}
 		: null,
 	props: (raw.props ?? []).map((p) => ({kind: p.kind, x: p.x, z: p.z, stones: resolveKeys(timing, p.stones)})),
 	rings: (raw.layers?.rings ?? []).map((r) => ({x: r.x, z: r.z, r: r.r, on: cueTime(timing, r.on), off: r.off ? cueTime(timing, r.off) : Infinity, color: r.color ?? '#f4c46e'})),
 });
+
+function resolveSettlement(st: SettlementRaw, timing: Timing): Settlement {
+	return {
+		buildings: st.buildings,
+		roof: resolveKeys(timing, st.roof),
+		char: resolveKeys(timing, st.char),
+		smoke: resolveKeys(timing, st.smoke),
+		pens: st.pens ?? [],
+		cover: resolveKeys(timing, st.cover),
+		place: resolveKeys(timing, st.place),
+		roads: {a: st.roads?.a ?? [], b: st.roads?.b ?? []},
+		route: resolveKeys(timing, st.route),
+		tradeKey: st.tradeKey ?? 'trade',
+		lanterns: resolveKeys(timing, st.lanterns),
+		tower: st.tower ? {x: st.tower.x, z: st.tower.z, h: st.tower.h ?? 7, keys: resolveKeys(timing, st.tower.keys), rings: (st.tower.rings ?? []).map((c) => cueTime(timing, c))} : null,
+		showK: st.buildings.map((b) => (b.show ? resolveKeys(timing, b.show) : null)),
+		sink: resolveKeys(timing, st.sink),
+		stone: resolveKeys(timing, st.stone),
+		open: resolveKeys(timing, st.open),
+		glow: resolveKeys(timing, st.glow),
+	};
+}
 
 const smooth = (p: number) => p * p * (3 - 2 * p);
 const lerpAngle = (a: number, b: number, p: number) => {

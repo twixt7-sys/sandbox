@@ -502,10 +502,44 @@ def style_stealth(c: Ctx):
         c.arp("celesta", 0.5, 72, 88, 40, pattern=(2, 1, 0, 1))
 
 
+
+# ---- EP28 colours (additive). Sections that use them set `programs` (kalimba on the marimba channel, ocarina on the
+# lead, choir on the strings, vibraphone on the glock) and later sections set them back.
+
+def style_folk(c: Ctx):
+    """A people at home (the Fenn): a kalimba ostinato, the series theme on ocarina, hand drums (congas) and a
+    soft plucked bass. `layer` 1-4 adds families as their traits change (hand drums, bass, ocarina theme, celesta)."""
+    layer = c.spec.get("layer", 4)
+    c.pad("strings", 52, 67, 34, max_notes=3)
+    c.arp("marimba", 0.5, 60, 79, 70, pattern=(0, 2, 1, 3, 2, 1, 0, 2))
+    if layer >= 2:
+        for b in range(0, c.n):
+            c.add("drums", b, 0.2, 64, 78)
+            c.add("drums", b + 0.5, 0.2, 63, 52)
+            if b % 2:
+                c.add("drums", b + 0.75, 0.2, 63, 44)
+    if layer >= 3:
+        c.root("pizz", 38, 50, 66, every=2.0, dur=0.6)
+    if layer >= 4:
+        c.theme("lead", vel=84, bars=(0, 4))
+        c.arp("celesta", 1.0, 74, 90, 40, pattern=(2, 1, 0))
+
+
+def style_glow(c: Ctx):
+    """Speaking in light (the twist): a choir pad, vibraphone arpeggios that ripple like the lights, harp shimmer, the
+    theme high on celesta, a low cello pedal; no drums."""
+    c.pad("strings", 50, 72, 50)
+    c.root("cello", 36, 48, 50)
+    c.arp("glock", 0.25, 64, 84, 52, pattern=(0, 1, 2, 3, 2, 1))
+    c.arp("harp", 0.5, 62, 86, 40, pattern=(0, 2, 1, 3))
+    c.theme("celesta", vel=70, bars=(0, 2), octave=1)
+
+
 STYLES = {"hook": style_hook, "pulse": style_pulse, "drive": style_drive, "drop": style_drop, "void": style_void,
           "mystery": style_mystery, "build": style_build, "twist": style_twist, "rest": style_rest, "frenzy": style_frenzy,
           "crash": style_crash, "swell": style_swell, "anthem": style_anthem, "outro": style_outro, "tease": style_tease,
-          "soar": style_soar, "raid": style_raid, "stealth": style_stealth}
+          "soar": style_soar, "raid": style_raid, "stealth": style_stealth,
+          "folk": style_folk, "glow": style_glow}
 
 # The World Engine chime: Season 2's sound signature (Season 1 had its sine bells). A rising open fifth on music box
 # with 8-bit blips, ringing out two octaves up: (seconds after the cue, semitones above D5).

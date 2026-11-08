@@ -189,7 +189,7 @@ def blip(f0, f1, dur, bright=1.0):
 
 
 S2_HITS = {"roar", "stompHit", "sting", "runPress", "stamp", "rewind", "ringOn", "snowAir", "sleepZ", "cubPop", "delete", "restore", "cardSlide", "check", "unlock", "worldRipple", "crash", "boomPop",
-           "engineWind", "dragonPass", "followPress", "chime", "towerBell", "eyeOn"}
+           "engineWind", "dragonPass", "followPress", "chime", "towerBell", "eyeOn", "morph", "slide"}
 S2_BEDS = {"simTicks", "births", "losses", "stomp", "burn", "lockOn"}
 
 
@@ -415,6 +415,29 @@ def s2_hit(kind):
         sw[: len(sweep)] += sweep
         thump = np.sin(2 * np.pi * 70 * t) * np.exp(-np.maximum(0, t - 0.5) * 9) * (t > 0.5) * 0.7
         return st(swell * 0.6 + sw + thump, 0.5)
+    if kind == "morph":
+        # EP28: a body changes (a trait slider takes effect): a soft rising shimmer of square partials over a breathy
+        # swell, like a creature re-forming. Its own seed.
+        n = int(0.9 * SR)
+        t = np.arange(n) / SR
+        rng = np.random.default_rng(281)
+        sw = np.zeros(n)
+        for k, f0 in enumerate((420, 630, 840, 1260)):
+            b = blip(f0, f0 * 2, 0.5, 0.5 / (k + 1))
+            i = int(k * 0.06 * SR)
+            sw[i:i + len(b)] += b[: n - i]
+        air = bp(rng.standard_normal(n), 500, 4000) * np.interp(t, [0, 0.3, 0.9], [0, 0.35, 0])
+        return st(sw + air, 0.6)
+    if kind == "slide":
+        # EP28: an editor slider moving: a quick ratcheting tick run, rising
+        n = int(0.32 * SR)
+        out = np.zeros(n)
+        for k in range(7):
+            f = 900 + k * 120
+            b = blip(f, f, 0.02, 0.5)
+            i = int(k * 0.04 * SR)
+            out[i:i + len(b)] += b[: n - i]
+        return st(out, 0.3)
     raise KeyError(kind)
 
 

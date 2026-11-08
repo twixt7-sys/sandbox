@@ -10,6 +10,7 @@ import {Cam, camPose, Lights, Stage, sunDir} from './Stage';
 import {cameraAt, dragonAt, herdCount, moodAt, predatorAt, simTime, World} from './timeline';
 import {Dragon} from './Dragon';
 import {Cairn, roadAt, SettlementLayer} from './Settlement';
+import {FolkLayer} from './Folk';
 
 export type S2State = {world: World; t: number; cam: Cam; island: Island; agents: HerdAgent[]; agentsB?: HerdAgent[]};
 export const S2Context = createContext<S2State | null>(null);
@@ -295,11 +296,11 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 	// EP27+: land cleared for the village (both sites, the pens and the tower): no trees inside the buildings
 	const cleared = useMemo(() => {
 		const out = new Set<number>();
-		const st = world.settlement;
-		if (!st) return out;
-		const spots: [number, number, number][] = [];
+		if (!world.settlements.length && !world.clearTrees.length) return out;
+		const spots: [number, number, number][] = [...world.clearTrees];
+		for (const st of world.settlements) {
 		for (const b of st.buildings) {
-			const r = b.kind === 'hall' ? 2.4 : 1.6;
+			const r = b.kind === 'greathall' ? 4.2 : b.kind === 'hall' ? 2.4 : 1.6;
 			spots.push([b.a[0], b.a[1], r]);
 			if (b.b) spots.push([b.b[0], b.b[1], r]);
 		}
@@ -312,6 +313,7 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 		for (const road of [st.roads.a, st.roads.b])
 			for (let i = 0; i + 1 < road.length; i++)
 				for (let f = 0; f <= 1; f += 0.1) spots.push([road[i][0] + (road[i + 1][0] - road[i][0]) * f, road[i][1] + (road[i + 1][1] - road[i][1]) * f, 0.8]);
+		}
 		island.trees.forEach((tr, k) => {
 			if (spots.some(([x, z, r]) => Math.hypot(tr.x - x, tr.z - z) < r)) out.add(k);
 		});
@@ -345,10 +347,11 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 			if (c.r < thr) out.copy(DIRT_C[Math.floor(c.r * 97) % DIRT_C.length]);
 			else if (c.r < thr + 0.12) out.lerp(DIRT_C[0], 0.45);
 		}
-		if (world.settlement && c.biome !== 'water') {
-			const r = roadAt(world.settlement, t, c.x, c.z);
-			if (r > 0) out.lerp(ROAD_C, r * (0.75 + 0.15 * c.r));
-		}
+		if (c.biome !== 'water')
+			for (const st of world.settlements) {
+				const r = roadAt(st, t, c.x, c.z);
+				if (r > 0) out.lerp(ROAD_C, r * (0.75 + 0.15 * c.r));
+			}
 		if (snow > 0 && c.biome !== 'snow') {
 			const k = smoothstep(c.r * 0.85, c.r * 0.85 + 0.15, snow);
 			if (k > 0) out.lerp(c.biome === 'water' ? ICE_C : SNOW_C, k * (c.biome === 'water' ? 0.55 : 0.88));
@@ -424,7 +427,10 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 				}}
 			/>
 			{poses.map((p, i) => (p ? <Grimmaw key={i} pose={p} /> : null))}
-			{world.settlement && <SettlementLayer world={world} island={island} t={t} s={s} />}
+			{world.settlements.map((st, i) => (
+				<SettlementLayer key={`st${i}`} world={world} island={island} t={t} s={s} settlement={st} />
+			))}
+			{world.folk && <FolkLayer world={world} island={island} t={t} s={s} />}
 			{world.dragons.map((d) => {
 				const dp = dragonAt(d.keys, t, (x, z) => Math.max(island.waterLevel, island.heightAt(x, z)));
 				return dp ? <Dragon key={d.id} pose={dp} scale={d.scale} t={t} loopT={world.loopT} /> : null;

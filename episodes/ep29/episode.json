@@ -1,0 +1,4834 @@
+{
+ "id": "ep29",
+ "number": 29,
+ "season": 2,
+ "title": "Immortality Would Break Your Society",
+ "lesson": "An immortal isn't a character trait, it's a change to the whole society around them: who inherits, who holds power and for how long, what marriage means, how far titles spread, and who gets to remember the past.",
+ "format": {
+  "version": "s2",
+  "qa": {
+   "min": 55.0,
+   "max": 62.0
+  }
+ },
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.07
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.2,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "The same lab host, a little slower and more thoughtful for a story told across centuries. The hook is a real question. 'Nothing else changes' is the knowing setup. 'Forty heirs. Not one coronation.' lands dry. 'Forever breaks every rule built for death' is the thesis. The fixes are crisp. 'Nobody else remembers year zero' is quiet; 'A library she can't rewrite' is the reveal. The comment ask is a genuine question."
+ },
+ "timing": {
+  "leadIn": 0.2,
+  "tail": 0.85,
+  "shotLead": 0.12
+ },
+ "captionY": 1238,
+ "captionsOff": [
+  {
+   "line": "L3",
+   "from": "nothing"
+  },
+  {
+   "line": "L6",
+   "from": "Not"
+  },
+  {
+   "line": "L7",
+   "from": "Forever",
+   "to": "Four"
+  },
+  {
+   "line": "L13",
+   "from": "Rule",
+   "to": "Nobody"
+  },
+  {
+   "line": "L14",
+   "from": "history",
+   "to": "Unless"
+  }
+ ],
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "What happens when a ruler can live for ten thousand years?",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "ruler",
+    "thousand"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "hook",
+   "text": "Meet the Undying Queen. She never ages.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "undying",
+    "never"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "setup",
+   "text": "The lazy version: she's immortal, and nothing else changes.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "lazy",
+    "nothing"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "setup",
+   "text": "Press run.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "run."
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "run1",
+   "text": "A thousand years. Forty generations wait for her crown.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "forty",
+    "crown."
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "drop",
+   "text": "Forty heirs. Not one coronation.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "heirs.",
+    "coronation."
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "rehook",
+   "text": "Forever breaks every rule built for death. Four fixes are easy. The fifth is the twist.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "forever",
+    "twist."
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "inherit",
+   "text": "One: inheritance. Heirs inherit at fifty, not at a funeral.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "fifty,",
+    "funeral."
+   ]
+  },
+  {
+   "id": "L9",
+   "shot": "power",
+   "text": "Two: power. Her crown is lent: a new council every century.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "lent:",
+    "century."
+   ]
+  },
+  {
+   "id": "L10",
+   "shot": "marriage",
+   "text": "Three: marriage. She outlives every husband, so vows last one lifetime.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "outlives",
+    "lifetime."
+   ]
+  },
+  {
+   "id": "L11",
+   "shot": "family",
+   "text": "Four: family. Forty generations of princes? Titles stop at grandchildren.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "princes?",
+    "grandchildren."
+   ]
+  },
+  {
+   "id": "L12",
+   "shot": "run2",
+   "text": "Run it again. The valley keeps changing. She doesn't.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "changing.",
+    "doesn't."
+   ]
+  },
+  {
+   "id": "L13",
+   "shot": "twist",
+   "text": "Rule five? Memory. Nobody else remembers year zero.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "memory.",
+    "zero."
+   ]
+  },
+  {
+   "id": "L14",
+   "shot": "twist",
+   "text": "So history is whatever she says. Unless it's written down.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "whatever",
+    "written"
+   ]
+  },
+  {
+   "id": "L15",
+   "shot": "role",
+   "text": "A library she can't rewrite.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "library",
+    "rewrite."
+   ]
+  },
+  {
+   "id": "L16",
+   "shot": "lesson",
+   "text": "Immortality isn't a trait. It's a society.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "trait.",
+    "society."
+   ]
+  },
+  {
+   "id": "L17",
+   "shot": "cta",
+   "text": "Would you want an immortal ruler? Explain why.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "immortal",
+    "why."
+   ]
+  },
+  {
+   "id": "L18",
+   "shot": "next",
+   "text": "Part 29 of 50. Follow for part 30: they pray to a monster.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "follow",
+    "monster."
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "world",
+   "purpose": "Close EP28's loop (who never dies?) and stop the scroll on the question.",
+   "visual": "Golden hour, a locked-off frame: the Undying Queen in violet on her stone dais, still, while behind her the valley's people are born, grey and are replaced, winters flicker and the forest thins and returns. A RULER WHO / NEVER DIES? Then the field card: THE UNDYING \u00b7 IMMORTAL RULER \u00b7 AGE: 30, since year 0.",
+   "camera": "Locked off (az 12, el 9, dist 30, fov 22), no drift; the loop lands on the same frame.",
+   "layers": {
+    "foreground": "kinetic, field card",
+    "midground": "the Queen on her dais",
+    "background": "the valley ageing"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "A RULER WHO / NEVER DIES?",
+   "transition": "Rewind wipe into the lazy version.",
+   "music": "Reign: organ chorale, timpani, the theme on horns.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "A RULER WHO",
+       "size": 84
+      },
+      {
+       "text": "NEVER DIES?",
+       "color": "#b48cff",
+       "size": 96
+      }
+     ],
+     "y": 452,
+     "size": 96,
+     "start": {
+      "shot": "hook"
+     },
+     "end": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.1
+     },
+     "preShow": true
+    },
+    {
+     "type": "sting",
+     "label": "WORLD ENGINE",
+     "run": "RUN 29 \u00b7 CREATURES",
+     "dur": 1.4,
+     "start": {
+      "shot": "hook"
+     },
+     "front": true
+    },
+    {
+     "type": "fieldCard",
+     "mode": "intro",
+     "y": 440,
+     "start": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "dietAt": {
+      "line": "L2",
+      "word": "never"
+     },
+     "kicker": "FIELD CARD \u00b7 NO. 004",
+     "kind": "IMMORTAL RULER",
+     "name": "THE UNDYING",
+     "dietLabel": "AGE",
+     "diet": "30, since year 0",
+     "sprite": "ep29/queen_sprite.png",
+     "spriteW": 56,
+     "spriteH": 107
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "chime",
+     "at": {
+      "shot": "hook"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "shot": "hook",
+      "offset": 0.05
+     },
+     "gain": -17
+    },
+    {
+     "sound": "clockTicks",
+     "from": {
+      "shot": "hook",
+      "offset": 0.35
+     },
+     "to": {
+      "line": "L1",
+      "word": "years?",
+      "offset": 0.3
+     },
+     "gain": -24
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.05
+     },
+     "gain": -18
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L2",
+      "word": "never"
+     },
+     "gain": -20
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "setup",
+   "scene": "world",
+   "purpose": "The lazy version: she's immortal and every mortal rule stays.",
+   "visual": "A violet block wipe back to year 0: the court as it is, one heir at the dais steps. NOTHING ELSE / CHANGES. The lineage strip slides in under the world: THE QUEEN \u00b7 AGE 30 beside the generations. RUN.",
+   "camera": "Locked medium on the dais and the heir (dist 44).",
+   "layers": {
+    "foreground": "kinetic, lineage strip, sim bar",
+    "midground": "Queen, heir, crowd",
+    "background": "valley"
+   },
+   "lighting": "Day.",
+   "onScreenText": "NOTHING ELSE CHANGES",
+   "transition": "Cut to the wide on 'run'.",
+   "music": "Clockwork, thin.",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "dur": 0.34,
+     "color": "#2a1a44"
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "NOTHING ELSE",
+       "at": {
+        "line": "L3",
+        "word": "nothing"
+       },
+       "size": 76
+      },
+      {
+       "text": "CHANGES",
+       "at": {
+        "line": "L3",
+        "word": "changes."
+       },
+       "color": "rust",
+       "size": 92
+      }
+     ],
+     "y": 470,
+     "size": 92,
+     "start": {
+      "line": "L3",
+      "word": "nothing",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L4",
+      "word": "Press",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "lineage",
+     "y": 1352,
+     "start": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": 0.1
+     },
+     "end": {
+      "line": "L16",
+      "word": "Immortality",
+      "offset": -0.3
+     },
+     "stat": {
+      "label": "CROWNED",
+      "key": "crowned",
+      "color": "#b48cff"
+     },
+     "badges": [
+      [
+       {
+        "line": "L3",
+        "word": "lazy"
+       },
+       "none"
+      ],
+      [
+       {
+        "line": "L5",
+        "word": "Forty",
+        "offset": -0.3
+       },
+       "waited"
+      ],
+      [
+       {
+        "line": "L6",
+        "word": "coronation.",
+        "offset": 0.55
+       },
+       "none"
+      ],
+      [
+       {
+        "line": "L8",
+        "word": "inherit"
+       },
+       "land"
+      ],
+      [
+       {
+        "line": "L9",
+        "word": "lent:"
+       },
+       "council"
+      ],
+      [
+       {
+        "line": "L10",
+        "word": "marriage."
+       },
+       "none"
+      ],
+      [
+       {
+        "line": "L11",
+        "word": "Forty"
+       },
+       "titles"
+      ],
+      [
+       {
+        "line": "L11",
+        "word": "Titles"
+       },
+       "cap"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run"
+       },
+       "council"
+      ],
+      [
+       {
+        "line": "L13",
+        "word": "remembers"
+       },
+       "memory"
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "library"
+       },
+       "record"
+      ]
+     ]
+    },
+    {
+     "type": "simBar",
+     "counters": [
+      {
+       "icon": "mortal",
+       "label": "GENERATIONS",
+       "key": "gens",
+       "color": "parchment",
+       "digits": 2
+      },
+      {
+       "icon": "crown",
+       "label": "CROWNED",
+       "key": "crowned",
+       "color": "#b48cff",
+       "digits": 2
+      }
+     ],
+     "compact": true,
+     "start": {
+      "line": "L4",
+      "word": "Press",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L16",
+      "word": "Immortality",
+      "offset": -0.3
+     },
+     "runAt": [
+      {
+       "line": "L4",
+       "word": "run."
+      },
+      {
+       "line": "L12",
+       "word": "Run"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "gain": -15
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": 0.1
+     },
+     "gain": -18
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L3",
+      "word": "changes."
+     },
+     "gain": -19
+    },
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L4",
+      "word": "run."
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L4",
+      "word": "run."
+     },
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "run1",
+   "scene": "world",
+   "purpose": "Run the lazy version: forty generations wait for a crown that never passes.",
+   "visual": "Whole Isle, locked off; YEAR 0\u21921000, GENERATIONS 00\u219240, CROWNED 00; the heir line grows to twelve, each heir greying in line; the strip marks every passing generation with a rust \u2717.",
+   "camera": "Wide (dist 196), locked.",
+   "layers": {
+    "foreground": "sim bar, strip, pin",
+    "midground": "the heir line, the crowd turning over",
+    "background": "island, seasons flickering"
+   },
+   "lighting": "Day, winters flickering.",
+   "onScreenText": "THE HEIRS \u00b7 STILL WAITING",
+   "transition": "Cut to the heir line.",
+   "music": "Clockwork at full.",
+   "graphics": [
+    {
+     "type": "pin",
+     "at": [
+      15.4,
+      3.6,
+      -1.0
+     ],
+     "kicker": "THE HEIRS",
+     "text": "STILL WAITING",
+     "color": "ember",
+     "lift": 80,
+     "size": 28,
+     "start": {
+      "line": "L5",
+      "word": "wait",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L6",
+      "word": "Forty",
+      "offset": -0.25
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L5",
+      "word": "crown.",
+      "offset": 0.2
+     },
+     "gain": -22
+    },
+    {
+     "sound": "clockTicks",
+     "from": {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L5",
+      "word": "crown.",
+      "offset": 0.2
+     },
+     "gain": -22
+    },
+    {
+     "sound": "crownPass",
+     "at": {
+      "line": "L5",
+      "word": "Forty"
+     },
+     "gain": -19
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L5",
+      "word": "wait",
+      "offset": -0.1
+     },
+     "gain": -21
+    }
+   ]
+  },
+  {
+   "id": "drop",
+   "scene": "world",
+   "purpose": "The punchline.",
+   "visual": "Close on the heir line before the dais, every heir grey: 0 CORONATIONS \u00b7 40 HEIRS WAITED.",
+   "camera": "Locked close (dist 34).",
+   "layers": {
+    "foreground": "stamp",
+    "midground": "grey heirs",
+    "background": "the dais"
+   },
+   "lighting": "Gloom.",
+   "onScreenText": "0 CORONATIONS",
+   "transition": "Rewind + block wipe.",
+   "music": "Drop; a boom on 'coronation'.",
+   "graphics": [
+    {
+     "type": "stamp",
+     "text": "0 CORONATIONS",
+     "sub": "40 HEIRS WAITED",
+     "color": "rust",
+     "y": 560,
+     "size": 58,
+     "start": {
+      "line": "L6",
+      "word": "coronation."
+     },
+     "end": {
+      "line": "L6",
+      "word": "coronation.",
+      "offset": 0.5
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L6",
+      "word": "coronation."
+     },
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "rehook",
+   "scene": "world",
+   "purpose": "Re-hook: the thesis, then four easy fixes and one locked.",
+   "visual": "REWIND to year 0; FOREVER BREAKS / EVERY RULE / BUILT FOR DEATH; the checklist BUILT FOR FOREVER, row 5 locked and blinking.",
+   "camera": "Locked medium.",
+   "layers": {
+    "foreground": "kinetic, checklist",
+    "midground": "the court at year 0",
+    "background": "valley"
+   },
+   "lighting": "Day.",
+   "onScreenText": "0/5",
+   "transition": "Cut on 'One'.",
+   "music": "Mystery; a riser into 'the twist'.",
+   "graphics": [
+    {
+     "type": "rewind",
+     "y": 620,
+     "start": {
+      "line": "L6",
+      "word": "coronation.",
+      "offset": 0.55
+     },
+     "end": {
+      "line": "L7",
+      "word": "Forever",
+      "offset": 0.4
+     }
+    },
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L6",
+      "word": "coronation.",
+      "offset": 0.53
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "FOREVER BREAKS",
+       "at": {
+        "line": "L7",
+        "word": "Forever"
+       },
+       "color": "#b48cff",
+       "size": 72
+      },
+      {
+       "text": "EVERY RULE",
+       "at": {
+        "line": "L7",
+        "word": "every"
+       },
+       "size": 84
+      },
+      {
+       "text": "BUILT FOR DEATH",
+       "at": {
+        "line": "L7",
+        "word": "built"
+       },
+       "color": "rust",
+       "size": 70
+      }
+     ],
+     "y": 470,
+     "size": 84,
+     "start": {
+      "line": "L7",
+      "word": "Forever",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "fieldCard",
+     "mode": "checklist",
+     "y": 448,
+     "rows": [
+      {
+       "n": 1,
+       "label": "HEIRS",
+       "text": "inherit at fifty",
+       "at": {
+        "line": "L8",
+        "word": "inheritance."
+       }
+      },
+      {
+       "n": 2,
+       "label": "POWER",
+       "text": "the crown is lent",
+       "at": {
+        "line": "L9",
+        "word": "power."
+       }
+      },
+      {
+       "n": 3,
+       "label": "MARRIAGE",
+       "text": "vows for one life",
+       "at": {
+        "line": "L10",
+        "word": "marriage."
+       }
+      },
+      {
+       "n": 4,
+       "label": "TITLES",
+       "text": "end at grandkids",
+       "at": {
+        "line": "L11",
+        "word": "family."
+       }
+      },
+      {
+       "n": 5,
+       "label": "MEMORY",
+       "text": "write it down",
+       "at": {
+        "line": "L7",
+        "word": "easy."
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L15",
+        "word": "library"
+       }
+      }
+     ],
+     "start": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L16",
+      "word": "Immortality",
+      "offset": -0.3
+     },
+     "kicker": "UNDYING \u00b7 WHAT MUST CHANGE",
+     "title": "BUILT FOR FOREVER",
+     "blinkAt": {
+      "line": "L7",
+      "word": "twist."
+     },
+     "lockedText": "the twist",
+     "sprite": "ep29/queen_sprite.png",
+     "spriteW": 56,
+     "spriteH": 107,
+     "collapse": [
+      [
+       {
+        "line": "L10",
+        "word": "Three:",
+        "offset": -0.3
+       },
+       0
+      ],
+      [
+       {
+        "line": "L10",
+        "word": "Three:",
+        "offset": 0.05
+       },
+       1
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "doesn't.",
+        "offset": 0.4
+       },
+       1
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "doesn't.",
+        "offset": 0.7
+       },
+       0
+      ],
+      [
+       {
+        "line": "L13",
+        "word": "Rule",
+        "offset": -0.35
+       },
+       0
+      ],
+      [
+       {
+        "line": "L13",
+        "word": "Rule",
+        "offset": -0.05
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "rewrite.",
+        "offset": 0.2
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "rewrite.",
+        "offset": 0.5
+       },
+       0
+      ]
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L6",
+      "word": "coronation.",
+      "offset": 0.5
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "gain": -17
+    }
+   ]
+  },
+  {
+   "id": "inherit",
+   "scene": "world",
+   "purpose": "Fix 1: inheritance without a funeral.",
+   "visual": "Tableau: the heir line at the dais dissolves as each heir is given land; six houses rise on the meadow one by one; the strip marks a house under every generation at fifty. YEAR 0\u2192150.",
+   "camera": "Locked (az 30, el 22, dist 46).",
+   "layers": {
+    "foreground": "checklist, strip",
+    "midground": "heirs' houses rising",
+    "background": "meadow"
+   },
+   "lighting": "Day.",
+   "onScreenText": "1 INHERITANCE \u00b7 land at fifty",
+   "transition": "Cut.",
+   "music": "Clockwork 1: harpsichord alone.",
+   "graphics": [],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L8",
+      "word": "inheritance."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "delete",
+     "at": {
+      "line": "L8",
+      "word": "inherit"
+     },
+     "gain": -20
+    },
+    {
+     "sound": "births",
+     "from": {
+      "line": "L8",
+      "word": "inherit",
+      "offset": 0.1
+     },
+     "to": {
+      "line": "L8",
+      "word": "funeral."
+     },
+     "gain": -24
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L8",
+      "word": "fifty,"
+     },
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "power",
+   "scene": "world",
+   "purpose": "Fix 2: a lent crown.",
+   "visual": "Tableau from the other side: a council hall rises beside the dais; a council seat marks every fourth generation in the strip. YEAR 150\u2192350.",
+   "camera": "Locked (az -20, el 18, dist 46).",
+   "layers": {
+    "foreground": "checklist, strip",
+    "midground": "the council hall",
+    "background": "valley"
+   },
+   "lighting": "Day.",
+   "onScreenText": "2 POWER \u00b7 the crown is lent",
+   "transition": "Cut.",
+   "music": "Clockwork 2: tick-tock joins.",
+   "graphics": [],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L9",
+      "word": "power."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L9",
+      "word": "lent:",
+      "offset": -0.1
+     },
+     "gain": -14
+    },
+    {
+     "sound": "crownPass",
+     "at": {
+      "line": "L9",
+      "word": "century."
+     },
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "marriage",
+   "scene": "world",
+   "purpose": "Fix 3: vows for one lifetime.",
+   "visual": "Close tableau at dusk: the Queen and her consort on the dais; he greys and is replaced, again and again, while she doesn't change. YEAR 350\u2192560.",
+   "camera": "Locked close, low (az 70, el 7, dist 18).",
+   "layers": {
+    "foreground": "checklist, strip",
+    "midground": "Queen and consort",
+    "background": "dusk valley"
+   },
+   "lighting": "Dusk.",
+   "onScreenText": "3 MARRIAGE \u00b7 vows for one life",
+   "transition": "Cut.",
+   "music": "Clockwork 3: bass joins.",
+   "graphics": [],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L10",
+      "word": "marriage."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "crownPass",
+     "at": {
+      "line": "L10",
+      "word": "husband,"
+     },
+     "gain": -17
+    },
+    {
+     "sound": "crownPass",
+     "at": {
+      "line": "L10",
+      "word": "lifetime."
+     },
+     "gain": -17
+    }
+   ]
+  },
+  {
+   "id": "family",
+   "scene": "world",
+   "purpose": "Fix 4: titles end.",
+   "visual": "Medium tableau on the crowd: violet (royal) spreads through the generations until most of the valley is royal; on 'Titles stop' it drains back to a few. YEAR 560\u2192760.",
+   "camera": "Locked (el 30, dist 70).",
+   "layers": {
+    "foreground": "checklist (folded), strip",
+    "midground": "royal violet spreading and receding",
+    "background": "valley"
+   },
+   "lighting": "Day.",
+   "onScreenText": "4 FAMILY \u00b7 titles end",
+   "transition": "Cut to the wide.",
+   "music": "Clockwork 4: the theme on celesta, bells.",
+   "graphics": [],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L11",
+      "word": "family."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "morph",
+     "at": {
+      "line": "L11",
+      "word": "princes?",
+      "offset": -0.2
+     },
+     "gain": -15
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L11",
+      "word": "Titles",
+      "offset": 0.1
+     },
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "run2",
+   "scene": "world",
+   "purpose": "Run with the fixes: the valley moves on, she doesn't.",
+   "visual": "Whole Isle, locked; YEAR 0\u21921000; CROWNED 00\u219210; MOVING ON \u00b7 10 CROWNS \u00b7 40 GENERATIONS.",
+   "camera": "Wide (dist 196), locked.",
+   "layers": {
+    "foreground": "stamp, strip",
+    "midground": "the court, the council hall, the heirs' houses",
+    "background": "island"
+   },
+   "lighting": "Day.",
+   "onScreenText": "MOVING ON",
+   "transition": "Cut to night.",
+   "music": "Drive with the theme; a stab and cymbal on 'doesn't'.",
+   "graphics": [
+    {
+     "type": "stamp",
+     "text": "MOVING ON",
+     "sub": "10 CROWNS \u00b7 40 GENERATIONS",
+     "color": "#b48cff",
+     "rotate": -4,
+     "y": 880,
+     "size": 88,
+     "start": {
+      "line": "L12",
+      "word": "doesn't."
+     },
+     "end": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -16
+    },
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L12",
+      "word": "doesn't.",
+      "offset": 0.2
+     },
+     "gain": -22
+    },
+    {
+     "sound": "clockTicks",
+     "from": {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L12",
+      "word": "doesn't.",
+      "offset": 0.2
+     },
+     "gain": -22
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L12",
+      "word": "doesn't."
+     },
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "twist",
+   "scene": "world",
+   "purpose": "The locked rule: memory.",
+   "visual": "Night, close on the Queen as the crowd keeps turning over around her: RULE 5? MEMORY. The strip's lamps: only the generations alive at year zero remember it, and they're long gone; only hers stays lit. HISTORY = WHAT SHE SAYS.",
+   "camera": "Locked close (az 40, el 10, dist 26).",
+   "layers": {
+    "foreground": "kinetic, strip",
+    "midground": "the Queen, the crowd",
+    "background": "night"
+   },
+   "lighting": "Night.",
+   "onScreenText": "RULE 5? MEMORY \u00b7 HISTORY = WHAT SHE SAYS",
+   "transition": "Cut.",
+   "music": "Twist, then reign (organ) under it.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "RULE 5?",
+       "at": {
+        "line": "L13",
+        "word": "Rule"
+       },
+       "color": "ember"
+      },
+      {
+       "text": "MEMORY",
+       "at": {
+        "line": "L13",
+        "word": "Memory."
+       },
+       "color": "#b48cff",
+       "size": 96
+      }
+     ],
+     "size": 150,
+     "y": 600,
+     "start": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.02
+     },
+     "end": {
+      "line": "L13",
+      "word": "Nobody",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "HISTORY =",
+       "at": {
+        "line": "L14",
+        "word": "history"
+       },
+       "size": 76
+      },
+      {
+       "text": "WHAT SHE SAYS",
+       "at": {
+        "line": "L14",
+        "word": "whatever"
+       },
+       "color": "rust",
+       "size": 76
+      }
+     ],
+     "size": 76,
+     "y": 600,
+     "start": {
+      "line": "L14",
+      "word": "history",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L14",
+      "word": "Unless",
+      "offset": -0.15
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "ringOn",
+     "at": {
+      "line": "L13",
+      "word": "remembers"
+     },
+     "gain": -18
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L14",
+      "word": "whatever"
+     },
+     "gain": -19
+    }
+   ]
+  },
+  {
+   "id": "role",
+   "scene": "world",
+   "purpose": "Unlock rule 5: a record she can't rewrite.",
+   "visual": "A stone library rises in the valley, its windows lit; THE RECORD \u00b7 SHE CAN'T REWRITE IT; every lamp in the strip lights; row 5 unlocks (MEMORY \u00b7 write it down).",
+   "camera": "Locked (az -30, el 16, dist 40).",
+   "layers": {
+    "foreground": "pin, unlocked card, strip, follow chip",
+    "midground": "the library",
+    "background": "the valley at night"
+   },
+   "lighting": "Night.",
+   "onScreenText": "THE RECORD; 5/5",
+   "transition": "Card goes full.",
+   "music": "A big D-major hit on 'library'.",
+   "graphics": [
+    {
+     "type": "pin",
+     "at": [
+      4.6,
+      7.6,
+      -6.4
+     ],
+     "kicker": "THE RECORD",
+     "text": "SHE CAN'T REWRITE IT",
+     "color": "sky",
+     "lift": 110,
+     "size": 28,
+     "start": {
+      "line": "L15",
+      "word": "library",
+      "offset": 0.2
+     },
+     "end": {
+      "line": "L16",
+      "word": "Immortality",
+      "offset": -0.35
+     }
+    },
+    {
+     "type": "followChip",
+     "start": {
+      "line": "L15",
+      "word": "rewrite.",
+      "offset": 0.4
+     },
+     "end": {
+      "line": "L16",
+      "word": "society.",
+      "offset": 0.1
+     },
+     "text": "FOLLOW",
+     "sub": "PART 29/50"
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L15",
+      "word": "library",
+      "offset": -0.1
+     },
+     "gain": -12
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L15",
+      "word": "library"
+     },
+     "gain": -10
+    },
+    {
+     "sound": "ringOn",
+     "at": {
+      "line": "L15",
+      "word": "library"
+     },
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "lesson",
+   "scene": "world",
+   "purpose": "The takeaway.",
+   "visual": "The full card (BEFORE YOU WRITE AN IMMORTAL, all five rows) with 'Immortality is a society.' in serif italic.",
+   "camera": "Wide (dist 190), the one slow drift of the episode.",
+   "layers": {
+    "foreground": "full card",
+    "midground": "the island at golden hour",
+    "background": "stars"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "Full card.",
+   "transition": "Block wipe to the end card.",
+   "music": "Anthem; the World Engine chime as the card lands.",
+   "graphics": [
+    {
+     "type": "fieldCard",
+     "mode": "full",
+     "y": 452,
+     "rows": [
+      {
+       "n": 1,
+       "label": "HEIRS",
+       "text": "inherit at fifty",
+       "at": {
+        "line": "L16",
+        "word": "Immortality",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 2,
+       "label": "POWER",
+       "text": "the crown is lent",
+       "at": {
+        "line": "L16",
+        "word": "Immortality",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 3,
+       "label": "MARRIAGE",
+       "text": "vows for one life",
+       "at": {
+        "line": "L16",
+        "word": "Immortality",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 4,
+       "label": "TITLES",
+       "text": "end at grandkids",
+       "at": {
+        "line": "L16",
+        "word": "Immortality",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 5,
+       "label": "MEMORY",
+       "text": "write it down",
+       "at": {
+        "line": "L16",
+        "word": "Immortality",
+        "offset": -0.3
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L16",
+        "word": "Immortality",
+        "offset": -0.3
+       }
+      }
+     ],
+     "start": {
+      "line": "L16",
+      "word": "Immortality",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.52
+     },
+     "kicker": "BEFORE YOU WRITE ONE",
+     "title": "THE UNDYING",
+     "sprite": "ep29/queen_sprite.png",
+     "spriteW": 56,
+     "spriteH": 107,
+     "subtitle": "Immortality is a society.",
+     "subtitleAt": {
+      "line": "L16",
+      "word": "society."
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L16",
+      "word": "Immortality",
+      "offset": -0.8
+     },
+     "gain": -15
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L16",
+      "word": "Immortality",
+      "offset": -0.3
+     },
+     "gain": -10
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L16",
+      "word": "Immortality",
+      "offset": -0.3
+     },
+     "gain": -18
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "cta",
+   "scene": "world",
+   "purpose": "Comment CTA.",
+   "visual": "End card: logo, PART 29 / 50, title, a speech-bubble COMMENT panel.",
+   "camera": "Cut (under the block wipe) back to the hook frame.",
+   "layers": {
+    "foreground": "end card",
+    "midground": "the Isle",
+    "background": "void"
+   },
+   "lighting": "Golden hour (the loop frame).",
+   "onScreenText": "End card.",
+   "transition": "The card lifts on 'Part'.",
+   "music": "Outro.",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "endCardS2",
+     "start": {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.12
+     },
+     "fadeOut": 0.3,
+     "kicker": "PART 29 / 50",
+     "title": "Immortality Would Break Your Society",
+     "cta": "COMMENT",
+     "icon": "bubble",
+     "with": "Would you want an immortal ruler? Explain why."
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     "gain": -21
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.1
+     },
+     "gain": -20
+    }
+   ],
+   "captions": false,
+   "hideLogoBug": true,
+   "hideLogoBugUntil": {
+    "line": "L18",
+    "word": "Part"
+   }
+  },
+  {
+   "id": "next",
+   "scene": "world",
+   "purpose": "Say the part number, ask for the follow with a reason (part 30), open the next loop.",
+   "visual": "The hook frame; PART 29/50; FOLLOW FOR PART 30; NEXT RUN 30 \u00b7 WORSHIPPED from a locked shrine; on the meadow behind, candles light one by one around the Grimmaw and the Queen looks up; then the hook title returns.",
+   "camera": "The hook frame, locked.",
+   "layers": {
+    "foreground": "progress bar, follow button, next-run card",
+    "midground": "the Queen, the candles",
+    "background": "the Grimmaw's meadow"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "PART 29/50 \u00b7 FOLLOW FOR PART 30 \u00b7 NEXT RUN: WORSHIPPED \u00b7 THEY PRAY TO A MONSTER.",
+   "transition": "Loop to frame 0.",
+   "music": "Tease over a held A, a horn call, the engine chime on 'Follow'.",
+   "graphics": [
+    {
+     "type": "seasonBar",
+     "y": 350,
+     "part": 29,
+     "of": 50,
+     "start": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.1
+     },
+     "fillAt": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "fillDur": 0.6,
+     "ofAt": {
+      "line": "L18",
+      "word": "50."
+     },
+     "end": {
+      "line": "L18",
+      "word": "monster.",
+      "offset": 0.6
+     }
+    },
+    {
+     "type": "followButton",
+     "y": 556,
+     "start": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.6
+     },
+     "pressAt": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "end": {
+      "line": "L18",
+      "word": "monster.",
+      "offset": 0.6
+     },
+     "text": "FOLLOW",
+     "doneText": "FOLLOWING",
+     "sub": "FOR PART 30"
+    },
+    {
+     "type": "nextRun",
+     "y": 772,
+     "start": {
+      "line": "L18",
+      "word": "30:",
+      "offset": -0.1
+     },
+     "revealAt": {
+      "line": "L18",
+      "word": "pray"
+     },
+     "end": {
+      "line": "L18",
+      "word": "monster.",
+      "offset": 0.6
+     },
+     "kicker": "NEXT RUN \u00b7 30",
+     "title": "WORSHIPPED",
+     "sub": "THEY PRAY TO A MONSTER.",
+     "sprite": "shrine",
+     "spritePx": 9
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "A RULER WHO",
+       "size": 84
+      },
+      {
+       "text": "NEVER DIES?",
+       "color": "#b48cff",
+       "size": 96
+      }
+     ],
+     "y": 452,
+     "size": 96,
+     "start": {
+      "line": "L18",
+      "word": "monster.",
+      "offset": 0.92
+     },
+     "fadeIn": 0.35,
+     "preShow": true
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "to": {
+      "line": "L18",
+      "word": "Part",
+      "offset": 0.55
+     },
+     "gain": -22
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.5
+     },
+     "gain": -15
+    },
+    {
+     "sound": "followPress",
+     "at": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": 0.02
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L18",
+      "word": "30:",
+      "offset": -0.1
+     },
+     "gain": -18
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L18",
+      "word": "pray"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "crownPass",
+     "at": {
+      "line": "L18",
+      "word": "monster."
+     },
+     "gain": -18
+    },
+    {
+     "sound": "roar",
+     "at": {
+      "line": "L18",
+      "word": "monster.",
+      "offset": 0.15
+     },
+     "gain": -27
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "end": true,
+      "offset": -0.54
+     },
+     "gain": -14
+    }
+   ],
+   "captions": false
+  }
+ ],
+ "world": {
+  "clock": {
+   "label": "YEAR",
+   "keys": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "shot": "hook",
+      "offset": 0.35
+     },
+     0
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "years?",
+      "offset": 0.3
+     },
+     260,
+     "linear"
+    ],
+    [
+     {
+      "line": "L2",
+      "word": "Meet"
+     },
+     260
+    ],
+    [
+     {
+      "line": "L2",
+      "word": "ages.",
+      "offset": 0.4
+     },
+     300,
+     "linear"
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "run."
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "crown.",
+      "offset": 0.3
+     },
+     1000,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "coronation.",
+      "offset": 0.55
+     },
+     1000
+    ],
+    [
+     {
+      "line": "L7",
+      "word": "Forever",
+      "offset": 0.4
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "inheritance."
+     },
+     0
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "funeral.",
+      "offset": 0.4
+     },
+     150,
+     "linear"
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "power."
+     },
+     150
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "century.",
+      "offset": 0.5
+     },
+     350,
+     "linear"
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "marriage."
+     },
+     350
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "lifetime.",
+      "offset": 0.4
+     },
+     560,
+     "linear"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "family."
+     },
+     560
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "grandchildren.",
+      "offset": 0.3
+     },
+     760,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": -0.05
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "doesn't.",
+      "offset": 0.2
+     },
+     1000,
+     "linear"
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "Rule"
+     },
+     1000
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "rewrite.",
+      "offset": 0.3
+     },
+     1450,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     1450
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.28
+     },
+     0,
+     "step"
+    ]
+   ]
+  },
+  "speed": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "run."
+    },
+    1
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.35
+    },
+    6
+   ],
+   [
+    {
+     "line": "L5",
+     "word": "crown.",
+     "offset": 0.3
+    },
+    6
+   ],
+   [
+    {
+     "line": "L6",
+     "word": "Forty"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.1
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.4
+    },
+    6
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "doesn't.",
+     "offset": 0.2
+    },
+    6
+   ],
+   [
+    {
+     "line": "L13",
+     "word": "Rule"
+    },
+    1
+   ]
+  ],
+  "camera": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "az": 20,
+    "el": 8,
+    "dist": 44,
+    "target": [
+     10.0,
+     6.4,
+     -3.0
+    ],
+    "fov": 13,
+    "dur": 1.4,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "az": 20,
+    "el": 12,
+    "dist": 64,
+    "target": [
+     12.4,
+     6.2,
+     -2.6
+    ],
+    "fov": 20,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.05
+    },
+    "az": 18,
+    "el": 48,
+    "dist": 196,
+    "target": [
+     4.0,
+     10.5,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 1.2,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "Forty",
+     "offset": -0.2
+    },
+    "az": -17,
+    "el": 12,
+    "dist": 40,
+    "target": [
+     14.0,
+     6.0,
+     -1.2
+    ],
+    "fov": 24,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "coronation.",
+     "offset": 0.55
+    },
+    "az": 20,
+    "el": 12,
+    "dist": 64,
+    "target": [
+     12.4,
+     6.2,
+     -2.6
+    ],
+    "fov": 20,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.15
+    },
+    "az": 30,
+    "el": 26,
+    "dist": 60,
+    "target": [
+     14.2,
+     6.0,
+     -1.6
+    ],
+    "fov": 24,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.15
+    },
+    "az": 50,
+    "el": 18,
+    "dist": 48,
+    "target": [
+     11.2,
+     6.0,
+     -4.6
+    ],
+    "fov": 24,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.15
+    },
+    "az": 70,
+    "el": 6,
+    "dist": 22,
+    "target": [
+     9.3,
+     5.4,
+     -1.7
+    ],
+    "fov": 24,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.15
+    },
+    "az": 10,
+    "el": 30,
+    "dist": 70,
+    "target": [
+     11.4,
+     5.5,
+     -5.4
+    ],
+    "fov": 24,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L12",
+     "word": "Run",
+     "offset": -0.05
+    },
+    "az": 20,
+    "el": 48,
+    "dist": 196,
+    "target": [
+     4.0,
+     10.5,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "az": 40,
+    "el": 10,
+    "dist": 26,
+    "target": [
+     9.6,
+     6.3,
+     -2.4
+    ],
+    "fov": 26,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L14",
+     "word": "Unless",
+     "offset": -0.1
+    },
+    "az": -30,
+    "el": 16,
+    "dist": 40,
+    "target": [
+     5.6,
+     7.0,
+     -5.2
+    ],
+    "fov": 26,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Immortality",
+     "offset": -0.25
+    },
+    "az": 15,
+    "el": 34,
+    "dist": 190,
+    "target": [
+     2.0,
+     3.0,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 1.6,
+    "drift": 2.0
+   },
+   {
+    "at": {
+     "line": "L17",
+     "word": "Would",
+     "offset": -0.3
+    },
+    "az": 20,
+    "el": 8,
+    "dist": 44,
+    "target": [
+     10.0,
+     6.4,
+     -3.0
+    ],
+    "fov": 13,
+    "dur": 1.4,
+    "drift": 0.0,
+    "cut": true
+   }
+  ],
+  "light": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "mood": "golden"
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "mood": "day",
+    "dur": 0.4
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "Forty",
+     "offset": -0.2
+    },
+    "mood": "gloom",
+    "dur": 0.6
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "coronation.",
+     "offset": 0.55
+    },
+    "mood": "day",
+    "dur": 0.8
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.15
+    },
+    "mood": "dusk",
+    "dur": 0.4
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.15
+    },
+    "mood": "day",
+    "dur": 0.4
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.2
+    },
+    "mood": "dusk",
+    "dur": 0.6
+   },
+   {
+    "at": {
+     "line": "L14",
+     "word": "Unless",
+     "offset": -0.1
+    },
+    "mood": "night",
+    "dur": 0.4
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Immortality",
+     "offset": -0.3
+    },
+    "mood": "golden",
+    "dur": 2.0
+   }
+  ],
+  "herd": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     30
+    ]
+   ],
+   "max": 40,
+   "base": 30,
+   "centers": [
+    [
+     -7.2,
+     -1.4
+    ],
+    [
+     -6.0,
+     0.4
+    ]
+   ],
+   "skin": "sheep"
+  },
+  "pred": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ]
+  ],
+  "predators": [
+   {
+    "id": "g1",
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 15.5,
+      "z": -10.0,
+      "state": "idle",
+      "face": 200
+     }
+    ]
+   }
+  ],
+  "series": {
+   "gens": [
+    [
+     {
+      "shot": "hook"
+     },
+     0.0
+    ],
+    [
+     {
+      "shot": "hook",
+      "offset": 0.35
+     },
+     0.0
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "years?",
+      "offset": 0.3
+     },
+     10.4,
+     "linear"
+    ],
+    [
+     {
+      "line": "L2",
+      "word": "Meet"
+     },
+     10.4
+    ],
+    [
+     {
+      "line": "L2",
+      "word": "ages.",
+      "offset": 0.4
+     },
+     12.0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0.0,
+     "step"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "run."
+     },
+     0.0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "crown.",
+      "offset": 0.3
+     },
+     40.0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "coronation.",
+      "offset": 0.55
+     },
+     40.0
+    ],
+    [
+     {
+      "line": "L7",
+      "word": "Forever",
+      "offset": 0.4
+     },
+     0.0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "inheritance."
+     },
+     0.0
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "funeral.",
+      "offset": 0.4
+     },
+     6.0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "power."
+     },
+     6.0
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "century.",
+      "offset": 0.5
+     },
+     14.0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "marriage."
+     },
+     14.0
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "lifetime.",
+      "offset": 0.4
+     },
+     22.4,
+     "linear"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "family."
+     },
+     22.4
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "grandchildren.",
+      "offset": 0.3
+     },
+     30.4,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": -0.05
+     },
+     0.0,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.1
+     },
+     0.0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "doesn't.",
+      "offset": 0.2
+     },
+     40.0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "Rule"
+     },
+     40.0
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "rewrite.",
+      "offset": 0.3
+     },
+     58.0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     58.0
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.28
+     },
+     0.0,
+     "step"
+    ]
+   ],
+   "crowned": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "doesn't.",
+      "offset": 0.2
+     },
+     10,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     10
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.28
+     },
+     0,
+     "step"
+    ]
+   ],
+   "tradeH": [
+    [
+     {
+      "shot": "hook"
+     },
+     4
+    ]
+   ]
+  },
+  "settlement": {
+   "buildings": [
+    {
+     "kind": "hall",
+     "a": [
+      -3.6,
+      -4.6
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -1.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -4.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -1.0,
+      -5.8
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -5.6,
+      -0.9
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -3.4,
+      -0.7
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      0.4,
+      -4.2
+     ],
+     "face": 0
+    }
+   ],
+   "roof": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "pens": [
+    {
+     "a": [
+      -6.4,
+      -1.4
+     ],
+     "r": 1.6
+    }
+   ],
+   "cover": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "roads": {
+    "b": [
+     [
+      -3.4,
+      -1.6
+     ],
+     [
+      -5.6,
+      2.0
+     ],
+     [
+      -8.2,
+      6.0
+     ],
+     [
+      -11.0,
+      10.0
+     ],
+     [
+      -13.0,
+      14.0
+     ],
+     [
+      -14.6,
+      17.0
+     ]
+    ]
+   },
+   "route": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "tradeKey": "tradeH",
+   "lanterns": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ]
+   ],
+   "tower": {
+    "x": -6.4,
+    "z": -5.6,
+    "h": 6.0,
+    "keys": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   }
+  },
+  "settlements": [
+   {
+    "buildings": [
+     {
+      "kind": "greathall",
+      "a": [
+       6.0,
+       4.6
+      ],
+      "b": [
+       6.0,
+       4.6
+      ],
+      "stiltsB": 1.6,
+      "face": 0
+     }
+    ],
+    "place": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "open": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "glow": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "roof": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "pens": []
+   },
+   {
+    "buildings": [
+     {
+      "kind": "house",
+      "a": [
+       13.2,
+       1.8
+      ],
+      "face": 0,
+      "show": [
+       [
+        {
+         "shot": "hook"
+        },
+        0
+       ],
+       [
+        {
+         "line": "L8",
+         "word": "inherit",
+         "offset": 0.1
+        },
+        0
+       ],
+       [
+        {
+         "line": "L8",
+         "word": "inherit",
+         "offset": 0.5
+        },
+        1,
+        "out"
+       ],
+       [
+        {
+         "line": "L17",
+         "word": "Would",
+         "offset": -0.3
+        },
+        1
+       ],
+       [
+        {
+         "line": "L17",
+         "word": "Would",
+         "offset": -0.28
+        },
+        0,
+        "step"
+       ]
+      ]
+     },
+     {
+      "kind": "house",
+      "a": [
+       15.8,
+       2.6
+      ],
+      "face": 0,
+      "show": [
+       [
+        {
+         "shot": "hook"
+        },
+        0
+       ],
+       [
+        {
+         "line": "L8",
+         "word": "inherit",
+         "offset": 0.32
+        },
+        0
+       ],
+       [
+        {
+         "line": "L8",
+         "word": "inherit",
+         "offset": 0.72
+        },
+        1,
+        "out"
+       ],
+       [
+        {
+         "line": "L17",
+         "word": "Would",
+         "offset": -0.3
+        },
+        1
+       ],
+       [
+        {
+         "line": "L17",
+         "word": "Would",
+         "offset": -0.28
+        },
+        0,
+        "step"
+       ]
+      ]
+     },
+     {
+      "kind": "house",
+      "a": [
+       14.6,
+       -5.4
+      ],
+      "face": 0,
+      "show": [
+       [
+        {
+         "shot": "hook"
+        },
+        0
+       ],
+       [
+        {
+         "line": "L8",
+         "word": "inherit",
+         "offset": 0.54
+        },
+        0
+       ],
+       [
+        {
+         "line": "L8",
+         "word": "inherit",
+         "offset": 0.94
+        },
+        1,
+        "out"
+       ],
+       [
+        {
+         "line": "L17",
+         "word": "Would",
+         "offset": -0.3
+        },
+        1
+       ],
+       [
+        {
+         "line": "L17",
+         "word": "Would",
+         "offset": -0.28
+        },
+        0,
+        "step"
+       ]
+      ]
+     },
+     {
+      "kind": "house",
+      "a": [
+       17.4,
+       -3.6
+      ],
+      "face": 0,
+      "show": [
+       [
+        {
+         "shot": "hook"
+        },
+        0
+       ],
+       [
+        {
+         "line": "L8",
+         "word": "inherit",
+         "offset": 0.76
+        },
+        0
+       ],
+       [
+        {
+         "line": "L8",
+         "word": "inherit",
+         "offset": 1.16
+        },
+        1,
+        "out"
+       ],
+       [
+        {
+         "line": "L17",
+         "word": "Would",
+         "offset": -0.3
+        },
+        1
+       ],
+       [
+        {
+         "line": "L17",
+         "word": "Would",
+         "offset": -0.28
+        },
+        0,
+        "step"
+       ]
+      ]
+     },
+     {
+      "kind": "house",
+      "a": [
+       18.4,
+       -0.4
+      ],
+      "face": 0,
+      "show": [
+       [
+        {
+         "shot": "hook"
+        },
+        0
+       ],
+       [
+        {
+         "line": "L8",
+         "word": "inherit",
+         "offset": 0.98
+        },
+        0
+       ],
+       [
+        {
+         "line": "L8",
+         "word": "inherit",
+         "offset": 1.38
+        },
+        1,
+        "out"
+       ],
+       [
+        {
+         "line": "L17",
+         "word": "Would",
+         "offset": -0.3
+        },
+        1
+       ],
+       [
+        {
+         "line": "L17",
+         "word": "Would",
+         "offset": -0.28
+        },
+        0,
+        "step"
+       ]
+      ]
+     },
+     {
+      "kind": "house",
+      "a": [
+       16.6,
+       -7.0
+      ],
+      "face": 0,
+      "show": [
+       [
+        {
+         "shot": "hook"
+        },
+        0
+       ],
+       [
+        {
+         "line": "L8",
+         "word": "inherit",
+         "offset": 1.2
+        },
+        0
+       ],
+       [
+        {
+         "line": "L8",
+         "word": "inherit",
+         "offset": 1.6
+        },
+        1,
+        "out"
+       ],
+       [
+        {
+         "line": "L17",
+         "word": "Would",
+         "offset": -0.3
+        },
+        1
+       ],
+       [
+        {
+         "line": "L17",
+         "word": "Would",
+         "offset": -0.28
+        },
+        0,
+        "step"
+       ]
+      ]
+     },
+     {
+      "kind": "hall",
+      "a": [
+       12.8,
+       -6.8
+      ],
+      "face": 0,
+      "w": 3.6,
+      "d": 2.4,
+      "h": 1.9,
+      "show": [
+       [
+        {
+         "shot": "hook"
+        },
+        0
+       ],
+       [
+        {
+         "line": "L9",
+         "word": "lent:",
+         "offset": -0.1
+        },
+        0
+       ],
+       [
+        {
+         "line": "L9",
+         "word": "council"
+        },
+        1,
+        "out"
+       ],
+       [
+        {
+         "line": "L17",
+         "word": "Would",
+         "offset": -0.3
+        },
+        1
+       ],
+       [
+        {
+         "line": "L17",
+         "word": "Would",
+         "offset": -0.28
+        },
+        0,
+        "step"
+       ]
+      ]
+     },
+     {
+      "kind": "library",
+      "a": [
+       4.6,
+       -6.4
+      ],
+      "face": 0,
+      "show": [
+       [
+        {
+         "shot": "hook"
+        },
+        0
+       ],
+       [
+        {
+         "line": "L14",
+         "word": "written",
+         "offset": -0.1
+        },
+        0
+       ],
+       [
+        {
+         "line": "L15",
+         "word": "library",
+         "offset": 0.1
+        },
+        1,
+        "out"
+       ],
+       [
+        {
+         "line": "L17",
+         "word": "Would",
+         "offset": -0.3
+        },
+        1
+       ],
+       [
+        {
+         "line": "L17",
+         "word": "Would",
+         "offset": -0.28
+        },
+        0,
+        "step"
+       ]
+      ]
+     }
+    ],
+    "roof": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "stone": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ]
+    ],
+    "pens": []
+   }
+  ],
+  "folk": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     9
+    ]
+   ],
+   "centers": [
+    [
+     6.0,
+     4.6
+    ]
+   ],
+   "spread": 2.0,
+   "site": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ]
+   ],
+   "eyes": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "wet": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "glow": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "hero": []
+  },
+  "people": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     34
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     34,
+     "step"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "run."
+     },
+     34
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "crown.",
+      "offset": 0.3
+     },
+     52,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "coronation.",
+      "offset": 0.55
+     },
+     52
+    ],
+    [
+     {
+      "line": "L7",
+      "word": "Forever",
+      "offset": 0.4
+     },
+     34,
+     "linear"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "family."
+     },
+     34
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "princes?",
+      "offset": 0.2
+     },
+     52,
+     "linear"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "Titles"
+     },
+     52
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "grandchildren.",
+      "offset": 0.3
+     },
+     44,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     44
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.28
+     },
+     34,
+     "step"
+    ]
+   ],
+   "centers": [
+    [
+     11.8,
+     -6.8
+    ],
+    [
+     8.0,
+     -5.4
+    ],
+    [
+     14.2,
+     -4.4
+    ],
+    [
+     12.4,
+     -8.6
+    ]
+   ],
+   "spread": 2.2,
+   "life": 70,
+   "royal": [
+    [
+     {
+      "shot": "hook"
+     },
+     0.08
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "run."
+     },
+     0.08
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "crown.",
+      "offset": 0.3
+     },
+     0.45,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "coronation.",
+      "offset": 0.55
+     },
+     0.45
+    ],
+    [
+     {
+      "line": "L7",
+      "word": "Forever",
+      "offset": 0.4
+     },
+     0.08,
+     "linear"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "family."
+     },
+     0.08
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "princes?",
+      "offset": 0.2
+     },
+     0.7,
+     "linear"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "Titles",
+      "offset": 0.1
+     },
+     0.7
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "grandchildren.",
+      "offset": 0.2
+     },
+     0.06,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     0.06
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.28
+     },
+     0.08,
+     "step"
+    ]
+   ],
+   "queue": {
+    "from": [
+     11.4,
+     -2.0
+    ],
+    "dir": [
+     1.0,
+     0.3
+    ],
+    "count": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L4",
+       "word": "run."
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "crown.",
+       "offset": 0.3
+      },
+      12,
+      "linear"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "coronation.",
+       "offset": 0.55
+      },
+      12
+     ],
+     [
+      {
+       "line": "L7",
+       "word": "Forever",
+       "offset": 0.4
+      },
+      3,
+      "linear"
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "inherit"
+      },
+      3
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "funeral."
+      },
+      0,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "Would",
+       "offset": -0.3
+      },
+      0
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "Would",
+       "offset": -0.28
+      },
+      1,
+      "step"
+     ]
+    ],
+    "gap": 0.72
+   },
+   "consort": {
+    "x": 9.4,
+    "z": -1.2,
+    "face": 0,
+    "show": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "marriage.",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "marriage.",
+       "offset": 0.3
+      },
+      1
+     ],
+     [
+      {
+       "line": "L11",
+       "word": "Four:",
+       "offset": -0.2
+      },
+      1
+     ],
+     [
+      {
+       "line": "L11",
+       "word": "Four:",
+       "offset": 0.1
+      },
+      0
+     ]
+    ],
+    "life": 60
+   },
+   "ruler": {
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "idle",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "monster.",
+       "offset": -0.1
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "alert",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "monster.",
+       "offset": 1.3
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "idle",
+      "face": 0
+     }
+    ],
+    "dais": {
+     "x": 9.4,
+     "z": -2.2,
+     "face": 0
+    }
+   }
+  },
+  "props": [
+   {
+    "kind": "cairn",
+    "x": 8.95,
+    "z": -5.38,
+    "stones": [
+     [
+      {
+       "shot": "hook"
+      },
+      3
+     ]
+    ]
+   },
+   {
+    "kind": "offerings",
+    "x": 11.2,
+    "z": -4.0,
+    "r": 0.8,
+    "lights": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "monster.",
+       "offset": -0.2
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "monster.",
+       "offset": 0.5
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "monster.",
+       "offset": 1.0
+      },
+      1
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "monster.",
+       "offset": 1.3
+      },
+      0
+     ]
+    ]
+   }
+  ],
+  "clearTrees": [
+   [
+    9.4,
+    -2.2,
+    2.8
+   ],
+   [
+    11.4,
+    -2.0,
+    2.8
+   ],
+   [
+    11.8,
+    -6.8,
+    2.8
+   ],
+   [
+    8.0,
+    -5.4,
+    2.8
+   ],
+   [
+    14.2,
+    -4.4,
+    2.8
+   ],
+   [
+    12.4,
+    -8.6,
+    2.8
+   ],
+   [
+    15.0,
+    -0.8,
+    2.8
+   ],
+   [
+    11.0,
+    -7.0,
+    2.8
+   ]
+  ],
+  "layers": {
+   "snow": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "What",
+      "offset": 0.25
+     },
+     0
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "What",
+      "offset": 0.418
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "What",
+      "offset": 0.634
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "What",
+      "offset": 0.73
+     },
+     0
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "What",
+      "offset": 0.898
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "What",
+      "offset": 1.114
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "What",
+      "offset": 1.21
+     },
+     0
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "What",
+      "offset": 1.378
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "What",
+      "offset": 1.594
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "What",
+      "offset": 1.69
+     },
+     0
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "What",
+      "offset": 1.858
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "What",
+      "offset": 2.074
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "What",
+      "offset": 2.17
+     },
+     0
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "What",
+      "offset": 2.338
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "What",
+      "offset": 2.554
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "What",
+      "offset": 2.65
+     },
+     0
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "What",
+      "offset": 2.818
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "What",
+      "offset": 3.034
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A",
+      "offset": 0.175
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A",
+      "offset": 0.4
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A",
+      "offset": 0.5
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A",
+      "offset": 0.675
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A",
+      "offset": 0.9
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A",
+      "offset": 1.0
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A",
+      "offset": 1.175
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A",
+      "offset": 1.4
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A",
+      "offset": 1.5
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A",
+      "offset": 1.675
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A",
+      "offset": 1.9
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A",
+      "offset": 2.0
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A",
+      "offset": 2.175
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A",
+      "offset": 2.4
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A",
+      "offset": 2.5
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A",
+      "offset": 2.675
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A",
+      "offset": 2.9
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "valley",
+      "offset": -0.3
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "valley",
+      "offset": -0.125
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "valley",
+      "offset": 0.1
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "valley",
+      "offset": 0.2
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "valley",
+      "offset": 0.375
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "valley",
+      "offset": 0.6
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "valley",
+      "offset": 0.7
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "valley",
+      "offset": 0.875
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "valley",
+      "offset": 1.1
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "valley",
+      "offset": 1.2
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "valley",
+      "offset": 1.375
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "valley",
+      "offset": 1.6
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "Rule"
+     },
+     0
+    ]
+   ],
+   "forest": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "ruler"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "thousand"
+     },
+     0.6,
+     "linear"
+    ],
+    [
+     {
+      "line": "L1",
+      "word": "years?",
+      "offset": 0.4
+     },
+     1,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "A"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Forty"
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "crown.",
+      "offset": 0.3
+     },
+     1,
+     "linear"
+    ]
+   ],
+   "ripple": [
+    {
+     "shot": "hook",
+     "offset": 0.05
+    },
+    {
+     "line": "L4",
+     "word": "run."
+    },
+    {
+     "line": "L12",
+     "word": "Run"
+    }
+   ],
+   "rings": [
+    {
+     "x": 4.6,
+     "z": -6.4,
+     "r": 3.0,
+     "on": {
+      "line": "L15",
+      "word": "library"
+     },
+     "off": {
+      "line": "L16",
+      "word": "Immortality",
+      "offset": -0.3
+     },
+     "color": "#8fc8ff"
+    }
+   ]
+  },
+  "ambient": {
+   "birds": 9,
+   "motes": 40,
+   "glints": true
+  },
+  "simLoop": {
+   "line": "L17",
+   "word": "Would",
+   "offset": -0.3
+  }
+ },
+ "music": {
+  "engine": "s2-score",
+  "key": "D minor, resolving to D major",
+  "bpm": 96,
+  "sections": [
+   {
+    "from": {
+     "shot": "hook"
+    },
+    "style": "reign",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "programs": {
+     "strings": 19
+    }
+   },
+   {
+    "from": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "style": "clockwork",
+    "chords": [
+     "Dm",
+     "Bb",
+     "F",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 1,
+    "programs": {
+     "marimba": 6,
+     "glock": 14,
+     "strings": 48
+    }
+   },
+   {
+    "from": {
+     "line": "L4",
+     "word": "run."
+    },
+    "style": "drive",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "intensity": 0.85
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "Forty",
+     "offset": -0.2
+    },
+    "style": "drop",
+    "chords": [
+     "Dm"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 8,
+    "programs": {
+     "marimba": 12,
+     "strings": 48,
+     "glock": 9
+    }
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "coronation.",
+     "offset": 0.5
+    },
+    "style": "mystery",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "A"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 2
+   },
+   {
+    "from": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.1
+    },
+    "style": "clockwork",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 1,
+    "programs": {
+     "marimba": 6,
+     "glock": 14,
+     "strings": 48
+    }
+   },
+   {
+    "from": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.1
+    },
+    "style": "clockwork",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 2
+   },
+   {
+    "from": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.1
+    },
+    "style": "clockwork",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 3
+   },
+   {
+    "from": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.1
+    },
+    "style": "clockwork",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 4
+   },
+   {
+    "from": {
+     "line": "L12",
+     "word": "Run"
+    },
+    "style": "drive",
+    "chords": [
+     "F",
+     "C",
+     "Bb",
+     "F"
+    ],
+    "key": "F major",
+    "intensity": 1.0,
+    "theme": true,
+    "programs": {
+     "marimba": 12,
+     "strings": 48,
+     "glock": 9
+    }
+   },
+   {
+    "from": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.05
+    },
+    "style": "twist",
+    "chords": [
+     "A7b9"
+    ],
+    "key": "D minor"
+   },
+   {
+    "from": {
+     "line": "L13",
+     "word": "Nobody",
+     "offset": -0.1
+    },
+    "style": "reign",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 2,
+    "programs": {
+     "strings": 19
+    }
+   },
+   {
+    "from": {
+     "line": "L15",
+     "word": "library",
+     "offset": -0.05
+    },
+    "style": "anthem",
+    "chords": [
+     "D",
+     "G",
+     "Bm",
+     "A"
+    ],
+    "key": "D major",
+    "programs": {
+     "marimba": 12,
+     "strings": 48,
+     "glock": 9
+    }
+   },
+   {
+    "from": {
+     "line": "L17",
+     "word": "Would",
+     "offset": -0.2
+    },
+    "style": "outro",
+    "chords": [
+     "G",
+     "D"
+    ],
+    "key": "D major"
+   },
+   {
+    "from": {
+     "line": "L18",
+     "word": "Part",
+     "offset": -0.1
+    },
+    "style": "tease",
+    "chords": [
+     "A5"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 32
+   }
+  ],
+  "accents": [
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L1",
+     "word": "years?"
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L6",
+     "word": "coronation."
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "riser",
+    "at": {
+     "line": "L7",
+     "word": "twist."
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "stab",
+    "at": {
+     "line": "L12",
+     "word": "doesn't."
+    },
+    "chord": "F"
+   },
+   {
+    "kind": "cymbal",
+    "at": {
+     "line": "L12",
+     "word": "doesn't."
+    }
+   },
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L15",
+     "word": "library"
+    },
+    "chord": "D"
+   },
+   {
+    "kind": "call",
+    "at": {
+     "line": "L18",
+     "word": "pray"
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "roll",
+    "at": {
+     "end": true,
+     "offset": -0.05
+    },
+    "chord": "A"
+   }
+  ],
+  "fadeOut": {
+   "fromEnd": 0.08
+  },
+  "gain": 0.55
+ },
+ "mix": {
+  "musicLufs": -25.0,
+  "duckDb": -8.0,
+  "sfxLufs": -29.0,
+  "voiceFx": true
+ },
+ "metadata": {
+  "youtube": {
+   "title": "Immortality Would Break Your Society (Worldbuilding)",
+   "titleAlternate": "What if your queen never died?",
+   "description": "What happens when a ruler can live for ten thousand years?\n\nMeet the Undying Queen: she never ages. The lazy version makes her immortal and changes nothing else, and we ran it: a thousand years, forty generations of heirs waiting for a crown that never passes. Forty heirs. Not one coronation.\n\nForever breaks every rule built for death. So heirs inherit at fifty, not at a funeral. Her crown is lent: a new council every century. She outlives every husband, so vows last one lifetime. And forty generations of princes? Titles stop at grandchildren. Run it again, and the valley keeps changing while she doesn't.\n\nThen the twist: memory. Nobody else remembers year zero, so history is whatever she says, unless it's written down. A library she can't rewrite.\n\nImmortality isn't a trait. It's a society.\n\nWould you want an immortal ruler? Explain why.\n\nPart 29 of 50. Follow for part 30: they pray to a monster.\n\nWorldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 6: Creatures and Species.\n\n#Worldbuilding #FantasyWriting #WritingTips #Immortality #WorldcraftShorts",
+   "pinnedComment": "Would you want an immortal ruler? Explain why. (Part 30: they pray to a monster.)",
+   "uploadSettings": "Altered or synthetic content: Yes (synthetic narration and an AI-generated field-card sprite; the island, people and buildings are drawn in code). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "Your immortal queen just broke inheritance \ud83d\udc51 We ran it: 1,000 years, 40 generations of heirs, 0 coronations. Then we fixed it rule by rule. Rule #5 is about who remembers. Would you want an immortal ruler? Part 29/50 \u00b7 follow for part 30 \ud83d\udd6f\ufe0f #Worldbuilding #FantasyWriting #WritingTips #Immortality #WorldcraftShorts",
+   "pinnedComment": "Would you want an immortal ruler? Explain why.",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "What happens when a ruler can live for ten thousand years?\n\nMeet the Undying Queen: she never ages. The lazy version makes her immortal and changes nothing else, and we ran it: a thousand years, forty generations of heirs waiting for a crown that never passes. Forty heirs. Not one coronation.\n\nForever breaks every rule built for death. So heirs inherit at fifty, not at a funeral. Her crown is lent: a new council every century. She outlives every husband, so vows last one lifetime. And forty generations of princes? Titles stop at grandchildren. Run it again, and the valley keeps changing while she doesn't.\n\nThen the twist: memory. Nobody else remembers year zero, so history is whatever she says, unless it's written down. A library she can't rewrite.\n\nImmortality isn't a trait. It's a society.\n\nWould you want an immortal ruler? Explain why.\n\nPart 29 of 50. Follow for part 30: they pray to a monster.\n\nWorldcraft Shorts \u00b7 Season 2: The World Engine.\n\n#Worldbuilding #FantasyWriting #WritingTips #Immortality #WorldcraftShorts",
+   "pinnedComment": "If your ruler never died, what's the first law you'd change?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "Your queen never dies. Now what?\n\nWhat happens when a ruler can live for ten thousand years?\n\nMeet the Undying Queen: she never ages. The lazy version makes her immortal and changes nothing else, and we ran it: a thousand years, forty generations of heirs waiting for a crown that never passes. Forty heirs. Not one coronation.\n\nForever breaks every rule built for death. So heirs inherit at fifty, not at a funeral. Her crown is lent: a new council every century. She outlives every husband, so vows last one lifetime. And forty generations of princes? Titles stop at grandchildren. Run it again, and the valley keeps changing while she doesn't.\n\nThen the twist: memory. Nobody else remembers year zero, so history is whatever she says, unless it's written down. A library she can't rewrite.\n\nImmortality isn't a trait. It's a society.\n\nWould you want an immortal ruler? Explain why.\n\nPart 29 of 50. Follow for part 30: they pray to a monster.\n\nWorldcraft Shorts \u00b7 Season 2\n\n#Worldbuilding #FantasyWriting #WritingTips #Immortality #WorldcraftShorts",
+   "hookCheck": "First 32 characters: 'Your queen never dies. Now what?'",
+   "pinnedComment": "Save the BUILT FOR FOREVER card, then tell us: would you want an immortal ruler?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  }
+ }
+}

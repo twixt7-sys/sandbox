@@ -943,7 +943,106 @@ export const DragonEye: React.FC<OP> = ({g, t}) => {
 	);
 };
 
+// ---------------------------------------------------------------- EP29: the lineage strip (generations vs the Undying)
+
+const AGELESS = '#b48cff';
+const GEN_TUNICS = ['#c98a5a', '#6fa8bf', '#a8bf6a', '#d07a4c', '#8a9ad8', '#cbb87a', '#86b886', '#d8a66a', '#9a9aae', '#c47a7a'];
+
+/**
+ * The lineage strip (EP29's device): a generations timeline under the world. On the left, the Queen's cell never
+ * changes (AGE 30, forever). On the right, one cell per generation scrolls left as the clock runs: each generation is
+ * born, grows old (grey hair) and is gone, 25 years apart, 70-year lives. A badge row shows what the current rule does
+ * to every generation (`badges`: [cue, kind] keys; the latest one shows): `waited` (heirs never crowned), `land`
+ * (inherit at fifty), `council` (a council seat each century), `titles` / `cap` (royal titles spreading, then capped
+ * at grandchildren), `memory` (only those alive at year zero remember it) and `record` (the library remembers for
+ * everyone). Every number reads the world's clock, so the strip always matches the time-lapse above it.
+ */
+export const Lineage: React.FC<OP> = ({g, t}) => {
+	const {o, a, timing} = useWin(g, t, 0.3, 0.3);
+	const {world} = useS2();
+	if (o <= 0) return null;
+	const year = clockAt(world, t);
+	const gy: number = g.genYears ?? 25;
+	const life: number = g.life ?? 70;
+	const G = Math.floor(year / gy + 1e-6);
+	const frac = year / gy - G;
+	const badges: {t: number; kind: string}[] = (g.badges ?? []).map((b: [Cue, string]) => ({t: cueTime(timing, b[0]), kind: b[1]})).sort((p: {t: number}, q: {t: number}) => p.t - q.t);
+	const cur = badges.filter((b) => b.t <= t).pop();
+	const kind = cur?.kind ?? 'none';
+	const bk = cur ? clamp((t - cur.t) / 0.3) : 0;
+	const y0: number = g.y ?? 1352;
+	const rise = (1 - ease(t, a, 0.35)) * 40;
+	const W = 804;
+	const H = 170;
+	const QW = 196;
+	const cellW = 54;
+	const stripL = QW + 22;
+	const stripR = W - 14;
+	const ncell = Math.ceil((stripR - stripL) / cellW) + 1;
+	const cells: React.ReactNode[] = [];
+	for (let k = -1; k < ncell; k++) {
+		const gi = G - k;
+		if (gi < -2) continue;
+		const x = stripR - cellW - (k + frac) * cellW;
+		if (x < stripL - 6) continue;
+		const age = (year - gi * gy) / life;
+		if (age < 0) continue;
+		const alive = age < 1;
+		const elder = age >= 0.62;
+		const fadeIn = clamp(((x - stripL) / cellW) * 2);
+		const tunic = GEN_TUNICS[(((gi % 10) + 10) % 10)];
+		let badge: React.ReactNode = null;
+		if (kind === 'waited') badge = alive ? <PixelSprite name="crown" px={4} color="rgba(244,196,110,0.45)" /> : <PixelSprite name="cross" px={4} color={S2.rust} />;
+		if (kind === 'land' && age >= 50 / life) badge = <PixelSprite name="house" px={2} />;
+		if (kind === 'council' && ((gi % 4) + 4) % 4 === 0) badge = <PixelSprite name="seat" px={4} color={AGELESS} />;
+		if (kind === 'titles') badge = <PixelSprite name="crown" px={4} color={AGELESS} />;
+		if (kind === 'cap' && gi >= G - 1) badge = <PixelSprite name="crown" px={4} color={AGELESS} />;
+		if (kind === 'memory') badge = <PixelSprite name="lamp" px={4} color={gi <= 0 && alive ? S2.ember : 'rgba(239,230,210,0.22)'} />;
+		if (kind === 'record') badge = <PixelSprite name="lamp" px={4} color={S2.sky} />;
+		cells.push(
+			<div key={gi} style={{position: 'absolute', left: Math.round(x / PX) * PX, top: 40, width: cellW - 6, height: H - 52, opacity: fadeIn, background: alive ? 'rgba(239,230,210,0.07)' : 'rgba(239,230,210,0.02)'}}>
+				<div style={{position: 'absolute', left: 0, right: 0, top: 4, display: 'flex', justifyContent: 'center', opacity: alive ? 1 : 0.35}}>
+					<PixelSprite name={elder ? 'elder' : 'mortal'} px={age < 0.18 && alive ? 4 : 6} color={tunic} mono={alive ? undefined : '#59627e'} />
+				</div>
+				<div style={{position: 'absolute', left: 0, right: 0, top: 50, textAlign: 'center', fontFamily: F2.pixel, fontSize: 16, color: alive ? 'rgba(239,230,210,0.8)' : 'rgba(239,230,210,0.3)'}}>{gi > 0 ? gi : '·'}</div>
+				<div style={{position: 'absolute', left: 0, right: 0, top: 78, height: 30, display: 'flex', justifyContent: 'center', alignItems: 'center', opacity: bk}}>{badge}</div>
+			</div>,
+		);
+	}
+	const stat = g.stat as {label: string; key: string; color?: string; digits?: number} | undefined;
+	const sv = stat ? hudValue(world, stat.key, t) : 0;
+	const queenLamp = kind === 'memory' || kind === 'record';
+	return (
+		<AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>
+			<div style={{position: 'absolute', left: 96, top: y0 + rise, width: W, height: H, overflow: 'hidden', ...panel({edge: AGELESS})}}>
+				<div style={{position: 'absolute', left: 0, top: 0, width: QW, height: H, background: 'rgba(180,140,255,0.16)', boxShadow: `inset -${PX}px 0 0 ${AGELESS}`}}>
+					<div style={{position: 'absolute', left: 16, top: 14, fontFamily: F2.pixel, fontSize: 18, color: AGELESS, letterSpacing: '0.08em'}}>{g.queenLabel ?? 'THE QUEEN'}</div>
+					<div style={{position: 'absolute', left: 18, top: 46}}>
+						<PixelSprite name="queen" px={7} />
+					</div>
+					<div style={{position: 'absolute', left: 96, top: 50, fontFamily: F2.pixel, fontSize: 18, color: 'rgba(239,230,210,0.75)'}}>AGE</div>
+					<div style={{position: 'absolute', left: 94, top: 70, fontFamily: F2.pixel, fontWeight: 700, fontSize: 50, lineHeight: 1, color: S2.parchment}}>{g.queenAge ?? '30'}</div>
+					<div style={{position: 'absolute', left: 96, top: 128, fontFamily: F2.pixel, fontSize: 16, color: AGELESS, display: 'flex', alignItems: 'center', gap: 8}}>
+						{queenLamp ? <PixelSprite name="lamp" px={4} color={kind === 'record' ? S2.sky : S2.ember} /> : null}
+						{queenLamp ? (kind === 'record' ? 'NOT ALONE' : 'REMEMBERS') : 'FOREVER'}
+					</div>
+				</div>
+				<div style={{position: 'absolute', left: stripL, top: 10, fontFamily: F2.pixel, fontSize: 18, color: 'rgba(239,230,210,0.75)', letterSpacing: '0.06em'}}>
+					{g.kicker ?? 'GENERATIONS'} <span style={{color: S2.parchment, fontWeight: 700, fontSize: 22}}>{String(Math.max(0, G)).padStart(2, '0')}</span>
+				</div>
+				{stat && (
+					<div style={{position: 'absolute', right: 16, top: 10, fontFamily: F2.pixel, fontSize: 18, color: 'rgba(239,230,210,0.75)', letterSpacing: '0.06em'}}>
+						{stat.label} <span style={{color: Math.round(sv) === 0 ? S2.rust : col(stat.color ?? 'prey'), fontWeight: 700, fontSize: 22}}>{String(Math.round(sv)).padStart(stat.digits ?? 2, '0')}</span>
+					</div>
+				)}
+				{cells}
+			</div>
+		</AbsoluteFill>
+	);
+};
+
 export const S2_OVERLAYS: Record<string, React.FC<OP>> = {
+	lineage: Lineage,
 	dragonEye: DragonEye,
 	editor: Editor,
 	readout: Readout,

@@ -11,6 +11,7 @@ import {cameraAt, dragonAt, herdCount, moodAt, predatorAt, simTime, World} from 
 import {Dragon} from './Dragon';
 import {Cairn, roadAt, SettlementLayer} from './Settlement';
 import {FolkLayer} from './Folk';
+import {Offerings, PeopleLayer} from './People';
 
 export type S2State = {world: World; t: number; cam: Cam; island: Island; agents: HerdAgent[]; agentsB?: HerdAgent[]};
 export const S2Context = createContext<S2State | null>(null);
@@ -431,11 +432,18 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 				<SettlementLayer key={`st${i}`} world={world} island={island} t={t} s={s} settlement={st} />
 			))}
 			{world.folk && <FolkLayer world={world} island={island} t={t} s={s} />}
+			{world.people && <PeopleLayer world={world} island={island} t={t} s={s} />}
 			{world.dragons.map((d) => {
 				const dp = dragonAt(d.keys, t, (x, z) => Math.max(island.waterLevel, island.heightAt(x, z)));
 				return dp ? <Dragon key={d.id} pose={dp} scale={d.scale} t={t} loopT={world.loopT} /> : null;
 			})}
-			{world.props.map((p, i) => (p.kind === 'cairn' ? <Cairn key={`c${i}`} x={p.x} z={p.z} y={island.heightAt(p.x, p.z)} stones={sample(p.stones, t, 0)} /> : null))}
+			{world.props.map((p, i) =>
+				p.kind === 'cairn' ? (
+					<Cairn key={`c${i}`} x={p.x} z={p.z} y={island.heightAt(p.x, p.z)} stones={sample(p.stones, t, 0)} />
+				) : p.kind === 'offerings' ? (
+					<Offerings key={`o${i}`} x={p.x} z={p.z} r={p.r} island={island} t={t} level={sample(p.lights, t, 0)} />
+				) : null,
+			)}
 			{world.ambient.birds > 0 && <Birds t={t} n={world.ambient.birds} loopT={world.loopT} />}
 			{world.ambient.motes > 0 && <Motes t={t} n={world.ambient.motes} island={island} warm={mood.warm} loopT={world.loopT} />}
 			{world.flyers.map((f, i) => (

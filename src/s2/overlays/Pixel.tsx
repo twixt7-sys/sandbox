@@ -41,6 +41,22 @@ export const SPRITES: Record<string, {rows: string[]; colors: Record<string, str
 		rows: ['XXXXXXXXX', '.X.....X.', '.XSSSSSX.', '..XSSSX..', '...XSX...', '...XSX...', '..X.S.X..', '.X..S..X.', '.XSSSSSX.', 'XXXXXXXXX'],
 		colors: {X: '#c9a26a', S: '#f4c46e'},
 	},
+	// EP29: the Undying Queen (a counter icon), a mortal and an elder (the lineage strip), a crown, a council seat,
+	// a memory lamp, a book (the record), and a shrine with candles (the EP30 tease)
+	queen: {
+		rows: ['..GGGG..', '.SSSSSS.', 'SSFFFFSS', 'SSFEFEFS', 'SSFFFFSS', 'SSVVVVSS', '.VVLVVV.', 'VVVLVVVV', 'VVVLVVVV'],
+		colors: {G: '#e9b85a', S: '#ece2e0', F: '#f1d6c4', E: '#2a1838', V: '#6a43a0', L: '#bba4c7'},
+	},
+	mortal: {rows: ['.HHH.', 'HSSSH', '.SSS.', 'XXXXX', 'XXXXX', '.XXX.', '.L.L.'], colors: {H: '#5a3a22', S: '#e2b48a', X: 'currentColor', L: '#3a2c20'}},
+	elder: {rows: ['.HHH.', 'HSSSH', '.SSS.', 'XXXXX', 'XXXXX', '.XXX.', '.L.L.'], colors: {H: '#e4e0da', S: '#e2b48a', X: 'currentColor', L: '#3a2c20'}},
+	crown: {rows: ['X.X.X', 'XXXXX', 'XXXXX'], colors: {X: 'currentColor'}},
+	seat: {rows: ['XX...', 'XX...', 'XXXXX', 'X...X'], colors: {X: 'currentColor'}},
+	lamp: {rows: ['.X.', 'XXX', 'XXX', '.X.'], colors: {X: 'currentColor'}},
+	book: {rows: ['XXX.XXX', 'X.XXX.X', 'X..X..X', 'XXXXXXX'], colors: {X: 'currentColor'}},
+	shrine: {
+		rows: ['...F...F...F...', '...C...C...C...', '...C...C...C...', '.SSSSSSSSSSSSS.', '.SKKKKKKKKKKKS.', 'SSSSSSSSSSSSSSS', '.S...........S.', '.S...........S.'],
+		colors: {F: '#ffc96a', C: '#efe3c4', S: '#8f8c86', K: '#a9a49a'},
+	},
 	play: {rows: ['X....', 'XXX..', 'XXXXX', 'XXX..', 'X....'], colors: {X: 'currentColor'}},
 	ffwd: {rows: ['X...X...', 'XX..XX..', 'XXX.XXX.', 'XX..XX..', 'X...X...'], colors: {X: 'currentColor'}},
 	rewind: {rows: ['...X...X', '..XX..XX', '.XXX.XXX', '..XX..XX', '...X...X'], colors: {X: 'currentColor'}},

@@ -100,6 +100,7 @@ The ending stack (55–61 s, captions off): `seasonBar` y 350–508, `followButt
 | A creature's point of view (EP27+) | `dragonEye`: the frame tinted in the episode's motif colour, brackets locking onto what it can see, a TARGETS count read from the world; `light` to keep counting through the fixes; `tower` for the other side looking back | `eyeOn` as it switches on, `lockOn` bed while targets lock, `unlock` as a target hides |
 | Riding with a creature (EP27+) | camera `follow` with `look`: over its shoulder at what it's looking at; loop-safe when the creature's path is a closed orbit timed to the loop | — |
 | A trait slider moves (EP28+) | `editor` / `fieldCard.sliders`: a knob slides from HUMAN to the species' value; the body (`folk` eyes / wet / glow) and the village (`sink`, `stone`, `show`, `stiltsB`, `open`, `glow`) change with it, and a `readout` (HUMAN-LIKE %) falls | `slide` + `morph` (body) or `restore` (buildings) |
+| Generations turn over (EP29+) | `people` on the clock (born, grey, gone, replaced in new colours) beside a ruler who never changes; the `lineage` strip scrolls one cell per generation with a badge for the current rule; the camera stays **locked off** (drift 0) while the clock races | `clockTicks` bed, `crownPass` as a generation or crown passes |
 | Roofs burn (EP27+) | `settlement.char`: thatch blackens and breaks one roof at a time, smoke rises; no people anywhere | `burn` bed |
 | A change switches on in the village (EP27+) | `roof` (thatch → slate / turf), `cover` (barns rise), `place` (unbuild at A, rise at B), `route` + `lanterns` (night road), `tower` (rises, bell swings) | `restore`, `check`; `towerBell` for the bell |
 | The next creature, teased in-world | `flyers`: a shadow-only creature crosses the Isle (EP26: a dragon's shadow sweeps the meadow and the Grimmaw looks up) | `dragonPass` (whoosh + wingbeats, panning with it) |
@@ -176,6 +177,7 @@ The recurring signature (the Isle, ▶ RUN, the field card with a locked row, th
 - **One camera language:** EP26 is grounded profile shots and orbits; EP27 rides on the dragon's back. Don't re-use the previous episode's hook pose.
 - **One motif colour** (named in the brief; EP27: dragon-sight red `#ff5a4e`) and **one band of music colour** around the series theme (EP27: `soar`, `raid`, `stealth`).
 - **EP28's answer:** the device is the *species editor* (a character creator whose sliders rebuild the world), the camera stays at the species' eye height, the motif colour is bioluminescent teal `#5fe0c0`, and the music band is `folk` / `glow`.
+- **EP29's answer:** the device is the *lineage strip* (generations born, greying and gone beneath a ruler whose cell never changes), the camera is a *locked-off tripod* (each tableau holds one frame while centuries pass through it), the motif colour is ageless violet `#b48cff`, and the music band is `clockwork` / `reign`.
 - **Fresh wording for the recurring beats:** the drop line, the stamp, the run-2 verdict and the checklist title belong to the episode's own idea (EP27: "They just lived in plain sight"; TARGETS 00, NOTHING TO HUNT; HIDE FROM THE SKY).
 
 ## Making the next episode

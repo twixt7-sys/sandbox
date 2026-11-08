@@ -76,6 +76,17 @@ The paid primary stack (Runway stills and clips + ElevenLabs) would still cost a
 | Render + QA | Claude cloud container | $0 |
 | **Total** | | **$0 cash (₱0)** plus 5 Figma image generations |
 
+## What Episode 29 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| Field card sprite (the Undying Queen) | **Figma AI, 1 generation** (the user approved up to 2 for EP29): `generate_image` with `gpt-image-2.5-sunburst`, 1536×1024, in "Worldcraft Shorts EP26 art"; right first time; re-gridded to 56×107 with `pipeline/pixelate.py` (`--colors 22 --tol 70`) | $0 cash (1 generation) |
+| The voxel Queen, the mortal crowd on the clock, the heir line, the consort, the court (heirs' houses, council hall, library), the candles, the lineage strip | Remotion + three.js code, software WebGL (`swangle`) | $0 |
+| Narration | Kokoro-82M (`af_heart`, speed 1.07), 161 words, 61.3 s total | $0 |
+| Score + SFX | `music_s2.py` (+ `clockwork`, `reign`; harpsichord, church organ, woodblocks and tubular bells from the same free SoundFont), `score_s2.py` (+ `crownPass`, `clockTicks`) | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, 1 Figma generation |
+
 ## What Episode 28 actually used
 
 | Item | Used | Cash cost |

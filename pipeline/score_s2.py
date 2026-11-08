@@ -189,8 +189,8 @@ def blip(f0, f1, dur, bright=1.0):
 
 
 S2_HITS = {"roar", "stompHit", "sting", "runPress", "stamp", "rewind", "ringOn", "snowAir", "sleepZ", "cubPop", "delete", "restore", "cardSlide", "check", "unlock", "worldRipple", "crash", "boomPop",
-           "engineWind", "dragonPass", "followPress", "chime", "towerBell", "eyeOn", "morph", "slide"}
-S2_BEDS = {"simTicks", "births", "losses", "stomp", "burn", "lockOn"}
+           "engineWind", "dragonPass", "followPress", "chime", "towerBell", "eyeOn", "morph", "slide", "crownPass"}
+S2_BEDS = {"simTicks", "births", "losses", "stomp", "burn", "lockOn", "clockTicks"}
 
 
 def s2_hit(kind):
@@ -438,6 +438,16 @@ def s2_hit(kind):
             i = int(k * 0.04 * SR)
             out[i:i + len(b)] += b[: n - i]
         return st(out, 0.3)
+    if kind == "crownPass":
+        # EP29: a generation passes / the crown changes hands: a soft rising glass shimmer (three detuned sines up a
+        # fifth) with a low wooden knock under it. Deterministic (no shared RNG draws).
+        n = int(1.1 * SR)
+        t = np.arange(n) / SR
+        f = 660 * (1 + 0.5 * np.clip(t / 0.5, 0, 1))
+        shim = sum(np.sin(2 * np.pi * np.cumsum(f * r) / SR) for r in (1.0, 1.003, 1.5)) / 3
+        shim *= np.interp(t, [0, 0.08, 0.6, 1.1], [0, 0.5, 0.25, 0])
+        knock = np.sin(2 * np.pi * 180 * t) * np.exp(-t * 40) * 0.6
+        return st(shim + knock, 0.6)
     raise KeyError(kind)
 
 
@@ -488,6 +498,18 @@ def s2_bed(kind, dur):
                 b = blip(f, f, 0.03, 0.4)
                 i = int((k * 0.12 + d0) * SR)
                 out[i:i + len(b)] += b[: max(0, n - i)]
+            k += 1
+    elif kind == "clockTicks":
+        # EP29: a pendulum clock, tick-tock, speeding up through the bed (time racing). Deterministic.
+        tt, k = 0.0, 0
+        while tt < dur - 0.06:
+            f = 2400 if k % 2 == 0 else 1800
+            m = int(0.04 * SR)
+            x = np.arange(m) / SR
+            clk = (np.sin(2 * np.pi * f * x) + 0.5 * np.sin(2 * np.pi * f * 1.5 * x)) * np.exp(-x * 160) * 0.5
+            i = int(tt * SR)
+            out[i:i + m] += clk[: max(0, n - i)]
+            tt += max(0.07, 0.3 * (1 - tt / max(dur, 0.1)) + 0.07)
             k += 1
     else:
         raise KeyError(kind)

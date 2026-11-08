@@ -227,9 +227,36 @@ const Lights: React.FC<{w: number; d: number; y: number; t: number; level: numbe
 	return <group>{out}</group>;
 };
 
+/** EP29+: a stone library (the record a ruler can't rewrite): a tall stone hall, lit windows, a stepped slate roof. */
+const Library: React.FC<{s: BuildingState}> = ({s}) => {
+	const w = s.b.w ?? 2.6;
+	const d = s.b.d ?? 2.4;
+	const h = s.b.h ?? 2.6;
+	return (
+		<group scale={[1, Math.max(0.0001, s.rise), 1]}>
+			<Box s={[w + 0.3, 0.3, d + 0.3]} p={[0, 0.15, 0]} c={STONE} />
+			<Box s={[w, h, d]} p={[0, 0.3 + h / 2, 0]} c={STONE_W[0]} />
+			{[-1, 0, 1].map((k) => (
+				<group key={k}>
+					<Box s={[0.08, 0.9, 0.34]} p={[w / 2 + 0.02, 0.3 + h * 0.55, (k * d) / 3.2]} c={DOOR_GLOW} e o={false} cast={false} />
+					<Box s={[0.34, 0.9, 0.08]} p={[(k * w) / 3.2, 0.3 + h * 0.55, d / 2 + 0.02]} c={DOOR_GLOW} e o={false} cast={false} />
+				</group>
+			))}
+			<Box s={[0.1, 0.9, 0.6]} p={[w / 2 + 0.02, 0.75, 0]} c={BEAM} o={false} cast={false} />
+			<group position={[0, 0.3 + h, 0]}>
+				<Box s={[w + 0.4, 0.34, d + 0.4]} p={[0, 0.17, 0]} c={SLATE[0]} />
+				<Box s={[w * 0.7, 0.34, d * 0.7]} p={[0, 0.5, 0]} c={SLATE[1]} />
+				<Box s={[w * 0.4, 0.34, d * 0.4]} p={[0, 0.84, 0]} c={SLATE[0]} />
+				<Box s={[0.14, 0.7, 0.14]} p={[0, 1.36, 0]} c={'#e9b85a'} o={false} />
+			</group>
+		</group>
+	);
+};
+
 const House: React.FC<{s: BuildingState}> = ({s}) => {
 	const b = s.b;
 	const kind = b.kind ?? 'house';
+	if (kind === 'library') return <Library s={s} />;
 	const great = kind === 'greathall';
 	const w = b.w ?? (great ? 5.6 : kind === 'hall' ? 3.2 : kind === 'barn' ? 3.6 : 1.7);
 	const d = b.d ?? (great ? 5.6 : kind === 'hall' ? 2.2 : kind === 'barn' ? 2.4 : 1.4);

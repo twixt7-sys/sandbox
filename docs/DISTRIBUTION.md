@@ -1977,3 +1977,96 @@ Source of truth: `episodes/ep28/episode.json` → `metadata`. Every description 
 - **Hook check:** First 27 characters: 'Your elves are just humans.'
 - **Pinned comment:** Save the species editor, then tell us: which biological trait would change a society the most?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+
+## Episode 29 captions (ready to paste) — Season 2, Arc 6
+
+Source of truth: `episodes/ep29/episode.json` → `metadata`. Every description ends with the Season 2 ending formula ("Part 29 of 50. Follow for part 30: …"), matching the video's last line. The AI label goes on for all four platforms. Cover: `episodes/ep29/Worldcraft_Short_E29_cover.jpg`. Subtitles: `episodes/ep29/ep29.srt`.
+
+**Disclosure.** The island, the Queen, the people, the court, the lineage strip, the HUD and every number are drawn and simulated in code. Two things are AI-made: the narration (Kokoro synthetic voice) and the field card's Queen sprite (Figma `generate_image`, re-gridded by `pipeline/pixelate.py`). AI label on everywhere (series policy). Nobody dies on screen: people grow old and fade out of the time-lapse, and heirs "wait" by greying in line.
+
+**Closing EP28's loop.** EP28 ended "someone on the Isle never dies" with years racing past. EP29 opens on the Undying Queen standing still while the valley ages around her. When EP29 goes up, reply to the top comments on EP28 with its link and pin it where a second pin is allowed. The comment CTA asks for a yes/no with a reason: pin a strong "yes" and a strong "no" side by side if the platform allows.
+
+**Posting part 30.** The video promises "they pray to a monster" (candles light on the meadow and the Queen looks up). Do the same reply-and-pin on EP29 when EP30 is posted.
+
+### YouTube Shorts
+- **Title** (52/100 chars): `Immortality Would Break Your Society (Worldbuilding)`
+- **Alternate title** (30 chars): `What if your queen never died?`
+- **Description:**
+
+> What happens when a ruler can live for ten thousand years?
+>
+> Meet the Undying Queen: she never ages. The lazy version makes her immortal and changes nothing else, and we ran it: a thousand years, forty generations of heirs waiting for a crown that never passes. Forty heirs. Not one coronation.
+>
+> Forever breaks every rule built for death. So heirs inherit at fifty, not at a funeral. Her crown is lent: a new council every century. She outlives every husband, so vows last one lifetime. And forty generations of princes? Titles stop at grandchildren. Run it again, and the valley keeps changing while she doesn't.
+>
+> Then the twist: memory. Nobody else remembers year zero, so history is whatever she says, unless it's written down. A library she can't rewrite.
+>
+> Immortality isn't a trait. It's a society.
+>
+> Would you want an immortal ruler? Explain why.
+>
+> Part 29 of 50. Follow for part 30: they pray to a monster.
+>
+> Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 6: Creatures and Species.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Immortality #WorldcraftShorts
+
+- **Pinned comment:** Would you want an immortal ruler? Explain why. (Part 30: they pray to a monster.)
+- **Upload settings:** Altered or synthetic content: Yes (synthetic narration and an AI-generated field-card sprite; the island, people and buildings are drawn in code). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (315 chars): `Your immortal queen just broke inheritance 👑 We ran it: 1,000 years, 40 generations of heirs, 0 coronations. Then we fixed it rule by rule. Rule #5 is about who remembers. Would you want an immortal ruler? Part 29/50 · follow for part 30 🕯️ #Worldbuilding #FantasyWriting #WritingTips #Immortality #WorldcraftShorts`
+- **Pinned comment:** Would you want an immortal ruler? Explain why.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> What happens when a ruler can live for ten thousand years?
+>
+> Meet the Undying Queen: she never ages. The lazy version makes her immortal and changes nothing else, and we ran it: a thousand years, forty generations of heirs waiting for a crown that never passes. Forty heirs. Not one coronation.
+>
+> Forever breaks every rule built for death. So heirs inherit at fifty, not at a funeral. Her crown is lent: a new council every century. She outlives every husband, so vows last one lifetime. And forty generations of princes? Titles stop at grandchildren. Run it again, and the valley keeps changing while she doesn't.
+>
+> Then the twist: memory. Nobody else remembers year zero, so history is whatever she says, unless it's written down. A library she can't rewrite.
+>
+> Immortality isn't a trait. It's a society.
+>
+> Would you want an immortal ruler? Explain why.
+>
+> Part 29 of 50. Follow for part 30: they pray to a monster.
+>
+> Worldcraft Shorts · Season 2: The World Engine.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Immortality #WorldcraftShorts
+
+- **Pinned comment:** If your ruler never died, what's the first law you'd change?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Your queen never dies. Now what?
+>
+> What happens when a ruler can live for ten thousand years?
+>
+> Meet the Undying Queen: she never ages. The lazy version makes her immortal and changes nothing else, and we ran it: a thousand years, forty generations of heirs waiting for a crown that never passes. Forty heirs. Not one coronation.
+>
+> Forever breaks every rule built for death. So heirs inherit at fifty, not at a funeral. Her crown is lent: a new council every century. She outlives every husband, so vows last one lifetime. And forty generations of princes? Titles stop at grandchildren. Run it again, and the valley keeps changing while she doesn't.
+>
+> Then the twist: memory. Nobody else remembers year zero, so history is whatever she says, unless it's written down. A library she can't rewrite.
+>
+> Immortality isn't a trait. It's a society.
+>
+> Would you want an immortal ruler? Explain why.
+>
+> Part 29 of 50. Follow for part 30: they pray to a monster.
+>
+> Worldcraft Shorts · Season 2
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Immortality #WorldcraftShorts
+
+- **Hook check:** First 32 characters: 'Your queen never dies. Now what?'
+- **Pinned comment:** Save the BUILT FOR FOREVER card, then tell us: would you want an immortal ruler?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

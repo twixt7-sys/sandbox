@@ -535,11 +535,43 @@ def style_glow(c: Ctx):
     c.theme("celesta", vel=70, bars=(0, 2), octave=1)
 
 
+# ---- EP29 colours (additive): time racing past the one who never ages. Sections set `programs` (harpsichord on the
+# marimba channel, church organ on the strings, tubular bells on the glock) and later sections set them back.
+
+def style_clockwork(c: Ctx):
+    """Centuries passing: a harpsichord ostinato in 16ths, a woodblock tick-tock on the 8ths, a pizzicato walking bass
+    and the theme on celesta. `layer` 1-4 adds families as the fixes switch on (tick-tock, bass, celesta theme, bells)."""
+    layer = c.spec.get("layer", 4)
+    c.pad("strings", 50, 67, 30, max_notes=3)
+    c.arp("marimba", 0.25, 62, 81, 80, pattern=(0, 2, 1, 3, 2, 1, 3, 2), accent=1.15)
+    if layer >= 2:
+        b = 0.0
+        while b < c.n - 1e-6:
+            c.add("drums", b, 0.15, 76 if int(b * 2) % 2 == 0 else 77, 84)
+            b += 0.5
+    if layer >= 3:
+        c.arp("pizz", 1.0, 40, 55, 76, pattern=(0, 1, 2, 1))
+    if layer >= 4:
+        c.theme("celesta", vel=96, bars=(0, 4))
+        for b, d, ch in c.chord_spans():
+            c.add("glock", b, 2.5, voicing(ch, 64, 76)[0], 56)
+
+
+def style_reign(c: Ctx):
+    """The one who never changes: a slow church-organ chorale (the strings channel), a cello pedal, a timpani
+    processional on 1 and 3, and the theme's first bars held on horns. No hurry."""
+    c.pad("strings", 50, 72, 56)
+    c.root("cello", 36, 48, 60)
+    for b in range(0, c.n, 2):
+        c.add("timp", b, 0.6, in_range(chord_tones(c.chord(b))[0], 40, 52)[0], 58 if b % 4 == 0 else 44)
+    c.theme("horns", vel=70, bars=(0, 2), legato=1.0)
+
+
 STYLES = {"hook": style_hook, "pulse": style_pulse, "drive": style_drive, "drop": style_drop, "void": style_void,
           "mystery": style_mystery, "build": style_build, "twist": style_twist, "rest": style_rest, "frenzy": style_frenzy,
           "crash": style_crash, "swell": style_swell, "anthem": style_anthem, "outro": style_outro, "tease": style_tease,
           "soar": style_soar, "raid": style_raid, "stealth": style_stealth,
-          "folk": style_folk, "glow": style_glow}
+          "folk": style_folk, "glow": style_glow, "clockwork": style_clockwork, "reign": style_reign}
 
 # The World Engine chime: Season 2's sound signature (Season 1 had its sine bells). A rising open fifth on music box
 # with 8-bit blips, ringing out two octaves up: (seconds after the cue, semitones above D5).

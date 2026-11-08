@@ -55,7 +55,18 @@ export type WorldRaw = {
 	 * look (`eyes`, `wet`, `glow`, each 0..1: night eyes, wet teal skin with fins instead of ears, glow spots). */
 	folk?: {count: RawKey[]; centers: [number, number][]; centersB?: [number, number][]; site?: RawKey[]; eyes?: RawKey[]; wet?: RawKey[]; glow?: RawKey[]; hero?: PredKeyRaw[]; spread?: number};
 	/** EP27+: small props, e.g. a cairn whose stones stack on their keys (`stones`). */
-	props?: {kind: 'cairn'; x: number; z: number; stones: RawKey[]}[];
+	props?: {kind: 'cairn' | 'offerings'; x: number; z: number; stones?: RawKey[]; lights?: RawKey[]; r?: number}[];
+	/** EP29+: mortal people living on the clock (born, ageing, replaced each generation) and the Undying ruler. */
+	people?: {
+		count: RawKey[];
+		centers: [number, number][];
+		spread?: number;
+		life?: number;
+		royal?: RawKey[];
+		queue?: {from: [number, number]; dir: [number, number]; count: RawKey[]; gap?: number};
+		consort?: {x: number; z: number; face?: number; show: RawKey[]; life?: number};
+		ruler?: {keys: PredKeyRaw[]; dais?: {x: number; z: number; face?: number}};
+	};
 };
 
 export type DragonKeyRaw = {at: Cue; x: number; z: number; y?: number; state?: string; face?: number; dur?: number; ease?: string};
@@ -63,7 +74,7 @@ export type DragonRaw = {id: string; scale?: number; keys: DragonKeyRaw[]};
 export type DragonKey = {t: number; x: number; z: number; y: number | null; state: string; face?: number; dur: number; ease: string};
 
 export type BuildingRaw = {
-	kind?: 'house' | 'hall' | 'barn' | 'tower' | 'greathall';
+	kind?: 'house' | 'hall' | 'barn' | 'tower' | 'greathall' | 'library';
 	/** site A (before the move) and optional site B (after it); without `b` the building stays at `a` */
 	a: [number, number];
 	b?: [number, number];
@@ -165,7 +176,18 @@ export type World = {
 	/** every settlement, the first one included (EP28+: more than one) */
 	settlements: Settlement[];
 	folk: {count: Key[]; centers: [number, number][]; centersB: [number, number][] | null; site: Key[]; eyes: Key[]; wet: Key[]; glow: Key[]; hero: PredKey[]; spread: number} | null;
-	props: {kind: 'cairn'; x: number; z: number; stones: Key[]}[];
+	props: {kind: 'cairn' | 'offerings'; x: number; z: number; stones: Key[]; lights: Key[]; r: number}[];
+	/** EP29+ (null before) */
+	people: {
+		count: Key[];
+		centers: [number, number][];
+		spread: number;
+		life: number;
+		royal: Key[];
+		queue: {from: [number, number]; dir: [number, number]; count: Key[]; gap?: number} | null;
+		consort: {x: number; z: number; face?: number; show: Key[]; life: number} | null;
+		ruler: {keys: PredKey[]; dais?: {x: number; z: number; face?: number}} | null;
+	} | null;
 };
 
 export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
@@ -218,7 +240,24 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 				spread: raw.folk.spread ?? 2.6,
 			}
 		: null,
-	props: (raw.props ?? []).map((p) => ({kind: p.kind, x: p.x, z: p.z, stones: resolveKeys(timing, p.stones)})),
+	props: (raw.props ?? []).map((p) => ({kind: p.kind, x: p.x, z: p.z, stones: resolveKeys(timing, p.stones), lights: resolveKeys(timing, p.lights), r: p.r ?? 2.2})),
+	people: raw.people
+		? {
+				count: resolveKeys(timing, raw.people.count),
+				centers: raw.people.centers,
+				spread: raw.people.spread ?? 2.6,
+				life: raw.people.life ?? 70,
+				royal: resolveKeys(timing, raw.people.royal),
+				queue: raw.people.queue ? {...raw.people.queue, count: resolveKeys(timing, raw.people.queue.count)} : null,
+				consort: raw.people.consort ? {...raw.people.consort, show: resolveKeys(timing, raw.people.consort.show), life: raw.people.consort.life ?? 60} : null,
+				ruler: raw.people.ruler
+					? {
+							keys: raw.people.ruler.keys.map((k) => ({t: cueTime(timing, k.at), x: k.x, z: k.z, state: k.state ?? 'idle', face: k.face, dur: k.dur ?? 0})).sort((a, b) => a.t - b.t),
+							dais: raw.people.ruler.dais,
+						}
+					: null,
+			}
+		: null,
 	rings: (raw.layers?.rings ?? []).map((r) => ({x: r.x, z: r.z, r: r.r, on: cueTime(timing, r.on), off: r.off ? cueTime(timing, r.off) : Infinity, color: r.color ?? '#f4c46e'})),
 });
 

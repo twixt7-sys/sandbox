@@ -63,6 +63,23 @@ const GRIMMAW_BODY: Part[] = [
 	{s: [0.18, 0.28, 0.14], p: [-1.55, 1.58, 0], c: RUST},
 	{s: [0.16, 0.22, 0.12], p: [-2.05, 1.3, 0], c: RUST2},
 ];
+// EP30+: the worshipped Grimmaw (matched to its field-card sprite): a braided wheat garland round its neck and painted
+// rose stripes on shoulder and flank. Drawn only when a predator sets `adorn`, so EP26-EP29 render as before.
+const WHEAT = '#e3c27a';
+const WHEAT2 = '#b98a4e';
+const PAINT = '#e0687f';
+const ADORN: Part[] = [
+	{s: [0.26, 0.2, 1.0], p: [1.02, 1.92, 0], c: WHEAT},
+	{s: [0.26, 0.2, 0.92], p: [1.02, 1.08, 0], c: WHEAT2},
+	{s: [0.26, 0.92, 0.2], p: [1.02, 1.5, 0.5], c: WHEAT},
+	{s: [0.26, 0.92, 0.2], p: [1.02, 1.5, -0.5], c: WHEAT},
+	{s: [0.18, 0.34, 0.16], p: [1.14, 0.86, 0.26], c: WHEAT2},
+	{s: [0.18, 0.34, 0.16], p: [1.14, 0.86, -0.26], c: WHEAT},
+	{s: [0.16, 0.6, 0.05], p: [0.32, 1.6, 0.6], c: PAINT, r: [0, 0, -0.35]},
+	{s: [0.16, 0.6, 0.05], p: [0.32, 1.6, -0.6], c: PAINT, r: [0, 0, -0.35]},
+	{s: [0.14, 0.5, 0.05], p: [-0.55, 1.36, 0.53], c: PAINT, r: [0, 0, -0.3]},
+	{s: [0.14, 0.5, 0.05], p: [-0.55, 1.36, -0.53], c: PAINT, r: [0, 0, -0.3]},
+];
 // Legs: pivot at the top (hip / shoulder); `leg` = gait phase index.
 const LEGS: {pivot: [number, number, number]; len: number; w: number; phase: number}[] = [
 	{pivot: [0.72, 1.18, 0.4], len: 1.18, w: 0.4, phase: 0},
@@ -93,6 +110,8 @@ export type GrimmawPose = {
 	roar?: number;
 	/** 0 .. 1 alert: head up, mouth shut (looking at the sky) */
 	alert?: number;
+	/** EP30+: the garland and painted stripes */
+	adorn?: boolean;
 	breath: number;
 	seed: number;
 };
@@ -132,7 +151,7 @@ export const Grimmaw: React.FC<{pose: GrimmawPose}> = ({pose}) => {
 	return (
 		<group position={[pose.x, pose.y, pose.z]} rotation={[0, (pose.face * Math.PI) / 180, 0]} scale={pose.scale}>
 			<group position={[0, bob - drop, 0]} rotation={[roll * 1.25, 0, roar * 0.12 + alert * 0.07]}>
-				{GRIMMAW_BODY.map((pt, k) => {
+				{(pose.adorn ? GRIMMAW_BODY.concat(ADORN) : GRIMMAW_BODY).map((pt, k) => {
 					const f = fly(k);
 					if (f.s <= 0.01) return null;
 					// Head parts dip when resting; torso breathes.

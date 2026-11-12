@@ -2070,3 +2070,96 @@ Source of truth: `episodes/ep29/episode.json` → `metadata`. Every description 
 - **Hook check:** First 32 characters: 'Your queen never dies. Now what?'
 - **Pinned comment:** Save the BUILT FOR FOREVER card, then tell us: would you want an immortal ruler?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+
+## Episode 30 captions (ready to paste) — Season 2, Arc 6 (finale)
+
+Source of truth: `episodes/ep30/episode.json` → `metadata`. Every description ends with the Season 2 ending formula ("Part 30 of 50. Follow for part 31: …"), matching the video's last line. The AI label goes on for all four platforms. Cover: `episodes/ep30/Worldcraft_Short_E30_cover.jpg`. Subtitles: `episodes/ep30/ep30.srt`.
+
+**Disclosure.** The island, the Grimmaw, the villagers, the shrine, the fields, the ledger, the HUD and every number are drawn and simulated in code. Two things are AI-made: the narration (Kokoro synthetic voice) and the field card's Grimmaw sprite (Figma `generate_image`, re-gridded by `pipeline/pixelate.py`). AI label on everywhere (series policy). No violence on screen: the Grimmaw is driven off by walking away, the flock eats the fields, the tithe is sheep standing at an altar. The rite is invented (candles, sheaves, a garland, painted stones) and depicts no real-world religion.
+
+**Closing EP29's loop.** EP29 ended "they pray to a monster" with candles lighting on the meadow and the Queen looking up. EP30 opens on what they pray to: the Grimmaw at its shrine, garlanded, with candles and villagers before it. When EP30 goes up, reply to the top comments on EP29 with its link and pin it where a second pin is allowed. The comment CTA invites invention: pin the most surprising creature.
+
+**Posting part 31.** The video promises "hero, or monster?" (a gold hero and a rust beast are painted on the shrine's two stones, and the Grimmaw looks up). EP31 opens Arc 7, History and Mythology. Do the same reply-and-pin on EP30 when EP31 is posted.
+
+### YouTube Shorts
+- **Title** (50/100 chars): `Make a Monster That People Worship (Worldbuilding)`
+- **Alternate title** (35 chars): `Why would anyone worship a monster?`
+- **Description:**
+
+> What if the creature everyone fears is also the source of their harvest?
+>
+> Meet the Grimmaw: it eats a sheep a moon. The lazy version treats it as just a monster and drives it off, and we ran it: ten years, no more lost sheep, and then the flocks ate the fields. No monster. No harvest.
+>
+> Fear and need share one scale. So the village makes offerings (a sheep each moon, so it never raids the pens), keeps its meadow holy, gives it the first sheaf of the harvest it guards, and lets keepers gather its shed plates for medicine. Run it again: still feared, still fed.
+>
+> Then the twist: the keepers. Whoever speaks for the monster speaks for everyone, so it's always hungry. Unless everyone watches it eat: an open rite.
+>
+> Worship isn't superstition. It's a deal with danger.
+>
+> What creature would your civilization worship despite its danger?
+>
+> Part 30 of 50. Follow for part 31: hero, or monster?
+>
+> Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 6: Creatures and Species (finale).
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyCreatures #WorldcraftShorts
+
+- **Pinned comment:** What creature would your civilization worship despite its danger? (Part 31: hero, or monster?)
+- **Upload settings:** Altered or synthetic content: Yes (synthetic narration and an AI-generated field-card sprite; the island, creature, people and shrine are drawn in code). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (315 chars): `They drove the monster off. Then the harvest died 🌾 We ran it: 10 years, 0 harvest. Then we fixed it ritual by ritual. Rule #5 is about who speaks for it. What creature would your civilization worship? Part 30/50 · follow for part 31 🗿 #Worldbuilding #FantasyWriting #WritingTips #FantasyCreatures #WorldcraftShorts`
+- **Pinned comment:** What creature would your civilization worship despite its danger?
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> What if the creature everyone fears is also the source of their harvest?
+>
+> Meet the Grimmaw: it eats a sheep a moon. The lazy version treats it as just a monster and drives it off, and we ran it: ten years, no more lost sheep, and then the flocks ate the fields. No monster. No harvest.
+>
+> Fear and need share one scale. So the village makes offerings (a sheep each moon, so it never raids the pens), keeps its meadow holy, gives it the first sheaf of the harvest it guards, and lets keepers gather its shed plates for medicine. Run it again: still feared, still fed.
+>
+> Then the twist: the keepers. Whoever speaks for the monster speaks for everyone, so it's always hungry. Unless everyone watches it eat: an open rite.
+>
+> Worship isn't superstition. It's a deal with danger.
+>
+> What creature would your civilization worship despite its danger?
+>
+> Part 30 of 50. Follow for part 31: hero, or monster?
+>
+> Worldcraft Shorts · Season 2: The World Engine.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyCreatures #WorldcraftShorts
+
+- **Pinned comment:** Which real-world danger would your fantasy culture turn into a god, and what would the tithe be?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> They worship what eats their sheep.
+>
+> What if the creature everyone fears is also the source of their harvest?
+>
+> Meet the Grimmaw: it eats a sheep a moon. The lazy version treats it as just a monster and drives it off, and we ran it: ten years, no more lost sheep, and then the flocks ate the fields. No monster. No harvest.
+>
+> Fear and need share one scale. So the village makes offerings (a sheep each moon, so it never raids the pens), keeps its meadow holy, gives it the first sheaf of the harvest it guards, and lets keepers gather its shed plates for medicine. Run it again: still feared, still fed.
+>
+> Then the twist: the keepers. Whoever speaks for the monster speaks for everyone, so it's always hungry. Unless everyone watches it eat: an open rite.
+>
+> Worship isn't superstition. It's a deal with danger.
+>
+> What creature would your civilization worship despite its danger?
+>
+> Part 30 of 50. Follow for part 31: hero, or monster?
+>
+> Worldcraft Shorts · Season 2
+>
+> #Worldbuilding #FantasyWriting #WritingTips #FantasyCreatures #WorldcraftShorts
+
+- **Hook check:** First 34 characters: 'They worship what eats their sheep.'
+- **Pinned comment:** Save the KEEP IT LEVEL card, then tell us: what creature would your civilization worship?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

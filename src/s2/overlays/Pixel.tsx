@@ -57,7 +57,14 @@ export const SPRITES: Record<string, {rows: string[]; colors: Record<string, str
 		rows: ['...F...F...F...', '...C...C...C...', '...C...C...C...', '.SSSSSSSSSSSSS.', '.SKKKKKKKKKKKS.', 'SSSSSSSSSSSSSSS', '.S...........S.', '.S...........S.'],
 		colors: {F: '#ffc96a', C: '#efe3c4', S: '#8f8c86', K: '#a9a49a'},
 	},
-	play: {rows: ['X....', 'XXX..', 'XXXXX', 'XXX..', 'X....'], colors: {X: 'currentColor'}},
+	// EP30: the ledger's weights (harvest, medicine; fear reuses `eye`) and the next-run stele (EP31: a painted standing stone)
+	sheaf: {rows: ['G.G.G', '.GGG.', 'GGGGG', '.BBB.', '..G..', '.G.G.', 'G...G'], colors: {G: '#e6c357', B: '#b98a4e'}},
+	vial: {rows: ['.CC.', '.KK.', 'K..K', 'KRRK', 'KRRK', '.KK.'], colors: {C: '#8a5a36', K: '#efe6d2', R: '#e0687f'}},
+	stele: {
+		rows: ['.SSSSS.', 'SSSSSSS', 'SSSGSSS', 'SGSGSGS', 'SSGGGSS', 'SSSGSSS', 'SSGSGSS', 'SSGSGSS', 'SSSSSSS', 'SSSSSSS', 'SSSSSSS', 'DDDDDDD'],
+		colors: {S: '#9b968c', G: '#f4c46e', D: '#6b5a48'},
+	},
+	play: {rows: ['X....','XXX..', 'XXXXX', 'XXX..', 'X....'], colors: {X: 'currentColor'}},
 	ffwd: {rows: ['X...X...', 'XX..XX..', 'XXX.XXX.', 'XX..XX..', 'X...X...'], colors: {X: 'currentColor'}},
 	rewind: {rows: ['...X...X', '..XX..XX', '.XXX.XXX', '..XX..XX', '...X...X'], colors: {X: 'currentColor'}},
 	lock: {rows: ['.XXX.', 'X...X', 'X...X', 'XXXXX', 'XX.XX', 'XXXXX'], colors: {X: 'currentColor'}},

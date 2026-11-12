@@ -46,12 +46,14 @@ const GREY = '#d9d6d0';
 const TUNICS = ['#8a5a3a', '#4f7a8c', '#7a8a4a', '#a0603c', '#5a6a9a', '#9a8a5a', '#6a8a6a', '#a87a4a', '#5a5a6a', '#8a4a4a'];
 
 /** One mortal. `age` 0..1 of their life (child -> adult -> elder); `royal` dresses them in violet with a circlet. */
-export const Person: React.FC<{age: number; seed: number; gen: number; gait: number; stride: number; royal?: boolean; tunic?: string}> = ({age, seed, gen, gait, stride, royal, tunic}) => {
+export const Person: React.FC<{age: number; seed: number; gen: number; gait: number; stride: number; royal?: boolean; tunic?: string; robe?: string}> = ({age, seed, gen, gait, stride, royal, tunic, robe}) => {
 	const skin = SKIN[Math.floor(hash2(seed, gen, 31) * SKIN.length)];
 	const hair0 = HAIR[Math.floor(hash2(seed, gen, 32) * HAIR.length)];
 	const grey = clamp((age - 0.62) / 0.25);
 	const hair = mix(hair0, GREY, grey);
-	const coat = royal ? VIOLET : (tunic ?? TUNICS[Math.floor(hash2(seed, gen, 33) * TUNICS.length)]);
+	// EP30+: `robe` turns the royal share into hooded keepers in that colour (no gold)
+	const hooded = royal && !!robe;
+	const coat = hooded ? robe! : royal ? VIOLET : (tunic ?? TUNICS[Math.floor(hash2(seed, gen, 33) * TUNICS.length)]);
 	const stoop = clamp((age - 0.8) / 0.2) * 0.22;
 	const swing = Math.sin(gait) * 0.5 * stride * (1 - stoop * 2);
 	const bob = Math.abs(Math.sin(gait)) * 0.04 * stride;
@@ -64,7 +66,8 @@ export const Person: React.FC<{age: number; seed: number; gen: number; gait: num
 			))}
 			<group position={[0, 0.62, 0]} rotation={[0, 0, -stoop]}>
 				<B s={[0.38, 0.62, 0.36]} p={[0, 0.3, 0]} c={coat} />
-				{royal && <B s={[0.06, 0.5, 0.2]} p={[0.19, 0.3, 0]} c={GOLD} o={false} />}
+				{royal && !hooded && <B s={[0.06, 0.5, 0.2]} p={[0.19, 0.3, 0]} c={GOLD} o={false} />}
+				{hooded && <B s={[0.4, 0.42, 0.38]} p={[0, -0.12, 0]} c={coat} />}
 				{[1, -1].map((side) => (
 					<group key={side} position={[0, 0.54, side * 0.24]} rotation={[0, 0, -side * swing * 0.8]}>
 						<B s={[0.11, 0.46, 0.11]} p={[0, -0.23, 0]} c={coat} />
@@ -76,7 +79,9 @@ export const Person: React.FC<{age: number; seed: number; gen: number; gait: num
 					<B s={[0.04, 0.05, 0.05]} p={[0.18, 0.04, -0.08]} c={'#14100c'} o={false} />
 					<B s={[0.38, 0.12, 0.38]} p={[-0.02, 0.2, 0]} c={hair} />
 					<B s={[0.12, 0.26, 0.36]} p={[-0.15, 0.04, 0]} c={hair} />
-					{royal && <B s={[0.4, 0.06, 0.4]} p={[0, 0.25, 0]} c={GOLD} o={false} />}
+					{royal && !hooded && <B s={[0.4, 0.06, 0.4]} p={[0, 0.25, 0]} c={GOLD} o={false} />}
+					{hooded && <B s={[0.42, 0.16, 0.42]} p={[-0.03, 0.22, 0]} c={coat} />}
+					{hooded && <B s={[0.16, 0.34, 0.42]} p={[-0.17, 0.02, 0]} c={coat} />}
 				</group>
 			</group>
 		</group>
@@ -159,6 +164,9 @@ export const PeopleLayer: React.FC<{world: World; island: Island; t: number; s: 
 	const royal = sample(pw.royal, t, 0);
 	const N = Math.ceil(count);
 	const nodes: React.ReactNode[] = [];
+	// EP30+: the crowd gathering in a ring (absent before: g = 0 changes nothing)
+	const ga = pw.gather;
+	const gat = ga ? sample(ga.keys, t, 0) : 0;
 	for (let i = 0; i < N; i++) {
 		const vis = clamp(count - i);
 		const {gen, age} = lifeAt(i, year, pw.life);
@@ -167,20 +175,30 @@ export const PeopleLayer: React.FC<{world: World; island: Island; t: number; s: 
 		const c = pw.centers[i % pw.centers.length];
 		const a0 = hash2(i, 1, 29) * Math.PI * 2;
 		const r0 = Math.sqrt(hash2(i, 2, 29)) * pw.spread;
-		const hx = c[0] + Math.cos(a0) * r0;
-		const hz = c[1] + Math.sin(a0) * r0;
+		let hx = c[0] + Math.cos(a0) * r0;
+		let hz = c[1] + Math.sin(a0) * r0;
+		let gi = 0;
+		if (ga && gat > 0) {
+			gi = clamp((gat - hash2(i, 5, 29) * 0.35) / 0.65);
+			gi = gi * gi * (3 - 2 * gi);
+			const ang = i * 2.39996;
+			const rr = ga.r * (0.75 + 0.5 * hash2(i, 6, 29));
+			hx += (ga.at[0] + Math.cos(ang) * rr - hx) * gi;
+			hz += (ga.at[1] + Math.sin(ang) * rr - hz) * gi;
+		}
 		const sp = 0.25 + hash2(i, 4, 29) * 0.15;
-		const x = hx + wander(s * sp, i * 3 + 1) * 1.2;
-		const z = hz + wander(s * sp, i * 3 + 2) * 1.2;
-		const x2 = hx + wander((s + 0.2) * sp, i * 3 + 1) * 1.2;
-		const z2 = hz + wander((s + 0.2) * sp, i * 3 + 2) * 1.2;
+		const wa = 1.2 * (1 - gi);
+		const x = hx + wander(s * sp, i * 3 + 1) * wa;
+		const z = hz + wander(s * sp, i * 3 + 2) * wa;
+		const x2 = hx + wander((s + 0.2) * sp, i * 3 + 1) * wa;
+		const z2 = hz + wander((s + 0.2) * sp, i * 3 + 2) * wa;
 		const col = island.columnAt(x, z);
 		if (!col || col.biome === 'water') continue;
-		const head = Math.atan2(-(z2 - z), x2 - x);
-		const moving = Math.hypot(x2 - x, z2 - z) > 0.02;
+		const moving = gi < 0.98 && Math.hypot(x2 - x, z2 - z) > 0.02;
+		const head = gi > 0.5 && ga ? Math.atan2(-(ga.at[1] - z), ga.at[0] - x) : Math.atan2(-(z2 - z), x2 - x);
 		nodes.push(
 			<group key={i} position={[x, island.heightAt(x, z), z]} rotation={[0, head, 0]} scale={sc}>
-				<Person age={age} seed={i} gen={gen} gait={s * 7 + i} stride={moving ? 1 : 0} royal={hash2(i, gen, 34) < royal} />
+				<Person age={age} seed={i} gen={gen} gait={s * 7 + i} stride={moving ? 1 : 0} royal={hash2(i, gen, 34) < royal} robe={pw.robe} />
 			</group>,
 		);
 	}
@@ -270,6 +288,106 @@ export const Offerings: React.FC<{x: number; z: number; r: number; island: Islan
 					</group>
 				);
 			})}
+		</group>
+	);
+};
+
+// ---------------------------------------------------------------- EP30: the shrine and the standing stones
+
+const STONE = '#9b968c';
+const STONE_D = '#8a8680';
+const MADDER = '#e0687f';
+const SHEAF = '#e3c27a';
+const SHEAF_D = '#b98a4e';
+const PLATE = '#cf7038';
+
+/** The tithe: one sheep (white wool, dark head and legs), standing. Faces +x. */
+const Sheep: React.FC = () => (
+	<group>
+		<B s={[0.56, 0.18, 0.34]} p={[0, 0.09, 0]} c={'#2b2622'} o={false} />
+		<B s={[0.84, 0.42, 0.58]} p={[0, 0.39, 0]} c={'#f3efe4'} />
+		<B s={[0.3, 0.3, 0.3]} p={[0.5, 0.46, 0]} c={'#24201d'} />
+	</group>
+);
+
+/**
+ * EP30's shrine to the Grimmaw: a stone platform and altar between two standing stones banded in madder, a candle ring
+ * (`lights`), and what the village lays before it: `tithe` sheep, `sheaves` of the first harvest and shed `plates`
+ * (medicine). Each count pops in one at a time; `rise` builds it up out of the ground; `paint` 0..2 paints a hero on one
+ * standing stone and a beast on the other (two tellings of the same story). Faces +x (towards the village).
+ */
+export const Shrine: React.FC<{x: number; z: number; face: number; r: number; island: Island; t: number; lights: number; tithe: number; sheaves: number; plates: number; rise: number; paint?: number}> = ({x, z, face, r, island, t, lights, tithe, sheaves, plates, rise, paint = 0}) => {
+	// `rise` 0..1: the shrine is built up out of the ground (0: no shrine at all)
+	if (rise <= 0.001) return null;
+	const y = island.heightAt(x, z) - (1 - rise) * 3.2;
+	const pop = (k: number) => {
+		const v = clamp(k);
+		return v < 1 ? 1 - (1 - v) ** 3 + Math.sin(v * Math.PI) * 0.15 : 1;
+	};
+	return (
+		<group>
+			<group position={[x, y, z]} rotation={[0, (face * Math.PI) / 180, 0]} scale={1.0}>
+				<B s={[2.6, 0.24, 2.2]} p={[0, 0.12, 0]} c={'#8f8c86'} />
+				<B s={[0.9, 0.62, 1.1]} p={[-0.2, 0.55, 0]} c={'#a9a49a'} />
+				<B s={[1.1, 0.12, 1.3]} p={[-0.2, 0.92, 0]} c={'#bdb6a8'} />
+				{[1, -1].map((side) => (
+					<group key={side} position={[-0.9, 0.24, side * 0.98]}>
+						<B s={[0.46, 2.3, 0.5]} p={[0, 1.15, 0]} c={side > 0 ? STONE : STONE_D} r={[side * 0.05, 0, 0.03]} />
+						<B s={[0.5, 0.22, 0.54]} p={[0, 1.75, 0]} c={MADDER} o={false} />
+						<B s={[0.5, 0.1, 0.54]} p={[0, 1.42, 0]} c={MADDER} o={false} />
+						{/* `paint` 0..2: a hero in gold on one stone, then a beast in rust on the other */}
+						{side > 0 ? <Painted kind="hero" color={'#f4c46e'} k={clamp(paint)} /> : <Painted kind="beast" color={'#d0603f'} k={clamp(paint - 1)} />}
+					</group>
+				))}
+				{Array.from({length: 4}, (_, k) => {
+					const v = pop(plates - k);
+					if (v <= 0.01) return null;
+					return (
+						<group key={`p${k}`} position={[-0.45 + k * 0.17, 1.02, -0.36 + k * 0.24]} rotation={[0, k * 0.7, 0.25]} scale={v}>
+							<B s={[0.22, 0.08, 0.3]} p={[0, 0, 0]} c={PLATE} />
+						</group>
+					);
+				})}
+				{Array.from({length: 6}, (_, k) => {
+					const v = pop(sheaves - k);
+					if (v <= 0.01) return null;
+					const zz = -0.75 + (k % 6) * 0.3;
+					return (
+						<group key={`s${k}`} position={[0.42, 0.24, zz]} rotation={[0, 0, -0.18]} scale={v}>
+							<B s={[0.22, 0.72, 0.22]} p={[0, 0.36, 0]} c={SHEAF} />
+							<B s={[0.26, 0.08, 0.26]} p={[0, 0.3, 0]} c={SHEAF_D} o={false} />
+						</group>
+					);
+				})}
+				{Array.from({length: 6}, (_, k) => {
+					const v = pop(tithe - k);
+					if (v <= 0.01) return null;
+					const zz = (k % 2 ? 1 : -1) * (0.45 + Math.floor(k / 2) * 0.9) - 0.0;
+					return (
+						<group key={`t${k}`} position={[1.55 + Math.floor(k / 2) * 0.35, 0.24, zz * 0.8]} rotation={[0, Math.PI, 0]} scale={v * 0.85}>
+							<Sheep />
+						</group>
+					);
+				})}
+			</group>
+			<Offerings x={x} z={z} r={r} island={island} t={t} level={lights} />
+		</group>
+	);
+};
+
+/** A figure painted on a standing stone's face (EP30's tease for EP31): `hero` (a person, arms raised) or a beast in
+ * profile; `k` 0..1 paints it in. Drawn just proud of the stone's +x face. */
+const Painted: React.FC<{kind: 'hero' | 'beast'; color: string; k: number}> = ({kind, color, k}) => {
+	if (k <= 0.01) return null;
+	const parts: [number, number, number, number, number?][] =
+		kind === 'hero'
+			? [[0, 1.98, 0.2, 0.2], [0, 1.58, 0.26, 0.52], [0.24, 1.94, 0.07, 0.36, 0.6], [-0.24, 1.94, 0.07, 0.36, -0.6], [0.09, 1.12, 0.08, 0.42], [-0.09, 1.12, 0.08, 0.42]]
+			: [[0, 1.58, 0.62, 0.26], [0.36, 1.72, 0.2, 0.18], [0.22, 1.36, 0.07, 0.24], [-0.22, 1.36, 0.07, 0.24], [-0.1, 1.76, 0.36, 0.08], [-0.38, 1.66, 0.14, 0.07]];
+	return (
+		<group position={[0.27, -0.5, 0]} scale={[1, 1.3, 1.25]}>
+			{parts.map(([z, y, w, h, r], i) => (
+				<B key={i} s={[0.03, h * k, w]} p={[0, y, z]} c={color} e o={false} r={[r ?? 0, 0, 0]} />
+			))}
 		</group>
 	);
 };

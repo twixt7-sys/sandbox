@@ -567,7 +567,54 @@ def style_reign(c: Ctx):
     c.theme("horns", vel=70, bars=(0, 2), legato=1.0)
 
 
-STYLES = {"hook": style_hook, "pulse": style_pulse, "drive": style_drive, "drop": style_drop, "void": style_void,
+# ---- EP30 colours (additive): a village that worships what it fears. Sections set `programs` (choir aahs on the
+# strings, voice oohs on the lead, kalimba on the marimba channel, pan flute on the lead for the rite) and later
+# sections set them back.
+
+def frame_drums(c: Ctx, vel=80, fill=True):
+    """A frame-drum pattern on the drum channel: low tom on 1, low conga pair, a high tom answer on 4 (no kit)."""
+    for b in range(0, c.n):
+        pos = b % 4
+        if pos == 0:
+            c.add("drums", b, 0.4, LTOM, vel)
+        if pos in (1, 2):
+            c.add("drums", b, 0.2, 64, int(vel * 0.7))
+            c.add("drums", b + 0.5, 0.2, 63, int(vel * 0.5))
+        if pos == 3 and fill:
+            c.add("drums", b, 0.3, HTOM, int(vel * 0.75))
+            c.add("drums", b + 0.5, 0.3, LTOM, int(vel * 0.6))
+
+
+def style_hymn(c: Ctx):
+    """The worshipped monster: a slow choir chord (the strings channel as choir aahs), a low cello drone on the tonic,
+    a deep frame drum on 1 and the theme's opening bars sung on voice oohs. Reverent, a little afraid."""
+    c.pad("strings", 50, 72, 58)
+    tpc, _ = key_info(c.key)
+    c.add("cello", 0, c.n + 0.2, in_range(tpc, 36, 47)[0], 62)
+    for b in range(0, c.n, 4):
+        c.add("drums", b, 0.5, LTOM, 70)
+        c.add("timp", b, 0.8, in_range(tpc, 40, 52)[0], 46)
+    c.theme("lead", vel=74, bars=(0, 2), legato=1.0)
+
+
+def style_rite(c: Ctx):
+    """Village life around the shrine: a kalimba ostinato, frame drums, a drone bass and the theme on pan flute.
+    `layer` 1-4 adds one family per ritual (frame drums, drone bass, the pan-flute theme, choir and glock)."""
+    layer = c.spec.get("layer", 4)
+    c.pad("strings", 52, 67, 46 if layer < 4 else 52, max_notes=3)
+    c.arp("marimba", 0.5, 60, 79, 104, pattern=(0, 2, 1, 3, 2, 1, 0, 2), accent=1.12)
+    c.arp("harp", 1.0, 55, 72, 52, pattern=(0, 2, 1))
+    if layer >= 2:
+        frame_drums(c, vel=96, fill=layer >= 3)
+    if layer >= 3:
+        c.root("bass", 33, 45, 76, every=2.0, dur=1.8)
+    if layer >= 4:
+        c.theme("lead", vel=92, bars=(0, 4))
+        for b, d, ch in c.chord_spans():
+            c.add("glock", b, 2.0, voicing(ch, 64, 76)[0], 52)
+
+
+STYLES = {"hymn": style_hymn, "rite": style_rite, "hook": style_hook, "pulse": style_pulse, "drive": style_drive, "drop": style_drop, "void": style_void,
           "mystery": style_mystery, "build": style_build, "twist": style_twist, "rest": style_rest, "frenzy": style_frenzy,
           "crash": style_crash, "swell": style_swell, "anthem": style_anthem, "outro": style_outro, "tease": style_tease,
           "soar": style_soar, "raid": style_raid, "stealth": style_stealth,

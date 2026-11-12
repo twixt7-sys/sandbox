@@ -21,7 +21,7 @@ export type CamKey = {
 export type Mood = 'day' | 'dusk' | 'gloom' | 'winter' | 'night' | 'golden';
 export type LightKey = {at: Cue; dur?: number; mood: Mood};
 export type PredKeyRaw = {at: Cue; x: number; z: number; state?: string; face?: number; dur?: number};
-export type PredatorRaw = {id: string; scale?: number; keys: PredKeyRaw[]};
+export type PredatorRaw = {id: string; scale?: number; keys: PredKeyRaw[]; adorn?: boolean};
 export type RingRaw = {x: number; z: number; r: number; on: Cue; off?: Cue; color?: string};
 
 export type WorldRaw = {
@@ -55,7 +55,10 @@ export type WorldRaw = {
 	 * look (`eyes`, `wet`, `glow`, each 0..1: night eyes, wet teal skin with fins instead of ears, glow spots). */
 	folk?: {count: RawKey[]; centers: [number, number][]; centersB?: [number, number][]; site?: RawKey[]; eyes?: RawKey[]; wet?: RawKey[]; glow?: RawKey[]; hero?: PredKeyRaw[]; spread?: number};
 	/** EP27+: small props, e.g. a cairn whose stones stack on their keys (`stones`). */
-	props?: {kind: 'cairn' | 'offerings'; x: number; z: number; stones?: RawKey[]; lights?: RawKey[]; r?: number}[];
+	props?: PropRaw[];
+	/** EP30+: crop fields (rectangles of voxel columns) whose crop grows from bare soil (0) through green (0.5) to a
+	 * golden harvest (1); a stripped field (grazed bare) is just `ripe` back at 0. */
+	fields?: {plots: {x: number; z: number; w: number; d: number}[]; ripe: RawKey[]};
 	/** EP29+: mortal people living on the clock (born, ageing, replaced each generation) and the Undying ruler. */
 	people?: {
 		count: RawKey[];
@@ -66,7 +69,29 @@ export type WorldRaw = {
 		queue?: {from: [number, number]; dir: [number, number]; count: RawKey[]; gap?: number};
 		consort?: {x: number; z: number; face?: number; show: RawKey[]; life?: number};
 		ruler?: {keys: PredKeyRaw[]; dais?: {x: number; z: number; face?: number}};
+		/** EP30+: the `royal` share wears this robe colour with a hood instead of violet and a circlet (keepers) */
+		robe?: string;
+		/** EP30+: 0..1 the crowd walks from its homes to a ring around `at` (radius `r`) and faces in (a gathering) */
+		gather?: {at: [number, number]; r?: number; keys: RawKey[]};
 	};
+};
+
+/** EP27+ small props. EP29: `offerings` (a candle ring). EP30: `shrine` (an altar between standing stones built up by
+ * `rise`; `lights` its candles, `tithe` sheep, `sheaves` and shed `plates` laid before it, `paint` 0..2 the figures
+ * painted on its stones). */
+export type PropRaw = {
+	kind: 'cairn' | 'offerings' | 'shrine';
+	x: number;
+	z: number;
+	stones?: RawKey[];
+	lights?: RawKey[];
+	r?: number;
+	face?: number;
+	tithe?: RawKey[];
+	sheaves?: RawKey[];
+	plates?: RawKey[];
+	rise?: RawKey[];
+	paint?: RawKey[];
 };
 
 export type DragonKeyRaw = {at: Cue; x: number; z: number; y?: number; state?: string; face?: number; dur?: number; ease?: string};
@@ -154,7 +179,7 @@ export type World = {
 	herd: Key[];
 	herdMax: number;
 	pred: Key[];
-	predators: {id: string; scale: number; keys: PredKey[]}[];
+	predators: {id: string; scale: number; keys: PredKey[]; adorn?: boolean}[];
 	graze: Key[];
 	snow: Key[];
 	forest: Key[];
@@ -176,7 +201,9 @@ export type World = {
 	/** every settlement, the first one included (EP28+: more than one) */
 	settlements: Settlement[];
 	folk: {count: Key[]; centers: [number, number][]; centersB: [number, number][] | null; site: Key[]; eyes: Key[]; wet: Key[]; glow: Key[]; hero: PredKey[]; spread: number} | null;
-	props: {kind: 'cairn' | 'offerings'; x: number; z: number; stones: Key[]; lights: Key[]; r: number}[];
+	props: {kind: PropRaw['kind']; x: number; z: number; stones: Key[]; lights: Key[]; r: number; face?: number; tithe?: Key[]; sheaves?: Key[]; plates?: Key[]; rise?: Key[]; paint?: Key[]}[];
+	/** EP30+ (null before) */
+	fields: {plots: {x: number; z: number; w: number; d: number}[]; ripe: Key[]} | null;
 	/** EP29+ (null before) */
 	people: {
 		count: Key[];
@@ -187,6 +214,8 @@ export type World = {
 		queue: {from: [number, number]; dir: [number, number]; count: Key[]; gap?: number} | null;
 		consort: {x: number; z: number; face?: number; show: Key[]; life: number} | null;
 		ruler: {keys: PredKey[]; dais?: {x: number; z: number; face?: number}} | null;
+		robe?: string;
+		gather?: {at: [number, number]; r: number; keys: Key[]};
 	} | null;
 };
 
@@ -203,6 +232,7 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 		id: p.id,
 		scale: p.scale ?? 1,
 		keys: p.keys.map((k) => ({t: cueTime(timing, k.at), x: k.x, z: k.z, state: k.state ?? 'idle', face: k.face, dur: k.dur ?? 0})).sort((a, b) => a.t - b.t),
+		...(p.adorn ? {adorn: true} : {}),
 	})),
 	graze: resolveKeys(timing, raw.layers?.graze),
 	snow: resolveKeys(timing, raw.layers?.snow),
@@ -240,7 +270,19 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 				spread: raw.folk.spread ?? 2.6,
 			}
 		: null,
-	props: (raw.props ?? []).map((p) => ({kind: p.kind, x: p.x, z: p.z, stones: resolveKeys(timing, p.stones), lights: resolveKeys(timing, p.lights), r: p.r ?? 2.2})),
+	props: (raw.props ?? []).map((p) => ({
+		kind: p.kind,
+		x: p.x,
+		z: p.z,
+		stones: resolveKeys(timing, p.stones),
+		lights: resolveKeys(timing, p.lights),
+		r: p.r ?? 2.2,
+		// EP30+ (absent before, so older episodes resolve exactly as they did)
+		...(p.kind === 'shrine'
+			? {face: p.face ?? 0, tithe: resolveKeys(timing, p.tithe), sheaves: resolveKeys(timing, p.sheaves), plates: resolveKeys(timing, p.plates), rise: resolveKeys(timing, p.rise), paint: resolveKeys(timing, p.paint)}
+			: {}),
+	})),
+	fields: raw.fields ? {plots: raw.fields.plots, ripe: resolveKeys(timing, raw.fields.ripe)} : null,
 	people: raw.people
 		? {
 				count: resolveKeys(timing, raw.people.count),
@@ -256,6 +298,8 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 							dais: raw.people.ruler.dais,
 						}
 					: null,
+				...(raw.people.robe ? {robe: raw.people.robe} : {}),
+				...(raw.people.gather ? {gather: {at: raw.people.gather.at, r: raw.people.gather.r ?? 3, keys: resolveKeys(timing, raw.people.gather.keys)}} : {}),
 			}
 		: null,
 	rings: (raw.layers?.rings ?? []).map((r) => ({x: r.x, z: r.z, r: r.r, on: cueTime(timing, r.on), off: r.off ? cueTime(timing, r.off) : Infinity, color: r.color ?? '#f4c46e'})),

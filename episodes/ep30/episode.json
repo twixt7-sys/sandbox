@@ -1,0 +1,4711 @@
+{
+ "id": "ep30",
+ "number": 30,
+ "season": 2,
+ "title": "Make a Monster That People Worship",
+ "lesson": "A worshipped monster isn't superstition: it's a deal a society makes with danger. When people depend on what they fear, they invent customs to keep the deal level (tithes, holy ground, first fruits, keepers), and then they need customs to keep the keepers honest.",
+ "format": {
+  "version": "s2",
+  "qa": {
+   "min": 55.0,
+   "max": 62.0
+  }
+ },
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.06
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.2,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "The same lab host, with a little awe in the hook. 'It's a monster, so drive it off' is the knowing setup. 'No monster. No harvest.' lands dry. 'Fear and need share one scale' is the thesis. The rules are crisp. 'Whoever speaks for it speaks for everyone' is quiet; 'An open rite' is the reveal. The comment ask is a genuine question."
+ },
+ "timing": {
+  "leadIn": 0.2,
+  "tail": 0.85,
+  "shotLead": 0.12
+ },
+ "captionY": 1238,
+ "captionsOff": [
+  {
+   "line": "L3",
+   "from": "it's"
+  },
+  {
+   "line": "L6",
+   "from": "No"
+  },
+  {
+   "line": "L7",
+   "from": "Fear",
+   "to": "Four"
+  },
+  {
+   "line": "L13",
+   "from": "Rule",
+   "to": "Whoever"
+  },
+  {
+   "line": "L14",
+   "from": "So",
+   "to": "Unless"
+  }
+ ],
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "What if the creature everyone fears is also the source of their harvest?",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "fears",
+    "harvest?"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "hook",
+   "text": "Meet the Grimmaw. It eats a sheep a moon.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "grimmaw.",
+    "sheep"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "setup",
+   "text": "The lazy version: it's a monster, so drive it off.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "lazy",
+    "monster,"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "setup",
+   "text": "Press run.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "run."
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "run1",
+   "text": "Ten years. No more lost sheep. Then the flocks eat the fields.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "lost",
+    "fields."
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "drop",
+   "text": "No monster. No harvest.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "monster.",
+    "harvest."
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "rehook",
+   "text": "Fear and need share one scale. Four rules level it. The fifth is the twist.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "scale.",
+    "twist."
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "offer",
+   "text": "One: offerings. A sheep each moon, so it never raids the pens.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "offerings.",
+    "never"
+   ]
+  },
+  {
+   "id": "L9",
+   "shot": "holy",
+   "text": "Two: holy ground. Nobody farms its meadow.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "holy",
+    "nobody"
+   ]
+  },
+  {
+   "id": "L10",
+   "shot": "harvest",
+   "text": "Three: harvest. It keeps grazers off the crops. It gets the first sheaf.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "grazers",
+    "first"
+   ]
+  },
+  {
+   "id": "L11",
+   "shot": "medicine",
+   "text": "Four: medicine. Keepers gather its shed plates for fevers.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "keepers",
+    "fevers."
+   ]
+  },
+  {
+   "id": "L12",
+   "shot": "run2",
+   "text": "Run it again. Ten years. Still feared. Still fed.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "feared.",
+    "fed."
+   ]
+  },
+  {
+   "id": "L13",
+   "shot": "twist",
+   "text": "Rule five? The keepers. Whoever speaks for it speaks for everyone.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "keepers.",
+    "everyone."
+   ]
+  },
+  {
+   "id": "L14",
+   "shot": "twist",
+   "text": "So it's always hungry. Unless everyone watches it eat.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "always",
+    "watches"
+   ]
+  },
+  {
+   "id": "L15",
+   "shot": "role",
+   "text": "An open rite. Nobody fakes its hunger.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "open",
+    "hunger."
+   ]
+  },
+  {
+   "id": "L16",
+   "shot": "lesson",
+   "text": "Worship isn't superstition. It's a deal with danger.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "superstition.",
+    "danger."
+   ]
+  },
+  {
+   "id": "L17",
+   "shot": "cta",
+   "text": "What creature would your civilization worship despite its danger?",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "worship",
+    "danger?"
+   ]
+  },
+  {
+   "id": "L18",
+   "shot": "next",
+   "text": "Part 30 of 50. Follow for part 31: hero, or monster?",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "follow",
+    "monster?"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "world",
+   "purpose": "Close EP29's loop (they pray to a monster) and stop the scroll on the question.",
+   "visual": "Golden hour, low among the villagers and looking up: the Grimmaw, garlanded in wheat and painted in madder, stands framed between the two madder-banded standing stones of its shrine (an altar, a candle ring, a tithe sheep, sheaves, shed plates), villagers before it. THEY FEAR IT. / IT FEEDS THEM? Then the field card: GRIMMAW \u00b7 WORSHIPPED BEAST \u00b7 TAKES: a sheep a moon.",
+   "camera": "Low, long lens (az -12, el 7, dist 40, fov 15), a slow 0.6\u00b0/s drift; the loop lands on the same frame.",
+   "layers": {
+    "foreground": "kinetic, field card",
+    "midground": "the Grimmaw over its shrine",
+    "background": "golden fields"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "THEY FEAR IT. / IT FEEDS THEM?",
+   "transition": "Madder block wipe into the lazy version.",
+   "music": "Hymn: choir, drone, frame drum; the theme on voice oohs.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "THEY FEAR IT.",
+       "size": 76
+      },
+      {
+       "text": "IT FEEDS THEM?",
+       "color": "#ef6f9c",
+       "size": 76
+      }
+     ],
+     "y": 452,
+     "size": 76,
+     "start": {
+      "shot": "hook"
+     },
+     "end": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.1
+     },
+     "preShow": true
+    },
+    {
+     "type": "sting",
+     "label": "WORLD ENGINE",
+     "run": "RUN 30 \u00b7 CREATURES",
+     "dur": 1.4,
+     "start": {
+      "shot": "hook"
+     },
+     "front": true
+    },
+    {
+     "type": "fieldCard",
+     "mode": "intro",
+     "y": 440,
+     "start": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "dietAt": {
+      "line": "L2",
+      "word": "eats"
+     },
+     "kicker": "FIELD CARD \u00b7 NO. 005",
+     "kind": "WORSHIPPED BEAST",
+     "name": "GRIMMAW",
+     "dietLabel": "TAKES",
+     "diet": "a sheep a moon",
+     "sprite": "ep30/grimmaw30_sprite.png",
+     "spriteW": 168,
+     "spriteH": 112
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "chime",
+     "at": {
+      "shot": "hook"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "shot": "hook",
+      "offset": 0.05
+     },
+     "gain": -17
+    },
+    {
+     "sound": "frameDrum",
+     "at": {
+      "line": "L1",
+      "word": "harvest?",
+      "offset": 0.05
+     },
+     "gain": -16
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.05
+     },
+     "gain": -18
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L2",
+      "word": "eats"
+     },
+     "gain": -20
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "setup",
+   "scene": "world",
+   "purpose": "The lazy version: it's a monster, so drive it off.",
+   "visual": "A madder block wipe: no shrine, no garland, a plain Grimmaw on its meadow; it calls, turns and is driven off the north-east edge. IT'S A MONSTER / DRIVE IT OFF. The ledger slides in under the world: HARVEST against FEAR and RAIDS, TIPPED. RUN.",
+   "camera": "Medium, low (el 10, dist 40, fov 22): the beast against the sky.",
+   "layers": {
+    "foreground": "kinetic, ledger, sim bar",
+    "midground": "the Grimmaw leaving",
+    "background": "the meadow"
+   },
+   "lighting": "Day.",
+   "onScreenText": "IT'S A MONSTER \u00b7 DRIVE IT OFF",
+   "transition": "Cut to the wide on 'run'.",
+   "music": "Rite, thin (kalimba).",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "dur": 0.34,
+     "color": "#3a1626"
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "IT'S A MONSTER",
+       "at": {
+        "line": "L3",
+        "word": "monster,"
+       },
+       "size": 70
+      },
+      {
+       "text": "DRIVE IT OFF",
+       "at": {
+        "line": "L3",
+        "word": "drive"
+       },
+       "color": "rust",
+       "size": 84
+      }
+     ],
+     "y": 470,
+     "size": 84,
+     "start": {
+      "line": "L3",
+      "word": "it's",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L4",
+      "word": "Press",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "ledger",
+     "y": 1352,
+     "start": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": 0.1
+     },
+     "end": {
+      "line": "L16",
+      "word": "Worship",
+      "offset": -0.3
+     },
+     "items": [
+      {
+       "side": "gift",
+       "icon": "sheaf",
+       "label": "HARVEST",
+       "w": 2,
+       "keys": [
+        [
+         {
+          "line": "L3",
+          "word": "lazy"
+         },
+         0.5
+        ],
+        [
+         {
+          "line": "L5",
+          "word": "Then"
+         },
+         0.5
+        ],
+        [
+         {
+          "line": "L5",
+          "word": "fields.",
+          "offset": 0.3
+         },
+         0
+        ],
+        [
+         {
+          "line": "L6",
+          "word": "harvest.",
+          "offset": 0.55
+         },
+         0
+        ],
+        [
+         {
+          "line": "L6",
+          "word": "harvest.",
+          "offset": 0.8
+         },
+         0.5,
+         "step"
+        ],
+        [
+         {
+          "line": "L10",
+          "word": "grazers",
+          "offset": -0.1
+         },
+         0.5
+        ],
+        [
+         {
+          "line": "L10",
+          "word": "crops.",
+          "offset": 0.2
+         },
+         1
+        ]
+       ]
+      },
+      {
+       "side": "gift",
+       "icon": "vial",
+       "label": "MEDICINE",
+       "w": 1,
+       "keys": [
+        [
+         {
+          "line": "L3",
+          "word": "lazy"
+         },
+         0
+        ],
+        [
+         {
+          "line": "L11",
+          "word": "plates",
+          "offset": -0.1
+         },
+         0
+        ],
+        [
+         {
+          "line": "L11",
+          "word": "plates",
+          "offset": 0.3
+         },
+         1
+        ]
+       ]
+      },
+      {
+       "side": "cost",
+       "icon": "eye",
+       "label": "FEAR",
+       "w": 2,
+       "keys": [
+        [
+         {
+          "line": "L3",
+          "word": "lazy"
+         },
+         1
+        ],
+        [
+         {
+          "line": "L5",
+          "word": "lost",
+          "offset": -0.1
+         },
+         1
+        ],
+        [
+         {
+          "line": "L5",
+          "word": "lost",
+          "offset": 0.3
+         },
+         0
+        ],
+        [
+         {
+          "line": "L6",
+          "word": "harvest.",
+          "offset": 0.55
+         },
+         0
+        ],
+        [
+         {
+          "line": "L6",
+          "word": "harvest.",
+          "offset": 0.8
+         },
+         1,
+         "step"
+        ],
+        [
+         {
+          "line": "L9",
+          "word": "ground.",
+          "offset": -0.1
+         },
+         1
+        ],
+        [
+         {
+          "line": "L9",
+          "word": "meadow.",
+          "offset": 0.1
+         },
+         0.5
+        ]
+       ]
+      },
+      {
+       "side": "cost",
+       "icon": "sheep",
+       "label": "RAIDS",
+       "key": "raids",
+       "w": 1
+      },
+      {
+       "side": "cost",
+       "icon": "sheep",
+       "label": "TITHE",
+       "key": "tithe",
+       "w": 1
+      }
+     ]
+    },
+    {
+     "type": "simBar",
+     "counters": [
+      {
+       "icon": "sheaf",
+       "label": "HARVEST",
+       "key": "harvest",
+       "color": "#e6c357",
+       "digits": 3
+      },
+      {
+       "icon": "sheep",
+       "label": "FLOCK",
+       "key": "herd",
+       "color": "parchment",
+       "digits": 3
+      }
+     ],
+     "compact": true,
+     "start": {
+      "line": "L4",
+      "word": "Press",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L16",
+      "word": "Worship",
+      "offset": -0.3
+     },
+     "runAt": [
+      {
+       "line": "L4",
+       "word": "run."
+      },
+      {
+       "line": "L12",
+       "word": "Run"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "gain": -15
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": 0.1
+     },
+     "gain": -18
+    },
+    {
+     "sound": "roar",
+     "at": {
+      "line": "L3",
+      "word": "monster,"
+     },
+     "gain": -16
+    },
+    {
+     "sound": "stompHit",
+     "at": {
+      "line": "L3",
+      "word": "monster,",
+      "offset": 0.1
+     },
+     "gain": -20
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L3",
+      "word": "drive"
+     },
+     "gain": -19
+    },
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L4",
+      "word": "run."
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L4",
+      "word": "run."
+     },
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "run1",
+   "scene": "world",
+   "purpose": "Run the lazy version: no monster, no harvest.",
+   "visual": "Whole Isle; YEAR 0\u219210; FLOCK 030\u2192150; the costs fall off the ledger ('no more lost sheep'), then the flocks spread over the fields and strip them bare: HARVEST 062\u2192000, the ledger EMPTY.",
+   "camera": "Wide (dist 196).",
+   "layers": {
+    "foreground": "sim bar, ledger, pin",
+    "midground": "the flock booming, the fields going bare",
+    "background": "island, seasons flickering"
+   },
+   "lighting": "Day, winters flickering.",
+   "onScreenText": "THE FLOCKS \u00b7 EAT THE FIELDS",
+   "transition": "Cut to the bare field.",
+   "music": "Drive.",
+   "graphics": [
+    {
+     "type": "pin",
+     "at": [
+      14.2,
+      3.6,
+      -7.6
+     ],
+     "kicker": "THE FLOCKS",
+     "text": "EAT THE FIELDS",
+     "color": "ember",
+     "lift": 80,
+     "size": 28,
+     "start": {
+      "line": "L5",
+      "word": "flocks",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L6",
+      "word": "No",
+      "offset": -0.25
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L5",
+      "word": "fields.",
+      "offset": 0.2
+     },
+     "gain": -22
+    },
+    {
+     "sound": "births",
+     "from": {
+      "line": "L5",
+      "word": "Then",
+      "offset": -0.2
+     },
+     "to": {
+      "line": "L5",
+      "word": "fields.",
+      "offset": 0.2
+     },
+     "gain": -23
+    },
+    {
+     "sound": "beamTip",
+     "at": {
+      "line": "L5",
+      "word": "lost"
+     },
+     "gain": -16
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L5",
+      "word": "flocks",
+      "offset": -0.1
+     },
+     "gain": -21
+    },
+    {
+     "sound": "beamTip",
+     "at": {
+      "line": "L5",
+      "word": "fields."
+     },
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "drop",
+   "scene": "world",
+   "purpose": "The punchline.",
+   "visual": "Low on the stripped field, sheep everywhere: 0 HARVEST \u00b7 NO MONSTER \u00b7 NO FIELDS.",
+   "camera": "Close on the field (el 8, dist 16).",
+   "layers": {
+    "foreground": "stamp",
+    "midground": "sheep on bare soil",
+    "background": "the empty meadow"
+   },
+   "lighting": "Gloom.",
+   "onScreenText": "0 HARVEST",
+   "transition": "Rewind + block wipe.",
+   "music": "Drop; a boom on 'harvest'.",
+   "graphics": [
+    {
+     "type": "stamp",
+     "text": "0 HARVEST",
+     "sub": "NO MONSTER \u00b7 NO FIELDS",
+     "color": "rust",
+     "y": 560,
+     "size": 70,
+     "start": {
+      "line": "L6",
+      "word": "harvest."
+     },
+     "end": {
+      "line": "L6",
+      "word": "harvest.",
+      "offset": 0.5
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L6",
+      "word": "harvest."
+     },
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "rehook",
+   "scene": "world",
+   "purpose": "Re-hook: the thesis, then four easy fixes and one locked.",
+   "visual": "REWIND: the Grimmaw back on its meadow; FEAR AND NEED / ONE SCALE; the checklist KEEP IT LEVEL, row 5 locked and blinking; the ledger TIPPED.",
+   "camera": "Low medium.",
+   "layers": {
+    "foreground": "kinetic, checklist, ledger",
+    "midground": "the Grimmaw",
+    "background": "the meadow"
+   },
+   "lighting": "Day.",
+   "onScreenText": "0/5",
+   "transition": "Cut on 'One'.",
+   "music": "Mystery; a riser into 'the twist'.",
+   "graphics": [
+    {
+     "type": "rewind",
+     "y": 620,
+     "start": {
+      "line": "L6",
+      "word": "harvest.",
+      "offset": 0.55
+     },
+     "end": {
+      "line": "L7",
+      "word": "Fear",
+      "offset": 0.3
+     }
+    },
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L6",
+      "word": "harvest.",
+      "offset": 0.53
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "FEAR AND NEED",
+       "at": {
+        "line": "L7",
+        "word": "Fear"
+       },
+       "size": 72
+      },
+      {
+       "text": "ONE SCALE",
+       "at": {
+        "line": "L7",
+        "word": "one"
+       },
+       "color": "#ef6f9c",
+       "size": 96
+      }
+     ],
+     "y": 470,
+     "size": 84,
+     "start": {
+      "line": "L7",
+      "word": "Fear",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "fieldCard",
+     "mode": "checklist",
+     "y": 448,
+     "rows": [
+      {
+       "n": 1,
+       "label": "TITHE",
+       "text": "a sheep each moon",
+       "at": {
+        "line": "L8",
+        "word": "offerings."
+       }
+      },
+      {
+       "n": 2,
+       "label": "HOLY",
+       "text": "its meadow stays wild",
+       "at": {
+        "line": "L9",
+        "word": "holy"
+       }
+      },
+      {
+       "n": 3,
+       "label": "HARVEST",
+       "text": "the first sheaf is its",
+       "at": {
+        "line": "L10",
+        "word": "harvest."
+       }
+      },
+      {
+       "n": 4,
+       "label": "MEDICINE",
+       "text": "keepers gather plates",
+       "at": {
+        "line": "L11",
+        "word": "medicine."
+       }
+      },
+      {
+       "n": 5,
+       "label": "WITNESS",
+       "text": "everyone watches it eat",
+       "at": {
+        "line": "L7",
+        "word": "level"
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L15",
+        "word": "rite."
+       }
+      }
+     ],
+     "start": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L16",
+      "word": "Worship",
+      "offset": -0.3
+     },
+     "kicker": "GRIMMAW \u00b7 THE DEAL",
+     "title": "KEEP IT LEVEL",
+     "blinkAt": {
+      "line": "L7",
+      "word": "twist."
+     },
+     "lockedText": "the twist",
+     "sprite": "ep30/grimmaw30_sprite.png",
+     "spriteW": 168,
+     "spriteH": 112,
+     "collapse": [
+      [
+       {
+        "line": "L9",
+        "word": "Two:",
+        "offset": -0.3
+       },
+       0
+      ],
+      [
+       {
+        "line": "L9",
+        "word": "Two:",
+        "offset": 0.05
+       },
+       1
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "fed.",
+        "offset": 0.4
+       },
+       1
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "fed.",
+        "offset": 0.7
+       },
+       0
+      ],
+      [
+       {
+        "line": "L13",
+        "word": "Rule",
+        "offset": -0.35
+       },
+       0
+      ],
+      [
+       {
+        "line": "L13",
+        "word": "Rule",
+        "offset": -0.05
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "rite.",
+        "offset": 0.2
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "rite.",
+        "offset": 0.5
+       },
+       0
+      ]
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L6",
+      "word": "harvest.",
+      "offset": 0.5
+     },
+     "gain": -11
+    },
+    {
+     "sound": "beamTip",
+     "at": {
+      "line": "L7",
+      "word": "scale."
+     },
+     "gain": -15
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "gain": -17
+    }
+   ]
+  },
+  {
+   "id": "offer",
+   "scene": "world",
+   "purpose": "Fix 1: a tithe instead of raids.",
+   "visual": "The shrine rises out of the ground; the Grimmaw comes to it, garlanded; one sheep at the altar; the candles light one by one; villagers gather. On the ledger RAIDS lift off and one TITHE hangs instead.",
+   "camera": "Low, long lens (el 6, dist 30, fov 20), a slow drift.",
+   "layers": {
+    "foreground": "checklist, ledger",
+    "midground": "shrine, Grimmaw, villagers",
+    "background": "meadow"
+   },
+   "lighting": "Day.",
+   "onScreenText": "1 TITHE \u00b7 a sheep each moon",
+   "transition": "Cut.",
+   "music": "Rite 1: kalimba alone; a frame drum on the tithe.",
+   "graphics": [],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L8",
+      "word": "offerings."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L8",
+      "word": "offerings."
+     },
+     "gain": -15
+    },
+    {
+     "sound": "frameDrum",
+     "at": {
+      "line": "L8",
+      "word": "sheep",
+      "offset": 0.1
+     },
+     "gain": -13
+    },
+    {
+     "sound": "beamTip",
+     "at": {
+      "line": "L8",
+      "word": "pens."
+     },
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "holy",
+   "scene": "world",
+   "purpose": "Fix 2: holy ground.",
+   "visual": "Medium-high: a madder ring is painted round the Grimmaw's meadow and the land outside dims: nobody farms it, nobody meets it by accident. FEAR halves on the ledger.",
+   "camera": "Medium-high (el 40, dist 70).",
+   "layers": {
+    "foreground": "checklist (folded), ledger",
+    "midground": "the madder ring",
+    "background": "the meadow"
+   },
+   "lighting": "Day.",
+   "onScreenText": "2 HOLY \u00b7 its meadow stays wild",
+   "transition": "Cut.",
+   "music": "Rite 2: frame drums join.",
+   "graphics": [],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L9",
+      "word": "holy"
+     },
+     "gain": -13
+    },
+    {
+     "sound": "ringOn",
+     "at": {
+      "line": "L9",
+      "word": "ground."
+     },
+     "gain": -14
+    },
+    {
+     "sound": "beamTip",
+     "at": {
+      "line": "L9",
+      "word": "meadow."
+     },
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "harvest",
+   "scene": "world",
+   "purpose": "Fix 3: the harvest is its gift.",
+   "visual": "Low across the fields toward the Grimmaw: the green crop ripens to gold; three sheaves are laid at the shrine. HARVEST doubles on the ledger: LEVEL.",
+   "camera": "Over the fields from the north (el 16, dist 44).",
+   "layers": {
+    "foreground": "checklist (folded), ledger",
+    "midground": "golden fields, sheaves",
+    "background": "the Grimmaw beyond"
+   },
+   "lighting": "Day.",
+   "onScreenText": "3 HARVEST \u00b7 the first sheaf is its",
+   "transition": "Cut.",
+   "music": "Rite 3: drone bass joins.",
+   "graphics": [],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L10",
+      "word": "harvest."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L10",
+      "word": "crops.",
+      "offset": -0.2
+     },
+     "gain": -16
+    },
+    {
+     "sound": "frameDrum",
+     "at": {
+      "line": "L10",
+      "word": "sheaf."
+     },
+     "gain": -14
+    },
+    {
+     "sound": "beamTip",
+     "at": {
+      "line": "L10",
+      "word": "crops.",
+      "offset": 0.2
+     },
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "medicine",
+   "scene": "world",
+   "purpose": "Fix 4: medicine, and the keepers.",
+   "visual": "Low at the shrine: hooded keepers in madder robes lay shed plates on the altar. MEDICINE joins the gifts: WORTH IT.",
+   "camera": "Low, long lens (el 18, dist 34, fov 20), a slow drift.",
+   "layers": {
+    "foreground": "checklist (folded), ledger",
+    "midground": "keepers, plates, altar",
+    "background": "the Grimmaw"
+   },
+   "lighting": "Day.",
+   "onScreenText": "4 MEDICINE \u00b7 keepers gather plates",
+   "transition": "Cut to the wide.",
+   "music": "Rite 4: the theme on pan flute, choir, glock.",
+   "graphics": [],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L11",
+      "word": "medicine."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L11",
+      "word": "plates"
+     },
+     "gain": -17
+    },
+    {
+     "sound": "beamTip",
+     "at": {
+      "line": "L11",
+      "word": "plates",
+      "offset": 0.3
+     },
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "run2",
+   "scene": "world",
+   "purpose": "Run with the rituals: feared and fed.",
+   "visual": "Whole Isle; YEAR 0\u219210; HARVEST holds at 100; the flock stays 030; FEARED & FED \u00b7 10 HARVESTS \u00b7 0 RAIDS.",
+   "camera": "Wide (dist 196).",
+   "layers": {
+    "foreground": "stamp, ledger",
+    "midground": "shrine, golden fields, the flock",
+    "background": "island"
+   },
+   "lighting": "Day.",
+   "onScreenText": "FEARED & FED",
+   "transition": "Cut to dusk.",
+   "music": "Drive with the theme; a stab and cymbal on 'fed'.",
+   "graphics": [
+    {
+     "type": "stamp",
+     "text": "FEARED & FED",
+     "sub": "10 HARVESTS \u00b7 0 RAIDS",
+     "color": "#ef6f9c",
+     "rotate": -4,
+     "y": 880,
+     "size": 80,
+     "start": {
+      "line": "L12",
+      "word": "fed."
+     },
+     "end": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -16
+    },
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L12",
+      "word": "fed.",
+      "offset": 0.2
+     },
+     "gain": -22
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L12",
+      "word": "fed."
+     },
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "twist",
+   "scene": "world",
+   "purpose": "The locked rule: the keepers.",
+   "visual": "Dusk, low on the shrine: RULE 5? THE KEEPERS. Madder robes spread through the crowd (whoever speaks for it speaks for everyone). IT'S ALWAYS / HUNGRY: the tithe piles up at the altar, one sheep after another, while the Grimmaw stands still; the ledger tips back: TIPPED.",
+   "camera": "Low, long lens (el 9, dist 30, fov 20).",
+   "layers": {
+    "foreground": "kinetic, ledger",
+    "midground": "keepers, the growing tithe",
+    "background": "dusk"
+   },
+   "lighting": "Dusk.",
+   "onScreenText": "RULE 5? THE KEEPERS \u00b7 IT'S ALWAYS HUNGRY",
+   "transition": "Cut.",
+   "music": "Twist, then hymn (choir, drone) under it.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "RULE 5?",
+       "at": {
+        "line": "L13",
+        "word": "Rule"
+       },
+       "color": "ember"
+      },
+      {
+       "text": "THE KEEPERS",
+       "at": {
+        "line": "L13",
+        "word": "keepers."
+       },
+       "color": "#ef6f9c",
+       "size": 88
+      }
+     ],
+     "size": 150,
+     "y": 600,
+     "start": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.02
+     },
+     "end": {
+      "line": "L13",
+      "word": "Whoever",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "IT'S ALWAYS",
+       "at": {
+        "line": "L14",
+        "word": "always"
+       },
+       "size": 76
+      },
+      {
+       "text": "HUNGRY",
+       "at": {
+        "line": "L14",
+        "word": "hungry."
+       },
+       "color": "rust",
+       "size": 110
+      }
+     ],
+     "size": 76,
+     "y": 600,
+     "start": {
+      "line": "L14",
+      "word": "So",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L14",
+      "word": "Unless",
+      "offset": -0.15
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "frameDrum",
+     "at": {
+      "line": "L13",
+      "word": "keepers."
+     },
+     "gain": -14
+    },
+    {
+     "sound": "morph",
+     "at": {
+      "line": "L13",
+      "word": "speaks"
+     },
+     "gain": -18
+    },
+    {
+     "sound": "births",
+     "from": {
+      "line": "L14",
+      "word": "always"
+     },
+     "to": {
+      "line": "L14",
+      "word": "hungry.",
+      "offset": 0.3
+     },
+     "gain": -24
+    },
+    {
+     "sound": "beamTip",
+     "at": {
+      "line": "L14",
+      "word": "hungry.",
+      "offset": 0.2
+     },
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "role",
+   "scene": "world",
+   "purpose": "Unlock rule 5: an open rite.",
+   "visual": "Night: the whole village walks to the shrine and rings it by candlelight; the extra tithe is gone, one sheep remains. THE OPEN RITE \u00b7 EVERYONE WATCHES; row 5 unlocks (WITNESS \u00b7 everyone watches it eat); the ledger: WORTH IT.",
+   "camera": "Medium (el 26, dist 34).",
+   "layers": {
+    "foreground": "pin, unlocked card, ledger, follow chip",
+    "midground": "the village in a ring",
+    "background": "night"
+   },
+   "lighting": "Night.",
+   "onScreenText": "THE OPEN RITE; 5/5",
+   "transition": "Card goes full.",
+   "music": "A big D-major hit on 'rite'.",
+   "graphics": [
+    {
+     "type": "pin",
+     "at": [
+      13.6,
+      6.0,
+      -1.2
+     ],
+     "kicker": "THE OPEN RITE",
+     "text": "EVERYONE WATCHES",
+     "color": "#ef6f9c",
+     "lift": 120,
+     "size": 28,
+     "start": {
+      "line": "L15",
+      "word": "open"
+     },
+     "end": {
+      "line": "L16",
+      "word": "Worship",
+      "offset": -0.35
+     }
+    },
+    {
+     "type": "followChip",
+     "start": {
+      "line": "L15",
+      "word": "hunger.",
+      "offset": 0.3
+     },
+     "end": {
+      "line": "L16",
+      "word": "danger.",
+      "offset": 0.1
+     },
+     "text": "FOLLOW",
+     "sub": "PART 30/50"
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L15",
+      "word": "open",
+      "offset": -0.1
+     },
+     "gain": -14
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L15",
+      "word": "rite."
+     },
+     "gain": -10
+    },
+    {
+     "sound": "beamTip",
+     "at": {
+      "line": "L15",
+      "word": "rite.",
+      "offset": 0.1
+     },
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "lesson",
+   "scene": "world",
+   "purpose": "The takeaway.",
+   "visual": "The full card (WHAT THE VILLAGE OWES, all five rows) with 'Worship is a deal with danger.' in serif italic.",
+   "camera": "Wide (dist 190), a slow drift.",
+   "layers": {
+    "foreground": "full card",
+    "midground": "the island at golden hour",
+    "background": "stars"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "Full card.",
+   "transition": "Block wipe to the end card.",
+   "music": "Anthem; the World Engine chime as the card lands.",
+   "graphics": [
+    {
+     "type": "fieldCard",
+     "mode": "full",
+     "y": 452,
+     "rows": [
+      {
+       "n": 1,
+       "label": "TITHE",
+       "text": "a sheep each moon",
+       "at": {
+        "line": "L16",
+        "word": "Worship",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 2,
+       "label": "HOLY",
+       "text": "its meadow stays wild",
+       "at": {
+        "line": "L16",
+        "word": "Worship",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 3,
+       "label": "HARVEST",
+       "text": "the first sheaf is its",
+       "at": {
+        "line": "L16",
+        "word": "Worship",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 4,
+       "label": "MEDICINE",
+       "text": "keepers gather plates",
+       "at": {
+        "line": "L16",
+        "word": "Worship",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 5,
+       "label": "WITNESS",
+       "text": "everyone watches it eat",
+       "at": {
+        "line": "L16",
+        "word": "Worship",
+        "offset": -0.3
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L16",
+        "word": "Worship",
+        "offset": -0.3
+       }
+      }
+     ],
+     "start": {
+      "line": "L16",
+      "word": "Worship",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.52
+     },
+     "kicker": "WHAT THE VILLAGE OWES",
+     "title": "THE GRIMMAW",
+     "sprite": "ep30/grimmaw30_sprite.png",
+     "spriteW": 168,
+     "spriteH": 112,
+     "subtitle": "Worship is a deal with danger.",
+     "subtitleAt": {
+      "line": "L16",
+      "word": "danger."
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L16",
+      "word": "Worship",
+      "offset": -0.8
+     },
+     "gain": -15
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L16",
+      "word": "Worship",
+      "offset": -0.3
+     },
+     "gain": -10
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L16",
+      "word": "Worship",
+      "offset": -0.3
+     },
+     "gain": -18
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "cta",
+   "scene": "world",
+   "purpose": "Comment CTA.",
+   "visual": "End card: logo, PART 30 / 50, title, a speech-bubble COMMENT panel.",
+   "camera": "Cut (under the block wipe) back to the hook pose, drifting into it.",
+   "layers": {
+    "foreground": "end card",
+    "midground": "the Isle",
+    "background": "void"
+   },
+   "lighting": "Golden hour (the loop frame).",
+   "onScreenText": "End card.",
+   "transition": "The card lifts on 'Part'.",
+   "music": "Outro.",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "endCardS2",
+     "start": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.12
+     },
+     "fadeOut": 0.3,
+     "kicker": "PART 30 / 50",
+     "title": "Make a Monster That People Worship",
+     "cta": "COMMENT",
+     "icon": "bubble",
+     "with": "What creature would your civilization worship despite its danger?"
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "gain": -21
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.1
+     },
+     "gain": -20
+    }
+   ],
+   "captions": false,
+   "hideLogoBug": true,
+   "hideLogoBugUntil": {
+    "line": "L18",
+    "word": "Part"
+   }
+  },
+  {
+   "id": "next",
+   "scene": "world",
+   "purpose": "Say the part number, ask for the follow with a reason (part 31), open the next loop.",
+   "visual": "The hook frame; PART 30/50; FOLLOW FOR PART 31; NEXT RUN 31 \u00b7 DISPUTED from a locked standing stone; in the world two villages raise two stones to the same figure, one painted gold, one rust, and the Grimmaw and the Queen look up; then the hook title returns.",
+   "camera": "The hook frame.",
+   "layers": {
+    "foreground": "progress bar, follow button, next-run card",
+    "midground": "the Grimmaw, the two stones",
+    "background": "the meadow"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "PART 30/50 \u00b7 FOLLOW FOR PART 31 \u00b7 NEXT RUN: DISPUTED \u00b7 HERO, OR MONSTER?",
+   "transition": "Loop to frame 0.",
+   "music": "Tease over a held A, a horn call, the engine chime on 'Follow'.",
+   "graphics": [
+    {
+     "type": "seasonBar",
+     "y": 350,
+     "part": 30,
+     "of": 50,
+     "start": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.1
+     },
+     "fillAt": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "fillDur": 0.6,
+     "ofAt": {
+      "line": "L18",
+      "word": "50."
+     },
+     "end": {
+      "line": "L18",
+      "word": "monster?",
+      "offset": 0.6
+     }
+    },
+    {
+     "type": "followButton",
+     "y": 556,
+     "start": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.6
+     },
+     "pressAt": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "end": {
+      "line": "L18",
+      "word": "monster?",
+      "offset": 0.6
+     },
+     "text": "FOLLOW",
+     "doneText": "FOLLOWING",
+     "sub": "FOR PART 31"
+    },
+    {
+     "type": "nextRun",
+     "y": 772,
+     "start": {
+      "line": "L18",
+      "word": "31:",
+      "offset": -0.1
+     },
+     "revealAt": {
+      "line": "L18",
+      "word": "hero,"
+     },
+     "end": {
+      "line": "L18",
+      "word": "monster?",
+      "offset": 0.6
+     },
+     "kicker": "NEXT RUN \u00b7 31",
+     "title": "DISPUTED",
+     "sub": "HERO, OR MONSTER?",
+     "sprite": "stele",
+     "spritePx": 9
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "THEY FEAR IT.",
+       "size": 76
+      },
+      {
+       "text": "IT FEEDS THEM?",
+       "color": "#ef6f9c",
+       "size": 76
+      }
+     ],
+     "y": 452,
+     "size": 76,
+     "start": {
+      "line": "L18",
+      "word": "monster?",
+      "offset": 0.92
+     },
+     "fadeIn": 0.35,
+     "preShow": true
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "to": {
+      "line": "L18",
+      "word": "Part",
+      "offset": 0.55
+     },
+     "gain": -22
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.5
+     },
+     "gain": -15
+    },
+    {
+     "sound": "followPress",
+     "at": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": 0.02
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L18",
+      "word": "31:",
+      "offset": -0.1
+     },
+     "gain": -18
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L18",
+      "word": "hero,"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L18",
+      "word": "hero,",
+      "offset": 0.1
+     },
+     "gain": -19
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L18",
+      "word": "monster?"
+     },
+     "gain": -19
+    },
+    {
+     "sound": "frameDrum",
+     "at": {
+      "line": "L18",
+      "word": "monster?",
+      "offset": 0.1
+     },
+     "gain": -19
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "end": true,
+      "offset": -0.54
+     },
+     "gain": -14
+    }
+   ],
+   "captions": false
+  }
+ ],
+ "world": {
+  "clock": {
+   "label": "YEAR",
+   "keys": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "run."
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "fields.",
+      "offset": 0.3
+     },
+     10,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "harvest.",
+      "offset": 0.55
+     },
+     10
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "harvest.",
+      "offset": 0.8
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": -0.05
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "fed.",
+      "offset": 0.2
+     },
+     10,
+     "linear"
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "Rule"
+     },
+     10
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "Rule",
+      "offset": 0.01
+     },
+     10,
+     "step"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     10
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.28
+     },
+     0,
+     "step"
+    ]
+   ]
+  },
+  "speed": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "run."
+    },
+    1
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.35
+    },
+    6
+   ],
+   [
+    {
+     "line": "L5",
+     "word": "fields.",
+     "offset": 0.3
+    },
+    6
+   ],
+   [
+    {
+     "line": "L6",
+     "word": "No"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.1
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.4
+    },
+    6
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "fed.",
+     "offset": 0.2
+    },
+    6
+   ],
+   [
+    {
+     "line": "L13",
+     "word": "Rule"
+    },
+    1
+   ]
+  ],
+  "camera": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "az": -12,
+    "el": 7,
+    "dist": 40,
+    "target": [
+     15.2,
+     6.3,
+     -2.1
+    ],
+    "fov": 15,
+    "dur": 1.4,
+    "drift": 0.6
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "az": -60,
+    "el": 10,
+    "dist": 40,
+    "target": [
+     17.0,
+     6.3,
+     -3.0
+    ],
+    "fov": 22,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.05
+    },
+    "az": 18,
+    "el": 48,
+    "dist": 196,
+    "target": [
+     4.0,
+     10.5,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 1.2,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "No",
+     "offset": -0.2
+    },
+    "az": -140,
+    "el": 8,
+    "dist": 16,
+    "target": [
+     14.2,
+     5.6,
+     -7.6
+    ],
+    "fov": 28,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "harvest.",
+     "offset": 0.55
+    },
+    "az": -60,
+    "el": 10,
+    "dist": 40,
+    "target": [
+     17.0,
+     6.3,
+     -3.0
+    ],
+    "fov": 22,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.15
+    },
+    "az": -40,
+    "el": 12,
+    "dist": 32,
+    "target": [
+     15.4,
+     6.0,
+     -2.0
+    ],
+    "fov": 20,
+    "dur": 0.01,
+    "drift": 0.6,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.15
+    },
+    "az": 40,
+    "el": 40,
+    "dist": 70,
+    "target": [
+     16.0,
+     5.0,
+     -3.0
+    ],
+    "fov": 24,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.15
+    },
+    "az": 160,
+    "el": 16,
+    "dist": 44,
+    "target": [
+     15.4,
+     5.4,
+     -6.0
+    ],
+    "fov": 22,
+    "dur": 0.01,
+    "drift": 0.6,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.15
+    },
+    "az": 25,
+    "el": 18,
+    "dist": 34,
+    "target": [
+     14.4,
+     5.6,
+     -1.4
+    ],
+    "fov": 20,
+    "dur": 0.01,
+    "drift": 0.6,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L12",
+     "word": "Run",
+     "offset": -0.05
+    },
+    "az": 20,
+    "el": 48,
+    "dist": 196,
+    "target": [
+     4.0,
+     10.5,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "az": -25,
+    "el": 9,
+    "dist": 30,
+    "target": [
+     14.8,
+     6.2,
+     -1.4
+    ],
+    "fov": 20,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L14",
+     "word": "Unless",
+     "offset": -0.1
+    },
+    "az": -60,
+    "el": 26,
+    "dist": 34,
+    "target": [
+     14.0,
+     5.4,
+     -1.4
+    ],
+    "fov": 26,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Worship",
+     "offset": -0.25
+    },
+    "az": 15,
+    "el": 34,
+    "dist": 190,
+    "target": [
+     2.0,
+     3.0,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 1.6,
+    "drift": 2.0
+   },
+   {
+    "at": {
+     "line": "L17",
+     "word": "What",
+     "offset": -0.3
+    },
+    "az": -17.3772,
+    "el": 7,
+    "dist": 40,
+    "target": [
+     15.2,
+     6.3,
+     -2.1
+    ],
+    "fov": 15,
+    "dur": 1.4,
+    "drift": 0.6,
+    "cut": true
+   }
+  ],
+  "light": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "mood": "golden"
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "mood": "day",
+    "dur": 0.4
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "No",
+     "offset": -0.2
+    },
+    "mood": "gloom",
+    "dur": 0.6
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "harvest.",
+     "offset": 0.55
+    },
+    "mood": "day",
+    "dur": 0.8
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.2
+    },
+    "mood": "dusk",
+    "dur": 0.6
+   },
+   {
+    "at": {
+     "line": "L14",
+     "word": "Unless",
+     "offset": -0.1
+    },
+    "mood": "night",
+    "dur": 0.4
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Worship",
+     "offset": -0.3
+    },
+    "mood": "golden",
+    "dur": 2.0
+   }
+  ],
+  "herd": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     30
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     30,
+     "step"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     30
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "fields.",
+      "offset": 0.2
+     },
+     150,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "harvest.",
+      "offset": 0.55
+     },
+     150
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "harvest.",
+      "offset": 0.8
+     },
+     30,
+     "step"
+    ]
+   ],
+   "max": 160,
+   "base": 30,
+   "centers": [
+    [
+     -7.2,
+     -1.4
+    ],
+    [
+     -6.0,
+     0.4
+    ],
+    [
+     14.6,
+     -11.0
+    ]
+   ],
+   "skin": "sheep"
+  },
+  "pred": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ]
+  ],
+  "predators": [
+   {
+    "id": "g1",
+    "scale": 1.3,
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 17.0,
+      "z": -3.0,
+      "state": "idle",
+      "face": 165
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      "x": 17.0,
+      "z": -3.0,
+      "state": "hidden"
+     },
+     {
+      "at": {
+       "line": "L8",
+       "word": "offerings.",
+       "offset": -0.2
+      },
+      "x": 17.0,
+      "z": -3.0,
+      "state": "idle",
+      "face": 165
+     },
+     {
+      "at": {
+       "line": "L8",
+       "word": "sheep",
+       "offset": 0.2
+      },
+      "x": 14.799999999999999,
+      "z": -1.7999999999999998,
+      "state": "idle",
+      "dur": 1.2
+     },
+     {
+      "at": {
+       "line": "L8",
+       "word": "pens."
+      },
+      "x": 17.0,
+      "z": -3.0,
+      "state": "idle",
+      "face": 165,
+      "dur": 1.4
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "monster?",
+       "offset": -0.15
+      },
+      "x": 17.0,
+      "z": -3.0,
+      "state": "alert",
+      "face": 165
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "monster?",
+       "offset": 1.1
+      },
+      "x": 17.0,
+      "z": -3.0,
+      "state": "idle",
+      "face": 165
+     }
+    ],
+    "adorn": true
+   },
+   {
+    "id": "g0",
+    "scale": 1.3,
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 17.0,
+      "z": -3.0,
+      "state": "hidden"
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      "x": 17.0,
+      "z": -3.0,
+      "state": "idle",
+      "face": 165
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "monster,"
+      },
+      "x": 17.0,
+      "z": -3.0,
+      "state": "roar",
+      "face": -150
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "drive"
+      },
+      "x": 17.0,
+      "z": -3.0,
+      "state": "idle",
+      "face": 60
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "off."
+      },
+      "x": 17.6,
+      "z": -9.6,
+      "state": "idle",
+      "dur": 1.6
+     },
+     {
+      "at": {
+       "line": "L4",
+       "word": "run.",
+       "offset": 0.2
+      },
+      "x": 17.6,
+      "z": -9.6,
+      "state": "despawn"
+     },
+     {
+      "at": {
+       "line": "L6",
+       "word": "harvest.",
+       "offset": 0.55
+      },
+      "x": 17.0,
+      "z": -3.0,
+      "state": "appear",
+      "face": 165
+     },
+     {
+      "at": {
+       "line": "L7",
+       "word": "Fear"
+      },
+      "x": 17.0,
+      "z": -3.0,
+      "state": "idle",
+      "face": 165
+     },
+     {
+      "at": {
+       "line": "L8",
+       "word": "offerings.",
+       "offset": -0.2
+      },
+      "x": 17.0,
+      "z": -3.0,
+      "state": "hidden"
+     }
+    ]
+   }
+  ],
+  "series": {
+   "harvest": [
+    [
+     {
+      "shot": "hook"
+     },
+     100
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     62,
+     "step"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Then"
+     },
+     62
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "fields.",
+      "offset": 0.4
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "harvest.",
+      "offset": 0.55
+     },
+     0
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "harvest.",
+      "offset": 0.8
+     },
+     62,
+     "step"
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "grazers",
+      "offset": -0.1
+     },
+     62
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "crops.",
+      "offset": 0.3
+     },
+     100
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     100
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.28
+     },
+     100,
+     "step"
+    ]
+   ],
+   "tithe": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "sheep",
+      "offset": -0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "sheep",
+      "offset": 0.3
+     },
+     1,
+     "out"
+    ],
+    [
+     {
+      "line": "L14",
+      "word": "always",
+      "offset": -0.1
+     },
+     1
+    ],
+    [
+     {
+      "line": "L14",
+      "word": "hungry.",
+      "offset": 0.3
+     },
+     5,
+     "linear"
+    ],
+    [
+     {
+      "line": "L14",
+      "word": "watches",
+      "offset": -0.1
+     },
+     5
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "rite."
+     },
+     1
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     1
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.28
+     },
+     1,
+     "step"
+    ]
+   ],
+   "tradeH": [
+    [
+     {
+      "shot": "hook"
+     },
+     4
+    ]
+   ],
+   "raids": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     2,
+     "step"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "lost",
+      "offset": -0.1
+     },
+     2
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "lost",
+      "offset": 0.3
+     },
+     0
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "harvest.",
+      "offset": 0.55
+     },
+     0
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "harvest.",
+      "offset": 0.8
+     },
+     2,
+     "step"
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "raids",
+      "offset": -0.1
+     },
+     2
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "pens.",
+      "offset": 0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     0
+    ]
+   ]
+  },
+  "settlement": {
+   "buildings": [
+    {
+     "kind": "hall",
+     "a": [
+      -3.6,
+      -4.6
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -1.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -4.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -1.0,
+      -5.8
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -5.6,
+      -0.9
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -3.4,
+      -0.7
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      0.4,
+      -4.2
+     ],
+     "face": 0
+    }
+   ],
+   "roof": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "pens": [
+    {
+     "a": [
+      -6.4,
+      -1.4
+     ],
+     "r": 1.6
+    }
+   ],
+   "cover": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "roads": {
+    "b": [
+     [
+      -3.4,
+      -1.6
+     ],
+     [
+      -5.6,
+      2.0
+     ],
+     [
+      -8.2,
+      6.0
+     ],
+     [
+      -11.0,
+      10.0
+     ],
+     [
+      -13.0,
+      14.0
+     ],
+     [
+      -14.6,
+      17.0
+     ]
+    ]
+   },
+   "route": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "tradeKey": "tradeH",
+   "lanterns": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ]
+   ],
+   "tower": {
+    "x": -6.4,
+    "z": -5.6,
+    "h": 6.0,
+    "keys": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   }
+  },
+  "settlements": [
+   {
+    "buildings": [
+     {
+      "kind": "greathall",
+      "a": [
+       6.0,
+       4.6
+      ],
+      "b": [
+       6.0,
+       4.6
+      ],
+      "stiltsB": 1.6,
+      "face": 0
+     }
+    ],
+    "place": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "open": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "glow": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "roof": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "pens": []
+   }
+  ],
+  "folk": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     9
+    ]
+   ],
+   "centers": [
+    [
+     6.0,
+     4.6
+    ]
+   ],
+   "spread": 2.0,
+   "site": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ]
+   ],
+   "eyes": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "wet": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "glow": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "hero": []
+  },
+  "people": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     20
+    ]
+   ],
+   "centers": [
+    [
+     11.0,
+     -0.6
+    ],
+    [
+     18.4,
+     1.8
+    ],
+    [
+     12.6,
+     3.2
+    ]
+   ],
+   "spread": 2.0,
+   "life": 70,
+   "royal": [
+    [
+     {
+      "shot": "hook"
+     },
+     0.14
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "Keepers",
+      "offset": -0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "plates"
+     },
+     0.14
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "keepers.",
+      "offset": -0.1
+     },
+     0.14
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "everyone.",
+      "offset": 0.2
+     },
+     0.6
+    ],
+    [
+     {
+      "line": "L14",
+      "word": "Unless"
+     },
+     0.6
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "rite.",
+      "offset": 0.2
+     },
+     0.14
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     0.14
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.28
+     },
+     0.14,
+     "step"
+    ]
+   ],
+   "robe": "#b84a72",
+   "gather": {
+    "at": [
+     13.6,
+     -1.2
+    ],
+    "r": 2.8,
+    "keys": [
+     [
+      {
+       "shot": "hook"
+      },
+      0.4
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "offerings."
+      },
+      0
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "pens."
+      },
+      0.4
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "Unless"
+      },
+      0.4
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "eat.",
+       "offset": 0.3
+      },
+      1.0
+     ],
+     [
+      {
+       "line": "L16",
+       "word": "Worship",
+       "offset": -0.3
+      },
+      1.0
+     ],
+     [
+      {
+       "line": "L16",
+       "word": "danger."
+      },
+      0.4
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0.4
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.28
+      },
+      0.4,
+      "step"
+     ]
+    ]
+   },
+   "ruler": {
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "idle",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "monster?"
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "alert",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "monster?",
+       "offset": 1.2
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "idle",
+      "face": 0
+     }
+    ],
+    "dais": {
+     "x": 9.4,
+     "z": -2.2,
+     "face": 0
+    }
+   }
+  },
+  "fields": {
+   "plots": [
+    {
+     "x": 14.2,
+     "z": -7.6,
+     "w": 4.0,
+     "d": 3.0
+    },
+    {
+     "x": 17.8,
+     "z": -8.2,
+     "w": 3.0,
+     "d": 3.0
+    },
+    {
+     "x": 11.8,
+     "z": -7.8,
+     "w": 2.5,
+     "d": 2.5
+    }
+   ],
+   "ripe": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0.62,
+     "step"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Then"
+     },
+     0.62
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "fields.",
+      "offset": 0.4
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "harvest.",
+      "offset": 0.55
+     },
+     0
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "harvest.",
+      "offset": 0.8
+     },
+     0.62,
+     "step"
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "grazers",
+      "offset": -0.1
+     },
+     0.62
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "crops.",
+      "offset": 0.3
+     },
+     1.0
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     1.0
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.28
+     },
+     1.0,
+     "step"
+    ]
+   ]
+  },
+  "props": [
+   {
+    "kind": "cairn",
+    "x": 8.95,
+    "z": -5.38,
+    "stones": [
+     [
+      {
+       "shot": "hook"
+      },
+      3
+     ]
+    ]
+   },
+   {
+    "kind": "shrine",
+    "x": 13.6,
+    "z": -1.2,
+    "face": -100,
+    "r": 2.2,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "offerings.",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "offerings.",
+       "offset": 0.6
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "lights": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "offerings.",
+       "offset": 0.4
+      },
+      0
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "pens."
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "Unless"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "Unless",
+       "offset": 0.01
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "tithe": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "sheep",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "sheep",
+       "offset": 0.3
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "always",
+       "offset": -0.1
+      },
+      1
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "hungry.",
+       "offset": 0.3
+      },
+      5,
+      "linear"
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "watches",
+       "offset": -0.1
+      },
+      5
+     ],
+     [
+      {
+       "line": "L15",
+       "word": "rite."
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.28
+      },
+      1,
+      "step"
+     ]
+    ],
+    "sheaves": [
+     [
+      {
+       "shot": "hook"
+      },
+      3
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "first",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "sheaf.",
+       "offset": 0.5
+      },
+      3,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      3
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.28
+      },
+      3,
+      "step"
+     ]
+    ],
+    "plates": [
+     [
+      {
+       "shot": "hook"
+      },
+      2
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L11",
+       "word": "plates",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L11",
+       "word": "fevers.",
+       "offset": 0.2
+      },
+      3,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      3
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.28
+      },
+      2,
+      "step"
+     ]
+    ],
+    "paint": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "hero,",
+       "offset": -0.05
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "hero,",
+       "offset": 0.5
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "monster?",
+       "offset": -0.05
+      },
+      1
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "monster?",
+       "offset": 0.5
+      },
+      2,
+      "out"
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "monster?",
+       "offset": 1.1
+      },
+      2
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "monster?",
+       "offset": 1.5
+      },
+      0
+     ]
+    ]
+   }
+  ],
+  "clearTrees": [
+   [
+    9.4,
+    -2.2,
+    2.8
+   ],
+   [
+    13.6,
+    -1.2,
+    2.8
+   ],
+   [
+    17.0,
+    -3.0,
+    2.8
+   ],
+   [
+    11.0,
+    -0.6,
+    2.8
+   ],
+   [
+    18.4,
+    1.8,
+    2.8
+   ],
+   [
+    12.6,
+    3.2,
+    2.8
+   ],
+   [
+    12.2,
+    0.0,
+    4.6
+   ]
+  ],
+  "layers": {
+   "snow": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Ten"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Ten",
+      "offset": 0.193
+     },
+     0.5,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Ten",
+      "offset": 0.44
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Ten",
+      "offset": 0.55
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Ten",
+      "offset": 0.743
+     },
+     0.5,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Ten",
+      "offset": 0.99
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Ten",
+      "offset": 1.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Ten",
+      "offset": 1.292
+     },
+     0.5,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Ten",
+      "offset": 1.54
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Ten",
+      "offset": 1.65
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Ten",
+      "offset": 1.843
+     },
+     0.5,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Ten",
+      "offset": 2.09
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Ten",
+      "offset": 2.2
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Ten",
+      "offset": 2.393
+     },
+     0.5,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Ten",
+      "offset": 2.64
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Ten",
+      "offset": 2.75
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Ten",
+      "offset": 2.942
+     },
+     0.5,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Ten",
+      "offset": 3.19
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Ten",
+      "offset": -0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Ten",
+      "offset": 0.092
+     },
+     0.5,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Ten",
+      "offset": 0.34
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Ten",
+      "offset": 0.45
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Ten",
+      "offset": 0.643
+     },
+     0.5,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Ten",
+      "offset": 0.89
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Ten",
+      "offset": 1.0
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Ten",
+      "offset": 1.192
+     },
+     0.5,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Ten",
+      "offset": 1.44
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Ten",
+      "offset": 1.55
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Ten",
+      "offset": 1.743
+     },
+     0.5,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Ten",
+      "offset": 1.99
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "Rule"
+     },
+     0
+    ]
+   ],
+   "graze": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Then",
+      "offset": -0.4
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "fields.",
+      "offset": 0.4
+     },
+     0.85,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "harvest.",
+      "offset": 0.55
+     },
+     0.85
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "harvest.",
+      "offset": 0.8
+     },
+     0,
+     "step"
+    ]
+   ],
+   "ripple": [
+    {
+     "shot": "hook",
+     "offset": 0.05
+    },
+    {
+     "line": "L4",
+     "word": "run."
+    },
+    {
+     "line": "L12",
+     "word": "Run"
+    }
+   ],
+   "rings": [
+    {
+     "x": 18.0,
+     "z": -2.6,
+     "r": 3.6,
+     "on": {
+      "line": "L9",
+      "word": "ground."
+     },
+     "off": {
+      "line": "L10",
+      "word": "Three:",
+      "offset": -0.2
+     },
+     "color": "#ef6f9c"
+    }
+   ]
+  },
+  "ambient": {
+   "birds": 9,
+   "motes": 40,
+   "glints": true
+  },
+  "simLoop": {
+   "line": "L17",
+   "word": "What",
+   "offset": -0.3
+  }
+ },
+ "music": {
+  "engine": "s2-score",
+  "key": "D minor, resolving to D major",
+  "bpm": 92,
+  "sections": [
+   {
+    "from": {
+     "shot": "hook"
+    },
+    "style": "hymn",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "programs": {
+     "strings": 52,
+     "lead": 53
+    }
+   },
+   {
+    "from": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "style": "rite",
+    "chords": [
+     "Dm",
+     "Bb",
+     "F",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 1,
+    "programs": {
+     "marimba": 108,
+     "lead": 75,
+     "strings": 52
+    }
+   },
+   {
+    "from": {
+     "line": "L4",
+     "word": "run."
+    },
+    "style": "drive",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "intensity": 0.85,
+    "programs": {
+     "marimba": 12,
+     "strings": 48,
+     "lead": 73
+    }
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "No",
+     "offset": -0.2
+    },
+    "style": "drop",
+    "chords": [
+     "Dm"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 8
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "harvest.",
+     "offset": 0.5
+    },
+    "style": "mystery",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "A"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 2
+   },
+   {
+    "from": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.1
+    },
+    "style": "rite",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 1,
+    "programs": {
+     "marimba": 108,
+     "lead": 75,
+     "strings": 52
+    }
+   },
+   {
+    "from": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.1
+    },
+    "style": "rite",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 2
+   },
+   {
+    "from": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.1
+    },
+    "style": "rite",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 3
+   },
+   {
+    "from": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.1
+    },
+    "style": "rite",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 4
+   },
+   {
+    "from": {
+     "line": "L12",
+     "word": "Run"
+    },
+    "style": "drive",
+    "chords": [
+     "F",
+     "C",
+     "Bb",
+     "F"
+    ],
+    "key": "F major",
+    "intensity": 1.0,
+    "theme": true,
+    "programs": {
+     "marimba": 12,
+     "strings": 48,
+     "lead": 73
+    }
+   },
+   {
+    "from": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.05
+    },
+    "style": "twist",
+    "chords": [
+     "A7b9"
+    ],
+    "key": "D minor"
+   },
+   {
+    "from": {
+     "line": "L13",
+     "word": "Whoever",
+     "offset": -0.1
+    },
+    "style": "hymn",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 2,
+    "programs": {
+     "strings": 52,
+     "lead": 53
+    }
+   },
+   {
+    "from": {
+     "line": "L15",
+     "word": "open",
+     "offset": -0.05
+    },
+    "style": "anthem",
+    "chords": [
+     "D",
+     "G",
+     "Bm",
+     "A"
+    ],
+    "key": "D major",
+    "programs": {
+     "marimba": 12,
+     "strings": 48,
+     "lead": 73
+    }
+   },
+   {
+    "from": {
+     "line": "L17",
+     "word": "What",
+     "offset": -0.2
+    },
+    "style": "outro",
+    "chords": [
+     "G",
+     "D"
+    ],
+    "key": "D major"
+   },
+   {
+    "from": {
+     "line": "L18",
+     "word": "Part",
+     "offset": -0.1
+    },
+    "style": "tease",
+    "chords": [
+     "A5"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 32
+   }
+  ],
+  "accents": [
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L1",
+     "word": "harvest?"
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L6",
+     "word": "harvest."
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "riser",
+    "at": {
+     "line": "L7",
+     "word": "twist."
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "stab",
+    "at": {
+     "line": "L12",
+     "word": "fed."
+    },
+    "chord": "F"
+   },
+   {
+    "kind": "cymbal",
+    "at": {
+     "line": "L12",
+     "word": "fed."
+    }
+   },
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L15",
+     "word": "rite."
+    },
+    "chord": "D"
+   },
+   {
+    "kind": "call",
+    "at": {
+     "line": "L18",
+     "word": "hero,"
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "roll",
+    "at": {
+     "end": true,
+     "offset": -0.05
+    },
+    "chord": "A"
+   }
+  ],
+  "fadeOut": {
+   "fromEnd": 0.08
+  },
+  "gain": 0.55
+ },
+ "mix": {
+  "musicLufs": -25.0,
+  "duckDb": -8.0,
+  "sfxLufs": -29.0,
+  "voiceFx": true
+ },
+ "metadata": {
+  "youtube": {
+   "title": "Make a Monster That People Worship (Worldbuilding)",
+   "titleAlternate": "Why would anyone worship a monster?",
+   "description": "What if the creature everyone fears is also the source of their harvest?\n\nMeet the Grimmaw: it eats a sheep a moon. The lazy version treats it as just a monster and drives it off, and we ran it: ten years, no more lost sheep, and then the flocks ate the fields. No monster. No harvest.\n\nFear and need share one scale. So the village makes offerings (a sheep each moon, so it never raids the pens), keeps its meadow holy, gives it the first sheaf of the harvest it guards, and lets keepers gather its shed plates for medicine. Run it again: still feared, still fed.\n\nThen the twist: the keepers. Whoever speaks for the monster speaks for everyone, so it's always hungry. Unless everyone watches it eat: an open rite.\n\nWorship isn't superstition. It's a deal with danger.\n\nWhat creature would your civilization worship despite its danger?\n\nPart 30 of 50. Follow for part 31: hero, or monster?\n\nWorldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 6: Creatures and Species (finale).\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyCreatures #WorldcraftShorts",
+   "pinnedComment": "What creature would your civilization worship despite its danger? (Part 31: hero, or monster?)",
+   "uploadSettings": "Altered or synthetic content: Yes (synthetic narration and an AI-generated field-card sprite; the island, creature, people and shrine are drawn in code). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "They drove the monster off. Then the harvest died \ud83c\udf3e We ran it: 10 years, 0 harvest. Then we fixed it ritual by ritual. Rule #5 is about who speaks for it. What creature would your civilization worship? Part 30/50 \u00b7 follow for part 31 \ud83d\uddff #Worldbuilding #FantasyWriting #WritingTips #FantasyCreatures #WorldcraftShorts",
+   "pinnedComment": "What creature would your civilization worship despite its danger?",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "What if the creature everyone fears is also the source of their harvest?\n\nMeet the Grimmaw: it eats a sheep a moon. The lazy version treats it as just a monster and drives it off, and we ran it: ten years, no more lost sheep, and then the flocks ate the fields. No monster. No harvest.\n\nFear and need share one scale. So the village makes offerings (a sheep each moon, so it never raids the pens), keeps its meadow holy, gives it the first sheaf of the harvest it guards, and lets keepers gather its shed plates for medicine. Run it again: still feared, still fed.\n\nThen the twist: the keepers. Whoever speaks for the monster speaks for everyone, so it's always hungry. Unless everyone watches it eat: an open rite.\n\nWorship isn't superstition. It's a deal with danger.\n\nWhat creature would your civilization worship despite its danger?\n\nPart 30 of 50. Follow for part 31: hero, or monster?\n\nWorldcraft Shorts \u00b7 Season 2: The World Engine.\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyCreatures #WorldcraftShorts",
+   "pinnedComment": "Which real-world danger would your fantasy culture turn into a god, and what would the tithe be?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "They worship what eats their sheep.\n\nWhat if the creature everyone fears is also the source of their harvest?\n\nMeet the Grimmaw: it eats a sheep a moon. The lazy version treats it as just a monster and drives it off, and we ran it: ten years, no more lost sheep, and then the flocks ate the fields. No monster. No harvest.\n\nFear and need share one scale. So the village makes offerings (a sheep each moon, so it never raids the pens), keeps its meadow holy, gives it the first sheaf of the harvest it guards, and lets keepers gather its shed plates for medicine. Run it again: still feared, still fed.\n\nThen the twist: the keepers. Whoever speaks for the monster speaks for everyone, so it's always hungry. Unless everyone watches it eat: an open rite.\n\nWorship isn't superstition. It's a deal with danger.\n\nWhat creature would your civilization worship despite its danger?\n\nPart 30 of 50. Follow for part 31: hero, or monster?\n\nWorldcraft Shorts \u00b7 Season 2\n\n#Worldbuilding #FantasyWriting #WritingTips #FantasyCreatures #WorldcraftShorts",
+   "hookCheck": "First 34 characters: 'They worship what eats their sheep.'",
+   "pinnedComment": "Save the KEEP IT LEVEL card, then tell us: what creature would your civilization worship?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  }
+ }
+}

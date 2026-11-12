@@ -11,7 +11,7 @@ import {cameraAt, dragonAt, herdCount, moodAt, predatorAt, simTime, World} from 
 import {Dragon} from './Dragon';
 import {Cairn, roadAt, SettlementLayer} from './Settlement';
 import {FolkLayer} from './Folk';
-import {Offerings, PeopleLayer} from './People';
+import {Offerings, PeopleLayer, Shrine} from './People';
 
 export type S2State = {world: World; t: number; cam: Cam; island: Island; agents: HerdAgent[]; agentsB?: HerdAgent[]};
 export const S2Context = createContext<S2State | null>(null);
@@ -38,6 +38,11 @@ const GLINT = new THREE.Color('#fff8e8');
 const SNOW_C = new THREE.Color('#eef4f6');
 const ICE_C = new THREE.Color('#a9d3e6');
 const ringCol = new THREE.Color();
+// EP30+: crop fields: bare tilled soil -> green shoots -> a golden harvest, with darker furrows on alternate rows
+const SOIL_C = new THREE.Color('#7a5434');
+const SHOOT_C = new THREE.Color('#79b24a');
+const GRAIN_C = new THREE.Color('#e6c357');
+const cropCol = new THREE.Color();
 const grey = (c: THREE.Color, sat: number) => {
 	if (sat >= 0.999) return c;
 	const g = c.r * 0.3 + c.g * 0.59 + c.b * 0.11;
@@ -98,6 +103,7 @@ export const grimmawPose = (island: Island, keys: World['predators'][number], t:
 		roar,
 		alert,
 		breath: Math.sin(t * (rest > 0.5 ? 1.6 : 2.6) + idx),
+		...(keys.adorn ? {adorn: true} : {}),
 		seed: idx * 7 + Math.floor(p.since * 10),
 	};
 };
@@ -299,6 +305,8 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 		const out = new Set<number>();
 		if (!world.settlements.length && !world.clearTrees.length) return out;
 		const spots: [number, number, number][] = [...world.clearTrees];
+		// EP30+: no trees in the crop fields
+		for (const f of world.fields?.plots ?? []) for (let dx = -f.w / 2; dx <= f.w / 2; dx += 1) for (let dz = -f.d / 2; dz <= f.d / 2; dz += 1) spots.push([f.x + dx, f.z + dz, 1.0]);
 		for (const st of world.settlements) {
 		for (const b of st.buildings) {
 			const r = b.kind === 'greathall' ? 4.2 : b.kind === 'hall' ? 2.4 : 1.6;
@@ -326,6 +334,8 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 	const snow = sample(world.snow, t, 0);
 	const forest = sample(world.forest, t, 1);
 	const count = herdCount(world, t);
+	const fieldsOn = !!world.fields && world.fields.plots.length > 0;
+	const ripe = fieldsOn ? sample(world.fields!.ripe, t, 0) : 0;
 	// The herd greys as a boom starves: tied to the graze layer being stripped.
 	const herdPale = clamp((graze - 0.6) / 0.4) * 0.6;
 	const rings = world.rings
@@ -347,6 +357,16 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 			const thr = c.biome === 'forest' ? (graze - 0.5) * 1.6 : graze * 1.08;
 			if (c.r < thr) out.copy(DIRT_C[Math.floor(c.r * 97) % DIRT_C.length]);
 			else if (c.r < thr + 0.12) out.lerp(DIRT_C[0], 0.45);
+		}
+		if (fieldsOn && c.biome !== 'water') {
+			for (const f of world.fields!.plots) {
+				if (Math.abs(c.x - f.x) > f.w / 2 || Math.abs(c.z - f.z) > f.d / 2) continue;
+				if (ripe < 0.5) cropCol.copy(SOIL_C).lerp(SHOOT_C, smoothstep(c.r * 0.6, c.r * 0.6 + 0.4, ripe * 2));
+				else cropCol.copy(SHOOT_C).lerp(GRAIN_C, smoothstep(c.r * 0.5, c.r * 0.5 + 0.5, (ripe - 0.5) * 2));
+				if (c.j % 2) cropCol.multiplyScalar(0.84);
+				out.copy(cropCol);
+				break;
+			}
 		}
 		if (c.biome !== 'water')
 			for (const st of world.settlements) {
@@ -442,6 +462,22 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 					<Cairn key={`c${i}`} x={p.x} z={p.z} y={island.heightAt(p.x, p.z)} stones={sample(p.stones, t, 0)} />
 				) : p.kind === 'offerings' ? (
 					<Offerings key={`o${i}`} x={p.x} z={p.z} r={p.r} island={island} t={t} level={sample(p.lights, t, 0)} />
+				) : p.kind === 'shrine' ? (
+					<Shrine
+						key={`s${i}`}
+						x={p.x}
+						z={p.z}
+						face={p.face ?? 0}
+						r={p.r}
+						island={island}
+						t={t}
+						lights={sample(p.lights, t, 0)}
+						tithe={sample(p.tithe ?? [], t, 0)}
+						sheaves={sample(p.sheaves ?? [], t, 0)}
+						plates={sample(p.plates ?? [], t, 0)}
+						rise={sample(p.rise ?? [], t, 0)}
+						paint={sample(p.paint ?? [], t, 0)}
+					/>
 				) : null,
 			)}
 			{world.ambient.birds > 0 && <Birds t={t} n={world.ambient.birds} loopT={world.loopT} />}

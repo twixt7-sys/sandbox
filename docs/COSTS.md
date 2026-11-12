@@ -76,6 +76,17 @@ The paid primary stack (Runway stills and clips + ElevenLabs) would still cost a
 | Render + QA | Claude cloud container | $0 |
 | **Total** | | **$0 cash (₱0)** plus 5 Figma image generations |
 
+## What Episode 30 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| Field card sprite (the worshipped Grimmaw) | **Figma AI, 1 generation** (the user approved up to 2 for EP30): `generate_image` with `gpt-image-2.5-sunburst`, 1536×1024, in "Worldcraft Shorts EP26 art"; right first time; re-gridded to 168×112 with `pipeline/pixelate.py` (`--colors 28`) | $0 cash (1 generation) |
+| The adorned voxel Grimmaw, the shrine, the fields, the keepers and the open rite, the painted stones, the ledger | Remotion + three.js code, software WebGL (`swangle`) | $0 |
+| Narration | Kokoro-82M (`af_heart`, speed 1.06), 170 words, 60.2 s total | $0 |
+| Score + SFX | `music_s2.py` (+ `hymn`, `rite`; choir aahs, voice oohs, kalimba and pan flute from the same free SoundFont, frame drums on the drum channel), `score_s2.py` (+ `frameDrum`, `beamTip`) | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, 1 Figma generation |
+
 ## What Episode 29 actually used
 
 | Item | Used | Cash cost |

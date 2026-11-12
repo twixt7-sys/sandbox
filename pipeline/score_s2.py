@@ -189,7 +189,8 @@ def blip(f0, f1, dur, bright=1.0):
 
 
 S2_HITS = {"roar", "stompHit", "sting", "runPress", "stamp", "rewind", "ringOn", "snowAir", "sleepZ", "cubPop", "delete", "restore", "cardSlide", "check", "unlock", "worldRipple", "crash", "boomPop",
-           "engineWind", "dragonPass", "followPress", "chime", "towerBell", "eyeOn", "morph", "slide", "crownPass"}
+           "engineWind", "dragonPass", "followPress", "chime", "towerBell", "eyeOn", "morph", "slide", "crownPass",
+           "frameDrum", "beamTip"}
 S2_BEDS = {"simTicks", "births", "losses", "stomp", "burn", "lockOn", "clockTicks"}
 
 
@@ -448,6 +449,38 @@ def s2_hit(kind):
         shim *= np.interp(t, [0, 0.08, 0.6, 1.1], [0, 0.5, 0.25, 0])
         knock = np.sin(2 * np.pi * 180 * t) * np.exp(-t * 40) * 0.6
         return st(shim + knock, 0.6)
+    if kind == "frameDrum":
+        # EP30: a ritual moment: one deep frame-drum stroke (a pitched membrane thump that bends down, plus the skin's
+        # slap) and a softer answering stroke. Deterministic (no shared RNG draws).
+        n = int(1.2 * SR)
+        t = np.arange(n) / SR
+        out = np.zeros(n)
+        for t0, g in ((0.0, 1.0), (0.32, 0.55)):
+            i = int(t0 * SR)
+            x = t[: n - i]
+            f = 68 * (1 + 0.6 * np.exp(-x * 18))
+            body = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-x * 6.5)
+            slap = np.sin(2 * np.pi * 210 * x) * np.exp(-x * 45) * 0.35 + np.sin(2 * np.pi * 330 * x) * np.exp(-x * 70) * 0.2
+            out[i:] += g * (body + slap) * np.minimum(1, x / 0.002)
+        return st(out * 0.8, 0.35)
+    if kind == "beamTip":
+        # EP30: the ledger's beam shifts: a short wooden creak (a few rough sine grains sliding down) and a soft clunk
+        # as the pans settle. Deterministic.
+        n = int(0.7 * SR)
+        t = np.arange(n) / SR
+        creak = np.zeros(n)
+        for k in range(9):
+            i = int(k * 0.022 * SR)
+            m = int(0.018 * SR)
+            x = np.arange(m) / SR
+            f = 520 - k * 28
+            g = (np.sin(2 * np.pi * f * x) + 0.4 * np.sin(2 * np.pi * f * 2.7 * x)) * np.hanning(m) * 0.35
+            creak[i:i + m] += g[: n - i]
+        clunk = np.zeros(n)
+        i = int(0.24 * SR)
+        x = t[: n - i]
+        clunk[i:] = (np.sin(2 * np.pi * 140 * x) * np.exp(-x * 30) + np.sin(2 * np.pi * 410 * x) * np.exp(-x * 55) * 0.4) * 0.7
+        return st(creak + clunk, 0.4)
     raise KeyError(kind)
 
 

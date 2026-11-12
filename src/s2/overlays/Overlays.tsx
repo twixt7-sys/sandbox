@@ -1041,7 +1041,90 @@ export const Lineage: React.FC<OP> = ({g, t}) => {
 	);
 };
 
+// ---------------------------------------------------------------- EP30: the ledger (a balance of gifts and costs)
+
+const MADDER_C = '#ef6f9c';
+type LedgerItem = {side: 'gift' | 'cost'; icon: string; label: string; w?: number; key?: string; keys?: [Cue, number, string?][]};
+
+/**
+ * The ledger (EP30's device): a pixel balance beam under the world. GIFTS hang on the left pan, COSTS on the right, and
+ * every item is a weight (`w` icons, scaled by its keys 0..1, or a world series by `key`, e.g. the tithe the shrine
+ * shows). The beam tips toward the heavier side, and the status reads TIPPED (costs heavier), LEVEL, WORTH IT (gifts
+ * heavier) or EMPTY. Rituals are what move the weights, so the beam always shows the deal the village has made.
+ */
+export const Ledger: React.FC<OP> = ({g, t}) => {
+	const {o, a, timing} = useWin(g, t, 0.3, 0.3);
+	const {world} = useS2();
+	if (o <= 0) return null;
+	const items: LedgerItem[] = g.items ?? [];
+	const weighed = items.map((it) => {
+		const v = it.key ? hudValue(world, it.key, t) : sample((it.keys ?? []).map((k) => ({t: cueTime(timing, k[0]), v: k[1], e: k[2] ?? 'smooth'})), t, 0);
+		const wt = (it.w ?? 1) * v;
+		return {...it, wt, n: wt > 0.05 ? Math.max(1, Math.round(wt)) : 0, v};
+	});
+	const gifts = weighed.filter((i) => i.side === 'gift').reduce((s, i) => s + i.wt, 0);
+	const costs = weighed.filter((i) => i.side === 'cost').reduce((s, i) => s + i.wt, 0);
+	const d = costs - gifts;
+	const ang = Math.max(-12, Math.min(12, d * 4.5));
+	const status = gifts + costs < 0.3 ? {text: 'EMPTY', c: S2.rust} : d > 0.4 ? {text: 'TIPPED', c: S2.rust} : d < -0.4 ? {text: 'WORTH IT', c: S2.stable} : {text: 'LEVEL', c: S2.stable};
+	const y0: number = g.y ?? 1352;
+	const rise = (1 - ease(t, a, 0.35)) * 40;
+	const W = 804;
+	const H = 186;
+	const cx = W / 2;
+	const cy = 64;
+	const L = 252;
+	const rad = (ang * Math.PI) / 180;
+	// the beam's ends: left (gifts) goes down when gifts are heavier (ang < 0)
+	const ends = [
+		{side: 'gift' as const, x: cx - L * Math.cos(rad), y: cy - L * Math.sin(rad)},
+		{side: 'cost' as const, x: cx + L * Math.cos(rad), y: cy + L * Math.sin(rad)},
+	];
+	const snap = (v: number) => Math.round(v / PX) * PX;
+	return (
+		<AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>
+			<div style={{position: 'absolute', left: 96, top: y0 + rise, width: W, height: H, overflow: 'hidden', ...panel({edge: MADDER_C})}}>
+				<div style={{position: 'absolute', left: 16, top: 12, fontFamily: F2.pixel, fontSize: 18, color: MADDER_C, letterSpacing: '0.08em'}}>{g.kicker ?? 'THE LEDGER'}</div>
+				<div style={{position: 'absolute', right: 16, top: 10, fontFamily: F2.pixel, fontWeight: 700, fontSize: 24, color: status.c, letterSpacing: '0.06em'}}>{status.text}</div>
+				{/* the post and the beam */}
+				<div style={{position: 'absolute', left: snap(cx - 6), top: cy, width: 12, height: H - cy - 14, background: '#8a7a64'}} />
+				<div style={{position: 'absolute', left: snap(cx - 36), top: H - 20, width: 72, height: 9, background: '#6b5a48'}} />
+				<div style={{position: 'absolute', left: cx - L - 6, top: cy - 5, width: 2 * L + 12, height: 10, background: '#c9b48c', boxShadow: `0 ${PX}px 0 #6b5a48`, transform: `rotate(${ang}deg)`, transformOrigin: '50% 50%'}} />
+				<div style={{position: 'absolute', left: snap(cx - 12), top: cy - 12, width: 24, height: 24, background: MADDER_C, boxShadow: `inset 0 0 0 ${PX}px #050912`}} />
+				{ends.map((e) => {
+					const its = weighed.filter((i) => i.side === e.side && i.n > 0);
+					const panW = 228;
+					const panY = e.y + 50;
+					return (
+						<React.Fragment key={e.side}>
+							<div style={{position: 'absolute', left: snap(e.x - panW / 2 + 12), top: e.y, width: 3, height: 50, background: 'rgba(239,230,210,0.5)', transform: 'skewX(12deg)', transformOrigin: '0 0'}} />
+							<div style={{position: 'absolute', left: snap(e.x + panW / 2 - 15), top: e.y, width: 3, height: 50, background: 'rgba(239,230,210,0.5)', transform: 'skewX(-12deg)', transformOrigin: '0 0'}} />
+							<div style={{position: 'absolute', left: snap(e.x - panW / 2), top: snap(panY), width: panW, height: 9, background: '#c9b48c', boxShadow: `0 ${PX}px 0 #6b5a48`}} />
+							<div style={{position: 'absolute', left: snap(e.x - panW / 2), top: snap(panY + 16), width: panW, textAlign: 'center', fontFamily: F2.pixel, fontSize: 15, color: e.side === 'gift' ? S2.stable : S2.rust, letterSpacing: '0.08em'}}>
+								{e.side === 'gift' ? (g.giftLabel ?? 'GIFTS') : (g.costLabel ?? 'COSTS')}
+							</div>
+							<div style={{position: 'absolute', left: snap(e.x - panW / 2), width: panW, top: snap(panY - 44), height: 44, display: 'flex', justifyContent: 'center', alignItems: 'flex-end', gap: 10}}>
+								{its.map((i) => (
+									<div key={i.label} style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, opacity: clamp(i.v * 3)}}>
+										<div style={{display: 'flex', gap: 3}}>
+											{Array.from({length: Math.min(i.n, 6)}, (_, k) => (
+												<PixelSprite key={k} name={i.icon} px={i.n > 3 ? 3 : 4} color={i.side === 'gift' ? S2.stable : S2.rust} />
+											))}
+										</div>
+										<span style={{fontFamily: F2.pixel, fontSize: 12, color: 'rgba(239,230,210,0.85)', letterSpacing: '0.04em', whiteSpace: 'nowrap'}}>{i.label}</span>
+									</div>
+								))}
+							</div>
+						</React.Fragment>
+					);
+				})}
+			</div>
+		</AbsoluteFill>
+	);
+};
+
 export const S2_OVERLAYS: Record<string, React.FC<OP>> = {
+	ledger: Ledger,
 	lineage: Lineage,
 	dragonEye: DragonEye,
 	editor: Editor,

@@ -11,7 +11,7 @@ import {cameraAt, dragonAt, herdCount, moodAt, predatorAt, simTime, World} from 
 import {Dragon} from './Dragon';
 import {Cairn, roadAt, SettlementLayer} from './Settlement';
 import {FolkLayer} from './Folk';
-import {Offerings, PeopleLayer, Shrine} from './People';
+import {Offerings, PeopleLayer, Shrine, Standard, Statue} from './People';
 
 export type S2State = {world: World; t: number; cam: Cam; island: Island; agents: HerdAgent[]; agentsB?: HerdAgent[]};
 export const S2Context = createContext<S2State | null>(null);
@@ -43,6 +43,8 @@ const SOIL_C = new THREE.Color('#7a5434');
 const SHOOT_C = new THREE.Color('#79b24a');
 const GRAIN_C = new THREE.Color('#e6c357');
 const cropCol = new THREE.Color();
+const EMBER_C = new THREE.Color('#ff9a3c');
+const CHAR_C = new THREE.Color('#2a2420');
 const grey = (c: THREE.Color, sat: number) => {
 	if (sat >= 0.999) return c;
 	const g = c.r * 0.3 + c.g * 0.59 + c.b * 0.11;
@@ -275,6 +277,25 @@ const Flyer: React.FC<{t: number; f: World['flyers'][number]; sun: [number, numb
 	);
 };
 
+/** EP31+: flames over a burning field: flickering emissive voxels and a few rising smoke blocks. No people anywhere. */
+const FLAME_M = [new THREE.MeshBasicMaterial({color: '#ffc96a'}), new THREE.MeshBasicMaterial({color: '#ff8a3c'}), new THREE.MeshBasicMaterial({color: '#e0522a'})];
+const FieldFire: React.FC<{f: {x: number; z: number; w: number; d: number}; t: number; level: number; y: number; seed: number}> = ({f, t, level, y, seed}) => (
+	<group>
+		{Array.from({length: 14}, (_, k) => {
+			const fx = f.x + (hash2(k, seed, 51) - 0.5) * f.w;
+			const fz = f.z + (hash2(k, seed, 52) - 0.5) * f.d;
+			const h = (0.5 + hash2(k, seed, 53) * 1.3) * level * (0.7 + 0.3 * Math.sin(t * (11 + k) + k));
+			if (h < 0.08) return null;
+			return <mesh key={k} geometry={DUST_BOX} material={FLAME_M[k % 3]} position={[fx, y + h / 2, fz]} scale={[0.42, h, 0.42]} />;
+		})}
+		{Array.from({length: 6}, (_, k) => {
+			const ph = (t * 0.5 + hash2(k, seed, 54)) % 1;
+			const m = new THREE.MeshLambertMaterial({color: '#4a4640', transparent: true, opacity: 0.55 * level * (1 - ph)});
+			return <mesh key={`s${k}`} geometry={DUST_BOX} material={m} position={[f.x + (hash2(k, seed, 55) - 0.5) * f.w, y + 1.2 + ph * 5, f.z + (hash2(k, seed, 56) - 0.5) * f.d]} scale={0.6 + ph * 0.9} />;
+		})}
+	</group>
+);
+
 export type WorldSceneProps = {world: World; t: number; herdCenters: [number, number][]; herdBase: number};
 
 export const useWorldState = (world: World, t: number, herdCenters: [number, number][], herdBase: number): S2State => {
@@ -336,6 +357,7 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 	const count = herdCount(world, t);
 	const fieldsOn = !!world.fields && world.fields.plots.length > 0;
 	const ripe = fieldsOn ? sample(world.fields!.ripe, t, 0) : 0;
+	const burn = fieldsOn && world.fields!.burn ? sample(world.fields!.burn, t, 0) : 0;
 	// The herd greys as a boom starves: tied to the graze layer being stripped.
 	const herdPale = clamp((graze - 0.6) / 0.4) * 0.6;
 	const rings = world.rings
@@ -364,6 +386,11 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 				if (ripe < 0.5) cropCol.copy(SOIL_C).lerp(SHOOT_C, smoothstep(c.r * 0.6, c.r * 0.6 + 0.4, ripe * 2));
 				else cropCol.copy(SHOOT_C).lerp(GRAIN_C, smoothstep(c.r * 0.5, c.r * 0.5 + 0.5, (ripe - 0.5) * 2));
 				if (c.j % 2) cropCol.multiplyScalar(0.84);
+				if (burn > 0) {
+					// EP31+: the field burns: embers flicker across it, then it chars
+					const lit = hash2(c.i, c.j, Math.floor(t * 9)) > 0.45;
+					cropCol.lerp(burn < 0.6 && lit ? EMBER_C : CHAR_C, clamp(burn * 2.2 - c.r * 0.6));
+				}
 				out.copy(cropCol);
 				break;
 			}
@@ -478,8 +505,13 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 						rise={sample(p.rise ?? [], t, 0)}
 						paint={sample(p.paint ?? [], t, 0)}
 					/>
+				) : p.kind === 'statue' ? (
+					<Statue key={`st${i}`} x={p.x} z={p.z} face={p.face ?? 0} island={island} t={t} loopT={world.loopT} rise={sample(p.rise ?? [], t, 0)} gild={sample(p.gild ?? [], t, 0)} tar={sample(p.tar ?? [], t, 0)} grow={sample(p.grow ?? [], t, 1)} />
+				) : p.kind === 'standard' ? (
+					<Standard key={`sd${i}`} x={p.x} z={p.z} face={p.face ?? 0} island={island} t={t} rise={sample(p.rise ?? [], t, 0)} color={p.color ?? '#a8452f'} />
 				) : null,
 			)}
+			{burn > 0.02 && burn < 0.95 && world.fields!.plots.map((f, i) => <FieldFire key={`ff${i}`} f={f} t={t} level={Math.sin(Math.min(1, burn / 0.95) * Math.PI)} y={island.heightAt(f.x, f.z)} seed={i} />)}
 			{world.ambient.birds > 0 && <Birds t={t} n={world.ambient.birds} loopT={world.loopT} />}
 			{world.ambient.motes > 0 && <Motes t={t} n={world.ambient.motes} island={island} warm={mood.warm} loopT={world.loopT} />}
 			{world.flyers.map((f, i) => (

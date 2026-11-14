@@ -76,6 +76,18 @@ The paid primary stack (Runway stills and clips + ElevenLabs) would still cost a
 | Render + QA | Claude cloud container | $0 |
 | **Total** | | **$0 cash (₱0)** plus 5 Figma image generations |
 
+## What Episode 31 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| Field card sprite (the split statue) | **Free local SDXL-Lightning** (`pipeline/local_stills.py`, CPU, about 100 s an image): 4 candidates in two rounds, seed 62 used; the gilded and tarred halves added in code (`episodes/ep31/art/split_statue.py`); re-gridded to 62×127 with `pipeline/pixelate.py` (`--colors 24`). **No Figma credits** (the user asked for free tools first) | $0 |
+| The statue, Maren and the two crowds, the Grimmaw, the burning field, the archives, the war standards, the chronicles, the veil, the split tone | Remotion + three.js code, software WebGL (`swangle`) | $0 |
+| Narration | Kokoro-82M (`af_heart`, speed 1.05), 161 words, 59.5 s total | $0 |
+| Score + SFX | `music_s2.py` (+ `chronicle`, `dispute`: lute, recorder and bassoon from the same free SoundFont), `score_s2.py` (+ `quill`, `pageTear`) | $0 |
+| Research and the scorecard | Web research (`docs/SEASON2_RESEARCH.md` §7), `pipeline/benchmark.py` | $0 |
+| Render, QA, encodes | Claude cloud container (three full renders of about 9–11 min each) | $0 |
+| **Total** | | **$0 cash (₱0)**, 0 Figma generations |
+
 ## What Episode 30 actually used
 
 | Item | Used | Cash cost |

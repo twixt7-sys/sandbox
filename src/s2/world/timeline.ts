@@ -58,7 +58,7 @@ export type WorldRaw = {
 	props?: PropRaw[];
 	/** EP30+: crop fields (rectangles of voxel columns) whose crop grows from bare soil (0) through green (0.5) to a
 	 * golden harvest (1); a stripped field (grazed bare) is just `ripe` back at 0. */
-	fields?: {plots: {x: number; z: number; w: number; d: number}[]; ripe: RawKey[]};
+	fields?: {plots: {x: number; z: number; w: number; d: number}[]; ripe: RawKey[]; /** EP31+: 0..1 the fields burn (flames, then char) */ burn?: RawKey[]};
 	/** EP29+: mortal people living on the clock (born, ageing, replaced each generation) and the Undying ruler. */
 	people?: {
 		count: RawKey[];
@@ -73,6 +73,12 @@ export type WorldRaw = {
 		robe?: string;
 		/** EP30+: 0..1 the crowd walks from its homes to a ring around `at` (radius `r`) and faces in (a gathering) */
 		gather?: {at: [number, number]; r?: number; keys: RawKey[]};
+		/** EP31+: keyed single figures (a named person in the story), optionally carrying a torch (state `dark` puts it out) */
+		figures?: {keys: PredKeyRaw[]; tunic?: string; torch?: boolean; scale?: number}[];
+		/** EP31+: one tunic colour per crowd centre (two villages side by side) */
+		tints?: string[];
+		/** EP31+: the crowd stands still and faces this point */
+		watch?: [number, number];
 	};
 };
 
@@ -80,7 +86,7 @@ export type WorldRaw = {
  * `rise`; `lights` its candles, `tithe` sheep, `sheaves` and shed `plates` laid before it, `paint` 0..2 the figures
  * painted on its stones). */
 export type PropRaw = {
-	kind: 'cairn' | 'offerings' | 'shrine';
+	kind: 'cairn' | 'offerings' | 'shrine' | 'statue' | 'standard';
 	x: number;
 	z: number;
 	stones?: RawKey[];
@@ -92,6 +98,12 @@ export type PropRaw = {
 	plates?: RawKey[];
 	rise?: RawKey[];
 	paint?: RawKey[];
+	/** EP31 `statue`: 0..1 gilded half, 0..1 tarred half, figure scale */
+	gild?: RawKey[];
+	tar?: RawKey[];
+	grow?: RawKey[];
+	/** EP31 `standard`: the cloth's colour */
+	color?: string;
 };
 
 export type DragonKeyRaw = {at: Cue; x: number; z: number; y?: number; state?: string; face?: number; dur?: number; ease?: string};
@@ -201,9 +213,9 @@ export type World = {
 	/** every settlement, the first one included (EP28+: more than one) */
 	settlements: Settlement[];
 	folk: {count: Key[]; centers: [number, number][]; centersB: [number, number][] | null; site: Key[]; eyes: Key[]; wet: Key[]; glow: Key[]; hero: PredKey[]; spread: number} | null;
-	props: {kind: PropRaw['kind']; x: number; z: number; stones: Key[]; lights: Key[]; r: number; face?: number; tithe?: Key[]; sheaves?: Key[]; plates?: Key[]; rise?: Key[]; paint?: Key[]}[];
+	props: {kind: PropRaw['kind']; x: number; z: number; stones: Key[]; lights: Key[]; r: number; face?: number; tithe?: Key[]; sheaves?: Key[]; plates?: Key[]; rise?: Key[]; paint?: Key[]; gild?: Key[]; tar?: Key[]; grow?: Key[]; color?: string}[];
 	/** EP30+ (null before) */
-	fields: {plots: {x: number; z: number; w: number; d: number}[]; ripe: Key[]} | null;
+	fields: {plots: {x: number; z: number; w: number; d: number}[]; ripe: Key[]; burn?: Key[]} | null;
 	/** EP29+ (null before) */
 	people: {
 		count: Key[];
@@ -216,6 +228,9 @@ export type World = {
 		ruler: {keys: PredKey[]; dais?: {x: number; z: number; face?: number}} | null;
 		robe?: string;
 		gather?: {at: [number, number]; r: number; keys: Key[]};
+		figures?: {keys: PredKey[]; tunic: string; torch: boolean; scale: number}[];
+		tints?: string[];
+		watch?: [number, number];
 	} | null;
 };
 
@@ -281,8 +296,11 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 		...(p.kind === 'shrine'
 			? {face: p.face ?? 0, tithe: resolveKeys(timing, p.tithe), sheaves: resolveKeys(timing, p.sheaves), plates: resolveKeys(timing, p.plates), rise: resolveKeys(timing, p.rise), paint: resolveKeys(timing, p.paint)}
 			: {}),
+		...(p.kind === 'statue' || p.kind === 'standard'
+			? {face: p.face ?? 0, rise: resolveKeys(timing, p.rise), gild: resolveKeys(timing, p.gild), tar: resolveKeys(timing, p.tar), grow: resolveKeys(timing, p.grow), ...(p.color ? {color: p.color} : {})}
+			: {}),
 	})),
-	fields: raw.fields ? {plots: raw.fields.plots, ripe: resolveKeys(timing, raw.fields.ripe)} : null,
+	fields: raw.fields ? {plots: raw.fields.plots, ripe: resolveKeys(timing, raw.fields.ripe), ...(raw.fields.burn ? {burn: resolveKeys(timing, raw.fields.burn)} : {})} : null,
 	people: raw.people
 		? {
 				count: resolveKeys(timing, raw.people.count),
@@ -299,6 +317,11 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 						}
 					: null,
 				...(raw.people.robe ? {robe: raw.people.robe} : {}),
+				...(raw.people.tints ? {tints: raw.people.tints} : {}),
+				...(raw.people.watch ? {watch: raw.people.watch} : {}),
+				...(raw.people.figures
+					? {figures: raw.people.figures.map((f) => ({keys: f.keys.map((k) => ({t: cueTime(timing, k.at), x: k.x, z: k.z, state: k.state ?? 'idle', face: k.face, dur: k.dur ?? 0})).sort((a, b) => a.t - b.t), tunic: f.tunic ?? '#8a5a3a', torch: !!f.torch, scale: f.scale ?? 1}))}
+					: {}),
 				...(raw.people.gather ? {gather: {at: raw.people.gather.at, r: raw.people.gather.r ?? 3, keys: resolveKeys(timing, raw.people.gather.keys)}} : {}),
 			}
 		: null,

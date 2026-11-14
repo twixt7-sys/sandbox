@@ -64,6 +64,13 @@ export const SPRITES: Record<string, {rows: string[]; colors: Record<string, str
 		rows: ['.SSSSS.', 'SSSSSSS', 'SSSGSSS', 'SGSGSGS', 'SSGGGSS', 'SSSGSSS', 'SSGSGSS', 'SSGSGSS', 'SSSSSSS', 'SSSSSSS', 'SSSSSSS', 'DDDDDDD'],
 		colors: {S: '#9b968c', G: '#f4c46e', D: '#6b5a48'},
 	},
+	// EP31: the chronicles' facts (flame; `coin` for motive) and the next-run standard (EP32: a torn battle flag)
+	flame: {rows: ['..X..', '.XX..', '.XXX.', 'XXOXX', 'XOOOX', '.XXX.'], colors: {X: 'currentColor', O: '#ffe9a8'}},
+	coin: {rows: ['.XXX.', 'XXOXX', 'XOXOX', 'XXOXX', '.XXX.'], colors: {X: 'currentColor', O: '#050912'}},
+	standard: {
+		rows: ['P.......', 'PRRRRRR.', 'PRRWRRRR', 'PRRRRRR.', 'PRRRR...', 'P.RR....', 'P.......', 'P.......', 'P.......', 'P.......'],
+		colors: {P: '#8a5a36', R: '#d0603f', W: '#efe6d2'},
+	},
 	play: {rows: ['X....','XXX..', 'XXXXX', 'XXX..', 'X....'], colors: {X: 'currentColor'}},
 	ffwd: {rows: ['X...X...', 'XX..XX..', 'XXX.XXX.', 'XX..XX..', 'X...X...'], colors: {X: 'currentColor'}},
 	rewind: {rows: ['...X...X', '..XX..XX', '.XXX.XXX', '..XX..XX', '...X...X'], colors: {X: 'currentColor'}},

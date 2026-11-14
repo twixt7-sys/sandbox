@@ -614,7 +614,50 @@ def style_rite(c: Ctx):
             c.add("glock", b, 2.0, voicing(ch, 64, 76)[0], 52)
 
 
-STYLES = {"hymn": style_hymn, "rite": style_rite, "hook": style_hook, "pulse": style_pulse, "drive": style_drive, "drop": style_drop, "void": style_void,
+# ---- EP31 colours (additive): one night, two histories. Sections set `programs` (nylon guitar on the marimba channel
+# as a lute, recorder on the lead, bassoon on the horns) and later sections set them back.
+
+def style_chronicle(c: Ctx):
+    """A chronicler at work: a plucked lute ostinato, a soft tambourine pulse, a pizzicato bass and the theme on
+    recorder. `layer` 1-4 adds one family per rule (tambourine, bass, the recorder theme, harp and glock)."""
+    layer = c.spec.get("layer", 4)
+    c.pad("strings", 52, 67, 44, max_notes=3)
+    c.arp("marimba", 0.5, 57, 76, 100, pattern=(0, 2, 1, 2, 3, 2, 1, 2), accent=1.12)
+    if layer >= 2:
+        for b in range(0, c.n):
+            c.add("drums", b, 0.2, TAMB, 70 if b % 2 == 0 else 52)
+            c.add("drums", b + 0.5, 0.2, TAMB, 40)
+    if layer >= 3:
+        c.arp("pizz", 1.0, 40, 55, 84, pattern=(0, 2, 1, 2))
+    if layer >= 4:
+        c.theme("lead", vel=96, bars=(0, 4))
+        c.arp("harp", 0.5, 62, 84, 48, pattern=(0, 1, 2, 3))
+        for b, d, ch in c.chord_spans():
+            c.add("glock", b, 2.0, voicing(ch, 64, 76)[0], 50)
+
+
+def style_dispute(c: Ctx):
+    """Two tellings of one tune: the theme's bars alternate between a recorder (high, bright) and a bassoon (low, on
+    the horns channel) that answers it and never quite agrees, over a lute pulse and a held cello."""
+    c.pad("strings", 50, 67, 46, max_notes=3)
+    c.root("cello", 36, 48, 62)
+    c.arp("marimba", 0.5, 57, 76, 84, pattern=(0, 2, 1, 2))
+    tpc, steps = key_info(c.key)
+    hi, lo = nearest(tpc, 74), nearest(tpc, 55)
+    b, acc = 0.0, 0.0
+    for deg, oc, dur in THEME:
+        bar = int(acc // 4)
+        acc += dur
+        if b >= c.n:
+            break
+        if bar % 2 == 0:
+            c.add("lead", b, dur * 0.95, hi + steps[(deg - 1) % 7] + 12 * (oc + (deg - 1) // 7), 92)
+        else:
+            c.add("horns", b, dur * 0.95, lo + steps[(deg - 1) % 7] + 12 * (oc + (deg - 1) // 7) + (1 if deg == 3 else 0), 86)
+        b += dur
+
+
+STYLES = {"chronicle": style_chronicle, "dispute": style_dispute, "hymn": style_hymn, "rite": style_rite, "hook": style_hook, "pulse": style_pulse, "drive": style_drive, "drop": style_drop, "void": style_void,
           "mystery": style_mystery, "build": style_build, "twist": style_twist, "rest": style_rest, "frenzy": style_frenzy,
           "crash": style_crash, "swell": style_swell, "anthem": style_anthem, "outro": style_outro, "tease": style_tease,
           "soar": style_soar, "raid": style_raid, "stealth": style_stealth,

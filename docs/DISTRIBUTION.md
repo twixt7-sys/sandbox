@@ -2163,3 +2163,97 @@ Source of truth: `episodes/ep30/episode.json` → `metadata`. Every description 
 - **Hook check:** First 34 characters: 'They worship what eats their sheep.'
 - **Pinned comment:** Save the KEEP IT LEVEL card, then tell us: what creature would your civilization worship?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 31 captions (ready to paste) — Season 2, Arc 7 (opener)
+
+Source of truth: `episodes/ep31/episode.json` → `metadata`. Every description ends with the Season 2 ending formula ("Part 31 of 50. Follow for part 32: …"), matching the video's last line. The AI label goes on for all four platforms. Cover: `episodes/ep31/Worldcraft_Short_E31_cover.jpg`. Subtitles: `episodes/ep31/ep31.srt`.
+
+**Disclosure.** The island, the statue, Maren, the two crowds, the Grimmaw, the fire, the archives, the two chronicles, the HUD and every number are drawn and simulated in code. Two things are AI-made: the narration (Kokoro synthetic voice) and the field card's statue sprite (free local SDXL-Lightning, then split gilded and tarred in code and re-gridded by `pipeline/pixelate.py`; no Figma credits). AI label on everywhere (series policy). No violence on screen: the Grimmaw is driven off by fire and walks away, a field burns with nobody in it, and "witnesses die" is a crowd thinning as seventy years pass. Maren and both peoples are invented, and the statue is an original design (a first generated version that resembled a real monument was rejected).
+
+**Closing EP30's loop.** EP30 ended "hero, or monster?" with a gold hero and a rust beast painted on the shrine's two stones. EP31 opens on one statue, half gilded and half tarred, under the same question. When EP31 goes up, reply to the top comments on EP30 with its link and pin it where a second pin is allowed.
+
+**The comment ask is a vote.** "Hero or monster? Give us your verdict." Post the pinned comment yourself straight away, answer early comments in the first hour, and reply to one-word answers with "why?" (advice from `docs/SEASON2_RESEARCH.md` §7, not measured). Don't take a side in the pin: the episode's point is that both are true.
+
+**Posting part 32.** The video promises "a war that never ended" (each crowd raises a war standard over its half of the statue, the valley's bell tolls, and the Queen and the Grimmaw look up). EP32 is "Create an Ancient War That Still Matters". Do the same reply-and-pin on EP31 when EP32 is posted.
+
+### YouTube Shorts
+- **Title** (59/100 chars): `Your World Needs a History Nobody Agrees On (Worldbuilding)`
+- **Alternate title** (54 chars): `Their greatest hero. Their worst monster. Same person.`
+- **Description:**
+
+> What if history's greatest hero was also its worst monster?
+>
+> Meet Maren. Three hundred years ago, she did one thing. The lazy version gives your world one history that everybody agrees on, and we ran it: three hundred years, one statue, one story, zero questions. Case closed. Nothing left to solve.
+>
+> Real history has witnesses. The valley saw her drive the monster off; the court saw their fields burn. Each side keeps the half that flatters it. Pages burn, witnesses die, and every generation makes her bigger. Run it again: one night, two histories.
+>
+> Then the twist: the truth. She did both: she burned the fields to drive it off. Now hide that from your world, and let your characters fight over the pieces.
+>
+> History isn't what happened. It's who's telling it.
+>
+> Hero or monster? Give us your verdict.
+>
+> Part 31 of 50. Follow for part 32: a war that never ended.
+>
+> Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 7: History and Mythology.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts
+
+- **Pinned comment:** Hero or monster? One word, then your reason. (Part 32: a war that never ended.)
+- **Upload settings:** Altered or synthetic content: Yes (synthetic narration and an AI-generated field-card sprite; the island, statue, people and fire are drawn in code). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (299 chars): `Same night. Two histories. One calls her a hero, one calls her a monster, and both are true 🔥 Four rules that crack your world's history open, and rule #5 is the one writers skip. Hero or monster? Part 31/50 · follow for part 32 ⚔️ #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts`
+- **Pinned comment:** Hero or monster? Give us your verdict.
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> What if history's greatest hero was also its worst monster?
+>
+> Meet Maren. Three hundred years ago, she did one thing. The lazy version gives your world one history that everybody agrees on, and we ran it: three hundred years, one statue, one story, zero questions. Case closed. Nothing left to solve.
+>
+> Real history has witnesses. The valley saw her drive the monster off; the court saw their fields burn. Each side keeps the half that flatters it. Pages burn, witnesses die, and every generation makes her bigger. Run it again: one night, two histories.
+>
+> Then the twist: the truth. She did both: she burned the fields to drive it off. Now hide that from your world, and let your characters fight over the pieces.
+>
+> History isn't what happened. It's who's telling it.
+>
+> Hero or monster? Give us your verdict.
+>
+> Part 31 of 50. Follow for part 32: a war that never ended.
+>
+> Worldcraft Shorts · Season 2: The World Engine.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts
+
+- **Pinned comment:** Which figure in your world would two villages remember in opposite ways?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Hero to one village. Monster to the next.
+>
+> What if history's greatest hero was also its worst monster?
+>
+> Meet Maren. Three hundred years ago, she did one thing. The lazy version gives your world one history that everybody agrees on, and we ran it: three hundred years, one statue, one story, zero questions. Case closed. Nothing left to solve.
+>
+> Real history has witnesses. The valley saw her drive the monster off; the court saw their fields burn. Each side keeps the half that flatters it. Pages burn, witnesses die, and every generation makes her bigger. Run it again: one night, two histories.
+>
+> Then the twist: the truth. She did both: she burned the fields to drive it off. Now hide that from your world, and let your characters fight over the pieces.
+>
+> History isn't what happened. It's who's telling it.
+>
+> Hero or monster? Give us your verdict.
+>
+> Part 31 of 50. Follow for part 32: a war that never ended.
+>
+> Worldcraft Shorts · Season 2
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts
+
+- **Hook check:** First 41 characters: 'Hero to one village. Monster to the next.'
+- **Pinned comment:** Save the CRACK IT OPEN card, then give us your verdict: hero or monster?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

@@ -74,7 +74,7 @@ Tilt-shift did not appear as a named 2026 trend in any source I found. **Unverif
 | **Procedural pixel pipeline** | New `pipeline/pixelate.py`: re-grids generated "pixel art" onto a true pixel grid (mode-sampling, median-cut palette, hue-aware background key). |
 | **Lottie** | Not needed: every overlay is React, and Lottie would add an After Effects dependency. |
 | **Figma `generate_image`** | Four models listed: `gemini-3.1-flash-lite-image`, `gpt-image-2.5-flare` (default), `gpt-image-2.5-sunburst`, `gemini-3.1-flash-image`. I tried to compare three on an identical prompt, but the session's permission classifier **blocked two of the three calls** as paid transactions, so the comparison is incomplete. `gpt-image-2.5-sunburst` produced an excellent, original, clean-silhouette pixel sprite on the first try. Its fine dithering re-grids cleanly at 168 px wide. **1 generation used.** |
-| **Local SDXL-Lightning** (`pipeline/local_stills.py`) | Still available for free plates. Not used in EP26, because the Isle is drawn in code. |
+| **Local SDXL-Lightning** (`pipeline/local_stills.py`) | Still available for free plates. Not used in EP26, because the Isle is drawn in code. **EP31** (14 Nov 2026): made the field-card sprite with no credits (about 100 s an image); `--sprite` adds the nerijs/pixel-art-xl LoRA (CreativeML OpenRAIL-M), which draws a true pixel grid at the same speed. |
 | **Narration** | Kokoro-82M (Apache-2.0) stays. VOICES.md grades `af_heart` as target A (overall grade not listed), `af_bella` A−, `af_nicole` and `bf_emma` B−; male voices C+ or lower ([VOICES.md](https://huggingface.co/hexgrad/Kokoro-82M/blob/main/VOICES.md)). The alternatives: Chatterbox / Chatterbox-Turbo is MIT but a vendor CPU benchmark measured about 48 s to first audio and 7.5 GB peak memory, which is impractical here. Kitten TTS (Apache-2.0) was slower than Kokoro in the same benchmark and is lower quality. Piper's licence is listed inconsistently (MIT vs GPL-3.0) ([Picovoice benchmark](https://picovoice.ai/blog/on-device-tts/), [Speakeasy](https://www.tryspeakeasy.io/blog/open-source-text-to-speech-2026), [LocalAIMaster](https://localaimaster.com/blog/kokoro-vs-xtts-vs-chatterbox)). **Kept:** `af_heart` at speed **1.05** for a brisker host read, with continuity of voice across the relaunch. |
 | **Music generators** | MusicGen weights are CC BY-NC (no commercial use); YuE2 weights are CC BY-NC; Stable Audio Open's licence is reported inconsistently. ACE-Step 1.5 (MIT or Apache, reported both ways) and HeartMuLa (Apache-2.0) are permissive but need a GPU with 6–8 GB to be practical ([Boppy, licences](https://boppy.me/blog/open-source-ai-music-model-licenses), [Dev.to ACE-Step guide](https://dev.to/czmilo/ace-step-15-the-complete-2026-guide-to-open-source-ai-music-generation-522e)). **Rejected for CPU.** EP26 v1 synthesised its score in `pipeline/score_s2.py`; **EP26 v2 (2 Nov 2026) plays a composed score on sampled instruments** (FluidSynth + the MuseScore General SoundFont). See the note below the table. |
 
@@ -141,3 +141,101 @@ The user asked for the episode number to be spoken, a follow ask "in the most ef
 **Not knowable from here:** whether any of this lifts follows on *this* channel.
 - Compare EP26's follows per 1,000 views with EP25's and EP27's, alongside the share of viewers still watching at 55 s.
 - If the mid-video chip costs watch time, drop it.
+
+## 7. Benchmarking the writing and the timeline (12–13 Nov 2026, EP31)
+
+The user asked for EP31's writing to be benchmarked against top-performing content "from start to finish", and for EP31 to be the reference for the episodes after it. Searched on 12 Nov 2026. The pages quoted below were re-read on 13 Nov 2026, because the search summaries again overstated or mixed up several numbers.
+
+**What "benchmarking" can mean from here.** I have no access to anyone's analytics and can't watch other channels' videos, so I could not measure top-performing Shorts directly. What I could do:
+1. collect what is published about how high-retention Shorts are written and cut;
+2. record how strong each source is;
+3. turn the patterns that several sources agree on into **measurable targets**;
+4. score EP31, and earlier episodes, against them with one script (`pipeline/benchmark.py`).
+
+The scorecard is a consistency check that catches a slow hook or a static stretch before a render. It does not predict retention.
+
+### What the platform itself says (primary source)
+- YouTube's blog, 19 Aug 2026 ([What are 'Engaged' Views on YouTube?](https://blog.youtube/inside-youtube/engaged-views-youtube-explained/)): "Starting August 24, 2026, views across YouTube are counted from the first frame going forward." For a Short in the feed: "The moment it starts to play, it's counted as a view." "An engaged view is defined as clicking to watch or watching past the initial seconds." Also: "the vast majority of analytics remain anchored on engaged views", and there is "no change to recommendations".
+- This confirms the item §1 marked as unchecked (the 24 Aug 2026 change). Shorts had already counted a view on play or replay since 31 Mar 2025 ([Gyre, 16 Jun 2026](https://gyre.pro/blog/youtube-shorts-view-count-update-impact-strategy-what-to-do-next), citing YouTube Help).
+- **What follows:** a raw view says nothing about the hook. The number to watch in Studio is "viewed vs swiped away" (Gyre calls it "the strongest indicator of whether your hook is working"), then average percentage viewed.
+
+### The first seconds
+- **No platform publishes a threshold.** Retensis says so about its own tiers: "These are targets we tell creators to aim at, not measured platform averages"; "no platform publishes a cutoff". Its tiers for swipe-away in the first three seconds: "below 15% is exceptional", "15% to 25% is healthy", "above 35% is a hook that is not working"; for 30–60 s Shorts it aims for average view duration "above 40%" ([Retensis, 7 Apr 2026, updated 7 Sep 2026](https://retensis.com/blog/youtube-shorts-analytics-metrics-explained)).
+- Other vendors give different numbers for the same thing: "70%+ viewed is viral territory", 50/50 is average ([Gyre](https://gyre.pro/blog/youtube-shorts-view-count-update-impact-strategy-what-to-do-next), no source). Virvid quotes, secondhand, a study of 3.3 billion Shorts by Paddy Galloway in which "a 'Viewed vs. Swiped Away' (VVSA) ratio of 70-90% performed best" ([Virvid, 16 Feb 2026](https://virvid.ai/blog/first-3-seconds-hook-faceless-shorts-2026)). **I did not read the study itself.**
+- **How the opening should be built** (Virvid, same page): "Your first spoken word should land within half a second of the video starting", with no "music intro, no logo animation"; "The opening visual should be the most striking frame in the entire video"; "Captions should appear from the very first word." It names five hook structures: bold claim, curiosity gap, micro-story opening, visual shock and direct question.
+- "The first two to three seconds should be the most deliberately constructed part of the video", and the value should be "clear within the first ten seconds" ([Masterhooks](https://masterhooks.com/resources/articles/short-form-video-checklist-for-high-retention); the page shows two different dates).
+- Hook length: "1-3 seconds maximum", about 15 words for a 60 s video ([Eliro, 7 Apr 2026](https://eliro.pro/blog/short-form-video-hooks-script-guide-2026)); "Hook (1–2 seconds)" ([Toptal, 2026](https://www.toptal.com/creator/post/how-to-write-a-youtube-script)).
+
+### Structure, pace and payoff
+- **One idea.** A Short is "Hook (1–2 seconds)", "Context (1 short line)", "Value (core takeaway)", "CTA (optional but focused)": "Use one idea, one example, one takeaway." "Shorts reward precision. Filler is fatal." ([Toptal](https://www.toptal.com/creator/post/how-to-write-a-youtube-script)).
+- **Written for the ear.** "Use short sentences. Use contractions. Avoid academic phrasing." "If you wouldn't say it out loud, rewrite it." Cut "10 to 20% before filming" (Toptal).
+- **Beats and timing.** "Hook > Problem > Solution > CTA": hook 0–3 s, problem 3–15 s, solution 15–45 s with scene changes "every 2-4 seconds", CTA in the final 5 seconds; 60 seconds is "140-160 words" at "about 2.5-3 words per second"; "Each beat should deliver a micro-payoff that earns the next few seconds of attention." ([Eliro](https://eliro.pro/blog/short-form-video-hooks-script-guide-2026)).
+- **Tension.** A "'but therefore' problem-solution structure" gives a reason to stay, and the video should "end with something the viewer can do, feel, or think differently about" ([Masterhooks](https://masterhooks.com/resources/articles/short-form-video-checklist-for-high-retention)).
+- **Promise and payoff.** A script works by "delivering on the thumbnail's promise, nothing more, nothing less"; "hold back one fact the viewer is waiting for until late in the video"; in a versus format, "Delay the verdict to 80% of the video"; "tease a specific secret in the middle to pull viewers past 50%". The page is about long-form scripts, and it calls the often-quoted lift from pattern interrupts "directional, not study-backed" ([OutlierKit, 20 Feb 2026, updated 6 Nov 2026](https://www.outlierkit.com/resources/youtube-script-writing/)).
+- "Deliver on your hook's promise." "Deliver value first, ask second." (Eliro).
+
+### Comments
+- **The one large dataset in this note** ([Socialinsider, 5 Aug 2026, updated 11 Nov 2026](https://www.socialinsider.io/blog/tiktok-vs-reels-vs-shorts/amp/)): 36.7 million Reels, 35.6 million TikTok videos and 7.5 million Shorts from brand accounts with about 1K to 1M followers, January 2025 to June 2026. Engagement rate by followers: TikTok 2.60% (down from 3.70% in 2025), Reels 0.45%, Shorts 0.30%. Average comments per video: TikTok 50, Reels 20, Shorts 10. Two cautions: these are brand accounts, and TikTok's rate includes shares while the other two count only likes and comments.
+- **A comment is expensive.** "A like takes 0.5 seconds. A comment takes 10+ seconds." (unsourced). Advice: "Place the CTA in the last 2 seconds of your video AND in the caption", "Post the first comment on your own video immediately", "Respond to all comments in the first hour after posting" ([Socialync, 25 Feb 2026](https://www.socialync.io/blog/increase-tiktok-comments-engagement-2026)).
+- **The binary choice.** A prompt that "Poses a binary choice where both options have vocal defenders"; "the split-screen format itself invites a side to be taken." The limit: "The goal is friction, not offense", because "Hooks engineered purely to provoke anger tend to attract comment sections full of anger." ([Influencers Time, 14 Sep 2026](https://www.influencers-time.com/comment-bait-hooks-engineering-replies-without-rage-bait-ris/)).
+- **No source measures it.** None of these pages reports a test showing that a binary prompt earns more comments than an open question. It is a reasoned guess: fewer words to type.
+
+### Numbers I'm not using
+- Eliro: "67%" of mobile viewers swipe within three seconds; list hooks "2.5x more likely to be saved and shared"; a sixth-grade reading level gets "2x more views". No sources.
+- Virvid: "more than 60% of mobile viewers watch without sound"; "70% of your audience is already gone" at 15 s. No sources.
+- Influencers Time: high comment velocity gets "two to three times more feeds". No source.
+- OutlierKit: "130-150 spoken words per minute". No source, and it's about long-form.
+- A Fluxnote retention guide that the search surfaced returned 404 when I went to re-read it, so nothing from it is used.
+- Seen in the search, not relied on: [Humble&Brag](https://humbleandbrag.com/blog/youtube-shorts-benchmarks), [Viralo](https://viralo.studio/blog/video-retention-rate-benchmarks-2026), [Unity Films](https://unityfilms.net/youtube-shorts-analytics/), [GrowCreator](https://growcreator.pro/blog/youtube-shorts-retention-rate-benchmark), [SocialRails](https://socialrails.com/blog/youtube-audience-retention-complete-guide), [River](https://rivereditor.com/guides/how-to-script-youtube-videos-2026), [Dev.to](https://dev.to/bulkdl/hook-engineering-the-science-of-the-first-3-seconds-in-short-form-video-2026-2jp9), [Darkroom](https://darkroomagency.com/observatory/how-tiktok-algorithm-works-in-2026), [GhostShorts](https://ghostshorts.com/blog/how-to-make-would-you-rather-videos-for-tiktok-2026).
+
+### Where platform UI covers the picture (checked 14 Nov 2026)
+EP30 and EP31 put the episode's device in a strip under the world (y 1352–1568 of 1920), lower than Season 1's rule allowed (nothing important below y 1360). I checked whether that is safe.
+- **No platform publishes a safe zone for organic posts** that I could find; the figures are third-party and differ.
+- AdaptlyPost (undated, 2026): bottom reserve 300 px on Shorts, 320 px on TikTok, 310 px on Reels; right reserve 96, 120 and 84 px; a shared area of "900x1400 pixels, centered on the canvas". The figures "represent conservative calculations based on the smallest commonly encountered safe zone across device types" ([AdaptlyPost](https://adaptlypost.com/blog/social-media-safe-zones-2026-complete-guide)).
+- TryMyPost (31 Mar 2026): on Shorts the title overlay needs "a 340-pixel buffer from the bottom edge"; on Reels, "Keep critical text 300 pixels from the bottom and 150 pixels from the top."; Facebook's bottom obstruction is "slightly larger" than Instagram's, with no number ([TryMyPost](https://www.trymypost.com/blog/platform-aspect-ratios-safe-zones-2026)).
+- **For us:** the strip ends at y 1568, 12 px above the most cautious figure (1920 − 340 = 1580), and stops at x 900. What matters most (the two verdicts and the spine's reading) sits in its top half. Facebook is the one place the bottom row might be touched. Check each app's own preview before posting: that is the only real test.
+
+### From findings to a scorecard
+`python pipeline/benchmark.py epNN [epMM …]` reads `episode.json` and the measured `timing.json` and prints 25 rows. Every target is a judgement made from the findings above, not a platform rule.
+
+| Group | Target | Why |
+|---|---|---|
+| Hook | first spoken word ≤ 0.5 s | Virvid: the first word "within half a second" |
+| Hook | spoken hook ends ≤ 4.0 s, ≤ 12 words, ≥ 7 words heard by 3 s | the 1–3 s hook window (Eliro, Toptal, Masterhooks), with room for a full question |
+| Hook | title on screen at frame 0 | "Captions should appear from the very first word"; §1's first-frame finding |
+| Hook | first change of picture ≤ 4.5 s | nothing static while the swipe decision is made |
+| Pace | 140–170 words, 150–175 wpm | Eliro: 140–160 words a minute at 2.5–3 words a second; our narrator's measured range (EP26–EP30: 158–169 wpm) |
+| Pace | average sentence ≤ 6 words, longest ≤ 12 | "Use short sentences" (Toptal), turned into a number from our own best scripts |
+| Pace | longest pause between lines ≤ 0.45 s | no dead air |
+| Picture | ≥ 40 changes a minute, no stretch over 2.5 s, median ≤ 1.0 s | scene changes "every 2-4 seconds" (Eliro) is the floor; a change is a camera key, an overlay arriving, a word popping, a row ticking |
+| Story | run 1 by 12 s, the drop at 13–19 s | the problem by 15 s (Eliro) |
+| Story | the re-hook ("the twist" promised) at 18–25 s | "tease a specific secret in the middle" (OutlierKit) |
+| Story | the twist at 36–47 s, the lesson after 45 s | "hold back one fact … until late"; the verdict at about 80% (OutlierKit) |
+| Story | the lesson line stays on screen ≥ 1.2 s | the one line meant to be saved has to be readable (roughly 0.3 s plus 0.2 s a word); "end with something the viewer can do, feel, or think differently about" (Masterhooks) |
+| Ending | CTA ≤ 10 words, one ask | "CTA (optional but focused)" (Toptal) |
+| Ending | ending formula, follow ask in the final 3–7 s, hook title back for the loop | §6 |
+| Format | 55–62 s | `format.qa` |
+
+**Scores:** EP31 25/25 · EP29 23/25 · EP30 21/25. What the older episodes miss is what EP31 fixed on purpose: a 13-word hook (EP30); static stretches of 4.1 s (EP30) and 4.4 s (EP29) against EP31's longest of 2.1 s; and a lesson line that was on screen for 0.4 s (EP30) and 0.5 s (EP29) against EP31's 1.7 s.
+
+### What EP31 does with it
+| Finding | In the episode |
+|---|---|
+| A direct question, spoken at once, on the most striking frame | Frame 0: the statue split down the middle, one half gilded, one half tarred, with HERO / OR MONSTER? already on screen. The first word is at 0.20 s; the 10-word question ends at 3.5 s |
+| Nothing static in the hook | The gold half flares on "hero" and the rust half on "monster?" (`splitTone` pulses, `crownPass` and `stompHit`) |
+| One idea, one example, one takeaway | One woman (Maren), one night, one sentence to keep: "History isn't what happened. It's who's telling it." |
+| Written for the ear | 161 words, 4.1 words a sentence on average, the longest 10; contractions; no line needs a comma to be understood |
+| Problem by 15 s, "but therefore" | The lazy version runs for 300 years and fails at 15.6 s: CASE CLOSED, "Nothing left to solve." The failure is that there's no story, which is the episode's argument |
+| A secret teased in the middle | 22.3 s: "Four rules crack it open. The fifth is the twist." A locked fifth row stays on screen |
+| Each beat pays something | Every rule changes the two chronicles on screen: the pages are written and AGREE falls from 100% to 0% (witnesses), a coin stamps each page (motive), a row is struck from each (loss), the verdicts inflate to SAINT and DEMON (retelling) |
+| Hold one fact back; deliver the promise as the climax | The hook asks "hero or monster?". The answer is held until 40 s: "She did both." The viewer learns what neither chronicle knows, then is told to hide it |
+| End with something to do | "Now hide that from your world. Let your characters fight over the pieces." |
+| A binary prompt where both sides have defenders, without rage | "Hero or monster? Give us your verdict." Maren is fictional, both answers are defensible because both are true, and two vote chips (HERO, MONSTER) show the choice. Pinned comments ask for one word, then a reason |
+| The ask after the value, the follow last | The comment ask comes after the lesson card (51.2 s); the ending formula keeps the final 5.6 s (§6) |
+| Picture cadence | 64 changes a minute; the longest stretch without one is 2.1 s |
+| The line to keep must be readable | "History is who's telling it." appears on the card as the first sentence ends and stays for 1.7 s, until the wipe covers it. EP31's first render showed it for under half a second |
+
+### Not knowable from here
+- Whether any of this lifts retention or comments on *this* channel. After posting, compare EP31 with EP29 and EP30 on viewed vs swiped away, average percentage viewed, the retention curve at 15 s, 22 s and 40 s, and comments per 1,000 views.
+- Whether a binary prompt beats EP30's invention prompt. EP30 and EP31 are a natural A/B: compare comment count, length and replies.
+- The targets should move when real numbers arrive. If an episode that passes every row loses viewers at a beat the scorecard passes, change the scorecard.

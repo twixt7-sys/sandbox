@@ -4,3 +4,4 @@ transformers==5.20.2
 accelerate==1.15.0
 safetensors==0.8.0
 Pillow
+peft==0.21.3   # only for `--sprite` (the pixel-art LoRA)

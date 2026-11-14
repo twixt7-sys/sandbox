@@ -1,0 +1,5053 @@
+{
+ "id": "ep31",
+ "number": 31,
+ "season": 2,
+ "title": "Your World Needs a History Nobody Agrees On",
+ "lesson": "Don't write one true history for your world. Write the event, then write who saw which half of it, what each side gains from its telling, what was lost, and how retelling changed it. You know the truth; your characters only have the pieces, and the gap between the accounts is the plot.",
+ "format": {
+  "version": "s2",
+  "qa": {
+   "min": 55.0,
+   "max": 62.0
+  }
+ },
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.05
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.2,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "The same lab host, a storyteller this time. The hook is a dare. 'One history, and everybody agrees' is the knowing setup; 'Case closed' lands dry. The rules are crisp, two beats each. 'She did both' is the reveal, said plainly; 'Now hide that from your world' is the instruction, almost a whisper. The verdict ask is a genuine question."
+ },
+ "timing": {
+  "leadIn": 0.2,
+  "tail": 0.85,
+  "shotLead": 0.12
+ },
+ "captionY": 1238,
+ "captionsOff": [
+  {
+   "line": "L3",
+   "from": "one"
+  },
+  {
+   "line": "L6",
+   "from": "Case"
+  },
+  {
+   "line": "L7",
+   "from": "Real",
+   "to": "Four"
+  },
+  {
+   "line": "L13",
+   "from": "Rule"
+  }
+ ],
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "What if history's greatest hero was also its worst monster?",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "hero",
+    "monster?"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "hook",
+   "text": "Meet Maren. Three hundred years ago, she did one thing.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "maren.",
+    "one"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "setup",
+   "text": "The lazy version: one history, and everybody agrees.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "lazy",
+    "agrees."
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "setup",
+   "text": "Press run.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "run."
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "run1",
+   "text": "Three hundred years. One statue. One story. Zero questions.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "story.",
+    "zero"
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "drop",
+   "text": "Case closed. Nothing left to solve.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "closed.",
+    "solve."
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "rehook",
+   "text": "Real history has witnesses. Four rules crack it open. The fifth is the twist.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "witnesses.",
+    "twist."
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "witness",
+   "text": "One: witnesses. The valley saw her drive the monster off. The court saw their fields burn.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "valley",
+    "court"
+   ]
+  },
+  {
+   "id": "L9",
+   "shot": "motive",
+   "text": "Two: motive. Each side keeps the half that flatters it.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "motive.",
+    "flatters"
+   ]
+  },
+  {
+   "id": "L10",
+   "shot": "loss",
+   "text": "Three: loss. Pages burn. Witnesses die.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "burn.",
+    "die."
+   ]
+  },
+  {
+   "id": "L11",
+   "shot": "retell",
+   "text": "Four: retelling. Every generation makes her bigger.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "retelling.",
+    "bigger."
+   ]
+  },
+  {
+   "id": "L12",
+   "shot": "run2",
+   "text": "Run it again. One night. Two histories.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "one",
+    "two"
+   ]
+  },
+  {
+   "id": "L13",
+   "shot": "twist",
+   "text": "Rule five? The truth. She did both.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "truth.",
+    "both."
+   ]
+  },
+  {
+   "id": "L14",
+   "shot": "twist",
+   "text": "She burned the fields to drive it off. Now hide that from your world.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "burned",
+    "hide"
+   ]
+  },
+  {
+   "id": "L15",
+   "shot": "role",
+   "text": "Let your characters fight over the pieces.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "fight",
+    "pieces."
+   ]
+  },
+  {
+   "id": "L16",
+   "shot": "lesson",
+   "text": "History isn't what happened. It's who's telling it.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "happened.",
+    "telling"
+   ]
+  },
+  {
+   "id": "L17",
+   "shot": "cta",
+   "text": "Hero or monster? Give us your verdict.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "hero",
+    "verdict."
+   ]
+  },
+  {
+   "id": "L18",
+   "shot": "next",
+   "text": "Part 31 of 50. Follow for part 32: a war that never ended.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "follow",
+    "never"
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "world",
+   "purpose": "Close EP30's loop (hero, or monster?) and stop the scroll on the question.",
+   "visual": "Golden hour, frontal: a hooded stone woman raising two torches on a stepped plinth, split down the middle. The valley's half is gilded, its torch lit, flowers and candles at its foot; the court's half is tarred, its torch dead, scratched in rust. The frame is split the same way: warm on the left, drained and rust on the right. The valley's people (wheat gold) stand left, the court's (rust) right. HERO / OR MONSTER? is on screen from frame 0; the gold half flares on 'hero', the rust half on 'monster?'. Then the field card: MAREN \u00b7 DISPUTED FIGURE \u00b7 DID: one thing, 300 years ago.",
+   "camera": "Frontal long lens on the centre line (az 0, el 9, dist 76, fov 15), a slow 0.6\u00b0/s drift; the loop lands on the same frame.",
+   "layers": {
+    "foreground": "kinetic, sting, split tone, field card",
+    "midground": "the split statue",
+    "background": "two crowds, the meadow"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "HERO / OR MONSTER? \u00b7 FIELD CARD NO. 006 \u00b7 MAREN",
+   "transition": "Ink-blue block wipe into the lazy version.",
+   "music": "Dispute: the theme split between recorder and bassoon; a hit on 'monster?'.",
+   "graphics": [
+    {
+     "type": "splitTone",
+     "start": {
+      "shot": "hook"
+     },
+     "end": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.15
+     },
+     "fadeOut": 0.3,
+     "pulses": [
+      [
+       {
+        "line": "L1",
+        "word": "hero"
+       },
+       "left"
+      ],
+      [
+       {
+        "line": "L1",
+        "word": "monster?"
+       },
+       "right"
+      ]
+     ]
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "HERO",
+       "color": "#f4c46e",
+       "size": 128,
+       "pulseAt": {
+        "line": "L1",
+        "word": "hero"
+       }
+      },
+      {
+       "text": "OR MONSTER?",
+       "color": "#d0603f",
+       "size": 84,
+       "pulseAt": {
+        "line": "L1",
+        "word": "monster?"
+       }
+      }
+     ],
+     "y": 440,
+     "size": 96,
+     "start": {
+      "shot": "hook"
+     },
+     "end": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.1
+     },
+     "preShow": true
+    },
+    {
+     "type": "sting",
+     "label": "WORLD ENGINE",
+     "run": "RUN 31 \u00b7 HISTORY",
+     "dur": 1.4,
+     "start": {
+      "shot": "hook"
+     },
+     "front": true
+    },
+    {
+     "type": "fieldCard",
+     "mode": "intro",
+     "y": 440,
+     "start": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "dietAt": {
+      "line": "L2",
+      "word": "she"
+     },
+     "kicker": "FIELD CARD \u00b7 NO. 006",
+     "kind": "DISPUTED FIGURE",
+     "name": "MAREN",
+     "dietLabel": "DID",
+     "diet": "one thing, 300 years ago",
+     "sprite": "ep31/statue_sprite.png",
+     "spriteW": 62,
+     "spriteH": 127
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "chime",
+     "at": {
+      "shot": "hook"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "shot": "hook",
+      "offset": 0.05
+     },
+     "gain": -17
+    },
+    {
+     "sound": "crownPass",
+     "at": {
+      "line": "L1",
+      "word": "hero"
+     },
+     "gain": -19
+    },
+    {
+     "sound": "stompHit",
+     "at": {
+      "line": "L1",
+      "word": "monster?"
+     },
+     "gain": -20
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.05
+     },
+     "gain": -18
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L2",
+      "word": "she"
+     },
+     "gain": -20
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "setup",
+   "scene": "world",
+   "purpose": "The lazy version: one history, and everybody agrees.",
+   "visual": "An ink wipe to day and year 0: the same statue in plain stone, both crowds before it. ONE HISTORY / EVERYBODY AGREES. The two chronicles slide in under the world, both pages saying HERO with MONSTER GONE and FLOCK SAVED: AGREE 100%. The sim bar arrives (TELLINGS 01, QUESTIONS 00) and RUN is pressed.",
+   "camera": "Frontal medium (az 0, el 12, dist 60, fov 20).",
+   "layers": {
+    "foreground": "kinetic, chronicles, sim bar",
+    "midground": "the plain statue, both crowds",
+    "background": "the meadow"
+   },
+   "lighting": "Day.",
+   "onScreenText": "ONE HISTORY \u00b7 EVERYBODY AGREES \u00b7 AGREE 100%",
+   "transition": "A pull-out to the wide on 'run'.",
+   "music": "Chronicle, thin (lute alone).",
+   "graphics": [
+    {
+     "type": "splitTone",
+     "start": {
+      "line": "L9",
+      "word": "keeps",
+      "offset": -0.1
+     },
+     "fadeIn": 0.5,
+     "end": {
+      "line": "L10",
+      "word": "Three:",
+      "offset": -0.15
+     },
+     "fadeOut": 0.01
+    },
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "dur": 0.34,
+     "color": "#1b2350"
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "ONE HISTORY",
+       "at": {
+        "line": "L3",
+        "word": "one"
+       },
+       "size": 84
+      },
+      {
+       "text": "EVERYBODY AGREES",
+       "at": {
+        "line": "L3",
+        "word": "everybody"
+       },
+       "color": "rust",
+       "size": 60
+      }
+     ],
+     "y": 470,
+     "size": 84,
+     "start": {
+      "line": "L3",
+      "word": "one",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L4",
+      "word": "Press",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "chronicles",
+     "y": 1352,
+     "start": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": 0.1
+     },
+     "end": {
+      "line": "L15",
+      "word": "Let",
+      "offset": -0.25
+     },
+     "rows": [
+      {
+       "icon": "grimmaw",
+       "label": "MONSTER GONE",
+       "left": [
+        [
+         {
+          "line": "L3",
+          "word": "lazy"
+         },
+         1
+        ],
+        [
+         {
+          "line": "L6",
+          "word": "solve.",
+          "offset": 0.55
+         },
+         0
+        ],
+        [
+         {
+          "line": "L8",
+          "word": "off.",
+          "offset": -0.1
+         },
+         1
+        ],
+        [
+         {
+          "line": "L13",
+          "word": "both."
+         },
+         3
+        ],
+        [
+         {
+          "line": "L14",
+          "word": "hide"
+         },
+         1
+        ]
+       ],
+       "right": [
+        [
+         {
+          "line": "L3",
+          "word": "lazy"
+         },
+         1
+        ],
+        [
+         {
+          "line": "L6",
+          "word": "solve.",
+          "offset": 0.55
+         },
+         0
+        ],
+        [
+         {
+          "line": "L13",
+          "word": "both."
+         },
+         3
+        ],
+        [
+         {
+          "line": "L14",
+          "word": "hide"
+         },
+         0
+        ]
+       ]
+      },
+      {
+       "icon": "sheep",
+       "label": "FLOCK SAVED",
+       "left": [
+        [
+         {
+          "line": "L3",
+          "word": "lazy"
+         },
+         1
+        ],
+        [
+         {
+          "line": "L6",
+          "word": "solve.",
+          "offset": 0.55
+         },
+         0
+        ],
+        [
+         {
+          "line": "L8",
+          "word": "off.",
+          "offset": 0.2
+         },
+         1
+        ],
+        [
+         {
+          "line": "L10",
+          "word": "burn."
+         },
+         2
+        ],
+        [
+         {
+          "line": "L13",
+          "word": "both."
+         },
+         3
+        ],
+        [
+         {
+          "line": "L14",
+          "word": "hide"
+         },
+         2
+        ]
+       ],
+       "right": [
+        [
+         {
+          "line": "L3",
+          "word": "lazy"
+         },
+         1
+        ],
+        [
+         {
+          "line": "L6",
+          "word": "solve.",
+          "offset": 0.55
+         },
+         0
+        ],
+        [
+         {
+          "line": "L13",
+          "word": "both."
+         },
+         3
+        ],
+        [
+         {
+          "line": "L14",
+          "word": "hide"
+         },
+         0
+        ]
+       ]
+      },
+      {
+       "icon": "flame",
+       "label": "FIELDS BURNED",
+       "left": [
+        [
+         {
+          "line": "L3",
+          "word": "lazy"
+         },
+         0
+        ],
+        [
+         {
+          "line": "L13",
+          "word": "both."
+         },
+         3
+        ],
+        [
+         {
+          "line": "L14",
+          "word": "hide"
+         },
+         0
+        ]
+       ],
+       "right": [
+        [
+         {
+          "line": "L3",
+          "word": "lazy"
+         },
+         0
+        ],
+        [
+         {
+          "line": "L8",
+          "word": "fields"
+         },
+         1
+        ],
+        [
+         {
+          "line": "L13",
+          "word": "both."
+         },
+         3
+        ],
+        [
+         {
+          "line": "L14",
+          "word": "hide"
+         },
+         1
+        ]
+       ]
+      },
+      {
+       "icon": "sheaf",
+       "label": "HARVEST LOST",
+       "left": [
+        [
+         {
+          "line": "L3",
+          "word": "lazy"
+         },
+         0
+        ],
+        [
+         {
+          "line": "L13",
+          "word": "both."
+         },
+         3
+        ],
+        [
+         {
+          "line": "L14",
+          "word": "hide"
+         },
+         0
+        ]
+       ],
+       "right": [
+        [
+         {
+          "line": "L3",
+          "word": "lazy"
+         },
+         0
+        ],
+        [
+         {
+          "line": "L8",
+          "word": "burn."
+         },
+         1
+        ],
+        [
+         {
+          "line": "L10",
+          "word": "burn."
+         },
+         2
+        ],
+        [
+         {
+          "line": "L13",
+          "word": "both."
+         },
+         3
+        ],
+        [
+         {
+          "line": "L14",
+          "word": "hide"
+         },
+         2
+        ]
+       ]
+      }
+     ],
+     "left": {
+      "title": "THE VALLEY SAYS",
+      "color": "#f4c46e"
+     },
+     "right": {
+      "title": "THE COURT SAYS",
+      "color": "#d0603f"
+     },
+     "verdicts": [
+      [
+       {
+        "line": "L3",
+        "word": "lazy"
+       },
+       "HERO",
+       "HERO"
+      ],
+      [
+       {
+        "line": "L6",
+        "word": "solve.",
+        "offset": 0.55
+       },
+       "\u00b7 \u00b7 \u00b7",
+       "\u00b7 \u00b7 \u00b7"
+      ],
+      [
+       {
+        "line": "L8",
+        "word": "off.",
+        "offset": -0.1
+       },
+       "HERO",
+       "\u00b7 \u00b7 \u00b7"
+      ],
+      [
+       {
+        "line": "L8",
+        "word": "fields"
+       },
+       "HERO",
+       "MONSTER"
+      ],
+      [
+       {
+        "line": "L11",
+        "word": "bigger."
+       },
+       "SAINT",
+       "DEMON"
+      ]
+     ],
+     "motiveAt": {
+      "line": "L9",
+      "word": "motive."
+     },
+     "hideAt": {
+      "line": "L14",
+      "word": "hide"
+     }
+    },
+    {
+     "type": "simBar",
+     "counters": [
+      {
+       "icon": "book",
+       "label": "TELLINGS",
+       "key": "tellings",
+       "color": "#7f95ff",
+       "digits": 2
+      },
+      {
+       "icon": "eye",
+       "label": "QUESTIONS",
+       "key": "questions",
+       "color": "ember",
+       "digits": 2
+      }
+     ],
+     "compact": true,
+     "start": {
+      "line": "L4",
+      "word": "Press",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L16",
+      "word": "History",
+      "offset": -0.3
+     },
+     "runAt": [
+      {
+       "line": "L4",
+       "word": "run."
+      },
+      {
+       "line": "L12",
+       "word": "Run"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "gain": -15
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": 0.1
+     },
+     "gain": -18
+    },
+    {
+     "sound": "quill",
+     "at": {
+      "line": "L3",
+      "word": "one"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L3",
+      "word": "everybody"
+     },
+     "gain": -19
+    },
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L4",
+      "word": "run."
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L4",
+      "word": "run."
+     },
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "run1",
+   "scene": "world",
+   "purpose": "Run the lazy version: three hundred years of one story.",
+   "visual": "Whole Isle; YEAR 0\u2192300; the crowds turn over, generation after generation, and nothing else changes: TELLINGS 01, QUESTIONS 00. The same verdict is stamped under the clock each century: YEAR 100 \u00b7 HERO, YEAR 200 \u00b7 HERO, YEAR 300 \u00b7 HERO.",
+   "camera": "Wide (az 18, el 48, dist 196).",
+   "layers": {
+    "foreground": "sim bar, kinetic, chronicles",
+    "midground": "the statue, the crowds ageing",
+    "background": "island"
+   },
+   "lighting": "Day.",
+   "onScreenText": "YEAR 100 \u00b7 HERO / YEAR 200 \u00b7 HERO / YEAR 300 \u00b7 HERO",
+   "transition": "Cut to the statue.",
+   "music": "Drive.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "YEAR 100 \u00b7 HERO",
+       "at": {
+        "line": "L5",
+        "word": "hundred"
+       },
+       "color": "#f4c46e",
+       "size": 58
+      },
+      {
+       "text": "YEAR 200 \u00b7 HERO",
+       "at": {
+        "line": "L5",
+        "word": "statue."
+       },
+       "color": "#f4c46e",
+       "size": 58
+      },
+      {
+       "text": "YEAR 300 \u00b7 HERO",
+       "at": {
+        "line": "L5",
+        "word": "Zero"
+       },
+       "color": "#f4c46e",
+       "size": 58
+      }
+     ],
+     "y": 468,
+     "size": 58,
+     "start": {
+      "line": "L5",
+      "word": "hundred",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L6",
+      "word": "Case",
+      "offset": -0.25
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L5",
+      "word": "Zero"
+     },
+     "gain": -22
+    },
+    {
+     "sound": "clockTicks",
+     "from": {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L5",
+      "word": "Zero"
+     },
+     "gain": -23
+    },
+    {
+     "sound": "quill",
+     "at": {
+      "line": "L5",
+      "word": "hundred"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "quill",
+     "at": {
+      "line": "L5",
+      "word": "statue."
+     },
+     "gain": -15
+    },
+    {
+     "sound": "quill",
+     "at": {
+      "line": "L5",
+      "word": "Zero"
+     },
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "drop",
+   "scene": "world",
+   "purpose": "The punchline: a closed case is no story.",
+   "visual": "The plain statue from above, in gloom: CASE CLOSED \u00b7 0 QUESTIONS \u00b7 NOTHING TO SOLVE. The chronicles still agree, 100%.",
+   "camera": "Frontal, higher (az 0, el 20, dist 53, fov 20).",
+   "layers": {
+    "foreground": "stamp, chronicles",
+    "midground": "the statue",
+    "background": "void"
+   },
+   "lighting": "Gloom.",
+   "onScreenText": "CASE CLOSED \u00b7 0 QUESTIONS \u00b7 NOTHING TO SOLVE",
+   "transition": "Rewind + block wipe.",
+   "music": "Drop; a boom on 'closed'.",
+   "graphics": [
+    {
+     "type": "stamp",
+     "text": "CASE CLOSED",
+     "sub": "0 QUESTIONS \u00b7 NOTHING TO SOLVE",
+     "color": "rust",
+     "y": 560,
+     "size": 76,
+     "start": {
+      "line": "L6",
+      "word": "closed."
+     },
+     "end": {
+      "line": "L6",
+      "word": "solve.",
+      "offset": 0.5
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L6",
+      "word": "closed."
+     },
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "rehook",
+   "scene": "world",
+   "purpose": "Re-hook: the thesis, then four easy rules and one locked.",
+   "visual": "REWIND to the night itself, year 0, dusk: no statue yet, and both chronicle pages go blank. Maren stands on the spot with her torch (THAT NIGHT \u00b7 MAREN), the Grimmaw to her left, the court's ripe field to her right, three witnesses from each side in the foreground. REAL HISTORY / HAS WITNESSES; then the checklist CRACK IT OPEN, row 5 locked (the twist).",
+   "camera": "Frontal, higher (az 0, el 22, dist 60, fov 22): the whole night in one frame.",
+   "layers": {
+    "foreground": "rewind, kinetic, pin, checklist, chronicles",
+    "midground": "Maren, the Grimmaw, the field, six witnesses",
+    "background": "the meadow at dusk"
+   },
+   "lighting": "Dusk.",
+   "onScreenText": "REAL HISTORY \u00b7 HAS WITNESSES \u00b7 CRACK IT OPEN 0/5",
+   "transition": "Hold: the same frame runs through rule 1.",
+   "music": "Mystery; a riser into 'the twist'.",
+   "graphics": [
+    {
+     "type": "rewind",
+     "y": 620,
+     "start": {
+      "line": "L6",
+      "word": "solve.",
+      "offset": 0.55
+     },
+     "end": {
+      "line": "L7",
+      "word": "Real",
+      "offset": 0.3
+     }
+    },
+    {
+     "type": "pin",
+     "at": [
+      18.0,
+      7.0,
+      1.5
+     ],
+     "kicker": "THAT NIGHT",
+     "text": "MAREN",
+     "color": "ember",
+     "lift": 60,
+     "size": 30,
+     "start": {
+      "line": "L7",
+      "word": "Real",
+      "offset": 0.35
+     },
+     "end": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.25
+     }
+    },
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L6",
+      "word": "solve.",
+      "offset": 0.53
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "REAL HISTORY",
+       "at": {
+        "line": "L7",
+        "word": "Real"
+       },
+       "size": 78
+      },
+      {
+       "text": "HAS WITNESSES",
+       "at": {
+        "line": "L7",
+        "word": "has"
+       },
+       "color": "#7f95ff",
+       "size": 72
+      }
+     ],
+     "y": 470,
+     "size": 84,
+     "start": {
+      "line": "L7",
+      "word": "Real",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "fieldCard",
+     "mode": "checklist",
+     "y": 448,
+     "rows": [
+      {
+       "n": 1,
+       "label": "WITNESSES",
+       "text": "each saw half",
+       "at": {
+        "line": "L8",
+        "word": "witnesses."
+       }
+      },
+      {
+       "n": 2,
+       "label": "MOTIVE",
+       "text": "each keeps its half",
+       "at": {
+        "line": "L9",
+        "word": "motive."
+       }
+      },
+      {
+       "n": 3,
+       "label": "LOSS",
+       "text": "pages burn",
+       "at": {
+        "line": "L10",
+        "word": "loss."
+       }
+      },
+      {
+       "n": 4,
+       "label": "RETELLING",
+       "text": "she grows",
+       "at": {
+        "line": "L11",
+        "word": "retelling."
+       }
+      },
+      {
+       "n": 5,
+       "label": "THE TRUTH",
+       "text": "know it. hide it.",
+       "at": {
+        "line": "L7",
+        "word": "crack"
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L15",
+        "word": "fight",
+        "offset": -0.1
+       }
+      }
+     ],
+     "start": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L16",
+      "word": "History",
+      "offset": -0.3
+     },
+     "kicker": "MAREN \u00b7 THE RECORD",
+     "title": "CRACK IT OPEN",
+     "blinkAt": {
+      "line": "L7",
+      "word": "twist."
+     },
+     "lockedText": "the twist",
+     "sprite": "ep31/statue_sprite.png",
+     "spriteW": 62,
+     "spriteH": 127,
+     "collapse": [
+      [
+       {
+        "line": "L8",
+        "word": "The",
+        "offset": -0.3
+       },
+       0
+      ],
+      [
+       {
+        "line": "L8",
+        "word": "The"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "Let",
+        "offset": -0.15
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "Let",
+        "offset": 0.15
+       },
+       0
+      ]
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L6",
+      "word": "solve.",
+      "offset": 0.5
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "gain": -17
+    }
+   ]
+  },
+  {
+   "id": "witness",
+   "scene": "world",
+   "purpose": "Rule 1: two witnesses, each saw half.",
+   "visual": "The same frame, held. THE VALLEY SAW: the right of the frame is hatched out UNSEEN while the Grimmaw roars and is driven off to the left, and the valley's page is written: HERO, MONSTER GONE, FLOCK SAVED. THE COURT SAW: the veil swaps sides, on the right the field burns, and the court's page is written: MONSTER, FIELDS BURNED, HARVEST LOST. The spine, blank until both pages exist, pops to AGREE 0%. TELLINGS 00, 01, 02.",
+   "camera": "The night frame, locked.",
+   "layers": {
+    "foreground": "veil, chronicles, checklist (folded)",
+    "midground": "the Grimmaw fleeing, the field burning",
+    "background": "dusk"
+   },
+   "lighting": "Dusk.",
+   "onScreenText": "THE VALLEY SAW \u00b7 THE COURT SAW \u00b7 UNSEEN \u00b7 AGREE 0%",
+   "transition": "Cut to day.",
+   "music": "Chronicle 1: lute alone.",
+   "graphics": [
+    {
+     "type": "veil",
+     "side": "right",
+     "w": 460,
+     "label": "THE VALLEY SAW",
+     "color": "#f4c46e",
+     "start": {
+      "line": "L8",
+      "word": "valley",
+      "offset": -0.25
+     },
+     "end": {
+      "line": "L8",
+      "word": "court",
+      "offset": -0.25
+     }
+    },
+    {
+     "type": "veil",
+     "side": "left",
+     "w": 460,
+     "label": "THE COURT SAW",
+     "color": "#d0603f",
+     "start": {
+      "line": "L8",
+      "word": "court",
+      "offset": -0.2
+     },
+     "end": {
+      "line": "L9",
+      "word": "Two:",
+      "offset": -0.2
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L8",
+      "word": "witnesses."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "eyeOn",
+     "at": {
+      "line": "L8",
+      "word": "valley",
+      "offset": -0.25
+     },
+     "gain": -17
+    },
+    {
+     "sound": "roar",
+     "at": {
+      "line": "L8",
+      "word": "valley",
+      "offset": -0.1
+     },
+     "gain": -19
+    },
+    {
+     "sound": "quill",
+     "at": {
+      "line": "L8",
+      "word": "off.",
+      "offset": -0.1
+     },
+     "gain": -15
+    },
+    {
+     "sound": "eyeOn",
+     "at": {
+      "line": "L8",
+      "word": "court",
+      "offset": -0.2
+     },
+     "gain": -17
+    },
+    {
+     "sound": "burn",
+     "from": {
+      "line": "L8",
+      "word": "court",
+      "offset": -0.2
+     },
+     "to": {
+      "line": "L9",
+      "word": "Two:",
+      "offset": -0.2
+     },
+     "gain": -20
+    },
+    {
+     "sound": "quill",
+     "at": {
+      "line": "L8",
+      "word": "fields"
+     },
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "motive",
+   "scene": "world",
+   "purpose": "Rule 2: each side keeps the half that flatters it.",
+   "visual": "Day: the statue rises on the spot in plain stone, between the two sides' archives. A coin stamps onto each page on 'motive'. On 'keeps' the valley's half is gilded, its torch lit, flowers and candles at its foot; on 'flatters' the court's half is tarred and scratched. The frame itself splits: warm on the left, drained and rust on the right.",
+   "camera": "Frontal long lens (az 0, el 9, dist 56, fov 16).",
+   "layers": {
+    "foreground": "split tone, chronicles, checklist (folded)",
+    "midground": "the statue gilding and tarring",
+    "background": "two archives, two crowds"
+   },
+   "lighting": "Day.",
+   "onScreenText": "2 MOTIVE \u00b7 each keeps its half",
+   "transition": "Cut.",
+   "music": "Chronicle 2: tambourine joins.",
+   "graphics": [],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L9",
+      "word": "motive."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L9",
+      "word": "Two:"
+     },
+     "gain": -16
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L9",
+      "word": "keeps"
+     },
+     "gain": -17
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L9",
+      "word": "flatters"
+     },
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "loss",
+   "scene": "world",
+   "purpose": "Rule 3: the record itself is lost.",
+   "visual": "Dusk: both archives behind the statue char and smoke (BOTH ARCHIVES \u00b7 PAGES BURN), and a row is struck out of each chronicle: PAGE LOST. On 'witnesses die' seventy years pass and the crowds thin to two.",
+   "camera": "Frontal, pulled back and higher (az 0, el 16, dist 64, fov 20), the archives behind the statue.",
+   "layers": {
+    "foreground": "pin, chronicles",
+    "midground": "the burning archives",
+    "background": "the statue, dusk"
+   },
+   "lighting": "Dusk.",
+   "onScreenText": "BOTH ARCHIVES \u00b7 PAGES BURN \u00b7 PAGE LOST",
+   "transition": "Cut.",
+   "music": "Chronicle 3: bass joins (F major).",
+   "graphics": [
+    {
+     "type": "pin",
+     "at": [
+      18.0,
+      8.6,
+      -4.2
+     ],
+     "kicker": "BOTH ARCHIVES",
+     "text": "PAGES BURN",
+     "color": "rust",
+     "lift": 30,
+     "size": 30,
+     "start": {
+      "line": "L10",
+      "word": "Pages"
+     },
+     "end": {
+      "line": "L11",
+      "word": "Four:",
+      "offset": -0.25
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L10",
+      "word": "loss."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "burn",
+     "from": {
+      "line": "L10",
+      "word": "Pages"
+     },
+     "to": {
+      "line": "L10",
+      "word": "die.",
+      "offset": 0.1
+     },
+     "gain": -21
+    },
+    {
+     "sound": "pageTear",
+     "at": {
+      "line": "L10",
+      "word": "burn."
+     },
+     "gain": -12
+    },
+    {
+     "sound": "crownPass",
+     "at": {
+      "line": "L10",
+      "word": "die."
+     },
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "retell",
+   "scene": "world",
+   "purpose": "Rule 4: retelling inflates.",
+   "visual": "Day: the archives are gone. The years race from 70 to 300, the crowds grow back, and the statue grows a third taller on its plinth; on 'bigger' the verdicts become SAINT and DEMON.",
+   "camera": "Frontal long lens (az 0, el 9, dist 68, fov 16).",
+   "layers": {
+    "foreground": "chronicles, checklist (folded)",
+    "midground": "the statue growing",
+    "background": "the crowds turning over"
+   },
+   "lighting": "Day.",
+   "onScreenText": "4 RETELLING \u00b7 she grows \u00b7 SAINT / DEMON",
+   "transition": "Cut to the wide.",
+   "music": "Chronicle 4: the theme on recorder, harp and glockenspiel.",
+   "graphics": [],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L11",
+      "word": "retelling."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "clockTicks",
+     "from": {
+      "line": "L11",
+      "word": "Every"
+     },
+     "to": {
+      "line": "L11",
+      "word": "bigger.",
+      "offset": 0.3
+     },
+     "gain": -23
+    },
+    {
+     "sound": "morph",
+     "at": {
+      "line": "L11",
+      "word": "makes"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "quill",
+     "at": {
+      "line": "L11",
+      "word": "bigger."
+     },
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "run2",
+   "scene": "world",
+   "purpose": "Run with the rules: one night, two histories.",
+   "visual": "Whole Isle; YEAR 0\u2192300; TELLINGS 02; QUESTIONS climbs from 20 to 40: DISPUTED \u00b7 1 NIGHT \u00b7 2 HISTORIES, stamped in chronicle ink.",
+   "camera": "Wide (az 20, el 48, dist 196).",
+   "layers": {
+    "foreground": "sim bar, stamp, chronicles",
+    "midground": "the split statue, the crowds",
+    "background": "island"
+   },
+   "lighting": "Day.",
+   "onScreenText": "DISPUTED \u00b7 1 NIGHT \u00b7 2 HISTORIES",
+   "transition": "Cut to the statue's face.",
+   "music": "Drive with the theme; a stab and a cymbal on 'histories'.",
+   "graphics": [
+    {
+     "type": "stamp",
+     "text": "DISPUTED",
+     "sub": "1 NIGHT \u00b7 2 HISTORIES",
+     "color": "#7f95ff",
+     "rotate": -4,
+     "y": 880,
+     "size": 96,
+     "start": {
+      "line": "L12",
+      "word": "histories."
+     },
+     "end": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -16
+    },
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L12",
+      "word": "histories.",
+      "offset": 0.2
+     },
+     "gain": -22
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L12",
+      "word": "histories."
+     },
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "twist",
+   "scene": "world",
+   "purpose": "The locked rule: the truth, and what to do with it.",
+   "visual": "RULE 5? THE TRUTH over a close-up of the split statue and its two torches. Then the night again, unveiled: Maren's torch lights the field and the Grimmaw flees from the fire, both halves in one frame. SHE DID / BOTH; every row on both pages turns ember: BOTH TRUE. ONE TORCH \u00b7 BOTH STORIES. On 'hide' a HIDDEN band hatches out the centre of the frame (ONLY YOU KNOW), the pages fall back to their halves and the spine locks: THE TRUTH \u00b7 HIDDEN.",
+   "camera": "Frontal close on a very long lens (az 0, el 6, dist 60, fov 12), then the night frame, locked.",
+   "layers": {
+    "foreground": "kinetic, veil, pin, chronicles",
+    "midground": "Maren, the fire, the fleeing Grimmaw",
+    "background": "dusk"
+   },
+   "lighting": "Day for the question, dusk for the night.",
+   "onScreenText": "RULE 5? THE TRUTH \u00b7 SHE DID BOTH \u00b7 ONLY YOU KNOW \u00b7 HIDDEN",
+   "transition": "Cut to today.",
+   "music": "Twist (a held A7\u266d9), a boom on 'both', then dispute.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "RULE 5?",
+       "at": {
+        "line": "L13",
+        "word": "Rule"
+       },
+       "color": "ember"
+      },
+      {
+       "text": "THE TRUTH",
+       "at": {
+        "line": "L13",
+        "word": "truth."
+       },
+       "color": "#7f95ff",
+       "size": 96
+      }
+     ],
+     "size": 150,
+     "y": 570,
+     "start": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.02
+     },
+     "end": {
+      "line": "L13",
+      "word": "She",
+      "offset": -0.12
+     }
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "SHE DID",
+       "at": {
+        "line": "L13",
+        "word": "She"
+       },
+       "size": 84
+      },
+      {
+       "text": "BOTH",
+       "at": {
+        "line": "L13",
+        "word": "both."
+       },
+       "color": "ember",
+       "size": 150
+      }
+     ],
+     "size": 84,
+     "y": 560,
+     "start": {
+      "line": "L13",
+      "word": "She",
+      "offset": -0.02
+     },
+     "end": {
+      "line": "L14",
+      "word": "fields",
+      "offset": -0.05
+     }
+    },
+    {
+     "type": "pin",
+     "at": [
+      18.0,
+      7.4,
+      1.5
+     ],
+     "kicker": "ONE TORCH",
+     "text": "BOTH STORIES",
+     "color": "ember",
+     "lift": 70,
+     "size": 30,
+     "start": {
+      "line": "L14",
+      "word": "fields",
+      "offset": 0.05
+     },
+     "end": {
+      "line": "L14",
+      "word": "Now",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "veil",
+     "side": "middle",
+     "w": 220,
+     "textSize": 30,
+     "hiddenText": "HIDDEN",
+     "label": "ONLY YOU KNOW",
+     "color": "ember",
+     "start": {
+      "line": "L14",
+      "word": "hide",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L15",
+      "word": "Let",
+      "offset": -0.2
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "eyeOn",
+     "at": {
+      "line": "L13",
+      "word": "She",
+      "offset": -0.1
+     },
+     "gain": -16
+    },
+    {
+     "sound": "burn",
+     "from": {
+      "line": "L13",
+      "word": "She"
+     },
+     "to": {
+      "line": "L14",
+      "word": "Now",
+      "offset": 0.1
+     },
+     "gain": -21
+    },
+    {
+     "sound": "roar",
+     "at": {
+      "line": "L13",
+      "word": "did"
+     },
+     "gain": -20
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L13",
+      "word": "both."
+     },
+     "gain": -12
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L14",
+      "word": "fields",
+      "offset": 0.05
+     },
+     "gain": -20
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L14",
+      "word": "hide",
+      "offset": -0.05
+     },
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "role",
+   "scene": "world",
+   "purpose": "Unlock rule 5: give the pieces to the characters.",
+   "visual": "Today: the split statue and both crowds under the open checklist. On 'fight' row 5 unlocks: THE TRUTH \u00b7 know it. hide it. 5/5. The follow chip (+ FOLLOW \u00b7 PART 31/50) appears after 'pieces'.",
+   "camera": "The hook framing, lowered to sit under the open card (az 0, el 9, dist 76, fov 15), a slow 0.5\u00b0/s drift.",
+   "layers": {
+    "foreground": "open checklist, follow chip",
+    "midground": "the split statue, two crowds",
+    "background": "the meadow"
+   },
+   "lighting": "Day.",
+   "onScreenText": "5 THE TRUTH \u00b7 know it. hide it. \u00b7 5/5",
+   "transition": "The card goes full.",
+   "music": "Anthem from 'Let'; a big D-major hit on 'fight'.",
+   "graphics": [
+    {
+     "type": "followChip",
+     "start": {
+      "line": "L15",
+      "word": "pieces.",
+      "offset": 0.2
+     },
+     "end": {
+      "line": "L16",
+      "word": "telling",
+      "offset": 0.3
+     },
+     "text": "FOLLOW",
+     "sub": "PART 31/50"
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L15",
+      "word": "Let",
+      "offset": -0.15
+     },
+     "gain": -17
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L15",
+      "word": "fight",
+      "offset": -0.1
+     },
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "lesson",
+   "scene": "world",
+   "purpose": "The takeaway.",
+   "visual": "The full card (BEFORE YOU WRITE HISTORY \u00b7 MAREN, all five rows ticked) over the whole Isle, with 'History is who's telling it.' in serif italic on 'telling'.",
+   "camera": "Wide (az 15, el 34, dist 190), a slow 2\u00b0/s orbit.",
+   "layers": {
+    "foreground": "full card, follow chip",
+    "midground": "the island at golden hour",
+    "background": "stars"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "BEFORE YOU WRITE HISTORY \u00b7 MAREN \u00b7 History is who's telling it.",
+   "transition": "Block wipe to the end card.",
+   "music": "Anthem; the World Engine chime as the card lands.",
+   "graphics": [
+    {
+     "type": "fieldCard",
+     "mode": "full",
+     "y": 452,
+     "rows": [
+      {
+       "n": 1,
+       "label": "WITNESSES",
+       "text": "each saw half",
+       "at": {
+        "line": "L16",
+        "word": "History",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 2,
+       "label": "MOTIVE",
+       "text": "each keeps its half",
+       "at": {
+        "line": "L16",
+        "word": "History",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 3,
+       "label": "LOSS",
+       "text": "pages burn",
+       "at": {
+        "line": "L16",
+        "word": "History",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 4,
+       "label": "RETELLING",
+       "text": "she grows",
+       "at": {
+        "line": "L16",
+        "word": "History",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 5,
+       "label": "THE TRUTH",
+       "text": "know it. hide it.",
+       "at": {
+        "line": "L16",
+        "word": "History",
+        "offset": -0.3
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L16",
+        "word": "History",
+        "offset": -0.3
+       }
+      }
+     ],
+     "start": {
+      "line": "L16",
+      "word": "History",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L17",
+      "word": "Hero",
+      "offset": -0.3
+     },
+     "kicker": "BEFORE YOU WRITE HISTORY",
+     "title": "MAREN",
+     "sprite": "ep31/statue_sprite.png",
+     "spriteW": 62,
+     "spriteH": 127,
+     "subtitle": "History is who's telling it.",
+     "subtitleAt": {
+      "line": "L16",
+      "word": "happened."
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L16",
+      "word": "History",
+      "offset": -0.8
+     },
+     "gain": -15
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L16",
+      "word": "History",
+      "offset": -0.3
+     },
+     "gain": -10
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L16",
+      "word": "History",
+      "offset": -0.3
+     },
+     "gain": -18
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "cta",
+   "scene": "world",
+   "purpose": "Comment CTA: a one-word verdict.",
+   "visual": "End card: logo, PART 31 / 50, the title, and a COMMENT panel where two vote chips pop on their words: HERO (gold), then MONSTER (rust). Then 'Give us your verdict.'",
+   "camera": "Cut (under the block wipe) back to the hook pose, drifting into it.",
+   "layers": {
+    "foreground": "end card",
+    "midground": "the Isle",
+    "background": "void"
+   },
+   "lighting": "Golden hour (the loop frame).",
+   "onScreenText": "COMMENT \u00b7 HERO / MONSTER \u00b7 Give us your verdict.",
+   "transition": "The card lifts on 'Part'.",
+   "music": "Outro.",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L17",
+      "word": "Hero",
+      "offset": -0.3
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "endCardS2",
+     "start": {
+      "line": "L17",
+      "word": "Hero",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.12
+     },
+     "fadeOut": 0.3,
+     "kicker": "PART 31 / 50",
+     "title": "Your World Needs a History Nobody Agrees On",
+     "cta": "COMMENT",
+     "icon": "bubble",
+     "with": "Give us your verdict.",
+     "withAt": {
+      "line": "L17",
+      "word": "Give",
+      "offset": -0.05
+     },
+     "choices": [
+      {
+       "text": "HERO",
+       "color": "#f4c46e",
+       "at": {
+        "line": "L17",
+        "word": "Hero"
+       }
+      },
+      {
+       "text": "MONSTER",
+       "color": "#d0603f",
+       "at": {
+        "line": "L17",
+        "word": "monster?"
+       }
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L17",
+      "word": "Hero",
+      "offset": -0.3
+     },
+     "gain": -21
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L17",
+      "word": "Hero"
+     },
+     "gain": -17
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L17",
+      "word": "monster?"
+     },
+     "gain": -17
+    }
+   ],
+   "captions": false,
+   "hideLogoBug": true,
+   "hideLogoBugUntil": {
+    "line": "L18",
+    "word": "Part"
+   }
+  },
+  {
+   "id": "next",
+   "scene": "world",
+   "purpose": "Say the part number, ask for the follow with a reason (part 32), open the next loop.",
+   "visual": "The hook frame, split-toned again; PART 31/50; FOLLOW FOR PART 32, pressed on 'Follow'; NEXT RUN \u00b7 32 decodes from a locked battle standard to UNFINISHED \u00b7 A WAR THAT NEVER ENDED. In the world, on 'war', each crowd raises a war standard in its own colour (wheat gold on the left, rust on the right), the valley's bell tolls, and the Queen and the Grimmaw look up; the standards sink and the hook title returns.",
+   "camera": "The hook frame.",
+   "layers": {
+    "foreground": "split tone, progress bar, follow button, next-run card",
+    "midground": "the statue, two standards",
+    "background": "the meadow"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "PART 31/50 \u00b7 FOLLOW FOR PART 32 \u00b7 NEXT RUN: UNFINISHED \u00b7 A WAR THAT NEVER ENDED.",
+   "transition": "Loop to frame 0.",
+   "music": "Tease over a held A, a horn call on 'war', the engine chime on 'Follow'.",
+   "graphics": [
+    {
+     "type": "splitTone",
+     "start": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.12
+     },
+     "fadeIn": 0.3
+    },
+    {
+     "type": "seasonBar",
+     "y": 350,
+     "part": 31,
+     "of": 50,
+     "start": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.1
+     },
+     "fillAt": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "fillDur": 0.6,
+     "ofAt": {
+      "line": "L18",
+      "word": "50."
+     },
+     "end": {
+      "line": "L18",
+      "word": "ended.",
+      "offset": 0.6
+     }
+    },
+    {
+     "type": "followButton",
+     "y": 556,
+     "start": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.6
+     },
+     "pressAt": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "end": {
+      "line": "L18",
+      "word": "ended.",
+      "offset": 0.6
+     },
+     "text": "FOLLOW",
+     "doneText": "FOLLOWING",
+     "sub": "FOR PART 32"
+    },
+    {
+     "type": "nextRun",
+     "y": 772,
+     "start": {
+      "line": "L18",
+      "word": "32:",
+      "offset": -0.1
+     },
+     "revealAt": {
+      "line": "L18",
+      "word": "war"
+     },
+     "end": {
+      "line": "L18",
+      "word": "ended.",
+      "offset": 0.6
+     },
+     "kicker": "NEXT RUN \u00b7 32",
+     "title": "UNFINISHED",
+     "titleSize": 66,
+     "sub": "A WAR THAT NEVER ENDED.",
+     "sprite": "standard",
+     "spritePx": 9
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "HERO",
+       "color": "#f4c46e",
+       "size": 128,
+       "pulseAt": {
+        "line": "L1",
+        "word": "hero"
+       }
+      },
+      {
+       "text": "OR MONSTER?",
+       "color": "#d0603f",
+       "size": 84,
+       "pulseAt": {
+        "line": "L1",
+        "word": "monster?"
+       }
+      }
+     ],
+     "y": 440,
+     "size": 96,
+     "start": {
+      "line": "L18",
+      "word": "ended.",
+      "offset": 0.92
+     },
+     "fadeIn": 0.35,
+     "preShow": true
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "to": {
+      "line": "L18",
+      "word": "Part",
+      "offset": 0.55
+     },
+     "gain": -22
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.5
+     },
+     "gain": -15
+    },
+    {
+     "sound": "followPress",
+     "at": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": 0.02
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L18",
+      "word": "32:",
+      "offset": -0.1
+     },
+     "gain": -18
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L18",
+      "word": "war"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L18",
+      "word": "war"
+     },
+     "gain": -19
+    },
+    {
+     "sound": "towerBell",
+     "at": {
+      "line": "L18",
+      "word": "war",
+      "offset": 0.15
+     },
+     "gain": -20
+    },
+    {
+     "sound": "frameDrum",
+     "at": {
+      "line": "L18",
+      "word": "never"
+     },
+     "gain": -17
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "end": true,
+      "offset": -0.54
+     },
+     "gain": -14
+    }
+   ],
+   "captions": false
+  }
+ ],
+ "world": {
+  "clock": {
+   "label": "YEAR",
+   "keys": [
+    [
+     {
+      "shot": "hook"
+     },
+     300
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     300
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "run."
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "hundred"
+     },
+     100,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "statue."
+     },
+     200,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Zero"
+     },
+     300,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "solve.",
+      "offset": 0.53
+     },
+     300
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "solve.",
+      "offset": 0.55
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "Witnesses",
+      "offset": -0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "die.",
+      "offset": 0.3
+     },
+     70,
+     "linear"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "Every",
+      "offset": -0.1
+     },
+     70
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "bigger.",
+      "offset": 0.3
+     },
+     300,
+     "linear"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": -0.07
+     },
+     300
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": -0.05
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "histories.",
+      "offset": 0.2
+     },
+     300,
+     "linear"
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "She",
+      "offset": -0.12
+     },
+     300
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "She",
+      "offset": -0.1
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "Let",
+      "offset": -0.17
+     },
+     0
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "Let",
+      "offset": -0.15
+     },
+     300,
+     "step"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Hero",
+      "offset": -0.3
+     },
+     300
+    ]
+   ]
+  },
+  "speed": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "run."
+    },
+    1
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.35
+    },
+    6
+   ],
+   [
+    {
+     "line": "L5",
+     "word": "Zero"
+    },
+    6
+   ],
+   [
+    {
+     "line": "L6",
+     "word": "Case"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.1
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.4
+    },
+    6
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "histories.",
+     "offset": 0.2
+    },
+    6
+   ],
+   [
+    {
+     "line": "L13",
+     "word": "Rule"
+    },
+    1
+   ]
+  ],
+  "camera": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "az": 0,
+    "el": 9,
+    "dist": 76,
+    "target": [
+     18.0,
+     8.6,
+     1.5
+    ],
+    "fov": 15,
+    "dur": 1.4,
+    "drift": 0.6
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "az": 0,
+    "el": 12,
+    "dist": 60,
+    "target": [
+     18.0,
+     7.6,
+     1.5
+    ],
+    "fov": 20,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.05
+    },
+    "az": 18,
+    "el": 48,
+    "dist": 196,
+    "target": [
+     4.0,
+     10.5,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 1.2,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "Case",
+     "offset": -0.2
+    },
+    "az": 0,
+    "el": 20,
+    "dist": 53,
+    "target": [
+     18.0,
+     7.6,
+     1.5
+    ],
+    "fov": 20,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "solve.",
+     "offset": 0.55
+    },
+    "az": 0,
+    "el": 22,
+    "dist": 60,
+    "target": [
+     18.25,
+     5.8,
+     1.5
+    ],
+    "fov": 22,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 9,
+    "dist": 56,
+    "target": [
+     18.0,
+     6.8,
+     1.5
+    ],
+    "fov": 16,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.15
+    },
+    "az": 0,
+    "el": 16,
+    "dist": 64,
+    "target": [
+     18.0,
+     7.2,
+     0.5
+    ],
+    "fov": 20,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.15
+    },
+    "az": 0,
+    "el": 9,
+    "dist": 68,
+    "target": [
+     18.0,
+     7.5,
+     1.5
+    ],
+    "fov": 16,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L12",
+     "word": "Run",
+     "offset": -0.05
+    },
+    "az": 20,
+    "el": 48,
+    "dist": 196,
+    "target": [
+     4.0,
+     10.5,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 6,
+    "dist": 60,
+    "target": [
+     18.0,
+     10.1,
+     1.5
+    ],
+    "fov": 12,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "She",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 22,
+    "dist": 60,
+    "target": [
+     18.25,
+     5.8,
+     1.5
+    ],
+    "fov": 22,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L15",
+     "word": "Let",
+     "offset": -0.15
+    },
+    "az": 0,
+    "el": 9,
+    "dist": 76,
+    "target": [
+     18.0,
+     9.95,
+     1.5
+    ],
+    "fov": 15,
+    "dur": 0.01,
+    "drift": 0.5,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "History",
+     "offset": -0.25
+    },
+    "az": 15,
+    "el": 34,
+    "dist": 190,
+    "target": [
+     2.0,
+     3.0,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 1.6,
+    "drift": 2.0
+   },
+   {
+    "at": {
+     "line": "L17",
+     "word": "Hero",
+     "offset": -0.3
+    },
+    "az": -5.058,
+    "el": 9,
+    "dist": 76,
+    "target": [
+     18.0,
+     8.6,
+     1.5
+    ],
+    "fov": 15,
+    "dur": 1.4,
+    "drift": 0.6,
+    "cut": true
+   }
+  ],
+  "light": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "mood": "golden"
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "mood": "day",
+    "dur": 0.4
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "Case",
+     "offset": -0.2
+    },
+    "mood": "gloom",
+    "dur": 0.6
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "solve.",
+     "offset": 0.55
+    },
+    "mood": "dusk",
+    "dur": 0.3
+   },
+   {
+    "at": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.1
+    },
+    "mood": "day",
+    "dur": 0.3
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.15
+    },
+    "mood": "dusk",
+    "dur": 0.4
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.15
+    },
+    "mood": "day",
+    "dur": 0.4
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "She",
+     "offset": -0.1
+    },
+    "mood": "dusk",
+    "dur": 0.2
+   },
+   {
+    "at": {
+     "line": "L15",
+     "word": "Let",
+     "offset": -0.15
+    },
+    "mood": "day",
+    "dur": 0.3
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "History",
+     "offset": -0.3
+    },
+    "mood": "golden",
+    "dur": 2.0
+   }
+  ],
+  "herd": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     30
+    ]
+   ],
+   "max": 40,
+   "base": 30,
+   "centers": [
+    [
+     -7.2,
+     -1.4
+    ],
+    [
+     -6.0,
+     0.4
+    ]
+   ],
+   "skin": "sheep"
+  },
+  "pred": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ]
+  ],
+  "predators": [
+   {
+    "id": "g1",
+    "scale": 1.3,
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 8.5,
+      "z": -9.6,
+      "state": "idle",
+      "face": 160
+     },
+     {
+      "at": {
+       "line": "L6",
+       "word": "solve.",
+       "offset": 0.55
+      },
+      "x": 8.5,
+      "z": -9.6,
+      "state": "hidden"
+     },
+     {
+      "at": {
+       "line": "L9",
+       "word": "Two:",
+       "offset": -0.1
+      },
+      "x": 8.5,
+      "z": -9.6,
+      "state": "idle",
+      "face": 160
+     },
+     {
+      "at": {
+       "line": "L13",
+       "word": "She",
+       "offset": -0.1
+      },
+      "x": 8.5,
+      "z": -9.6,
+      "state": "hidden"
+     },
+     {
+      "at": {
+       "line": "L15",
+       "word": "Let",
+       "offset": -0.15
+      },
+      "x": 8.5,
+      "z": -9.6,
+      "state": "idle",
+      "face": 160
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "war"
+      },
+      "x": 8.5,
+      "z": -9.6,
+      "state": "alert",
+      "face": 160
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "ended.",
+       "offset": 1.0
+      },
+      "x": 8.5,
+      "z": -9.6,
+      "state": "idle",
+      "face": 160
+     }
+    ],
+    "adorn": true
+   },
+   {
+    "id": "g0",
+    "scale": 1.3,
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 14.2,
+      "z": 0.2,
+      "state": "hidden"
+     },
+     {
+      "at": {
+       "line": "L6",
+       "word": "solve.",
+       "offset": 0.55
+      },
+      "x": 14.2,
+      "z": 0.2,
+      "state": "idle",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L8",
+       "word": "valley",
+       "offset": -0.1
+      },
+      "x": 14.2,
+      "z": 0.2,
+      "state": "roar",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L8",
+       "word": "monster",
+       "offset": -0.1
+      },
+      "x": 7.0,
+      "z": 0.3,
+      "state": "idle",
+      "dur": 0.9
+     },
+     {
+      "at": {
+       "line": "L8",
+       "word": "court",
+       "offset": -0.25
+      },
+      "x": 7.0,
+      "z": 0.3,
+      "state": "hidden"
+     },
+     {
+      "at": {
+       "line": "L13",
+       "word": "She",
+       "offset": -0.1
+      },
+      "x": 14.2,
+      "z": 0.2,
+      "state": "idle",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L13",
+       "word": "did"
+      },
+      "x": 14.2,
+      "z": 0.2,
+      "state": "roar",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L14",
+       "word": "drive",
+       "offset": -0.1
+      },
+      "x": 7.0,
+      "z": 0.3,
+      "state": "idle",
+      "dur": 1.0
+     },
+     {
+      "at": {
+       "line": "L14",
+       "word": "Now",
+       "offset": 0.1
+      },
+      "x": 7.0,
+      "z": 0.3,
+      "state": "hidden"
+     }
+    ]
+   }
+  ],
+  "series": {
+   "tellings": [
+    [
+     {
+      "shot": "hook"
+     },
+     2
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     2
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     1,
+     "step"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "solve.",
+      "offset": 0.53
+     },
+     1
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "solve.",
+      "offset": 0.55
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "off.",
+      "offset": -0.12
+     },
+     0
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "off.",
+      "offset": -0.1
+     },
+     1,
+     "step"
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "fields",
+      "offset": -0.02
+     },
+     1
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "fields"
+     },
+     2,
+     "step"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Hero",
+      "offset": -0.3
+     },
+     2
+    ]
+   ],
+   "questions": [
+    [
+     {
+      "shot": "hook"
+     },
+     40
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     40
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "fields"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "burn.",
+      "offset": 0.2
+     },
+     4
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "flatters"
+     },
+     4
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "it.",
+      "offset": 0.1
+     },
+     8
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "burn."
+     },
+     8
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "die.",
+      "offset": 0.2
+     },
+     14
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "Every"
+     },
+     14
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "bigger.",
+      "offset": 0.2
+     },
+     20
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.1
+     },
+     20
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "histories.",
+      "offset": 0.2
+     },
+     40,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Hero",
+      "offset": -0.3
+     },
+     40
+    ]
+   ],
+   "tradeH": [
+    [
+     {
+      "shot": "hook"
+     },
+     4
+    ]
+   ]
+  },
+  "settlement": {
+   "buildings": [
+    {
+     "kind": "hall",
+     "a": [
+      -3.6,
+      -4.6
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -1.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -4.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -1.0,
+      -5.8
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -5.6,
+      -0.9
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -3.4,
+      -0.7
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      0.4,
+      -4.2
+     ],
+     "face": 0
+    }
+   ],
+   "roof": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "pens": [
+    {
+     "a": [
+      -6.4,
+      -1.4
+     ],
+     "r": 1.6
+    }
+   ],
+   "cover": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "roads": {
+    "b": [
+     [
+      -3.4,
+      -1.6
+     ],
+     [
+      -5.6,
+      2.0
+     ],
+     [
+      -8.2,
+      6.0
+     ],
+     [
+      -11.0,
+      10.0
+     ],
+     [
+      -13.0,
+      14.0
+     ],
+     [
+      -14.6,
+      17.0
+     ]
+    ]
+   },
+   "route": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "tradeKey": "tradeH",
+   "lanterns": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ]
+   ],
+   "tower": {
+    "x": -6.4,
+    "z": -5.6,
+    "h": 6.0,
+    "keys": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "rings": [
+     {
+      "line": "L18",
+      "word": "war",
+      "offset": 0.1
+     }
+    ]
+   }
+  },
+  "settlements": [
+   {
+    "buildings": [
+     {
+      "kind": "greathall",
+      "a": [
+       6.0,
+       4.6
+      ],
+      "b": [
+       6.0,
+       4.6
+      ],
+      "stiltsB": 1.6,
+      "face": 0
+     }
+    ],
+    "place": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "open": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "glow": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "roof": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "pens": []
+   },
+   {
+    "buildings": [
+     {
+      "kind": "hall",
+      "a": [
+       14.6,
+       -4.2
+      ],
+      "face": 0,
+      "w": 3.0,
+      "d": 2.2,
+      "h": 1.7,
+      "show": [
+       [
+        {
+         "shot": "hook"
+        },
+        0
+       ],
+       [
+        {
+         "line": "L9",
+         "word": "Two:",
+         "offset": -0.12
+        },
+        0
+       ],
+       [
+        {
+         "line": "L9",
+         "word": "Two:",
+         "offset": -0.1
+        },
+        1,
+        "step"
+       ],
+       [
+        {
+         "line": "L11",
+         "word": "Four:",
+         "offset": -0.17
+        },
+        1
+       ],
+       [
+        {
+         "line": "L11",
+         "word": "Four:",
+         "offset": -0.15
+        },
+        0,
+        "step"
+       ]
+      ]
+     },
+     {
+      "kind": "hall",
+      "a": [
+       20.4,
+       -4.4
+      ],
+      "face": 0,
+      "w": 3.0,
+      "d": 2.2,
+      "h": 1.7,
+      "show": [
+       [
+        {
+         "shot": "hook"
+        },
+        0
+       ],
+       [
+        {
+         "line": "L9",
+         "word": "Two:",
+         "offset": -0.12
+        },
+        0
+       ],
+       [
+        {
+         "line": "L9",
+         "word": "Two:",
+         "offset": -0.1
+        },
+        1,
+        "step"
+       ],
+       [
+        {
+         "line": "L11",
+         "word": "Four:",
+         "offset": -0.17
+        },
+        1
+       ],
+       [
+        {
+         "line": "L11",
+         "word": "Four:",
+         "offset": -0.15
+        },
+        0,
+        "step"
+       ]
+      ]
+     }
+    ],
+    "roof": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ]
+    ],
+    "pens": [],
+    "char": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "Pages",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "Witnesses",
+       "offset": 0.2
+      },
+      1.0,
+      "linear"
+     ]
+    ],
+    "smoke": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "Pages"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "burn."
+      },
+      1
+     ],
+     [
+      {
+       "line": "L11",
+       "word": "Four:",
+       "offset": -0.2
+      },
+      1
+     ]
+    ]
+   }
+  ],
+  "folk": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     9
+    ]
+   ],
+   "centers": [
+    [
+     6.0,
+     4.6
+    ]
+   ],
+   "spread": 2.0,
+   "site": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ]
+   ],
+   "eyes": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "wet": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "glow": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "hero": []
+  },
+  "people": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     22
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "solve.",
+      "offset": 0.53
+     },
+     22
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "solve.",
+      "offset": 0.55
+     },
+     6,
+     "step"
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "Two:",
+      "offset": -0.12
+     },
+     6
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "Two:",
+      "offset": -0.1
+     },
+     22,
+     "step"
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "Witnesses",
+      "offset": -0.1
+     },
+     22
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "die.",
+      "offset": 0.2
+     },
+     2
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "Every"
+     },
+     2
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "bigger.",
+      "offset": 0.2
+     },
+     22,
+     "linear"
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "She",
+      "offset": -0.12
+     },
+     22
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "She",
+      "offset": -0.1
+     },
+     6,
+     "step"
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "Let",
+      "offset": -0.17
+     },
+     6
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "Let",
+      "offset": -0.15
+     },
+     22,
+     "step"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Hero",
+      "offset": -0.3
+     },
+     22
+    ]
+   ],
+   "centers": [
+    [
+     15.2,
+     3.6
+    ],
+    [
+     20.8,
+     3.6
+    ]
+   ],
+   "spread": 1.5,
+   "life": 70,
+   "royal": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ]
+   ],
+   "tints": [
+    "#f0c04a",
+    "#b0452f"
+   ],
+   "watch": [
+    18.0,
+    1.5
+   ],
+   "figures": [
+    {
+     "keys": [
+      {
+       "at": {
+        "shot": "hook"
+       },
+       "x": 18.0,
+       "z": 1.5,
+       "state": "hidden"
+      },
+      {
+       "at": {
+        "line": "L6",
+        "word": "solve.",
+        "offset": 0.55
+       },
+       "x": 18.0,
+       "z": 1.5,
+       "state": "idle",
+       "face": -90
+      },
+      {
+       "at": {
+        "line": "L9",
+        "word": "Two:",
+        "offset": -0.1
+       },
+       "x": 18.0,
+       "z": 1.5,
+       "state": "hidden"
+      },
+      {
+       "at": {
+        "line": "L13",
+        "word": "She",
+        "offset": -0.1
+       },
+       "x": 18.0,
+       "z": 1.5,
+       "state": "idle",
+       "face": -90
+      },
+      {
+       "at": {
+        "line": "L15",
+        "word": "Let",
+        "offset": -0.15
+       },
+       "x": 18.0,
+       "z": 1.5,
+       "state": "hidden"
+      }
+     ],
+     "tunic": "#e9e2cf",
+     "torch": true,
+     "scale": 2.0
+    }
+   ],
+   "ruler": {
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "idle",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "war",
+       "offset": 0.1
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "alert",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "ended.",
+       "offset": 1.0
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "idle",
+      "face": 0
+     }
+    ],
+    "dais": {
+     "x": 9.4,
+     "z": -2.2,
+     "face": 0
+    }
+   }
+  },
+  "fields": {
+   "plots": [
+    {
+     "x": 20.9,
+     "z": -0.4,
+     "w": 3.4,
+     "d": 3.4
+    }
+   ],
+   "ripe": [
+    [
+     {
+      "shot": "hook"
+     },
+     0.5
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "solve.",
+      "offset": 0.53
+     },
+     0.5
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "solve.",
+      "offset": 0.55
+     },
+     1.0,
+     "step"
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "Two:",
+      "offset": -0.12
+     },
+     1.0
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "Two:",
+      "offset": -0.1
+     },
+     0.5,
+     "step"
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "She",
+      "offset": -0.12
+     },
+     0.5
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "She",
+      "offset": -0.1
+     },
+     1.0,
+     "step"
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "Let",
+      "offset": -0.17
+     },
+     1.0
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "Let",
+      "offset": -0.15
+     },
+     0.5,
+     "step"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Hero",
+      "offset": -0.3
+     },
+     0.5
+    ]
+   ],
+   "burn": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "valley",
+      "offset": -0.2
+     },
+     0
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "burn.",
+      "offset": 0.3
+     },
+     0.55,
+     "linear"
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "Two:",
+      "offset": -0.12
+     },
+     0.55
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "Two:",
+      "offset": -0.1
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "She",
+      "offset": -0.12
+     },
+     0
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "She",
+      "offset": -0.1
+     },
+     0.15,
+     "step"
+    ],
+    [
+     {
+      "line": "L14",
+      "word": "Now",
+      "offset": 0.2
+     },
+     0.6,
+     "linear"
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "Let",
+      "offset": -0.17
+     },
+     0.6
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "Let",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ]
+   ]
+  },
+  "props": [
+   {
+    "kind": "cairn",
+    "x": 8.95,
+    "z": -5.38,
+    "stones": [
+     [
+      {
+       "shot": "hook"
+      },
+      3
+     ]
+    ]
+   },
+   {
+    "kind": "statue",
+    "x": 18.0,
+    "z": 1.5,
+    "face": -90,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "solve.",
+       "offset": 0.53
+      },
+      1
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "solve.",
+       "offset": 0.55
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L9",
+       "word": "Two:",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L9",
+       "word": "Two:",
+       "offset": 0.4
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L13",
+       "word": "She",
+       "offset": -0.12
+      },
+      1
+     ],
+     [
+      {
+       "line": "L13",
+       "word": "She",
+       "offset": -0.1
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L15",
+       "word": "Let",
+       "offset": -0.17
+      },
+      0
+     ],
+     [
+      {
+       "line": "L15",
+       "word": "Let",
+       "offset": -0.15
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "Hero",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "gild": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L9",
+       "word": "keeps",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L9",
+       "word": "half"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "Hero",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "tar": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L9",
+       "word": "flatters",
+       "offset": -0.2
+      },
+      0
+     ],
+     [
+      {
+       "line": "L9",
+       "word": "it."
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "Hero",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "grow": [
+     [
+      {
+       "shot": "hook"
+      },
+      1.35
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1.35
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      1.0,
+      "step"
+     ],
+     [
+      {
+       "line": "L11",
+       "word": "Every"
+      },
+      1.0
+     ],
+     [
+      {
+       "line": "L11",
+       "word": "bigger.",
+       "offset": 0.3
+      },
+      1.35,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "Hero",
+       "offset": -0.3
+      },
+      1.35
+     ]
+    ]
+   },
+   {
+    "kind": "standard",
+    "x": 15.0,
+    "z": 2.2,
+    "face": -90,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "war",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "war",
+       "offset": 0.5
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "ended.",
+       "offset": 0.9
+      },
+      1
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "ended.",
+       "offset": 1.3
+      },
+      0
+     ]
+    ],
+    "color": "#f0c04a"
+   },
+   {
+    "kind": "standard",
+    "x": 21.0,
+    "z": 2.2,
+    "face": 90,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "war",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "war",
+       "offset": 0.5
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "ended.",
+       "offset": 0.9
+      },
+      1
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "ended.",
+       "offset": 1.3
+      },
+      0
+     ]
+    ],
+    "color": "#b0452f"
+   }
+  ],
+  "clearTrees": [
+   [
+    18.0,
+    1.5,
+    3.0
+   ],
+   [
+    14.2,
+    0.2,
+    3.0
+   ],
+   [
+    14.6,
+    -4.2,
+    3.0
+   ],
+   [
+    20.4,
+    -4.4,
+    3.0
+   ],
+   [
+    20.9,
+    -0.4,
+    3.0
+   ],
+   [
+    15.2,
+    3.6,
+    3.0
+   ],
+   [
+    20.8,
+    3.6,
+    3.0
+   ],
+   [
+    18.0,
+    6.5,
+    3.5
+   ],
+   [
+    10.5,
+    0.3,
+    2.0
+   ]
+  ],
+  "layers": {
+   "ripple": [
+    {
+     "shot": "hook",
+     "offset": 0.05
+    },
+    {
+     "line": "L4",
+     "word": "run."
+    },
+    {
+     "line": "L12",
+     "word": "Run"
+    }
+   ]
+  },
+  "ambient": {
+   "birds": 9,
+   "motes": 40,
+   "glints": true
+  },
+  "simLoop": {
+   "line": "L17",
+   "word": "Hero",
+   "offset": -0.3
+  }
+ },
+ "music": {
+  "engine": "s2-score",
+  "key": "D minor, resolving to D major",
+  "bpm": 96,
+  "sections": [
+   {
+    "from": {
+     "shot": "hook"
+    },
+    "style": "dispute",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "programs": {
+     "marimba": 24,
+     "lead": 74,
+     "horns": 70
+    }
+   },
+   {
+    "from": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "style": "chronicle",
+    "chords": [
+     "Dm",
+     "Bb",
+     "F",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 1
+   },
+   {
+    "from": {
+     "line": "L4",
+     "word": "run."
+    },
+    "style": "drive",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "intensity": 0.85,
+    "programs": {
+     "marimba": 12,
+     "lead": 73,
+     "horns": 60
+    }
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "Case",
+     "offset": -0.2
+    },
+    "style": "drop",
+    "chords": [
+     "Dm"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 8
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "solve.",
+     "offset": 0.5
+    },
+    "style": "mystery",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "A"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 2
+   },
+   {
+    "from": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.1
+    },
+    "style": "chronicle",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 1,
+    "programs": {
+     "marimba": 24,
+     "lead": 74,
+     "horns": 70
+    }
+   },
+   {
+    "from": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.1
+    },
+    "style": "chronicle",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 2
+   },
+   {
+    "from": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.1
+    },
+    "style": "chronicle",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 3
+   },
+   {
+    "from": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.1
+    },
+    "style": "chronicle",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 4
+   },
+   {
+    "from": {
+     "line": "L12",
+     "word": "Run"
+    },
+    "style": "drive",
+    "chords": [
+     "F",
+     "C",
+     "Bb",
+     "F"
+    ],
+    "key": "F major",
+    "intensity": 1.0,
+    "theme": true,
+    "programs": {
+     "marimba": 12,
+     "lead": 73,
+     "horns": 60
+    }
+   },
+   {
+    "from": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.05
+    },
+    "style": "twist",
+    "chords": [
+     "A7b9"
+    ],
+    "key": "D minor"
+   },
+   {
+    "from": {
+     "line": "L13",
+     "word": "She",
+     "offset": -0.1
+    },
+    "style": "dispute",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 2,
+    "programs": {
+     "marimba": 24,
+     "lead": 74,
+     "horns": 70
+    }
+   },
+   {
+    "from": {
+     "line": "L15",
+     "word": "Let",
+     "offset": -0.1
+    },
+    "style": "anthem",
+    "chords": [
+     "D",
+     "G",
+     "Bm",
+     "A"
+    ],
+    "key": "D major",
+    "programs": {
+     "marimba": 12,
+     "lead": 73,
+     "horns": 60
+    }
+   },
+   {
+    "from": {
+     "line": "L17",
+     "word": "Hero",
+     "offset": -0.2
+    },
+    "style": "outro",
+    "chords": [
+     "G",
+     "D"
+    ],
+    "key": "D major"
+   },
+   {
+    "from": {
+     "line": "L18",
+     "word": "Part",
+     "offset": -0.1
+    },
+    "style": "tease",
+    "chords": [
+     "A5"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 32
+   }
+  ],
+  "accents": [
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L1",
+     "word": "monster?"
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L6",
+     "word": "closed."
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "riser",
+    "at": {
+     "line": "L7",
+     "word": "twist."
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "stab",
+    "at": {
+     "line": "L12",
+     "word": "histories."
+    },
+    "chord": "F"
+   },
+   {
+    "kind": "cymbal",
+    "at": {
+     "line": "L12",
+     "word": "histories."
+    }
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L13",
+     "word": "both."
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L15",
+     "word": "fight"
+    },
+    "chord": "D"
+   },
+   {
+    "kind": "call",
+    "at": {
+     "line": "L18",
+     "word": "war"
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "roll",
+    "at": {
+     "end": true,
+     "offset": -0.05
+    },
+    "chord": "A"
+   }
+  ],
+  "fadeOut": {
+   "fromEnd": 0.08
+  },
+  "gain": 0.55
+ },
+ "mix": {
+  "musicLufs": -25.0,
+  "duckDb": -8.0,
+  "sfxLufs": -29.0,
+  "voiceFx": true
+ },
+ "metadata": {
+  "youtube": {
+   "title": "Your World Needs a History Nobody Agrees On (Worldbuilding)",
+   "titleAlternate": "Their greatest hero. Their worst monster. Same person.",
+   "description": "What if history's greatest hero was also its worst monster?\n\nMeet Maren. Three hundred years ago, she did one thing. The lazy version gives your world one history that everybody agrees on, and we ran it: three hundred years, one statue, one story, zero questions. Case closed. Nothing left to solve.\n\nReal history has witnesses. The valley saw her drive the monster off; the court saw their fields burn. Each side keeps the half that flatters it. Pages burn, witnesses die, and every generation makes her bigger. Run it again: one night, two histories.\n\nThen the twist: the truth. She did both: she burned the fields to drive it off. Now hide that from your world, and let your characters fight over the pieces.\n\nHistory isn't what happened. It's who's telling it.\n\nHero or monster? Give us your verdict.\n\nPart 31 of 50. Follow for part 32: a war that never ended.\n\nWorldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 7: History and Mythology.\n\n#Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "pinnedComment": "Hero or monster? One word, then your reason. (Part 32: a war that never ended.)",
+   "uploadSettings": "Altered or synthetic content: Yes (synthetic narration and an AI-generated field-card sprite; the island, statue, people and fire are drawn in code). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "Same night. Two histories. One calls her a hero, one calls her a monster, and both are true \ud83d\udd25 Four rules that crack your world's history open, and rule #5 is the one writers skip. Hero or monster? Part 31/50 \u00b7 follow for part 32 \u2694\ufe0f #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "pinnedComment": "Hero or monster? Give us your verdict.",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "What if history's greatest hero was also its worst monster?\n\nMeet Maren. Three hundred years ago, she did one thing. The lazy version gives your world one history that everybody agrees on, and we ran it: three hundred years, one statue, one story, zero questions. Case closed. Nothing left to solve.\n\nReal history has witnesses. The valley saw her drive the monster off; the court saw their fields burn. Each side keeps the half that flatters it. Pages burn, witnesses die, and every generation makes her bigger. Run it again: one night, two histories.\n\nThen the twist: the truth. She did both: she burned the fields to drive it off. Now hide that from your world, and let your characters fight over the pieces.\n\nHistory isn't what happened. It's who's telling it.\n\nHero or monster? Give us your verdict.\n\nPart 31 of 50. Follow for part 32: a war that never ended.\n\nWorldcraft Shorts \u00b7 Season 2: The World Engine.\n\n#Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "pinnedComment": "Which figure in your world would two villages remember in opposite ways?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "Hero to one village. Monster to the next.\n\nWhat if history's greatest hero was also its worst monster?\n\nMeet Maren. Three hundred years ago, she did one thing. The lazy version gives your world one history that everybody agrees on, and we ran it: three hundred years, one statue, one story, zero questions. Case closed. Nothing left to solve.\n\nReal history has witnesses. The valley saw her drive the monster off; the court saw their fields burn. Each side keeps the half that flatters it. Pages burn, witnesses die, and every generation makes her bigger. Run it again: one night, two histories.\n\nThen the twist: the truth. She did both: she burned the fields to drive it off. Now hide that from your world, and let your characters fight over the pieces.\n\nHistory isn't what happened. It's who's telling it.\n\nHero or monster? Give us your verdict.\n\nPart 31 of 50. Follow for part 32: a war that never ended.\n\nWorldcraft Shorts \u00b7 Season 2\n\n#Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "hookCheck": "First 41 characters: 'Hero to one village. Monster to the next.'",
+   "pinnedComment": "Save the CRACK IT OPEN card, then give us your verdict: hero or monster?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  }
+ }
+}

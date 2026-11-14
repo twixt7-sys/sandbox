@@ -2,6 +2,8 @@
 
 From EP26, every episode follows this guide. `docs/STYLE.md` still governs EP01–EP25, and those episodes must keep rendering exactly as they did. Why Season 2 looks like this is recorded in `docs/SEASON2_RESEARCH.md`; this file says *how*.
 
+**The reference episode is EP31** (`episodes/ep31/`): its script, its brief and its scorecard (`pipeline/benchmark.py`, 25/25) are the worked example of everything below. Start a new episode from `episodes/ep31/make_ep31.py` and `episodes/ep31/BRIEF.md` §11.
+
 ## The concept in one line
 **One living pixel-voxel island (the Isle) where every episode tests a worldbuilding idea by pressing ▶ RUN:** the naive design visibly breaks, the fix visibly works, a twist shows what most people miss, and the viewer leaves with a field card checklist.
 
@@ -16,7 +18,8 @@ Four things recur in every episode. They are the series' signature, so don't dro
 - `"season": 2` in `episode.json` selects `src/s2/EpisodeS2.tsx`. Without it, the Season 1 composition renders unchanged.
 - **Render with `--gl=swangle`.** WebGL can't get a context under `angle` in the cloud container. Season 1 stays on `angle` (set in `remotion.config.ts`).
 - The 3D stage renders at ⅓ size (360×640) and is upscaled ×3 with nearest-neighbour filtering. **One S2 pixel = 3 output px.** Sprites, HUD icons and borders snap to that grid.
-- Narration: about 140–170 words, Kokoro `af_heart` at speed **1.05–1.07** (brisk host read; EP26 v3 runs 169 words at 1.07 in 60.97 s). Measure with the real TTS before locking cues, and check invented names in the G2P (`KPipeline(...)(text).phonemes`).
+- Narration: about 140–170 words, Kokoro `af_heart` at speed **1.05–1.07** (brisk host read; EP26 v3 runs 169 words at 1.07 in 60.97 s; EP31 runs 161 words at 1.05 in 59.47 s). Measure with the real TTS before locking cues, and check invented names in the G2P (`KPipeline(...)(text).phonemes`).
+- **Writing rules (from EP31, checked by the scorecard):** one idea, one example, one sentence to keep. The hook is one question of 12 words or fewer that ends by 4 s, with its first word inside 0.5 s. Sentences average 6 words or fewer and none is longer than 12. No pause between lines longer than 0.45 s. The hook's question is answered by the twist, not before it.
 
 ## Story shape (60 s)
 | Time | Beat | What's on screen |
@@ -30,11 +33,11 @@ Four things recur in every episode. They are the series' signature, so don't dro
 | 38–42 s | **Run 2:** it works | Groove at full, graph oscillating, STABLE stamp |
 | 42–51 s | **The twist:** the locked rule | A surprising experiment (e.g. DELETE the monster) and its consequence, then the row unlocks |
 | 48–50 s | **Light follow nudge** | `followChip` (+ FOLLOW · PART NN/50) top-right, only *after* the payoff line lands; no voice |
-| 50–53 s | **Lesson** | The full card, complete: the screenshot moment, in golden light. One serif italic line carries the principle. The **chime** plays as it lands |
+| 50–53 s | **Lesson** | The full card, complete: the screenshot moment, in golden light. One serif italic line carries the principle, on screen for at least 1.2 s (from EP31). The **chime** plays as it lands |
 | 53–55 s | **Share ask** | `blockWipe` → `endCardS2` (full logo, PART NN / 50, title, the share ask) for about 2 s |
 | 55–61 s | **The ending formula, then loop** | Part number, follow with a reason, next-run tease, then the hook title fades back in and the last frame matches frame 0 (camera, light, world, title). Details below |
 
-Re-hook around 20–25 s and twist around 43–47 s are deliberate; keep them near those marks.
+Re-hook around 18–25 s and twist around 36–47 s are deliberate; keep them near those marks (the scorecard checks both). The table's times are EP26's; EP31's are in its brief.
 
 ## Look
 - **Background:** deep midnight radial gradient per mood (`MOODS` in `src/s2/world/timeline.ts`): `day`, `dusk`, `gloom` (desaturated: failure), `winter`, `night`, `golden`. The island floats in the void like a diorama on a dark desk. Each mood also sets the sun's elevation and azimuth (`el`, `az`).
@@ -61,7 +64,10 @@ Re-hook around 20–25 s and twist around 43–47 s are deliberate; keep them ne
 | Card / graph / kinetic | 448–~900 | Fold the checklist (`collapse` keys) whenever the world needs the space (wide rings, a run's graph) |
 | World focus | ~800–1300 | Frame subjects here with the camera target's y (raise target y to push the world down) |
 | Captions | centred on 1238 | 1–3 words, ≤13 chars, Inter 900 caps, 7-px outline |
-| Free | > 1360 and x > 920 | Platform UI |
+| Device strip (EP30+) | 1352–1568 | x 96–900: the episode's device under the world (EP30's ledger, EP31's chronicles). Put what matters most at its top (EP31: the verdicts and the spine). Third-party safe-zone guides reserve the bottom 300–340 px for platform UI (`docs/SEASON2_RESEARCH.md` §7), so the strip ends 12 px above the most cautious of them; check it in each app's preview before posting |
+| Free | > 1580 and x > 920 | Platform UI |
+
+**Type sizes that survive a phone (from EP31):** nothing the viewer has to read is smaller than 18 px (caps, letter-spaced) or 20 px (Pixelify body); verdicts and numbers are 40 px or more. EP30's ledger labels (12 px) were too small to read on a phone; EP31's chronicles use 18 / 20 / 44.
 
 The ending stack (55–61 s, captions off): `seasonBar` y 350–508, `followButton` 556–734, `nextRun` 772–958, all x 96–900, over the hook frame. `followChip` sits where the sting was (top-right, y 246–296), after the payoff.
 
@@ -69,6 +75,7 @@ The ending stack (55–61 s, captions off): `seasonBar` y 350–508, `followButt
 - **Hero close:** dist 34–40, el 10–14, fov 22, profile azimuth. Introductions. For the **hook**, use a long lens (EP26: fov 16.5 from dist 54, el 8): less perspective, so the creature towers over everything around it.
 - **Medium:** dist 80–100, el 28–36, fov 24.
 - **Wide (whole Isle):** dist ≥ 180, el 42–66, fov 26. Anything closer crops the island in 9:16.
+- **Frontal on one centre line (EP31):** when an episode sets two sides against each other, fix the azimuth so one side is always screen-left and the other screen-right, and *cut* between poses on that line instead of orbiting (EP31: az 0 on the statue's centre line, valley left, court right; hook el 9, dist 76, fov 15). Check every pose with a projection probe so older landmarks fall outside the frame.
 - Every key may drift 1–3°/s. Pushes and orbits only: no shakes, whip-pans or spins (Season 1 rule, kept). The stamp's 0.3 s shake is the single exception.
 
 ## Motion vocabulary (reuse; don't invent new ones per episode)
@@ -105,7 +112,15 @@ The ending stack (55–61 s, captions off): `seasonBar` y 350–508, `followButt
 | A change switches on in the village (EP27+) | `roof` (thatch → slate / turf), `cover` (barns rise), `place` (unbuild at A, rise at B), `route` + `lanterns` (night road), `tower` (rises, bell swings) | `restore`, `check`; `towerBell` for the bell |
 | A deal is weighed (EP30+) | `ledger`: GIFTS and COSTS hang on a balance beam; items join, grow or lift off on their keys (or follow a world series), and the beam tips: TIPPED, LEVEL, WORTH IT, EMPTY | `beamTip` each time the balance changes |
 | A ritual switches on (EP30+) | `shrine` props: the shrine rises (`rise`), candles light (`lights`), a tithe sheep, sheaves and plates are laid before it; the crowd walks to it and rings it (`people.gather`); keepers in robes (`people.robe`) | `frameDrum`, `restore`, `check` |
-| The next creature, teased in-world | `flyers`: a shadow-only creature crosses the Isle (EP26: a dragon's shadow sweeps the meadow and the Grimmaw looks up) | `dragonPass` (whoosh + wingbeats, panning with it) |
+| Two tellings of one event (EP31+) | `chronicles`: two open pages under the world, one per teller. Each fact is written, never written, lost (PAGE LOST) or the truth on each page; a one-word verdict heads each page; the spine shows how much the pages agree (· · · until both are written, then a percentage, BOTH TRUE, or THE TRUTH · HIDDEN). Write each page on the word that names its witness | `quill` for each entry, `pageTear` when a page is lost, `unlock` on the truth, `stamp` when it is hidden |
+| What a witness never saw (EP31+) | `veil`: the unseen half of the frame is hatched out (UNSEEN) and the seen half is labelled with the witness (`side` left / right); `middle` hides a centre band (the author hiding the truth) | `eyeOn` |
+| Two readings of one picture (EP31+) | `splitTone`: the frame graded in two halves along a seam, warm on one side, drained and rust on the other; `pulses` make a half answer a spoken word. List it in an early shot so it draws under the HUD | `crownPass` / `stompHit` on the hook's two words |
+| A monument changes with its tellers (EP31+) | `statue` prop: `rise` (built), `gild` (one half gilded, its torch lit, flowers), `tar` (the other half tarred and scratched), `grow` (taller with each retelling) | `restore` as it rises, `unlock` on the gilding, `stamp` on the tar, `morph` as it grows |
+| A field burns (EP31+) | `fields.burn`: the crop chars from one edge, flames and smoke above it; no people in it | `burn` bed |
+| One named person in the crowd (EP31+) | `people.figures`: a keyed figure with her own tunic, scale and a torch; `people.watch` turns the crowd to face a point; `people.tints` dresses each crowd centre in its own colour | — |
+| A word answers the voice (EP31+) | `kinetic` parts with `pulseAt`: a title word already on screen flares on its spoken cue (the hook's HERO, then MONSTER?) | the hook's two sounds |
+| A vote (EP31+) | `endCardS2.choices`: answer chips pop on their spoken words (HERO, MONSTER), then the ask (`with`, on `withAt`) | `check` per chip |
+| The next creature, teased in-world | `flyers`: a shadow-only creature crosses the Isle (EP26: a dragon's shadow sweeps the meadow and the Grimmaw looks up). EP31 teases a war: two `standard` props rise over the two crowds | `dragonPass` (whoosh + wingbeats, panning with it); EP31: `towerBell` + `frameDrum` |
 
 - **Settlements (EP27+):** the Isle now has a village (`settlement` in `episode.world`). Frame 0 and the loop frame show the *naive* village (thatch, open pens, the road over the open meadow); everything the episode changes resets under the share card's wipe. Later episodes can start from either site; plan landmarks with the constants at the top of `make_ep27.py`.
 - **Deaths are never shown as violence.** A starving creature lies down, greys and dissolves out of the simulation. Prey loss is a falling counter and agents shrinking away, never a kill.
@@ -115,7 +130,7 @@ The ending stack (55–61 s, captions off): `seasonBar` y 350–508, `followButt
 - **Music, default from EP26 v2 (`music.engine: "s2-score"`, `pipeline/music_s2.py`):** a composed score played on sampled instruments (FluidSynth + the MuseScore General SoundFont, MIT).
   - **The series theme:** a 4-bar melody (D A D F E | D E F A, then B A F E D | E F E D in D major). It recurs every episode, in minor for the problem and in major for the payoff. It's the season's musical identity, so keep it.
   - **Tempo map to picture:** each section starts on a spoken cue, and the beat stretches slightly (±5 BPM around 100) so every change lands exactly on its story beat.
-  - **Styles:** `hook`, `pulse`, `drive` (16th marimba + chip arps + pizzicato + bass + drums; `theme: true` adds the melody), `drop`, `void`, `mystery`, `build` with `layer` 1–4 (one instrument family joins per rule), `twist`, `rest`, `frenzy`, `crash`, `swell`, `anthem`, `outro`, `tease` (the last line: the dominant held as open fifths, chord `A5`, under the theme's first bar asked as a question).
+  - **Styles:** `hook`, `pulse`, `drive` (16th marimba + chip arps + pizzicato + bass + drums; `theme: true` adds the melody), `drop`, `void`, `mystery`, `build` with `layer` 1–4 (one instrument family joins per rule), `twist`, `rest`, `frenzy`, `crash`, `swell`, `anthem`, `outro`, `chronicle` with `layer` 1–4 (EP31: a lute ostinato, tambourine, pizzicato bass, the theme on recorder, then harp and glockenspiel), `dispute` (EP31: the theme's bars alternate between a recorder and a bassoon), `tease` (the last line: the dominant held as open fifths, chord `A5`, under the theme's first bar asked as a question).
   - **Accents on exact cues:** `hit`, `boom`, `stab`, `cymbal`, `riser`, `call` (a horn call in open fifths: the next creature), `roll` (a timpani roll swelling into the cue, e.g. the loop point).
   - **Rests:** `rests` silences windows such as the beat after "Delete".
   - **Fade:** `fadeOut: {"fromEnd": 0.08}` plays to the loop point with only a click-free fade (from EP26 v3); `{"at", "dur"}` fades earlier.
@@ -127,14 +142,14 @@ The ending stack (55–61 s, captions off): `seasonBar` y 350–508, `followButt
   - `voiceFx` is phone clarity: high-pass 85 Hz, +2.5 dB at 3.2 kHz, a touch of air, gentle 2.5:1 compression.
   - Season 1 episodes set no `mix`, so their audio is bit-identical (verified for EP24 and EP25).
 - **The World Engine chime, the season's sound logo** (Season 1 had its sine bells): a rising open fifth D5 A5 D6 A6 on music box with 8-bit square blips, ringing D7 on music box and glockenspiel, about 2.9 s with its tail. `render_chime()` (`pipeline/music_s2.py`) renders it once from the score's SoundFont, and it plays as the SFX `chime`: the same clip every time, always on D, never ducked. It sits about 6–7 LU under the voice. Use it only at its three moments (frame 0, the lesson card, the follow press) so it stays a signal, and keep `engineWind` (a clockwork ratchet that winds up into it) for the moments with room before them.
-- **SFX:** synthesised, from the palette table above, one sound per event, reused every episode. The chime is the one SoundFont-rendered clip.
+- **SFX:** synthesised, from the palette table above, one sound per event, reused every episode. The chime is the one SoundFont-rendered clip. New sounds get their own seeded random generator (EP31's `quill` and `pageTear` use seeds 311 and 312), so adding one never changes an older episode's audio.
 
 ## Captions
 - `CaptionsS2`: 1–3-word bursts, ≤13 characters. Each word pops on its own timestamp; emphasis words in ember.
 - Turn captions off where a kinetic title says the same words (`captions: false` on the shot, or `captionsOff: [{line, from, to?}]`).
 
 ## CTA card (`endCardS2`)
-Full logo (y 268) → `PART NN / 50` (Silkscreen, amber) → title in Cormorant italic → a pixel panel with the ask (pixel icon + `SEND THIS` / `SHARE THIS` / `COMMENT` …, then Inter 800 detail) → footer `WORLDCRAFT SHORTS · WORLDBUILDING, FROM THE GROUND UP`. It comes in on a `blockWipe` (anything that has to jump for the loop, like the camera cut to the hook pose, jumps on the wipe's midpoint) and lifts on the word "Part" for the ending formula.
+Full logo (y 268) → `PART NN / 50` (Silkscreen, amber) → title in Cormorant italic → a pixel panel with the ask (pixel icon + `SEND THIS` / `SHARE THIS` / `COMMENT` …, then Inter 800 detail) → footer `WORLDCRAFT SHORTS · WORLDBUILDING, FROM THE GROUND UP`. For a comment ask with two answers, `choices` shows them as chips that pop on their spoken words, and `with` (on `withAt`) carries the ask (EP31: HERO / MONSTER, "Give us your verdict."). It comes in on a `blockWipe` (anything that has to jump for the loop, like the camera cut to the hook pose, jumps on the wipe's midpoint) and lifts on the word "Part" for the ending formula.
 
 ## The ending formula (from EP26 v3)
 Why: `docs/SEASON2_RESEARCH.md` → "Follow ask, part numbers and the sound logo". The formula is the same every episode so it becomes familiar.
@@ -159,13 +174,15 @@ Why: `docs/SEASON2_RESEARCH.md` → "Follow ask, part numbers and the sound logo
   - then `python pipeline/pixelate.py src.png episodes/epNN/assets/<name>.png --width 168 --colors 28`.
   - Shown at ×3, the sprite sits on the same pixel grid as the world.
   - Build the voxel model to match the sprite's palette and silhouette.
-- Creatures, dress and architecture are original. No readable text in generated art (all type is code).
+- **Free alternative (EP31):** the local SDXL-Lightning pipeline (`pipeline/local_stills.py`, about 2 minutes an image on 4 CPU cores, no credits). It can't follow a compositional instruction such as "left half gilded, right half tarred", so ask it for the plain subject on a flat background and make the change in code (`episodes/ep31/art/split_statue.py`), then `pixelate.py`. For sprites, `--sprite --prompt "…"` fuses a pixel-art LoRA into the model and draws a real pixel grid at the same speed (tested on EP31; use it from EP32). Run it alone: it needs about 10 GB of RAM, and a render or a TTS build beside it gets killed.
+- Creatures, dress and architecture are original. No readable text in generated art (all type is code). Look at each candidate before using it: a statue with a crown and a raised torch came back looking like a real monument and was rejected.
 - Runtime assets go in `episodes/epNN/assets/`; `pipeline/build.sh` copies them to `public/epNN/`.
 
 ## Delivery (every S2 episode)
 1. `python episodes/epNN/make_epNN.py` → `pipeline/build.sh epNN`.
+   - Then **the scorecard:** `python pipeline/benchmark.py epNN ep31` (25 rows: hook, pace, how often the picture changes, where the beats land, how long the lesson line can be read, the ending, the loop; why in `docs/SEASON2_RESEARCH.md` §7). Fix every ✗ before rendering, or say in the brief why it stays.
 2. Beat stills: `node pipeline/stills.mjs epNN out/epNN_beats <seconds…>` and `python3 pipeline/tile.py out/epNN_beats out/epNN_beats.jpg`.
-3. Render: `npx remotion render Episode out/epNN.mp4 --props='{"episodeId":"epNN"}' --gl=swangle --browser-executable <headless shell>` (about 20 min for 60 s with full shadows and ambient life; v2 took about 12).
+3. Render: `npx remotion render Episode out/epNN.mp4 --props='{"episodeId":"epNN"}' --gl=swangle --browser-executable <headless shell>` (10–20 min for 60 s with full shadows and ambient life, depending on the crowd: EP29 18 min, EP30 9, EP31 9).
 4. `python pipeline/qa.py out/epNN.mp4 --sheet out/epNN_sheet.jpg`, then inspect the sheet and the beat frames, including the loop tail.
 5. Encodes, all `-c:a copy` and each through `qa.py`:
    - compat: H.264 Main, CRF 20, `+faststart`;
@@ -181,10 +198,20 @@ The recurring signature (the Isle, ▶ RUN, the field card with a locked row, th
 - **EP28's answer:** the device is the *species editor* (a character creator whose sliders rebuild the world), the camera stays at the species' eye height, the motif colour is bioluminescent teal `#5fe0c0`, and the music band is `folk` / `glow`.
 - **EP29's answer:** the device is the *lineage strip* (generations born, greying and gone beneath a ruler whose cell never changes), the camera is a *locked-off tripod* (each tableau holds one frame while centuries pass through it), the motif colour is ageless violet `#b48cff`, and the music band is `clockwork` / `reign`.
 - **EP30's answer:** the device is the *ledger* (a balance beam under the world: what the monster gives on one pan, what it costs on the other, and every ritual is a weight that levels it), the camera takes the *worshipper's angle* (low and long-lensed, the monster against the sky over its people), the motif colour is shrine madder `#ef6f9c`, and the music band is `hymn` / `rite`.
+- **EP31's answer:** the device is the *two chronicles* (two open pages under the world, one per teller, and a spine that counts how much they agree) with the *witness veil* in the world; the camera language is the *split frame* (everything frontal on one centre line, one side's telling on the left, the other's on the right, the picture itself graded in two halves); the motif colour is chronicle ink `#7f95ff`; and the music band is `chronicle` / `dispute`.
 - **Fresh wording for the recurring beats:** the drop line, the stamp, the run-2 verdict and the checklist title belong to the episode's own idea (EP27: "They just lived in plain sight"; TARGETS 00, NOTHING TO HUNT; HIDE FROM THE SKY).
 
 ## Making the next episode
-- **Low angles on the Isle (learned on EP30):** a camera at eye height (1–2 units above the grass, negative elevation) almost never works here. The meadows are terraced voxels, trees and buildings sit everywhere, and anything within ten units fills the frame. The worshipper's angle that works is a *low elevation from medium distance on a long lens* (el 5–12°, dist 30–44, fov 15–22), which puts the subject against the sky with its people small below it. Check each pose before rendering: `camPose` from `Stage.tsx` plus the island's `heightAt` and `trees` give the line of sight, and `project` places landmarks (the Fenn's great hall, the cairn, the Queen's dais) in or out of frame.
+- **Start from EP31.** Copy `episodes/ep31/make_ep31.py` (not EP26's): it has the helpers the later episodes needed (`jump` for hard changes on a cut, `shift`, `loop_span`, frontal poses as named dicts), and `episodes/ep31/BRIEF.md` §11 is the hand-off checklist.
+- **Lessons from EP31, in the order they cost time:**
+  - *A block wipe is centred on its cue.* The frame is fully covered at `at`, so every state that has to jump under a wipe (camera cut, clock, props, light) is keyed at the wipe's own cue, not after it.
+  - *A graphic ends where the next shot starts* unless it has an `end`. Anything that must still be on screen in the last frame (the split tone, the returning hook title) belongs in the last shot's list.
+  - *Overlays draw in shot order, then list order.* A full-frame grade goes in an early shot's list so the HUD draws over it.
+  - *The device changes on the spoken word.* EP31's first render wrote the valley's page before anyone had named the valley; the final version writes each page as its witness is named. If a sound (`quill`) plays, something has to be written.
+  - *A line the viewer should keep needs time to be read.* The lesson line used to arrive on the last spoken word and leave with the card half a second later (EP29, EP30, and EP31's first render). Bring it in as the first sentence ends (`subtitleAt`) and hold the card until the wipe covers it. The same goes for the reveal word: EP31's BOTH now holds through the next three words.
+  - *Nothing static for more than 2.5 s.* The scorecard found a 3.7 s hold in the hook and 2.8 s in run 1; the fixes were small (two title pulses, a verdict stamped each century).
+  - *Look at a model's output before building on it.* The first statue silhouette read as a slab at phone size, and the first sprite looked like a real landmark.
+- **Low angles on the Isle (learned on EP30):** a camera at eye height (1–2 units above the grass, negative elevation) almost never works here. The meadows are terraced voxels, trees and buildings sit everywhere, and anything within ten units fills the frame. The worshipper's angle that works is a *low elevation from medium distance on a long lens* (el 5–12°, dist 30–44, fov 15–22), which puts the subject against the sky with its people small below it. Check each pose before rendering with `pipeline/camprobe.ts` (from EP31; usage at the top of the file): it prints the line of sight's tightest clearance over the terrain and trees, and where each landmark you name (the Fenn's great hall, the cairn, the Queen's dais, your subject) lands in the 1080×1920 frame, or that it falls outside it.
 - Copy `episodes/ep26/make_ep26.py`. Keep the Isle; add new species or props in `src/s2/world/` (voxel parts with outlines) and new overlay types in `src/s2/overlays/` only for genuinely new kinds of visuals.
 - The world timeline is keyed to spoken words (`cue(line, word, offset)`), so re-measuring the TTS moves every beat with the voice. `{"end": true, "offset": -0.5}` is a cue relative to the episode's end (the loop point), in both the Python pipeline and Remotion.
 - Order on a narration change: `tts.py` → `make_epNN.py` (the loop camera reads the measured timing) → `build.sh`.

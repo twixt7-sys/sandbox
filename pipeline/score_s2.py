@@ -190,7 +190,7 @@ def blip(f0, f1, dur, bright=1.0):
 
 S2_HITS = {"roar", "stompHit", "sting", "runPress", "stamp", "rewind", "ringOn", "snowAir", "sleepZ", "cubPop", "delete", "restore", "cardSlide", "check", "unlock", "worldRipple", "crash", "boomPop",
            "engineWind", "dragonPass", "followPress", "chime", "towerBell", "eyeOn", "morph", "slide", "crownPass",
-           "frameDrum", "beamTip"}
+           "frameDrum", "beamTip", "quill", "pageTear"}
 S2_BEDS = {"simTicks", "births", "losses", "stomp", "burn", "lockOn", "clockTicks"}
 
 
@@ -481,6 +481,28 @@ def s2_hit(kind):
         x = t[: n - i]
         clunk[i:] = (np.sin(2 * np.pi * 140 * x) * np.exp(-x * 30) + np.sin(2 * np.pi * 410 * x) * np.exp(-x * 55) * 0.4) * 0.7
         return st(creak + clunk, 0.4)
+    if kind == "quill":
+        # EP31: a chronicler writes a line: four short scratchy pen strokes (band-passed noise bursts) and a dot. Its
+        # own seeded RNG (no shared-RNG draws).
+        n = int(0.62 * SR)
+        rng = np.random.default_rng(311)
+        out = np.zeros(n)
+        for k, (t0, d) in enumerate(((0.0, 0.1), (0.13, 0.08), (0.24, 0.12), (0.39, 0.07), (0.5, 0.03))):
+            m = int(d * SR)
+            x = np.arange(m) / SR
+            stroke = bp(rng.standard_normal(m), 2200 + k * 350, 6500) * np.hanning(m) * (0.5 + 0.5 * np.sin(2 * np.pi * 38 * x) ** 2)
+            i = int(t0 * SR)
+            out[i:i + m] += stroke[: n - i] * (0.9 if k < 4 else 1.4)
+        return st(out * 0.8, 0.3)
+    if kind == "pageTear":
+        # EP31: a page is torn out of the record: a ripping noise sweep that snaps off, then a soft flutter.
+        n = int(0.7 * SR)
+        t = np.arange(n) / SR
+        rng = np.random.default_rng(312)
+        nz = rng.standard_normal(n)
+        rip = bp(nz, 900, 7000) * np.interp(t, [0, 0.05, 0.3, 0.34, 0.7], [0, 0.9, 1.0, 0.0, 0]) * (0.6 + 0.4 * np.sign(np.sin(2 * np.pi * (60 + 240 * t) * t)))
+        flut = lp(nz, 700) * np.interp(t, [0, 0.36, 0.42, 0.7], [0, 0, 0.35, 0])
+        return st(rip + flut, 0.5)
     raise KeyError(kind)
 
 

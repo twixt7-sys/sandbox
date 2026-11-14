@@ -39,14 +39,16 @@ export const Kinetic: React.FC<OP> = ({g, t}) => {
 	let y = g.y ?? 470;
 	return (
 		<AbsoluteFill style={{opacity: o, pointerEvents: 'none'}}>
-			{(g.parts as {text: string; at?: Cue; color?: string; size?: number; italic?: boolean}[]).map((p, i) => {
+			{(g.parts as {text: string; at?: Cue; color?: string; size?: number; italic?: boolean; pulseAt?: Cue}[]).map((p, i) => {
 				const at = p.at ? cueTime(timing, p.at) : cueTime(timing, g.start, 0);
 				const size = p.size ?? g.size ?? 96;
 				const top = y;
 				y += size * (g.font === 'serif' ? 1.05 : 1.12);
 				const k = at <= 0.001 || g.preShow ? 1 : clamp((t - at) / 0.16);
 				if (t < at - 0.001 && !g.preShow) return null;
-				const pop = g.preShow ? 1 : 1 + (1 - k) * 0.35 + Math.max(0, Math.sin(clamp((t - at) / 0.3) * Math.PI)) * 0.04;
+				// EP31+: `pulseAt` swells the word for 0.4 s on a spoken cue (absent before: no change)
+				const pulse = p.pulseAt ? Math.sin(clamp((t - cueTime(timing, p.pulseAt)) / 0.4) * Math.PI) : 0;
+				const pop = (g.preShow ? 1 : 1 + (1 - k) * 0.35 + Math.max(0, Math.sin(clamp((t - at) / 0.3) * Math.PI)) * 0.04) * (1 + 0.13 * pulse);
 				return (
 					<div
 						key={i}
@@ -66,6 +68,7 @@ export const Kinetic: React.FC<OP> = ({g, t}) => {
 							transform: `scale(${pop})`,
 							transformOrigin: '50% 60%',
 							opacity: k,
+							filter: pulse > 0.01 ? `brightness(${(1 + 0.45 * pulse).toFixed(3)})` : undefined,
 							textShadow: g.font === 'serif' ? `0 4px 18px rgba(0,0,0,0.6), ${outline('#050912', 3)}` : outline('#050912', 7),
 						}}
 					>
@@ -609,7 +612,7 @@ export const Sting: React.FC<OP> = ({g, t}) => {
 // ---------------------------------------------------------------- end card
 
 export const EndCardS2: React.FC<OP> = ({g, t}) => {
-	const {o, a} = useWin(g, t, 0.4, g.fadeOut ?? 0.55);
+	const {o, a, timing} = useWin(g, t, 0.4, g.fadeOut ?? 0.55);
 	const brand = useBrand();
 	if (o <= 0) return null;
 	const k = (d: number) => ease(t, a + d, 0.4);
@@ -633,7 +636,24 @@ export const EndCardS2: React.FC<OP> = ({g, t}) => {
 					<PixelSprite name={g.icon ?? 'share'} px={9} color={S2.ember} />
 					<span style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: 78, color: S2.ember, textShadow: pixelShadow('#050912', 2)}}>{g.cta ?? 'SHARE THIS'}</span>
 				</div>
-				<div style={{position: 'absolute', left: 30, right: 30, top: 160, textAlign: 'center', fontFamily: F2.caption, fontWeight: 800, fontSize: 46, lineHeight: 1.15, color: S2.parchment}}>{g.with}</div>
+				{g.choices ? (
+					<>
+						{/* EP31+: a one-word vote: each choice is a chip that pops on its spoken cue, then the ask under them */}
+						<div style={{position: 'absolute', left: 30, right: 30, top: 146, display: 'flex', justifyContent: 'center', gap: 26}}>
+							{(g.choices as {text: string; color?: string; at?: Cue}[]).map((c, i) => {
+								const ck = c.at ? clamp((t - cueTime(timing, c.at)) / 0.18) : 1;
+								return (
+									<div key={i} style={{padding: '14px 30px 10px', fontFamily: F2.pixel, fontWeight: 700, fontSize: 52, lineHeight: 1, color: S2.ink, background: col(c.color ?? 'ember'), boxShadow: `0 ${PX * 2}px 0 rgba(3,6,14,0.8)`, opacity: ck, transform: `scale(${0.6 + 0.4 * ck + Math.sin(ck * Math.PI) * 0.12})`}}>
+										{c.text}
+									</div>
+								);
+							})}
+						</div>
+						<div style={{position: 'absolute', left: 30, right: 30, top: 252, textAlign: 'center', fontFamily: F2.caption, fontWeight: 800, fontSize: 42, lineHeight: 1.1, color: S2.parchment, opacity: g.withAt ? clamp((t - cueTime(timing, g.withAt)) / 0.25) : 1}}>{g.with}</div>
+					</>
+				) : (
+					<div style={{position: 'absolute', left: 30, right: 30, top: 160, textAlign: 'center', fontFamily: F2.caption, fontWeight: 800, fontSize: 46, lineHeight: 1.15, color: S2.parchment}}>{g.with}</div>
+				)}
 			</div>
 			<div style={{position: 'absolute', left: 90, right: 160, top: 1176, textAlign: 'center', whiteSpace: 'nowrap', opacity: k(0.5), fontFamily: F2.pixel, fontSize: 19, color: 'rgba(239,230,210,0.6)', letterSpacing: '0.06em'}}>
 				{g.footer ?? 'WORLDCRAFT SHORTS · WORLDBUILDING, FROM THE GROUND UP'}
@@ -785,7 +805,7 @@ export const NextRun: React.FC<OP> = ({g, t}) => {
 					{flash > 0 && <div style={{position: 'absolute', left: 0, top: 0, right: 0, bottom: 0, background: `rgba(255,248,232,${(flash * 0.9).toFixed(3)})`}} />}
 				</div>
 				<div style={{position: 'absolute', left: 196, top: 22, fontFamily: F2.pixel, fontSize: 26, color: S2.sky, letterSpacing: '0.1em'}}>{g.kicker ?? 'NEXT RUN · 27'}</div>
-				<div style={{position: 'absolute', left: 192, top: 58, fontFamily: F2.pixel, fontWeight: 700, fontSize: 80, lineHeight: 1, color: locked ? 'rgba(239,230,210,0.55)' : S2.rust, textShadow: pixelShadow('#050912', 2)}}>{shown}</div>
+				<div style={{position: 'absolute', left: 192, top: 58, fontFamily: F2.pixel, fontWeight: 700, fontSize: g.titleSize ?? 80, lineHeight: 1, color: locked ? 'rgba(239,230,210,0.55)' : S2.rust, textShadow: pixelShadow('#050912', 2)}}>{shown}</div>
 				<div style={{position: 'absolute', left: 196, top: 144, fontFamily: F2.pixel, fontSize: 22, color: S2.parchment, letterSpacing: '0.06em', opacity: sub}}>{g.sub ?? 'A DRAGON LANDS HERE.'}</div>
 			</div>
 		</AbsoluteFill>
@@ -1123,7 +1143,173 @@ export const Ledger: React.FC<OP> = ({g, t}) => {
 	);
 };
 
+// ---------------------------------------------------------------- EP31: the two chronicles and the witness veil
+
+const INK_C = '#7f95ff';
+type ChronRow = {icon: string; label: string; left: [Cue, number][]; right: [Cue, number][]};
+type ChronSide = {title: string; color: string};
+
+/**
+ * The two chronicles (EP31's device): two open pages under the world, one per teller, recording the same event. Each
+ * fact (`rows`) has a state per page, keyed to cues: 0 never written, 1 written, 2 lost (torn out), 3 the truth (shown
+ * on both). `verdicts` ([cue, left word, right word]) is each page's one-word judgement; `motiveAt` stamps a coin on
+ * both pages (each telling pays its teller); `hideAt` locks the truth away again. The spine shows the share of written
+ * facts the two pages agree on, so the dispute is a number the viewer can watch fall from 100% to 0%. While a page is
+ * still blank there is nothing to compare, so the spine waits (· · ·); its reading pops whenever an entry changes it.
+ */
+export const Chronicles: React.FC<OP> = ({g, t}) => {
+	const {o, a, timing} = useWin(g, t, 0.3, 0.3);
+	if (o <= 0) return null;
+	const rows: ChronRow[] = g.rows ?? [];
+	const sides: [ChronSide, ChronSide] = [g.left, g.right];
+	const at = (keys: [Cue, number][], tt = t) => {
+		let v = 0;
+		let since = -1;
+		for (const k of keys) {
+			const kt = cueTime(timing, k[0]);
+			if (kt <= tt) {
+				v = k[1];
+				since = kt;
+			}
+		}
+		return {v, k: since < 0 ? 1 : clamp((tt - since) / 0.25)};
+	};
+	const told = (v: number) => v === 1 || v === 3;
+	// what the record says at time tt: every row's state on both pages, and the spine's reading
+	const read = (tt: number) => {
+		const s = rows.map((r) => [at(r.left, tt), at(r.right, tt)] as const);
+		const either = s.filter(([l, r]) => told(l.v) || told(r.v)).length;
+		const both = s.filter(([l, r]) => told(l.v) && told(r.v)).length;
+		const agree = either ? Math.round((100 * both) / either) : 100;
+		const truth = s.length > 0 && s.every(([l, r]) => l.v === 3 && r.v === 3);
+		// one telling, or none: nothing to compare yet
+		const open = [0, 1].some((side) => s.every((x) => x[side].v === 0));
+		const hid = g.hideAt ? tt >= cueTime(timing, g.hideAt) : false;
+		return {s, agree, truth, open, text: hid ? 'HIDDEN' : truth ? 'TRUE' : open ? '· · ·' : `${agree}%`};
+	};
+	const now = read(t);
+	const st = now.s;
+	const {agree, truth, open} = now;
+	// the spine pops when the newest entry on either page changed its reading
+	const newest = Math.max(-1, ...rows.flatMap((r) => [...r.left, ...r.right].map((k) => cueTime(timing, k[0])).filter((kt) => kt <= t)));
+	const sk = newest >= 0 && read(newest - 0.001).text !== now.text ? clamp((t - newest) / 0.3) : 1;
+	const verdicts: [number, string, string][] = (g.verdicts ?? []).map((v: [Cue, string, string]) => [cueTime(timing, v[0]), v[1], v[2]]);
+	const cur = verdicts.filter((v) => v[0] <= t).pop();
+	const vk = cur ? clamp((t - cur[0]) / 0.2) : 1;
+	const motive = g.motiveAt ? clamp((t - cueTime(timing, g.motiveAt)) / 0.25) : 0;
+	const hidden = g.hideAt ? t >= cueTime(timing, g.hideAt) : false;
+	const y0: number = g.y ?? 1352;
+	const rise = (1 - ease(t, a, 0.35)) * 40;
+	const W = 804;
+	const H = 216;
+	const PW = 336;
+	const page = (side: 0 | 1) => {
+		const sd = sides[side];
+		const word = cur ? cur[1 + side] : '';
+		return (
+			<div style={{position: 'absolute', left: side ? W - PW : 0, top: 0, width: PW, height: H, background: 'rgba(239,230,210,0.07)', boxShadow: `inset ${side ? PX : -PX}px 0 0 rgba(239,230,210,0.35)`}}>
+				<div style={{position: 'absolute', left: 14, top: 10, fontFamily: F2.pixel, fontSize: 18, color: 'rgba(239,230,210,0.85)', letterSpacing: '0.06em'}}>{sd.title}</div>
+				<div style={{position: 'absolute', right: 12, top: 8, opacity: motive, transform: `scale(${1 + (1 - motive) * 0.8})`}}>
+					<PixelSprite name="coin" px={4} color={S2.ember} />
+				</div>
+				<div style={{position: 'absolute', left: 14, top: 34, fontFamily: F2.pixel, fontWeight: 700, fontSize: 44, lineHeight: 1, color: sd.color, letterSpacing: '0.03em', transform: `scale(${1 + (1 - vk) * 0.3})`, transformOrigin: '0 50%'}}>{word}</div>
+				{rows.map((r, i) => {
+					const s0 = st[i][side];
+					const top = 88 + i * 30;
+					const on = s0.v === 1 || s0.v === 3;
+					const lost = s0.v === 2;
+					const c = s0.v === 3 ? S2.ember : sd.color;
+					return (
+						<div key={i} style={{position: 'absolute', left: 14, right: 12, top, height: 25, display: 'flex', alignItems: 'center', gap: 10, opacity: on ? 0.35 + 0.65 * s0.k : lost ? 0.75 : 0.28}}>
+							<div style={{width: 44, display: 'flex', justifyContent: 'center'}}>{on ? <PixelSprite name={r.icon} px={3} color={c} /> : lost ? <PixelSprite name="cross" px={3} color={S2.rust} /> : null}</div>
+							<span style={{fontFamily: F2.pixel, fontSize: 20, letterSpacing: '0.02em', whiteSpace: 'nowrap', color: on ? S2.parchment : lost ? S2.rust : 'rgba(239,230,210,0.7)', textDecoration: lost ? 'line-through' : undefined}}>{on ? r.label : lost ? 'PAGE LOST' : '· · · · ·'}</span>
+						</div>
+					);
+				})}
+			</div>
+		);
+	};
+	return (
+		<AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>
+			<div style={{position: 'absolute', left: 96, top: y0 + rise, width: W, height: H, overflow: 'hidden', ...panel({edge: INK_C})}}>
+				{page(0)}
+				{page(1)}
+				<div style={{position: 'absolute', left: PW, width: W - 2 * PW, top: 0, height: H, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 6}}>
+					<PixelSprite name={hidden ? 'lock' : 'book'} px={5} color={truth || hidden ? S2.ember : INK_C} />
+					<span style={{fontFamily: F2.pixel, fontSize: 18, color: 'rgba(239,230,210,0.8)', letterSpacing: '0.08em'}}>{hidden ? 'THE TRUTH' : truth ? 'BOTH' : 'AGREE'}</span>
+					<span style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: hidden ? 26 : open ? 28 : 40, lineHeight: 1, color: truth || hidden ? S2.ember : open ? 'rgba(239,230,210,0.45)' : agree === 0 ? S2.rust : INK_C, transform: `scale(${1 + (1 - sk) * 0.35})`}}>{now.text}</span>
+				</div>
+			</div>
+		</AbsoluteFill>
+	);
+};
+
+/**
+ * The witness veil (EP31): the half of the frame one witness never saw is hatched out and marked UNSEEN, and the half
+ * they did see is labelled with their name. `side` is the hidden half ('left' | 'right'); `middle` instead hides a
+ * centre band (the author hiding the truth). Covers the world zone only (y..y+h), never the HUD.
+ */
+export const Veil: React.FC<OP> = ({g, t}) => {
+	const {o, a} = useWin(g, t, 0.18, 0.18);
+	if (o <= 0) return null;
+	const y: number = g.y ?? 552;
+	const h: number = g.h ?? 784;
+	const c = col(g.color ?? 'ember');
+	const k = 1 - (1 - clamp((t - a) / 0.3)) ** 3;
+	const mid = g.side === 'middle';
+	const w: number = g.w ?? (mid ? 300 : 540);
+	const x = mid ? 540 - w / 2 : g.side === 'left' ? 0 : 1080 - w;
+	const hatch = 'repeating-linear-gradient(135deg, rgba(5,9,18,0.94) 0 12px, rgba(16,24,48,0.9) 12px 24px)';
+	return (
+		<AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>
+			<div style={{position: 'absolute', left: x, top: y, width: w, height: h * k, background: hatch, boxShadow: `inset 0 0 0 ${PX}px rgba(239,230,210,0.35)`, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden'}}>
+				<span style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: g.textSize ?? 44, letterSpacing: '0.1em', color: 'rgba(239,230,210,0.6)'}}>{g.hiddenText ?? 'UNSEEN'}</span>
+			</div>
+			{g.label && (
+				<div style={{position: 'absolute', left: mid ? 0 : g.side === 'left' ? w : 0, width: mid ? 1080 : 1080 - w, top: y + 14, display: 'flex', justifyContent: 'center', opacity: k}}>
+					<span style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: 30, letterSpacing: '0.06em', color: c, background: 'rgba(5,9,18,0.82)', padding: '8px 16px 6px', boxShadow: `0 0 0 ${PX}px ${c}`}}>{g.label}</span>
+				</div>
+			)}
+		</AbsoluteFill>
+	);
+};
+
+/**
+ * The split tone (EP31): the frame graded in two halves along a vertical seam (`x`, default the centre line), so two
+ * tellings of one scene share the picture: the left keeps the world's own light (a touch warmer), the right is drained
+ * of colour (`grey`) and washed in a `tint` (rust: the monster's telling). A thin seam line marks the join. `y0`/`y1`
+ * limit it to a band (the world zone, so the HUD keeps its colours). List it before the titles it should sit under.
+ */
+export const SplitTone: React.FC<OP> = ({g, t}) => {
+	const {o} = useWin(g, t, g.fadeIn ?? 0.3, g.fadeOut ?? 0.3);
+	if (o <= 0) return null;
+	const x: number = g.x ?? 540;
+	const y0: number = g.y0 ?? 0;
+	const y1: number = g.y1 ?? 1920;
+	// `pulses` ([cue, 'left' | 'right']): that half answers a spoken word for half a second (the hero's side flares, the
+	// monster's side throbs)
+	const timing = useTiming();
+	const bump = (side: string) => Math.max(0, ...((g.pulses ?? []) as [Cue, string][]).filter((p) => p[1] === side).map((p) => Math.sin(clamp((t - cueTime(timing, p[0])) / 0.5) * Math.PI)));
+	const bl = bump('left');
+	const br = bump('right');
+	const grey = (g.grey ?? 0.7) * o;
+	const dim = 1 - (1 - (g.dim ?? 0.96)) * o - 0.1 * br;
+	const f = `grayscale(${grey.toFixed(3)}) brightness(${dim.toFixed(3)}) contrast(${(1 + 0.06 * o).toFixed(3)})`;
+	const warm = `saturate(${(1 + 0.12 * o + 0.35 * bl).toFixed(3)}) brightness(${(1 + 0.04 * o + 0.2 * bl).toFixed(3)})`;
+	const tint = `rgba(176,58,38,${(0.17 + 0.2 * br).toFixed(3)})`;
+	return (
+		<AbsoluteFill style={{pointerEvents: 'none'}}>
+			<div style={{position: 'absolute', left: 0, top: y0, width: x, height: y1 - y0, backdropFilter: warm, WebkitBackdropFilter: warm}} />
+			<div style={{position: 'absolute', left: x, top: y0, width: 1080 - x, height: y1 - y0, backdropFilter: f, WebkitBackdropFilter: f, background: g.tint ?? tint, opacity: o}} />
+			<div style={{position: 'absolute', left: x - PX / 2, top: y0, width: PX, height: y1 - y0, background: 'rgba(239,230,210,0.5)', opacity: o * (g.seam ?? 0.6)}} />
+		</AbsoluteFill>
+	);
+};
+
 export const S2_OVERLAYS: Record<string, React.FC<OP>> = {
+	chronicles: Chronicles,
+	splitTone: SplitTone,
+	veil: Veil,
 	ledger: Ledger,
 	lineage: Lineage,
 	dragonEye: DragonEye,

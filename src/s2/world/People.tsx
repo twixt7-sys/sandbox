@@ -6,7 +6,7 @@
 // stands on. Faces +x, feet at y = 0. All a pure function of time.
 import React from 'react';
 import * as THREE from 'three';
-import {sample} from '../keys';
+import {loopFreq, sample} from '../keys';
 import {clamp, hash2, wander} from '../rng';
 import type {Island} from './island';
 import {clockAt, predatorAt, World} from './timeline';
@@ -187,7 +187,8 @@ export const PeopleLayer: React.FC<{world: World; island: Island; t: number; s: 
 			hz += (ga.at[1] + Math.sin(ang) * rr - hz) * gi;
 		}
 		const sp = 0.25 + hash2(i, 4, 29) * 0.15;
-		const wa = 1.2 * (1 - gi);
+		// EP31+: `watch` stands the crowd still, facing a point (absent before: they wander as they did)
+		const wa = (pw.watch ? 0 : 1.2) * (1 - gi);
 		const x = hx + wander(s * sp, i * 3 + 1) * wa;
 		const z = hz + wander(s * sp, i * 3 + 2) * wa;
 		const x2 = hx + wander((s + 0.2) * sp, i * 3 + 1) * wa;
@@ -195,10 +196,10 @@ export const PeopleLayer: React.FC<{world: World; island: Island; t: number; s: 
 		const col = island.columnAt(x, z);
 		if (!col || col.biome === 'water') continue;
 		const moving = gi < 0.98 && Math.hypot(x2 - x, z2 - z) > 0.02;
-		const head = gi > 0.5 && ga ? Math.atan2(-(ga.at[1] - z), ga.at[0] - x) : Math.atan2(-(z2 - z), x2 - x);
+		const head = pw.watch ? Math.atan2(-(pw.watch[1] - z), pw.watch[0] - x) : gi > 0.5 && ga ? Math.atan2(-(ga.at[1] - z), ga.at[0] - x) : Math.atan2(-(z2 - z), x2 - x);
 		nodes.push(
 			<group key={i} position={[x, island.heightAt(x, z), z]} rotation={[0, head, 0]} scale={sc}>
-				<Person age={age} seed={i} gen={gen} gait={s * 7 + i} stride={moving ? 1 : 0} royal={hash2(i, gen, 34) < royal} robe={pw.robe} />
+				<Person age={age} seed={i} gen={gen} gait={s * 7 + i} stride={moving ? 1 : 0} royal={hash2(i, gen, 34) < royal} robe={pw.robe} tunic={pw.tints ? pw.tints[i % pw.centers.length] : undefined} />
 			</group>,
 		);
 	}
@@ -243,6 +244,12 @@ export const PeopleLayer: React.FC<{world: World; island: Island; t: number; s: 
 				);
 		}
 	}
+	// EP31+: keyed figures (absent before)
+	(pw.figures ?? []).forEach((f, fi) => {
+		const p = predatorAt(f.keys, t);
+		if (!p || p.state === 'hidden') return;
+		nodes.push(<Figure key={`fig${fi}`} x={p.x} z={p.z} face={p.face} moving={p.moving} island={island} t={t} s={s} tunic={f.tunic} torch={f.torch && p.state !== 'dark'} scale={f.scale} />);
+	});
 	if (pw.ruler) {
 		const d = pw.ruler.dais;
 		if (d)
@@ -388,6 +395,143 @@ const Painted: React.FC<{kind: 'hero' | 'beast'; color: string; k: number}> = ({
 			{parts.map(([z, y, w, h, r], i) => (
 				<B key={i} s={[0.03, h * k, w]} p={[0, y, z]} c={color} e o={false} r={[r ?? 0, 0, 0]} />
 			))}
+		</group>
+	);
+};
+
+// ---------------------------------------------------------------- EP31: the disputed statue, the torch-bearer, the standards
+
+const TAR = '#1c191b';
+const GILT = '#ffd45e';
+const FLOWERS = ['#f4c46e', '#ef6f9c', '#f3efe4', '#9bd16a'];
+const glowMats = new Map<string, THREE.MeshLambertMaterial>();
+/** A material that glows a little in its own colour (gilding that catches the light): `k` 0..1 emissive strength. */
+const gm = (hex: string, k: number) => {
+	const key = `${hex}|${k.toFixed(2)}`;
+	if (!glowMats.has(key)) glowMats.set(key, new THREE.MeshLambertMaterial({color: hex, emissive: new THREE.Color(hex), emissiveIntensity: k}));
+	return glowMats.get(key)!;
+};
+const G: React.FC<{s: [number, number, number]; p: [number, number, number]; c: string; k?: number; r?: [number, number, number]}> = ({s, p, c, k = 0, r}) => (
+	<group position={p} rotation={r ?? [0, 0, 0]}>
+		<mesh geometry={BOX} material={k > 0.01 ? gm(c, k) : m(c)} scale={s} castShadow receiveShadow />
+		<mesh geometry={BOX} material={OUTLINE} scale={[s[0] + OL, s[1] + OL, s[2] + OL]} />
+	</group>
+);
+
+// Each part of the statue in three finishes: bare stone, gilded, tarred (so the forms still read in every telling).
+const ST: Record<string, [string, string, string]> = {
+	plinth1: ['#8f8c86', '#c9952e', '#1c191a'],
+	plinth2: ['#9b968c', '#d9a534', '#242022'],
+	hem: ['#8f8c86', '#c9952e', '#1c191a'],
+	cloak: ['#a9a49a', '#e6b53c', '#2a2527'],
+	mid: ['#b3ada1', '#f4c94f', '#342e31'],
+	chest: ['#a9a49a', '#ecbe44', '#2a2527'],
+	hood: ['#9b968c', '#d9a534', '#211d1f'],
+	recess: ['#6f6c68', '#8a6420', '#0f0d0e'],
+	face: ['#cfc8ba', '#ffe08a', '#4a4245'],
+	arm: ['#a9a49a', '#e6b53c', '#2a2527'],
+	pole: ['#6b5a48', '#b88a2a', '#191516'],
+};
+
+/**
+ * EP31's disputed monument: a stone statue of a hooded woman holding a torch in each hand, on a two-step plinth (built
+ * to the field-card sprite). Two tellings paint it: `gild` 0..1 gilds the half on its right hand (+z: that torch
+ * burns, flowers and candles lie at its foot) and `tar` 0..1 blackens the half on its left (-z: that torch is dead,
+ * rust scratches cross it). `grow` scales the figure on its plinth (every retelling makes her bigger); `rise` 0..1
+ * builds it up out of the ground. Faces +x. The gleam and the flame run whole cycles per episode (`loopT`).
+ */
+export const Statue: React.FC<{x: number; z: number; face: number; island: Island; t: number; loopT?: number; rise: number; gild: number; tar: number; grow: number}> = ({x, z, face, island, t, loopT, rise, gild, tar, grow}) => {
+	if (rise <= 0.001) return null;
+	const y = island.heightAt(x, z) - (1 - rise) * 8;
+	const gleam = gild * (0.1 + 0.12 * Math.max(0, Math.sin(t * loopFreq(2.4, loopT))));
+	const gc = (part: string) => mix(ST[part][0], ST[part][1], gild);
+	const tc = (part: string) => mix(ST[part][0], ST[part][2], tar);
+	// a part on the centre line is two halves: +z (the gilded telling) and -z (the tarred telling)
+	const H: React.FC<{s: [number, number, number]; p: [number, number, number]; c: string}> = ({s: sz, p: ps, c}) => (
+		<>
+			<G s={[sz[0], sz[1], sz[2] / 2]} p={[ps[0], ps[1], ps[2] + sz[2] / 4]} c={gc(c)} k={gleam} />
+			<G s={[sz[0], sz[1], sz[2] / 2]} p={[ps[0], ps[1], ps[2] - sz[2] / 4]} c={tc(c)} />
+		</>
+	);
+	const fl = 0.82 + 0.18 * Math.sin(t * loopFreq(13, loopT));
+	const lit = gild > 0.5;
+	return (
+		<group position={[x, y, z]} rotation={[0, (face * Math.PI) / 180, 0]}>
+			<H s={[2.2, 0.5, 3.0]} p={[0, 0.25, 0]} c="plinth1" />
+			<H s={[1.7, 0.6, 2.3]} p={[0, 0.8, 0]} c="plinth2" />
+			<group position={[0, 1.1, 0]} scale={grow}>
+				{/* the long cloak flaring to its hem, the shoulders, the hood and the face inside it */}
+				<H s={[1.1, 0.5, 2.0]} p={[0, 0.25, 0]} c="hem" />
+				<H s={[1.0, 0.8, 1.7]} p={[0, 0.9, 0]} c="cloak" />
+				<H s={[0.9, 0.7, 1.3]} p={[0, 1.65, 0]} c="mid" />
+				<H s={[0.9, 0.75, 1.6]} p={[0, 2.37, 0]} c="chest" />
+				<H s={[0.9, 0.9, 1.0]} p={[-0.03, 3.15, 0]} c="hood" />
+				<H s={[0.7, 0.22, 0.6]} p={[-0.08, 3.7, 0]} c="hood" />
+				<H s={[0.08, 0.56, 0.66]} p={[0.44, 3.1, 0]} c="recess" />
+				<H s={[0.08, 0.38, 0.44]} p={[0.48, 3.06, 0]} c="face" />
+				{/* the arm and torch on her right hand (the gilded half): it burns once that side is gilded */}
+				<G s={[0.3, 0.3, 0.55]} p={[0.05, 2.5, 1.05]} c={gc('arm')} k={gleam} />
+				<G s={[0.28, 0.8, 0.28]} p={[0.05, 2.95, 1.3]} c={gc('arm')} k={gleam} />
+				<G s={[0.14, 0.6, 0.14]} p={[0.05, 3.6, 1.3]} c={gc('pole')} k={gleam} />
+				<B s={[0.5 * (lit ? fl : 0.8), 0.6 * (lit ? fl : 0.7), 0.5 * (lit ? fl : 0.8)]} p={[0.05, 4.2, 1.3]} c={lit ? '#ffc96a' : '#c9c2b4'} e={lit} o={!lit} />
+				{lit && <B s={[0.26 * fl, 0.36 * fl, 0.26 * fl]} p={[0.05, 4.48, 1.3]} c={'#ff8a3c'} e o={false} />}
+				{/* the arm and torch on her left hand (the tarred half): a dead torch */}
+				<G s={[0.3, 0.3, 0.55]} p={[0.05, 2.5, -1.05]} c={tc('arm')} />
+				<G s={[0.28, 0.8, 0.28]} p={[0.05, 2.95, -1.3]} c={tc('arm')} />
+				<G s={[0.14, 0.6, 0.14]} p={[0.05, 3.6, -1.3]} c={tc('pole')} />
+				<G s={[0.4, 0.42, 0.4]} p={[0.05, 4.1, -1.3]} c={mix('#c9c2b4', '#2a2527', tar)} />
+				{tar > 0.5 && <B s={[0.16, 0.12, 0.16]} p={[0.05, 4.36, -1.3]} c={'#d0603f'} e o={false} />}
+				{/* rust scratches across the tarred half */}
+				{tar > 0.5 &&
+					[0, 1, 2].map((k) => <B key={k} s={[0.04, 0.09, 0.66]} p={[0.57 - k * 0.04, 0.7 + k * 0.75, -0.45]} c={'#d0603f'} e o={false} r={[0.5, 0, 0]} />)}
+			</group>
+			{/* what the gilded side leaves at its foot: a row of flowers on the step, candles on the ground */}
+			{lit &&
+				Array.from({length: 6}, (_, k) => <B key={k} s={[0.24, 0.24, 0.24]} p={[0.98, 0.62, 0.16 + k * 0.24]} c={['#ff7fae', '#ffd84a', '#fff6e0'][k % 3]} e={k % 3 === 1} o={false} />)}
+			{lit &&
+				[0, 1, 2].map((k) => (
+					<group key={`c${k}`} position={[1.45, 0, 0.4 + k * 0.45]}>
+						<B s={[0.16, 0.4, 0.16]} p={[0, 0.2, 0]} c={'#efe3c4'} o={false} />
+						<B s={[0.14 * fl, 0.22 * fl, 0.14 * fl]} p={[0, 0.52, 0]} c={'#ffc96a'} e o={false} />
+					</group>
+				))}
+		</group>
+	);
+};
+
+/** A war standard planted in the ground (EP31's tease for EP32): a tall pole and a swallow-tailed cloth in `color`
+ * with a pale band, rising with `rise`. Faces +x; the cloth flies toward +z. */
+export const Standard: React.FC<{x: number; z: number; face: number; island: Island; t: number; rise: number; color: string}> = ({x, z, face, island, t, rise, color}) => {
+	if (rise <= 0.001) return null;
+	const y = island.heightAt(x, z) - (1 - rise) * 5;
+	const wv = Math.sin(t * 3.1) * 0.07;
+	return (
+		<group position={[x, y, z]} rotation={[0, (face * Math.PI) / 180, 0]}>
+			<B s={[0.18, 4.4, 0.18]} p={[0, 2.2, 0]} c={'#5a3c28'} />
+			<B s={[0.34, 0.34, 0.34]} p={[0, 4.5, 0]} c={'#c9c2b4'} />
+			<group position={[0, 3.55, 0.1]} rotation={[wv, 0, 0]}>
+				<B s={[0.1, 1.4, 1.3]} p={[0, 0, 0.65]} c={color} />
+				<B s={[0.12, 0.3, 1.3]} p={[0, 0.12, 0.65]} c={'#efe6d2'} o={false} />
+				<B s={[0.1, 0.56, 0.6]} p={[0, 0.42, 1.55]} c={color} />
+				<B s={[0.1, 0.56, 0.6]} p={[0, -0.42, 1.55]} c={color} />
+			</group>
+		</group>
+	);
+};
+
+/** EP31+: keyed single figures (`people.figures`): a Person at a key's spot, optionally carrying a lit torch. */
+export const Figure: React.FC<{x: number; z: number; face: number; moving: boolean; island: Island; t: number; s: number; tunic: string; torch: boolean; scale: number}> = ({x, z, face, moving, island, t, s, tunic, torch, scale}) => {
+	const fl = 0.75 + 0.25 * Math.sin(t * 17);
+	return (
+		<group position={[x, island.heightAt(x, z), z]} rotation={[0, (face * Math.PI) / 180, 0]} scale={scale}>
+			<Person age={0.4} seed={77} gen={3} gait={s * 9} stride={moving ? 1 : 0} tunic={tunic} />
+			{torch && (
+				<group position={[0.1, 1.2, 0.3]}>
+					<B s={[0.08, 0.8, 0.08]} p={[0, 0.4, 0]} c={'#5a3c28'} o={false} />
+					<B s={[0.3 * fl, 0.44 * fl, 0.3 * fl]} p={[0, 0.98, 0]} c={'#ffc96a'} e o={false} />
+					<B s={[0.16 * fl, 0.3 * fl, 0.16 * fl]} p={[0, 1.2, 0]} c={'#ff8a3c'} e o={false} />
+				</group>
+			)}
 		</group>
 	);
 };

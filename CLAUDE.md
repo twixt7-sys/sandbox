@@ -11,7 +11,7 @@ These apply to every episode and every session working in this repo.
 - Series name: **Worldcraft Shorts**. Tagline: "Worldbuilding, from the ground up".
 
 ## Series style
-- **Season 2 (EP26–EP50): read `docs/STYLE_S2.md` ("The World Engine") before designing any episode from EP26 on**, and follow its concept, 60-second story shape, look, layout, camera, motion vocabulary, sound, CTA card and delivery rules. Season 2 episodes set `"season": 2` in `episode.json` and render through `src/s2/EpisodeS2.tsx` (one persistent pixel-voxel island, the Isle; ▶ RUN; the field card). Why: `docs/SEASON2_RESEARCH.md`. Reuse `src/s2/*` and add new pieces only for genuinely new kinds of visuals.
+- **Season 2 (EP26–EP50): read `docs/STYLE_S2.md` ("The World Engine") before designing any episode from EP26 on**, and follow its concept, 60-second story shape, look, layout, camera, motion vocabulary, sound, CTA card and delivery rules. Season 2 episodes set `"season": 2` in `episode.json` and render through `src/s2/EpisodeS2.tsx` (one persistent pixel-voxel island, the Isle; ▶ RUN; the field card). Why: `docs/SEASON2_RESEARCH.md`. Reuse `src/s2/*` and add new pieces only for genuinely new kinds of visuals. **EP31 is the Season 2 reference episode:** start a new one from `episodes/ep31/make_ep31.py` and `episodes/ep31/BRIEF.md` §11, and run the retention scorecard (`python pipeline/benchmark.py epNN ep31`) before rendering.
 - **Season 1 (EP01–EP25): `docs/STYLE.md` still governs them.** They must keep rendering exactly as before: anything global (composition, captions, QA, score, mix) changes only additively or behind the season / per-episode switches.
 
 ## Production conventions

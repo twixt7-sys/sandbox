@@ -4,6 +4,7 @@ import React, {useLayoutEffect, useMemo, useRef} from 'react';
 import * as THREE from 'three';
 import {loopFreq} from '../keys';
 import {Column, Island} from './island';
+import type {Strata} from './timeline';
 
 export const BIOME_COLORS: Record<string, string[]> = {
 	water: ['#3f86b0', '#4790b9', '#3a7ca5'],
@@ -19,18 +20,60 @@ const tmpM = new THREE.Matrix4();
 const tmpC = new THREE.Color();
 const tmpC2 = new THREE.Color();
 
+// EP32+: the war as a layer of the island (`world.strata`), with centuries laid on top and consequences running up
+// through them as veins. Injected only when an episode has strata, so every older episode compiles the same shader.
+const STRATA_GLSL = `
+					vec3 wpat = vec3(0.19, 0.14, 0.16);
+					{
+						vec2 cell = floor(vec2(vWX + vWZ, y) * 3.0);
+						float h = fract(sin(dot(cell, vec2(12.9898, 78.233))) * 43758.5453);
+						if (h > 0.86) wpat = uWarFleck;
+						else if (h > 0.8) wpat = vec3(0.82, 0.78, 0.7);
+						else if (h > 0.7) wpat = vec3(0.42, 0.17, 0.13);
+					}
+					float sy0 = uWar.x;
+					float sy1 = uWar.y;
+					float th = (uWar.z - sy1) / max(1.0, uCen.y);
+					if (y > sy1 && th > 0.01) {
+						float k = floor((y - sy1) / th);
+						float fk = fract((y - sy1) / th);
+						if (k < uCen.x && y < uWar.z + 0.6) {
+							vec3 cb = mod(k, 2.0) < 1.0 ? vec3(0.56, 0.43, 0.3) : vec3(0.48, 0.36, 0.25);
+							if (fk > 0.8) cb *= 0.6;
+							c = cb;
+						}
+						if (k < uCen.z * uCen.y) c = fk > 0.8 ? wpat * 0.7 : wpat;
+					}
+					if (y >= sy0 && y <= sy1) c = mix(wpat, c * 0.85, uWar.w);
+					for (int i = 0; i < 4; i++) {
+						vec4 b = uVeinBox[i];
+						vec4 vc = uVeinCol[i];
+						if (vc.w > 0.001 && vWX > b.x && vWX < b.y && vWZ > b.z && vWZ < b.w && y > sy0 && y < sy1 + vc.w * (vTop - sy1)) {
+							float e = min(min(vWX - b.x, b.y - vWX), min(vWZ - b.z, b.w - vWZ));
+							c = e < 0.1 ? vc.rgb * 0.55 : vc.rgb;
+						}
+					}
+					c = mix(vec3(dot(c, vec3(0.299, 0.587, 0.114))), c, uCen.w);`;
+
+type StrataU = {uWar: {value: THREE.Vector4}; uCen: {value: THREE.Vector4}; uWarFleck: {value: THREE.Color}; uVeinBox: {value: THREE.Vector4[]}; uVeinCol: {value: THREE.Vector4[]}};
+
 /** Patch a Lambert material: per-instance column top -> strata colours on the cut sides, plus faint voxel banding. */
-const strataMaterial = () => {
+const strataMaterial = (u?: StrataU) => {
 	const m = new THREE.MeshLambertMaterial({vertexColors: false});
 	m.onBeforeCompile = (shader) => {
+		if (u) Object.assign(shader.uniforms, u);
 		shader.vertexShader = shader.vertexShader
-			.replace('#include <common>', '#include <common>\nattribute float aTop;\nvarying float vTop;\nvarying float vWY;\nvarying float vUp;')
+			.replace('#include <common>', '#include <common>\nattribute float aTop;\nvarying float vTop;\nvarying float vWY;\nvarying float vUp;' + (u ? '\nvarying float vWX;\nvarying float vWZ;' : ''))
 			.replace(
 				'#include <project_vertex>',
-				'#include <project_vertex>\nvTop = aTop;\nvec4 wpS = modelMatrix * instanceMatrix * vec4(transformed, 1.0);\nvWY = wpS.y;\nvUp = normal.y;',
+				'#include <project_vertex>\nvTop = aTop;\nvec4 wpS = modelMatrix * instanceMatrix * vec4(transformed, 1.0);\nvWY = wpS.y;\nvUp = normal.y;' + (u ? '\nvWX = wpS.x;\nvWZ = wpS.z;' : ''),
 			);
 		shader.fragmentShader = shader.fragmentShader
-			.replace('#include <common>', '#include <common>\nvarying float vTop;\nvarying float vWY;\nvarying float vUp;')
+			.replace(
+				'#include <common>',
+				'#include <common>\nvarying float vTop;\nvarying float vWY;\nvarying float vUp;' +
+					(u ? '\nvarying float vWX;\nvarying float vWZ;\nuniform vec4 uWar;\nuniform vec4 uCen;\nuniform vec3 uWarFleck;\nuniform vec4 uVeinBox[4];\nuniform vec4 uVeinCol[4];' : ''),
+			)
 			.replace(
 				'#include <color_fragment>',
 				`#include <color_fragment>
@@ -41,7 +84,7 @@ const strataMaterial = () => {
 					vec3 rock = vec3(0.40, 0.41, 0.45);
 					vec3 deep = vec3(0.25, 0.25, 0.32);
 					vec3 c = y > 4.5 ? rock * 1.15 : (y > vTop - 2.2 ? soil : (y > -1.5 ? clay : (y > -6.0 ? rock : deep)));
-					c *= mod(floor(y), 2.0) < 1.0 ? 0.92 : 1.0;
+					c *= mod(floor(y), 2.0) < 1.0 ? 0.92 : 1.0;${u ? STRATA_GLSL : ''}
 					diffuseColor.rgb = c;
 				}
 				if (vUp < -0.5) diffuseColor.rgb = vec3(0.16, 0.16, 0.22);`,
@@ -63,15 +106,45 @@ type Props = {
 	t: number;
 	/** the episode's length: the water shimmer repeats over it (seamless loop); omit outside episodes */
 	loopT?: number;
+	/** EP32+: the war layer, the centuries on it and the veins through them (omit: the cut sides as before) */
+	strata?: Strata | null;
+	/** EP32+: the mood's saturation, applied to the strata */
+	sat?: number;
 };
 
-export const IslandMesh: React.FC<Props> = ({island, tint, treeScale, lift, treeTint, t, loopT}) => {
+export const IslandMesh: React.FC<Props> = ({island, tint, treeScale, lift, treeTint, t, loopT, strata, sat = 1}) => {
 	const terrain = useRef<THREE.InstancedMesh>(null);
 	const trunks = useRef<THREE.InstancedMesh>(null);
 	const crowns = useRef<THREE.InstancedMesh>(null);
 	const crownTops = useRef<THREE.InstancedMesh>(null);
 	const box = useMemo(() => new THREE.BoxGeometry(1, 1, 1), []);
-	const terrainMat = useMemo(() => strataMaterial(), []);
+	const hasStrata = !!strata;
+	const su = useMemo<StrataU | undefined>(
+		() =>
+			hasStrata
+				? {
+						uWar: {value: new THREE.Vector4()},
+						uCen: {value: new THREE.Vector4()},
+						uWarFleck: {value: new THREE.Color('#46c2a0')},
+						uVeinBox: {value: [0, 1, 2, 3].map(() => new THREE.Vector4())},
+						uVeinCol: {value: [0, 1, 2, 3].map(() => new THREE.Vector4())},
+					}
+				: undefined,
+		[hasStrata],
+	);
+	const terrainMat = useMemo(() => strataMaterial(su), [su]);
+	if (su && strata) {
+		su.uWar.value.set(strata.y0, strata.y1, strata.surface, strata.fade);
+		su.uCen.value.set(strata.n, strata.max, strata.flood, sat);
+		for (let i = 0; i < 4; i++) {
+			const v = strata.veins[i];
+			if (v) {
+				su.uVeinBox.value[i].set(v.box[0], v.box[1], v.box[2], v.box[3]);
+				tmpC.set(v.color);
+				su.uVeinCol.value[i].set(tmpC.r, tmpC.g, tmpC.b, v.on);
+			} else su.uVeinCol.value[i].set(0, 0, 0, 0);
+		}
+	}
 	const plainMat = useMemo(() => new THREE.MeshLambertMaterial(), []);
 	const base = useMemo(
 		() =>

@@ -187,8 +187,10 @@ export const PeopleLayer: React.FC<{world: World; island: Island; t: number; s: 
 			hz += (ga.at[1] + Math.sin(ang) * rr - hz) * gi;
 		}
 		const sp = 0.25 + hash2(i, 4, 29) * 0.15;
-		// EP31+: `watch` stands the crowd still, facing a point (absent before: they wander as they did)
-		const wa = (pw.watch ? 0 : 1.2) * (1 - gi);
+		// EP31+: `watch` stands the crowd still, facing a point (absent before: they wander as they did); EP32+: only
+		// while `watchOn` is above 0.5, when it is given
+		const watching = !!pw.watch && (!pw.watchOn || sample(pw.watchOn, t, 0) > 0.5);
+		const wa = (watching ? 0 : 1.2) * (1 - gi);
 		const x = hx + wander(s * sp, i * 3 + 1) * wa;
 		const z = hz + wander(s * sp, i * 3 + 2) * wa;
 		const x2 = hx + wander((s + 0.2) * sp, i * 3 + 1) * wa;
@@ -196,7 +198,7 @@ export const PeopleLayer: React.FC<{world: World; island: Island; t: number; s: 
 		const col = island.columnAt(x, z);
 		if (!col || col.biome === 'water') continue;
 		const moving = gi < 0.98 && Math.hypot(x2 - x, z2 - z) > 0.02;
-		const head = pw.watch ? Math.atan2(-(pw.watch[1] - z), pw.watch[0] - x) : gi > 0.5 && ga ? Math.atan2(-(ga.at[1] - z), ga.at[0] - x) : Math.atan2(-(z2 - z), x2 - x);
+		const head = watching ? Math.atan2(-(pw.watch![1] - z), pw.watch![0] - x) : gi > 0.5 && ga ? Math.atan2(-(ga.at[1] - z), ga.at[0] - x) : Math.atan2(-(z2 - z), x2 - x);
 		nodes.push(
 			<group key={i} position={[x, island.heightAt(x, z), z]} rotation={[0, head, 0]} scale={sc}>
 				<Person age={age} seed={i} gen={gen} gait={s * 7 + i} stride={moving ? 1 : 0} royal={hash2(i, gen, 34) < royal} robe={pw.robe} tunic={pw.tints ? pw.tints[i % pw.centers.length] : undefined} />
@@ -440,7 +442,7 @@ const ST: Record<string, [string, string, string]> = {
  * rust scratches cross it). `grow` scales the figure on its plinth (every retelling makes her bigger); `rise` 0..1
  * builds it up out of the ground. Faces +x. The gleam and the flame run whole cycles per episode (`loopT`).
  */
-export const Statue: React.FC<{x: number; z: number; face: number; island: Island; t: number; loopT?: number; rise: number; gild: number; tar: number; grow: number}> = ({x, z, face, island, t, loopT, rise, gild, tar, grow}) => {
+export const Statue: React.FC<{x: number; z: number; face: number; island: Island; t: number; loopT?: number; rise: number; gild: number; tar: number; grow: number; torch?: number}> = ({x, z, face, island, t, loopT, rise, gild, tar, grow, torch = 1}) => {
 	if (rise <= 0.001) return null;
 	const y = island.heightAt(x, z) - (1 - rise) * 8;
 	const gleam = gild * (0.1 + 0.12 * Math.max(0, Math.sin(t * loopFreq(2.4, loopT))));
@@ -472,9 +474,10 @@ export const Statue: React.FC<{x: number; z: number; face: number; island: Islan
 				{/* the arm and torch on her right hand (the gilded half): it burns once that side is gilded */}
 				<G s={[0.3, 0.3, 0.55]} p={[0.05, 2.5, 1.05]} c={gc('arm')} k={gleam} />
 				<G s={[0.28, 0.8, 0.28]} p={[0.05, 2.95, 1.3]} c={gc('arm')} k={gleam} />
-				<G s={[0.14, 0.6, 0.14]} p={[0.05, 3.6, 1.3]} c={gc('pole')} k={gleam} />
-				<B s={[0.5 * (lit ? fl : 0.8), 0.6 * (lit ? fl : 0.7), 0.5 * (lit ? fl : 0.8)]} p={[0.05, 4.2, 1.3]} c={lit ? '#ffc96a' : '#c9c2b4'} e={lit} o={!lit} />
-				{lit && <B s={[0.26 * fl, 0.36 * fl, 0.26 * fl]} p={[0.05, 4.48, 1.3]} c={'#ff8a3c'} e o={false} />}
+				{/* EP32: `torch` 0 takes the torch out of her hand (stolen); the raised fist stays */}
+				{torch > 0.5 && <G s={[0.14, 0.6, 0.14]} p={[0.05, 3.6, 1.3]} c={gc('pole')} k={gleam} />}
+				{torch > 0.5 && <B s={[0.5 * (lit ? fl : 0.8), 0.6 * (lit ? fl : 0.7), 0.5 * (lit ? fl : 0.8)]} p={[0.05, 4.2, 1.3]} c={lit ? '#ffc96a' : '#c9c2b4'} e={lit} o={!lit} />}
+				{torch > 0.5 && lit && <B s={[0.26 * fl, 0.36 * fl, 0.26 * fl]} p={[0.05, 4.48, 1.3]} c={'#ff8a3c'} e o={false} />}
 				{/* the arm and torch on her left hand (the tarred half): a dead torch */}
 				<G s={[0.3, 0.3, 0.55]} p={[0.05, 2.5, -1.05]} c={tc('arm')} />
 				<G s={[0.28, 0.8, 0.28]} p={[0.05, 2.95, -1.3]} c={tc('arm')} />
@@ -515,6 +518,55 @@ export const Standard: React.FC<{x: number; z: number; face: number; island: Isl
 				<B s={[0.1, 0.56, 0.6]} p={[0, 0.42, 1.55]} c={color} />
 				<B s={[0.1, 0.56, 0.6]} p={[0, -0.42, 1.55]} c={color} />
 			</group>
+		</group>
+	);
+};
+
+/** EP32: a border: a line of boundary stones from (x, z) to `to`, each a squat dressed stone with a dark cap, set every
+ * 0.9 units on the ground. They rise from the middle of the line outward as `rise` goes 0..1 (the line is drawn), and
+ * a `skip` window along the line (fractions 0..1) is left empty (the statue stands on it). */
+export const Border: React.FC<{x: number; z: number; to: [number, number]; island: Island; rise: number; skip?: [number, number]}> = ({x, z, to, island, rise, skip}) => {
+	if (rise <= 0.001) return null;
+	const len = Math.hypot(to[0] - x, to[1] - z);
+	const n = Math.max(2, Math.round(len / 0.9));
+	const ang = Math.atan2(-(to[1] - z), to[0] - x);
+	const out: React.ReactNode[] = [];
+	for (let k = 0; k <= n; k++) {
+		const f = k / n;
+		if (skip && f > skip[0] && f < skip[1]) continue;
+		// from the middle outward
+		const d = Math.abs(f - 0.5) * 2;
+		const g = Math.max(0, Math.min(1, (rise - d * 0.8) / 0.2));
+		if (g <= 0.001) continue;
+		const px = x + (to[0] - x) * f;
+		const pz = z + (to[1] - z) * f;
+		const tall = k % 4 === 0 ? 0.9 : 0.55;
+		out.push(
+			<group key={k} position={[px, island.heightAt(px, pz) - (1 - g) * 1.2, pz]} rotation={[0, ang, 0]}>
+				<B s={[0.42, tall, 0.5]} p={[0, tall / 2, 0]} c={k % 2 ? STONE : STONE_D} />
+				<B s={[0.46, 0.12, 0.54]} p={[0, tall + 0.04, 0]} c={'#5d5a58'} o={false} />
+			</group>,
+		);
+	}
+	return <group>{out}</group>;
+};
+
+/** EP32: a stolen relic on display: a stone plinth with a gilded torch set upright on it, burning, behind a low rail.
+ * It rises with `rise`. */
+export const Relic: React.FC<{x: number; z: number; face: number; island: Island; t: number; loopT?: number; rise: number}> = ({x, z, face, island, t, loopT, rise}) => {
+	if (rise <= 0.001) return null;
+	const y = island.heightAt(x, z) - (1 - rise) * 4;
+	const fl = 0.82 + 0.18 * Math.sin(t * loopFreq(13, loopT) + 1.3);
+	return (
+		<group position={[x, y, z]} rotation={[0, (face * Math.PI) / 180, 0]}>
+			<B s={[1.1, 0.4, 1.1]} p={[0, 0.2, 0]} c={STONE_D} />
+			<B s={[0.8, 0.9, 0.8]} p={[0, 0.85, 0]} c={STONE} />
+			<B s={[0.16, 1.1, 0.16]} p={[0, 1.85, 0]} c={GILT} />
+			<B s={[0.46 * fl, 0.56 * fl, 0.46 * fl]} p={[0, 2.62, 0]} c={'#ffc96a'} e o={false} />
+			<B s={[0.24 * fl, 0.34 * fl, 0.24 * fl]} p={[0, 2.9, 0]} c={'#ff8a3c'} e o={false} />
+			{[-1, 1].map((k) => (
+				<B key={k} s={[0.1, 0.7, 1.3]} p={[k * 0.65, 0.35, 0]} c={'#5a3c28'} />
+			))}
 		</group>
 	);
 };

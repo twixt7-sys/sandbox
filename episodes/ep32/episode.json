@@ -1,0 +1,5059 @@
+{
+ "id": "ep32",
+ "number": 32,
+ "season": 2,
+ "title": "Create an Ancient War That Still Matters",
+ "lesson": "A war that only ended is a date in your backstory. Write what it left behind instead: a border still drawn, ground nobody will farm, a relic one side still keeps, a grudge each generation is taught. Then decide what was never settled. A war ends when its consequences do, and one character can be the one to end it.",
+ "format": {
+  "version": "s2",
+  "qa": {
+   "min": 55.0,
+   "max": 62.0
+  }
+ },
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.04
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.2,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "The same lab host, an archaeologist this time. The hook is a puzzle, not a threat. 'Everyone moves on' is the knowing setup; 'just a date' lands dry. The rules are crisp, two beats each. 'Nobody ever signed the peace' is the reveal, said plainly; 'So hand one character the pen' is the instruction. The comment ask is a genuine invitation."
+ },
+ "timing": {
+  "leadIn": 0.2,
+  "tail": 0.85,
+  "shotLead": 0.12
+ },
+ "captionY": 1238,
+ "captionsOff": [
+  {
+   "line": "L3",
+   "from": "war"
+  },
+  {
+   "line": "L6",
+   "from": "just"
+  },
+  {
+   "line": "L7",
+   "from": "Real",
+   "to": "Four"
+  },
+  {
+   "line": "L13",
+   "from": "Rule",
+   "to": "Nobody"
+  },
+  {
+   "line": "L14",
+   "from": "pause."
+  }
+ ],
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "This war ended a thousand years ago. Why are people still dying?",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "thousand",
+    "dying?"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "hook",
+   "text": "Meet the Seam War. It ended in one truce.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "seam",
+    "truce."
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "setup",
+   "text": "The lazy version: the war ends, and everyone moves on.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "lazy",
+    "moves"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "setup",
+   "text": "Press run.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "run."
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "run1",
+   "text": "Ten centuries pile on. The war sinks. Forgotten.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "sinks.",
+    "forgotten."
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "drop",
+   "text": "A war nobody feels is just a date.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "nobody",
+    "date."
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "rehook",
+   "text": "Real wars don't stay buried. Four climb out. The fifth is the twist.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "buried.",
+    "twist."
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "border",
+   "text": "One: a border. The truce line still splits the statue.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "border.",
+    "splits"
+   ]
+  },
+  {
+   "id": "L9",
+   "shot": "curse",
+   "text": "Two: cursed ground. Nobody has farmed the burned field since.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "cursed",
+    "nobody"
+   ]
+  },
+  {
+   "id": "L10",
+   "shot": "relic",
+   "text": "Three: a stolen relic. The court still keeps her torch.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "stolen",
+    "torch."
+   ]
+  },
+  {
+   "id": "L11",
+   "shot": "grudge",
+   "text": "Four: a grudge. Every child is taught who to hate.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "grudge.",
+    "hate."
+   ]
+  },
+  {
+   "id": "L12",
+   "shot": "run2",
+   "text": "Run it again. A thousand years. It's all still here.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "thousand",
+    "here."
+   ]
+  },
+  {
+   "id": "L13",
+   "shot": "twist",
+   "text": "Rule five? The claim. Nobody ever signed the peace.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "claim.",
+    "peace."
+   ]
+  },
+  {
+   "id": "L14",
+   "shot": "twist",
+   "text": "That truce was a pause. The war never ended.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "pause.",
+    "never"
+   ]
+  },
+  {
+   "id": "L15",
+   "shot": "role",
+   "text": "So hand one character the pen.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "one",
+    "pen."
+   ]
+  },
+  {
+   "id": "L16",
+   "shot": "lesson",
+   "text": "Fighting stops in a day. A war ends when its consequences do.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "day.",
+    "consequences"
+   ]
+  },
+  {
+   "id": "L17",
+   "shot": "cta",
+   "text": "What unresolved conflict would your ancestors leave behind?",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "unresolved",
+    "ancestors"
+   ]
+  },
+  {
+   "id": "L18",
+   "shot": "next",
+   "text": "Part 32 of 50. Follow for part 33: a god built from fear.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "follow",
+    "fear."
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "world",
+   "purpose": "Close EP31's loop (two standards rose: a war that never ended) and stop the scroll on the question.",
+   "visual": "Golden hour, a thousand years on: frontal on the Isle's south-east cliff. Above, Maren's split statue (gilded left, tarred right, the gilded hand empty) with a line of boundary stones running down its seam to the cliff edge, the valley's people in gold on the left and the court's in rust on the right, each facing the line, EP31's two war standards still planted, the court's field black and unfarmed, her torch on a plinth on the court's side. Below, the cut side of the island: the war is a dark layer flecked with bronze-green, ten century bands are laid on top of it, and four verdigris veins run up through them to the grass. 1000 YEARS AGO / STILL DYING? is on screen from frame 0, each line pulsing on its spoken word. A depth ruler pins TODAY at the grass and THE WAR \u00b7 1000 YRS DOWN on the layer. Then the field card: THE SEAM WAR \u00b7 ANCIENT WAR \u00b7 ENDED: one truce, 1000 years ago.",
+   "camera": "Cutaway, frontal long lens (az 0, el 12, dist 130, fov 15), a slow 0.5\u00b0/s drift; the loop lands on the same frame.",
+   "layers": {
+    "foreground": "kinetic, sting, strata labels, field card",
+    "midground": "the statue on the line, the two crowds",
+    "background": "the cut side: the war layer, ten centuries, four veins"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "1000 YEARS AGO / STILL DYING? \u00b7 FIELD CARD NO. 007 \u00b7 THE SEAM WAR",
+   "transition": "Verdigris block wipe into the lazy version.",
+   "music": "Dirge: the theme at half speed on low horns over a muffled drum; a hit on 'dying?'.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "1000 YEARS AGO",
+       "color": "#46c2a0",
+       "size": 60,
+       "pulseAt": {
+        "line": "L1",
+        "word": "thousand"
+       }
+      },
+      {
+       "text": "STILL DYING?",
+       "color": "#d0603f",
+       "size": 80,
+       "pulseAt": {
+        "line": "L1",
+        "word": "dying?"
+       }
+      }
+     ],
+     "y": 430,
+     "size": 84,
+     "start": {
+      "shot": "hook"
+     },
+     "end": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.1
+     },
+     "preShow": true
+    },
+    {
+     "type": "sting",
+     "label": "WORLD ENGINE",
+     "run": "RUN 32 \u00b7 HISTORY",
+     "dur": 1.4,
+     "start": {
+      "shot": "hook"
+     },
+     "front": true
+    },
+    {
+     "type": "strata",
+     "ruler": [
+      14.0,
+      14.1
+     ],
+     "start": {
+      "line": "L1",
+      "word": "Why",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "topText": "TODAY"
+    },
+    {
+     "type": "fieldCard",
+     "mode": "intro",
+     "y": 440,
+     "start": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "dietAt": {
+      "line": "L2",
+      "word": "truce."
+     },
+     "kicker": "FIELD CARD \u00b7 NO. 007",
+     "kind": "ANCIENT WAR",
+     "name": "THE SEAM WAR",
+     "dietLabel": "ENDED",
+     "diet": "one truce, 1000 years ago",
+     "sprite": "ep32/war_sprite.png",
+     "spriteW": 84,
+     "spriteH": 126
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "chime",
+     "at": {
+      "shot": "hook"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "shot": "hook",
+      "offset": 0.05
+     },
+     "gain": -17
+    },
+    {
+     "sound": "dig",
+     "at": {
+      "line": "L1",
+      "word": "thousand"
+     },
+     "gain": -18
+    },
+    {
+     "sound": "stompHit",
+     "at": {
+      "line": "L1",
+      "word": "dying?"
+     },
+     "gain": -20
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.05
+     },
+     "gain": -18
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L2",
+      "word": "truce."
+     },
+     "gain": -20
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "setup",
+   "scene": "world",
+   "purpose": "The lazy version: the war ends, and everyone moves on.",
+   "visual": "A wipe to the truce day, year 0, in daylight: no line, no standards, the statue whole and plain, the field gold and farmed. The war is a dark band directly under the grass (THE WAR \u00b7 YEAR 0). THE WAR ENDS / EVERYONE MOVES ON. The sim bar arrives (LEGACIES 00, HEIRS 000) and RUN is pressed.",
+   "camera": "Cutaway (az 0, el 7, dist 70, fov 15), closer than the hook.",
+   "layers": {
+    "foreground": "kinetic, strata labels, sim bar",
+    "midground": "the whole statue, both crowds mixing",
+    "background": "the cut side, the war just under the grass"
+   },
+   "lighting": "Day.",
+   "onScreenText": "THE WAR ENDS \u00b7 EVERYONE MOVES ON",
+   "transition": "A pull-out to the whole Isle on 'run'.",
+   "music": "Earth, thin (the heartbeat alone).",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "dur": 0.34,
+     "color": "#173a33"
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "THE WAR ENDS",
+       "at": {
+        "line": "L3",
+        "word": "war"
+       },
+       "size": 80
+      },
+      {
+       "text": "EVERYONE MOVES ON",
+       "at": {
+        "line": "L3",
+        "word": "everyone"
+       },
+       "color": "rust",
+       "size": 58
+      }
+     ],
+     "y": 470,
+     "size": 80,
+     "start": {
+      "line": "L3",
+      "word": "war",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L4",
+      "word": "Press",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "strata",
+     "ruler": [
+      14.0,
+      14.1
+     ],
+     "start": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": 0.1
+     },
+     "end": {
+      "line": "L6",
+      "word": "A",
+      "offset": -0.2
+     },
+     "warText": "THE WAR",
+     "topText": "TODAY",
+     "zeroText": "YEAR 0"
+    },
+    {
+     "type": "simBar",
+     "counters": [
+      {
+       "icon": "strata",
+       "label": "LEGACIES",
+       "key": "legacies",
+       "color": "#46c2a0",
+       "digits": 2
+      },
+      {
+       "icon": "mortal",
+       "label": "HEIRS",
+       "key": "heirs",
+       "color": "ember",
+       "digits": 3
+      }
+     ],
+     "compact": true,
+     "start": {
+      "line": "L4",
+      "word": "Press",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L16",
+      "word": "Fighting",
+      "offset": -0.3
+     },
+     "runAt": [
+      {
+       "line": "L4",
+       "word": "run."
+      },
+      {
+       "line": "L12",
+       "word": "Run"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "gain": -15
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L3",
+      "word": "everyone"
+     },
+     "gain": -19
+    },
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L4",
+      "word": "run."
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L4",
+      "word": "run."
+     },
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "run1",
+   "scene": "world",
+   "purpose": "Run the lazy version: a thousand years bury it.",
+   "visual": "The whole Isle in profile, its cut side showing all round; YEAR 0\u21921000; century bands pile onto the war layer, which sinks down the cliff and greys into the clay as the camera cranes down after it. YEAR 300 \u00b7 BURIED, YEAR 600 \u00b7 FADED, YEAR 1000 \u00b7 FORGOTTEN.",
+   "camera": "Wide profile (az 0, el 12, dist 196), craning down 3.5 units after the sinking layer.",
+   "layers": {
+    "foreground": "sim bar, kinetic",
+    "midground": "the island's cut side, the war layer sinking",
+    "background": "void"
+   },
+   "lighting": "Day.",
+   "onScreenText": "YEAR 300 \u00b7 BURIED / YEAR 600 \u00b7 FADED / YEAR 1000 \u00b7 FORGOTTEN",
+   "transition": "Cut down onto the layer.",
+   "music": "Drive.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "YEAR 300 \u00b7 BURIED",
+       "at": {
+        "line": "L5",
+        "word": "centuries"
+       },
+       "color": "parchment",
+       "size": 56
+      },
+      {
+       "text": "YEAR 600 \u00b7 FADED",
+       "at": {
+        "line": "L5",
+        "word": "sinks."
+       },
+       "color": "parchment",
+       "size": 56
+      },
+      {
+       "text": "YEAR 1000 \u00b7 FORGOTTEN",
+       "at": {
+        "line": "L5",
+        "word": "Forgotten."
+       },
+       "color": "rust",
+       "size": 56
+      }
+     ],
+     "y": 468,
+     "size": 56,
+     "start": {
+      "line": "L5",
+      "word": "centuries",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L6",
+      "word": "A",
+      "offset": -0.25
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L5",
+      "word": "Forgotten.",
+      "offset": 0.2
+     },
+     "gain": -22
+    },
+    {
+     "sound": "rumble",
+     "from": {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L5",
+      "word": "Forgotten.",
+      "offset": 0.3
+     },
+     "gain": -19
+    },
+    {
+     "sound": "dig",
+     "at": {
+      "line": "L5",
+      "word": "centuries"
+     },
+     "gain": -17
+    },
+    {
+     "sound": "dig",
+     "at": {
+      "line": "L5",
+      "word": "sinks."
+     },
+     "gain": -17
+    },
+    {
+     "sound": "crownPass",
+     "at": {
+      "line": "L5",
+      "word": "Forgotten."
+     },
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "drop",
+   "scene": "world",
+   "purpose": "The punchline: a war nobody feels is just a date.",
+   "visual": "Craned down onto the cliff in gloom: the war layer deep and grey under ten centuries, nothing reaching the grass: JUST A DATE \u00b7 0 LEGACIES \u00b7 NOBODY CARES. The ruler reads FORGOTTEN \u00b7 1000 YRS DOWN.",
+   "camera": "Cutaway, craned down onto the layer (az 0, el 8, dist 95, fov 15).",
+   "layers": {
+    "foreground": "stamp, strata labels",
+    "midground": "the forgotten layer",
+    "background": "void"
+   },
+   "lighting": "Gloom.",
+   "onScreenText": "JUST A DATE \u00b7 0 LEGACIES \u00b7 NOBODY CARES",
+   "transition": "Rewind + block wipe.",
+   "music": "Drop; a boom on 'date'.",
+   "graphics": [
+    {
+     "type": "stamp",
+     "text": "JUST A DATE",
+     "sub": "0 LEGACIES \u00b7 NOBODY CARES",
+     "color": "rust",
+     "y": 560,
+     "size": 80,
+     "start": {
+      "line": "L6",
+      "word": "just"
+     },
+     "end": {
+      "line": "L6",
+      "word": "date.",
+      "offset": 0.5
+     }
+    },
+    {
+     "type": "strata",
+     "ruler": [
+      14.0,
+      14.1
+     ],
+     "start": {
+      "line": "L6",
+      "word": "A",
+      "offset": -0.2
+     },
+     "end": {
+      "line": "L6",
+      "word": "date.",
+      "offset": 0.55
+     },
+     "warText": "FORGOTTEN",
+     "topText": "TODAY"
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L6",
+      "word": "just"
+     },
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "rehook",
+   "scene": "world",
+   "purpose": "Re-hook: the thesis, then four easy rules and one locked.",
+   "visual": "REWIND to the truce day, year 0, dusk: the centuries peel off and the war is the topsoil again, vivid. The two standards stand planted, the statue split (gilded and tarred), the field black; the ruler reads THE WAR \u00b7 YEAR 0. REAL WARS / DON'T STAY BURIED; then the checklist DIG IT UP, row 5 locked (the twist).",
+   "camera": "Cutaway (az 0, el 12, dist 115, fov 15).",
+   "layers": {
+    "foreground": "rewind, kinetic, checklist, strata labels",
+    "midground": "the statue, the standards, the black field",
+    "background": "the war under the grass"
+   },
+   "lighting": "Dusk.",
+   "onScreenText": "THE WAR \u00b7 YEAR 0 \u00b7 REAL WARS \u00b7 DON'T STAY BURIED \u00b7 DIG IT UP 0/5",
+   "transition": "Cut down to the war layer.",
+   "music": "Earth, the heartbeat; a riser into 'the twist'.",
+   "graphics": [
+    {
+     "type": "rewind",
+     "y": 620,
+     "start": {
+      "line": "L6",
+      "word": "date.",
+      "offset": 0.55
+     },
+     "end": {
+      "line": "L7",
+      "word": "Real",
+      "offset": 0.3
+     }
+    },
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L6",
+      "word": "date.",
+      "offset": 0.53
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "REAL WARS",
+       "at": {
+        "line": "L7",
+        "word": "Real"
+       },
+       "size": 78
+      },
+      {
+       "text": "DON'T STAY BURIED",
+       "at": {
+        "line": "L7",
+        "word": "stay"
+       },
+       "color": "#46c2a0",
+       "size": 60
+      }
+     ],
+     "y": 470,
+     "size": 84,
+     "start": {
+      "line": "L7",
+      "word": "Real",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "strata",
+     "ruler": [
+      14.0,
+      14.1
+     ],
+     "start": {
+      "line": "L7",
+      "word": "Real"
+     },
+     "end": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.1
+     },
+     "warText": "THE WAR",
+     "topText": "TODAY",
+     "zeroText": "YEAR 0",
+     "tags": [
+      {
+       "vein": 0,
+       "text": "BORDER",
+       "at": {
+        "line": "L8",
+        "word": "splits"
+       },
+       "lift": 60
+      },
+      {
+       "vein": 1,
+       "text": "CURSED",
+       "at": {
+        "line": "L9",
+        "word": "farmed"
+       },
+       "lift": 90
+      },
+      {
+       "vein": 2,
+       "text": "RELIC",
+       "at": {
+        "line": "L10",
+        "word": "keeps"
+       },
+       "lift": 60
+      },
+      {
+       "vein": 3,
+       "text": "GRUDGE",
+       "at": {
+        "line": "L11",
+        "word": "hate."
+       },
+       "lift": 90
+      }
+     ]
+    },
+    {
+     "type": "fieldCard",
+     "mode": "checklist",
+     "y": 448,
+     "rows": [
+      {
+       "n": 1,
+       "label": "A BORDER",
+       "text": "the line holds",
+       "at": {
+        "line": "L8",
+        "word": "border."
+       }
+      },
+      {
+       "n": 2,
+       "label": "A CURSE",
+       "text": "never farmed",
+       "at": {
+        "line": "L9",
+        "word": "cursed"
+       }
+      },
+      {
+       "n": 3,
+       "label": "A RELIC",
+       "text": "stolen, kept",
+       "at": {
+        "line": "L10",
+        "word": "stolen"
+       }
+      },
+      {
+       "n": 4,
+       "label": "A GRUDGE",
+       "text": "taught, not lived",
+       "at": {
+        "line": "L11",
+        "word": "grudge."
+       }
+      },
+      {
+       "n": 5,
+       "label": "THE CLAIM",
+       "text": "nobody signed",
+       "at": {
+        "line": "L7",
+        "word": "Four"
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L15",
+        "word": "pen.",
+        "offset": -0.1
+       }
+      }
+     ],
+     "start": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L16",
+      "word": "Fighting",
+      "offset": -0.3
+     },
+     "kicker": "THE SEAM WAR \u00b7 WHAT SURVIVES",
+     "title": "DIG IT UP",
+     "blinkAt": {
+      "line": "L7",
+      "word": "twist."
+     },
+     "lockedText": "the twist",
+     "sprite": "ep32/war_sprite.png",
+     "spriteW": 84,
+     "spriteH": 126,
+     "collapse": [
+      [
+       {
+        "line": "L8",
+        "word": "The",
+        "offset": -0.3
+       },
+       0
+      ],
+      [
+       {
+        "line": "L8",
+        "word": "The"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "So",
+        "offset": -0.15
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "So",
+        "offset": 0.15
+       },
+       0
+      ]
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L6",
+      "word": "date.",
+      "offset": 0.5
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "gain": -17
+    }
+   ]
+  },
+  {
+   "id": "border",
+   "scene": "world",
+   "purpose": "Rule 1: a border.",
+   "visual": "Down at the war layer in daylight, a verdigris seed lights in it under the seam; craning up, a line of boundary stones rises down the statue's seam to the cliff edge (THE TRUCE LINE \u00b7 DOWN HER SEAM). Tag: BORDER.",
+   "camera": "Crane: down at the layer (el 6, dist 80, fov 15), then up to the surface (el 16, dist 105, fov 15).",
+   "layers": {
+    "foreground": "strata labels, checklist (folded), pin",
+    "midground": "the stones rising",
+    "background": "the cut side"
+   },
+   "lighting": "Day.",
+   "onScreenText": "1 A BORDER \u00b7 the line holds",
+   "transition": "Cut down.",
+   "music": "Earth 1: the heartbeat alone.",
+   "graphics": [
+    {
+     "type": "pin",
+     "at": [
+      18.0,
+      6.2,
+      0.0
+     ],
+     "kicker": "THE TRUCE LINE",
+     "text": "DOWN HER SEAM",
+     "color": "#46c2a0",
+     "lift": 30,
+     "size": 28,
+     "start": {
+      "line": "L8",
+      "word": "splits"
+     },
+     "end": {
+      "line": "L9",
+      "word": "Two:",
+      "offset": -0.15
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L8",
+      "word": "border."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "dig",
+     "at": {
+      "line": "L8",
+      "word": "border."
+     },
+     "gain": -15
+    },
+    {
+     "sound": "stomp",
+     "from": {
+      "line": "L8",
+      "word": "truce"
+     },
+     "to": {
+      "line": "L8",
+      "word": "statue.",
+      "offset": 0.1
+     },
+     "gain": -26
+    },
+    {
+     "sound": "stones",
+     "at": {
+      "line": "L8",
+      "word": "line"
+     },
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "curse",
+   "scene": "world",
+   "purpose": "Rule 2: cursed ground.",
+   "visual": "Down at the layer a second seed lights under the court's field; craning up, the field burns black and stays black (THE BURNED FIELD \u00b7 NEVER FARMED). Tag: CURSED.",
+   "camera": "Crane: down, then up and over the field.",
+   "layers": {
+    "foreground": "strata labels, checklist (folded), pin",
+    "midground": "the black field",
+    "background": "the court's crowd"
+   },
+   "lighting": "Day.",
+   "onScreenText": "2 CURSED GROUND \u00b7 never farmed",
+   "transition": "Cut down.",
+   "music": "Earth 2: a side-stick march joins.",
+   "graphics": [
+    {
+     "type": "pin",
+     "at": [
+      20.9,
+      3.6,
+      -0.4
+     ],
+     "kicker": "THE BURNED FIELD",
+     "text": "NEVER FARMED",
+     "color": "#46c2a0",
+     "lift": 40,
+     "size": 28,
+     "start": {
+      "line": "L9",
+      "word": "farmed"
+     },
+     "end": {
+      "line": "L10",
+      "word": "Three:",
+      "offset": -0.15
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L9",
+      "word": "cursed"
+     },
+     "gain": -13
+    },
+    {
+     "sound": "dig",
+     "at": {
+      "line": "L9",
+      "word": "cursed"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "burn",
+     "from": {
+      "line": "L9",
+      "word": "cursed",
+      "offset": -0.1
+     },
+     "to": {
+      "line": "L9",
+      "word": "field.",
+      "offset": 0.3
+     },
+     "gain": -20
+    }
+   ]
+  },
+  {
+   "id": "relic",
+   "scene": "world",
+   "purpose": "Rule 3: a stolen relic.",
+   "visual": "A third seed; craning up, the torch leaves the statue's gilded hand and rises on a plinth on the court's side of the line (HER TORCH \u00b7 ON THEIR SIDE). Tag: RELIC.",
+   "camera": "Crane: down, then up to the statue and the plinth.",
+   "layers": {
+    "foreground": "strata labels, checklist (folded), pin",
+    "midground": "the empty hand, the torch on its plinth",
+    "background": "the line"
+   },
+   "lighting": "Day.",
+   "onScreenText": "3 A STOLEN RELIC \u00b7 kept, not returned",
+   "transition": "Cut down.",
+   "music": "Earth 3: a tuba on the roots.",
+   "graphics": [
+    {
+     "type": "pin",
+     "at": [
+      20.3,
+      7.4,
+      5.4
+     ],
+     "kicker": "HER TORCH",
+     "text": "ON THEIR SIDE",
+     "color": "#46c2a0",
+     "lift": 30,
+     "size": 28,
+     "start": {
+      "line": "L10",
+      "word": "torch."
+     },
+     "end": {
+      "line": "L11",
+      "word": "Four:",
+      "offset": -0.15
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L10",
+      "word": "stolen"
+     },
+     "gain": -13
+    },
+    {
+     "sound": "dig",
+     "at": {
+      "line": "L10",
+      "word": "stolen"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "delete",
+     "at": {
+      "line": "L10",
+      "word": "court"
+     },
+     "gain": -19
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L10",
+      "word": "keeps"
+     },
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "grudge",
+   "scene": "world",
+   "purpose": "Rule 4: a grudge, taught.",
+   "visual": "A fourth seed under the valley's crowd; craning up, on 'taught' both crowds stop and turn to face the line (EVERY CHILD \u00b7 FACES THE LINE); HEIRS 022. Tag: GRUDGE.",
+   "camera": "Crane: down, then up and back to both crowds.",
+   "layers": {
+    "foreground": "strata labels, checklist (folded), pin",
+    "midground": "the crowds facing off",
+    "background": "the line"
+   },
+   "lighting": "Day.",
+   "onScreenText": "4 A GRUDGE \u00b7 taught, not lived \u00b7 HEIRS 022",
+   "transition": "Cut to the whole Isle.",
+   "music": "Earth 4: the theme on muted trumpet, far away.",
+   "graphics": [
+    {
+     "type": "pin",
+     "at": [
+      18.0,
+      9.4,
+      3.4
+     ],
+     "kicker": "EVERY CHILD",
+     "text": "FACES THE LINE",
+     "color": "#46c2a0",
+     "lift": 30,
+     "size": 28,
+     "start": {
+      "line": "L11",
+      "word": "taught"
+     },
+     "end": {
+      "line": "L12",
+      "word": "Run",
+      "offset": -0.15
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L11",
+      "word": "grudge."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "dig",
+     "at": {
+      "line": "L11",
+      "word": "grudge."
+     },
+     "gain": -15
+    },
+    {
+     "sound": "stompHit",
+     "at": {
+      "line": "L11",
+      "word": "taught"
+     },
+     "gain": -18
+    },
+    {
+     "sound": "frameDrum",
+     "at": {
+      "line": "L11",
+      "word": "hate."
+     },
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "run2",
+   "scene": "world",
+   "purpose": "Run with the rules: a thousand years, still here.",
+   "visual": "The whole Isle in profile; YEAR 0\u21921000; the war layer sinks under the centuries as in run 1, but the four veins stretch with it and keep it tied to the grass; HEIRS climbs to 314: STILL HERE \u00b7 1000 YEARS \u00b7 4 LEGACIES \u00b7 314 HEIRS, stamped in verdigris.",
+   "camera": "Wide profile (az 0, el 12, dist 196), craning down after the layer.",
+   "layers": {
+    "foreground": "sim bar, stamp",
+    "midground": "the cut side: the layer and four veins",
+    "background": "void"
+   },
+   "lighting": "Day.",
+   "onScreenText": "STILL HERE \u00b7 1000 YEARS \u00b7 4 LEGACIES \u00b7 314 HEIRS",
+   "transition": "Cut down to the layer.",
+   "music": "Drive with the theme; a stab and a cymbal on 'here'.",
+   "graphics": [
+    {
+     "type": "stamp",
+     "text": "STILL HERE",
+     "sub": "1000 YEARS \u00b7 4 LEGACIES \u00b7 314 HEIRS",
+     "color": "#46c2a0",
+     "rotate": -4,
+     "y": 880,
+     "size": 96,
+     "start": {
+      "line": "L12",
+      "word": "here."
+     },
+     "end": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -16
+    },
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L12",
+      "word": "here."
+     },
+     "gain": -22
+    },
+    {
+     "sound": "rumble",
+     "from": {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L12",
+      "word": "here.",
+      "offset": 0.1
+     },
+     "gain": -20
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L12",
+      "word": "here."
+     },
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "twist",
+   "scene": "world",
+   "purpose": "The locked rule: the claim. The war never ended.",
+   "visual": "Today, down at the war layer in dusk: RULE 5? THE CLAIM; a pin on the layer, THE PEACE \u00b7 NEVER SIGNED; LEGACIES 05. On 'never' the war's own colour floods up through all ten centuries to the grass while the camera cranes up with it to the hook frame: A PAUSE / IT NEVER ENDED, and the ruler's THE WAR turns ember.",
+   "camera": "Cutaway: down at the buried layer (el 6, dist 82, fov 15), craning up 1.3 s to the hook framing.",
+   "layers": {
+    "foreground": "kinetic, pin, strata labels",
+    "midground": "the war flooding up through the centuries",
+    "background": "dusk"
+   },
+   "lighting": "Dusk.",
+   "onScreenText": "RULE 5? THE CLAIM \u00b7 THE PEACE \u00b7 NEVER SIGNED \u00b7 A PAUSE \u00b7 IT NEVER ENDED",
+   "transition": "Cut to the surface.",
+   "music": "Twist (a held A7\u266d9), a boom on 'peace', then the dirge.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "RULE 5?",
+       "at": {
+        "line": "L13",
+        "word": "Rule"
+       },
+       "color": "ember"
+      },
+      {
+       "text": "THE CLAIM",
+       "at": {
+        "line": "L13",
+        "word": "claim."
+       },
+       "color": "#46c2a0",
+       "size": 96
+      }
+     ],
+     "size": 150,
+     "y": 560,
+     "start": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.02
+     },
+     "end": {
+      "line": "L13",
+      "word": "Nobody",
+      "offset": -0.12
+     }
+    },
+    {
+     "type": "pin",
+     "at": [
+      18.0,
+      -0.4,
+      9.2
+     ],
+     "kicker": "THE PEACE",
+     "text": "NEVER SIGNED",
+     "color": "ember",
+     "lift": 90,
+     "size": 30,
+     "start": {
+      "line": "L13",
+      "word": "Nobody"
+     },
+     "end": {
+      "line": "L14",
+      "word": "pause.",
+      "offset": 0.2
+     }
+    },
+    {
+     "type": "strata",
+     "ruler": [
+      14.0,
+      14.1
+     ],
+     "start": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L15",
+      "word": "So",
+      "offset": -0.15
+     },
+     "warText": "THE WAR",
+     "topText": "TODAY"
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "A PAUSE",
+       "at": {
+        "line": "L14",
+        "word": "pause."
+       },
+       "color": "parchment",
+       "size": 84
+      },
+      {
+       "text": "IT NEVER ENDED",
+       "at": {
+        "line": "L14",
+        "word": "never"
+       },
+       "color": "ember",
+       "size": 84
+      }
+     ],
+     "size": 84,
+     "y": 560,
+     "start": {
+      "line": "L14",
+      "word": "pause.",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L15",
+      "word": "So",
+      "offset": -0.2
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "dig",
+     "at": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.1
+     },
+     "gain": -16
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L13",
+      "word": "claim."
+     },
+     "gain": -14
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L13",
+      "word": "Nobody"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "rumble",
+     "from": {
+      "line": "L14",
+      "word": "never",
+      "offset": -0.05
+     },
+     "to": {
+      "line": "L14",
+      "word": "ended.",
+      "offset": 0.4
+     },
+     "gain": -17
+    },
+    {
+     "sound": "eyeOn",
+     "at": {
+      "line": "L14",
+      "word": "never"
+     },
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "role",
+   "scene": "world",
+   "purpose": "Unlock rule 5: give the ending to a character.",
+   "visual": "Today, in daylight: one figure in pale cloth walks onto the line in front of the statue. The checklist opens and row 5 unlocks on 'pen': THE CLAIM \u00b7 nobody signed \u00b7 5/5. The follow chip (+ FOLLOW \u00b7 PART 32/50) appears after 'pen'.",
+   "camera": "Cutaway (az 0, el 12, dist 108, fov 15), a slow 0.4\u00b0/s drift.",
+   "layers": {
+    "foreground": "open checklist, follow chip",
+    "midground": "one figure on the line",
+    "background": "the statue, two crowds"
+   },
+   "lighting": "Day.",
+   "onScreenText": "5 THE CLAIM \u00b7 nobody signed \u00b7 5/5",
+   "transition": "The card goes full.",
+   "music": "Anthem from 'So'; a big D-major hit on 'pen'.",
+   "graphics": [
+    {
+     "type": "followChip",
+     "start": {
+      "line": "L15",
+      "word": "pen.",
+      "offset": 0.2
+     },
+     "end": {
+      "line": "L16",
+      "word": "consequences",
+      "offset": 0.3
+     },
+     "text": "FOLLOW",
+     "sub": "PART 32/50"
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L15",
+      "word": "So",
+      "offset": -0.15
+     },
+     "gain": -17
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L15",
+      "word": "character",
+      "offset": 0.1
+     },
+     "gain": -19
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L15",
+      "word": "pen.",
+      "offset": -0.1
+     },
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "lesson",
+   "scene": "world",
+   "purpose": "The takeaway.",
+   "visual": "The full card (BEFORE YOU END A WAR \u00b7 THE SEAM WAR, all five rows ticked) over the whole Isle, with 'A war ends when its consequences do.' in serif italic from the end of the first sentence.",
+   "camera": "Wide (az 15, el 34, dist 190), a slow 2\u00b0/s orbit: the only orbit in the episode.",
+   "layers": {
+    "foreground": "full card, follow chip",
+    "midground": "the island at golden hour",
+    "background": "stars"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "BEFORE YOU END A WAR \u00b7 THE SEAM WAR \u00b7 A war ends when its consequences do.",
+   "transition": "Block wipe to the end card.",
+   "music": "Anthem; the World Engine chime as the card lands.",
+   "graphics": [
+    {
+     "type": "fieldCard",
+     "mode": "full",
+     "y": 452,
+     "rows": [
+      {
+       "n": 1,
+       "label": "A BORDER",
+       "text": "the line holds",
+       "at": {
+        "line": "L16",
+        "word": "Fighting",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 2,
+       "label": "A CURSE",
+       "text": "never farmed",
+       "at": {
+        "line": "L16",
+        "word": "Fighting",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 3,
+       "label": "A RELIC",
+       "text": "stolen, kept",
+       "at": {
+        "line": "L16",
+        "word": "Fighting",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 4,
+       "label": "A GRUDGE",
+       "text": "taught, not lived",
+       "at": {
+        "line": "L16",
+        "word": "Fighting",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 5,
+       "label": "THE CLAIM",
+       "text": "nobody signed",
+       "at": {
+        "line": "L16",
+        "word": "Fighting",
+        "offset": -0.3
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L16",
+        "word": "Fighting",
+        "offset": -0.3
+       }
+      }
+     ],
+     "start": {
+      "line": "L16",
+      "word": "Fighting",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "kicker": "BEFORE YOU END A WAR",
+     "title": "THE SEAM WAR",
+     "sprite": "ep32/war_sprite.png",
+     "spriteW": 84,
+     "spriteH": 126,
+     "subtitle": "A war ends when its consequences do.",
+     "subtitleAt": {
+      "line": "L16",
+      "word": "day."
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L16",
+      "word": "Fighting",
+      "offset": -0.8
+     },
+     "gain": -15
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L16",
+      "word": "Fighting",
+      "offset": -0.3
+     },
+     "gain": -10
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L16",
+      "word": "Fighting",
+      "offset": -0.3
+     },
+     "gain": -18
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "cta",
+   "scene": "world",
+   "purpose": "Comment CTA: invent the unfinished war.",
+   "visual": "End card: logo, PART 32 / 50, the title, and a COMMENT panel where three idea chips pop (BORDER, RELIC, GRUDGE), then 'What did they leave you?'",
+   "camera": "Cut (under the block wipe) back to the hook pose, drifting into it.",
+   "layers": {
+    "foreground": "end card",
+    "midground": "the Isle",
+    "background": "void"
+   },
+   "lighting": "Golden hour (the loop frame).",
+   "onScreenText": "COMMENT \u00b7 BORDER / RELIC / GRUDGE \u00b7 What did they leave you?",
+   "transition": "The card lifts on 'Part'.",
+   "music": "Outro.",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "endCardS2",
+     "start": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.12
+     },
+     "fadeOut": 0.3,
+     "kicker": "PART 32 / 50",
+     "title": "Create an Ancient War That Still Matters",
+     "cta": "COMMENT",
+     "icon": "bubble",
+     "with": "What did they leave you?",
+     "withAt": {
+      "line": "L17",
+      "word": "ancestors",
+      "offset": -0.05
+     },
+     "choiceSize": 34,
+     "choices": [
+      {
+       "text": "BORDER",
+       "color": "#46c2a0",
+       "at": {
+        "line": "L17",
+        "word": "unresolved"
+       }
+      },
+      {
+       "text": "RELIC",
+       "color": "#46c2a0",
+       "at": {
+        "line": "L17",
+        "word": "conflict"
+       }
+      },
+      {
+       "text": "GRUDGE",
+       "color": "#46c2a0",
+       "at": {
+        "line": "L17",
+        "word": "your"
+       }
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "gain": -21
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L17",
+      "word": "unresolved"
+     },
+     "gain": -17
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L17",
+      "word": "conflict"
+     },
+     "gain": -17
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L17",
+      "word": "your"
+     },
+     "gain": -17
+    }
+   ],
+   "captions": false,
+   "hideLogoBug": true,
+   "hideLogoBugUntil": {
+    "line": "L18",
+    "word": "Part"
+   }
+  },
+  {
+   "id": "next",
+   "scene": "world",
+   "purpose": "Say the part number, ask for the follow with a reason (part 33), open the next loop.",
+   "visual": "The hook frame; PART 32/50; FOLLOW FOR PART 33, pressed on 'Follow'; NEXT RUN \u00b7 33 decodes from a locked, eclipsed sun to BELIEF \u00b7 A GOD BUILT FROM FEAR. In the world, on 'fear', the sun goes dark over the Isle for a breath (an eclipse), the Queen and the Grimmaw look up, and the golden hour comes back; the hook title returns.",
+   "camera": "The hook frame.",
+   "layers": {
+    "foreground": "progress bar, follow button, next-run card",
+    "midground": "the Isle under an eclipse",
+    "background": "the cut side"
+   },
+   "lighting": "Golden hour, an eclipse on 'fear'.",
+   "onScreenText": "PART 32/50 \u00b7 FOLLOW FOR PART 33 \u00b7 NEXT RUN: BELIEF \u00b7 A GOD BUILT FROM FEAR.",
+   "transition": "Loop to frame 0.",
+   "music": "Tease over a held A, a low eclipse swell on 'fear', the engine chime on 'Follow'.",
+   "graphics": [
+    {
+     "type": "seasonBar",
+     "y": 350,
+     "part": 32,
+     "of": 50,
+     "start": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.1
+     },
+     "fillAt": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "fillDur": 0.6,
+     "ofAt": {
+      "line": "L18",
+      "word": "50."
+     },
+     "end": {
+      "line": "L18",
+      "word": "fear.",
+      "offset": 0.6
+     }
+    },
+    {
+     "type": "followButton",
+     "y": 556,
+     "start": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.6
+     },
+     "pressAt": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "end": {
+      "line": "L18",
+      "word": "fear.",
+      "offset": 0.6
+     },
+     "text": "FOLLOW",
+     "doneText": "FOLLOWING",
+     "sub": "FOR PART 33"
+    },
+    {
+     "type": "nextRun",
+     "y": 772,
+     "start": {
+      "line": "L18",
+      "word": "33:",
+      "offset": -0.1
+     },
+     "revealAt": {
+      "line": "L18",
+      "word": "god"
+     },
+     "end": {
+      "line": "L18",
+      "word": "fear.",
+      "offset": 0.6
+     },
+     "kicker": "NEXT RUN \u00b7 33",
+     "title": "BELIEF",
+     "sub": "A GOD BUILT FROM FEAR.",
+     "sprite": "sun",
+     "spritePx": 9
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "1000 YEARS AGO",
+       "color": "#46c2a0",
+       "size": 60,
+       "pulseAt": {
+        "line": "L1",
+        "word": "thousand"
+       }
+      },
+      {
+       "text": "STILL DYING?",
+       "color": "#d0603f",
+       "size": 80,
+       "pulseAt": {
+        "line": "L1",
+        "word": "dying?"
+       }
+      }
+     ],
+     "y": 430,
+     "size": 84,
+     "start": {
+      "line": "L18",
+      "word": "fear.",
+      "offset": 0.92
+     },
+     "fadeIn": 0.35,
+     "preShow": true
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "to": {
+      "line": "L18",
+      "word": "Part",
+      "offset": 0.55
+     },
+     "gain": -22
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.5
+     },
+     "gain": -15
+    },
+    {
+     "sound": "followPress",
+     "at": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": 0.02
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L18",
+      "word": "33:",
+      "offset": -0.1
+     },
+     "gain": -18
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L18",
+      "word": "god"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "eclipse",
+     "at": {
+      "line": "L18",
+      "word": "fear.",
+      "offset": -0.25
+     },
+     "gain": -14
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "end": true,
+      "offset": -0.54
+     },
+     "gain": -14
+    }
+   ],
+   "captions": false
+  }
+ ],
+ "world": {
+  "clock": {
+   "label": "YEAR",
+   "keys": [
+    [
+     {
+      "shot": "hook"
+     },
+     1000
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     1000
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Forgotten.",
+      "offset": 0.2
+     },
+     1000,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "date.",
+      "offset": 0.53
+     },
+     1000
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "date.",
+      "offset": 0.55
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.25
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "here."
+     },
+     1000,
+     "linear"
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.12
+     },
+     1000
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.1
+     },
+     1000,
+     "step"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     1000
+    ]
+   ]
+  },
+  "speed": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "run."
+    },
+    1
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.3
+    },
+    6
+   ],
+   [
+    {
+     "line": "L5",
+     "word": "Forgotten."
+    },
+    6
+   ],
+   [
+    {
+     "line": "L6",
+     "word": "A"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.25
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.5
+    },
+    6
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "here."
+    },
+    6
+   ],
+   [
+    {
+     "line": "L13",
+     "word": "Rule"
+    },
+    1
+   ]
+  ],
+  "camera": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "az": 0,
+    "el": 12,
+    "dist": 130,
+    "target": [
+     18.0,
+     6.5,
+     6.0
+    ],
+    "fov": 15,
+    "dur": 1.4,
+    "drift": 0.5
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "az": 0,
+    "el": 7,
+    "dist": 70,
+    "target": [
+     18.0,
+     4.2,
+     6.0
+    ],
+    "fov": 15,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.05
+    },
+    "az": 0,
+    "el": 12,
+    "dist": 196,
+    "target": [
+     3.0,
+     1.0,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 1.0,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L5",
+     "word": "sinks.",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 12,
+    "dist": 196,
+    "target": [
+     3.0,
+     -2.5,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 1.6,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "A",
+     "offset": -0.2
+    },
+    "az": 0,
+    "el": 8,
+    "dist": 95,
+    "target": [
+     18.0,
+     2.6,
+     8.5
+    ],
+    "fov": 15,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "date.",
+     "offset": 0.55
+    },
+    "az": 0,
+    "el": 12,
+    "dist": 115,
+    "target": [
+     18.0,
+     6.0,
+     6.0
+    ],
+    "fov": 15,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 6,
+    "dist": 80,
+    "target": [
+     18.0,
+     2.6,
+     8.5
+    ],
+    "fov": 15,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L8",
+     "word": "truce",
+     "offset": -0.15
+    },
+    "az": 0,
+    "el": 16,
+    "dist": 105,
+    "target": [
+     18.0,
+     6.0,
+     4.0
+    ],
+    "fov": 15,
+    "dur": 0.9,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 6,
+    "dist": 80,
+    "target": [
+     18.0,
+     2.6,
+     8.5
+    ],
+    "fov": 15,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L9",
+     "word": "Nobody",
+     "offset": -0.15
+    },
+    "az": 0,
+    "el": 20,
+    "dist": 105,
+    "target": [
+     19.0,
+     5.6,
+     2.5
+    ],
+    "fov": 15,
+    "dur": 0.9,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 6,
+    "dist": 80,
+    "target": [
+     18.0,
+     2.6,
+     8.5
+    ],
+    "fov": 15,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "court",
+     "offset": -0.15
+    },
+    "az": 0,
+    "el": 13,
+    "dist": 105,
+    "target": [
+     18.8,
+     6.3,
+     4.0
+    ],
+    "fov": 15,
+    "dur": 0.9,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 6,
+    "dist": 80,
+    "target": [
+     18.0,
+     2.6,
+     8.5
+    ],
+    "fov": 15,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "Every",
+     "offset": -0.15
+    },
+    "az": 0,
+    "el": 14,
+    "dist": 112,
+    "target": [
+     18.0,
+     6.0,
+     4.0
+    ],
+    "fov": 15,
+    "dur": 0.9,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L12",
+     "word": "Run",
+     "offset": -0.05
+    },
+    "az": 0,
+    "el": 12,
+    "dist": 196,
+    "target": [
+     3.0,
+     1.0,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L12",
+     "word": "thousand",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 12,
+    "dist": 196,
+    "target": [
+     3.0,
+     -2.5,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 1.6,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 6,
+    "dist": 82,
+    "target": [
+     18.0,
+     1.4,
+     8.5
+    ],
+    "fov": 15,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L14",
+     "word": "never",
+     "offset": -0.05
+    },
+    "az": 0,
+    "el": 12,
+    "dist": 130,
+    "target": [
+     18.0,
+     6.5,
+     6.0
+    ],
+    "fov": 15,
+    "dur": 1.3,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L15",
+     "word": "So",
+     "offset": -0.15
+    },
+    "az": 0,
+    "el": 12,
+    "dist": 108,
+    "target": [
+     18.0,
+     6.2,
+     5.5
+    ],
+    "fov": 15,
+    "dur": 0.01,
+    "drift": 0.4,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Fighting",
+     "offset": -0.25
+    },
+    "az": 15,
+    "el": 34,
+    "dist": 190,
+    "target": [
+     2.0,
+     3.0,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 1.6,
+    "drift": 2.0
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "ends",
+     "offset": -0.1
+    },
+    "az": 19.117999999999995,
+    "el": 28,
+    "dist": 184,
+    "target": [
+     2.0,
+     2.0,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 1.8,
+    "drift": 2.0
+   },
+   {
+    "at": {
+     "line": "L17",
+     "word": "What",
+     "offset": -0.3
+    },
+    "az": -4.857499999999998,
+    "el": 12,
+    "dist": 130,
+    "target": [
+     18.0,
+     6.5,
+     6.0
+    ],
+    "fov": 15,
+    "dur": 1.4,
+    "drift": 0.5,
+    "cut": true
+   }
+  ],
+  "light": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "mood": "golden"
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "mood": "day",
+    "dur": 0.4
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "A",
+     "offset": -0.2
+    },
+    "mood": "gloom",
+    "dur": 0.6
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "date.",
+     "offset": 0.55
+    },
+    "mood": "dusk",
+    "dur": 0.3
+   },
+   {
+    "at": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.1
+    },
+    "mood": "day",
+    "dur": 0.4
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "mood": "dusk",
+    "dur": 0.3
+   },
+   {
+    "at": {
+     "line": "L15",
+     "word": "So",
+     "offset": -0.15
+    },
+    "mood": "day",
+    "dur": 0.3
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Fighting",
+     "offset": -0.3
+    },
+    "mood": "golden",
+    "dur": 2.0
+   },
+   {
+    "at": {
+     "line": "L18",
+     "word": "fear.",
+     "offset": -0.15
+    },
+    "mood": "night",
+    "dur": 0.35
+   },
+   {
+    "at": {
+     "line": "L18",
+     "word": "fear.",
+     "offset": 0.75
+    },
+    "mood": "golden",
+    "dur": 0.6
+   }
+  ],
+  "herd": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     30
+    ]
+   ],
+   "max": 40,
+   "base": 30,
+   "centers": [
+    [
+     -7.2,
+     -1.4
+    ],
+    [
+     -6.0,
+     0.4
+    ]
+   ],
+   "skin": "sheep"
+  },
+  "pred": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ]
+  ],
+  "predators": [
+   {
+    "id": "g1",
+    "scale": 1.3,
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 8.5,
+      "z": -9.6,
+      "state": "idle",
+      "face": 160
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "fear.",
+       "offset": -0.1
+      },
+      "x": 8.5,
+      "z": -9.6,
+      "state": "alert",
+      "face": 160
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "fear.",
+       "offset": 1.0
+      },
+      "x": 8.5,
+      "z": -9.6,
+      "state": "idle",
+      "face": 160
+     }
+    ],
+    "adorn": true
+   }
+  ],
+  "series": {
+   "legacies": [
+    [
+     {
+      "shot": "hook"
+     },
+     4
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     4
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "date.",
+      "offset": 0.53
+     },
+     0
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "date.",
+      "offset": 0.55
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "border.",
+      "offset": -0.02
+     },
+     0
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "border."
+     },
+     1,
+     "step"
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "cursed",
+      "offset": -0.02
+     },
+     1
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "cursed"
+     },
+     2,
+     "step"
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "stolen",
+      "offset": -0.02
+     },
+     2
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "stolen"
+     },
+     3,
+     "step"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "grudge.",
+      "offset": -0.02
+     },
+     3
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "grudge."
+     },
+     4,
+     "step"
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "claim.",
+      "offset": -0.02
+     },
+     4
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "claim."
+     },
+     5,
+     "step"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.32
+     },
+     5
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     4,
+     "step"
+    ]
+   ],
+   "heirs": [
+    [
+     {
+      "shot": "hook"
+     },
+     314
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     314
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "taught",
+      "offset": -0.02
+     },
+     0
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "taught"
+     },
+     22,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.25
+     },
+     22
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "here."
+     },
+     314,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     314
+    ]
+   ],
+   "tradeH": [
+    [
+     {
+      "shot": "hook"
+     },
+     4
+    ]
+   ]
+  },
+  "settlement": {
+   "buildings": [
+    {
+     "kind": "hall",
+     "a": [
+      -3.6,
+      -4.6
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -1.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -4.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -1.0,
+      -5.8
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -5.6,
+      -0.9
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -3.4,
+      -0.7
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      0.4,
+      -4.2
+     ],
+     "face": 0
+    }
+   ],
+   "roof": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "pens": [
+    {
+     "a": [
+      -6.4,
+      -1.4
+     ],
+     "r": 1.6
+    }
+   ],
+   "cover": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "roads": {
+    "b": [
+     [
+      -3.4,
+      -1.6
+     ],
+     [
+      -5.6,
+      2.0
+     ],
+     [
+      -8.2,
+      6.0
+     ],
+     [
+      -11.0,
+      10.0
+     ],
+     [
+      -13.0,
+      14.0
+     ],
+     [
+      -14.6,
+      17.0
+     ]
+    ]
+   },
+   "route": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "tradeKey": "tradeH",
+   "lanterns": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ]
+   ],
+   "tower": {
+    "x": -6.4,
+    "z": -5.6,
+    "h": 6.0,
+    "keys": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "rings": []
+   }
+  },
+  "settlements": [
+   {
+    "buildings": [
+     {
+      "kind": "greathall",
+      "a": [
+       6.0,
+       4.6
+      ],
+      "b": [
+       6.0,
+       4.6
+      ],
+      "stiltsB": 1.6,
+      "face": 0
+     }
+    ],
+    "place": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "open": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "glow": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "roof": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "pens": []
+   }
+  ],
+  "folk": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     9
+    ]
+   ],
+   "centers": [
+    [
+     6.0,
+     4.6
+    ]
+   ],
+   "spread": 2.0,
+   "site": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ]
+   ],
+   "eyes": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "wet": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "glow": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "hero": []
+  },
+  "people": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     22
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     22
+    ]
+   ],
+   "centers": [
+    [
+     15.4,
+     3.8
+    ],
+    [
+     21.2,
+     3.0
+    ]
+   ],
+   "spread": 1.5,
+   "life": 70,
+   "royal": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ]
+   ],
+   "tints": [
+    "#f0c04a",
+    "#b0452f"
+   ],
+   "watch": [
+    18.0,
+    1.5
+   ],
+   "watchOn": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "taught",
+      "offset": -0.05
+     },
+     0
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "taught"
+     },
+     1,
+     "step"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     1
+    ]
+   ],
+   "figures": [
+    {
+     "keys": [
+      {
+       "at": {
+        "shot": "hook"
+       },
+       "x": 18.0,
+       "z": 5.6,
+       "state": "hidden"
+      },
+      {
+       "at": {
+        "line": "L15",
+        "word": "one",
+        "offset": -0.1
+       },
+       "x": 19.8,
+       "z": 6.0,
+       "state": "idle",
+       "face": 180
+      },
+      {
+       "at": {
+        "line": "L15",
+        "word": "character"
+       },
+       "x": 18.0,
+       "z": 5.6,
+       "state": "idle",
+       "face": 90,
+       "dur": 0.8
+      },
+      {
+       "at": {
+        "line": "L16",
+        "word": "Fighting",
+        "offset": -0.3
+       },
+       "x": 18.0,
+       "z": 5.6,
+       "state": "hidden"
+      }
+     ],
+     "tunic": "#e9e2cf",
+     "torch": false,
+     "scale": 1.7
+    }
+   ],
+   "ruler": {
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "idle",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "fear.",
+       "offset": -0.1
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "alert",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "fear.",
+       "offset": 1.0
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "idle",
+      "face": 0
+     }
+    ],
+    "dais": {
+     "x": 9.4,
+     "z": -2.2,
+     "face": 0
+    }
+   }
+  },
+  "fields": {
+   "plots": [
+    {
+     "x": 20.9,
+     "z": -0.4,
+     "w": 3.4,
+     "d": 3.4
+    }
+   ],
+   "ripe": [
+    [
+     {
+      "shot": "hook"
+     },
+     0.5
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     0.5
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     1.0,
+     "step"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "date.",
+      "offset": 0.53
+     },
+     1.0
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "date.",
+      "offset": 0.55
+     },
+     0.5,
+     "step"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     0.5
+    ]
+   ],
+   "burn": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "date.",
+      "offset": 0.53
+     },
+     0
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "date.",
+      "offset": 0.55
+     },
+     0.35,
+     "step"
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "cursed",
+      "offset": -0.1
+     },
+     0.35
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "burned",
+      "offset": 0.1
+     },
+     1,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     1
+    ]
+   ]
+  },
+  "props": [
+   {
+    "kind": "cairn",
+    "x": 8.95,
+    "z": -5.38,
+    "stones": [
+     [
+      {
+       "shot": "hook"
+      },
+      3
+     ]
+    ]
+   },
+   {
+    "kind": "statue",
+    "x": 18.0,
+    "z": 1.5,
+    "face": -90,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "gild": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "date.",
+       "offset": 0.53
+      },
+      0
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "date.",
+       "offset": 0.55
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "tar": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "date.",
+       "offset": 0.53
+      },
+      0
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "date.",
+       "offset": 0.55
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "grow": [
+     [
+      {
+       "shot": "hook"
+      },
+      1.35
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1.35
+     ]
+    ],
+    "torch": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "court",
+       "offset": -0.02
+      },
+      1
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "court"
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "kind": "border",
+    "x": 18.0,
+    "z": -7.0,
+    "to": [
+     18.0,
+     8.3
+    ],
+    "skip": [
+     0.46,
+     0.65
+    ],
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "truce"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "statue.",
+       "offset": 0.1
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "relic",
+    "x": 20.3,
+    "z": 5.4,
+    "face": -90,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "court",
+       "offset": -0.05
+      },
+      0
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "keeps",
+       "offset": 0.15
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "standard",
+    "x": 15.0,
+    "z": 2.2,
+    "face": -90,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "date.",
+       "offset": 0.53
+      },
+      0
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "date.",
+       "offset": 0.55
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "color": "#f0c04a"
+   },
+   {
+    "kind": "standard",
+    "x": 21.0,
+    "z": 2.2,
+    "face": 90,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "date.",
+       "offset": 0.53
+      },
+      0
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "date.",
+       "offset": 0.55
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "color": "#b0452f"
+   }
+  ],
+  "strata": {
+   "war": {
+    "y0": [
+     [
+      {
+       "shot": "hook"
+      },
+      -0.8
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      -0.8
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      1.75,
+      "step"
+     ],
+     [
+      {
+       "line": "L4",
+       "word": "run.",
+       "offset": 0.3
+      },
+      1.75
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Forgotten.",
+       "offset": 0.2
+      },
+      -0.8,
+      "linear"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "date.",
+       "offset": 0.53
+      },
+      -0.8
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "date.",
+       "offset": 0.55
+      },
+      1.75,
+      "step"
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "Run",
+       "offset": 0.25
+      },
+      1.75
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "here."
+      },
+      -0.8,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      -0.8
+     ]
+    ],
+    "y1": [
+     [
+      {
+       "shot": "hook"
+      },
+      0.0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      0.0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      2.55,
+      "step"
+     ],
+     [
+      {
+       "line": "L4",
+       "word": "run.",
+       "offset": 0.3
+      },
+      2.55
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Forgotten.",
+       "offset": 0.2
+      },
+      0.0,
+      "linear"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "date.",
+       "offset": 0.53
+      },
+      0.0
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "date.",
+       "offset": 0.55
+      },
+      2.55,
+      "step"
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "Run",
+       "offset": 0.25
+      },
+      2.55
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "here."
+      },
+      0.0,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0.0
+     ]
+    ]
+   },
+   "surface": 2.55,
+   "max": 10,
+   "centuries": [
+    [
+     {
+      "shot": "hook"
+     },
+     10
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     10
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Forgotten.",
+      "offset": 0.2
+     },
+     10,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "date.",
+      "offset": 0.53
+     },
+     10
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "date.",
+      "offset": 0.55
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.25
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "here."
+     },
+     10,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     10
+    ]
+   ],
+   "fade": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "sinks.",
+      "offset": -0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Forgotten.",
+      "offset": 0.4
+     },
+     0.9,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "date.",
+      "offset": 0.53
+     },
+     0.9
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "date.",
+      "offset": 0.55
+     },
+     0,
+     "step"
+    ]
+   ],
+   "flood": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L14",
+      "word": "never",
+      "offset": -0.05
+     },
+     0
+    ],
+    [
+     {
+      "line": "L14",
+      "word": "ended.",
+      "offset": 0.35
+     },
+     1,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.32
+     },
+     1
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     0,
+     "step"
+    ]
+   ],
+   "veins": [
+    {
+     "box": [
+      17.7,
+      18.3,
+      8.2,
+      10.2
+     ],
+     "color": "#46c2a0",
+     "on": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L8",
+        "word": "border."
+       },
+       0
+      ],
+      [
+       {
+        "line": "L8",
+        "word": "border.",
+        "offset": 0.35
+       },
+       1
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "What",
+        "offset": -0.32
+       },
+       1
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "What",
+        "offset": -0.3
+       },
+       1,
+       "step"
+      ]
+     ],
+     "label": "BORDER"
+    },
+    {
+     "box": [
+      21.2,
+      21.8,
+      6.2,
+      7.2
+     ],
+     "color": "#46c2a0",
+     "on": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L9",
+        "word": "cursed"
+       },
+       0
+      ],
+      [
+       {
+        "line": "L9",
+        "word": "cursed",
+        "offset": 0.35
+       },
+       1
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "What",
+        "offset": -0.32
+       },
+       1
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "What",
+        "offset": -0.3
+       },
+       1,
+       "step"
+      ]
+     ],
+     "label": "CURSED"
+    },
+    {
+     "box": [
+      19.25,
+      19.75,
+      7.2,
+      8.2
+     ],
+     "color": "#46c2a0",
+     "on": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L10",
+        "word": "stolen"
+       },
+       0
+      ],
+      [
+       {
+        "line": "L10",
+        "word": "stolen",
+        "offset": 0.35
+       },
+       1
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "What",
+        "offset": -0.32
+       },
+       1
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "What",
+        "offset": -0.3
+       },
+       1,
+       "step"
+      ]
+     ],
+     "label": "RELIC"
+    },
+    {
+     "box": [
+      15.2,
+      15.8,
+      12.2,
+      13.2
+     ],
+     "color": "#46c2a0",
+     "on": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L11",
+        "word": "grudge."
+       },
+       0
+      ],
+      [
+       {
+        "line": "L11",
+        "word": "grudge.",
+        "offset": 0.35
+       },
+       1
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "What",
+        "offset": -0.32
+       },
+       1
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "What",
+        "offset": -0.3
+       },
+       1,
+       "step"
+      ]
+     ],
+     "label": "GRUDGE"
+    }
+   ]
+  },
+  "clearTrees": [
+   [
+    18.0,
+    1.5,
+    3.0
+   ],
+   [
+    20.3,
+    5.4,
+    3.0
+   ],
+   [
+    18.0,
+    5.6,
+    3.0
+   ],
+   [
+    20.9,
+    -0.4,
+    3.0
+   ],
+   [
+    15.4,
+    3.8,
+    3.0
+   ],
+   [
+    21.2,
+    3.0,
+    3.0
+   ],
+   [
+    18.0,
+    6.5,
+    3.5
+   ],
+   [
+    18.0,
+    -3.0,
+    4.0
+   ],
+   [
+    16.0,
+    9.0,
+    3.0
+   ]
+  ],
+  "layers": {
+   "ripple": [
+    {
+     "shot": "hook",
+     "offset": 0.05
+    },
+    {
+     "line": "L4",
+     "word": "run."
+    },
+    {
+     "line": "L12",
+     "word": "Run"
+    }
+   ]
+  },
+  "ambient": {
+   "birds": 9,
+   "motes": 40,
+   "glints": true
+  },
+  "simLoop": {
+   "line": "L17",
+   "word": "What",
+   "offset": -0.3
+  }
+ },
+ "music": {
+  "engine": "s2-score",
+  "key": "D minor, resolving to D major",
+  "bpm": 92,
+  "sections": [
+   {
+    "from": {
+     "shot": "hook"
+    },
+    "style": "dirge",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "programs": {
+     "horns": 60
+    }
+   },
+   {
+    "from": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "style": "earth",
+    "chords": [
+     "Dm",
+     "Bb",
+     "F",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 1,
+    "programs": {
+     "horns": 58,
+     "lead": 59
+    }
+   },
+   {
+    "from": {
+     "line": "L4",
+     "word": "run."
+    },
+    "style": "drive",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "intensity": 0.85,
+    "programs": {
+     "lead": 73,
+     "horns": 60
+    }
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "A",
+     "offset": -0.2
+    },
+    "style": "drop",
+    "chords": [
+     "Dm"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 8
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "date.",
+     "offset": 0.5
+    },
+    "style": "mystery",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "A"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 2
+   },
+   {
+    "from": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.1
+    },
+    "style": "earth",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 1,
+    "programs": {
+     "horns": 58,
+     "lead": 59
+    }
+   },
+   {
+    "from": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.1
+    },
+    "style": "earth",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 2
+   },
+   {
+    "from": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.1
+    },
+    "style": "earth",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 3
+   },
+   {
+    "from": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.1
+    },
+    "style": "earth",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 4
+   },
+   {
+    "from": {
+     "line": "L12",
+     "word": "Run"
+    },
+    "style": "drive",
+    "chords": [
+     "F",
+     "C",
+     "Bb",
+     "F"
+    ],
+    "key": "F major",
+    "intensity": 1.0,
+    "theme": true,
+    "programs": {
+     "lead": 73,
+     "horns": 60
+    }
+   },
+   {
+    "from": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.05
+    },
+    "style": "twist",
+    "chords": [
+     "A7b9"
+    ],
+    "key": "D minor"
+   },
+   {
+    "from": {
+     "line": "L14",
+     "word": "That",
+     "offset": -0.1
+    },
+    "style": "dirge",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 2,
+    "programs": {
+     "horns": 60
+    }
+   },
+   {
+    "from": {
+     "line": "L15",
+     "word": "So",
+     "offset": -0.1
+    },
+    "style": "anthem",
+    "chords": [
+     "D",
+     "G",
+     "Bm",
+     "A"
+    ],
+    "key": "D major",
+    "programs": {
+     "lead": 73,
+     "horns": 60
+    }
+   },
+   {
+    "from": {
+     "line": "L17",
+     "word": "What",
+     "offset": -0.2
+    },
+    "style": "outro",
+    "chords": [
+     "G",
+     "D"
+    ],
+    "key": "D major"
+   },
+   {
+    "from": {
+     "line": "L18",
+     "word": "Part",
+     "offset": -0.1
+    },
+    "style": "tease",
+    "chords": [
+     "A5"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 32
+   }
+  ],
+  "accents": [
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L1",
+     "word": "dying?"
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L6",
+     "word": "date."
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "riser",
+    "at": {
+     "line": "L7",
+     "word": "twist."
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "stab",
+    "at": {
+     "line": "L12",
+     "word": "here."
+    },
+    "chord": "F"
+   },
+   {
+    "kind": "cymbal",
+    "at": {
+     "line": "L12",
+     "word": "here."
+    }
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L13",
+     "word": "peace."
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L15",
+     "word": "pen."
+    },
+    "chord": "D"
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L18",
+     "word": "fear."
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "roll",
+    "at": {
+     "end": true,
+     "offset": -0.05
+    },
+    "chord": "A"
+   }
+  ],
+  "fadeOut": {
+   "fromEnd": 0.08
+  },
+  "gain": 0.55
+ },
+ "mix": {
+  "musicLufs": -25.0,
+  "duckDb": -8.0,
+  "sfxLufs": -29.0,
+  "voiceFx": true
+ },
+ "metadata": {
+  "youtube": {
+   "title": "Create an Ancient War That Still Matters (Worldbuilding)",
+   "titleAlternate": "The war ended 1000 years ago. Nobody signed the peace.",
+   "description": "This war ended a thousand years ago. Why are people still dying?\n\nMeet the Seam War. It ended in one truce. The lazy version lets the war end and everyone move on, and we ran it: ten centuries pile on, the war sinks, forgotten. A war nobody feels is just a date.\n\nReal wars don't stay buried. A border: the truce line still splits the statue. Cursed ground: nobody farms the burned field. A stolen relic: the court kept her torch. A grudge: children are taught who to hate. Run it again: a thousand years, still here.\n\nThen the twist: the claim. Nobody ever signed the peace. That truce was a pause, and the war never ended. So hand one character the pen.\n\nFighting stops in a day. A war ends when its consequences do.\n\nWhat unresolved conflict would your ancestors leave behind?\n\nPart 32 of 50. Follow for part 33: a god built from fear.\n\nWorldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 7: History and Mythology.\n\n#Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "pinnedComment": "What unresolved conflict would your ancestors leave behind? A border, a relic, a grudge, or something worse? (Part 33: a god built from fear.)",
+   "uploadSettings": "Altered or synthetic content: Yes (synthetic narration and an AI-generated field-card sprite; the island, statue, people, stones and strata are drawn in code). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "The war ended 1000 years ago. So why is it still here? \u2694\ufe0f Four things an old war leaves behind, and rule #5 is the one writers skip. What would your ancestors leave you? Part 32/50 \u00b7 follow for part 33 \ud83c\udf11 #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "pinnedComment": "What unresolved conflict would your ancestors leave behind?",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "This war ended a thousand years ago. Why are people still dying?\n\nMeet the Seam War. It ended in one truce. The lazy version lets the war end and everyone move on, and we ran it: ten centuries pile on, the war sinks, forgotten. A war nobody feels is just a date.\n\nReal wars don't stay buried. A border: the truce line still splits the statue. Cursed ground: nobody farms the burned field. A stolen relic: the court kept her torch. A grudge: children are taught who to hate. Run it again: a thousand years, still here.\n\nThen the twist: the claim. Nobody ever signed the peace. That truce was a pause, and the war never ended. So hand one character the pen.\n\nFighting stops in a day. A war ends when its consequences do.\n\nWhat unresolved conflict would your ancestors leave behind?\n\nPart 32 of 50. Follow for part 33: a god built from fear.\n\nWorldcraft Shorts \u00b7 Season 2: The World Engine.\n\n#Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "pinnedComment": "Which old war in your world is still being fought by people who never saw it?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "The war ended 1000 years ago. Nobody signed the peace.\n\nThis war ended a thousand years ago. Why are people still dying?\n\nMeet the Seam War. It ended in one truce. The lazy version lets the war end and everyone move on, and we ran it: ten centuries pile on, the war sinks, forgotten. A war nobody feels is just a date.\n\nReal wars don't stay buried. A border: the truce line still splits the statue. Cursed ground: nobody farms the burned field. A stolen relic: the court kept her torch. A grudge: children are taught who to hate. Run it again: a thousand years, still here.\n\nThen the twist: the claim. Nobody ever signed the peace. That truce was a pause, and the war never ended. So hand one character the pen.\n\nFighting stops in a day. A war ends when its consequences do.\n\nWhat unresolved conflict would your ancestors leave behind?\n\nPart 32 of 50. Follow for part 33: a god built from fear.\n\nWorldcraft Shorts \u00b7 Season 2\n\n#Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "hookCheck": "First 54 characters: 'The war ended 1000 years ago. Nobody signed the peace.'",
+   "pinnedComment": "Save the DIG IT UP card, then tell us: what unresolved conflict would your ancestors leave behind?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  }
+ }
+}

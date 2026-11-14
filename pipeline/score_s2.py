@@ -190,8 +190,8 @@ def blip(f0, f1, dur, bright=1.0):
 
 S2_HITS = {"roar", "stompHit", "sting", "runPress", "stamp", "rewind", "ringOn", "snowAir", "sleepZ", "cubPop", "delete", "restore", "cardSlide", "check", "unlock", "worldRipple", "crash", "boomPop",
            "engineWind", "dragonPass", "followPress", "chime", "towerBell", "eyeOn", "morph", "slide", "crownPass",
-           "frameDrum", "beamTip", "quill", "pageTear"}
-S2_BEDS = {"simTicks", "births", "losses", "stomp", "burn", "lockOn", "clockTicks"}
+           "frameDrum", "beamTip", "quill", "pageTear", "dig", "stones", "eclipse"}
+S2_BEDS = {"simTicks", "births", "losses", "stomp", "burn", "lockOn", "clockTicks", "rumble"}
 
 
 def s2_hit(kind):
@@ -503,6 +503,40 @@ def s2_hit(kind):
         rip = bp(nz, 900, 7000) * np.interp(t, [0, 0.05, 0.3, 0.34, 0.7], [0, 0.9, 1.0, 0.0, 0]) * (0.6 + 0.4 * np.sign(np.sin(2 * np.pi * (60 + 240 * t) * t)))
         flut = lp(nz, 700) * np.interp(t, [0, 0.36, 0.42, 0.7], [0, 0, 0.35, 0])
         return st(rip + flut, 0.5)
+    if kind == "dig":
+        # EP32: a spade bites into the ground: a gritty crunch (low-passed noise burst) over a dull thud, then soil
+        # trickling off. Its own seeded RNG.
+        n = int(0.6 * SR)
+        t = np.arange(n) / SR
+        rng = np.random.default_rng(321)
+        nz = rng.standard_normal(n)
+        thud = np.sin(2 * np.pi * np.cumsum(70 * (1 + 0.6 * np.exp(-t * 40))) / SR) * np.exp(-t * 14)
+        crunch = bp(nz, 300, 2600) * np.exp(-t * 18) * 0.9
+        trickle = bp(nz, 1500, 6000) * np.interp(t, [0, 0.12, 0.2, 0.6], [0, 0, 0.18, 0]) * (rng.uniform(0, 1, n) > 0.92)
+        return st(thud * 0.9 + crunch + trickle * 2.0, 0.3)
+    if kind == "stones":
+        # EP32: boundary stones set down one after another: four dry stone-on-stone knocks, the last one heavier.
+        n = int(0.75 * SR)
+        rng = np.random.default_rng(322)
+        out = np.zeros(n)
+        for k, t0 in enumerate((0.0, 0.14, 0.27, 0.42)):
+            m = int(0.16 * SR)
+            x = np.arange(m) / SR
+            f = 180 + k * 15
+            knock = (np.sin(2 * np.pi * f * x) * np.exp(-x * 45) + bp(rng.standard_normal(m), 900, 4200) * np.exp(-x * 70) * 0.6) * (1.0 if k < 3 else 1.4)
+            i = int(t0 * SR)
+            out[i:i + m] += knock[: n - i]
+        return st(out * 0.8, 0.35)
+    if kind == "eclipse":
+        # EP32 (EP33's tease): the light goes out of the sky: a low hollow swell (two detuned sines and dark noise)
+        # that rises and closes, like a held breath. Its own seeded RNG.
+        n = int(1.8 * SR)
+        t = np.arange(n) / SR
+        rng = np.random.default_rng(323)
+        env = np.interp(t, [0, 0.7, 1.2, 1.8], [0, 1, 0.6, 0])
+        tone = (np.sin(2 * np.pi * 55 * t) + 0.7 * np.sin(2 * np.pi * 55.8 * t) + 0.35 * np.sin(2 * np.pi * 110.4 * t)) * env
+        air = lp(rng.standard_normal(n), 380) * env * 0.6
+        return st(tone * 0.45 + air, 0.6)
     raise KeyError(kind)
 
 
@@ -566,6 +600,18 @@ def s2_bed(kind, dur):
             out[i:i + m] += clk[: max(0, n - i)]
             tt += max(0.07, 0.3 * (1 - tt / max(dur, 0.1)) + 0.07)
             k += 1
+    elif kind == "rumble":
+        # EP32: centuries settling on the war: a slow sub-heavy earth rumble (low-passed noise, slow swell) with a few
+        # grains of soil falling. Its own seeded RNG.
+        rng = np.random.default_rng(324)
+        t = np.arange(n) / SR
+        swell = np.interp(t, [0, min(0.5, dur / 3), max(0.6, dur - 0.4), dur], [0, 1, 1, 0])
+        out += lp(rng.standard_normal(n), 140) * 1.6 * swell * (0.8 + 0.2 * np.sin(2 * np.pi * 0.7 * t))
+        for g in np.sort(rng.uniform(0, max(0.1, dur - 0.05), int(10 * dur))):
+            m = int(0.02 * SR)
+            i = int(g * SR)
+            grain = bp(rng.standard_normal(m), 1200, 5000) * np.exp(-np.arange(m) / SR * 220) * rng.uniform(0.1, 0.4)
+            out[i:i + m] += grain[: max(0, n - i)]
     else:
         raise KeyError(kind)
     return st(out, 0.5)

@@ -9,7 +9,7 @@ import {sample} from '../keys';
 import {clamp, hash2} from '../rng';
 import {F2, outline, panel, pixelShadow, PX, S2} from '../style';
 import {grimmawPose, project, useS2} from '../world/WorldScene';
-import {clockAt, dragonAt, herdCount, seriesAt, simTime, World} from '../world/timeline';
+import {clockAt, dragonAt, herdCount, seriesAt, simTime, strataAt, World} from '../world/timeline';
 import {dragonTargets, roofsIntact, Target} from '../world/Settlement';
 
 /** A HUD value by key: herd, pred, roofs (EP27: standing, unburnt roofs, read from the village itself) or a world series. */
@@ -643,7 +643,7 @@ export const EndCardS2: React.FC<OP> = ({g, t}) => {
 							{(g.choices as {text: string; color?: string; at?: Cue}[]).map((c, i) => {
 								const ck = c.at ? clamp((t - cueTime(timing, c.at)) / 0.18) : 1;
 								return (
-									<div key={i} style={{padding: '14px 30px 10px', fontFamily: F2.pixel, fontWeight: 700, fontSize: 52, lineHeight: 1, color: S2.ink, background: col(c.color ?? 'ember'), boxShadow: `0 ${PX * 2}px 0 rgba(3,6,14,0.8)`, opacity: ck, transform: `scale(${0.6 + 0.4 * ck + Math.sin(ck * Math.PI) * 0.12})`}}>
+									<div key={i} style={{padding: '14px 30px 10px', fontFamily: F2.pixel, fontWeight: 700, fontSize: g.choiceSize ?? 52, lineHeight: 1, color: S2.ink, background: col(c.color ?? 'ember'), boxShadow: `0 ${PX * 2}px 0 rgba(3,6,14,0.8)`, opacity: ck, transform: `scale(${0.6 + 0.4 * ck + Math.sin(ck * Math.PI) * 0.12})`}}>
 										{c.text}
 									</div>
 								);
@@ -1306,7 +1306,89 @@ export const SplitTone: React.FC<OP> = ({g, t}) => {
 	);
 };
 
+// ---------------------------------------------------------------- EP32: the strata
+
+const VERD_C = '#46c2a0';
+
+/**
+ * The strata (EP32's device, labelled): the world's cut side carries the war as a layer with the centuries laid on top
+ * of it (`world.strata`, drawn by the island's shader). This overlay reads the same state and pins words to it: a depth
+ * ruler standing on the cut at `ruler` [x, z] (TODAY at the grass, a tick per century, THE WAR on the layer with how
+ * many years down it lies, `years` per century) and a tag over each vein where it breaks the surface (`tags`: [{vein,
+ * text, at, end?}], shown while the vein is on). Everything is projected through the live camera, so it rides the
+ * crane. `warText` / `topText` rename the two ends.
+ */
+export const StrataLabels: React.FC<OP> = ({g, t}) => {
+	const {o, timing} = useWin(g, t, 0.25, 0.25);
+	const s = useS2();
+	const st = strataAt(s.world, t);
+	if (o <= 0 || !st) return null;
+	const snap = (v: number) => Math.round(v / PX) * PX;
+	const nodes: React.ReactNode[] = [];
+	const c = col(g.color ?? VERD_C);
+	if (g.ruler) {
+		const [rx, rz] = g.ruler as [number, number];
+		const th = (st.surface - st.y1) / Math.max(1, st.max);
+		const top = project(s.cam, [rx, st.surface + 0.45, rz]);
+		const war = project(s.cam, [rx, (st.y0 + st.y1) / 2, rz]);
+		const lift = g.rulerLift ?? 0;
+		if (!top.behind && !war.behind) {
+			const x = snap(top.x);
+			const yT = snap(top.y) - lift;
+			const yW = snap(war.y) - lift;
+			nodes.push(<div key="spine" style={{position: 'absolute', left: x - PX, top: yT, width: PX * 2, height: Math.max(PX, yW - yT), background: 'rgba(239,230,210,0.75)'}} />);
+			const n = Math.floor(st.n + 1e-6);
+			for (let k = 1; k <= n; k++) {
+				const tk = project(s.cam, [rx, st.y1 + k * th, rz]);
+				nodes.push(<div key={`k${k}`} style={{position: 'absolute', left: x - 4 * PX, top: snap(tk.y) - lift - PX / 2, width: k % 5 === 0 ? 8 * PX : 5 * PX, height: PX, background: 'rgba(239,230,210,0.85)'}} />);
+			}
+			const years = Math.round(st.n * (g.years ?? 100));
+			const label = (y: number, a: string, b: string | null, color: string, key: string) => (
+				<div key={key} style={{position: 'absolute', left: x + 5 * PX, top: y, transform: 'translateY(-50%)', padding: '6px 12px 4px', whiteSpace: 'nowrap', background: 'rgba(5,9,18,0.86)', boxShadow: `0 0 0 ${PX}px ${color}`}}>
+					<div style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: 24, lineHeight: 1.05, color, letterSpacing: '0.06em'}}>{a}</div>
+					{b && <div style={{fontFamily: F2.pixel, fontSize: 18, lineHeight: 1.1, color: 'rgba(239,230,210,0.9)', letterSpacing: '0.06em'}}>{b}</div>}
+				</div>
+			);
+			const near = yW - yT < 60;
+			if (!near && g.topText !== '') nodes.push(label(yT, g.topText ?? 'TODAY', null, S2.parchment, 'top'));
+			const wc = st.flood > 0.5 ? S2.ember : c;
+			nodes.push(label(yW, g.warText ?? 'THE WAR', years > 0 ? `${years} YRS DOWN` : (g.zeroText ?? 'YEAR 0'), wc, 'war'));
+			nodes.push(<div key="dot" style={{position: 'absolute', left: x - 3 * PX, top: yW - 3 * PX, width: 6 * PX, height: 6 * PX, background: wc, boxShadow: `0 0 0 ${PX}px #050912`}} />);
+		}
+	}
+	for (const tg of (g.tags ?? []) as {vein: number; text: string; at?: Cue; end?: Cue; lift?: number; dx?: number}[]) {
+		const v = st.veins[tg.vein];
+		if (!v || v.on < 0.5) continue;
+		const a = tg.at ? cueTime(timing, tg.at) : -Infinity;
+		const b = tg.end ? cueTime(timing, tg.end) : Infinity;
+		if (t < a || t > b) continue;
+		const k = Math.min(clamp((t - a) / 0.2), b === Infinity ? 1 : 1 - clamp((t - b + 0.2) / 0.2));
+		// tags are for the cutaway poses; in a wide shot they would be too small to read
+		if (s.cam.dist > (g.tagMaxDist ?? 150)) continue;
+		const [x0, x1, z0, z1] = v.box;
+		const cx = (x0 + x1) / 2;
+		// the vein breaks the surface at the outermost column inside its box
+		let zc = z1;
+		while (zc > z0 && s.island.heightAt(cx, zc) < -30) zc -= 0.1;
+		const p0 = project(s.cam, [cx, s.island.heightAt(cx, zc) + 0.2, zc]);
+		if (p0.behind) continue;
+		const lift = tg.lift ?? 70;
+		const px = snap(p0.x);
+		const py = snap(p0.y);
+		nodes.push(
+			<div key={`t${tg.vein}${tg.text}`} style={{opacity: k}}>
+				<div style={{position: 'absolute', left: px - PX, top: py - lift, width: PX * 2, height: lift, background: v.color}} />
+				<div style={{position: 'absolute', left: px + (tg.dx ?? 0), top: py - lift - 4, transform: 'translate(-50%, -100%)', padding: '6px 12px 4px', whiteSpace: 'nowrap', background: 'rgba(5,9,18,0.88)', boxShadow: `0 0 0 ${PX}px ${v.color}`, fontFamily: F2.pixel, fontWeight: 700, fontSize: 24, color: S2.parchment, letterSpacing: '0.06em'}}>
+					{tg.text}
+				</div>
+			</div>,
+		);
+	}
+	return <AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>{nodes}</AbsoluteFill>;
+};
+
 export const S2_OVERLAYS: Record<string, React.FC<OP>> = {
+	strata: StrataLabels,
 	chronicles: Chronicles,
 	splitTone: SplitTone,
 	veil: Veil,

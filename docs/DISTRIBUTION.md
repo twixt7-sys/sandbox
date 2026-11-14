@@ -2257,3 +2257,98 @@ Source of truth: `episodes/ep31/episode.json` → `metadata`. Every description 
 - **Hook check:** First 41 characters: 'Hero to one village. Monster to the next.'
 - **Pinned comment:** Save the CRACK IT OPEN card, then give us your verdict: hero or monster?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+
+## Episode 32 captions (ready to paste) — Season 2, Arc 7
+
+Source of truth: `episodes/ep32/episode.json` → `metadata` (this section is generated from it). Every description ends with the Season 2 ending formula ("Part 32 of 50. Follow for part 33: …"), matching the video's last line. The AI label goes on for all four platforms. Cover: `episodes/ep32/Worldcraft_Short_E32_cover.jpg`. Subtitles: `episodes/ep32/ep32.srt`.
+
+**Disclosure.** The island, the strata (the war layer, the centuries and the veins), the statue, the boundary stones, the two crowds, the relic, the HUD and every number are drawn and simulated in code. Two things are AI-made: the narration (Kokoro synthetic voice) and the field card's helmet sprite (free local SDXL-Lightning with a pixel-art LoRA, re-gridded by `pipeline/pixelate.py`; no Figma credits). AI label on everywhere (series policy). No violence on screen: the war exists only as a layer in the ground and its consequences (a line of stones, a black field, a torch on the other side, two crowds facing each other). The Seam War, the valley and the court are invented, and no real-world flag, faith or conflict is shown (two generated banners that looked like real flags were rejected).
+
+**Closing EP31's loop.** EP31 ended "a war that never ended" with two war standards rising over the two crowds before Maren's statue. EP32 opens a thousand years later on the same statue with the truce line running down its seam and the two standards still planted, and its twist is that nobody ever signed the peace. When EP32 goes up, reply to the top comments on EP31 with its link and pin it where a second pin is allowed.
+
+**The comment ask is an invention prompt** (EP31's was a vote; compare the two). "What unresolved conflict would your ancestors leave behind?" The end card offers three starters (BORDER, RELIC, GRUDGE). Post the pinned comment straight away and answer early comments in the first hour.
+
+**Posting part 33.** The video promises "a god built from fear" (the sun goes dark over the Isle for a breath; the Queen and the Grimmaw look up). EP33 is "How Do You Invent a Believable Religion?". Do the same reply-and-pin on EP32 when EP33 is posted.
+
+### YouTube Shorts
+- **Title** (56/100 chars): `Create an Ancient War That Still Matters (Worldbuilding)`
+- **Alternate title** (54 chars): `The war ended 1000 years ago. Nobody signed the peace.`
+- **Description:**
+
+> This war ended a thousand years ago. Why are people still dying?
+>
+> Meet the Seam War. It ended in one truce. The lazy version lets the war end and everyone move on, and we ran it: ten centuries pile on, the war sinks, forgotten. A war nobody feels is just a date.
+>
+> Real wars don't stay buried. A border: the truce line still splits the statue. Cursed ground: nobody farms the burned field. A stolen relic: the court kept her torch. A grudge: children are taught who to hate. Run it again: a thousand years, still here.
+>
+> Then the twist: the claim. Nobody ever signed the peace. That truce was a pause, and the war never ended. So hand one character the pen.
+>
+> Fighting stops in a day. A war ends when its consequences do.
+>
+> What unresolved conflict would your ancestors leave behind?
+>
+> Part 32 of 50. Follow for part 33: a god built from fear.
+>
+> Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 7: History and Mythology.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts
+
+- **Pinned comment:** What unresolved conflict would your ancestors leave behind? A border, a relic, a grudge, or something worse? (Part 33: a god built from fear.)
+- **Upload settings:** Altered or synthetic content: Yes (synthetic narration and an AI-generated field-card sprite; the island, statue, people, stones and strata are drawn in code). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (271 chars): `The war ended 1000 years ago. So why is it still here? ⚔️ Four things an old war leaves behind, and rule #5 is the one writers skip. What would your ancestors leave you? Part 32/50 · follow for part 33 🌑 #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts`
+- **Pinned comment:** What unresolved conflict would your ancestors leave behind?
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> This war ended a thousand years ago. Why are people still dying?
+>
+> Meet the Seam War. It ended in one truce. The lazy version lets the war end and everyone move on, and we ran it: ten centuries pile on, the war sinks, forgotten. A war nobody feels is just a date.
+>
+> Real wars don't stay buried. A border: the truce line still splits the statue. Cursed ground: nobody farms the burned field. A stolen relic: the court kept her torch. A grudge: children are taught who to hate. Run it again: a thousand years, still here.
+>
+> Then the twist: the claim. Nobody ever signed the peace. That truce was a pause, and the war never ended. So hand one character the pen.
+>
+> Fighting stops in a day. A war ends when its consequences do.
+>
+> What unresolved conflict would your ancestors leave behind?
+>
+> Part 32 of 50. Follow for part 33: a god built from fear.
+>
+> Worldcraft Shorts · Season 2: The World Engine.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts
+
+- **Pinned comment:** Which old war in your world is still being fought by people who never saw it?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> The war ended 1000 years ago. Nobody signed the peace.
+>
+> This war ended a thousand years ago. Why are people still dying?
+>
+> Meet the Seam War. It ended in one truce. The lazy version lets the war end and everyone move on, and we ran it: ten centuries pile on, the war sinks, forgotten. A war nobody feels is just a date.
+>
+> Real wars don't stay buried. A border: the truce line still splits the statue. Cursed ground: nobody farms the burned field. A stolen relic: the court kept her torch. A grudge: children are taught who to hate. Run it again: a thousand years, still here.
+>
+> Then the twist: the claim. Nobody ever signed the peace. That truce was a pause, and the war never ended. So hand one character the pen.
+>
+> Fighting stops in a day. A war ends when its consequences do.
+>
+> What unresolved conflict would your ancestors leave behind?
+>
+> Part 32 of 50. Follow for part 33: a god built from fear.
+>
+> Worldcraft Shorts · Season 2
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts
+
+- **Hook check:** First 54 characters: 'The war ended 1000 years ago. Nobody signed the peace.'
+- **Pinned comment:** Save the DIG IT UP card, then tell us: what unresolved conflict would your ancestors leave behind?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

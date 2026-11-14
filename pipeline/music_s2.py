@@ -657,7 +657,68 @@ def style_dispute(c: Ctx):
         b += dur
 
 
-STYLES = {"chronicle": style_chronicle, "dispute": style_dispute, "hymn": style_hymn, "rite": style_rite, "hook": style_hook, "pulse": style_pulse, "drive": style_drive, "drop": style_drop, "void": style_void,
+# ---- EP32 colours (additive): an ancient war that still matters. Sections set `programs` (tuba on the horns channel,
+# muted trumpet on the lead for `earth`) and later sections set them back.
+
+def style_dirge(c: Ctx):
+    """A march slowed to a dirge: the series theme at half speed on low horns, a muffled bass drum (timpani on the
+    root) on beats 1 and 3, a snare roll that swells into each bar, and a held minor pad with a cello pedal."""
+    c.pad("strings", 48, 65, 50, max_notes=3)
+    c.root("cello", 36, 48, 64)
+    for b, d, ch in c.chord_spans():
+        r = in_range(chord_tones(ch)[0], 38, 50)[0]
+        k = 0.0
+        while k < d - 1e-6:
+            c.add("timp", b + k, 1.2, r, 92 if k % 4 < 1e-6 else 70)
+            k += 2.0
+    bar = 0.0
+    while bar < c.n - 1e-6:  # the roll: 32nds over the last beat of each bar, quiet to firm
+        for j in range(8):
+            q = j / 8
+            if bar + 3 + q * 1.0 < c.n:
+                c.add("drums", bar + 3 + q, 0.1, SNARE, int(18 + 40 * q * q))
+        bar += 4.0
+    tpc, steps = key_info(c.key)
+    tonic = nearest(tpc, 57)
+    b = 0.0
+    for deg, oc, dur in THEME:
+        if b >= c.n:
+            break
+        c.add("horns", b, dur * 2 * 0.95, tonic + steps[(deg - 1) % 7] + 12 * (oc + (deg - 1) // 7), 86 if (b % 1) < 1e-6 else 78)
+        b += dur * 2
+
+
+def style_earth(c: Ctx):
+    """War drums heard through the earth: a soft taiko heartbeat, a low drone and a distant side-stick march, the
+    world under the grass. `layer` 1-4 adds one family per rule (the march, a tuba on the roots, the theme on muted
+    trumpet far away with a timpani swell into each bar)."""
+    layer = c.spec.get("layer", 4)
+    c.pad("strings", 45, 62, 40, max_notes=3)
+    c.root("cello", 36, 48, 58)
+    b = 0.0
+    while b < c.n - 1e-6:  # the heartbeat: lub-dub every two beats
+        c.add("taiko", b, 0.6, 45, 76)
+        if b + 0.5 < c.n:
+            c.add("taiko", b + 0.5, 0.5, 45, 54)
+        b += 2.0
+    if layer >= 2:
+        for b in range(0, c.n):
+            pos = b % 4
+            c.add("drums", b, 0.2, STICK, 52 if pos == 0 else 38)
+            if pos in (0, 2) and b + 0.75 < c.n:
+                c.add("drums", b + 0.75, 0.15, STICK, 34)
+    if layer >= 3:
+        c.root("horns", 31, 43, 74, every=2.0, dur=1.8)
+    if layer >= 4:
+        c.theme("lead", vel=86, bars=(0, 4), octave=-1)
+        for b, d, ch in c.chord_spans():
+            r = in_range(chord_tones(ch)[0], 40, 52)[0]
+            for j in range(6):
+                if b + d - 0.75 + j * 0.125 < c.n:
+                    c.add("timp", b + d - 0.75 + j * 0.125, 0.12, r, 30 + j * 9)
+
+
+STYLES = {"dirge": style_dirge, "earth": style_earth, "chronicle": style_chronicle, "dispute": style_dispute, "hymn": style_hymn, "rite": style_rite, "hook": style_hook, "pulse": style_pulse, "drive": style_drive, "drop": style_drop, "void": style_void,
           "mystery": style_mystery, "build": style_build, "twist": style_twist, "rest": style_rest, "frenzy": style_frenzy,
           "crash": style_crash, "swell": style_swell, "anthem": style_anthem, "outro": style_outro, "tease": style_tease,
           "soar": style_soar, "raid": style_raid, "stealth": style_stealth,

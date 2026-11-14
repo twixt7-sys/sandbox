@@ -94,6 +94,16 @@ export const SPRITES: Record<string, {rows: string[]; colors: Record<string, str
 		rows: ['........H.H........', '.........H.........', '........HEH........', '.........B.........', 'WW.......B.......WW', '.WWW....BBB....WWW.', '..WWWW..BBB..WWWW..', '..WWWWWBBBBBWWWWW..', '...WWWWWBBBWWWWW...', '...WWWWWBBBWWWWW...', '....W.W.WBW.W.W....', '.........B.........', '.........B.........', '..........B........', '..........B........', '.........TT........'],
 		colors: {H: '#c95a3c', E: '#f4c46e', B: '#b34a35', W: '#d0603f', T: '#8f3a2c'},
 	},
+	// EP32: the strata (grass, two centuries, the war layer with a bronze fleck, a vein rising through them)
+	strata: {
+		rows: ['GGGGGGGGGG', 'SSSSVSSSSS', 'ssssVsssss', 'SSSSVSSSSS', 'WWWWVWWBWW', 'WBWWWWWWWW'],
+		colors: {G: '#86bb5c', S: '#8f6c46', s: '#7a5a3a', W: '#3a2a2e', B: '#46c2a0', V: '#46c2a0'},
+	},
+	// EP32's tease for EP33: the sun, eclipsed (a dark disc inside a ring of light)
+	sun: {
+		rows: ['...YYYY...', '.YYDDDDYY.', '.YDDDDDDY.', 'YDDDDDDDDY', 'YDDDDDDDDY', 'YDDDDDDDDY', 'YDDDDDDDDY', '.YDDDDDDY.', '.YYDDDDYY.', '...YYYY...'],
+		colors: {Y: '#f4c46e', D: '#141d38'},
+	},
 };
 
 /** `mono` paints every pixel one colour (a locked silhouette, e.g. the next episode's creature before its reveal). */

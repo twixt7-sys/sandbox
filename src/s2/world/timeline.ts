@@ -79,14 +79,33 @@ export type WorldRaw = {
 		tints?: string[];
 		/** EP31+: the crowd stands still and faces this point */
 		watch?: [number, number];
+		/** EP32+: 0..1 keys for `watch` (they only stand and face it while > 0.5; absent: always, as in EP31) */
+		watchOn?: RawKey[];
 	};
+	/** EP32+: the strata. The island's cut sides carry the war as a layer (`war`: its bottom and top, in world y, keyed
+	 * so it can sink as centuries pile on), `centuries` thin bands laid on top of it (0..`max` shown), `fade` (0 vivid ..
+	 * 1 forgotten: it greys into the clay), `flood` (0..1: the war's colour climbs up through every century to the
+	 * surface) and `veins`: consequences that run from the war layer up to the grass inside a box (x0, x1, z0, z1),
+	 * each switched on by `on` (0..1). */
+	strata?: StrataRaw;
 };
+
+export type StrataRaw = {
+	war: {y0: RawKey[]; y1: RawKey[]};
+	surface?: number;
+	max?: number;
+	centuries?: RawKey[];
+	fade?: RawKey[];
+	flood?: RawKey[];
+	veins?: {box: [number, number, number, number]; color: string; on: RawKey[]; label?: string}[];
+};
+export type Strata = {y0: number; y1: number; surface: number; max: number; n: number; fade: number; flood: number; veins: {box: [number, number, number, number]; color: string; on: number; label?: string}[]};
 
 /** EP27+ small props. EP29: `offerings` (a candle ring). EP30: `shrine` (an altar between standing stones built up by
  * `rise`; `lights` its candles, `tithe` sheep, `sheaves` and shed `plates` laid before it, `paint` 0..2 the figures
  * painted on its stones). */
 export type PropRaw = {
-	kind: 'cairn' | 'offerings' | 'shrine' | 'statue' | 'standard';
+	kind: 'cairn' | 'offerings' | 'shrine' | 'statue' | 'standard' | 'border' | 'relic';
 	x: number;
 	z: number;
 	stones?: RawKey[];
@@ -104,6 +123,12 @@ export type PropRaw = {
 	grow?: RawKey[];
 	/** EP31 `standard`: the cloth's colour */
 	color?: string;
+	/** EP32 `statue`: 0..1 the gilded torch is still in her hand (absent: always) */
+	torch?: RawKey[];
+	/** EP32 `border`: a line of boundary stones from (x, z) to `to`, rising from the middle outward with `rise`; `skip`
+	 * leaves a gap [from, to] along the line (a statue standing on it) */
+	to?: [number, number];
+	skip?: [number, number];
 };
 
 export type DragonKeyRaw = {at: Cue; x: number; z: number; y?: number; state?: string; face?: number; dur?: number; ease?: string};
@@ -213,7 +238,7 @@ export type World = {
 	/** every settlement, the first one included (EP28+: more than one) */
 	settlements: Settlement[];
 	folk: {count: Key[]; centers: [number, number][]; centersB: [number, number][] | null; site: Key[]; eyes: Key[]; wet: Key[]; glow: Key[]; hero: PredKey[]; spread: number} | null;
-	props: {kind: PropRaw['kind']; x: number; z: number; stones: Key[]; lights: Key[]; r: number; face?: number; tithe?: Key[]; sheaves?: Key[]; plates?: Key[]; rise?: Key[]; paint?: Key[]; gild?: Key[]; tar?: Key[]; grow?: Key[]; color?: string}[];
+	props: {kind: PropRaw['kind']; x: number; z: number; stones: Key[]; lights: Key[]; r: number; face?: number; tithe?: Key[]; sheaves?: Key[]; plates?: Key[]; rise?: Key[]; paint?: Key[]; gild?: Key[]; tar?: Key[]; grow?: Key[]; color?: string; torch?: Key[]; to?: [number, number]; skip?: [number, number]}[];
 	/** EP30+ (null before) */
 	fields: {plots: {x: number; z: number; w: number; d: number}[]; ripe: Key[]; burn?: Key[]} | null;
 	/** EP29+ (null before) */
@@ -231,7 +256,10 @@ export type World = {
 		figures?: {keys: PredKey[]; tunic: string; torch: boolean; scale: number}[];
 		tints?: string[];
 		watch?: [number, number];
+		watchOn?: Key[];
 	} | null;
+	/** EP32+ (absent before) */
+	strata?: {war: {y0: Key[]; y1: Key[]}; surface: number; max: number; centuries: Key[]; fade: Key[]; flood: Key[]; veins: {box: [number, number, number, number]; color: string; on: Key[]; label?: string}[]};
 };
 
 export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
@@ -297,8 +325,11 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 			? {face: p.face ?? 0, tithe: resolveKeys(timing, p.tithe), sheaves: resolveKeys(timing, p.sheaves), plates: resolveKeys(timing, p.plates), rise: resolveKeys(timing, p.rise), paint: resolveKeys(timing, p.paint)}
 			: {}),
 		...(p.kind === 'statue' || p.kind === 'standard'
-			? {face: p.face ?? 0, rise: resolveKeys(timing, p.rise), gild: resolveKeys(timing, p.gild), tar: resolveKeys(timing, p.tar), grow: resolveKeys(timing, p.grow), ...(p.color ? {color: p.color} : {})}
+			? {face: p.face ?? 0, rise: resolveKeys(timing, p.rise), gild: resolveKeys(timing, p.gild), tar: resolveKeys(timing, p.tar), grow: resolveKeys(timing, p.grow), ...(p.color ? {color: p.color} : {}), ...(p.torch ? {torch: resolveKeys(timing, p.torch)} : {})}
 			: {}),
+		// EP32+
+		...(p.kind === 'border' ? {rise: resolveKeys(timing, p.rise), to: p.to ?? [p.x, p.z], ...(p.skip ? {skip: p.skip} : {})} : {}),
+		...(p.kind === 'relic' ? {face: p.face ?? 0, rise: resolveKeys(timing, p.rise)} : {}),
 	})),
 	fields: raw.fields ? {plots: raw.fields.plots, ripe: resolveKeys(timing, raw.fields.ripe), ...(raw.fields.burn ? {burn: resolveKeys(timing, raw.fields.burn)} : {})} : null,
 	people: raw.people
@@ -319,6 +350,7 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 				...(raw.people.robe ? {robe: raw.people.robe} : {}),
 				...(raw.people.tints ? {tints: raw.people.tints} : {}),
 				...(raw.people.watch ? {watch: raw.people.watch} : {}),
+				...(raw.people.watchOn ? {watchOn: resolveKeys(timing, raw.people.watchOn)} : {}),
 				...(raw.people.figures
 					? {figures: raw.people.figures.map((f) => ({keys: f.keys.map((k) => ({t: cueTime(timing, k.at), x: k.x, z: k.z, state: k.state ?? 'idle', face: k.face, dur: k.dur ?? 0})).sort((a, b) => a.t - b.t), tunic: f.tunic ?? '#8a5a3a', torch: !!f.torch, scale: f.scale ?? 1}))}
 					: {}),
@@ -326,7 +358,36 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 			}
 		: null,
 	rings: (raw.layers?.rings ?? []).map((r) => ({x: r.x, z: r.z, r: r.r, on: cueTime(timing, r.on), off: r.off ? cueTime(timing, r.off) : Infinity, color: r.color ?? '#f4c46e'})),
+	...(raw.strata
+		? {
+				strata: {
+					war: {y0: resolveKeys(timing, raw.strata.war.y0), y1: resolveKeys(timing, raw.strata.war.y1)},
+					surface: raw.strata.surface ?? 2.55,
+					max: raw.strata.max ?? 10,
+					centuries: resolveKeys(timing, raw.strata.centuries),
+					fade: resolveKeys(timing, raw.strata.fade),
+					flood: resolveKeys(timing, raw.strata.flood),
+					veins: (raw.strata.veins ?? []).map((v) => ({box: v.box, color: v.color, on: resolveKeys(timing, v.on), ...(v.label ? {label: v.label} : {})})),
+				},
+			}
+		: {}),
 });
+
+/** EP32+: the strata at time t (null when the episode has none). */
+export const strataAt = (w: World, t: number): Strata | null => {
+	const st = w.strata;
+	if (!st) return null;
+	return {
+		y0: sample(st.war.y0, t, -1.3),
+		y1: sample(st.war.y1, t, -0.5),
+		surface: st.surface,
+		max: st.max,
+		n: sample(st.centuries, t, st.max),
+		fade: sample(st.fade, t, 0),
+		flood: sample(st.flood, t, 0),
+		veins: st.veins.map((v) => ({box: v.box, color: v.color, on: sample(v.on, t, 0), label: v.label})),
+	};
+};
 
 function resolveSettlement(st: SettlementRaw, timing: Timing): Settlement {
 	return {

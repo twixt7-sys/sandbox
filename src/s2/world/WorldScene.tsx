@@ -7,11 +7,11 @@ import {buildHerd, Grimmaw, GrimmawPose, Herd, HerdAgent} from './Creatures';
 import {Column, Island, isle} from './island';
 import {BIOME_COLORS, DIRT, IslandMesh} from './IslandMesh';
 import {Cam, camPose, Lights, Stage, sunDir} from './Stage';
-import {cameraAt, dragonAt, herdCount, moodAt, predatorAt, simTime, World} from './timeline';
+import {cameraAt, dragonAt, herdCount, moodAt, predatorAt, simTime, strataAt, World} from './timeline';
 import {Dragon} from './Dragon';
 import {Cairn, roadAt, SettlementLayer} from './Settlement';
 import {FolkLayer} from './Folk';
-import {Offerings, PeopleLayer, Shrine, Standard, Statue} from './People';
+import {Border, Offerings, PeopleLayer, Relic, Shrine, Standard, Statue} from './People';
 
 export type S2State = {world: World; t: number; cam: Cam; island: Island; agents: HerdAgent[]; agentsB?: HerdAgent[]};
 export const S2Context = createContext<S2State | null>(null);
@@ -457,7 +457,11 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 			{/* Distance haze in the void's colour: the far side of the island recedes a little (diorama depth). */}
 			<fog attach="fog" args={[mood.sky[1], cam.dist * 0.98, cam.dist + 120]} />
 			<Lights sun={mood.sun} warm={mood.warm} hemi={mood.hemi} az={mood.az} el={mood.el} />
-			<IslandMesh island={island} t={t} tint={tint} treeScale={treeScale} treeTint={treeTint} lift={lift} loopT={world.loopT} />
+			{world.strata ? (
+				<IslandMesh island={island} t={t} tint={tint} treeScale={treeScale} treeTint={treeTint} lift={lift} loopT={world.loopT} strata={strataAt(world, t)} sat={mood.sat} />
+			) : (
+				<IslandMesh island={island} t={t} tint={tint} treeScale={treeScale} treeTint={treeTint} lift={lift} loopT={world.loopT} />
+			)}
 			<Herd
 				island={island}
 				agents={agents}
@@ -506,9 +510,13 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 						paint={sample(p.paint ?? [], t, 0)}
 					/>
 				) : p.kind === 'statue' ? (
-					<Statue key={`st${i}`} x={p.x} z={p.z} face={p.face ?? 0} island={island} t={t} loopT={world.loopT} rise={sample(p.rise ?? [], t, 0)} gild={sample(p.gild ?? [], t, 0)} tar={sample(p.tar ?? [], t, 0)} grow={sample(p.grow ?? [], t, 1)} />
+					<Statue key={`st${i}`} x={p.x} z={p.z} face={p.face ?? 0} island={island} t={t} loopT={world.loopT} rise={sample(p.rise ?? [], t, 0)} gild={sample(p.gild ?? [], t, 0)} tar={sample(p.tar ?? [], t, 0)} grow={sample(p.grow ?? [], t, 1)} {...(p.torch ? {torch: sample(p.torch, t, 1)} : {})} />
 				) : p.kind === 'standard' ? (
 					<Standard key={`sd${i}`} x={p.x} z={p.z} face={p.face ?? 0} island={island} t={t} rise={sample(p.rise ?? [], t, 0)} color={p.color ?? '#a8452f'} />
+				) : p.kind === 'border' ? (
+					<Border key={`bd${i}`} x={p.x} z={p.z} to={p.to ?? [p.x, p.z]} island={island} rise={sample(p.rise ?? [], t, 0)} skip={p.skip} />
+				) : p.kind === 'relic' ? (
+					<Relic key={`rl${i}`} x={p.x} z={p.z} face={p.face ?? 0} island={island} t={t} loopT={world.loopT} rise={sample(p.rise ?? [], t, 0)} />
 				) : null,
 			)}
 			{burn > 0.02 && burn < 0.95 && world.fields!.plots.map((f, i) => <FieldFire key={`ff${i}`} f={f} t={t} level={Math.sin(Math.min(1, burn / 0.95) * Math.PI)} y={island.heightAt(f.x, f.z)} seed={i} />)}

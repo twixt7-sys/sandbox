@@ -76,6 +76,17 @@ The paid primary stack (Runway stills and clips + ElevenLabs) would still cost a
 | Render + QA | Claude cloud container | $0 |
 | **Total** | | **$0 cash (₱0)** plus 5 Figma image generations |
 
+## What Episode 32 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| Field card sprite (a buried bronze helmet) | **Free local SDXL-Lightning with the pixel-art LoRA** (`pipeline/local_stills.py --sprite`, CPU, about 80 s an image): 5 candidates in two rounds (two of the first three were real national flags and were rejected), seed 32 of the second round used; re-gridded to 84×126 with `pipeline/pixelate.py` (`--colors 24`). **No Figma credits** | $0 |
+| The strata (war layer, centuries, veins), the boundary stones, the relic, the statue, the two crowds, the eclipse | Remotion + three.js code, software WebGL (`swangle`) | $0 |
+| Narration | Kokoro-82M (`af_heart`, speed 1.04), 169 words, 58.5 s total | $0 |
+| Score + SFX | `music_s2.py` (+ `dirge`, `earth`: tuba, muted trumpet, taiko and side-stick from the same free SoundFont), `score_s2.py` (+ `dig`, `stones`, `eclipse`, `rumble`) | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, 0 Figma generations |
+
 ## What Episode 31 actually used
 
 | Item | Used | Cash cost |

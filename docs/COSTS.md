@@ -76,6 +76,17 @@ The paid primary stack (Runway stills and clips + ElevenLabs) would still cost a
 | Render + QA | Claude cloud container | $0 |
 | **Total** | | **$0 cash (₱0)** plus 5 Figma image generations |
 
+## What Episode 33 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| Field card sprite (an iron lantern) | **Free local SDXL-Lightning with the pixel-art LoRA** (`pipeline/local_stills.py --sprite`, CPU, about 90 s an image): 2 candidates, seed 8 used (seed 33 had a backdrop artifact); checked for real symbols (none); re-gridded to 60×130 with `pipeline/pixelate.py` (`--colors 24`) and the grey seen through the cage keyed in code. **No Figma credits** | $0 |
+| The fear map (shadows, lamplit pools, lamp posts, the crack of light), the boats, the sheaves, the shrines, the crowd with lamps, the keepers | Remotion + three.js code, software WebGL (`swangle`) | $0 |
+| Narration | Kokoro-82M (`af_heart`, speed 1.04), 161 words, 56.2 s total | $0 |
+| Score + SFX | `music_s2.py` (+ `vigil`, `lantern`: bowed glass, tubular bells, dulcimer and ocarina from the same free SoundFont), `score_s2.py` (+ `lampOn`, `rift`, `creep`) | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, 0 Figma generations |
+
 ## What Episode 32 actually used
 
 | Item | Used | Cash cost |

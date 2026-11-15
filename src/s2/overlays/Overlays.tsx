@@ -9,7 +9,7 @@ import {sample} from '../keys';
 import {clamp, hash2} from '../rng';
 import {F2, outline, panel, pixelShadow, PX, S2} from '../style';
 import {grimmawPose, project, useS2} from '../world/WorldScene';
-import {clockAt, dragonAt, herdCount, seriesAt, simTime, strataAt, World} from '../world/timeline';
+import {clockAt, dragonAt, fearsAt, herdCount, seriesAt, simTime, strataAt, World} from '../world/timeline';
 import {dragonTargets, roofsIntact, Target} from '../world/Settlement';
 
 /** A HUD value by key: herd, pred, roofs (EP27: standing, unburnt roofs, read from the village itself) or a world series. */
@@ -1387,7 +1387,61 @@ export const StrataLabels: React.FC<OP> = ({g, t}) => {
 	return <AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>{nodes}</AbsoluteFill>;
 };
 
+/** EP33+: the fear map's labels. Each tag names one fear on the map, pinned to it through the live camera, and reads
+ * its state from the world: while the shadow stands unanswered it is a fear (its name in dread grey beside a shadow
+ * swatch); once its light is lit it becomes a belief (the fear's name small in lamplight over the answer). Tags: [{fear
+ * (id), at, end, lift, dx, text (overrides the answer)}]; `tagMaxDist` hides them in shots too wide to read. */
+const LAMP = '#ffe45c';
+const DREAD = '#b9b4d8';
+export const FearTags: React.FC<OP> = ({g, t}) => {
+	const {o, timing} = useWin(g, t, 0.25, 0.25);
+	const s = useS2();
+	const fs = fearsAt(s.world, t);
+	if (o <= 0 || !fs) return null;
+	const snap = (v: number) => Math.round(v / PX) * PX;
+	const nodes: React.ReactNode[] = [];
+	for (const tg of (g.tags ?? []) as {fear: string; at?: Cue; end?: Cue; lift?: number; dx?: number; text?: string; dy?: number}[]) {
+		const f = fs.find((ff) => ff.id === tg.fear);
+		if (!f) continue;
+		const a = tg.at ? cueTime(timing, tg.at) : -Infinity;
+		const b = tg.end ? cueTime(timing, tg.end) : Infinity;
+		if (t < a || t > b) continue;
+		if (s.cam.dist > (g.tagMaxDist ?? 400)) continue;
+		const lit = f.lit > 0.5;
+		if (!lit && f.dark < 0.3) continue;
+		const k = Math.min(clamp((t - a) / 0.2), b === Infinity ? 1 : 1 - clamp((t - b + 0.2) / 0.2));
+		const p0 = project(s.cam, [f.x, Math.max(s.island.waterLevel, s.island.heightAt(f.x, f.z)) + (tg.dy ?? 0.5), f.z]);
+		if (p0.behind) continue;
+		const lift = tg.lift ?? 60;
+		const px = snap(p0.x);
+		const py = snap(p0.y);
+		const c = lit ? LAMP : DREAD;
+		const bx = Math.max(150, Math.min(930, px + (tg.dx ?? 0)));
+		nodes.push(
+			<div key={`f${tg.fear}${a}`} style={{opacity: k}}>
+				<div style={{position: 'absolute', left: px - PX, top: py - lift, width: PX * 2, height: lift, background: c, opacity: 0.9}} />
+				<div style={{position: 'absolute', left: px - 3 * PX, top: py - 3 * PX, width: 6 * PX, height: 6 * PX, background: lit ? LAMP : '#15122e', boxShadow: `0 0 0 ${PX}px ${lit ? '#050912' : DREAD}`}} />
+				<div style={{position: 'absolute', left: bx, top: py - lift - 4, transform: 'translate(-50%, -100%)', padding: '8px 14px 6px', whiteSpace: 'nowrap', textAlign: 'center', background: 'rgba(5,9,18,0.88)', boxShadow: `0 0 0 ${PX}px ${c}`}}>
+					{lit ? (
+						<>
+							<div style={{fontFamily: F2.pixel, fontSize: 20, color: LAMP, letterSpacing: '0.08em'}}>{f.label}</div>
+							<div style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: 28, color: S2.parchment, letterSpacing: '0.04em'}}>{tg.text ?? f.answer}</div>
+						</>
+					) : (
+						<div style={{display: 'flex', alignItems: 'center', gap: 12, fontFamily: F2.pixel, fontWeight: 700, fontSize: 30, color: DREAD, letterSpacing: '0.06em'}}>
+							<div style={{width: 18, height: 18, background: '#15122e', boxShadow: `0 0 0 ${PX}px ${DREAD}`}} />
+							{f.label}
+						</div>
+					)}
+				</div>
+			</div>,
+		);
+	}
+	return <AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>{nodes}</AbsoluteFill>;
+};
+
 export const S2_OVERLAYS: Record<string, React.FC<OP>> = {
+	fearTags: FearTags,
 	strata: StrataLabels,
 	chronicles: Chronicles,
 	splitTone: SplitTone,

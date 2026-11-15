@@ -1,0 +1,5962 @@
+{
+ "id": "ep33",
+ "number": 33,
+ "season": 2,
+ "title": "How Do You Invent a Believable Religion?",
+ "lesson": "Gods invented first answer nothing, so nobody needs them. Start with what your people fear: death, the lake that drowns their fishers, a hungry winter, a sky that goes dark. Give each fear an answer and let a rite grow around it: candles, lamps, a shared harvest, keepers. Then write the god last, as the answer to the deepest fear of all: that nobody is listening. Every god answers a fear.",
+ "format": {
+  "version": "s2",
+  "qa": {
+   "min": 55.0,
+   "max": 62.0
+  }
+ },
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.04
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.2,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "The same lab host, a cartographer this time. The hook is a gentle correction, then a real question. 'One job each' is the knowing setup; 'Nobody prays to a god they don't need' lands dry. The rules are crisp, two beats each. 'That nobody is listening' is the quiet reveal; 'So they made someone who listens' is warm. The comment ask is a genuine invitation."
+ },
+ "timing": {
+  "leadIn": 0.2,
+  "tail": 0.85,
+  "shotLead": 0.12
+ },
+ "captionY": 1238,
+ "captionsOff": [
+  {
+   "line": "L3",
+   "from": "twelve"
+  },
+  {
+   "line": "L5",
+   "from": "Shrines"
+  },
+  {
+   "line": "L7",
+   "from": "Real",
+   "to": "Four"
+  },
+  {
+   "line": "L13",
+   "from": "Rule"
+  },
+  {
+   "line": "L14",
+   "from": "So"
+  }
+ ],
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "Inventing a religion? Don't start with gods. What do people fear?",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "religion?",
+    "fear?"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "hook",
+   "text": "Meet the Lamplight faith. They pray to an empty sky.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "lamplight",
+    "empty"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "setup",
+   "text": "The lazy version: twelve gods first, one job each.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "lazy",
+    "twelve"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "setup",
+   "text": "Press run.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "run."
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "run1",
+   "text": "Shrines rise. Nobody comes. The lamps go out.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "nobody",
+    "out."
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "drop",
+   "text": "Nobody prays to a god they don't need.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "prays",
+    "need."
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "rehook",
+   "text": "Real faith starts in the dark. Four fears come first. The fifth is the twist.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "dark.",
+    "twist."
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "death",
+   "text": "One: death. Candles keep the dead company at the cairn.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "death.",
+    "candles"
+   ]
+  },
+  {
+   "id": "L9",
+   "shot": "lake",
+   "text": "Two: the lake. No boat leaves without a lamp.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "lake.",
+    "lamp."
+   ]
+  },
+  {
+   "id": "L10",
+   "shot": "hunger",
+   "text": "Three: hunger. Hoarding grain becomes a sin.",
+   "pauseAfter": 0.2,
+   "emphasis": [
+    "hunger.",
+    "sin."
+   ]
+  },
+  {
+   "id": "L11",
+   "shot": "eclipse",
+   "text": "Four: the eclipse. Keepers rise to read the sky.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "eclipse.",
+    "keepers"
+   ]
+  },
+  {
+   "id": "L12",
+   "shot": "run2",
+   "text": "Run it again. Five hundred years. Every lamp still burns.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "hundred",
+    "burns."
+   ]
+  },
+  {
+   "id": "L13",
+   "shot": "twist",
+   "text": "Rule five? The deepest fear. That nobody is listening.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "deepest",
+    "listening."
+   ]
+  },
+  {
+   "id": "L14",
+   "shot": "twist",
+   "text": "So they made someone who listens. A god.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "listens.",
+    "god."
+   ]
+  },
+  {
+   "id": "L15",
+   "shot": "role",
+   "text": "Write it last, and it feels real.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "last,",
+    "real."
+   ]
+  },
+  {
+   "id": "L16",
+   "shot": "lesson",
+   "text": "Gods don't come first. Every god answers a fear.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "first.",
+    "answers"
+   ]
+  },
+  {
+   "id": "L17",
+   "shot": "cta",
+   "text": "What question would your people ask their gods?",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "question",
+    "gods?"
+   ]
+  },
+  {
+   "id": "L18",
+   "shot": "next",
+   "text": "Part 33 of 50. Follow for part 34: the gods are lying.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "follow",
+    "lying."
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "world",
+   "purpose": "Close EP32's loop (the sun went dark on 'a god built from fear') and stop the scroll on the question.",
+   "visual": "Golden hour, from almost straight above: the eclipse's round shadow lies over the valley village, drifting east. Inside it the crowd stands with lamps held up, faces turned to the sky (to the camera), and the keepers' lamp post burns at the centre in its pool of light; round the map the other answered fears glow (candles at the cairn, boats with lamps on the lake). NOT GODS FIRST / WHAT DO THEY FEAR? from frame 0, each line pulsing on its word. A map tag on the shadow: THE ECLIPSE \u00b7 THE LAMPS STAY LIT. Then the field card: THE LAMPLIGHT \u00b7 RELIGION \u00b7 PRAYS TO: an empty sky.",
+   "camera": "The map table: overhead (az 0, el 80, dist 84, fov 24), north up, a slow 0.4\u00b0/s turn; the loop lands on the same frame.",
+   "layers": {
+    "foreground": "kinetic, sting, map tag, field card",
+    "midground": "the crowd with lamps, the eclipse's shadow",
+    "background": "the valley, the tower"
+   },
+   "lighting": "Golden hour, under an eclipse.",
+   "onScreenText": "NOT GODS FIRST / WHAT DO THEY FEAR? \u00b7 FIELD CARD NO. 008 \u00b7 THE LAMPLIGHT",
+   "transition": "Lamplight block wipe into the lazy version.",
+   "music": "Vigil: a bell tolls the theme over bowed glass; a hit on 'fear?'.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "NOT GODS FIRST",
+       "color": "#ffe45c",
+       "size": 60,
+       "pulseAt": {
+        "line": "L1",
+        "word": "gods."
+       }
+      },
+      {
+       "text": "WHAT DO THEY FEAR?",
+       "color": "#b9b4d8",
+       "size": 58,
+       "pulseAt": {
+        "line": "L1",
+        "word": "fear?"
+       }
+      }
+     ],
+     "y": 440,
+     "size": 60,
+     "start": {
+      "shot": "hook"
+     },
+     "end": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.1
+     },
+     "preShow": true
+    },
+    {
+     "type": "sting",
+     "label": "WORLD ENGINE",
+     "run": "RUN 33 \u00b7 BELIEF",
+     "dur": 1.4,
+     "start": {
+      "shot": "hook"
+     },
+     "front": true
+    },
+    {
+     "type": "fearTags",
+     "start": {
+      "line": "L1",
+      "word": "What",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "fear": "umbra",
+       "at": {
+        "line": "L1",
+        "word": "What",
+        "offset": -0.05
+       },
+       "end": {
+        "line": "L2",
+        "word": "Meet",
+        "offset": -0.1
+       },
+       "lift": 150,
+       "dx": 0,
+       "text": "THE LAMPS STAY LIT"
+      }
+     ]
+    },
+    {
+     "type": "fieldCard",
+     "mode": "intro",
+     "y": 440,
+     "start": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "dietAt": {
+      "line": "L2",
+      "word": "empty"
+     },
+     "kicker": "FIELD CARD \u00b7 NO. 008",
+     "kind": "RELIGION",
+     "name": "THE LAMPLIGHT",
+     "dietLabel": "PRAYS TO",
+     "diet": "an empty sky",
+     "sprite": "ep33/lamp_sprite.png",
+     "spriteW": 60,
+     "spriteH": 130
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "chime",
+     "at": {
+      "shot": "hook"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "shot": "hook",
+      "offset": 0.05
+     },
+     "gain": -17
+    },
+    {
+     "sound": "towerBell",
+     "at": {
+      "line": "L1",
+      "word": "gods."
+     },
+     "gain": -20
+    },
+    {
+     "sound": "eclipse",
+     "at": {
+      "line": "L1",
+      "word": "fear?",
+      "offset": -0.3
+     },
+     "gain": -17
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.05
+     },
+     "gain": -18
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L2",
+      "word": "empty"
+     },
+     "gain": -20
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "setup",
+   "scene": "world",
+   "purpose": "The lazy version: twelve gods first.",
+   "visual": "A wipe to an unbelieving Isle in daylight: no shadows, no lamps, no rites; the crowd wanders. On 'twelve' twelve gods' lamps pop up one by one on sunny ground all over the map, each in a small pool of light that answers nothing. 12 GODS FIRST / A NAME \u00b7 A JOB. The sim bar arrives (LAMPS 12, FAITHFUL 000) and RUN is pressed.",
+   "camera": "Map table (dist 150).",
+   "layers": {
+    "foreground": "kinetic, sim bar",
+    "midground": "twelve lamps on bright ground",
+    "background": "the Isle"
+   },
+   "lighting": "Day.",
+   "onScreenText": "12 GODS FIRST \u00b7 ONE JOB EACH",
+   "transition": "A pull-out to the whole map on 'run'.",
+   "music": "Lantern, thin (the celesta alone).",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "dur": 0.34,
+     "color": "#3a3410"
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "12 GODS FIRST",
+       "at": {
+        "line": "L3",
+        "word": "twelve"
+       },
+       "size": 80
+      },
+      {
+       "text": "ONE JOB EACH",
+       "at": {
+        "line": "L3",
+        "word": "one"
+       },
+       "color": "rust",
+       "size": 58
+      }
+     ],
+     "y": 470,
+     "size": 80,
+     "start": {
+      "line": "L3",
+      "word": "twelve",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L4",
+      "word": "Press",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "simBar",
+     "counters": [
+      {
+       "icon": "lantern",
+       "label": "LAMPS",
+       "key": "lamps",
+       "color": "#ffe45c",
+       "digits": 2
+      },
+      {
+       "icon": "mortal",
+       "label": "FAITHFUL",
+       "key": "faithful",
+       "color": "ember",
+       "digits": 3
+      }
+     ],
+     "compact": true,
+     "start": {
+      "line": "L4",
+      "word": "Press",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L16",
+      "word": "Gods",
+      "offset": -0.3
+     },
+     "runAt": [
+      {
+       "line": "L4",
+       "word": "run."
+      },
+      {
+       "line": "L12",
+       "word": "Run"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "gain": -15
+    },
+    {
+     "sound": "lampOn",
+     "at": {
+      "line": "L3",
+      "word": "twelve"
+     },
+     "gain": -19
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L3",
+      "word": "one"
+     },
+     "gain": -20
+    },
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L4",
+      "word": "run."
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L4",
+      "word": "run."
+     },
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "run1",
+   "scene": "world",
+   "purpose": "Run the lazy version: 300 years of gods nobody needs.",
+   "visual": "The whole map; YEAR 0\u2192300; three shrines rise beside the lamps, nobody walks to them, and the twelve lamps go out one by one (LAMPS 12\u21920, FAITHFUL 000). SHRINES RISE, NOBODY COMES, THE LAMPS GO OUT.",
+   "camera": "Map table, the whole Isle (dist 178).",
+   "layers": {
+    "foreground": "sim bar, kinetic",
+    "midground": "the lamps going out, the empty shrines",
+    "background": "void"
+   },
+   "lighting": "Day.",
+   "onScreenText": "SHRINES RISE / NOBODY COMES / THE LAMPS GO OUT",
+   "transition": "Slide down onto the empty shrines.",
+   "music": "Drive.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "SHRINES RISE",
+       "at": {
+        "line": "L5",
+        "word": "Shrines"
+       },
+       "color": "parchment",
+       "size": 56
+      },
+      {
+       "text": "NOBODY COMES",
+       "at": {
+        "line": "L5",
+        "word": "Nobody"
+       },
+       "color": "parchment",
+       "size": 56
+      },
+      {
+       "text": "THE LAMPS GO OUT",
+       "at": {
+        "line": "L5",
+        "word": "lamps"
+       },
+       "color": "rust",
+       "size": 56
+      }
+     ],
+     "y": 468,
+     "size": 56,
+     "start": {
+      "line": "L5",
+      "word": "Shrines",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L6",
+      "word": "Nobody",
+      "offset": -0.25
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L5",
+      "word": "out.",
+      "offset": 0.3
+     },
+     "gain": -22
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L5",
+      "word": "Shrines"
+     },
+     "gain": -17
+    },
+    {
+     "sound": "crownPass",
+     "at": {
+      "line": "L5",
+      "word": "Nobody"
+     },
+     "gain": -19
+    },
+    {
+     "sound": "losses",
+     "from": {
+      "line": "L5",
+      "word": "lamps",
+      "offset": -0.1
+     },
+     "to": {
+      "line": "L5",
+      "word": "out.",
+      "offset": 0.3
+     },
+     "gain": -19
+    }
+   ]
+  },
+  {
+   "id": "drop",
+   "scene": "world",
+   "purpose": "The punchline: nobody prays to a god they don't need.",
+   "visual": "Gloom over the map: the dark lamps and empty shrines: UNNEEDED \u00b7 12 GODS \u00b7 0 FEARS ANSWERED.",
+   "camera": "Map table, pushed in (dist 128).",
+   "layers": {
+    "foreground": "stamp",
+    "midground": "the empty shrines",
+    "background": "void"
+   },
+   "lighting": "Gloom.",
+   "onScreenText": "UNNEEDED \u00b7 12 GODS \u00b7 0 FEARS ANSWERED",
+   "transition": "Rewind + block wipe.",
+   "music": "Drop; a boom on 'need'.",
+   "graphics": [
+    {
+     "type": "stamp",
+     "text": "UNNEEDED",
+     "sub": "12 GODS \u00b7 0 FEARS ANSWERED",
+     "color": "rust",
+     "y": 560,
+     "size": 84,
+     "start": {
+      "line": "L6",
+      "word": "god"
+     },
+     "end": {
+      "line": "L6",
+      "word": "need.",
+      "offset": 0.5
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L6",
+      "word": "god"
+     },
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "rehook",
+   "scene": "world",
+   "purpose": "Re-hook: the thesis, then four fears and one locked.",
+   "visual": "REWIND to the Isle before any faith, at dusk: the shrines and lamps are gone. On 'dark' four shadows bloom over the map one after another and are labelled in dread grey: DEATH (the cairn), THE LAKE, HUNGER (the field), THE ECLIPSE (the valley). REAL FAITH / STARTS IN THE DARK; then the checklist LIGHT THE DARK, row 5 locked (the twist).",
+   "camera": "Map table (dist 178 \u2192 132).",
+   "layers": {
+    "foreground": "rewind, kinetic, map tags, checklist",
+    "midground": "four shadows",
+    "background": "the Isle at dusk"
+   },
+   "lighting": "Dusk.",
+   "onScreenText": "REAL FAITH \u00b7 STARTS IN THE DARK \u00b7 DEATH \u00b7 THE LAKE \u00b7 HUNGER \u00b7 THE ECLIPSE \u00b7 LIGHT THE DARK 0/5",
+   "transition": "Slide to the cairn.",
+   "music": "Vigil; a riser into 'the twist'.",
+   "graphics": [
+    {
+     "type": "rewind",
+     "y": 620,
+     "start": {
+      "line": "L6",
+      "word": "need.",
+      "offset": 0.55
+     },
+     "end": {
+      "line": "L7",
+      "word": "Real",
+      "offset": 0.3
+     }
+    },
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L6",
+      "word": "need.",
+      "offset": 0.53
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "REAL FAITH",
+       "at": {
+        "line": "L7",
+        "word": "Real"
+       },
+       "size": 78
+      },
+      {
+       "text": "STARTS IN THE DARK",
+       "at": {
+        "line": "L7",
+        "word": "starts"
+       },
+       "color": "#b9b4d8",
+       "size": 58
+      }
+     ],
+     "y": 470,
+     "size": 84,
+     "start": {
+      "line": "L7",
+      "word": "Real",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "fearTags",
+     "start": {
+      "line": "L7",
+      "word": "dark.",
+      "offset": 0.3
+     },
+     "end": {
+      "line": "L8",
+      "word": "One:",
+      "offset": -0.1
+     },
+     "tags": [
+      {
+       "fear": "death",
+       "at": {
+        "line": "L7",
+        "word": "dark.",
+        "offset": 0.3
+       },
+       "end": {
+        "line": "L8",
+        "word": "One:",
+        "offset": -0.1
+       },
+       "lift": 50,
+       "dx": 0
+      },
+      {
+       "fear": "lake",
+       "at": {
+        "line": "L7",
+        "word": "dark.",
+        "offset": 0.42
+       },
+       "end": {
+        "line": "L8",
+        "word": "One:",
+        "offset": -0.1
+       },
+       "lift": 50,
+       "dx": 0
+      },
+      {
+       "fear": "hunger",
+       "at": {
+        "line": "L7",
+        "word": "dark.",
+        "offset": 0.54
+       },
+       "end": {
+        "line": "L8",
+        "word": "One:",
+        "offset": -0.1
+       },
+       "lift": 50,
+       "dx": 0
+      },
+      {
+       "fear": "eclipse",
+       "at": {
+        "line": "L7",
+        "word": "dark.",
+        "offset": 0.66
+       },
+       "end": {
+        "line": "L8",
+        "word": "One:",
+        "offset": -0.1
+       },
+       "lift": 50,
+       "dx": 0
+      }
+     ]
+    },
+    {
+     "type": "fieldCard",
+     "mode": "checklist",
+     "y": 448,
+     "rows": [
+      {
+       "n": 1,
+       "label": "DEATH",
+       "text": "candles at the cairn",
+       "at": {
+        "line": "L8",
+        "word": "death."
+       }
+      },
+      {
+       "n": 2,
+       "label": "THE LAKE",
+       "text": "a lamp in every boat",
+       "at": {
+        "line": "L9",
+        "word": "lake."
+       }
+      },
+      {
+       "n": 3,
+       "label": "HUNGER",
+       "text": "hoarding is a sin",
+       "at": {
+        "line": "L10",
+        "word": "hunger."
+       }
+      },
+      {
+       "n": 4,
+       "label": "ECLIPSE",
+       "text": "keepers read the sky",
+       "at": {
+        "line": "L11",
+        "word": "eclipse."
+       }
+      },
+      {
+       "n": 5,
+       "label": "THE GOD",
+       "text": "written last",
+       "at": {
+        "line": "L7",
+        "word": "Four"
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L15",
+        "word": "last,",
+        "offset": -0.1
+       }
+      }
+     ],
+     "start": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L16",
+      "word": "Gods",
+      "offset": -0.3
+     },
+     "kicker": "THE LAMPLIGHT \u00b7 WHAT THEY FEAR",
+     "title": "LIGHT THE DARK",
+     "blinkAt": {
+      "line": "L7",
+      "word": "twist."
+     },
+     "lockedText": "the twist",
+     "sprite": "ep33/lamp_sprite.png",
+     "spriteW": 60,
+     "spriteH": 130,
+     "collapse": [
+      [
+       {
+        "line": "L8",
+        "word": "Candles",
+        "offset": -0.3
+       },
+       0
+      ],
+      [
+       {
+        "line": "L8",
+        "word": "Candles"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "Write",
+        "offset": -0.15
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "Write",
+        "offset": 0.15
+       },
+       0
+      ]
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L6",
+      "word": "need.",
+      "offset": 0.5
+     },
+     "gain": -11
+    },
+    {
+     "sound": "creep",
+     "from": {
+      "line": "L7",
+      "word": "dark.",
+      "offset": -0.15
+     },
+     "to": {
+      "line": "L7",
+      "word": "come",
+      "offset": 0.1
+     },
+     "gain": -17
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "gain": -17
+    }
+   ]
+  },
+  {
+   "id": "death",
+   "scene": "world",
+   "purpose": "Rule 1: death.",
+   "visual": "The map slides to the cairn in its shadow (DEATH); on 'Candles' a light opens from the cairn and pushes the shadow back, a lamp post rises and a ring of candles lights round the cairn: DEATH \u00b7 CANDLES AT THE CAIRN.",
+   "camera": "Map table: slide (dist 92), then push in (70) as the light opens.",
+   "layers": {
+    "foreground": "map tag, checklist (folded)",
+    "midground": "the candle ring",
+    "background": "the shadow"
+   },
+   "lighting": "Day.",
+   "onScreenText": "1 DEATH \u00b7 candles at the cairn",
+   "transition": "Slide to the lake.",
+   "music": "Lantern 1: celesta.",
+   "graphics": [
+    {
+     "type": "fearTags",
+     "start": {
+      "line": "L8",
+      "word": "death."
+     },
+     "end": {
+      "line": "L9",
+      "word": "Two:",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "fear": "death",
+       "at": {
+        "line": "L8",
+        "word": "death."
+       },
+       "end": {
+        "line": "L9",
+        "word": "Two:",
+        "offset": -0.15
+       },
+       "lift": 70,
+       "dx": 0
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L8",
+      "word": "death."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "lampOn",
+     "at": {
+      "line": "L8",
+      "word": "Candles"
+     },
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "lake",
+   "scene": "world",
+   "purpose": "Rule 2: the lake.",
+   "visual": "The lake in its shadow (THE LAKE); on 'boat' the light spreads over the water and nine boats come out, each with a lamp: THE LAKE \u00b7 A LAMP IN EVERY BOAT.",
+   "camera": "Map table: slide, then push in.",
+   "layers": {
+    "foreground": "map tag, checklist (folded)",
+    "midground": "the boats with lamps",
+    "background": "the lake"
+   },
+   "lighting": "Day.",
+   "onScreenText": "2 THE LAKE \u00b7 a lamp in every boat",
+   "transition": "Slide north to the field.",
+   "music": "Lantern 2: a dulcimer joins.",
+   "graphics": [
+    {
+     "type": "fearTags",
+     "start": {
+      "line": "L9",
+      "word": "lake."
+     },
+     "end": {
+      "line": "L10",
+      "word": "Three:",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "fear": "lake",
+       "at": {
+        "line": "L9",
+        "word": "lake."
+       },
+       "end": {
+        "line": "L10",
+        "word": "Three:",
+        "offset": -0.15
+       },
+       "lift": 70,
+       "dx": 0
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L9",
+      "word": "lake."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "lampOn",
+     "at": {
+      "line": "L9",
+      "word": "boat"
+     },
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "hunger",
+   "scene": "world",
+   "purpose": "Rule 3: hunger, and a rule: hoarding is a sin.",
+   "visual": "The bare field in its shadow (HUNGER); the crop ripens as the light opens and eight sheaves are stood round it, shared: HUNGER \u00b7 HOARDING IS A SIN.",
+   "camera": "Map table: slide, then push in.",
+   "layers": {
+    "foreground": "map tag, checklist (folded)",
+    "midground": "the ripe field, the sheaves",
+    "background": "the north meadow"
+   },
+   "lighting": "Day.",
+   "onScreenText": "3 HUNGER \u00b7 hoarding is a sin",
+   "transition": "Slide to the valley.",
+   "music": "Lantern 3: a hand drum and pizzicato bass.",
+   "graphics": [
+    {
+     "type": "fearTags",
+     "start": {
+      "line": "L10",
+      "word": "hunger."
+     },
+     "end": {
+      "line": "L11",
+      "word": "Four:",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "fear": "hunger",
+       "at": {
+        "line": "L10",
+        "word": "hunger."
+       },
+       "end": {
+        "line": "L11",
+        "word": "Four:",
+        "offset": -0.15
+       },
+       "lift": 70,
+       "dx": 0
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L10",
+      "word": "hunger."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "lampOn",
+     "at": {
+      "line": "L10",
+      "word": "Hoarding"
+     },
+     "gain": -12
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L10",
+      "word": "grain"
+     },
+     "gain": -18
+    }
+   ]
+  },
+  {
+   "id": "eclipse",
+   "scene": "world",
+   "purpose": "Rule 4: the eclipse, and an institution: keepers.",
+   "visual": "The valley in its shadow (THE ECLIPSE); on 'Keepers' the light opens round the village, a lamp post rises, robed keepers appear among the crowd, lamps come out in people's hands and the tower bell rings on 'sky': THE ECLIPSE \u00b7 KEEPERS READ THE SKY.",
+   "camera": "Map table: slide, then push in.",
+   "layers": {
+    "foreground": "map tag, checklist (folded)",
+    "midground": "the keepers, the lamps",
+    "background": "the valley"
+   },
+   "lighting": "Day.",
+   "onScreenText": "4 ECLIPSE \u00b7 keepers read the sky",
+   "transition": "Slide out to the whole map.",
+   "music": "Lantern 4: the theme on ocarina, bells on the roots.",
+   "graphics": [
+    {
+     "type": "fearTags",
+     "start": {
+      "line": "L11",
+      "word": "eclipse."
+     },
+     "end": {
+      "line": "L12",
+      "word": "Run",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "fear": "eclipse",
+       "at": {
+        "line": "L11",
+        "word": "eclipse."
+       },
+       "end": {
+        "line": "L12",
+        "word": "Run",
+        "offset": -0.15
+       },
+       "lift": 70,
+       "dx": 0
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L11",
+      "word": "eclipse."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "lampOn",
+     "at": {
+      "line": "L11",
+      "word": "Keepers"
+     },
+     "gain": -12
+    },
+    {
+     "sound": "towerBell",
+     "at": {
+      "line": "L11",
+      "word": "sky."
+     },
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "run2",
+   "scene": "world",
+   "purpose": "Run with the fears answered: 500 years, still burning.",
+   "visual": "The whole map; YEAR 0\u2192500; an eclipse's shadow sweeps across the Isle from west to east and every lamp holds inside it; FAITHFUL climbs to 480: STILL BURNING \u00b7 500 YEARS \u00b7 4 LAMPS \u00b7 480 FAITHFUL, stamped in lamplight.",
+   "camera": "Map table, the whole Isle (dist 178 \u2192 168).",
+   "layers": {
+    "foreground": "sim bar, stamp",
+    "midground": "the eclipse crossing, four lamps",
+    "background": "void"
+   },
+   "lighting": "Day.",
+   "onScreenText": "STILL BURNING \u00b7 500 YEARS \u00b7 4 LAMPS \u00b7 480 FAITHFUL",
+   "transition": "Pull out.",
+   "music": "Drive with the theme; a stab and a cymbal on 'burns'.",
+   "graphics": [
+    {
+     "type": "stamp",
+     "text": "STILL BURNING",
+     "sub": "500 YEARS \u00b7 4 LAMPS \u00b7 480 FAITHFUL",
+     "color": "#ffe45c",
+     "rotate": -4,
+     "y": 880,
+     "size": 90,
+     "start": {
+      "line": "L12",
+      "word": "burns."
+     },
+     "end": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -16
+    },
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L12",
+      "word": "burns."
+     },
+     "gain": -22
+    },
+    {
+     "sound": "eclipse",
+     "at": {
+      "line": "L12",
+      "word": "again.",
+      "offset": -0.1
+     },
+     "gain": -18
+    },
+    {
+     "sound": "towerBell",
+     "at": {
+      "line": "L12",
+      "word": "again."
+     },
+     "gain": -18
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L12",
+      "word": "burns."
+     },
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "twist",
+   "scene": "world",
+   "purpose": "The locked rule: the deepest fear. The god comes last.",
+   "visual": "Dusk: RULE 5? THE DEEPEST FEAR; on 'deepest' one shadow spreads over the whole map until only the four lamps burn: NOBODY / LISTENING?. On 'listens' every face on the Isle turns up to the camera, and a light opens from the middle of the map and sweeps out past the coast: SO THEY MADE / A GOD.",
+   "camera": "Map table, pulled out to the whole Isle (dist 184 \u2192 160).",
+   "layers": {
+    "foreground": "kinetic",
+    "midground": "the whole Isle dark, then lit",
+    "background": "dusk to golden"
+   },
+   "lighting": "Dusk \u2192 golden.",
+   "onScreenText": "RULE 5? THE DEEPEST FEAR \u00b7 NOBODY LISTENING? \u00b7 SO THEY MADE A GOD",
+   "transition": "Slide to the valley.",
+   "music": "Twist (a held A7\u266d9), a boom on 'listening', then the vigil.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "RULE 5?",
+       "at": {
+        "line": "L13",
+        "word": "Rule"
+       },
+       "color": "ember"
+      },
+      {
+       "text": "THE DEEPEST FEAR",
+       "at": {
+        "line": "L13",
+        "word": "deepest"
+       },
+       "color": "#b9b4d8",
+       "size": 72
+      }
+     ],
+     "size": 150,
+     "y": 540,
+     "start": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.02
+     },
+     "end": {
+      "line": "L13",
+      "word": "That",
+      "offset": -0.12
+     }
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "NOBODY",
+       "at": {
+        "line": "L13",
+        "word": "nobody"
+       },
+       "color": "#b9b4d8",
+       "size": 84
+      },
+      {
+       "text": "LISTENING?",
+       "at": {
+        "line": "L13",
+        "word": "listening."
+       },
+       "color": "#b9b4d8",
+       "size": 84
+      }
+     ],
+     "size": 84,
+     "y": 560,
+     "start": {
+      "line": "L13",
+      "word": "nobody",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L14",
+      "word": "listens.",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "SO THEY MADE",
+       "at": {
+        "line": "L14",
+        "word": "listens.",
+        "offset": -0.05
+       },
+       "color": "parchment",
+       "size": 60
+      },
+      {
+       "text": "A GOD",
+       "at": {
+        "line": "L14",
+        "word": "god."
+       },
+       "color": "#ffe45c",
+       "size": 120
+      }
+     ],
+     "size": 84,
+     "y": 540,
+     "start": {
+      "line": "L14",
+      "word": "listens.",
+      "offset": -0.07
+     },
+     "end": {
+      "line": "L15",
+      "word": "Write",
+      "offset": -0.2
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L13",
+      "word": "Rule"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "creep",
+     "from": {
+      "line": "L13",
+      "word": "deepest",
+      "offset": -0.05
+     },
+     "to": {
+      "line": "L13",
+      "word": "listening.",
+      "offset": 0.3
+     },
+     "gain": -14
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L13",
+      "word": "nobody"
+     },
+     "gain": -17
+    },
+    {
+     "sound": "lampOn",
+     "at": {
+      "line": "L14",
+      "word": "listens.",
+      "offset": -0.05
+     },
+     "gain": -10
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L14",
+      "word": "listens.",
+      "offset": -0.05
+     },
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "role",
+   "scene": "world",
+   "purpose": "Unlock rule 5: the god is written last.",
+   "visual": "Daylight over the valley: the crowd still looking up; the checklist opens and row 5 unlocks on 'last': THE GOD \u00b7 written last \u00b7 5/5. The follow chip (+ FOLLOW \u00b7 PART 33/50) appears after 'real'.",
+   "camera": "Map table (dist 96), a slow 0.3\u00b0/s turn.",
+   "layers": {
+    "foreground": "open checklist, follow chip",
+    "midground": "faces turned up",
+    "background": "the valley"
+   },
+   "lighting": "Day.",
+   "onScreenText": "5 THE GOD \u00b7 written last \u00b7 5/5",
+   "transition": "The card goes full.",
+   "music": "Anthem from 'Write'; a D-major hit on 'last'.",
+   "graphics": [
+    {
+     "type": "followChip",
+     "start": {
+      "line": "L15",
+      "word": "real.",
+      "offset": 0.2
+     },
+     "end": {
+      "line": "L16",
+      "word": "answers",
+      "offset": 0.3
+     },
+     "text": "FOLLOW",
+     "sub": "PART 33/50"
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L15",
+      "word": "Write",
+      "offset": -0.15
+     },
+     "gain": -17
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L15",
+      "word": "last,",
+      "offset": -0.1
+     },
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "lesson",
+   "scene": "world",
+   "purpose": "The takeaway.",
+   "visual": "The full card (BEFORE YOU WRITE A GOD \u00b7 THE LAMPLIGHT, all five rows ticked) over the whole map in golden light, with 'Every god answers a fear.' in serif italic from the end of the first sentence.",
+   "camera": "Map table, the whole Isle, rotating 3\u00b0/s: the only turn in the episode.",
+   "layers": {
+    "foreground": "full card, follow chip",
+    "midground": "the lit map",
+    "background": "stars"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "BEFORE YOU WRITE A GOD \u00b7 THE LAMPLIGHT \u00b7 Every god answers a fear.",
+   "transition": "Block wipe to the end card.",
+   "music": "Anthem; the World Engine chime as the card lands.",
+   "graphics": [
+    {
+     "type": "fieldCard",
+     "mode": "full",
+     "y": 452,
+     "rows": [
+      {
+       "n": 1,
+       "label": "DEATH",
+       "text": "candles at the cairn",
+       "at": {
+        "line": "L16",
+        "word": "Gods",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 2,
+       "label": "THE LAKE",
+       "text": "a lamp in every boat",
+       "at": {
+        "line": "L16",
+        "word": "Gods",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 3,
+       "label": "HUNGER",
+       "text": "hoarding is a sin",
+       "at": {
+        "line": "L16",
+        "word": "Gods",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 4,
+       "label": "ECLIPSE",
+       "text": "keepers read the sky",
+       "at": {
+        "line": "L16",
+        "word": "Gods",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 5,
+       "label": "THE GOD",
+       "text": "written last",
+       "at": {
+        "line": "L16",
+        "word": "Gods",
+        "offset": -0.3
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L16",
+        "word": "Gods",
+        "offset": -0.3
+       }
+      }
+     ],
+     "start": {
+      "line": "L16",
+      "word": "Gods",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "kicker": "BEFORE YOU WRITE A GOD",
+     "title": "THE LAMPLIGHT",
+     "sprite": "ep33/lamp_sprite.png",
+     "spriteW": 60,
+     "spriteH": 130,
+     "subtitle": "Every god answers a fear.",
+     "subtitleAt": {
+      "line": "L16",
+      "word": "first."
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L16",
+      "word": "Gods",
+      "offset": -0.8
+     },
+     "gain": -15
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L16",
+      "word": "Gods",
+      "offset": -0.3
+     },
+     "gain": -10
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L16",
+      "word": "Gods",
+      "offset": -0.3
+     },
+     "gain": -18
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "cta",
+   "scene": "world",
+   "purpose": "Comment CTA: what would your people ask their gods?",
+   "visual": "End card: logo, PART 33 / 50, the title, and a COMMENT panel where two starter questions pop (WHY DO WE DIE?, ARE YOU THERE?), then 'Ask it in their words.'",
+   "camera": "Cut (under the block wipe) back to the hook pose, drifting into it.",
+   "layers": {
+    "foreground": "end card",
+    "midground": "the Isle",
+    "background": "void"
+   },
+   "lighting": "Golden hour under the eclipse (the loop frame).",
+   "onScreenText": "COMMENT \u00b7 WHY DO WE DIE? / ARE YOU THERE? \u00b7 Ask it in their words.",
+   "transition": "The card lifts on 'Part'.",
+   "music": "Outro.",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "endCardS2",
+     "start": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.12
+     },
+     "fadeOut": 0.3,
+     "kicker": "PART 33 / 50",
+     "title": "How Do You Invent a Believable Religion?",
+     "cta": "COMMENT",
+     "icon": "bubble",
+     "with": "Ask it in their words.",
+     "withAt": {
+      "line": "L17",
+      "word": "gods?",
+      "offset": -0.05
+     },
+     "choiceSize": 30,
+     "choices": [
+      {
+       "text": "WHY DO WE DIE?",
+       "color": "#ffe45c",
+       "at": {
+        "line": "L17",
+        "word": "question"
+       }
+      },
+      {
+       "text": "ARE YOU THERE?",
+       "color": "#ffe45c",
+       "at": {
+        "line": "L17",
+        "word": "people"
+       }
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "gain": -21
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L17",
+      "word": "question"
+     },
+     "gain": -17
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L17",
+      "word": "people"
+     },
+     "gain": -17
+    }
+   ],
+   "captions": false,
+   "hideLogoBug": true,
+   "hideLogoBugUntil": {
+    "line": "L18",
+    "word": "Part"
+   }
+  },
+  {
+   "id": "next",
+   "scene": "world",
+   "purpose": "Say the part number, ask for the follow with a reason (part 34), open the next loop.",
+   "visual": "The hook frame; PART 33/50; FOLLOW FOR PART 34, pressed on 'Follow'; NEXT RUN \u00b7 34 decodes from a locked crack in the ground to THE LIE \u00b7 THE GODS ARE LYING. In the world, on 'lying', a crack of light opens across the meadow south of the lake for a breath (something under the Isle that the myth leaves out) and closes; the eclipse's shadow slides back onto frame 0's spot and the hook title returns.",
+   "camera": "The hook frame.",
+   "layers": {
+    "foreground": "progress bar, follow button, next-run card",
+    "midground": "the crack of light",
+    "background": "the eclipse"
+   },
+   "lighting": "Golden hour under the eclipse.",
+   "onScreenText": "PART 33/50 \u00b7 FOLLOW FOR PART 34 \u00b7 NEXT RUN: THE LIE \u00b7 THE GODS ARE LYING.",
+   "transition": "Loop to frame 0.",
+   "music": "Tease over a held A, a crack and a groan on 'lying', the engine chime on 'Follow'.",
+   "graphics": [
+    {
+     "type": "seasonBar",
+     "y": 350,
+     "part": 33,
+     "of": 50,
+     "start": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.1
+     },
+     "fillAt": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "fillDur": 0.6,
+     "ofAt": {
+      "line": "L18",
+      "word": "50."
+     },
+     "end": {
+      "line": "L18",
+      "word": "lying.",
+      "offset": 0.6
+     }
+    },
+    {
+     "type": "followButton",
+     "y": 556,
+     "start": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.6
+     },
+     "pressAt": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "end": {
+      "line": "L18",
+      "word": "lying.",
+      "offset": 0.6
+     },
+     "text": "FOLLOW",
+     "doneText": "FOLLOWING",
+     "sub": "FOR PART 34"
+    },
+    {
+     "type": "nextRun",
+     "y": 772,
+     "start": {
+      "line": "L18",
+      "word": "34:",
+      "offset": -0.1
+     },
+     "revealAt": {
+      "line": "L18",
+      "word": "gods",
+      "nth": 1
+     },
+     "end": {
+      "line": "L18",
+      "word": "lying.",
+      "offset": 0.6
+     },
+     "kicker": "NEXT RUN \u00b7 34",
+     "title": "THE LIE",
+     "sub": "THE GODS ARE LYING.",
+     "sprite": "rift",
+     "spritePx": 12
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "NOT GODS FIRST",
+       "color": "#ffe45c",
+       "size": 60,
+       "pulseAt": {
+        "line": "L1",
+        "word": "gods."
+       }
+      },
+      {
+       "text": "WHAT DO THEY FEAR?",
+       "color": "#b9b4d8",
+       "size": 58,
+       "pulseAt": {
+        "line": "L1",
+        "word": "fear?"
+       }
+      }
+     ],
+     "y": 440,
+     "size": 60,
+     "start": {
+      "line": "L18",
+      "word": "lying.",
+      "offset": 0.92
+     },
+     "fadeIn": 0.35,
+     "preShow": true
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "to": {
+      "line": "L18",
+      "word": "Part",
+      "offset": 0.55
+     },
+     "gain": -22
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.5
+     },
+     "gain": -15
+    },
+    {
+     "sound": "followPress",
+     "at": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": 0.02
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L18",
+      "word": "34:",
+      "offset": -0.1
+     },
+     "gain": -18
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L18",
+      "word": "gods"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "rift",
+     "at": {
+      "line": "L18",
+      "word": "lying.",
+      "offset": -0.2
+     },
+     "gain": -14
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "end": true,
+      "offset": -0.54
+     },
+     "gain": -14
+    }
+   ],
+   "captions": false
+  }
+ ],
+ "world": {
+  "clock": {
+   "label": "YEAR",
+   "keys": [
+    [
+     {
+      "shot": "hook"
+     },
+     500
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     500
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "out.",
+      "offset": 0.3
+     },
+     300,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "need.",
+      "offset": 0.53
+     },
+     300
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "need.",
+      "offset": 0.55
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.25
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "burns.",
+      "offset": 0.1
+     },
+     500,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     500
+    ]
+   ]
+  },
+  "speed": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "run."
+    },
+    1
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.3
+    },
+    6
+   ],
+   [
+    {
+     "line": "L5",
+     "word": "out.",
+     "offset": 0.3
+    },
+    6
+   ],
+   [
+    {
+     "line": "L6",
+     "word": "Nobody"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.25
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.5
+    },
+    6
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "burns.",
+     "offset": 0.1
+    },
+    6
+   ],
+   [
+    {
+     "line": "L13",
+     "word": "Rule"
+    },
+    1
+   ]
+  ],
+  "camera": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 130,
+    "target": [
+     -1.4,
+     4.0,
+     -5.4
+    ],
+    "fov": 24,
+    "dur": 1.4,
+    "drift": 0.4
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 150,
+    "target": [
+     4.0,
+     2.0,
+     -1.0
+    ],
+    "fov": 26,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.05
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 178,
+    "target": [
+     1.0,
+     2.0,
+     0.4
+    ],
+    "fov": 26,
+    "dur": 1.0,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L5",
+     "word": "lamps",
+     "offset": -0.2
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 168,
+    "target": [
+     4.0,
+     2.0,
+     -1.0
+    ],
+    "fov": 26,
+    "dur": 1.4,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "Nobody",
+     "offset": -0.2
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 128,
+    "target": [
+     8.0,
+     2.0,
+     -3.0
+    ],
+    "fov": 26,
+    "dur": 1.6,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "need.",
+     "offset": 0.55
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 178,
+    "target": [
+     1.0,
+     2.0,
+     0.4
+    ],
+    "fov": 26,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L7",
+     "word": "Four",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 122,
+    "target": [
+     2.4,
+     3.0,
+     -13.0
+    ],
+    "fov": 26,
+    "dur": 1.2,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 124,
+    "target": [
+     8.4,
+     4.0,
+     -4.6
+    ],
+    "fov": 24,
+    "dur": 0.9,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L8",
+     "word": "Candles"
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 100,
+    "target": [
+     8.4,
+     4.0,
+     -4.6
+    ],
+    "fov": 24,
+    "dur": 1.4,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 134,
+    "target": [
+     6.2,
+     2.0,
+     4.2
+    ],
+    "fov": 24,
+    "dur": 0.9,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L9",
+     "word": "boat"
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 110,
+    "target": [
+     6.2,
+     2.0,
+     4.2
+    ],
+    "fov": 24,
+    "dur": 1.4,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 124,
+    "target": [
+     3.0,
+     4.0,
+     -10.4
+    ],
+    "fov": 24,
+    "dur": 0.9,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "Hoarding"
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 100,
+    "target": [
+     3.0,
+     4.0,
+     -10.4
+    ],
+    "fov": 24,
+    "dur": 1.2,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 130,
+    "target": [
+     -2.0,
+     4.0,
+     -3.2
+    ],
+    "fov": 24,
+    "dur": 0.9,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "Keepers"
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 106,
+    "target": [
+     -2.0,
+     4.0,
+     -3.2
+    ],
+    "fov": 24,
+    "dur": 1.4,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L12",
+     "word": "Run",
+     "offset": -0.05
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 178,
+    "target": [
+     1.0,
+     2.0,
+     0.4
+    ],
+    "fov": 26,
+    "dur": 0.8,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L12",
+     "word": "hundred",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 168,
+    "target": [
+     0.0,
+     2.0,
+     -2.0
+    ],
+    "fov": 26,
+    "dur": 1.6,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 150,
+    "target": [
+     1.0,
+     2.0,
+     0.4
+    ],
+    "fov": 26,
+    "dur": 0.8,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "deepest",
+     "offset": -0.05
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 184,
+    "target": [
+     1.0,
+     2.0,
+     0.4
+    ],
+    "fov": 26,
+    "dur": 1.2,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L14",
+     "word": "listens.",
+     "offset": -0.05
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 160,
+    "target": [
+     1.0,
+     2.0,
+     0.4
+    ],
+    "fov": 26,
+    "dur": 1.6,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L15",
+     "word": "Write",
+     "offset": -0.15
+    },
+    "az": 0,
+    "el": 80,
+    "dist": 116,
+    "target": [
+     0.4,
+     4.0,
+     -2.2
+    ],
+    "fov": 24,
+    "dur": 0.9,
+    "drift": 0.3
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Gods",
+     "offset": -0.25
+    },
+    "az": 8,
+    "el": 80,
+    "dist": 176,
+    "target": [
+     1.0,
+     2.0,
+     0.4
+    ],
+    "fov": 26,
+    "dur": 1.4,
+    "drift": 3.0
+   },
+   {
+    "at": {
+     "line": "L17",
+     "word": "What",
+     "offset": -0.3
+    },
+    "az": -3.2524,
+    "el": 80,
+    "dist": 130,
+    "target": [
+     -1.4,
+     4.0,
+     -5.4
+    ],
+    "fov": 24,
+    "dur": 1.4,
+    "drift": 0.4,
+    "cut": true
+   }
+  ],
+  "light": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "mood": "golden"
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "mood": "day",
+    "dur": 0.4
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "Nobody",
+     "offset": -0.2
+    },
+    "mood": "gloom",
+    "dur": 0.6
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "need.",
+     "offset": 0.55
+    },
+    "mood": "day",
+    "dur": 0.3
+   },
+   {
+    "at": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.1
+    },
+    "mood": "day",
+    "dur": 0.6
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "mood": "dusk",
+    "dur": 0.5
+   },
+   {
+    "at": {
+     "line": "L14",
+     "word": "listens.",
+     "offset": -0.05
+    },
+    "mood": "golden",
+    "dur": 1.2
+   },
+   {
+    "at": {
+     "line": "L15",
+     "word": "Write",
+     "offset": -0.15
+    },
+    "mood": "day",
+    "dur": 0.4
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Gods",
+     "offset": -0.3
+    },
+    "mood": "golden",
+    "dur": 1.6
+   }
+  ],
+  "herd": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     24
+    ]
+   ],
+   "max": 30,
+   "base": 24,
+   "centers": [
+    [
+     -9.5,
+     -1.0
+    ],
+    [
+     -8.4,
+     1.2
+    ]
+   ],
+   "skin": "sheep"
+  },
+  "pred": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ]
+  ],
+  "predators": [
+   {
+    "id": "g1",
+    "scale": 1.3,
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 8.5,
+      "z": -9.6,
+      "state": "idle",
+      "face": 160
+     }
+    ],
+    "adorn": true
+   }
+  ],
+  "series": {
+   "lamps": [
+    [
+     {
+      "shot": "hook"
+     },
+     4
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     4
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "twelve",
+      "offset": -0.05
+     },
+     0
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "twelve",
+      "offset": 1.07
+     },
+     12,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "lamps",
+      "offset": -0.1
+     },
+     12
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "out.",
+      "offset": 0.3
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "Candles",
+      "offset": -0.02
+     },
+     0
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "Candles"
+     },
+     1,
+     "step"
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "boat",
+      "offset": -0.02
+     },
+     1
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "boat"
+     },
+     2,
+     "step"
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "Hoarding",
+      "offset": -0.02
+     },
+     2
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "Hoarding"
+     },
+     3,
+     "step"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "Keepers",
+      "offset": -0.02
+     },
+     3
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "Keepers"
+     },
+     4,
+     "step"
+    ],
+    [
+     {
+      "line": "L14",
+      "word": "listens.",
+      "offset": -0.07
+     },
+     4
+    ],
+    [
+     {
+      "line": "L14",
+      "word": "listens.",
+      "offset": -0.05
+     },
+     5,
+     "step"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.32
+     },
+     5
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     4,
+     "step"
+    ]
+   ],
+   "faithful": [
+    [
+     {
+      "shot": "hook"
+     },
+     480
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     480
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "Candles",
+      "offset": -0.02
+     },
+     0
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "Candles"
+     },
+     40,
+     "step"
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "boat",
+      "offset": -0.02
+     },
+     40
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "boat"
+     },
+     90,
+     "step"
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "Hoarding",
+      "offset": -0.02
+     },
+     90
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "Hoarding"
+     },
+     150,
+     "step"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "Keepers",
+      "offset": -0.02
+     },
+     150
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "Keepers"
+     },
+     220,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.25
+     },
+     220
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "burns.",
+      "offset": 0.1
+     },
+     480,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     480
+    ]
+   ],
+   "tradeH": [
+    [
+     {
+      "shot": "hook"
+     },
+     4
+    ]
+   ]
+  },
+  "settlement": {
+   "buildings": [
+    {
+     "kind": "hall",
+     "a": [
+      -3.6,
+      -4.6
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -1.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -4.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -1.0,
+      -5.8
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -5.6,
+      -0.9
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -3.4,
+      -0.7
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      0.4,
+      -4.2
+     ],
+     "face": 0
+    }
+   ],
+   "roof": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "pens": [
+    {
+     "a": [
+      -6.4,
+      -1.4
+     ],
+     "r": 1.6
+    }
+   ],
+   "cover": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "roads": {
+    "b": [
+     [
+      -3.4,
+      -1.6
+     ],
+     [
+      -5.6,
+      2.0
+     ],
+     [
+      -8.2,
+      6.0
+     ],
+     [
+      -11.0,
+      10.0
+     ],
+     [
+      -13.0,
+      14.0
+     ],
+     [
+      -14.6,
+      17.0
+     ]
+    ]
+   },
+   "route": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "tradeKey": "tradeH",
+   "lanterns": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ]
+   ],
+   "tower": {
+    "x": -6.4,
+    "z": -5.6,
+    "h": 6.0,
+    "keys": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "rings": [
+     {
+      "line": "L11",
+      "word": "sky."
+     },
+     {
+      "line": "L12",
+      "word": "again."
+     }
+    ]
+   }
+  },
+  "people": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     30
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     30
+    ]
+   ],
+   "centers": [
+    [
+     -2.4,
+     -3.2
+    ],
+    [
+     -0.4,
+     -1.6
+    ],
+    [
+     -4.2,
+     -1.8
+    ]
+   ],
+   "spread": 1.6,
+   "life": 70,
+   "royal": [
+    [
+     {
+      "shot": "hook"
+     },
+     0.22
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     0.22
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "Keepers"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "read",
+      "offset": 0.1
+     },
+     0.22,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     0.22
+    ]
+   ],
+   "robe": "#efe2b0",
+   "look": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L14",
+      "word": "made",
+      "offset": -0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L14",
+      "word": "listens."
+     },
+     1
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "real.",
+      "offset": 0.3
+     },
+     1
+    ],
+    [
+     {
+      "line": "L16",
+      "word": "Gods",
+      "offset": -0.3
+     },
+     0
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.32
+     },
+     0
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     1,
+     "step"
+    ]
+   ],
+   "lamps": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "Keepers"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "sky.",
+      "offset": 0.2
+     },
+     0.6,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     1
+    ]
+   ],
+   "ruler": {
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "alert",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "idle",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "lying.",
+       "offset": -0.1
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "alert",
+      "face": 0
+     }
+    ],
+    "dais": {
+     "x": 9.4,
+     "z": -2.2,
+     "face": 0
+    }
+   }
+  },
+  "fields": {
+   "plots": [
+    {
+     "x": 3.0,
+     "z": -11.0,
+     "w": 4.0,
+     "d": 3.4
+    }
+   ],
+   "ripe": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     1,
+     "step"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "need.",
+      "offset": 0.53
+     },
+     1
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "need.",
+      "offset": 0.55
+     },
+     0.5,
+     "step"
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "hunger."
+     },
+     0.5
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "Hoarding"
+     },
+     1,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     1
+    ]
+   ]
+  },
+  "props": [
+   {
+    "kind": "cairn",
+    "x": 8.95,
+    "z": -5.38,
+    "stones": [
+     [
+      {
+       "shot": "hook"
+      },
+      3
+     ]
+    ]
+   },
+   {
+    "kind": "offerings",
+    "x": 8.95,
+    "z": -5.38,
+    "r": 1.7,
+    "lights": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "Candles"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "cairn.",
+       "offset": 0.1
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "lanterns",
+    "x": 6.5,
+    "z": 4.5,
+    "r": 3.8,
+    "n": 9,
+    "lights": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L9",
+       "word": "boat"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L9",
+       "word": "lamp.",
+       "offset": 0.1
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "sheaves",
+    "x": 3.0,
+    "z": -11.0,
+    "r": 2.7,
+    "n": 8,
+    "sheaves": [
+     [
+      {
+       "shot": "hook"
+      },
+      8
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      8
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "Hoarding"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "sin.",
+       "offset": 0.1
+      },
+      8,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      8
+     ]
+    ]
+   },
+   {
+    "kind": "shrine",
+    "x": 15.5,
+    "z": -5.0,
+    "face": 0,
+    "r": 1.6,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Shrines",
+       "offset": 0.0
+      },
+      0
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "rise.",
+       "offset": 0.0
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "need.",
+       "offset": 0.53
+      },
+      1
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "need.",
+       "offset": 0.55
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ],
+    "lights": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "kind": "shrine",
+    "x": 6.0,
+    "z": -16.4,
+    "face": 0,
+    "r": 1.6,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Shrines",
+       "offset": 0.15
+      },
+      0
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "rise.",
+       "offset": 0.15
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "need.",
+       "offset": 0.53
+      },
+      1
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "need.",
+       "offset": 0.55
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ],
+    "lights": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "kind": "shrine",
+    "x": 3.0,
+    "z": 14.4,
+    "face": 0,
+    "r": 1.6,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Shrines",
+       "offset": 0.3
+      },
+      0
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "rise.",
+       "offset": 0.3
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "need.",
+       "offset": 0.53
+      },
+      1
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "need.",
+       "offset": 0.55
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ],
+    "lights": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "kind": "statue",
+    "x": 18.0,
+    "z": 1.5,
+    "face": -90,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "gild": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "tar": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "grow": [
+     [
+      {
+       "shot": "hook"
+      },
+      1.35
+     ]
+    ],
+    "torch": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "kind": "border",
+    "x": 18.0,
+    "z": -7.0,
+    "to": [
+     18.0,
+     8.3
+    ],
+    "skip": [
+     0.46,
+     0.65
+    ],
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "relic",
+    "x": 20.3,
+    "z": 5.4,
+    "face": -90,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   }
+  ],
+  "fears": [
+   {
+    "id": "death",
+    "x": 8.95,
+    "z": -5.38,
+    "r": 5.2,
+    "dark": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "need.",
+       "offset": 0.53
+      },
+      0
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "need.",
+       "offset": 0.55
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L7",
+       "word": "dark.",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L7",
+       "word": "dark.",
+       "offset": 0.6
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "lit": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "Candles"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "Candles",
+       "offset": 0.7
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "label": "DEATH",
+    "answer": "CANDLES AT THE CAIRN",
+    "lamp": true,
+    "light": 2.6
+   },
+   {
+    "id": "lake",
+    "x": 6.5,
+    "z": 4.5,
+    "r": 6.4,
+    "dark": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "need.",
+       "offset": 0.53
+      },
+      0
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "need.",
+       "offset": 0.55
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L7",
+       "word": "dark.",
+       "offset": 0.02
+      },
+      0
+     ],
+     [
+      {
+       "line": "L7",
+       "word": "dark.",
+       "offset": 0.72
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "lit": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L9",
+       "word": "boat"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L9",
+       "word": "boat",
+       "offset": 0.7
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "label": "THE LAKE",
+    "answer": "A LAMP IN EVERY BOAT",
+    "lamp": false,
+    "light": 4.2
+   },
+   {
+    "id": "hunger",
+    "x": 3.0,
+    "z": -11.0,
+    "r": 5.2,
+    "dark": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "need.",
+       "offset": 0.53
+      },
+      0
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "need.",
+       "offset": 0.55
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L7",
+       "word": "dark.",
+       "offset": 0.14
+      },
+      0
+     ],
+     [
+      {
+       "line": "L7",
+       "word": "dark.",
+       "offset": 0.84
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "lit": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "Hoarding"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "Hoarding",
+       "offset": 0.7
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "label": "HUNGER",
+    "answer": "HOARDING IS A SIN",
+    "lamp": false,
+    "light": 3.2
+   },
+   {
+    "id": "eclipse",
+    "x": -2.2,
+    "z": -3.4,
+    "r": 5.8,
+    "dark": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "need.",
+       "offset": 0.53
+      },
+      0
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "need.",
+       "offset": 0.55
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L7",
+       "word": "dark.",
+       "offset": 0.26
+      },
+      0
+     ],
+     [
+      {
+       "line": "L7",
+       "word": "dark.",
+       "offset": 0.96
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "lit": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L11",
+       "word": "Keepers"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L11",
+       "word": "Keepers",
+       "offset": 0.7
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "label": "THE ECLIPSE",
+    "answer": "KEEPERS READ THE SKY",
+    "lamp": true,
+    "light": 3.4
+   },
+   {
+    "id": "umbra",
+    "x": -2.2,
+    "z": -3.2,
+    "r": 7.4,
+    "kind": "umbra",
+    "xk": [
+     [
+      {
+       "shot": "hook"
+      },
+      -2.2
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0.9810499999999998,
+      "linear"
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "Run",
+       "offset": -0.07
+      },
+      0.9810499999999998
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "Run",
+       "offset": -0.05
+      },
+      -14.0,
+      "step"
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "burns.",
+       "offset": 0.4
+      },
+      16.0,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.32
+      },
+      16.0
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      -5.85895,
+      "step"
+     ],
+     [
+      {
+       "end": true
+      },
+      -2.2,
+      "linear"
+     ]
+    ],
+    "dark": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "Run",
+       "offset": -0.07
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "Run",
+       "offset": -0.05
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "Run",
+       "offset": 0.3
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "again.",
+       "offset": 0.2
+      },
+      1
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "burns."
+      },
+      1
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "burns.",
+       "offset": 0.4
+      },
+      0
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.32
+      },
+      0
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1,
+      "step"
+     ]
+    ],
+    "label": "THE ECLIPSE",
+    "answer": "KEEPERS READ THE SKY"
+   },
+   {
+    "id": "void",
+    "x": 2.0,
+    "z": -1.0,
+    "r": 30.0,
+    "light": 31.0,
+    "glow": 0.2,
+    "dark": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L13",
+       "word": "deepest",
+       "offset": -0.05
+      },
+      0
+     ],
+     [
+      {
+       "line": "L13",
+       "word": "deepest",
+       "offset": 0.85
+      },
+      1
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "listens.",
+       "offset": -0.05
+      },
+      1
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "listens.",
+       "offset": 1.15
+      },
+      0
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.32
+      },
+      0
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0,
+      "step"
+     ]
+    ],
+    "lit": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "listens.",
+       "offset": -0.05
+      },
+      0
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "listens.",
+       "offset": 1.25
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.32
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0,
+      "step"
+     ]
+    ],
+    "label": "NOBODY LISTENING?",
+    "answer": "SOMEONE LISTENS"
+   },
+   {
+    "id": "god0",
+    "x": 14,
+    "z": -11,
+    "r": 1.0,
+    "light": 1.7,
+    "lamp": true,
+    "lit": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": -0.05
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.3
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": -0.1
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.15
+      },
+      0
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "id": "god1",
+    "x": 17,
+    "z": -5,
+    "r": 1.0,
+    "light": 1.7,
+    "lamp": true,
+    "lit": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.02
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.37
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": -0.021
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.229
+      },
+      0
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "id": "god2",
+    "x": 19,
+    "z": 1,
+    "r": 1.0,
+    "light": 1.7,
+    "lamp": true,
+    "lit": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.09
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.44
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.058
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.308
+      },
+      0
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "id": "god3",
+    "x": 16,
+    "z": 7,
+    "r": 1.0,
+    "light": 1.7,
+    "lamp": true,
+    "lit": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.16
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.51
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.138
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.388
+      },
+      0
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "id": "god4",
+    "x": 10,
+    "z": 11,
+    "r": 1.0,
+    "light": 1.7,
+    "lamp": true,
+    "lit": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.23
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.58
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.217
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.467
+      },
+      0
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "id": "god5",
+    "x": 3,
+    "z": 13,
+    "r": 1.0,
+    "light": 1.7,
+    "lamp": true,
+    "lit": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.3
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.65
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.296
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.546
+      },
+      0
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "id": "god6",
+    "x": 1,
+    "z": -17,
+    "r": 1.0,
+    "light": 1.7,
+    "lamp": true,
+    "lit": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.37
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.72
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.375
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.625
+      },
+      0
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "id": "god7",
+    "x": 6,
+    "z": -15,
+    "r": 1.0,
+    "light": 1.7,
+    "lamp": true,
+    "lit": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.44
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.79
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.454
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.704
+      },
+      0
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "id": "god8",
+    "x": -18,
+    "z": -4,
+    "r": 1.0,
+    "light": 1.7,
+    "lamp": true,
+    "lit": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.51
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.86
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.533
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.783
+      },
+      0
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "id": "god9",
+    "x": -16,
+    "z": -12,
+    "r": 1.0,
+    "light": 1.7,
+    "lamp": true,
+    "lit": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.58
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.93
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.613
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.863
+      },
+      0
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "id": "god10",
+    "x": 13,
+    "z": -1,
+    "r": 1.0,
+    "light": 1.7,
+    "lamp": true,
+    "lit": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.65
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 1.0
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.692
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.942
+      },
+      0
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "id": "god11",
+    "x": 12,
+    "z": -14,
+    "r": 1.0,
+    "light": 1.7,
+    "lamp": true,
+    "lit": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 0.72
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "twelve",
+       "offset": 1.07
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 0.771
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "lamps",
+       "offset": 1.021
+      },
+      0
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "id": "rift",
+    "x": -0.5,
+    "z": 10.6,
+    "r": 0.0,
+    "kind": "rift",
+    "to": [
+     12.0,
+     8.8
+    ],
+    "dark": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "lying.",
+       "offset": -0.15
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "lying.",
+       "offset": 0.35
+      },
+      1
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "lying.",
+       "offset": 0.85
+      },
+      1
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "lying.",
+       "offset": 1.05
+      },
+      0
+     ]
+    ]
+   }
+  ],
+  "clearTrees": [
+   [
+    14,
+    -11,
+    2.2
+   ],
+   [
+    17,
+    -5,
+    2.2
+   ],
+   [
+    19,
+    1,
+    2.2
+   ],
+   [
+    16,
+    7,
+    2.2
+   ],
+   [
+    10,
+    11,
+    2.2
+   ],
+   [
+    3,
+    13,
+    2.2
+   ],
+   [
+    1,
+    -17,
+    2.2
+   ],
+   [
+    6,
+    -15,
+    2.2
+   ],
+   [
+    -18,
+    -4,
+    2.2
+   ],
+   [
+    -16,
+    -12,
+    2.2
+   ],
+   [
+    13,
+    -1,
+    2.2
+   ],
+   [
+    12,
+    -14,
+    2.2
+   ],
+   [
+    15.5,
+    -5.0,
+    2.2
+   ],
+   [
+    6.0,
+    -16.4,
+    2.2
+   ],
+   [
+    3.0,
+    14.4,
+    2.2
+   ],
+   [
+    -2.2,
+    -3.4,
+    2.2
+   ],
+   [
+    8.95,
+    -5.38,
+    2.2
+   ],
+   [
+    3.0,
+    -11.0,
+    2.2
+   ],
+   [
+    -2.4,
+    -3.2,
+    2.2
+   ],
+   [
+    -0.4,
+    -1.6,
+    2.2
+   ],
+   [
+    -4.2,
+    -1.8,
+    2.2
+   ],
+   [
+    -2.2,
+    -3.4,
+    4.0
+   ]
+  ],
+  "layers": {
+   "ripple": [
+    {
+     "shot": "hook",
+     "offset": 0.05
+    },
+    {
+     "line": "L4",
+     "word": "run."
+    },
+    {
+     "line": "L12",
+     "word": "Run"
+    }
+   ]
+  },
+  "ambient": {
+   "birds": 9,
+   "motes": 40,
+   "glints": true
+  },
+  "simLoop": {
+   "line": "L17",
+   "word": "What",
+   "offset": -0.3
+  }
+ },
+ "music": {
+  "engine": "s2-score",
+  "key": "D minor, resolving to D major",
+  "bpm": 96,
+  "sections": [
+   {
+    "from": {
+     "shot": "hook"
+    },
+    "style": "vigil",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "programs": {
+     "strings": 92,
+     "mbox": 14
+    }
+   },
+   {
+    "from": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "style": "lantern",
+    "chords": [
+     "Dm",
+     "Bb",
+     "F",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 1,
+    "programs": {
+     "strings": 92,
+     "marimba": 15,
+     "lead": 79,
+     "mbox": 14
+    }
+   },
+   {
+    "from": {
+     "line": "L4",
+     "word": "run."
+    },
+    "style": "drive",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "intensity": 0.85,
+    "programs": {
+     "strings": 48,
+     "marimba": 12,
+     "lead": 73,
+     "mbox": 10
+    }
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "Nobody",
+     "offset": -0.2
+    },
+    "style": "drop",
+    "chords": [
+     "Dm"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 8
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "need.",
+     "offset": 0.5
+    },
+    "style": "vigil",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "A"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 4,
+    "programs": {
+     "strings": 92,
+     "mbox": 14
+    }
+   },
+   {
+    "from": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.1
+    },
+    "style": "lantern",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 1,
+    "programs": {
+     "strings": 92,
+     "marimba": 15,
+     "lead": 79,
+     "mbox": 14
+    }
+   },
+   {
+    "from": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.1
+    },
+    "style": "lantern",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 2
+   },
+   {
+    "from": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.1
+    },
+    "style": "lantern",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 3
+   },
+   {
+    "from": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.1
+    },
+    "style": "lantern",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 4
+   },
+   {
+    "from": {
+     "line": "L12",
+     "word": "Run"
+    },
+    "style": "drive",
+    "chords": [
+     "F",
+     "C",
+     "Bb",
+     "F"
+    ],
+    "key": "F major",
+    "intensity": 1.0,
+    "theme": true,
+    "programs": {
+     "strings": 48,
+     "marimba": 12,
+     "lead": 73,
+     "mbox": 10
+    }
+   },
+   {
+    "from": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.05
+    },
+    "style": "twist",
+    "chords": [
+     "A7b9"
+    ],
+    "key": "D minor"
+   },
+   {
+    "from": {
+     "line": "L14",
+     "word": "So",
+     "offset": -0.1
+    },
+    "style": "vigil",
+    "chords": [
+     "D",
+     "G",
+     "Bm",
+     "A"
+    ],
+    "key": "D major",
+    "beatsPerChord": 2,
+    "programs": {
+     "strings": 92,
+     "mbox": 14
+    }
+   },
+   {
+    "from": {
+     "line": "L15",
+     "word": "Write",
+     "offset": -0.1
+    },
+    "style": "anthem",
+    "chords": [
+     "D",
+     "G",
+     "Bm",
+     "A"
+    ],
+    "key": "D major",
+    "programs": {
+     "strings": 48,
+     "marimba": 12,
+     "lead": 73,
+     "mbox": 10
+    }
+   },
+   {
+    "from": {
+     "line": "L17",
+     "word": "What",
+     "offset": -0.2
+    },
+    "style": "outro",
+    "chords": [
+     "G",
+     "D"
+    ],
+    "key": "D major"
+   },
+   {
+    "from": {
+     "line": "L18",
+     "word": "Part",
+     "offset": -0.1
+    },
+    "style": "tease",
+    "chords": [
+     "A5"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 32
+   }
+  ],
+  "accents": [
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L1",
+     "word": "fear?"
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L6",
+     "word": "need."
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "riser",
+    "at": {
+     "line": "L7",
+     "word": "twist."
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "stab",
+    "at": {
+     "line": "L12",
+     "word": "burns."
+    },
+    "chord": "F"
+   },
+   {
+    "kind": "cymbal",
+    "at": {
+     "line": "L12",
+     "word": "burns."
+    }
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L13",
+     "word": "listening."
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L15",
+     "word": "last,"
+    },
+    "chord": "D"
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L18",
+     "word": "lying."
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "roll",
+    "at": {
+     "end": true,
+     "offset": -0.05
+    },
+    "chord": "A"
+   }
+  ],
+  "fadeOut": {
+   "fromEnd": 0.08
+  },
+  "gain": 0.55
+ },
+ "mix": {
+  "musicLufs": -25.0,
+  "duckDb": -8.0,
+  "sfxLufs": -29.0,
+  "voiceFx": true
+ },
+ "metadata": {
+  "youtube": {
+   "title": "How Do You Invent a Believable Religion? (Worldbuilding)",
+   "titleAlternate": "Don't invent gods first. Ask what your people fear.",
+   "description": "Inventing a religion? Don't start with gods. What do people fear?\n\nMeet the Lamplight faith. They pray to an empty sky. The lazy version invents twelve gods first, one job each, and we ran it: shrines rise, nobody comes, the lamps go out. Nobody prays to a god they don't need.\n\nReal faith starts in the dark. Death: candles keep the dead company at the cairn. The lake: no boat leaves without a lamp. Hunger: hoarding grain becomes a sin. The eclipse: keepers rise to read the sky. Run it again: five hundred years, and every lamp still burns.\n\nThen the twist: the deepest fear is that nobody is listening. So they made someone who listens. A god. Write it last, and it feels real.\n\nGods don't come first. Every god answers a fear.\n\nWhat question would the people of your world ask their gods?\n\nPart 33 of 50. Follow for part 34: the gods are lying.\n\nWorldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 7: History and Mythology. The Lamplight faith and its god are invented for this video; no real religion is depicted.\n\n#Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "pinnedComment": "What question would the people of your world ask their gods? Why do we die? Are you there? Something stranger? (Part 34: the gods are lying.)",
+   "uploadSettings": "Altered or synthetic content: Yes (synthetic narration and an AI-generated field-card sprite; the island, people, lamps and the fear map are drawn in code). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "Don't invent gods first. Ask what your people fear \ud83d\udd6f\ufe0f Four fears, four answers, and rule #5 is the one that makes a god feel real. What would your people ask their gods? Part 33/50 \u00b7 follow for part 34 \ud83c\udf11 #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "pinnedComment": "What question would the people of your world ask their gods?",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "Inventing a religion? Don't start with gods. What do people fear?\n\nMeet the Lamplight faith. They pray to an empty sky. The lazy version invents twelve gods first, one job each, and we ran it: shrines rise, nobody comes, the lamps go out. Nobody prays to a god they don't need.\n\nReal faith starts in the dark. Death: candles keep the dead company at the cairn. The lake: no boat leaves without a lamp. Hunger: hoarding grain becomes a sin. The eclipse: keepers rise to read the sky. Run it again: five hundred years, and every lamp still burns.\n\nThen the twist: the deepest fear is that nobody is listening. So they made someone who listens. A god. Write it last, and it feels real.\n\nGods don't come first. Every god answers a fear.\n\nWhat question would the people of your world ask their gods?\n\nPart 33 of 50. Follow for part 34: the gods are lying.\n\nWorldcraft Shorts \u00b7 Season 2: The World Engine.\n\n#Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "pinnedComment": "What does the oldest fear in your world sound like when it's said as a prayer?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "Don't invent gods first. Ask what your people fear.\n\nInventing a religion? Don't start with gods. What do people fear?\n\nMeet the Lamplight faith. They pray to an empty sky. The lazy version invents twelve gods first, one job each, and we ran it: shrines rise, nobody comes, the lamps go out. Nobody prays to a god they don't need.\n\nReal faith starts in the dark. Death: candles keep the dead company at the cairn. The lake: no boat leaves without a lamp. Hunger: hoarding grain becomes a sin. The eclipse: keepers rise to read the sky. Run it again: five hundred years, and every lamp still burns.\n\nThen the twist: the deepest fear is that nobody is listening. So they made someone who listens. A god. Write it last, and it feels real.\n\nGods don't come first. Every god answers a fear.\n\nWhat question would the people of your world ask their gods?\n\nPart 33 of 50. Follow for part 34: the gods are lying.\n\nWorldcraft Shorts \u00b7 Season 2\n\n#Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "hookCheck": "First 51 characters: 'Don't invent gods first. Ask what your people fear.'",
+   "pinnedComment": "Save the LIGHT THE DARK card, then tell us: what question would your people ask their gods?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  }
+ }
+}

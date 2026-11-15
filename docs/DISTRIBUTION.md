@@ -2352,3 +2352,98 @@ Source of truth: `episodes/ep32/episode.json` → `metadata` (this section is ge
 - **Hook check:** First 54 characters: 'The war ended 1000 years ago. Nobody signed the peace.'
 - **Pinned comment:** Save the DIG IT UP card, then tell us: what unresolved conflict would your ancestors leave behind?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+## Episode 33 captions (ready to paste) — Season 2, Arc 7
+
+Source of truth: `episodes/ep33/episode.json` → `metadata` (this section is generated from it). Every description ends with the Season 2 ending formula ("Part 33 of 50. Follow for part 34: …"), matching the video's last line. The AI label goes on for all four platforms. Cover: `episodes/ep33/Worldcraft_Short_E33_cover.jpg`. Subtitles: `episodes/ep33/ep33.srt`.
+
+**Disclosure.** The island, the fear map (the shadows, the lamplit pools and their rims, the crack of light), the people, the lamps, the boats, the sheaves, the shrines, the HUD and every number are drawn and simulated in code. Two things are AI-made: the narration (Kokoro synthetic voice) and the field card's lantern sprite (free local SDXL-Lightning with a pixel-art LoRA, re-gridded by `pipeline/pixelate.py`; no Figma credits). AI label on everywhere (series policy). **No real-world religion is depicted, named or imitated:** the Lamplight faith, its rites (candles at a cairn, a lamp in every boat, shared sheaves, keepers who read the sky) and its god are invented; there are no real symbols, scriptures, vestments or sacred buildings (the keepers wear plain pale hooded robes; the lantern sprite was checked for marks). No violence on screen.
+
+**Closing EP32's loop.** EP32 ended "a god built from fear": on "fear" the sun went dark over the Isle for a breath. EP33 opens on that eclipse: its shadow lies over the valley while the crowd holds up lamps and looks at the sky. When EP33 goes up, reply to the top comments on EP32 with its link and pin it where a second pin is allowed.
+
+**The comment ask is an invention prompt with starters** (as EP32's). The video asks "What question would your people ask their gods?" (the plan's CTA cut to 8 words for the scorecard; the descriptions keep the full wording). The end card offers two starters (WHY DO WE DIE?, ARE YOU THERE?). Post the pinned comment straight away and answer early comments in the first hour.
+
+**Posting part 34.** The video promises "the gods are lying" (a crack of light opens in the ground for a breath). EP34 is "What If Your World's Creation Myth Is Wrong?". Do the same reply-and-pin on EP33 when EP34 is posted.
+
+### YouTube Shorts
+- **Title** (56/100 chars): `How Do You Invent a Believable Religion? (Worldbuilding)`
+- **Alternate title** (51 chars): `Don't invent gods first. Ask what your people fear.`
+- **Description:**
+
+> Inventing a religion? Don't start with gods. What do people fear?
+>
+> Meet the Lamplight faith. They pray to an empty sky. The lazy version invents twelve gods first, one job each, and we ran it: shrines rise, nobody comes, the lamps go out. Nobody prays to a god they don't need.
+>
+> Real faith starts in the dark. Death: candles keep the dead company at the cairn. The lake: no boat leaves without a lamp. Hunger: hoarding grain becomes a sin. The eclipse: keepers rise to read the sky. Run it again: five hundred years, and every lamp still burns.
+>
+> Then the twist: the deepest fear is that nobody is listening. So they made someone who listens. A god. Write it last, and it feels real.
+>
+> Gods don't come first. Every god answers a fear.
+>
+> What question would the people of your world ask their gods?
+>
+> Part 33 of 50. Follow for part 34: the gods are lying.
+>
+> Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 7: History and Mythology. The Lamplight faith and its god are invented for this video; no real religion is depicted.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts
+
+- **Pinned comment:** What question would the people of your world ask their gods? Why do we die? Are you there? Something stranger? (Part 34: the gods are lying.)
+- **Upload settings:** Altered or synthetic content: Yes (synthetic narration and an AI-generated field-card sprite; the island, people, lamps and the fear map are drawn in code). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (271 chars): `Don't invent gods first. Ask what your people fear 🕯️ Four fears, four answers, and rule #5 is the one that makes a god feel real. What would your people ask their gods? Part 33/50 · follow for part 34 🌑 #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts`
+- **Pinned comment:** What question would the people of your world ask their gods?
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> Inventing a religion? Don't start with gods. What do people fear?
+>
+> Meet the Lamplight faith. They pray to an empty sky. The lazy version invents twelve gods first, one job each, and we ran it: shrines rise, nobody comes, the lamps go out. Nobody prays to a god they don't need.
+>
+> Real faith starts in the dark. Death: candles keep the dead company at the cairn. The lake: no boat leaves without a lamp. Hunger: hoarding grain becomes a sin. The eclipse: keepers rise to read the sky. Run it again: five hundred years, and every lamp still burns.
+>
+> Then the twist: the deepest fear is that nobody is listening. So they made someone who listens. A god. Write it last, and it feels real.
+>
+> Gods don't come first. Every god answers a fear.
+>
+> What question would the people of your world ask their gods?
+>
+> Part 33 of 50. Follow for part 34: the gods are lying.
+>
+> Worldcraft Shorts · Season 2: The World Engine.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts
+
+- **Pinned comment:** What does the oldest fear in your world sound like when it's said as a prayer?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Don't invent gods first. Ask what your people fear.
+>
+> Inventing a religion? Don't start with gods. What do people fear?
+>
+> Meet the Lamplight faith. They pray to an empty sky. The lazy version invents twelve gods first, one job each, and we ran it: shrines rise, nobody comes, the lamps go out. Nobody prays to a god they don't need.
+>
+> Real faith starts in the dark. Death: candles keep the dead company at the cairn. The lake: no boat leaves without a lamp. Hunger: hoarding grain becomes a sin. The eclipse: keepers rise to read the sky. Run it again: five hundred years, and every lamp still burns.
+>
+> Then the twist: the deepest fear is that nobody is listening. So they made someone who listens. A god. Write it last, and it feels real.
+>
+> Gods don't come first. Every god answers a fear.
+>
+> What question would the people of your world ask their gods?
+>
+> Part 33 of 50. Follow for part 34: the gods are lying.
+>
+> Worldcraft Shorts · Season 2
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts
+
+- **Hook check:** First 51 characters: 'Don't invent gods first. Ask what your people fear.'
+- **Pinned comment:** Save the LIGHT THE DARK card, then tell us: what question would your people ask their gods?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+

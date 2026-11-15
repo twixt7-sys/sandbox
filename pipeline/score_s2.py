@@ -190,8 +190,8 @@ def blip(f0, f1, dur, bright=1.0):
 
 S2_HITS = {"roar", "stompHit", "sting", "runPress", "stamp", "rewind", "ringOn", "snowAir", "sleepZ", "cubPop", "delete", "restore", "cardSlide", "check", "unlock", "worldRipple", "crash", "boomPop",
            "engineWind", "dragonPass", "followPress", "chime", "towerBell", "eyeOn", "morph", "slide", "crownPass",
-           "frameDrum", "beamTip", "quill", "pageTear", "dig", "stones", "eclipse"}
-S2_BEDS = {"simTicks", "births", "losses", "stomp", "burn", "lockOn", "clockTicks", "rumble"}
+           "frameDrum", "beamTip", "quill", "pageTear", "dig", "stones", "eclipse", "lampOn", "rift"}
+S2_BEDS = {"simTicks", "births", "losses", "stomp", "burn", "lockOn", "clockTicks", "rumble", "creep"}
 
 
 def s2_hit(kind):
@@ -537,6 +537,26 @@ def s2_hit(kind):
         tone = (np.sin(2 * np.pi * 55 * t) + 0.7 * np.sin(2 * np.pi * 55.8 * t) + 0.35 * np.sin(2 * np.pi * 110.4 * t)) * env
         air = lp(rng.standard_normal(n), 380) * env * 0.6
         return st(tone * 0.45 + air, 0.6)
+    if kind == "lampOn":
+        # EP33: a lamp is lit: a soft breathy whoomp as the wick takes (low-passed noise swell), then a warm bell-like
+        # shimmer (three sine partials on a high D) blooming and ringing out. Its own seeded RNG.
+        n = int(1.1 * SR)
+        t = np.arange(n) / SR
+        rng = np.random.default_rng(331)
+        whoomp = lp(rng.standard_normal(n), 900) * np.interp(t, [0, 0.06, 0.22, 0.4], [0, 1, 0.3, 0]) * 0.8
+        f = 1174.66
+        shimmer = sum(a * np.sin(2 * np.pi * f * m * t + m) for m, a in ((1, 1.0), (2.01, 0.35), (3.0, 0.18))) * np.minimum(1, np.maximum(0, t - 0.05) / 0.08) * np.exp(-np.maximum(0, t - 0.05) * 3.2) * 0.32
+        return st(whoomp + shimmer, 0.5)
+    if kind == "rift":
+        # EP33 (EP34's tease): the ground cracks with light: a dry splitting crackle that runs and stops, over a
+        # low hollow groan. Its own seeded RNG.
+        n = int(1.2 * SR)
+        t = np.arange(n) / SR
+        rng = np.random.default_rng(333)
+        nz = rng.standard_normal(n)
+        crackle = bp(nz, 1400, 7000) * (rng.uniform(0, 1, n) > 0.85) * np.interp(t, [0, 0.05, 0.5, 0.7], [0, 1, 0.8, 0]) * 1.4
+        groan = np.sin(2 * np.pi * np.cumsum(48 + 10 * np.exp(-t * 3)) / SR) * np.interp(t, [0, 0.15, 0.8, 1.2], [0, 0.8, 0.5, 0])
+        return st(crackle + groan * 0.7, 0.45)
     raise KeyError(kind)
 
 
@@ -612,6 +632,14 @@ def s2_bed(kind, dur):
             i = int(g * SR)
             grain = bp(rng.standard_normal(m), 1200, 5000) * np.exp(-np.arange(m) / SR * 220) * rng.uniform(0.1, 0.4)
             out[i:i + m] += grain[: max(0, n - i)]
+    elif kind == "creep":
+        # EP33: shadows spreading over the map: a cold airy hiss (band-passed noise) that swells and slowly falls in
+        # pitch, with a faint low wind under it. Its own seeded RNG.
+        rng = np.random.default_rng(332)
+        t = np.arange(n) / SR
+        swell = np.interp(t, [0, min(0.5, dur / 3), max(0.6, dur - 0.4), dur], [0, 1, 0.8, 0])
+        nz = rng.standard_normal(n)
+        out += bp(nz, 500, 2600) * 0.55 * swell + lp(nz, 160) * 0.9 * swell
     else:
         raise KeyError(kind)
     return st(out, 0.5)

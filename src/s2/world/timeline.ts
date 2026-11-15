@@ -1,7 +1,7 @@
 // Resolves `episode.world` (the Season 2 world timeline) against the narration timing.
 import {cueTime} from '../../lib/timing';
 import type {Cue, Timing} from '../../types';
-import {integrate, Key, RawKey, resolveKeys, sample} from '../keys';
+import {integrate, Key, loopFreq, RawKey, resolveKeys, sample} from '../keys';
 import type {Cam} from './Stage';
 
 export type CamKey = {
@@ -81,6 +81,10 @@ export type WorldRaw = {
 		watch?: [number, number];
 		/** EP32+: 0..1 keys for `watch` (they only stand and face it while > 0.5; absent: always, as in EP31) */
 		watchOn?: RawKey[];
+		/** EP33+: 0..1 the crowd looks up at the sky (heads tilted back, faces to an overhead camera) */
+		look?: RawKey[];
+		/** EP33+: 0..1 the share of the crowd holding a lit lamp */
+		lamps?: RawKey[];
 	};
 	/** EP32+: the strata. The island's cut sides carry the war as a layer (`war`: its bottom and top, in world y, keyed
 	 * so it can sink as centuries pile on), `centuries` thin bands laid on top of it (0..`max` shown), `fade` (0 vivid ..
@@ -88,7 +92,33 @@ export type WorldRaw = {
 	 * surface) and `veins`: consequences that run from the war layer up to the grass inside a box (x0, x1, z0, z1),
 	 * each switched on by `on` (0..1). */
 	strata?: StrataRaw;
+	/** EP33+: the fear map. Each fear is a shadow on the Isle (`dark` 0..1, a soft creeping disc of radius `r`) and
+	 * each belief a light that answers one (`lit` 0..1 grows a lamplit disc of radius `light` from its centre, with a
+	 * lamplight rim and, with `lamp`, a lamp post at the centre). `xk` / `zk` move a zone (an eclipse's shadow);
+	 * `umbra` zones stay mostly dark inside other lights (lamps burning in the dark); a `rift` is a crack of light
+	 * along the segment to `to` (`dark` keys how far it has opened). */
+	fears?: FearRaw[];
 };
+
+export type FearRaw = {
+	id: string;
+	x: number;
+	z: number;
+	r: number;
+	kind?: 'zone' | 'umbra' | 'rift';
+	dark?: RawKey[];
+	lit?: RawKey[];
+	light?: number;
+	lamp?: boolean;
+	/** how strongly the lit disc tints the ground (default 1; the rim and the push-back are unchanged) */
+	glow?: number;
+	xk?: RawKey[];
+	zk?: RawKey[];
+	to?: [number, number];
+	label?: string;
+	answer?: string;
+};
+export type FearNow = {id: string; x: number; z: number; r: number; kind: 'zone' | 'umbra' | 'rift'; dark: number; lit: number; light: number; lamp: boolean; glow: number; to?: [number, number]; label?: string; answer?: string};
 
 export type StrataRaw = {
 	war: {y0: RawKey[]; y1: RawKey[]};
@@ -105,7 +135,10 @@ export type Strata = {y0: number; y1: number; surface: number; max: number; n: n
  * `rise`; `lights` its candles, `tithe` sheep, `sheaves` and shed `plates` laid before it, `paint` 0..2 the figures
  * painted on its stones). */
 export type PropRaw = {
-	kind: 'cairn' | 'offerings' | 'shrine' | 'statue' | 'standard' | 'border' | 'relic';
+	kind: 'cairn' | 'offerings' | 'shrine' | 'statue' | 'standard' | 'border' | 'relic' | 'lanterns' | 'sheaves';
+	/** EP33 `lanterns`: `n` boats with lamps floating on the water within radius `r`, lit one by one with `lights` (0..1);
+	 * `sheaves`: harvest sheaves laid in a ring of radius `r`, popping in one at a time with `sheaves` (a count) */
+	n?: number;
 	x: number;
 	z: number;
 	stones?: RawKey[];
@@ -238,7 +271,7 @@ export type World = {
 	/** every settlement, the first one included (EP28+: more than one) */
 	settlements: Settlement[];
 	folk: {count: Key[]; centers: [number, number][]; centersB: [number, number][] | null; site: Key[]; eyes: Key[]; wet: Key[]; glow: Key[]; hero: PredKey[]; spread: number} | null;
-	props: {kind: PropRaw['kind']; x: number; z: number; stones: Key[]; lights: Key[]; r: number; face?: number; tithe?: Key[]; sheaves?: Key[]; plates?: Key[]; rise?: Key[]; paint?: Key[]; gild?: Key[]; tar?: Key[]; grow?: Key[]; color?: string; torch?: Key[]; to?: [number, number]; skip?: [number, number]}[];
+	props: {kind: PropRaw['kind']; x: number; z: number; stones: Key[]; lights: Key[]; r: number; face?: number; tithe?: Key[]; sheaves?: Key[]; plates?: Key[]; rise?: Key[]; paint?: Key[]; gild?: Key[]; tar?: Key[]; grow?: Key[]; color?: string; torch?: Key[]; to?: [number, number]; skip?: [number, number]; n?: number}[];
 	/** EP30+ (null before) */
 	fields: {plots: {x: number; z: number; w: number; d: number}[]; ripe: Key[]; burn?: Key[]} | null;
 	/** EP29+ (null before) */
@@ -257,9 +290,13 @@ export type World = {
 		tints?: string[];
 		watch?: [number, number];
 		watchOn?: Key[];
+		look?: Key[];
+		lamps?: Key[];
 	} | null;
 	/** EP32+ (absent before) */
 	strata?: {war: {y0: Key[]; y1: Key[]}; surface: number; max: number; centuries: Key[]; fade: Key[]; flood: Key[]; veins: {box: [number, number, number, number]; color: string; on: Key[]; label?: string}[]};
+	/** EP33+ (absent before) */
+	fears?: {raw: FearRaw; dark: Key[]; lit: Key[]; xk: Key[]; zk: Key[]}[];
 };
 
 export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
@@ -330,6 +367,9 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 		// EP32+
 		...(p.kind === 'border' ? {rise: resolveKeys(timing, p.rise), to: p.to ?? [p.x, p.z], ...(p.skip ? {skip: p.skip} : {})} : {}),
 		...(p.kind === 'relic' ? {face: p.face ?? 0, rise: resolveKeys(timing, p.rise)} : {}),
+		// EP33+
+		...(p.kind === 'lanterns' ? {n: p.n ?? 6} : {}),
+		...(p.kind === 'sheaves' ? {n: p.n ?? 8, sheaves: resolveKeys(timing, p.sheaves)} : {}),
 	})),
 	fields: raw.fields ? {plots: raw.fields.plots, ripe: resolveKeys(timing, raw.fields.ripe), ...(raw.fields.burn ? {burn: resolveKeys(timing, raw.fields.burn)} : {})} : null,
 	people: raw.people
@@ -351,6 +391,8 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 				...(raw.people.tints ? {tints: raw.people.tints} : {}),
 				...(raw.people.watch ? {watch: raw.people.watch} : {}),
 				...(raw.people.watchOn ? {watchOn: resolveKeys(timing, raw.people.watchOn)} : {}),
+				...(raw.people.look ? {look: resolveKeys(timing, raw.people.look)} : {}),
+				...(raw.people.lamps ? {lamps: resolveKeys(timing, raw.people.lamps)} : {}),
 				...(raw.people.figures
 					? {figures: raw.people.figures.map((f) => ({keys: f.keys.map((k) => ({t: cueTime(timing, k.at), x: k.x, z: k.z, state: k.state ?? 'idle', face: k.face, dur: k.dur ?? 0})).sort((a, b) => a.t - b.t), tunic: f.tunic ?? '#8a5a3a', torch: !!f.torch, scale: f.scale ?? 1}))}
 					: {}),
@@ -371,7 +413,75 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 				},
 			}
 		: {}),
+	...(raw.fears ? {fears: raw.fears.map((f) => ({raw: f, dark: resolveKeys(timing, f.dark), lit: resolveKeys(timing, f.lit), xk: resolveKeys(timing, f.xk), zk: resolveKeys(timing, f.zk)}))} : {}),
 });
+
+/** EP33+: the fear map at time t (null when the episode has none). */
+export const fearsAt = (w: World, t: number): FearNow[] | null => {
+	if (!w.fears) return null;
+	return w.fears.map((f) => ({
+		id: f.raw.id,
+		x: f.xk.length ? sample(f.xk, t, f.raw.x) : f.raw.x,
+		z: f.zk.length ? sample(f.zk, t, f.raw.z) : f.raw.z,
+		r: f.raw.r,
+		kind: f.raw.kind ?? 'zone',
+		dark: sample(f.dark, t, 0),
+		lit: sample(f.lit, t, 0),
+		light: f.raw.light ?? f.raw.r * 1.05,
+		lamp: !!f.raw.lamp,
+		glow: f.raw.glow ?? 1,
+		...(f.raw.to ? {to: f.raw.to} : {}),
+		...(f.raw.label ? {label: f.raw.label} : {}),
+		...(f.raw.answer ? {answer: f.raw.answer} : {}),
+	}));
+};
+
+const sm01 = (v: number) => {
+	const p = Math.max(0, Math.min(1, v));
+	return p * p * (3 - 2 * p);
+};
+/** EP33+: how the fear map falls on a ground point: `dark` 0..1 (after the lights push it back), `lit` 0..1 inside a
+ * lit disc, `rim` 0..1 on a light's growing edge, `crack` 0..1 on a rift. `n` (0..1, per column) roughens the
+ * shadows' edges, which creep slowly with t. */
+export const fearLight = (fs: FearNow[], x: number, z: number, n: number, t: number, loopT?: number) => {
+	// the edges creep in whole cycles per episode, so the loop has no seam
+	const w1 = loopFreq(0.7, loopT);
+	const w2 = loopFreq(0.45, loopT);
+	let cover = 0;
+	let tint = 0;
+	let rim = 0;
+	let crack = 0;
+	for (const f of fs) {
+		if (f.kind === 'rift') {
+			if (f.dark <= 0.001 || !f.to) continue;
+			const vx = f.to[0] - f.x;
+			const vz = f.to[1] - f.z;
+			const L2 = vx * vx + vz * vz || 1;
+			const u = Math.max(0, Math.min(1, ((x - f.x) * vx + (z - f.z) * vz) / L2));
+			const d = Math.hypot(x - (f.x + vx * u), z - (f.z + vz * u));
+			// the crack opens from its middle outward
+			if (Math.abs(u - 0.5) * 2 < f.dark) crack = Math.max(crack, 1 - sm01(d / (0.55 + 0.5 * n)));
+			continue;
+		}
+		if (f.lit <= 0.001) continue;
+		const R = f.light * (1 - (1 - Math.min(1, f.lit)) ** 3);
+		const d = Math.hypot(x - f.x, z - f.z);
+		const cv = (1 - sm01((d - R + 0.5) / 1.0)) * Math.min(1, f.lit * 1.5);
+		cover = Math.max(cover, cv);
+		tint = Math.max(tint, cv * f.glow);
+		rim = Math.max(rim, (Math.abs(d - R) < 0.55 ? 1 : Math.max(0, 1 - (Math.abs(d - R) - 0.55) / 0.4)) * Math.min(1, f.lit * 2));
+	}
+	let dark = 0;
+	for (const f of fs) {
+		if (f.kind === 'rift' || f.dark <= 0.001) continue;
+		const d = Math.hypot(x - f.x, z - f.z);
+		const a = Math.atan2(z - f.z, x - f.x);
+		const edge = f.r * (0.94 + 0.08 * Math.sin(a * 3 + t * w1) + 0.05 * Math.sin(a * 5 - t * w2)) - n * 0.6;
+		const k = f.dark * (1 - sm01((d - edge + 0.5) / 1.0));
+		dark = Math.max(dark, k * (1 - cover * (f.kind === 'umbra' ? 0.3 : 1)));
+	}
+	return {dark, lit: tint, rim, crack};
+};
 
 /** EP32+: the strata at time t (null when the episode has none). */
 export const strataAt = (w: World, t: number): Strata | null => {

@@ -46,7 +46,7 @@ const GREY = '#d9d6d0';
 const TUNICS = ['#8a5a3a', '#4f7a8c', '#7a8a4a', '#a0603c', '#5a6a9a', '#9a8a5a', '#6a8a6a', '#a87a4a', '#5a5a6a', '#8a4a4a'];
 
 /** One mortal. `age` 0..1 of their life (child -> adult -> elder); `royal` dresses them in violet with a circlet. */
-export const Person: React.FC<{age: number; seed: number; gen: number; gait: number; stride: number; royal?: boolean; tunic?: string; robe?: string}> = ({age, seed, gen, gait, stride, royal, tunic, robe}) => {
+export const Person: React.FC<{age: number; seed: number; gen: number; gait: number; stride: number; royal?: boolean; tunic?: string; robe?: string; look?: number; lamp?: number}> = ({age, seed, gen, gait, stride, royal, tunic, robe, look = 0, lamp = 0}) => {
 	const skin = SKIN[Math.floor(hash2(seed, gen, 31) * SKIN.length)];
 	const hair0 = HAIR[Math.floor(hash2(seed, gen, 32) * HAIR.length)];
 	const grey = clamp((age - 0.62) / 0.25);
@@ -73,7 +73,14 @@ export const Person: React.FC<{age: number; seed: number; gen: number; gait: num
 						<B s={[0.11, 0.46, 0.11]} p={[0, -0.23, 0]} c={coat} />
 					</group>
 				))}
-				<group position={[0.02, 0.82, 0]}>
+				{/* EP33+: `look` tilts the head back to the sky; `lamp` 0..1 a lit lamp held up in front */}
+				{lamp > 0.01 && (
+					<group position={[0.34, 0.66, 0.12]} scale={lamp}>
+						<B s={[0.06, 0.3, 0.06]} p={[0, -0.08, 0]} c={'#5a3c28'} o={false} />
+						<B s={[0.24, 0.26, 0.24]} p={[0, 0.16, 0]} c={'#ffe45c'} e o={false} />
+					</group>
+				)}
+				<group position={[0.02, 0.82, 0]} rotation={[0, 0, look * 1.05]}>
 					<B s={[0.36, 0.36, 0.34]} p={[0, 0, 0]} c={skin} />
 					<B s={[0.04, 0.05, 0.05]} p={[0.18, 0.04, 0.08]} c={'#14100c'} o={false} />
 					<B s={[0.04, 0.05, 0.05]} p={[0.18, 0.04, -0.08]} c={'#14100c'} o={false} />
@@ -162,6 +169,9 @@ export const PeopleLayer: React.FC<{world: World; island: Island; t: number; s: 
 	const year = clockAt(world, t);
 	const count = sample(pw.count, t, 0);
 	const royal = sample(pw.royal, t, 0);
+	// EP33+ (absent before: zero, and Person renders as it did)
+	const look = pw.look ? sample(pw.look, t, 0) : 0;
+	const lamps = pw.lamps ? sample(pw.lamps, t, 0) : 0;
 	const N = Math.ceil(count);
 	const nodes: React.ReactNode[] = [];
 	// EP30+: the crowd gathering in a ring (absent before: g = 0 changes nothing)
@@ -201,7 +211,7 @@ export const PeopleLayer: React.FC<{world: World; island: Island; t: number; s: 
 		const head = watching ? Math.atan2(-(pw.watch![1] - z), pw.watch![0] - x) : gi > 0.5 && ga ? Math.atan2(-(ga.at[1] - z), ga.at[0] - x) : Math.atan2(-(z2 - z), x2 - x);
 		nodes.push(
 			<group key={i} position={[x, island.heightAt(x, z), z]} rotation={[0, head, 0]} scale={sc}>
-				<Person age={age} seed={i} gen={gen} gait={s * 7 + i} stride={moving ? 1 : 0} royal={hash2(i, gen, 34) < royal} robe={pw.robe} tunic={pw.tints ? pw.tints[i % pw.centers.length] : undefined} />
+				<Person age={age} seed={i} gen={gen} gait={s * 7 + i} stride={moving ? 1 : 0} royal={hash2(i, gen, 34) < royal} robe={pw.robe} tunic={pw.tints ? pw.tints[i % pw.centers.length] : undefined} {...(pw.look ? {look: clamp((look - hash2(i, 9, 29) * 0.3) / 0.7)} : {})} {...(pw.lamps ? {lamp: clamp((lamps - hash2(i, 10, 29)) * 8)} : {})} />
 			</group>,
 		);
 	}
@@ -584,6 +594,75 @@ export const Figure: React.FC<{x: number; z: number; face: number; moving: boole
 					<B s={[0.16 * fl, 0.3 * fl, 0.16 * fl]} p={[0, 1.2, 0]} c={'#ff8a3c'} e o={false} />
 				</group>
 			)}
+		</group>
+	);
+};
+
+/** EP33: lamps on the water: `n` small boats spread within radius `r` of (x, z), each with a lit lamp on a post,
+ * lit one at a time as `level` goes 0..1. They bob a little; the bob runs whole cycles per episode (`loopT`). Only
+ * water columns get a boat. */
+export const Lanterns: React.FC<{x: number; z: number; r: number; n: number; island: Island; t: number; loopT?: number; level: number}> = ({x, z, r, n, island, t, loopT, level}) => {
+	if (level <= 0.01) return null;
+	const out: React.ReactNode[] = [];
+	const bob = loopFreq(1.3, loopT);
+	for (let k = 0; k < n; k++) {
+		const on = clamp((level - (k / n) * 0.75) / 0.25);
+		if (on <= 0.01) continue;
+		const a = k * 2.39996 + 0.4;
+		const rr = r * (0.35 + 0.65 * Math.sqrt((k + 0.5) / n));
+		const px = x + Math.cos(a) * rr;
+		const pz = z + Math.sin(a) * rr;
+		const c = island.columnAt(px, pz);
+		if (!c || c.biome !== 'water') continue;
+		const y = island.waterLevel + 0.05 + Math.sin(t * bob + k * 1.7) * 0.05;
+		out.push(
+			<group key={k} position={[px, y, pz]} rotation={[0, a, Math.sin(t * bob + k) * 0.06]} scale={on}>
+				<B s={[1.1, 0.22, 0.46]} p={[0, 0.11, 0]} c={'#6b4a30'} />
+				<B s={[0.3, 0.12, 0.5]} p={[0.5, 0.26, 0]} c={'#5a3c28'} o={false} />
+				<B s={[0.07, 0.7, 0.07]} p={[0, 0.55, 0]} c={'#3a2a1e'} o={false} />
+				<B s={[0.3, 0.3, 0.3]} p={[0, 0.98, 0]} c={'#ffe45c'} e o={false} />
+			</group>,
+		);
+	}
+	return <group>{out}</group>;
+};
+
+/** EP33: the first harvest shared: `n` sheaves standing in a ring of radius `r` round (x, z), popping in one at a
+ * time as `count` rises. */
+export const Sheaves: React.FC<{x: number; z: number; r: number; n: number; island: Island; count: number}> = ({x, z, r, n, island, count}) => {
+	if (count <= 0.01) return null;
+	return (
+		<group>
+			{Array.from({length: n}, (_, k) => {
+				const v = clamp(count - k);
+				if (v <= 0.01) return null;
+				const a = (k / n) * Math.PI * 2;
+				const px = x + Math.cos(a) * r;
+				const pz = z + Math.sin(a) * r;
+				const pop = v < 1 ? 1 - (1 - v) ** 3 + Math.sin(v * Math.PI) * 0.15 : 1;
+				return (
+					<group key={k} position={[px, island.heightAt(px, pz), pz]} rotation={[0, -a, 0]} scale={pop * 1.3}>
+						<B s={[0.3, 0.8, 0.3]} p={[0, 0.4, 0]} c={SHEAF} />
+						<B s={[0.34, 0.1, 0.34]} p={[0, 0.34, 0]} c={SHEAF_D} o={false} />
+						<B s={[0.42, 0.2, 0.42]} p={[0, 0.86, 0]} c={SHEAF} />
+					</group>
+				);
+			})}
+		</group>
+	);
+};
+
+/** EP33: a lamp post at the heart of a belief on the fear map: a dark post with a glowing lamp head, rising with
+ * `on` 0..1. */
+export const LampPost: React.FC<{x: number; z: number; island: Island; t: number; loopT?: number; on: number}> = ({x, z, island, t, loopT, on}) => {
+	if (on <= 0.01) return null;
+	const fl = 0.9 + 0.1 * Math.sin(t * loopFreq(9, loopT) + x);
+	return (
+		<group position={[x, Math.max(island.waterLevel, island.heightAt(x, z)), z]} scale={[1, on, 1]}>
+			<B s={[0.5, 0.3, 0.5]} p={[0, 0.15, 0]} c={'#4a4644'} />
+			<B s={[0.16, 2.2, 0.16]} p={[0, 1.3, 0]} c={'#3a2a1e'} />
+			<B s={[0.9 * fl, 0.8 * fl, 0.9 * fl]} p={[0, 2.7, 0]} c={'#ffe45c'} e />
+			<B s={[0.46 * fl, 0.3, 0.46 * fl]} p={[0, 3.2, 0]} c={'#fff6d2'} e o={false} />
 		</group>
 	);
 };

@@ -7,11 +7,11 @@ import {buildHerd, Grimmaw, GrimmawPose, Herd, HerdAgent} from './Creatures';
 import {Column, Island, isle} from './island';
 import {BIOME_COLORS, DIRT, IslandMesh} from './IslandMesh';
 import {Cam, camPose, Lights, Stage, sunDir} from './Stage';
-import {cameraAt, dragonAt, herdCount, moodAt, predatorAt, simTime, strataAt, World} from './timeline';
+import {cameraAt, dragonAt, fearLight, fearsAt, herdCount, moodAt, predatorAt, simTime, strataAt, World} from './timeline';
 import {Dragon} from './Dragon';
 import {Cairn, roadAt, SettlementLayer} from './Settlement';
 import {FolkLayer} from './Folk';
-import {Border, Offerings, PeopleLayer, Relic, Shrine, Standard, Statue} from './People';
+import {Border, LampPost, Lanterns, Offerings, PeopleLayer, Relic, Sheaves, Shrine, Standard, Statue} from './People';
 
 export type S2State = {world: World; t: number; cam: Cam; island: Island; agents: HerdAgent[]; agentsB?: HerdAgent[]};
 export const S2Context = createContext<S2State | null>(null);
@@ -45,6 +45,10 @@ const GRAIN_C = new THREE.Color('#e6c357');
 const cropCol = new THREE.Color();
 const EMBER_C = new THREE.Color('#ff9a3c');
 const CHAR_C = new THREE.Color('#2a2420');
+// EP33+: the fear map's shadow (deep indigo) and its lamplight
+const FEAR_C = new THREE.Color('#2b2766');
+const LAMP_C = new THREE.Color('#ffe45c');
+const CRACK_C = new THREE.Color('#fff6d2');
 const grey = (c: THREE.Color, sat: number) => {
 	if (sat >= 0.999) return c;
 	const g = c.r * 0.3 + c.g * 0.59 + c.b * 0.11;
@@ -296,6 +300,29 @@ const FieldFire: React.FC<{f: {x: number; z: number; w: number; d: number}; t: n
 	</group>
 );
 
+/** EP33+: a crack of light in the ground along a rift (it opens from its middle outward with `dark`): glowing voxels
+ * set flush in the turf, jittered side to side, flickering a little. */
+const RIFT_M = [new THREE.MeshBasicMaterial({color: '#fff6d2'}), new THREE.MeshBasicMaterial({color: '#ffe45c'})];
+const Rift: React.FC<{f: {x: number; z: number; to?: [number, number]; dark: number}; island: Island; t: number}> = ({f, island, t}) => {
+	const [tx, tz] = f.to!;
+	const len = Math.hypot(tx - f.x, tz - f.z);
+	const n = Math.max(2, Math.round(len / 0.45));
+	const nx = -(tz - f.z) / len;
+	const nz = (tx - f.x) / len;
+	const out: React.ReactNode[] = [];
+	for (let k = 0; k <= n; k++) {
+		const u = k / n;
+		if (Math.abs(u - 0.5) * 2 > f.dark) continue;
+		const j = (hash2(k, 3, 61) - 0.5) * 0.9 + Math.sin(u * 17) * 0.35;
+		const x = f.x + (tx - f.x) * u + nx * j;
+		const z = f.z + (tz - f.z) * u + nz * j;
+		const y = Math.max(island.waterLevel, island.heightAt(x, z));
+		const w = 0.42 + 0.2 * hash2(k, 4, 61);
+		out.push(<mesh key={k} geometry={DUST_BOX} material={RIFT_M[(k + Math.floor(t * 12)) % 7 === 0 ? 1 : 0]} position={[x, y + 0.06, z]} scale={[w, 0.14, w]} />);
+	}
+	return <group>{out}</group>;
+};
+
 export type WorldSceneProps = {world: World; t: number; herdCenters: [number, number][]; herdBase: number};
 
 export const useWorldState = (world: World, t: number, herdCenters: [number, number][], herdBase: number): S2State => {
@@ -369,6 +396,15 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 		})
 		.filter((r) => r.w > 0);
 
+	// EP33+: the fear map, sampled once per frame (null for every older episode, which then tints as it did)
+	const fears = fearsAt(world, t);
+	const fearTint = (out: THREE.Color, x: number, z: number, n: number, k = 1) => {
+		const f = fearLight(fears!, x, z, n, t, world.loopT);
+		if (f.dark > 0) out.lerp(FEAR_C, 0.93 * f.dark * k);
+		if (f.lit > 0) out.lerp(LAMP_C, 0.3 * f.lit * k);
+		if (f.rim > 0) out.lerp(LAMP_C, 0.95 * f.rim * k);
+		if (f.crack > 0) out.lerp(CRACK_C, 0.95 * f.crack * k);
+	};
 	const tint = (c: Column, base: THREE.Color, out: THREE.Color) => {
 		out.copy(base);
 		if (world.ambient.glints && c.biome === 'water') {
@@ -418,6 +454,7 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 				out.lerp(ringCol, Math.max(border, inside) * r.w);
 			}
 		}
+		if (fears) fearTint(out, c.x, c.z, c.r);
 		grey(out, mood.sat);
 	};
 	const treeScale = (k: number) => {
@@ -432,6 +469,10 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 			const sk = smoothstep(tr.r * 0.8, tr.r * 0.8 + 0.2, snow);
 			if (part === 2) c.lerp(SNOW_C, sk * 0.9);
 			else c.lerp(SNOW_C, sk * 0.35);
+		}
+		if (fears) {
+			const tr = island.trees[k];
+			fearTint(c, tr.x, tr.z, tr.r, 0.9);
 		}
 		grey(c, mood.sat);
 	};
@@ -517,8 +558,14 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 					<Border key={`bd${i}`} x={p.x} z={p.z} to={p.to ?? [p.x, p.z]} island={island} rise={sample(p.rise ?? [], t, 0)} skip={p.skip} />
 				) : p.kind === 'relic' ? (
 					<Relic key={`rl${i}`} x={p.x} z={p.z} face={p.face ?? 0} island={island} t={t} loopT={world.loopT} rise={sample(p.rise ?? [], t, 0)} />
+				) : p.kind === 'lanterns' ? (
+					<Lanterns key={`ln${i}`} x={p.x} z={p.z} r={p.r} n={p.n ?? 6} island={island} t={t} loopT={world.loopT} level={sample(p.lights, t, 0)} />
+				) : p.kind === 'sheaves' ? (
+					<Sheaves key={`sh${i}`} x={p.x} z={p.z} r={p.r} n={p.n ?? 8} island={island} count={sample(p.sheaves ?? [], t, 0)} />
 				) : null,
 			)}
+			{fears?.map((f, i) => (f.kind === 'rift' && f.to && f.dark > 0.01 ? <Rift key={`rf${i}`} f={f} island={island} t={t} /> : null))}
+			{fears?.map((f, i) => (f.lamp && f.kind !== 'rift' ? <LampPost key={`lp${i}`} x={f.x} z={f.z} island={island} t={t} loopT={world.loopT} on={Math.min(1, f.lit * 1.6)} /> : null))}
 			{burn > 0.02 && burn < 0.95 && world.fields!.plots.map((f, i) => <FieldFire key={`ff${i}`} f={f} t={t} level={Math.sin(Math.min(1, burn / 0.95) * Math.PI)} y={island.heightAt(f.x, f.z)} seed={i} />)}
 			{world.ambient.birds > 0 && <Birds t={t} n={world.ambient.birds} loopT={world.loopT} />}
 			{world.ambient.motes > 0 && <Motes t={t} n={world.ambient.motes} island={island} warm={mood.warm} loopT={world.loopT} />}

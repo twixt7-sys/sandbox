@@ -718,7 +718,52 @@ def style_earth(c: Ctx):
                     c.add("timp", b + d - 0.75 + j * 0.125, 0.12, r, 30 + j * 9)
 
 
-STYLES = {"dirge": style_dirge, "earth": style_earth, "chronicle": style_chronicle, "dispute": style_dispute, "hymn": style_hymn, "rite": style_rite, "hook": style_hook, "pulse": style_pulse, "drive": style_drive, "drop": style_drop, "void": style_void,
+# ---- EP33 colours (additive): a believable religion built from fear. Sections set `programs` (bowed glass on the
+# strings channel, tubular bells on the music-box channel, a dulcimer on the marimba channel and an ocarina on the lead
+# for `lantern`) and later sections set them back.
+
+def style_vigil(c: Ctx):
+    """A night vigil under a dark sky: a bowed-glass pad, a low cello drone on the tonic, a bell tolling the theme's
+    first notes one per bar, and a soft rain of celesta stars. Hushed and waiting; no choir, no organ."""
+    c.pad("strings", 50, 69, 54, max_notes=3)
+    tpc, steps = key_info(c.key)
+    c.add("cello", 0, c.n + 0.2, in_range(tpc, 36, 47)[0], 60)
+    tonic = nearest(tpc, 62)
+    toll = [0, 4, 0, 2]  # D A D F: the theme's opening, one bell a bar
+    for k, b in enumerate(range(0, c.n, 4)):
+        deg = toll[k % len(toll)]
+        c.add("mbox", b, 3.6, tonic + steps[deg % 7], 78)
+    b = 0.5
+    k = 0
+    while b < c.n - 1e-6:
+        notes = voicing(c.chord(b), 74, 91)
+        if notes:
+            c.add("celesta", b, 0.6, notes[(k * 2) % len(notes)], 34 + (k % 3) * 6)
+        b += 1.5
+        k += 1
+
+
+def style_lantern(c: Ctx):
+    """A procession of lamps: a twinkling celesta ostinato over the bowed-glass pad. `layer` 1-4 adds one family per
+    belief lit (a hammered dulcimer, a soft hand drum and pizzicato bass, the theme on ocarina, then bells on the
+    roots)."""
+    layer = c.spec.get("layer", 4)
+    c.pad("strings", 52, 69, 50 + 4 * min(layer, 4), max_notes=3)
+    c.arp("celesta", 0.5, 69, 88, 88, pattern=(0, 2, 1, 3, 2, 1), accent=1.1)
+    c.root("cello", 36, 48, 52)
+    if layer >= 2:
+        c.arp("marimba", 0.5, 57, 76, 100, pattern=(0, 1, 2, 1, 3, 1, 2, 1), accent=1.15)
+    if layer >= 3:
+        for b in range(0, c.n):
+            c.add("drums", b, 0.3, LTOM if b % 2 == 0 else HTOM, 76 if b % 4 == 0 else 56)
+        c.arp("pizz", 1.0, 40, 55, 92, pattern=(0, 2, 1, 2))
+    if layer >= 4:
+        c.theme("lead", vel=92, bars=(0, 4))
+        for b, d, ch in c.chord_spans():
+            c.add("mbox", b, 3.0, voicing(ch, 62, 74)[0], 56)
+
+
+STYLES = {"vigil": style_vigil, "lantern": style_lantern, "dirge": style_dirge, "earth": style_earth, "chronicle": style_chronicle, "dispute": style_dispute, "hymn": style_hymn, "rite": style_rite, "hook": style_hook, "pulse": style_pulse, "drive": style_drive, "drop": style_drop, "void": style_void,
           "mystery": style_mystery, "build": style_build, "twist": style_twist, "rest": style_rest, "frenzy": style_frenzy,
           "crash": style_crash, "swell": style_swell, "anthem": style_anthem, "outro": style_outro, "tease": style_tease,
           "soar": style_soar, "raid": style_raid, "stealth": style_stealth,

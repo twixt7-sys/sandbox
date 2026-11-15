@@ -104,6 +104,13 @@ export const SPRITES: Record<string, {rows: string[]; colors: Record<string, str
 		rows: ['...YYYY...', '.YYDDDDYY.', '.YDDDDDDY.', 'YDDDDDDDDY', 'YDDDDDDDDY', 'YDDDDDDDDY', 'YDDDDDDDDY', '.YDDDDDDY.', '.YYDDDDYY.', '...YYYY...'],
 		colors: {Y: '#f4c46e', D: '#141d38'},
 	},
+	// EP33's tease for EP34: the ground split by a crack of light (what the gods buried)
+	rift: {
+		rows: ['GGGGLGGGGG', 'GGGGLLGGGG', 'SSSLLSSSSS', 'SSSSLLSSSS', 'sssssLssss', 'ssssLLssss', 'WWWWLWWWWW', 'WWWLLWWWWW'],
+		colors: {G: '#86bb5c', S: '#8f6c46', s: '#7a5a3a', W: '#3a2a2e', L: '#fff6d2'},
+	},
+	// EP33's field card icon: a lamp (the belief that answers a fear)
+	lantern: {rows: ['.KKK.', '..K..', 'KKKKK', 'KYYYK', 'KYOYK', 'KYYYK', 'KKKKK'], colors: {K: '#3a2a1e', Y: '#ffe45c', O: '#fff6d2'}},
 };
 
 /** `mono` paints every pixel one colour (a locked silhouette, e.g. the next episode's creature before its reveal). */

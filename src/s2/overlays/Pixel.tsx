@@ -111,6 +111,14 @@ export const SPRITES: Record<string, {rows: string[]; colors: Record<string, str
 	},
 	// EP33's field card icon: a lamp (the belief that answers a fear)
 	lantern: {rows: ['.KKK.', '..K..', 'KKKKK', 'KYYYK', 'KYOYK', 'KYYYK', 'KKKKK'], colors: {K: '#3a2a1e', Y: '#ffe45c', O: '#fff6d2'}},
+	// EP34: the two skies' counters (a hole torn in painted lapis; a brush that paints it over) and the next-run card
+	// for EP35 (broken pillars older than anyone, one fallen stone set back in fresh mortar)
+	tear: {rows: ['UUUUUUU', 'UUC.CUU', 'UC...CU', 'U.....U', 'UC...CU', 'UUC.CUU', 'UUUUUUU'], colors: {U: '#4a68ff', C: '#efe3c2'}},
+	brush: {rows: ['....HH', '...HH.', '..HH..', '.FF...', 'BBF...', 'BB....'], colors: {H: '#8a5a36', F: '#c9c2b4', B: '#4a68ff'}},
+	ruins: {
+		rows: ['SSSS.......SSSS', '.SS.........SS.', '.SS...MM....SS.', '.SS...SS....SS.', '.SS...SS.....S.', '.SS...SS.......', '.SS.F.SS.......', '.SS.FFSS...SS..', 'GGGGGGGGGGGGGGG', 'ddddddddddddddd'],
+		colors: {S: '#9a9b8e', M: '#5f7a4a', F: '#efe3c2', G: '#86bb5c', d: '#7a5a3a'},
+	},
 };
 
 /** `mono` paints every pixel one colour (a locked silhouette, e.g. the next episode's creature before its reveal). */

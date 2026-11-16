@@ -76,6 +76,17 @@ The paid primary stack (Runway stills and clips + ElevenLabs) would still cost a
 | Render + QA | Claude cloud container | $0 |
 | **Total** | | **$0 cash (₱0)** plus 5 Figma image generations |
 
+## What Episode 34 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| Field card sprite (a brass lantern falling with a trail of light) | **Free local SDXL-Lightning with the pixel-art LoRA** (`pipeline/local_stills.py --sprite`, CPU, about 75 s an image): 4 candidates from two prompts (a falling star: one read as lightning, one was a cropped smear; a falling lantern: seed 34 had fire bursting out of its top), seed 7 of the lantern used; checked for real symbols (none); re-gridded to 76×124 with `pipeline/pixelate.py` (`--colors 28`) and the end of the trail dissolved with an ordered dither in code (`art/fade_trail.py`). **No Figma credits** | $0 |
+| The painted sky (painting, tears, patches, the true sky), the falling star, the bones and their trench, the ruins, the strata callback, the people | Remotion + three.js code, software WebGL (`swangle`) | $0 |
+| Narration | Kokoro-82M (`af_heart`, speed 0.98), 167 words, 57.85 s total | $0 |
+| Score + SFX | `music_s2.py` (+ `lullaby`, `excavate`: harp, music box, kalimba, wood blocks and clarinet from the same free SoundFont), `score_s2.py` (+ `tear`, `brush`, `starfall`, `stoneRise`) | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, 0 Figma generations |
+
 ## What Episode 33 actually used
 
 | Item | Used | Cash cost |

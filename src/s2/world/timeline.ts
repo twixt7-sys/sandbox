@@ -17,6 +17,10 @@ export type CamKey = {
 	/** EP27+: ride with a dragon. The target becomes the dragon's position (+ `ahead` units along its heading, + `up`),
 	 * and `az` is measured from directly behind it (0 = over its tail, positive = orbit to the camera's right). */
 	follow?: {dragon: string; ahead?: number; up?: number; look?: [number, number, number]; back?: number};
+	/** EP34+: a dolly zoom. While this key eases in, the frame's half-height at the target (dist · tan(fov / 2)) is
+	 * interpolated instead of the distance, so the subject holds its size while the lens changes and the sky behind
+	 * it swells (longer lens) or falls away (wider lens). Absent: dist and fov ease separately, as before. */
+	dolly?: boolean;
 };
 export type Mood = 'day' | 'dusk' | 'gloom' | 'winter' | 'night' | 'golden';
 export type LightKey = {at: Cue; dur?: number; mood: Mood};
@@ -98,6 +102,33 @@ export type WorldRaw = {
 	 * `umbra` zones stay mostly dark inside other lights (lamps burning in the dark); a `rift` is a crack of light
 	 * along the segment to `to` (`dark` keys how far it has opened). */
 	fears?: FearRaw[];
+	/** EP34+: the two skies. The creation myth is a painted dome over the Isle (a sphere of radius `r` centred `y`
+	 * below the grass, painted inside: lapis with gilt stars, a gold horizon band and the First Lamp falling at
+	 * `lamp`), seen from outside as the sky behind the island. `tears` are holes torn in the paint (each at dome
+	 * azimuth / elevation in degrees, radius in degrees; `open` 0..1 grows it, `patch` 0..1 paints it over in fresher
+	 * paint), through which the true sky shows (the void). `sheer` 0..1 thins the whole painting (the lamp stays
+	 * longest) and `star` is a real falling star whose head runs `from` -> `to` as `fall` goes 0..1. Dome azimuth
+	 * follows the camera's: a point at dome az A shows behind the island from a camera at az A + 180. */
+	sky?: SkyRaw;
+};
+
+export type SkyRaw = {
+	r?: number;
+	y?: number;
+	paint?: RawKey[];
+	sheer?: RawKey[];
+	lamp?: {az: number; el: number};
+	tears?: {az: number; el: number; r: number; open: RawKey[]; patch?: RawKey[]; seed?: number}[];
+	star?: {from: [number, number, number]; to: [number, number, number]; fall: RawKey[]};
+};
+export type SkyNow = {
+	r: number;
+	y: number;
+	paint: number;
+	sheer: number;
+	lamp: {az: number; el: number};
+	tears: {az: number; el: number; r: number; open: number; patch: number; seed: number}[];
+	star: {from: [number, number, number]; to: [number, number, number]; fall: number} | null;
 };
 
 export type FearRaw = {
@@ -135,7 +166,9 @@ export type Strata = {y0: number; y1: number; surface: number; max: number; n: n
  * `rise`; `lights` its candles, `tithe` sheep, `sheaves` and shed `plates` laid before it, `paint` 0..2 the figures
  * painted on its stones). */
 export type PropRaw = {
-	kind: 'cairn' | 'offerings' | 'shrine' | 'statue' | 'standard' | 'border' | 'relic' | 'lanterns' | 'sheaves';
+	kind: 'cairn' | 'offerings' | 'shrine' | 'statue' | 'standard' | 'border' | 'relic' | 'lanterns' | 'sheaves' | 'bones' | 'ruin';
+	/** EP34 `bones`: a giant's skeleton lying in the ground, unearthed by `rise` (0 buried .. 1 half out); `ruin`: broken
+	 * pillars older than anyone, rising out of the ground with `rise`; both turn by `face` and scale by `r` / 2.2 */
 	/** EP33 `lanterns`: `n` boats with lamps floating on the water within radius `r`, lit one by one with `lights` (0..1);
 	 * `sheaves`: harvest sheaves laid in a ring of radius `r`, popping in one at a time with `sheaves` (a count) */
 	n?: number;
@@ -297,6 +330,8 @@ export type World = {
 	strata?: {war: {y0: Key[]; y1: Key[]}; surface: number; max: number; centuries: Key[]; fade: Key[]; flood: Key[]; veins: {box: [number, number, number, number]; color: string; on: Key[]; label?: string}[]};
 	/** EP33+ (absent before) */
 	fears?: {raw: FearRaw; dark: Key[]; lit: Key[]; xk: Key[]; zk: Key[]}[];
+	/** EP34+ (absent before) */
+	sky?: {raw: SkyRaw; paint: Key[]; sheer: Key[]; tears: {open: Key[]; patch: Key[]}[]; fall: Key[]};
 };
 
 export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
@@ -370,6 +405,8 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 		// EP33+
 		...(p.kind === 'lanterns' ? {n: p.n ?? 6} : {}),
 		...(p.kind === 'sheaves' ? {n: p.n ?? 8, sheaves: resolveKeys(timing, p.sheaves)} : {}),
+		// EP34+
+		...(p.kind === 'bones' || p.kind === 'ruin' ? {face: p.face ?? 0, rise: resolveKeys(timing, p.rise)} : {}),
 	})),
 	fields: raw.fields ? {plots: raw.fields.plots, ripe: resolveKeys(timing, raw.fields.ripe), ...(raw.fields.burn ? {burn: resolveKeys(timing, raw.fields.burn)} : {})} : null,
 	people: raw.people
@@ -414,7 +451,40 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 			}
 		: {}),
 	...(raw.fears ? {fears: raw.fears.map((f) => ({raw: f, dark: resolveKeys(timing, f.dark), lit: resolveKeys(timing, f.lit), xk: resolveKeys(timing, f.xk), zk: resolveKeys(timing, f.zk)}))} : {}),
+	...(raw.sky
+		? {
+				sky: {
+					raw: raw.sky,
+					paint: resolveKeys(timing, raw.sky.paint),
+					sheer: resolveKeys(timing, raw.sky.sheer),
+					tears: (raw.sky.tears ?? []).map((tr) => ({open: resolveKeys(timing, tr.open), patch: resolveKeys(timing, tr.patch)})),
+					fall: resolveKeys(timing, raw.sky.star?.fall),
+				},
+			}
+		: {}),
 });
+
+/** EP34+: the painted sky at time t (null when the episode has none). */
+export const skyAt = (w: World, t: number): SkyNow | null => {
+	const sk = w.sky;
+	if (!sk) return null;
+	return {
+		r: sk.raw.r ?? 56,
+		y: sk.raw.y ?? -2,
+		paint: sample(sk.paint, t, 1),
+		sheer: sample(sk.sheer, t, 0),
+		lamp: sk.raw.lamp ?? {az: 180, el: 18},
+		tears: (sk.raw.tears ?? []).map((tr, i) => ({az: tr.az, el: tr.el, r: tr.r, open: sample(sk.tears[i].open, t, 0), patch: sample(sk.tears[i].patch, t, 0), seed: tr.seed ?? i * 7 + 3})),
+		star: sk.raw.star ? {from: sk.raw.star.from, to: sk.raw.star.to, fall: sample(sk.fall, t, 0)} : null,
+	};
+};
+
+/** EP34+: a point on the painted dome (dome azimuth / elevation in degrees) in world coordinates. */
+export const domePoint = (s: {r: number; y: number}, az: number, el: number): [number, number, number] => {
+	const a = (az * Math.PI) / 180;
+	const e = (el * Math.PI) / 180;
+	return [Math.sin(a) * Math.cos(e) * s.r, s.y + Math.sin(e) * s.r, Math.cos(a) * Math.cos(e) * s.r];
+};
 
 /** EP33+: the fear map at time t (null when the episode has none). */
 export const fearsAt = (w: World, t: number): FearNow[] | null => {
@@ -550,6 +620,12 @@ export const cameraAt = (w: World, t: number, ground?: (x: number, z: number) =>
 	const az0 = from.az + driftFrom;
 	const az = lerpAngle(az0, cur.az, p) + driftCur;
 	const lerp = (a: number, b: number) => a + (b - a) * p;
+	if (cur.dolly && !cur.cut && idx > 0) {
+		const half = (f: number) => Math.tan(((f / 2) * Math.PI) / 180);
+		const fov = lerp(from.fov ?? 24, cur.fov ?? 24);
+		const h = lerp(from.dist * half(from.fov ?? 24), cur.dist * half(cur.fov ?? 24));
+		return {az, el: lerp(from.el, cur.el), dist: h / half(fov), at: [lerp(from.target[0], cur.target[0]), lerp(from.target[1], cur.target[1]), lerp(from.target[2], cur.target[2])], fov};
+	}
 	return {
 		az,
 		el: lerp(from.el, cur.el),

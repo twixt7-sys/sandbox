@@ -763,7 +763,54 @@ def style_lantern(c: Ctx):
             c.add("mbox", b, 3.0, voicing(ch, 62, 74)[0], 56)
 
 
-STYLES = {"vigil": style_vigil, "lantern": style_lantern, "dirge": style_dirge, "earth": style_earth, "chronicle": style_chronicle, "dispute": style_dispute, "hymn": style_hymn, "rite": style_rite, "hook": style_hook, "pulse": style_pulse, "drive": style_drive, "drop": style_drop, "void": style_void,
+# ---- EP34 colours (additive): a creation myth that is wrong. `lullaby` is the myth as it is sung to children (a harp
+# rocking in triplets, the theme on music box, a soft string pad, a cello on the roots; no drums, nothing liturgical);
+# `excavate` is the truth coming up out of the ground, one family per rule (a kalimba ostinato and wood-block ticks,
+# then a pizzicato walk and a bowed bass, a low hand drum and shaker, the theme on clarinet with glockenspiel).
+# Sections set `programs` (kalimba on the marimba channel, clarinet on the lead) and later sections set them back.
+
+def style_lullaby(c: Ctx):
+    """The myth as a lullaby: a harp rocking in triplets (root, fifth, octave, third), the theme on music box, a warm
+    string pad and a cello on the roots. Gentle and certain."""
+    c.pad("strings", 52, 69, 44, max_notes=3)
+    c.root("cello", 36, 48, 48)
+    k = 0
+    b = 0.0
+    while b < c.n - 1e-6:
+        notes = voicing(c.chord(b), 55, 79)
+        if notes:
+            pat = (0, 2, 4, 1, 3, 2)
+            c.add("harp", b, 0.9, notes[pat[k % len(pat)] % len(notes)], 70 if k % 3 == 0 else 54)
+        b += 1.0 / 3.0
+        k += 1
+    c.theme("mbox", vel=74, bars=c.spec.get("bars", (0, 4)), octave=c.spec.get("octave", 0))
+
+
+def style_excavate(c: Ctx):
+    """The ground answering back: `layer` 1-4 adds one family per rule (a kalimba ostinato with wood-block ticks; a
+    pizzicato walk over a bowed bass; a low hand drum and a shaker; the theme on clarinet with glockenspiel on the
+    roots). Curious and patient, never menacing."""
+    layer = c.spec.get("layer", 4)
+    c.pad("strings", 50, 66, 40 + 3 * min(layer, 4), max_notes=3)
+    c.arp("marimba", 0.5, 57, 79, 104, pattern=(0, 2, 1, 3, 0, 2, 3, 1), accent=1.15)
+    c.root("bass", 33, 45, 58)
+    for b in range(0, c.n * 2):
+        if b % 4 in (0, 3):
+            c.add("drums", b * 0.5, 0.2, 76 if b % 8 == 0 else 77, 58 if b % 8 == 0 else 44)
+    if layer >= 2:
+        c.root("cello", 33, 45, 62)
+        c.arp("pizz", 0.5, 38, 55, 84, pattern=(0, 1, 2, 1))
+    if layer >= 3:
+        for b in range(0, c.n):
+            c.add("drums", b, 0.3, LTOM, 74 if b % 2 == 0 else 52)
+        c.drums(kick=(), snare=(), hats=0, shaker=0.5)
+    if layer >= 4:
+        c.theme("lead", vel=90, bars=(0, 4), octave=-1)
+        for b, d, ch in c.chord_spans():
+            c.add("glock", b, 1.5, voicing(ch, 74, 86)[0], 60)
+
+
+STYLES = {"lullaby": style_lullaby, "excavate": style_excavate, "vigil": style_vigil, "lantern": style_lantern, "dirge": style_dirge, "earth": style_earth, "chronicle": style_chronicle, "dispute": style_dispute, "hymn": style_hymn, "rite": style_rite, "hook": style_hook, "pulse": style_pulse, "drive": style_drive, "drop": style_drop, "void": style_void,
           "mystery": style_mystery, "build": style_build, "twist": style_twist, "rest": style_rest, "frenzy": style_frenzy,
           "crash": style_crash, "swell": style_swell, "anthem": style_anthem, "outro": style_outro, "tease": style_tease,
           "soar": style_soar, "raid": style_raid, "stealth": style_stealth,

@@ -1,0 +1,6480 @@
+{
+ "id": "ep34",
+ "number": 34,
+ "season": 2,
+ "title": "What If Your World's Creation Myth Is Wrong?",
+ "lesson": "A creation myth that is simply true leaves nothing to find. Let yours be wrong about the past and still do a job: bury proof that it can't explain, give it something to hold up (a crown), let someone dig and someone hide what they find. Then hide a real event inside it, told wrong, so a reader can decode it. Every myth is a memory, told wrong.",
+ "format": {
+  "version": "s2",
+  "qa": {
+   "min": 55.0,
+   "max": 62.0
+  }
+ },
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 0.98
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.2,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "The same lab host, a little conspiratorial this time. The hook is a question asked of the viewer's childhood. 'Simply true' is the knowing setup; 'a textbook' lands dry. The rules are crisp, two beats each. 'It's remembering' is the quiet reveal; 'A star really fell here' is wonder. The comment ask is a genuine dilemma."
+ },
+ "timing": {
+  "leadIn": 0.2,
+  "tail": 0.85,
+  "shotLead": 0.12
+ },
+ "captionY": 1238,
+ "captionsOff": [
+  {
+   "line": "L3",
+   "from": "myth"
+  },
+  {
+   "line": "L5",
+   "from": "Five"
+  },
+  {
+   "line": "L7",
+   "from": "Wrong",
+   "to": "Four"
+  },
+  {
+   "line": "L13",
+   "from": "Rule"
+  }
+ ],
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "Every child learns the gods made the world. What if they're lying?",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "gods",
+    "lying?"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "hook",
+   "text": "Meet the First Lamp. It fell from the sky.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "first",
+    "fell"
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "setup",
+   "text": "The lazy version: the myth is simply true.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "lazy",
+    "true."
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "setup",
+   "text": "Press run.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "run."
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "run1",
+   "text": "Five hundred years. Nobody digs. Nothing to find.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "nobody",
+    "nothing"
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "drop",
+   "text": "A myth that's just true is a textbook.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "true",
+    "textbook."
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "rehook",
+   "text": "Wrong myths build better worlds. Four rules. The fifth is the twist.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "wrong",
+    "twist."
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "bones",
+   "text": "One: bury proof. Bones older than the gods.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "proof.",
+    "older"
+   ]
+  },
+  {
+   "id": "L9",
+   "shot": "crown",
+   "text": "Two: give it a job. The Queen's crown rests on it.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "job.",
+    "crown"
+   ]
+  },
+  {
+   "id": "L10",
+   "shot": "cliff",
+   "text": "Three: let someone dig. The cliffs count ten thousand years.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "dig.",
+    "thousand"
+   ]
+  },
+  {
+   "id": "L11",
+   "shot": "keepers",
+   "text": "Four: let someone hide it. Keepers paint over the holes.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "hide",
+    "paint"
+   ]
+  },
+  {
+   "id": "L12",
+   "shot": "run2",
+   "text": "Run it again. Five hundred years. They're still arguing.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "hundred",
+    "arguing."
+   ]
+  },
+  {
+   "id": "L13",
+   "shot": "twist",
+   "text": "Rule five? The myth isn't lying at all. It's remembering.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "lying",
+    "remembering."
+   ]
+  },
+  {
+   "id": "L14",
+   "shot": "twist",
+   "text": "A star really fell here. It made the lake.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "star",
+    "lake."
+   ]
+  },
+  {
+   "id": "L15",
+   "shot": "role",
+   "text": "So hide the truth inside the myth.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "truth",
+    "inside"
+   ]
+  },
+  {
+   "id": "L16",
+   "shot": "lesson",
+   "text": "Myths aren't lies. Every myth is a memory, told wrong.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "lies.",
+    "memory,"
+   ]
+  },
+  {
+   "id": "L17",
+   "shot": "cta",
+   "text": "Would you tell them the truth, or keep the myth?",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "tell",
+    "keep"
+   ]
+  },
+  {
+   "id": "L18",
+   "shot": "next",
+   "text": "Part 34 of 50. Follow for part 35: the ruins are older than us.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "follow",
+    "us."
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "world",
+   "purpose": "Close EP33's loop (a crack of light opened on 'the gods are lying') and stop the scroll on the question.",
+   "visual": "Golden hour, looking north across the Isle: EP33's crack of light lies open for good in the meadow south of the lake, a giant's bones half out of it; behind the island the sky is a painted dome (lapis, gilt stars, a gold horizon band, the First Lamp falling with its trail) mended with old patches, and a fresh ragged hole torn in it right above the crack shows the true night sky. THE GODS MADE IT / ARE THEY LYING? from frame 0, each line pulsing on its word; the hole widens on 'lying?'. Then the field card: THE FIRST LAMP \u00b7 CREATION MYTH \u00b7 SAYS: it fell from the sky.",
+   "camera": "From the south over the crack (el 16, fov 22), dolly-zooming to a longer lens (fov 20) under the field card.",
+   "layers": {
+    "foreground": "kinetic, sting, ground tag, field card",
+    "midground": "the crack, the bones, the crowd with lamps",
+    "background": "the painted sky, torn"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "THE GODS MADE IT / ARE THEY LYING? \u00b7 FIELD CARD NO. 009 \u00b7 THE FIRST LAMP",
+   "transition": "Ultramarine block wipe into the lazy version.",
+   "music": "Lullaby: a harp rocking in triplets, the theme on music box; a hit on 'lying?'.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "THE GODS MADE IT",
+       "color": "#e6be5e",
+       "size": 60,
+       "pulseAt": {
+        "line": "L1",
+        "word": "gods"
+       }
+      },
+      {
+       "text": "ARE THEY LYING?",
+       "color": "#e8dec4",
+       "size": 64,
+       "pulseAt": {
+        "line": "L1",
+        "word": "lying?"
+       }
+      }
+     ],
+     "y": 440,
+     "size": 60,
+     "start": {
+      "shot": "hook"
+     },
+     "end": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.1
+     },
+     "preShow": true
+    },
+    {
+     "type": "sting",
+     "label": "WORLD ENGINE",
+     "run": "RUN 34 \u00b7 MYTH",
+     "dur": 1.4,
+     "start": {
+      "shot": "hook"
+     },
+     "front": true
+    },
+    {
+     "type": "skyTags",
+     "start": {
+      "line": "L1",
+      "word": "lying?",
+      "offset": 0.1
+     },
+     "end": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "kind": "ground",
+       "text": "SOMETHING BURIED",
+       "at": {
+        "line": "L1",
+        "word": "lying?",
+        "offset": 0.1
+       },
+       "end": {
+        "line": "L2",
+        "word": "Meet",
+        "offset": -0.1
+       },
+       "lift": 110,
+       "dx": 0,
+       "pos": [
+        6.5,
+        12.2,
+        0.4
+       ]
+      }
+     ]
+    },
+    {
+     "type": "fieldCard",
+     "mode": "intro",
+     "y": 440,
+     "start": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "dietAt": {
+      "line": "L2",
+      "word": "fell"
+     },
+     "kicker": "FIELD CARD \u00b7 NO. 009",
+     "kind": "CREATION MYTH",
+     "name": "THE FIRST LAMP",
+     "dietLabel": "SAYS",
+     "diet": "it fell from the sky",
+     "sprite": "ep34/firstlamp_sprite.png",
+     "spriteW": 76,
+     "spriteH": 124
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "chime",
+     "at": {
+      "shot": "hook"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "shot": "hook",
+      "offset": 0.05
+     },
+     "gain": -17
+    },
+    {
+     "sound": "towerBell",
+     "at": {
+      "line": "L1",
+      "word": "gods"
+     },
+     "gain": -20
+    },
+    {
+     "sound": "tear",
+     "at": {
+      "line": "L1",
+      "word": "lying?",
+      "offset": -0.05
+     },
+     "gain": -15
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.05
+     },
+     "gain": -18
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L2",
+      "word": "fell"
+     },
+     "gain": -20
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "setup",
+   "scene": "world",
+   "purpose": "The lazy version: the myth is simply true.",
+   "visual": "A wipe to a perfect sky: no holes, no patches; the ground closed, no bones, the cliffs one plain colour (a world made in one night has no layers). THE MYTH / IS SIMPLY TRUE as the lens lengthens and the painted lamp looms. The sim bar arrives (HOLES 00, PATCHED 00) and RUN is pressed.",
+   "camera": "Dolly zoom out to fov 13 (the myth looms).",
+   "layers": {
+    "foreground": "kinetic, sim bar",
+    "midground": "the closed ground",
+    "background": "the perfect painted sky"
+   },
+   "lighting": "Day.",
+   "onScreenText": "THE MYTH IS SIMPLY TRUE",
+   "transition": "A cut to the whole Isle on 'run'.",
+   "music": "Lullaby, in major.",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "dur": 0.34,
+     "color": "#1b2766"
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "THE MYTH",
+       "at": {
+        "line": "L3",
+        "word": "myth"
+       },
+       "size": 80,
+       "color": "#e6be5e"
+      },
+      {
+       "text": "IS SIMPLY TRUE",
+       "at": {
+        "line": "L3",
+        "word": "simply"
+       },
+       "color": "parchment",
+       "size": 60
+      }
+     ],
+     "y": 470,
+     "size": 80,
+     "start": {
+      "line": "L3",
+      "word": "myth",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L4",
+      "word": "Press",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "simBar",
+     "counters": [
+      {
+       "icon": "tear",
+       "label": "HOLES",
+       "key": "holes",
+       "color": "#4a68ff",
+       "digits": 2
+      },
+      {
+       "icon": "brush",
+       "label": "PATCHED",
+       "key": "patched",
+       "color": "parchment",
+       "digits": 2
+      }
+     ],
+     "compact": true,
+     "start": {
+      "line": "L4",
+      "word": "Press",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L16",
+      "word": "Myths",
+      "offset": -0.3
+     },
+     "runAt": [
+      {
+       "line": "L4",
+       "word": "run."
+      },
+      {
+       "line": "L12",
+       "word": "Run"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "gain": -15
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L3",
+      "word": "simply"
+     },
+     "gain": -19
+    },
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L4",
+      "word": "run."
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L4",
+      "word": "run."
+     },
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "run1",
+   "scene": "world",
+   "purpose": "Run the lazy version: 500 years and nothing to find.",
+   "visual": "The whole Isle under its unbroken painted sky; YEAR 0\u2192500; nobody digs; HOLES 00. 500 YEARS, NOBODY DIGS, NOTHING TO FIND; tags: THE MYTH \u00b7 MADE IN ONE NIGHT and THE GROUND \u00b7 AGREES.",
+   "camera": "Wide (dist 160, fov 22), dolly-zooming to a long lens (fov 15): the painted sky swells around the Isle.",
+   "layers": {
+    "foreground": "sim bar, kinetic, tags",
+    "midground": "the unchanging Isle",
+    "background": "the painted sky"
+   },
+   "lighting": "Day.",
+   "onScreenText": "500 YEARS / NOBODY DIGS / NOTHING TO FIND",
+   "transition": "Gloom.",
+   "music": "Drive.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "500 YEARS",
+       "at": {
+        "line": "L5",
+        "word": "Five"
+       },
+       "color": "parchment",
+       "size": 56
+      },
+      {
+       "text": "NOBODY DIGS",
+       "at": {
+        "line": "L5",
+        "word": "Nobody"
+       },
+       "color": "parchment",
+       "size": 56
+      },
+      {
+       "text": "NOTHING TO FIND",
+       "at": {
+        "line": "L5",
+        "word": "Nothing"
+       },
+       "color": "rust",
+       "size": 56
+      }
+     ],
+     "y": 468,
+     "size": 56,
+     "start": {
+      "line": "L5",
+      "word": "Five",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L6",
+      "word": "A",
+      "offset": -0.25
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L5",
+      "word": "find.",
+      "offset": 0.3
+     },
+     "gain": -22
+    },
+    {
+     "sound": "crownPass",
+     "at": {
+      "line": "L5",
+      "word": "Nobody"
+     },
+     "gain": -20
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L5",
+      "word": "Nothing"
+     },
+     "gain": -21
+    }
+   ]
+  },
+  {
+   "id": "drop",
+   "scene": "world",
+   "purpose": "The punchline: a myth that's just true is a textbook.",
+   "visual": "Gloom over the perfect sky: TEXTBOOK \u00b7 0 HOLES \u00b7 0 SECRETS \u00b7 0 STORIES.",
+   "camera": "The longest lens of the episode (fov 12, dist 292): the painted sky fills the frame.",
+   "layers": {
+    "foreground": "stamp",
+    "midground": "the Isle",
+    "background": "the painted sky"
+   },
+   "lighting": "Gloom.",
+   "onScreenText": "TEXTBOOK \u00b7 0 HOLES \u00b7 0 SECRETS \u00b7 0 STORIES",
+   "transition": "Rewind + block wipe.",
+   "music": "Drop; a boom on 'textbook'.",
+   "graphics": [
+    {
+     "type": "stamp",
+     "text": "TEXTBOOK",
+     "sub": "0 HOLES \u00b7 0 SECRETS \u00b7 0 STORIES",
+     "color": "rust",
+     "y": 560,
+     "size": 84,
+     "start": {
+      "line": "L6",
+      "word": "true"
+     },
+     "end": {
+      "line": "L6",
+      "word": "textbook.",
+      "offset": 0.55
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L6",
+      "word": "true"
+     },
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "rehook",
+   "scene": "world",
+   "purpose": "Re-hook: the thesis, four rules, one locked.",
+   "visual": "REWIND to the pristine sky. WRONG MYTHS / BUILD BETTER WORLDS; then the checklist TEAR THE SKY, row 5 locked (the twist).",
+   "camera": "Wide, dolly-zooming from fov 26 to 18.",
+   "layers": {
+    "foreground": "rewind, kinetic, checklist",
+    "midground": "the Isle",
+    "background": "the painted sky"
+   },
+   "lighting": "Day.",
+   "onScreenText": "WRONG MYTHS \u00b7 BUILD BETTER WORLDS \u00b7 TEAR THE SKY 0/5",
+   "transition": "Cut to the meadow south of the lake.",
+   "music": "Excavate, bare (kalimba and wood blocks); a riser into 'the twist'.",
+   "graphics": [
+    {
+     "type": "rewind",
+     "y": 620,
+     "start": {
+      "line": "L6",
+      "word": "textbook.",
+      "offset": 0.6
+     },
+     "end": {
+      "line": "L7",
+      "word": "Wrong",
+      "offset": 0.3
+     }
+    },
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L6",
+      "word": "textbook.",
+      "offset": 0.58
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "WRONG MYTHS",
+       "at": {
+        "line": "L7",
+        "word": "Wrong"
+       },
+       "size": 78,
+       "color": "#e6be5e"
+      },
+      {
+       "text": "BUILD BETTER WORLDS",
+       "at": {
+        "line": "L7",
+        "word": "build"
+       },
+       "color": "parchment",
+       "size": 56
+      }
+     ],
+     "y": 470,
+     "size": 84,
+     "start": {
+      "line": "L7",
+      "word": "Wrong",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "fieldCard",
+     "mode": "checklist",
+     "y": 448,
+     "rows": [
+      {
+       "n": 1,
+       "label": "PROOF",
+       "text": "bones older than gods",
+       "at": {
+        "line": "L8",
+        "word": "proof."
+       }
+      },
+      {
+       "n": 2,
+       "label": "A JOB",
+       "text": "the Queen's crown",
+       "at": {
+        "line": "L9",
+        "word": "job."
+       }
+      },
+      {
+       "n": 3,
+       "label": "A DIGGER",
+       "text": "the cliffs count",
+       "at": {
+        "line": "L10",
+        "word": "dig."
+       }
+      },
+      {
+       "n": 4,
+       "label": "A KEEPER",
+       "text": "paints over holes",
+       "at": {
+        "line": "L11",
+        "word": "hide"
+       }
+      },
+      {
+       "n": 5,
+       "label": "THE MEMORY",
+       "text": "the truth inside",
+       "at": {
+        "line": "L7",
+        "word": "Four"
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L15",
+        "word": "inside",
+        "offset": -0.1
+       }
+      }
+     ],
+     "start": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L16",
+      "word": "Myths",
+      "offset": -0.3
+     },
+     "kicker": "THE FIRST LAMP \u00b7 WHAT IT HIDES",
+     "title": "TEAR THE SKY",
+     "blinkAt": {
+      "line": "L7",
+      "word": "twist."
+     },
+     "lockedText": "the twist",
+     "sprite": "ep34/firstlamp_sprite.png",
+     "spriteW": 76,
+     "spriteH": 124,
+     "collapse": [
+      [
+       {
+        "line": "L8",
+        "word": "bury",
+        "offset": -0.3
+       },
+       0
+      ],
+      [
+       {
+        "line": "L8",
+        "word": "bury"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "So",
+        "offset": -0.15
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "So",
+        "offset": 0.15
+       },
+       0
+      ]
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L6",
+      "word": "textbook.",
+      "offset": 0.55
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "gain": -17
+    }
+   ]
+  },
+  {
+   "id": "bones",
+   "scene": "world",
+   "purpose": "Rule 1: bury proof.",
+   "visual": "The meadow south of the lake on a long lens, the painted lamp behind it; on 'bury' the crack of light opens along the meadow; on 'Bones' a giant's skeleton rises half out of it (THE GROUND \u00b7 BONES \u00b7 9,000 YEARS); on 'older' the sky tears open right behind it (THE MYTH \u00b7 THE WORLD IS 500) as the camera dolly-zooms in to a wide lens and the sky falls away. HOLES 01.",
+   "camera": "Cut, then a dolly zoom in (fov 15 \u2192 40).",
+   "layers": {
+    "foreground": "tags, checklist (folded)",
+    "midground": "the bones in the crack",
+    "background": "the sky tearing"
+   },
+   "lighting": "Day.",
+   "onScreenText": "1 PROOF \u00b7 bones older than gods",
+   "transition": "Cut to the Queen.",
+   "music": "Excavate 1: kalimba and wood blocks.",
+   "graphics": [
+    {
+     "type": "skyTags",
+     "start": {
+      "line": "L8",
+      "word": "Bones",
+      "offset": 0.2
+     },
+     "end": {
+      "line": "L9",
+      "word": "Two:",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "kind": "ground",
+       "text": "BONES \u00b7 9,000 YEARS",
+       "at": {
+        "line": "L8",
+        "word": "Bones",
+        "offset": 0.2
+       },
+       "end": {
+        "line": "L9",
+        "word": "Two:",
+        "offset": -0.15
+       },
+       "lift": 80,
+       "dx": 0,
+       "pos": [
+        8.7,
+        12.2,
+        0.5
+       ]
+      },
+      {
+       "kind": "myth",
+       "text": "THE WORLD IS 500",
+       "at": {
+        "line": "L8",
+        "word": "older",
+        "offset": 0.3
+       },
+       "end": {
+        "line": "L9",
+        "word": "Two:",
+        "offset": -0.15
+       },
+       "lift": -50,
+       "dx": 0,
+       "tear": 1,
+       "band": [
+        600,
+        760
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L8",
+      "word": "proof."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "rift",
+     "at": {
+      "line": "L8",
+      "word": "bury"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "dig",
+     "at": {
+      "line": "L8",
+      "word": "Bones"
+     },
+     "gain": -14
+    },
+    {
+     "sound": "tear",
+     "at": {
+      "line": "L8",
+      "word": "older"
+     },
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "crown",
+   "scene": "world",
+   "purpose": "Rule 2: give the myth a job.",
+   "visual": "The Queen on her dais close on a wide lens; on 'Queen's' a dolly zoom out to a long lens swells the painted First Lamp behind her (THE GROUND \u00b7 HER RIGHT TO RULE; THE MYTH \u00b7 THE GODS CROWNED HER); the tower bell rings on 'crown'.",
+   "camera": "Cut, then a dolly zoom out (fov 34 \u2192 11): the myth looms over her.",
+   "layers": {
+    "foreground": "tags, checklist (folded)",
+    "midground": "the Queen",
+    "background": "the painted lamp"
+   },
+   "lighting": "Day.",
+   "onScreenText": "2 A JOB \u00b7 the Queen's crown",
+   "transition": "Cut to the south cliff.",
+   "music": "Excavate 2: a pizzicato walk over a bowed bass.",
+   "graphics": [
+    {
+     "type": "skyTags",
+     "start": {
+      "line": "L9",
+      "word": "Queen's"
+     },
+     "end": {
+      "line": "L10",
+      "word": "Three:",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "kind": "ground",
+       "text": "HER RIGHT TO RULE",
+       "at": {
+        "line": "L9",
+        "word": "Queen's"
+       },
+       "end": {
+        "line": "L10",
+        "word": "Three:",
+        "offset": -0.15
+       },
+       "lift": -30,
+       "dx": 250,
+       "pos": [
+        9.1,
+        -2.2,
+        1.6
+       ]
+      },
+      {
+       "kind": "myth",
+       "text": "THE GODS CROWNED HER",
+       "at": {
+        "line": "L9",
+        "word": "rests",
+        "offset": -0.1
+       },
+       "end": {
+        "line": "L10",
+        "word": "Three:",
+        "offset": -0.15
+       },
+       "lift": -150,
+       "dx": -200
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L9",
+      "word": "job."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "towerBell",
+     "at": {
+      "line": "L9",
+      "word": "crown"
+     },
+     "gain": -16
+    },
+    {
+     "sound": "morph",
+     "at": {
+      "line": "L9",
+      "word": "Queen's"
+     },
+     "gain": -20
+    }
+   ]
+  },
+  {
+   "id": "cliff",
+   "scene": "world",
+   "purpose": "Rule 3: let someone dig.",
+   "visual": "The island's south cliff, low and close, a digger with a torch at its lip; on 'cliffs' twelve layers stack up the cut side from the bottom (a callback to EP32's strata; THE GROUND \u00b7 10,000 YEARS); on 'thousand' the sky tears behind it (THE MYTH \u00b7 MADE IN ONE NIGHT). HOLES 02.",
+   "camera": "Cut, then a dolly zoom in (fov 14 \u2192 38): the sky falls away behind the layered cliff.",
+   "layers": {
+    "foreground": "tags, checklist (folded)",
+    "midground": "the layered cliff, the digger",
+    "background": "the sky tearing"
+   },
+   "lighting": "Day.",
+   "onScreenText": "3 A DIGGER \u00b7 the cliffs count",
+   "transition": "Cut to the valley.",
+   "music": "Excavate 3: a low hand drum and a shaker.",
+   "graphics": [
+    {
+     "type": "skyTags",
+     "start": {
+      "line": "L10",
+      "word": "cliffs"
+     },
+     "end": {
+      "line": "L11",
+      "word": "Four:",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "kind": "ground",
+       "text": "10,000 YEARS",
+       "at": {
+        "line": "L10",
+        "word": "count"
+       },
+       "end": {
+        "line": "L11",
+        "word": "Four:",
+        "offset": -0.15
+       },
+       "lift": 90,
+       "dx": 200,
+       "pos": [
+        4.0,
+        17.5,
+        -2.5
+       ]
+      },
+      {
+       "kind": "myth",
+       "text": "MADE IN ONE NIGHT",
+       "at": {
+        "line": "L10",
+        "word": "thousand",
+        "offset": 0.3
+       },
+       "end": {
+        "line": "L11",
+        "word": "Four:",
+        "offset": -0.15
+       },
+       "lift": -50,
+       "dx": 0,
+       "tear": 2,
+       "band": [
+        600,
+        760
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L10",
+      "word": "dig."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "rumble",
+     "from": {
+      "line": "L10",
+      "word": "cliffs"
+     },
+     "to": {
+      "line": "L10",
+      "word": "years.",
+      "offset": 0.1
+     },
+     "gain": -16
+    },
+    {
+     "sound": "tear",
+     "at": {
+      "line": "L10",
+      "word": "thousand"
+     },
+     "gain": -11
+    }
+   ]
+  },
+  {
+   "id": "keepers",
+   "scene": "world",
+   "purpose": "Rule 4: let someone hide it.",
+   "visual": "Dusk over the valley: robed keepers appear among the crowd (THE GROUND \u00b7 THE KEEPERS); on 'paint' and 'holes' both tears are brushed over with fresher paint, a visible patch with a dark seam (THE MYTH \u00b7 PAINTED OVER). PATCHED 02.",
+   "camera": "Cut, then a dolly zoom out (fov 30 \u2192 14): the mended sky looms.",
+   "layers": {
+    "foreground": "tags, checklist (folded)",
+    "midground": "the keepers",
+    "background": "the patches"
+   },
+   "lighting": "Dusk.",
+   "onScreenText": "4 A KEEPER \u00b7 paints over holes",
+   "transition": "Cut to the whole Isle.",
+   "music": "Excavate 4: the theme on clarinet, glockenspiel on the roots.",
+   "graphics": [
+    {
+     "type": "skyTags",
+     "start": {
+      "line": "L11",
+      "word": "Keepers"
+     },
+     "end": {
+      "line": "L12",
+      "word": "Run",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "kind": "ground",
+       "text": "THE KEEPERS",
+       "at": {
+        "line": "L11",
+        "word": "Keepers"
+       },
+       "end": {
+        "line": "L12",
+        "word": "Run",
+        "offset": -0.15
+       },
+       "lift": 90,
+       "dx": 0,
+       "pos": [
+        -2.4,
+        -3.2,
+        1.6
+       ]
+      },
+      {
+       "kind": "myth",
+       "text": "PAINTED OVER",
+       "at": {
+        "line": "L11",
+        "word": "holes.",
+        "offset": 0.2
+       },
+       "end": {
+        "line": "L12",
+        "word": "Run",
+        "offset": -0.15
+       },
+       "lift": -50,
+       "dx": 0,
+       "tear": 2,
+       "band": [
+        600,
+        760
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L11",
+      "word": "hide"
+     },
+     "gain": -13
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L11",
+      "word": "Keepers"
+     },
+     "gain": -18
+    },
+    {
+     "sound": "brush",
+     "at": {
+      "line": "L11",
+      "word": "paint"
+     },
+     "gain": -12
+    },
+    {
+     "sound": "brush",
+     "at": {
+      "line": "L11",
+      "word": "holes."
+     },
+     "gain": -12
+    }
+   ]
+  },
+  {
+   "id": "run2",
+   "scene": "world",
+   "purpose": "Run with the gap open: 500 years of digging and patching.",
+   "visual": "The whole Isle; YEAR 0\u2192500; eleven more holes tear around the painted sky and each is patched half a second later; the last, over the crack, stays open: STILL ARGUING \u00b7 500 YEARS \u00b7 14 HOLES \u00b7 13 PATCHED, stamped in ultramarine.",
+   "camera": "Wide, dolly-zooming in to a wide lens (fov 22 \u2192 30).",
+   "layers": {
+    "foreground": "sim bar, stamp",
+    "midground": "the tearing and mending sky",
+    "background": "the true sky in the holes"
+   },
+   "lighting": "Day.",
+   "onScreenText": "STILL ARGUING \u00b7 500 YEARS \u00b7 14 HOLES \u00b7 13 PATCHED",
+   "transition": "Cut to dusk.",
+   "music": "Drive with the theme; a stab and a cymbal on 'arguing'.",
+   "graphics": [
+    {
+     "type": "stamp",
+     "text": "STILL ARGUING",
+     "sub": "500 YEARS \u00b7 14 HOLES \u00b7 13 PATCHED",
+     "color": "#4a68ff",
+     "rotate": -4,
+     "y": 880,
+     "size": 90,
+     "start": {
+      "line": "L12",
+      "word": "arguing."
+     },
+     "end": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -16
+    },
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L12",
+      "word": "arguing."
+     },
+     "gain": -22
+    },
+    {
+     "sound": "tear",
+     "at": {
+      "line": "L12",
+      "word": "again.",
+      "offset": 0.05
+     },
+     "gain": -19
+    },
+    {
+     "sound": "brush",
+     "at": {
+      "line": "L12",
+      "word": "Five",
+      "offset": 0.1
+     },
+     "gain": -19
+    },
+    {
+     "sound": "tear",
+     "at": {
+      "line": "L12",
+      "word": "years.",
+      "offset": -0.1
+     },
+     "gain": -19
+    },
+    {
+     "sound": "brush",
+     "at": {
+      "line": "L12",
+      "word": "still",
+      "offset": -0.05
+     },
+     "gain": -19
+    },
+    {
+     "sound": "towerBell",
+     "at": {
+      "line": "L12",
+      "word": "again."
+     },
+     "gain": -20
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L12",
+      "word": "arguing."
+     },
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "twist",
+   "scene": "world",
+   "purpose": "The locked rule: the myth isn't lying, it's remembering.",
+   "visual": "Dusk: RULE 5? NOT LYING; on 'remembering' the clock runs back to year 0 and the paint thins until the true night sky shows through the whole dome, the painted lamp fading last. On 'star' a real star falls out of the sky behind the painted lamp into the lake: a flash, a ripple, a ring of dust, and the lake's rim lights as a crater (THE MYTH \u00b7 A LAMP FELL; THE GROUND \u00b7 A STAR FELL, then THE CRATER); every face turns up.",
+   "camera": "Cut, a dolly zoom in to a wide lens (fov 18 \u2192 34) on 'remembering'.",
+   "layers": {
+    "foreground": "kinetic, tags",
+    "midground": "the falling star, the crater",
+    "background": "the sheer painted sky"
+   },
+   "lighting": "Dusk.",
+   "onScreenText": "RULE 5? NOT LYING \u00b7 REMEMBERING \u00b7 A LAMP FELL / A STAR FELL \u00b7 THE CRATER",
+   "transition": "A dolly zoom out on 'So'.",
+   "music": "Twist (a held A7\u266d9), then the lullaby in D major (the myth was a memory); a boom as the star lands.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "RULE 5?",
+       "at": {
+        "line": "L13",
+        "word": "Rule"
+       },
+       "color": "ember"
+      },
+      {
+       "text": "NOT LYING",
+       "at": {
+        "line": "L13",
+        "word": "isn't"
+       },
+       "color": "#e8dec4",
+       "size": 72
+      }
+     ],
+     "size": 150,
+     "y": 520,
+     "start": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.02
+     },
+     "end": {
+      "line": "L13",
+      "word": "It's",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "REMEMBERING",
+       "at": {
+        "line": "L13",
+        "word": "remembering."
+       },
+       "color": "#e6be5e",
+       "size": 84
+      }
+     ],
+     "size": 84,
+     "y": 560,
+     "start": {
+      "line": "L13",
+      "word": "remembering.",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L14",
+      "word": "star",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "skyTags",
+     "start": {
+      "line": "L14",
+      "word": "star",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L15",
+      "word": "So",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "kind": "myth",
+       "text": "A LAMP FELL",
+       "at": {
+        "line": "L14",
+        "word": "star",
+        "offset": 0.0
+       },
+       "end": {
+        "line": "L15",
+        "word": "So",
+        "offset": -0.15
+       },
+       "lift": -90,
+       "dx": -240
+      },
+      {
+       "kind": "ground",
+       "text": "A STAR FELL",
+       "at": {
+        "line": "L14",
+        "word": "star",
+        "offset": 0.85
+       },
+       "end": {
+        "line": "L14",
+        "word": "lake.",
+        "offset": -0.1
+       },
+       "lift": 110,
+       "dx": 230,
+       "pos": [
+        6.5,
+        4.5,
+        0.3
+       ]
+      },
+      {
+       "kind": "ground",
+       "text": "THE CRATER",
+       "at": {
+        "line": "L14",
+        "word": "lake.",
+        "offset": -0.1
+       },
+       "end": {
+        "line": "L15",
+        "word": "So",
+        "offset": -0.15
+       },
+       "lift": 110,
+       "dx": 230,
+       "pos": [
+        6.5,
+        4.5,
+        0.3
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L13",
+      "word": "Rule"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L13",
+      "word": "remembering.",
+      "offset": -0.05
+     },
+     "gain": -15
+    },
+    {
+     "sound": "starfall",
+     "at": {
+      "line": "L14",
+      "word": "star",
+      "offset": -0.1
+     },
+     "gain": -10
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L14",
+      "word": "star",
+      "offset": 0.8
+     },
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "role",
+   "scene": "world",
+   "purpose": "Unlock rule 5: hide the truth inside the myth.",
+   "visual": "Day returns and the paint with it; a dolly zoom out to a long lens brings the painted lamp back over the lake (the star, remembered as a lamp); the checklist opens and row 5 unlocks on 'inside': THE MEMORY \u00b7 the truth inside \u00b7 5/5. The follow chip (+ FOLLOW \u00b7 PART 34/50) after 'myth'.",
+   "camera": "Dolly zoom out (fov 34 \u2192 12).",
+   "layers": {
+    "foreground": "open checklist, follow chip",
+    "midground": "the lake",
+    "background": "the painted lamp"
+   },
+   "lighting": "Day.",
+   "onScreenText": "5 THE MEMORY \u00b7 the truth inside \u00b7 5/5",
+   "transition": "The card goes full.",
+   "music": "Anthem from 'So'; a D-major hit on 'inside'.",
+   "graphics": [
+    {
+     "type": "followChip",
+     "start": {
+      "line": "L15",
+      "word": "myth.",
+      "offset": 0.2
+     },
+     "end": {
+      "line": "L16",
+      "word": "Every",
+      "offset": 0.3
+     },
+     "text": "FOLLOW",
+     "sub": "PART 34/50"
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L15",
+      "word": "So",
+      "offset": -0.15
+     },
+     "gain": -17
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L15",
+      "word": "inside",
+      "offset": -0.1
+     },
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "lesson",
+   "scene": "world",
+   "purpose": "The takeaway.",
+   "visual": "The full card (BEFORE YOU WRITE A MYTH \u00b7 THE FIRST LAMP, all five rows ticked) over the whole Isle in golden light under its mended, torn sky, with 'Every myth is a memory, told wrong.' in serif italic from the end of the first sentence.",
+   "camera": "Wide: one slow dolly zoom (fov 14 \u2192 22).",
+   "layers": {
+    "foreground": "full card, follow chip",
+    "midground": "the Isle",
+    "background": "the painted sky"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "BEFORE YOU WRITE A MYTH \u00b7 THE FIRST LAMP \u00b7 Every myth is a memory, told wrong.",
+   "transition": "Block wipe to the end card.",
+   "music": "Anthem; the World Engine chime as the card lands.",
+   "graphics": [
+    {
+     "type": "fieldCard",
+     "mode": "full",
+     "y": 452,
+     "rows": [
+      {
+       "n": 1,
+       "label": "PROOF",
+       "text": "bones older than gods",
+       "at": {
+        "line": "L16",
+        "word": "Myths",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 2,
+       "label": "A JOB",
+       "text": "the Queen's crown",
+       "at": {
+        "line": "L16",
+        "word": "Myths",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 3,
+       "label": "A DIGGER",
+       "text": "the cliffs count",
+       "at": {
+        "line": "L16",
+        "word": "Myths",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 4,
+       "label": "A KEEPER",
+       "text": "paints over holes",
+       "at": {
+        "line": "L16",
+        "word": "Myths",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 5,
+       "label": "THE MEMORY",
+       "text": "the truth inside",
+       "at": {
+        "line": "L16",
+        "word": "Myths",
+        "offset": -0.3
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L16",
+        "word": "Myths",
+        "offset": -0.3
+       }
+      }
+     ],
+     "start": {
+      "line": "L16",
+      "word": "Myths",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     "kicker": "BEFORE YOU WRITE A MYTH",
+     "title": "THE FIRST LAMP",
+     "sprite": "ep34/firstlamp_sprite.png",
+     "spriteW": 76,
+     "spriteH": 124,
+     "subtitle": "Every myth is a memory, told wrong.",
+     "subtitleAt": {
+      "line": "L16",
+      "word": "lies."
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L16",
+      "word": "Myths",
+      "offset": -0.8
+     },
+     "gain": -15
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L16",
+      "word": "Myths",
+      "offset": -0.3
+     },
+     "gain": -10
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L16",
+      "word": "Myths",
+      "offset": -0.3
+     },
+     "gain": -18
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "cta",
+   "scene": "world",
+   "purpose": "Comment CTA: would you tell them, or keep the myth?",
+   "visual": "End card: logo, PART 34 / 50, the title, and a COMMENT panel where TELL THEM and KEEP THE MYTH pop on their words, then 'Which would you choose?'",
+   "camera": "Cut (under the block wipe) back to the hook pose.",
+   "layers": {
+    "foreground": "end card",
+    "midground": "the Isle",
+    "background": "the torn sky"
+   },
+   "lighting": "Golden hour (the loop frame).",
+   "onScreenText": "COMMENT \u00b7 TELL THEM / KEEP THE MYTH \u00b7 Which would you choose?",
+   "transition": "The card lifts on 'Part'.",
+   "music": "Outro.",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "endCardS2",
+     "start": {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.12
+     },
+     "fadeOut": 0.3,
+     "kicker": "PART 34 / 50",
+     "title": "What If Your World's Creation Myth Is Wrong?",
+     "cta": "COMMENT",
+     "icon": "bubble",
+     "with": "Which would you choose?",
+     "withAt": {
+      "line": "L17",
+      "word": "myth?",
+      "offset": -0.05
+     },
+     "choiceSize": 30,
+     "choices": [
+      {
+       "text": "TELL THEM",
+       "color": "#e8dec4",
+       "at": {
+        "line": "L17",
+        "word": "tell"
+       }
+      },
+      {
+       "text": "KEEP THE MYTH",
+       "color": "#e6be5e",
+       "at": {
+        "line": "L17",
+        "word": "keep"
+       }
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     "gain": -21
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L17",
+      "word": "tell"
+     },
+     "gain": -17
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L17",
+      "word": "keep"
+     },
+     "gain": -17
+    }
+   ],
+   "captions": false,
+   "hideLogoBug": true,
+   "hideLogoBugUntil": {
+    "line": "L18",
+    "word": "Part"
+   }
+  },
+  {
+   "id": "next",
+   "scene": "world",
+   "purpose": "Say the part number, ask for the follow with a reason (part 35), open the next loop.",
+   "visual": "The hook frame; PART 34/50; FOLLOW FOR PART 35, pressed on 'Follow'; NEXT RUN \u00b7 35 decodes from locked pillars to THE RUINS \u00b7 OLDER THAN US. In the world, on 'ruins', broken pillars older than anyone rise out of the ground beside the bones and the Queen looks across at them; they sink back before the hook title returns.",
+   "camera": "The hook frame.",
+   "layers": {
+    "foreground": "progress bar, follow button, next-run card",
+    "midground": "the ruins rising",
+    "background": "the torn sky"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "PART 34/50 \u00b7 FOLLOW FOR PART 35 \u00b7 NEXT RUN: THE RUINS \u00b7 OLDER THAN US.",
+   "transition": "Loop to frame 0.",
+   "music": "Tease over a held A; stones grinding on 'ruins'; the engine chime on 'Follow'.",
+   "graphics": [
+    {
+     "type": "seasonBar",
+     "y": 350,
+     "part": 34,
+     "of": 50,
+     "start": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.1
+     },
+     "fillAt": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "fillDur": 0.6,
+     "ofAt": {
+      "line": "L18",
+      "word": "50."
+     },
+     "end": {
+      "line": "L18",
+      "word": "us.",
+      "offset": 0.6
+     }
+    },
+    {
+     "type": "followButton",
+     "y": 556,
+     "start": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.6
+     },
+     "pressAt": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "end": {
+      "line": "L18",
+      "word": "us.",
+      "offset": 0.6
+     },
+     "text": "FOLLOW",
+     "doneText": "FOLLOWING",
+     "sub": "FOR PART 35"
+    },
+    {
+     "type": "nextRun",
+     "y": 772,
+     "start": {
+      "line": "L18",
+      "word": "35:",
+      "offset": -0.1
+     },
+     "revealAt": {
+      "line": "L18",
+      "word": "ruins"
+     },
+     "end": {
+      "line": "L18",
+      "word": "us.",
+      "offset": 0.6
+     },
+     "kicker": "NEXT RUN \u00b7 35",
+     "title": "THE RUINS",
+     "sub": "OLDER THAN US.",
+     "sprite": "ruins",
+     "spritePx": 8
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "THE GODS MADE IT",
+       "color": "#e6be5e",
+       "size": 60,
+       "pulseAt": {
+        "line": "L1",
+        "word": "gods"
+       }
+      },
+      {
+       "text": "ARE THEY LYING?",
+       "color": "#e8dec4",
+       "size": 64,
+       "pulseAt": {
+        "line": "L1",
+        "word": "lying?"
+       }
+      }
+     ],
+     "y": 440,
+     "size": 60,
+     "start": {
+      "line": "L18",
+      "word": "us.",
+      "offset": 0.92
+     },
+     "fadeIn": 0.35,
+     "preShow": true
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "to": {
+      "line": "L18",
+      "word": "Part",
+      "offset": 0.55
+     },
+     "gain": -22
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.5
+     },
+     "gain": -15
+    },
+    {
+     "sound": "followPress",
+     "at": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": 0.02
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L18",
+      "word": "35:",
+      "offset": -0.1
+     },
+     "gain": -18
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L18",
+      "word": "ruins"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "stoneRise",
+     "at": {
+      "line": "L18",
+      "word": "ruins",
+      "offset": -0.1
+     },
+     "gain": -13
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "end": true,
+      "offset": -0.54
+     },
+     "gain": -14
+    }
+   ],
+   "captions": false
+  }
+ ],
+ "world": {
+  "clock": {
+   "label": "YEAR",
+   "keys": [
+    [
+     {
+      "shot": "hook"
+     },
+     500
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     500
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "find.",
+      "offset": 0.3
+     },
+     500,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "textbook.",
+      "offset": 0.58
+     },
+     500
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "textbook.",
+      "offset": 0.6
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.25
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "arguing.",
+      "offset": 0.1
+     },
+     500,
+     "linear"
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "remembering.",
+      "offset": -0.05
+     },
+     500
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "remembering.",
+      "offset": 1.05
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "So",
+      "offset": -0.17
+     },
+     0
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "So",
+      "offset": -0.15
+     },
+     500,
+     "step"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     500
+    ]
+   ]
+  },
+  "speed": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "run."
+    },
+    1
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.3
+    },
+    6
+   ],
+   [
+    {
+     "line": "L5",
+     "word": "find.",
+     "offset": 0.3
+    },
+    6
+   ],
+   [
+    {
+     "line": "L6",
+     "word": "A"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.25
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.5
+    },
+    6
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "arguing.",
+     "offset": 0.1
+    },
+    6
+   ],
+   [
+    {
+     "line": "L13",
+     "word": "Rule"
+    },
+    1
+   ]
+  ],
+  "camera": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "az": 4,
+    "el": 16,
+    "dist": 92.602,
+    "target": [
+     5.0,
+     8.0,
+     3.0
+    ],
+    "fov": 22,
+    "dur": 1.4,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L2",
+     "word": "Meet",
+     "offset": -0.1
+    },
+    "az": 4,
+    "el": 16,
+    "dist": 102.083,
+    "target": [
+     5.0,
+     8.0,
+     3.0
+    ],
+    "fov": 20,
+    "dur": 3.2,
+    "drift": 0.0,
+    "dolly": true
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "az": 4,
+    "el": 16,
+    "dist": 102.083,
+    "target": [
+     5.0,
+     8.0,
+     3.0
+    ],
+    "fov": 20,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "simply",
+     "offset": -0.1
+    },
+    "az": 4,
+    "el": 16,
+    "dist": 157.984,
+    "target": [
+     5.0,
+     8.0,
+     3.0
+    ],
+    "fov": 13,
+    "dur": 1.6,
+    "drift": 0.0,
+    "dolly": true
+   },
+   {
+    "at": {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.05
+    },
+    "az": 0,
+    "el": 20,
+    "dist": 159.481,
+    "target": [
+     1.0,
+     2.0,
+     0.0
+    ],
+    "fov": 22,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L5",
+     "word": "Nobody",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 20,
+    "dist": 235.468,
+    "target": [
+     1.0,
+     2.0,
+     0.0
+    ],
+    "fov": 15,
+    "dur": 2.4,
+    "drift": 0.0,
+    "dolly": true
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "A",
+     "offset": -0.2
+    },
+    "az": 0,
+    "el": 20,
+    "dist": 294.945,
+    "target": [
+     1.0,
+     2.0,
+     0.0
+    ],
+    "fov": 12,
+    "dur": 1.6,
+    "drift": 0.0,
+    "dolly": true
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "textbook.",
+     "offset": 0.6
+    },
+    "az": 0,
+    "el": 20,
+    "dist": 134.276,
+    "target": [
+     1.0,
+     2.0,
+     0.0
+    ],
+    "fov": 26,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L7",
+     "word": "Four",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 20,
+    "dist": 195.726,
+    "target": [
+     1.0,
+     2.0,
+     0.0
+    ],
+    "fov": 18,
+    "dur": 1.4,
+    "drift": 0.0,
+    "dolly": true
+   },
+   {
+    "at": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.1
+    },
+    "az": -6,
+    "el": 12,
+    "dist": 73.299,
+    "target": [
+     7.5,
+     5.0,
+     11.2
+    ],
+    "fov": 14,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L8",
+     "word": "older"
+    },
+    "az": -6,
+    "el": 12,
+    "dist": 24.727,
+    "target": [
+     7.5,
+     5.0,
+     11.2
+    ],
+    "fov": 40,
+    "dur": 1.3,
+    "drift": 0.0,
+    "dolly": true
+   },
+   {
+    "at": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.1
+    },
+    "az": 6,
+    "el": 12,
+    "dist": 27.99,
+    "target": [
+     9.1,
+     6.2,
+     -2.2
+    ],
+    "fov": 30,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L9",
+     "word": "Queen's"
+    },
+    "az": 6,
+    "el": 12,
+    "dist": 77.89,
+    "target": [
+     9.1,
+     6.2,
+     -2.2
+    ],
+    "fov": 11,
+    "dur": 1.5,
+    "drift": 0.0,
+    "dolly": true
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.1
+    },
+    "az": -16,
+    "el": 10,
+    "dist": 81.443,
+    "target": [
+     4.0,
+     3.4,
+     18.0
+    ],
+    "fov": 14,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "thousand"
+    },
+    "az": -16,
+    "el": 10,
+    "dist": 29.042,
+    "target": [
+     4.0,
+     3.4,
+     18.0
+    ],
+    "fov": 38,
+    "dur": 1.3,
+    "drift": 0.0,
+    "dolly": true
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.1
+    },
+    "az": -21,
+    "el": 18,
+    "dist": 64.972,
+    "target": [
+     -1.0,
+     4.0,
+     -2.0
+    ],
+    "fov": 26,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "paint"
+    },
+    "az": -21,
+    "el": 18,
+    "dist": 122.165,
+    "target": [
+     -1.0,
+     4.0,
+     -2.0
+    ],
+    "fov": 14,
+    "dur": 1.6,
+    "drift": 0.0,
+    "dolly": true
+   },
+   {
+    "at": {
+     "line": "L12",
+     "word": "Run",
+     "offset": -0.05
+    },
+    "az": 0,
+    "el": 20,
+    "dist": 159.481,
+    "target": [
+     1.0,
+     2.0,
+     0.0
+    ],
+    "fov": 22,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L12",
+     "word": "hundred",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 20,
+    "dist": 115.694,
+    "target": [
+     1.0,
+     2.0,
+     0.0
+    ],
+    "fov": 30,
+    "dur": 2.4,
+    "drift": 0.0,
+    "dolly": true
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "az": 2,
+    "el": 16,
+    "dist": 151.53,
+    "target": [
+     5.0,
+     2.0,
+     2.0
+    ],
+    "fov": 18,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "remembering.",
+     "offset": -0.05
+    },
+    "az": 2,
+    "el": 16,
+    "dist": 78.5,
+    "target": [
+     5.0,
+     2.0,
+     2.0
+    ],
+    "fov": 34,
+    "dur": 1.4,
+    "drift": 0.0,
+    "dolly": true
+   },
+   {
+    "at": {
+     "line": "L14",
+     "word": "lake.",
+     "offset": -0.2
+    },
+    "az": 2,
+    "el": 16,
+    "dist": 89.569,
+    "target": [
+     5.0,
+     2.0,
+     2.0
+    ],
+    "fov": 30,
+    "dur": 1.2,
+    "drift": 0.0,
+    "dolly": true
+   },
+   {
+    "at": {
+     "line": "L15",
+     "word": "So",
+     "offset": -0.15
+    },
+    "az": 2,
+    "el": 16,
+    "dist": 228.345,
+    "target": [
+     5.0,
+     2.0,
+     2.0
+    ],
+    "fov": 12,
+    "dur": 1.4,
+    "drift": 0.0,
+    "dolly": true
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Myths",
+     "offset": -0.25
+    },
+    "az": 0,
+    "el": 20,
+    "dist": 252.475,
+    "target": [
+     1.0,
+     2.0,
+     0.0
+    ],
+    "fov": 14,
+    "dur": 0.01,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Every",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 20,
+    "dist": 159.481,
+    "target": [
+     1.0,
+     2.0,
+     0.0
+    ],
+    "fov": 22,
+    "dur": 2.4,
+    "drift": 0.0,
+    "dolly": true
+   },
+   {
+    "at": {
+     "line": "L17",
+     "word": "Would",
+     "offset": -0.3
+    },
+    "az": 4.0,
+    "el": 16,
+    "dist": 92.602,
+    "target": [
+     5.0,
+     8.0,
+     3.0
+    ],
+    "fov": 22,
+    "dur": 1.4,
+    "drift": 0.0,
+    "cut": true
+   }
+  ],
+  "light": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "mood": "golden"
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "mood": "day",
+    "dur": 0.4
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "A",
+     "offset": -0.2
+    },
+    "mood": "gloom",
+    "dur": 0.6
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "textbook.",
+     "offset": 0.6
+    },
+    "mood": "day",
+    "dur": 0.3
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "hide"
+    },
+    "mood": "dusk",
+    "dur": 0.8
+   },
+   {
+    "at": {
+     "line": "L12",
+     "word": "Run",
+     "offset": -0.05
+    },
+    "mood": "day",
+    "dur": 0.4
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "mood": "dusk",
+    "dur": 0.6
+   },
+   {
+    "at": {
+     "line": "L15",
+     "word": "So",
+     "offset": -0.15
+    },
+    "mood": "day",
+    "dur": 0.5
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Myths",
+     "offset": -0.3
+    },
+    "mood": "golden",
+    "dur": 1.4
+   }
+  ],
+  "herd": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     24
+    ]
+   ],
+   "max": 30,
+   "base": 24,
+   "centers": [
+    [
+     -9.5,
+     -1.0
+    ],
+    [
+     -8.4,
+     1.2
+    ]
+   ],
+   "skin": "sheep"
+  },
+  "pred": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ]
+  ],
+  "predators": [
+   {
+    "id": "g1",
+    "scale": 1.3,
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 13.0,
+      "z": -10.5,
+      "state": "idle",
+      "face": 160
+     }
+    ],
+    "adorn": true
+   }
+  ],
+  "series": {
+   "holes": [
+    [
+     {
+      "shot": "hook"
+     },
+     14
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     14
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "older",
+      "offset": -0.02
+     },
+     0
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "older"
+     },
+     1,
+     "step"
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "thousand",
+      "offset": -0.02
+     },
+     1
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "thousand"
+     },
+     2,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.38
+     },
+     2
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.4
+     },
+     3,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.505
+     },
+     3
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.525
+     },
+     4,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.63
+     },
+     4
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.65
+     },
+     5,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.755
+     },
+     5
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.775
+     },
+     6,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.88
+     },
+     6
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.9
+     },
+     7,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.005
+     },
+     7
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.025
+     },
+     8,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.13
+     },
+     8
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.15
+     },
+     9,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.255
+     },
+     9
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.275
+     },
+     10,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.38
+     },
+     10
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.4
+     },
+     11,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.505
+     },
+     11
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.525
+     },
+     12,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.63
+     },
+     12
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.65
+     },
+     13,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "arguing.",
+      "offset": -0.52
+     },
+     13
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "arguing.",
+      "offset": -0.5
+     },
+     14,
+     "step"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     14
+    ]
+   ],
+   "patched": [
+    [
+     {
+      "shot": "hook"
+     },
+     13
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     13
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "paint",
+      "offset": -0.02
+     },
+     0
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "paint"
+     },
+     1,
+     "step"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "holes.",
+      "offset": -0.02
+     },
+     1
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "holes."
+     },
+     2,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.83
+     },
+     2
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.85
+     },
+     3,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.955
+     },
+     3
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.975
+     },
+     4,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.08
+     },
+     4
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.1
+     },
+     5,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.205
+     },
+     5
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.225
+     },
+     6,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.33
+     },
+     6
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.35
+     },
+     7,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.455
+     },
+     7
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.475
+     },
+     8,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.58
+     },
+     8
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.6
+     },
+     9,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.705
+     },
+     9
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.725
+     },
+     10,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.83
+     },
+     10
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.85
+     },
+     11,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.955
+     },
+     11
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 1.975
+     },
+     12,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 2.08
+     },
+     12
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 2.1
+     },
+     13,
+     "step"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     13
+    ]
+   ],
+   "tradeH": [
+    [
+     {
+      "shot": "hook"
+     },
+     4
+    ]
+   ]
+  },
+  "settlement": {
+   "buildings": [
+    {
+     "kind": "hall",
+     "a": [
+      -3.6,
+      -4.6
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -1.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -4.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -1.0,
+      -5.8
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -5.6,
+      -0.9
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -3.4,
+      -0.7
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      0.4,
+      -4.2
+     ],
+     "face": 0
+    }
+   ],
+   "roof": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "pens": [
+    {
+     "a": [
+      -6.4,
+      -1.4
+     ],
+     "r": 1.6
+    }
+   ],
+   "cover": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "roads": {
+    "b": [
+     [
+      -3.4,
+      -1.6
+     ],
+     [
+      -5.6,
+      2.0
+     ],
+     [
+      -8.2,
+      6.0
+     ],
+     [
+      -11.0,
+      10.0
+     ],
+     [
+      -13.0,
+      14.0
+     ],
+     [
+      -14.6,
+      17.0
+     ]
+    ]
+   },
+   "route": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "tradeKey": "tradeH",
+   "lanterns": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ]
+   ],
+   "tower": {
+    "x": -6.4,
+    "z": -5.6,
+    "h": 6.0,
+    "keys": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "rings": [
+     {
+      "line": "L9",
+      "word": "crown"
+     },
+     {
+      "line": "L12",
+      "word": "again."
+     }
+    ]
+   }
+  },
+  "people": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     30
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     30
+    ]
+   ],
+   "centers": [
+    [
+     -2.4,
+     -3.2
+    ],
+    [
+     -0.4,
+     -1.6
+    ],
+    [
+     -4.2,
+     -1.8
+    ]
+   ],
+   "spread": 1.6,
+   "life": 70,
+   "royal": [
+    [
+     {
+      "shot": "hook"
+     },
+     0.22
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     0.22
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "Keepers"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "Keepers",
+      "offset": 0.5
+     },
+     0.22,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     0.22
+    ]
+   ],
+   "robe": "#efe2b0",
+   "look": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L14",
+      "word": "star",
+      "offset": -0.1
+     },
+     0
+    ],
+    [
+     {
+      "line": "L14",
+      "word": "star",
+      "offset": 0.4
+     },
+     1
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "So",
+      "offset": -0.15
+     },
+     1
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "So",
+      "offset": 0.45
+     },
+     0
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.32
+     },
+     0
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     1,
+     "step"
+    ]
+   ],
+   "lamps": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "figures": [
+    {
+     "keys": [
+      {
+       "at": {
+        "shot": "hook"
+       },
+       "x": 3.2,
+       "z": 13.4,
+       "state": "hidden",
+       "face": 90
+      },
+      {
+       "at": {
+        "line": "L10",
+        "word": "dig."
+       },
+       "x": 3.2,
+       "z": 13.4,
+       "state": "idle",
+       "face": 90
+      },
+      {
+       "at": {
+        "line": "L11",
+        "word": "Four:",
+        "offset": -0.1
+       },
+       "x": 3.2,
+       "z": 13.4,
+       "state": "hidden",
+       "face": 90
+      }
+     ],
+     "tunic": "#7a5a3a",
+     "torch": true
+    }
+   ],
+   "ruler": {
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "idle",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L9",
+       "word": "Queen's"
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "alert",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L9",
+       "word": "it.",
+       "offset": 0.2
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "idle",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "ruins"
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "alert",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "us.",
+       "offset": 0.7
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "idle",
+      "face": 0
+     }
+    ],
+    "dais": {
+     "x": 9.4,
+     "z": -2.2,
+     "face": 0
+    }
+   }
+  },
+  "fields": {
+   "plots": [
+    {
+     "x": 3.0,
+     "z": -11.0,
+     "w": 4.0,
+     "d": 3.4
+    }
+   ],
+   "ripe": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ]
+  },
+  "props": [
+   {
+    "kind": "cairn",
+    "x": 8.95,
+    "z": -5.38,
+    "stones": [
+     [
+      {
+       "shot": "hook"
+      },
+      3
+     ]
+    ]
+   },
+   {
+    "kind": "offerings",
+    "x": 8.95,
+    "z": -5.38,
+    "r": 1.7,
+    "lights": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "lanterns",
+    "x": 6.5,
+    "z": 4.5,
+    "r": 3.8,
+    "n": 9,
+    "lights": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L13",
+       "word": "remembering.",
+       "offset": -0.05
+      },
+      1
+     ],
+     [
+      {
+       "line": "L13",
+       "word": "remembering.",
+       "offset": 0.55
+      },
+      0,
+      "linear"
+     ],
+     [
+      {
+       "line": "L15",
+       "word": "So",
+       "offset": -0.15
+      },
+      0
+     ],
+     [
+      {
+       "line": "L15",
+       "word": "So",
+       "offset": 0.65
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "Would",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "sheaves",
+    "x": 3.0,
+    "z": -11.0,
+    "r": 2.7,
+    "n": 8,
+    "sheaves": [
+     [
+      {
+       "shot": "hook"
+      },
+      8
+     ]
+    ]
+   },
+   {
+    "kind": "statue",
+    "x": 18.0,
+    "z": 1.5,
+    "face": -90,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "gild": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "tar": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "grow": [
+     [
+      {
+       "shot": "hook"
+      },
+      1.35
+     ]
+    ],
+    "torch": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "kind": "border",
+    "x": 18.0,
+    "z": -7.0,
+    "to": [
+     18.0,
+     8.3
+    ],
+    "skip": [
+     0.46,
+     0.65
+    ],
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "relic",
+    "x": 20.3,
+    "z": 5.4,
+    "face": -90,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "bones",
+    "x": 6.5,
+    "z": 12.2,
+    "face": 8.2,
+    "r": 1.7,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "Bones"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "Bones",
+       "offset": 0.9
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "Would",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "ruin",
+    "x": 12.8,
+    "z": 13.4,
+    "face": 20,
+    "r": 2.2,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "ruins",
+       "offset": -0.05
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "older",
+       "offset": 0.1
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "us.",
+       "offset": 0.55
+      },
+      1
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "us.",
+       "offset": 1.0
+      },
+      0
+     ]
+    ]
+   }
+  ],
+  "fears": [
+   {
+    "id": "rift",
+    "x": -0.5,
+    "z": 10.6,
+    "r": 0.0,
+    "kind": "rift",
+    "to": [
+     12.0,
+     8.8
+    ],
+    "dark": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "bury"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "bury",
+       "offset": 0.6
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "Would",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   }
+  ],
+  "strata": {
+   "war": {
+    "y0": [
+     [
+      {
+       "shot": "hook"
+      },
+      -4.4
+     ]
+    ],
+    "y1": [
+     [
+      {
+       "shot": "hook"
+      },
+      -4.0
+     ]
+    ]
+   },
+   "surface": 2.55,
+   "max": 12,
+   "centuries": [
+    [
+     {
+      "shot": "hook"
+     },
+     12
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     12
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "cliffs"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "years.",
+      "offset": 0.1
+     },
+     12,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     12
+    ]
+   ],
+   "fade": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "flood": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ]
+   ]
+  },
+  "sky": {
+   "r": 56.0,
+   "y": -2.0,
+   "lamp": {
+    "az": 176.46,
+    "el": 1.2
+   },
+   "tears": [
+    {
+     "az": 168.46,
+     "el": -1.3,
+     "r": 7.5,
+     "open": [
+      [
+       {
+        "shot": "hook"
+       },
+       0.82
+      ],
+      [
+       {
+        "line": "L1",
+        "word": "lying?",
+        "offset": -0.05
+       },
+       0.82
+      ],
+      [
+       {
+        "line": "L1",
+        "word": "lying?",
+        "offset": 0.35
+       },
+       1,
+       "out"
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "arguing.",
+        "offset": -0.5
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "arguing.",
+        "offset": -0.1
+       },
+       1,
+       "out"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.32
+       },
+       1
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       0.82,
+       "step"
+      ]
+     ],
+     "seed": 11
+    },
+    {
+     "az": 167.0,
+     "el": 7.0,
+     "r": 5.5,
+     "open": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L8",
+        "word": "older"
+       },
+       0
+      ],
+      [
+       {
+        "line": "L8",
+        "word": "older",
+        "offset": 0.5
+       },
+       1,
+       "out"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "patch": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L11",
+        "word": "paint"
+       },
+       0
+      ],
+      [
+       {
+        "line": "L11",
+        "word": "paint",
+        "offset": 0.55
+       },
+       1,
+       "linear"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "seed": 23
+    },
+    {
+     "az": 153.0,
+     "el": 8.0,
+     "r": 5.5,
+     "open": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L10",
+        "word": "thousand"
+       },
+       0
+      ],
+      [
+       {
+        "line": "L10",
+        "word": "thousand",
+        "offset": 0.5
+       },
+       1,
+       "out"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "patch": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L11",
+        "word": "holes."
+       },
+       0
+      ],
+      [
+       {
+        "line": "L11",
+        "word": "holes.",
+        "offset": 0.55
+       },
+       1,
+       "linear"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "seed": 37
+    },
+    {
+     "az": 170,
+     "el": 26,
+     "r": 4.5,
+     "open": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 0.4
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 0.65
+       },
+       1,
+       "out"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "patch": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 0.85
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.25
+       },
+       1,
+       "linear"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "seed": 51
+    },
+    {
+     "az": 205,
+     "el": 8,
+     "r": 5.0,
+     "open": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 0.525
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 0.775
+       },
+       1,
+       "out"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "patch": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 0.975
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.375
+       },
+       1,
+       "linear"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "seed": 64
+    },
+    {
+     "az": 150,
+     "el": 12,
+     "r": 4.0,
+     "open": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 0.65
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 0.9
+       },
+       1,
+       "out"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "patch": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.1
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.5
+       },
+       1,
+       "linear"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "seed": 77
+    },
+    {
+     "az": 222,
+     "el": 30,
+     "r": 5.5,
+     "open": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 0.775
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.025
+       },
+       1,
+       "out"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "patch": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.225
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.625
+       },
+       1,
+       "linear"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "seed": 90
+    },
+    {
+     "az": 186,
+     "el": 38,
+     "r": 4.0,
+     "open": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 0.9
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.15
+       },
+       1,
+       "out"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "patch": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.35
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.75
+       },
+       1,
+       "linear"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "seed": 103
+    },
+    {
+     "az": 240,
+     "el": 14,
+     "r": 4.5,
+     "open": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.025
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.275
+       },
+       1,
+       "out"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "patch": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.475
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.875
+       },
+       1,
+       "linear"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "seed": 116
+    },
+    {
+     "az": 128,
+     "el": 28,
+     "r": 5.0,
+     "open": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.15
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.4
+       },
+       1,
+       "out"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "patch": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.6
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 2.0
+       },
+       1,
+       "linear"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "seed": 129
+    },
+    {
+     "az": 196,
+     "el": 2,
+     "r": 3.5,
+     "open": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.275
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.525
+       },
+       1,
+       "out"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "patch": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.725
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 2.125
+       },
+       1,
+       "linear"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "seed": 142
+    },
+    {
+     "az": 160,
+     "el": 44,
+     "r": 4.5,
+     "open": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.4
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.65
+       },
+       1,
+       "out"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "patch": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.85
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 2.25
+       },
+       1,
+       "linear"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "seed": 155
+    },
+    {
+     "az": 262,
+     "el": 26,
+     "r": 4.0,
+     "open": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.525
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.775
+       },
+       1,
+       "out"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "patch": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.975
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 2.375
+       },
+       1,
+       "linear"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "seed": 168
+    },
+    {
+     "az": 110,
+     "el": 10,
+     "r": 4.5,
+     "open": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.65
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 1.9
+       },
+       1,
+       "out"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "patch": [
+      [
+       {
+        "shot": "hook"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.17
+       },
+       1
+      ],
+      [
+       {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       0,
+       "step"
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 2.1
+       },
+       0
+      ],
+      [
+       {
+        "line": "L12",
+        "word": "Run",
+        "offset": 2.5
+       },
+       1,
+       "linear"
+      ],
+      [
+       {
+        "line": "L17",
+        "word": "Would",
+        "offset": -0.3
+       },
+       1
+      ]
+     ],
+     "seed": 181
+    }
+   ],
+   "sheer": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "remembering.",
+      "offset": -0.05
+     },
+     0
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "remembering.",
+      "offset": 0.75
+     },
+     0.92,
+     "linear"
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "So",
+      "offset": -0.15
+     },
+     0.92
+    ],
+    [
+     {
+      "line": "L15",
+      "word": "So",
+      "offset": 0.75
+     },
+     0
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "Would",
+      "offset": -0.3
+     },
+     0
+    ]
+   ],
+   "star": {
+    "from": [
+     -14.93,
+     23.2,
+     -41.02
+    ],
+    "to": [
+     6.5,
+     2.2,
+     4.5
+    ],
+    "fall": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "star",
+       "offset": -0.45
+      },
+      0
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "star",
+       "offset": 0.8
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "star",
+       "offset": 0.85
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "Would",
+       "offset": -0.3
+      },
+      0
+     ]
+    ]
+   }
+  },
+  "clearTrees": [
+   [
+    6.5,
+    12.2,
+    2.2
+   ],
+   [
+    2.5,
+    12.2,
+    2.2
+   ],
+   [
+    10.5,
+    11.7,
+    2.2
+   ],
+   [
+    8.95,
+    -5.38,
+    2.2
+   ],
+   [
+    3.0,
+    -11.0,
+    2.2
+   ],
+   [
+    -2.4,
+    -3.2,
+    2.2
+   ],
+   [
+    -0.4,
+    -1.6,
+    2.2
+   ],
+   [
+    -4.2,
+    -1.8,
+    2.2
+   ],
+   [
+    3.2,
+    13.4,
+    2.2
+   ],
+   [
+    12.8,
+    13.4,
+    2.2
+   ],
+   [
+    2.5,
+    19.6,
+    2.2
+   ],
+   [
+    4.0,
+    19.0,
+    2.2
+   ],
+   [
+    0.5,
+    19.0,
+    2.2
+   ],
+   [
+    6.5,
+    19.5,
+    2.2
+   ],
+   [
+    -0.5,
+    10.6,
+    2.2
+   ],
+   [
+    -0.5,
+    13.2,
+    2.2
+   ],
+   [
+    1.0625,
+    10.375,
+    2.2
+   ],
+   [
+    1.0625,
+    12.975,
+    2.2
+   ],
+   [
+    2.625,
+    10.15,
+    2.2
+   ],
+   [
+    2.625,
+    12.75,
+    2.2
+   ],
+   [
+    4.1875,
+    9.925,
+    2.2
+   ],
+   [
+    4.1875,
+    12.525,
+    2.2
+   ],
+   [
+    5.75,
+    9.7,
+    2.2
+   ],
+   [
+    5.75,
+    12.299999999999999,
+    2.2
+   ],
+   [
+    7.3125,
+    9.475,
+    2.2
+   ],
+   [
+    7.3125,
+    12.075,
+    2.2
+   ],
+   [
+    8.875,
+    9.25,
+    2.2
+   ],
+   [
+    8.875,
+    11.85,
+    2.2
+   ],
+   [
+    10.4375,
+    9.025,
+    2.2
+   ],
+   [
+    10.4375,
+    11.625,
+    2.2
+   ],
+   [
+    12.0,
+    8.8,
+    2.2
+   ],
+   [
+    12.0,
+    11.4,
+    2.2
+   ]
+  ],
+  "layers": {
+   "ripple": [
+    {
+     "shot": "hook",
+     "offset": 0.05
+    },
+    {
+     "line": "L4",
+     "word": "run."
+    },
+    {
+     "line": "L12",
+     "word": "Run"
+    },
+    {
+     "line": "L14",
+     "word": "star",
+     "offset": 0.8
+    }
+   ],
+   "rings": [
+    {
+     "x": 6.5,
+     "z": 4.5,
+     "r": 6.6,
+     "on": {
+      "line": "L14",
+      "word": "star",
+      "offset": 0.85
+     },
+     "off": {
+      "line": "L15",
+      "word": "So",
+      "offset": -0.15
+     },
+     "color": "#fff3c4"
+    }
+   ],
+   "dust": [
+    {
+     "at": {
+      "line": "L14",
+      "word": "star",
+      "offset": 0.8
+     },
+     "x": 6.5,
+     "z": 4.5,
+     "r": 5.0
+    }
+   ]
+  },
+  "ambient": {
+   "birds": 9,
+   "motes": 40,
+   "glints": true
+  },
+  "simLoop": {
+   "line": "L17",
+   "word": "Would",
+   "offset": -0.3
+  }
+ },
+ "music": {
+  "engine": "s2-score",
+  "key": "D minor, resolving to D major",
+  "bpm": 96,
+  "sections": [
+   {
+    "from": {
+     "shot": "hook"
+    },
+    "style": "lullaby",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "programs": {
+     "harp": 46,
+     "mbox": 10
+    }
+   },
+   {
+    "from": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "style": "lullaby",
+    "chords": [
+     "F",
+     "C",
+     "Bb",
+     "F"
+    ],
+    "key": "F major",
+    "bars": [
+     0,
+     2
+    ],
+    "octave": 1
+   },
+   {
+    "from": {
+     "line": "L4",
+     "word": "run."
+    },
+    "style": "drive",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "intensity": 0.85,
+    "programs": {
+     "strings": 48,
+     "marimba": 12,
+     "lead": 73,
+     "mbox": 10
+    }
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "A",
+     "offset": -0.2
+    },
+    "style": "drop",
+    "chords": [
+     "Dm"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 8
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "textbook.",
+     "offset": 0.55
+    },
+    "style": "excavate",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "A"
+    ],
+    "key": "D minor",
+    "layer": 1,
+    "programs": {
+     "marimba": 108,
+     "lead": 71
+    }
+   },
+   {
+    "from": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.1
+    },
+    "style": "excavate",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 1
+   },
+   {
+    "from": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.1
+    },
+    "style": "excavate",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 2
+   },
+   {
+    "from": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.1
+    },
+    "style": "excavate",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 3
+   },
+   {
+    "from": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.1
+    },
+    "style": "excavate",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 4
+   },
+   {
+    "from": {
+     "line": "L12",
+     "word": "Run"
+    },
+    "style": "drive",
+    "chords": [
+     "F",
+     "C",
+     "Bb",
+     "F"
+    ],
+    "key": "F major",
+    "intensity": 1.0,
+    "theme": true,
+    "programs": {
+     "strings": 48,
+     "marimba": 12,
+     "lead": 73,
+     "mbox": 10
+    }
+   },
+   {
+    "from": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.05
+    },
+    "style": "twist",
+    "chords": [
+     "A7b9"
+    ],
+    "key": "D minor"
+   },
+   {
+    "from": {
+     "line": "L14",
+     "word": "A",
+     "offset": -0.1
+    },
+    "style": "lullaby",
+    "chords": [
+     "D",
+     "G",
+     "Bm",
+     "A"
+    ],
+    "key": "D major",
+    "programs": {
+     "harp": 46,
+     "mbox": 10
+    }
+   },
+   {
+    "from": {
+     "line": "L15",
+     "word": "So",
+     "offset": -0.1
+    },
+    "style": "anthem",
+    "chords": [
+     "D",
+     "G",
+     "Bm",
+     "A"
+    ],
+    "key": "D major",
+    "programs": {
+     "strings": 48,
+     "marimba": 12,
+     "lead": 73,
+     "mbox": 10
+    }
+   },
+   {
+    "from": {
+     "line": "L17",
+     "word": "Would",
+     "offset": -0.2
+    },
+    "style": "outro",
+    "chords": [
+     "G",
+     "D"
+    ],
+    "key": "D major"
+   },
+   {
+    "from": {
+     "line": "L18",
+     "word": "Part",
+     "offset": -0.1
+    },
+    "style": "tease",
+    "chords": [
+     "A5"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 32
+   }
+  ],
+  "accents": [
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L1",
+     "word": "lying?"
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L6",
+     "word": "textbook."
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "riser",
+    "at": {
+     "line": "L7",
+     "word": "twist."
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "stab",
+    "at": {
+     "line": "L12",
+     "word": "arguing."
+    },
+    "chord": "F"
+   },
+   {
+    "kind": "cymbal",
+    "at": {
+     "line": "L12",
+     "word": "arguing."
+    }
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L14",
+     "word": "star",
+     "offset": 0.8
+    },
+    "chord": "D"
+   },
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L15",
+     "word": "inside"
+    },
+    "chord": "D"
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L18",
+     "word": "older"
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "roll",
+    "at": {
+     "end": true,
+     "offset": -0.05
+    },
+    "chord": "A"
+   }
+  ],
+  "fadeOut": {
+   "fromEnd": 0.08
+  },
+  "gain": 0.55
+ },
+ "mix": {
+  "musicLufs": -25.0,
+  "duckDb": -8.0,
+  "sfxLufs": -29.0,
+  "voiceFx": true
+ },
+ "metadata": {
+  "youtube": {
+   "title": "What If Your World's Creation Myth Is Wrong? (Worldbuilding)",
+   "titleAlternate": "Every child learns the gods made the world. What if they're lying?",
+   "description": "Every child learns the gods made the world. What if they're lying?\n\nMeet the First Lamp, the creation myth of the Lamplight faith: it fell from the sky, and the world began. The lazy version makes the myth simply true, and we ran it: five hundred years, nobody digs, nothing to find. A myth that's just true is a textbook.\n\nWrong myths build better worlds. Bury proof: bones older than the gods. Give it a job: the Queen's crown rests on it. Let someone dig: the cliffs count ten thousand years. Let someone hide it: keepers paint over the holes. Run it again: five hundred years, and they're still arguing.\n\nThen the twist: the myth isn't lying. It's remembering. A star really fell here, and it made the lake. So hide the truth inside the myth.\n\nMyths aren't lies. Every myth is a memory, told wrong.\n\nWould you reveal the truth to a civilization built on a lie?\n\nPart 34 of 50. Follow for part 35: the ruins are older than us.\n\nWorldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 7: History and Mythology. The Lamplight faith, its creation myth and its gods are invented for this video; no real religion or creation story is depicted.\n\n#Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "pinnedComment": "Would you reveal the truth to a civilization built on a lie? Tell them, or keep the myth? One word, then your reason. (Part 35: the ruins are older than us.)",
+   "uploadSettings": "Altered or synthetic content: Yes (synthetic narration and an AI-generated field-card sprite; the island, the painted sky, the bones and the people are drawn in code). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "Every child learns the gods made the world. What if they're lying? \ud83c\udf0c Four rules for a creation myth that's wrong (in a useful way), and rule #5 is the twist. Would you tell them the truth, or keep the myth? Part 34/50 \u00b7 follow for part 35 \ud83c\udfdb\ufe0f #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "pinnedComment": "Would you reveal the truth to a civilization built on a lie? Tell them, or keep the myth?",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "Every child learns the gods made the world. What if they're lying?\n\nMeet the First Lamp, the creation myth of the Lamplight faith: it fell from the sky, and the world began. The lazy version makes the myth simply true, and we ran it: five hundred years, nobody digs, nothing to find. A myth that's just true is a textbook.\n\nWrong myths build better worlds. Bury proof: bones older than the gods. Give it a job: the Queen's crown rests on it. Let someone dig: the cliffs count ten thousand years. Let someone hide it: keepers paint over the holes. Run it again: five hundred years, and they're still arguing.\n\nThen the twist: the myth isn't lying. It's remembering. A star really fell here, and it made the lake. So hide the truth inside the myth.\n\nMyths aren't lies. Every myth is a memory, told wrong.\n\nWould you reveal the truth to a civilization built on a lie?\n\nPart 34 of 50. Follow for part 35: the ruins are older than us.\n\nWorldcraft Shorts \u00b7 Season 2: The World Engine.\n\n#Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "pinnedComment": "What real event is hiding inside your world's creation myth, told wrong?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "Every child learns the gods made the world. What if they're lying?\n\nMeet the First Lamp, the creation myth of the Lamplight faith: it fell from the sky, and the world began. The lazy version makes the myth simply true, and we ran it: five hundred years, nobody digs, nothing to find. A myth that's just true is a textbook.\n\nWrong myths build better worlds. Bury proof: bones older than the gods. Give it a job: the Queen's crown rests on it. Let someone dig: the cliffs count ten thousand years. Let someone hide it: keepers paint over the holes. Run it again: five hundred years, and they're still arguing.\n\nThen the twist: the myth isn't lying. It's remembering. A star really fell here, and it made the lake. So hide the truth inside the myth.\n\nMyths aren't lies. Every myth is a memory, told wrong.\n\nWould you reveal the truth to a civilization built on a lie?\n\nPart 34 of 50. Follow for part 35: the ruins are older than us.\n\nWorldcraft Shorts \u00b7 Season 2\n\n#Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "hookCheck": "First 66 characters: 'Every child learns the gods made the world. What if they're lying?'",
+   "pinnedComment": "Save the TEAR THE SKY card, then tell us: would you reveal the truth to a civilization built on a lie?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  }
+ }
+}

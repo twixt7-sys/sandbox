@@ -7,7 +7,8 @@ import {buildHerd, Grimmaw, GrimmawPose, Herd, HerdAgent} from './Creatures';
 import {Column, Island, isle} from './island';
 import {BIOME_COLORS, DIRT, IslandMesh} from './IslandMesh';
 import {Cam, camPose, Lights, Stage, sunDir} from './Stage';
-import {cameraAt, dragonAt, fearLight, fearsAt, herdCount, moodAt, predatorAt, simTime, strataAt, World} from './timeline';
+import {cameraAt, dragonAt, fearLight, fearsAt, herdCount, moodAt, predatorAt, simTime, skyAt, strataAt, World} from './timeline';
+import {Bones, FallingStar, PaintedSky, Ruin} from './Sky';
 import {Dragon} from './Dragon';
 import {Cairn, roadAt, SettlementLayer} from './Settlement';
 import {FolkLayer} from './Folk';
@@ -489,11 +490,18 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 		return dy;
 	};
 	const poses = world.predators.map((p, i) => grimmawPose(island, p, t, s, i));
+	// EP34+: the painted sky (null for every older episode)
+	const sky = skyAt(world, t);
 	return (
 		<Stage
 			cam={cam}
-			background={`radial-gradient(ellipse at 50% 42%, ${mood.sky[0]} 0%, ${mood.sky[1]} 48%, ${mood.sky[2]} 100%)`}
-			backdrop={<PixelStars t={t} level={0.35 + 0.45 * (1 - mood.sun)} loopT={world.loopT} />}
+			background={
+				sky
+					? // EP34+: behind the painted dome is the true sky, the night void, whatever the mood (it shows only through holes)
+						'radial-gradient(ellipse at 50% 42%, #18204a 0%, #0b1026 52%, #04060d 100%)'
+					: `radial-gradient(ellipse at 50% 42%, ${mood.sky[0]} 0%, ${mood.sky[1]} 48%, ${mood.sky[2]} 100%)`
+			}
+			backdrop={<PixelStars t={t} level={sky ? 0.95 : 0.35 + 0.45 * (1 - mood.sun)} loopT={world.loopT} />}
 		>
 			{/* Distance haze in the void's colour: the far side of the island recedes a little (diorama depth). */}
 			<fog attach="fog" args={[mood.sky[1], cam.dist * 0.98, cam.dist + 120]} />
@@ -562,11 +570,17 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 					<Lanterns key={`ln${i}`} x={p.x} z={p.z} r={p.r} n={p.n ?? 6} island={island} t={t} loopT={world.loopT} level={sample(p.lights, t, 0)} />
 				) : p.kind === 'sheaves' ? (
 					<Sheaves key={`sh${i}`} x={p.x} z={p.z} r={p.r} n={p.n ?? 8} island={island} count={sample(p.sheaves ?? [], t, 0)} />
+				) : p.kind === 'bones' ? (
+					<Bones key={`bn${i}`} x={p.x} z={p.z} face={p.face ?? 0} scale={p.r / 2.2} island={island} rise={sample(p.rise ?? [], t, 0)} />
+				) : p.kind === 'ruin' ? (
+					<Ruin key={`ru${i}`} x={p.x} z={p.z} face={p.face ?? 0} scale={p.r / 2.2} island={island} rise={sample(p.rise ?? [], t, 0)} />
 				) : null,
 			)}
 			{fears?.map((f, i) => (f.kind === 'rift' && f.to && f.dark > 0.01 ? <Rift key={`rf${i}`} f={f} island={island} t={t} /> : null))}
 			{fears?.map((f, i) => (f.lamp && f.kind !== 'rift' ? <LampPost key={`lp${i}`} x={f.x} z={f.z} island={island} t={t} loopT={world.loopT} on={Math.min(1, f.lit * 1.6)} /> : null))}
 			{burn > 0.02 && burn < 0.95 && world.fields!.plots.map((f, i) => <FieldFire key={`ff${i}`} f={f} t={t} level={Math.sin(Math.min(1, burn / 0.95) * Math.PI)} y={island.heightAt(f.x, f.z)} seed={i} />)}
+			{sky && <PaintedSky sky={sky} warm={mood.warm} sat={mood.sat} sun={mood.sun} />}
+			{sky?.star && <FallingStar star={sky.star} />}
 			{world.ambient.birds > 0 && <Birds t={t} n={world.ambient.birds} loopT={world.loopT} />}
 			{world.ambient.motes > 0 && <Motes t={t} n={world.ambient.motes} island={island} warm={mood.warm} loopT={world.loopT} />}
 			{world.flyers.map((f, i) => (

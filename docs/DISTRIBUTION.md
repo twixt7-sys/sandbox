@@ -2447,3 +2447,94 @@ Source of truth: `episodes/ep33/episode.json` → `metadata` (this section is ge
 - **Pinned comment:** Save the LIGHT THE DARK card, then tell us: what question would your people ask their gods?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
 
+## Episode 34 captions (ready to paste) — Season 2, Arc 7
+
+Source of truth: `episodes/ep34/episode.json` → `metadata` (this section is generated from it). Every description ends with the Season 2 ending formula ("Part 34 of 50. Follow for part 35: …"), matching the video's last line. The AI label goes on for all four platforms. Cover: `episodes/ep34/Worldcraft_Short_E34_cover.jpg`. Subtitles: `episodes/ep34/ep34.srt`.
+
+**Disclosure.** The island, the painted sky (its lapis and gilt painting, the tears, the patches and the true sky behind them), the bones, the ruins, the falling star, the people, the HUD and every number are drawn and simulated in code. Two things are AI-made: the narration (Kokoro synthetic voice) and the field card's falling-lantern sprite (free local SDXL-Lightning with a pixel-art LoRA, re-gridded by `pipeline/pixelate.py`, the end of its trail dithered out in code; no Figma credits). AI label on everywhere (series policy). **No real-world religion or creation myth is depicted, named or imitated:** the Lamplight faith's creation myth (the First Lamp, which fell from the sky) is invented, the painted sky carries only a lantern, four-point stars, clouds and a wave band (no real symbol, scripture or sacred architecture), and the keepers wear the same plain pale hooded robes as in EP33. No violence on screen: the bones are a fossil, the star falls into an empty lake.
+
+**Closing EP33's loop.** EP33 ended "the gods are lying": on "lying" a crack of light opened in the meadow south of the lake for a breath. EP34 opens with that crack open for good, a giant's bones dug out of it, and a fresh hole torn in the painted sky above it. When EP34 goes up, reply to the top comments on EP33 with its link and pin it where a second pin is allowed.
+
+**The comment ask is a binary choice again** (as EP31's vote, after EP32's and EP33's invention prompts). The plan's CTA, "Would you reveal the truth to a civilization built on a lie?" (12 words), is cut to 10 for the scorecard: "Would you tell them the truth, or keep the myth?". The end card shows two chips (TELL THEM, KEEP THE MYTH); the descriptions and pinned comments keep the plan's full wording. Post the pinned comment straight away and answer early comments in the first hour.
+
+**Posting part 35.** The video promises "the ruins are older than us" (broken pillars rise beside the bones for a breath). EP35 is "Give Your World a Lost Civilization". Do the same reply-and-pin on EP34 when EP35 is posted.
+
+### YouTube Shorts
+- **Title** (60/100 chars): `What If Your World's Creation Myth Is Wrong? (Worldbuilding)`
+- **Alternate title** (66 chars): `Every child learns the gods made the world. What if they're lying?`
+- **Description:**
+
+> Every child learns the gods made the world. What if they're lying?
+>
+> Meet the First Lamp, the creation myth of the Lamplight faith: it fell from the sky, and the world began. The lazy version makes the myth simply true, and we ran it: five hundred years, nobody digs, nothing to find. A myth that's just true is a textbook.
+>
+> Wrong myths build better worlds. Bury proof: bones older than the gods. Give it a job: the Queen's crown rests on it. Let someone dig: the cliffs count ten thousand years. Let someone hide it: keepers paint over the holes. Run it again: five hundred years, and they're still arguing.
+>
+> Then the twist: the myth isn't lying. It's remembering. A star really fell here, and it made the lake. So hide the truth inside the myth.
+>
+> Myths aren't lies. Every myth is a memory, told wrong.
+>
+> Would you reveal the truth to a civilization built on a lie?
+>
+> Part 34 of 50. Follow for part 35: the ruins are older than us.
+>
+> Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 7: History and Mythology. The Lamplight faith, its creation myth and its gods are invented for this video; no real religion or creation story is depicted.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts
+
+- **Pinned comment:** Would you reveal the truth to a civilization built on a lie? Tell them, or keep the myth? One word, then your reason. (Part 35: the ruins are older than us.)
+- **Upload settings:** Altered or synthetic content: Yes (synthetic narration and an AI-generated field-card sprite; the island, the painted sky, the bones and the people are drawn in code). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (309 chars): `Every child learns the gods made the world. What if they're lying? 🌌 Four rules for a creation myth that's wrong (in a useful way), and rule #5 is the twist. Would you tell them the truth, or keep the myth? Part 34/50 · follow for part 35 🏛️ #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts`
+- **Pinned comment:** Would you reveal the truth to a civilization built on a lie? Tell them, or keep the myth?
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> Every child learns the gods made the world. What if they're lying?
+>
+> Meet the First Lamp, the creation myth of the Lamplight faith: it fell from the sky, and the world began. The lazy version makes the myth simply true, and we ran it: five hundred years, nobody digs, nothing to find. A myth that's just true is a textbook.
+>
+> Wrong myths build better worlds. Bury proof: bones older than the gods. Give it a job: the Queen's crown rests on it. Let someone dig: the cliffs count ten thousand years. Let someone hide it: keepers paint over the holes. Run it again: five hundred years, and they're still arguing.
+>
+> Then the twist: the myth isn't lying. It's remembering. A star really fell here, and it made the lake. So hide the truth inside the myth.
+>
+> Myths aren't lies. Every myth is a memory, told wrong.
+>
+> Would you reveal the truth to a civilization built on a lie?
+>
+> Part 34 of 50. Follow for part 35: the ruins are older than us.
+>
+> Worldcraft Shorts · Season 2: The World Engine.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts
+
+- **Pinned comment:** What real event is hiding inside your world's creation myth, told wrong?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Every child learns the gods made the world. What if they're lying?
+>
+> Meet the First Lamp, the creation myth of the Lamplight faith: it fell from the sky, and the world began. The lazy version makes the myth simply true, and we ran it: five hundred years, nobody digs, nothing to find. A myth that's just true is a textbook.
+>
+> Wrong myths build better worlds. Bury proof: bones older than the gods. Give it a job: the Queen's crown rests on it. Let someone dig: the cliffs count ten thousand years. Let someone hide it: keepers paint over the holes. Run it again: five hundred years, and they're still arguing.
+>
+> Then the twist: the myth isn't lying. It's remembering. A star really fell here, and it made the lake. So hide the truth inside the myth.
+>
+> Myths aren't lies. Every myth is a memory, told wrong.
+>
+> Would you reveal the truth to a civilization built on a lie?
+>
+> Part 34 of 50. Follow for part 35: the ruins are older than us.
+>
+> Worldcraft Shorts · Season 2
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts
+
+- **Hook check:** First 66 characters: 'Every child learns the gods made the world. What if they're lying?'
+- **Pinned comment:** Save the TEAR THE SKY card, then tell us: would you reveal the truth to a civilization built on a lie?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

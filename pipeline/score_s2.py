@@ -190,7 +190,8 @@ def blip(f0, f1, dur, bright=1.0):
 
 S2_HITS = {"roar", "stompHit", "sting", "runPress", "stamp", "rewind", "ringOn", "snowAir", "sleepZ", "cubPop", "delete", "restore", "cardSlide", "check", "unlock", "worldRipple", "crash", "boomPop",
            "engineWind", "dragonPass", "followPress", "chime", "towerBell", "eyeOn", "morph", "slide", "crownPass",
-           "frameDrum", "beamTip", "quill", "pageTear", "dig", "stones", "eclipse", "lampOn", "rift"}
+           "frameDrum", "beamTip", "quill", "pageTear", "dig", "stones", "eclipse", "lampOn", "rift",
+           "tear", "brush", "starfall", "stoneRise"}
 S2_BEDS = {"simTicks", "births", "losses", "stomp", "burn", "lockOn", "clockTicks", "rumble", "creep"}
 
 
@@ -557,6 +558,53 @@ def s2_hit(kind):
         crackle = bp(nz, 1400, 7000) * (rng.uniform(0, 1, n) > 0.85) * np.interp(t, [0, 0.05, 0.5, 0.7], [0, 1, 0.8, 0]) * 1.4
         groan = np.sin(2 * np.pi * np.cumsum(48 + 10 * np.exp(-t * 3)) / SR) * np.interp(t, [0, 0.15, 0.8, 1.2], [0, 0.8, 0.5, 0])
         return st(crackle + groan * 0.7, 0.45)
+    if kind == "tear":
+        # EP34: the painted sky tears: a dry canvas rip (band-passed noise in fast irregular bursts that rises in
+        # pitch as it runs), then a soft plaster crumble. Its own seeded RNG.
+        n = int(0.75 * SR)
+        t = np.arange(n) / SR
+        rng = np.random.default_rng(341)
+        nz = rng.standard_normal(n)
+        bursts = (np.sin(2 * np.pi * np.cumsum(55 + 140 * t) / SR) > 0.2) * (rng.uniform(0, 1, n) > 0.25)
+        rip = (bp(nz, 900, 4200) * 0.8 + bp(nz, 2600, 8000) * np.clip(t / 0.35, 0, 1) * 0.6) * bursts * np.interp(t, [0, 0.02, 0.36, 0.42], [0, 1, 0.9, 0])
+        crumble = bp(nz, 400, 2200) * (rng.uniform(0, 1, n) > 0.94) * np.interp(t, [0, 0.38, 0.5, 0.75], [0, 0, 0.5, 0])
+        return st(rip * 1.2 + crumble, 0.4)
+    if kind == "brush":
+        # EP34: a patch painted over a hole: two soft wet brush strokes (low band-passed noise swells) and a faint
+        # dab. Its own seeded RNG.
+        n = int(0.8 * SR)
+        t = np.arange(n) / SR
+        rng = np.random.default_rng(342)
+        nz = rng.standard_normal(n)
+        env = np.interp(t, [0, 0.05, 0.26, 0.32, 0.38, 0.62, 0.7, 0.8], [0, 0.9, 0.7, 0, 0.8, 0.6, 0.1, 0])
+        stroke = bp(nz, 700, 3200) * env * 0.9
+        dab = lp(nz, 500) * np.interp(t, [0, 0.66, 0.69, 0.76], [0, 0, 0.7, 0])
+        return st(stroke + dab, 0.35)
+    if kind == "starfall":
+        # EP34: a star falls into the lake: a descending airy whistle (a sine gliding down an octave through noise)
+        # for 0.9 s, then a deep impact boom and a hiss of water. Its own seeded RNG.
+        n = int(2.2 * SR)
+        t = np.arange(n) / SR
+        rng = np.random.default_rng(343)
+        nz = rng.standard_normal(n)
+        f = np.where(t < 0.9, 1800 * 2 ** (-t / 0.9), 900)
+        whistle = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.interp(t, [0, 0.4, 0.88, 0.9], [0, 0.35, 0.5, 0])
+        air = bp(nz, 1200, 6000) * np.interp(t, [0, 0.5, 0.9, 0.92], [0, 0.25, 0.4, 0])
+        ti = np.maximum(0, t - 0.9)
+        boom = np.sin(2 * np.pi * np.cumsum(42 * (1 + 1.2 * np.exp(-ti * 9))) / SR) * np.exp(-ti * 2.6) * (t >= 0.9) * 1.1
+        hiss = bp(nz, 2000, 9000) * np.exp(-ti * 3.5) * (t >= 0.9) * 0.35
+        return st(whistle + air + boom + hiss, 0.5)
+    if kind == "stoneRise":
+        # EP34 (EP35's tease): old stones grinding up out of the ground and settling: a slow gritty grind (low
+        # band-passed noise with a slow wobble) ending in one heavy knock. Its own seeded RNG.
+        n = int(1.3 * SR)
+        t = np.arange(n) / SR
+        rng = np.random.default_rng(344)
+        nz = rng.standard_normal(n)
+        grind = bp(nz, 120, 900) * np.interp(t, [0, 0.2, 0.85, 0.95], [0, 1, 0.8, 0]) * (0.7 + 0.3 * np.sin(2 * np.pi * 7 * t))
+        ti = np.maximum(0, t - 0.92)
+        knock = (np.sin(2 * np.pi * 95 * ti) * np.exp(-ti * 22) + bp(nz, 700, 3000) * np.exp(-ti * 40) * 0.5) * (t >= 0.92)
+        return st(grind * 1.3 + knock * 1.2, 0.4)
     raise KeyError(kind)
 
 

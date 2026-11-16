@@ -9,7 +9,8 @@ import {sample} from '../keys';
 import {clamp, hash2} from '../rng';
 import {F2, outline, panel, pixelShadow, PX, S2} from '../style';
 import {grimmawPose, project, useS2} from '../world/WorldScene';
-import {clockAt, dragonAt, fearsAt, herdCount, seriesAt, simTime, strataAt, World} from '../world/timeline';
+import {clockAt, domePoint, dragonAt, fearsAt, herdCount, seriesAt, simTime, skyAt, strataAt, World} from '../world/timeline';
+import {camPose} from '../world/Stage';
 import {dragonTargets, roofsIntact, Target} from '../world/Settlement';
 
 /** A HUD value by key: herd, pred, roofs (EP27: standing, unburnt roofs, read from the village itself) or a world series. */
@@ -1440,7 +1441,82 @@ export const FearTags: React.FC<OP> = ({g, t}) => {
 	return <AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>{nodes}</AbsoluteFill>;
 };
 
+/** EP34+: the two skies' labels. A `myth` tag is pinned to a point on the painted dome (`az` / `el`, or `tear`: the
+ * index of a tear, pinned at its edge) and only shows while that point is on the dome's far wall, behind the island; a
+ * `ground` tag is pinned to the Isle (`pos`: [x, z, height above the ground]). Myth tags are framed in ultramarine and
+ * headed THE MYTH in gilt; ground tags are framed in bone and headed THE GROUND. Tags: [{kind, at, end, text, head?,
+ * lift (px above the pin; negative hangs it below), dx}]. */
+const ULTRA = '#4a68ff';
+const GILT = '#e6be5e';
+const BONE = '#e8dec4';
+export const SkyTags: React.FC<OP> = ({g, t}) => {
+	const {o, timing} = useWin(g, t, 0.25, 0.25);
+	const s = useS2();
+	const sky = skyAt(s.world, t);
+	if (o <= 0) return null;
+	const snap = (v: number) => Math.round(v / PX) * PX;
+	const cp = camPose(s.cam);
+	const nodes: React.ReactNode[] = [];
+	for (const tg of (g.tags ?? []) as {kind: 'myth' | 'ground'; at?: Cue; end?: Cue; text: string; head?: string; az?: number; el?: number; tear?: number; pos?: [number, number, number?]; lift?: number; dx?: number; band?: [number, number]}[]) {
+		const a = tg.at ? cueTime(timing, tg.at) : -Infinity;
+		const b = tg.end ? cueTime(timing, tg.end) : Infinity;
+		if (t < a || t > b) continue;
+		let w: [number, number, number];
+		if (tg.kind === 'myth') {
+			if (!sky) continue;
+			const tr = tg.tear !== undefined ? sky.tears[tg.tear] : null;
+			const az = tr ? tr.az : (tg.az ?? sky.lamp.az);
+			const el = tr ? tr.el + tr.r * 0.9 : (tg.el ?? sky.lamp.el);
+			w = domePoint(sky, az, el);
+			// the far wall only: the dome's near half is not drawn
+			const dc = Math.hypot(cp[0], cp[1] - sky.y, cp[2]);
+			if (Math.hypot(w[0] - cp[0], w[1] - cp[1], w[2] - cp[2]) < dc) continue;
+		} else {
+			const [x, z, dy] = tg.pos ?? [0, 0, 0];
+			w = [x, Math.max(s.island.waterLevel, s.island.heightAt(x, z)) + (dy ?? 0.6), z];
+		}
+		const p0 = project(s.cam, w);
+		if (p0.behind) continue;
+		const k = Math.min(clamp((t - a) / 0.2), b === Infinity ? 1 : 1 - clamp((t - b + 0.2) / 0.2));
+		const lift = tg.lift ?? 70;
+		const px = snap(p0.x);
+		const py = snap(p0.y);
+		const myth = tg.kind === 'myth';
+		const frame = myth ? ULTRA : BONE;
+		const bx = Math.max(160, Math.min(920, px + (tg.dx ?? 0)));
+		// `band` [y0, y1] keeps the label's anchor inside a band of the frame (clear of the HUD and the platform UI)
+		// while the leader still runs to the pin, so a tag can follow a tear across a dolly zoom
+		const band = tg.band as [number, number] | undefined;
+		const top = band ? snap(Math.max(band[0], Math.min(band[1], py - lift))) : py - lift;
+		const below = top > py;
+		nodes.push(
+			<div key={`${tg.kind}${tg.text}${a}`} style={{opacity: k}}>
+				<div style={{position: 'absolute', left: px - PX, top: Math.min(py, top), width: PX * 2, height: Math.abs(top - py), background: frame, opacity: 0.9}} />
+				<div style={{position: 'absolute', left: px - 3 * PX, top: py - 3 * PX, width: 6 * PX, height: 6 * PX, background: myth ? GILT : BONE, boxShadow: `0 0 0 ${PX}px #050912`}} />
+				<div
+					style={{
+						position: 'absolute',
+						left: bx,
+						top: below ? top + 4 : top - 4,
+						transform: `translate(-50%, ${below ? '0' : '-100%'})`,
+						padding: '8px 14px 6px',
+						whiteSpace: 'nowrap',
+						textAlign: 'center',
+						background: 'rgba(5,9,18,0.9)',
+						boxShadow: `0 0 0 ${PX}px ${frame}`,
+					}}
+				>
+					<div style={{fontFamily: F2.pixel, fontSize: 20, color: myth ? GILT : BONE, letterSpacing: '0.1em'}}>{tg.head ?? (myth ? 'THE MYTH' : 'THE GROUND')}</div>
+					<div style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: 30, color: S2.parchment, letterSpacing: '0.04em'}}>{tg.text}</div>
+				</div>
+			</div>,
+		);
+	}
+	return <AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>{nodes}</AbsoluteFill>;
+};
+
 export const S2_OVERLAYS: Record<string, React.FC<OP>> = {
+	skyTags: SkyTags,
 	fearTags: FearTags,
 	strata: StrataLabels,
 	chronicles: Chronicles,

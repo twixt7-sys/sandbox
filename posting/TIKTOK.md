@@ -21,7 +21,9 @@ don't need a TikTok developer account, a business account or an ads account.
 ## How it works
 
 `.github/workflows/tiktok-post.yml` starts as soon as the scheduled **Instagram daily post** run
-finishes. It also has its own daily fallback run at 22:47 UTC in case the Instagram run didn't happen.
+finishes. It only posts an episode Instagram has already posted (`tiktok.followInstagram` in
+`posting/config.json`), so the two accounts stay on the same episode. A daily catch-up run at 22:47 UTC
+posts it if the run after Instagram was missed.
 
 1. Picks the lowest episode, from EP14 on, that isn't in `posting/tiktok_state.json` yet. TikTok keeps
    its own record. Instagram's `state.json` is never touched. Same rules as Instagram: it waits if

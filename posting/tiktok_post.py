@@ -22,6 +22,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from post import CONFIG_PATH, ep_id, episode_marker, load, now_utc, pick, resolve, set_output  # noqa: E402
+from post import STATE_PATH as IG_STATE_PATH  # noqa: E402
 
 STATE_PATH = HERE / "tiktok_state.json"
 MAX_CAPTION = 2200  # TikTok and Buffer both count UTF-16 code units for video captions
@@ -75,7 +76,14 @@ def build_caption(cfg, episode):
 
 def cmd_select(args):
     cfg = tiktok_cfg(load(CONFIG_PATH))
-    set_output(**pick(cfg, load(STATE_PATH), args.episode, args.force, first=cfg["startEpisode"]))
+    out = pick(cfg, load(STATE_PATH), args.episode, args.force, first=cfg["startEpisode"])
+    # Keep the two accounts on the same episode: TikTok never gets ahead of Instagram on its own.
+    # An episode named by hand (--episode) is posted regardless.
+    if out.get("go") == "true" and not args.episode and cfg.get("followInstagram", True):
+        if out["episode"] not in load(IG_STATE_PATH)["posted"]:
+            out = dict(go="false", reason=f"{out['episode']} isn't on Instagram yet; "
+                                          "waiting so both accounts stay on the same episode")
+    set_output(**out)
 
 
 def cmd_caption(args):

@@ -258,6 +258,31 @@ class CaptionAndSelectTests(unittest.TestCase):
             self.assertEqual(ig["go"], "false")
             self.assertIn("ep01 is next", ig["reason"])
 
+    def test_select_waits_for_instagram(self):
+        branches = {f"claude/worldcraft-ep{i:02d}" for i in range(2, 26)}
+        old = {"posted_at": "2020-01-01T00:00:00+00:00"}
+        tiktok = {"hold": [], "posted": {"ep14": old, "ep15": old}}
+
+        def select(ig_posted, episode=None):
+            with tempfile.TemporaryDirectory() as d:
+                tt_path, ig_path = Path(d, "tt.json"), Path(d, "ig.json")
+                tt_path.write_text(json.dumps(tiktok))
+                ig_path.write_text(json.dumps({"hold": [], "posted": {e: old for e in ig_posted}}))
+                out = io.StringIO()
+                with mock.patch.object(post, "remote_branches", lambda: branches), \
+                        mock.patch.object(post, "unfinished", lambda b, e: None), \
+                        mock.patch.object(tiktok_post, "STATE_PATH", tt_path), \
+                        mock.patch.object(tiktok_post, "IG_STATE_PATH", ig_path), \
+                        mock.patch.dict(os.environ, {"GITHUB_OUTPUT": ""}), redirect_stdout(out):
+                    tiktok_post.cmd_select(mock.Mock(episode=episode, force=False))
+                return out.getvalue()
+
+        # TikTok is on EP15 but Instagram only on EP14: TikTok doesn't run ahead to EP16.
+        self.assertIn("ep16 isn't on Instagram yet", select(["ep14"]))
+        self.assertIn("episode=ep16", select(["ep14", "ep15", "ep16"]))
+        # An episode named by hand is posted regardless.
+        self.assertIn("episode=ep17", select(["ep14"], episode="ep17"))
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

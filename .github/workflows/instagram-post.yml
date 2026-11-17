@@ -8,9 +8,14 @@ name: Instagram daily post
 
 on:
   schedule:
-    # 12:23 UTC = 20:23 Manila. GitHub has been starting scheduled runs 3-4 hours late, so posts land
-    # roughly 20:30-midnight Manila. TikTok (tiktok-post.yml) posts right after each scheduled run.
-    - cron: "23 12 * * *"
+    # 20:23 Manila, with three backups. GitHub starts scheduled runs hours late and sometimes drops
+    # them (Nov 1 and Nov 2 never ran), so one time slot isn't enough. The first run that starts
+    # posts; the others find a post under 12 h old and skip. TikTok (tiktok-post.yml) runs after
+    # each of these and only posts episodes Instagram has already posted, so both stay in sync.
+    - cron: "23 12 * * *" # 20:23 Manila
+    - cron: "53 13 * * *" # 21:53 Manila
+    - cron: "23 15 * * *" # 23:23 Manila
+    - cron: "53 16 * * *" # 00:53 Manila
   workflow_dispatch:
     inputs:
       episode:

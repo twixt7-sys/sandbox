@@ -9,6 +9,7 @@ import {BIOME_COLORS, DIRT, IslandMesh} from './IslandMesh';
 import {Cam, camPose, Lights, Stage, sunDir} from './Stage';
 import {cameraAt, dragonAt, fearLight, fearsAt, herdCount, moodAt, predatorAt, simTime, skyAt, strataAt, World} from './timeline';
 import {Bones, FallingStar, PaintedSky, Ruin} from './Sky';
+import {Find, RuinWall} from './Ruins';
 import {Dragon} from './Dragon';
 import {Cairn, roadAt, SettlementLayer} from './Settlement';
 import {FolkLayer} from './Folk';
@@ -561,7 +562,7 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 				) : p.kind === 'statue' ? (
 					<Statue key={`st${i}`} x={p.x} z={p.z} face={p.face ?? 0} island={island} t={t} loopT={world.loopT} rise={sample(p.rise ?? [], t, 0)} gild={sample(p.gild ?? [], t, 0)} tar={sample(p.tar ?? [], t, 0)} grow={sample(p.grow ?? [], t, 1)} {...(p.torch ? {torch: sample(p.torch, t, 1)} : {})} />
 				) : p.kind === 'standard' ? (
-					<Standard key={`sd${i}`} x={p.x} z={p.z} face={p.face ?? 0} island={island} t={t} rise={sample(p.rise ?? [], t, 0)} color={p.color ?? '#a8452f'} />
+					<Standard key={`sd${i}`} x={p.x} z={p.z} face={p.face ?? 0} island={island} t={t} rise={sample(p.rise ?? [], t, 0)} color={p.color ?? '#a8452f'} {...(p.size ? {size: p.size} : {})} />
 				) : p.kind === 'border' ? (
 					<Border key={`bd${i}`} x={p.x} z={p.z} to={p.to ?? [p.x, p.z]} island={island} rise={sample(p.rise ?? [], t, 0)} skip={p.skip} />
 				) : p.kind === 'relic' ? (
@@ -574,6 +575,10 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 					<Bones key={`bn${i}`} x={p.x} z={p.z} face={p.face ?? 0} scale={p.r / 2.2} island={island} rise={sample(p.rise ?? [], t, 0)} />
 				) : p.kind === 'ruin' ? (
 					<Ruin key={`ru${i}`} x={p.x} z={p.z} face={p.face ?? 0} scale={p.r / 2.2} island={island} rise={sample(p.rise ?? [], t, 0)} />
+				) : p.kind === 'wall' ? (
+					<RuinWall key={`wl${i}`} x={p.x} z={p.z} to={p.to ?? [p.x, p.z]} profile={p.profile ?? []} fresh={p.fresh ?? [-1, -1]} tonight={p.tonight ?? [-1, -1]} island={island} log={sample(p.log ?? [], t, 0)} glow={sample(p.glow ?? [], t, 0)} place={sample(p.place ?? [], t, 0)} />
+				) : p.kind === 'find' ? (
+					<Find key={`fd${i}`} kind={p.find ?? 'gear'} x={p.x} z={p.z} face={p.face ?? 0} scale={p.r / 2.2} y={p.y ?? 0} island={island} rise={sample(p.rise ?? [], t, 0)} />
 				) : null,
 			)}
 			{fears?.map((f, i) => (f.kind === 'rift' && f.to && f.dark > 0.01 ? <Rift key={`rf${i}`} f={f} island={island} t={t} /> : null))}

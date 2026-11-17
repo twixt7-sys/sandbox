@@ -166,7 +166,20 @@ export type Strata = {y0: number; y1: number; surface: number; max: number; n: n
  * `rise`; `lights` its candles, `tithe` sheep, `sheaves` and shed `plates` laid before it, `paint` 0..2 the figures
  * painted on its stones). */
 export type PropRaw = {
-	kind: 'cairn' | 'offerings' | 'shrine' | 'statue' | 'standard' | 'border' | 'relic' | 'lanterns' | 'sheaves' | 'bones' | 'ruin';
+	kind: 'cairn' | 'offerings' | 'shrine' | 'statue' | 'standard' | 'border' | 'relic' | 'lanterns' | 'sheaves' | 'bones' | 'ruin' | 'wall' | 'find';
+	/** EP35 `wall`: a lost civilization's wall from (x, z) to `to`, `profile` blocks tall per column; `log` 0..1 is the
+	 * repair log (original stone umber, repairs glowing quartz cyan by recency), `glow` lights last night's stone
+	 * (`fresh` [column, row]) and `place` sets tonight's stone (`tonight` [column, row]) into its gap. `find`: one find
+	 * (`gear`, `kitchen`, `wells`, `hands`) unearthed by `rise`, turned by `face`, scaled by `r` / 2.2; `y` lifts it
+	 * above the ground (the hands sit on the wall's face). */
+	profile?: number[];
+	fresh?: [number, number];
+	tonight?: [number, number];
+	log?: RawKey[];
+	glow?: RawKey[];
+	place?: RawKey[];
+	find?: string;
+	y?: number;
 	/** EP34 `bones`: a giant's skeleton lying in the ground, unearthed by `rise` (0 buried .. 1 half out); `ruin`: broken
 	 * pillars older than anyone, rising out of the ground with `rise`; both turn by `face` and scale by `r` / 2.2 */
 	/** EP33 `lanterns`: `n` boats with lamps floating on the water within radius `r`, lit one by one with `lights` (0..1);
@@ -187,8 +200,9 @@ export type PropRaw = {
 	gild?: RawKey[];
 	tar?: RawKey[];
 	grow?: RawKey[];
-	/** EP31 `standard`: the cloth's colour */
+	/** EP31 `standard`: the cloth's colour; EP35+: `size` scales it */
 	color?: string;
+	size?: number;
 	/** EP32 `statue`: 0..1 the gilded torch is still in her hand (absent: always) */
 	torch?: RawKey[];
 	/** EP32 `border`: a line of boundary stones from (x, z) to `to`, rising from the middle outward with `rise`; `skip`
@@ -304,7 +318,7 @@ export type World = {
 	/** every settlement, the first one included (EP28+: more than one) */
 	settlements: Settlement[];
 	folk: {count: Key[]; centers: [number, number][]; centersB: [number, number][] | null; site: Key[]; eyes: Key[]; wet: Key[]; glow: Key[]; hero: PredKey[]; spread: number} | null;
-	props: {kind: PropRaw['kind']; x: number; z: number; stones: Key[]; lights: Key[]; r: number; face?: number; tithe?: Key[]; sheaves?: Key[]; plates?: Key[]; rise?: Key[]; paint?: Key[]; gild?: Key[]; tar?: Key[]; grow?: Key[]; color?: string; torch?: Key[]; to?: [number, number]; skip?: [number, number]; n?: number}[];
+	props: {kind: PropRaw['kind']; x: number; z: number; stones: Key[]; lights: Key[]; r: number; face?: number; profile?: number[]; fresh?: [number, number]; tonight?: [number, number]; log?: Key[]; glow?: Key[]; place?: Key[]; find?: string; y?: number; size?: number; tithe?: Key[]; sheaves?: Key[]; plates?: Key[]; rise?: Key[]; paint?: Key[]; gild?: Key[]; tar?: Key[]; grow?: Key[]; color?: string; torch?: Key[]; to?: [number, number]; skip?: [number, number]; n?: number}[];
 	/** EP30+ (null before) */
 	fields: {plots: {x: number; z: number; w: number; d: number}[]; ripe: Key[]; burn?: Key[]} | null;
 	/** EP29+ (null before) */
@@ -397,7 +411,7 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 			? {face: p.face ?? 0, tithe: resolveKeys(timing, p.tithe), sheaves: resolveKeys(timing, p.sheaves), plates: resolveKeys(timing, p.plates), rise: resolveKeys(timing, p.rise), paint: resolveKeys(timing, p.paint)}
 			: {}),
 		...(p.kind === 'statue' || p.kind === 'standard'
-			? {face: p.face ?? 0, rise: resolveKeys(timing, p.rise), gild: resolveKeys(timing, p.gild), tar: resolveKeys(timing, p.tar), grow: resolveKeys(timing, p.grow), ...(p.color ? {color: p.color} : {}), ...(p.torch ? {torch: resolveKeys(timing, p.torch)} : {})}
+			? {face: p.face ?? 0, rise: resolveKeys(timing, p.rise), gild: resolveKeys(timing, p.gild), tar: resolveKeys(timing, p.tar), grow: resolveKeys(timing, p.grow), ...(p.color ? {color: p.color} : {}), ...(p.torch ? {torch: resolveKeys(timing, p.torch)} : {}), ...(p.size ? {size: p.size} : {})}
 			: {}),
 		// EP32+
 		...(p.kind === 'border' ? {rise: resolveKeys(timing, p.rise), to: p.to ?? [p.x, p.z], ...(p.skip ? {skip: p.skip} : {})} : {}),
@@ -407,6 +421,11 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 		...(p.kind === 'sheaves' ? {n: p.n ?? 8, sheaves: resolveKeys(timing, p.sheaves)} : {}),
 		// EP34+
 		...(p.kind === 'bones' || p.kind === 'ruin' ? {face: p.face ?? 0, rise: resolveKeys(timing, p.rise)} : {}),
+		// EP35+
+		...(p.kind === 'wall'
+			? {to: p.to ?? [p.x, p.z], profile: p.profile ?? [], fresh: p.fresh ?? [-1, -1], tonight: p.tonight ?? [-1, -1], log: resolveKeys(timing, p.log), glow: resolveKeys(timing, p.glow), place: resolveKeys(timing, p.place)}
+			: {}),
+		...(p.kind === 'find' ? {face: p.face ?? 0, rise: resolveKeys(timing, p.rise), find: p.find ?? 'gear', y: p.y ?? 0} : {}),
 	})),
 	fields: raw.fields ? {plots: raw.fields.plots, ripe: resolveKeys(timing, raw.fields.ripe), ...(raw.fields.burn ? {burn: resolveKeys(timing, raw.fields.burn)} : {})} : null,
 	people: raw.people

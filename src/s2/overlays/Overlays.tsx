@@ -1457,7 +1457,7 @@ export const SkyTags: React.FC<OP> = ({g, t}) => {
 	const snap = (v: number) => Math.round(v / PX) * PX;
 	const cp = camPose(s.cam);
 	const nodes: React.ReactNode[] = [];
-	for (const tg of (g.tags ?? []) as {kind: 'myth' | 'ground'; at?: Cue; end?: Cue; text: string; head?: string; az?: number; el?: number; tear?: number; pos?: [number, number, number?]; lift?: number; dx?: number; band?: [number, number]}[]) {
+	for (const tg of (g.tags ?? []) as {kind: 'myth' | 'ground'; at?: Cue; end?: Cue; text: string; head?: string; az?: number; el?: number; tear?: number; pos?: [number, number, number?]; lift?: number; dx?: number; band?: [number, number]; color?: string; headColor?: string}[]) {
 		const a = tg.at ? cueTime(timing, tg.at) : -Infinity;
 		const b = tg.end ? cueTime(timing, tg.end) : Infinity;
 		if (t < a || t > b) continue;
@@ -1482,7 +1482,9 @@ export const SkyTags: React.FC<OP> = ({g, t}) => {
 		const px = snap(p0.x);
 		const py = snap(p0.y);
 		const myth = tg.kind === 'myth';
-		const frame = myth ? ULTRA : BONE;
+		// EP35+: `color` frames a tag in the episode's own colour (`headColor` for its kicker); absent, EP34's colours
+		const frame = tg.color ?? (myth ? ULTRA : BONE);
+		const headC = tg.headColor ?? (myth ? GILT : BONE);
 		const bx = Math.max(160, Math.min(920, px + (tg.dx ?? 0)));
 		// `band` [y0, y1] keeps the label's anchor inside a band of the frame (clear of the HUD and the platform UI)
 		// while the leader still runs to the pin, so a tag can follow a tear across a dolly zoom
@@ -1492,7 +1494,7 @@ export const SkyTags: React.FC<OP> = ({g, t}) => {
 		nodes.push(
 			<div key={`${tg.kind}${tg.text}${a}`} style={{opacity: k}}>
 				<div style={{position: 'absolute', left: px - PX, top: Math.min(py, top), width: PX * 2, height: Math.abs(top - py), background: frame, opacity: 0.9}} />
-				<div style={{position: 'absolute', left: px - 3 * PX, top: py - 3 * PX, width: 6 * PX, height: 6 * PX, background: myth ? GILT : BONE, boxShadow: `0 0 0 ${PX}px #050912`}} />
+				<div style={{position: 'absolute', left: px - 3 * PX, top: py - 3 * PX, width: 6 * PX, height: 6 * PX, background: headC, boxShadow: `0 0 0 ${PX}px #050912`}} />
 				<div
 					style={{
 						position: 'absolute',
@@ -1506,7 +1508,7 @@ export const SkyTags: React.FC<OP> = ({g, t}) => {
 						boxShadow: `0 0 0 ${PX}px ${frame}`,
 					}}
 				>
-					<div style={{fontFamily: F2.pixel, fontSize: 20, color: myth ? GILT : BONE, letterSpacing: '0.1em'}}>{tg.head ?? (myth ? 'THE MYTH' : 'THE GROUND')}</div>
+					<div style={{fontFamily: F2.pixel, fontSize: 20, color: headC, letterSpacing: '0.1em'}}>{tg.head ?? (myth ? 'THE MYTH' : 'THE GROUND')}</div>
 					<div style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: 30, color: S2.parchment, letterSpacing: '0.04em'}}>{tg.text}</div>
 				</div>
 			</div>,
@@ -1515,7 +1517,75 @@ export const SkyTags: React.FC<OP> = ({g, t}) => {
 	return <AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>{nodes}</AbsoluteFill>;
 };
 
+
+// ---------------------------------------------------------------- EP35: the finds tray
+
+const QUARTZ_C = '#4fd6ff';
+type TraySlot = {icon: string; kind: string; text: string; at?: Cue; locked?: boolean; unlockAt?: Cue; color?: string};
+
+/**
+ * The finds tray (EP35's device): a specimen tray under the world with one compartment per find dug out of a lost
+ * civilization's ruins. A slot is empty until its `at` cue, when its find drops in (icon, what kind of fragment it is,
+ * what it shows). A `locked` slot shows ? until `unlockAt`. From `askAt`, each filled slot sprouts two question marks,
+ * one after another (every find opens two questions). The status reads EMPTY (rust) or the number of finds.
+ */
+export const FindsTray: React.FC<OP> = ({g, t}) => {
+	const {o, a, timing} = useWin(g, t, 0.3, 0.3);
+	if (o <= 0) return null;
+	const slots: TraySlot[] = g.slots ?? [];
+	const y0: number = g.y ?? 1352;
+	const rise = (1 - ease(t, a, 0.35)) * 40;
+	const W = 804;
+	const H = 216;
+	const SW = 150;
+	const gap = (W - 20 - SW * slots.length) / Math.max(1, slots.length - 1);
+	const askAt = g.askAt ? cueTime(timing, g.askAt) : Infinity;
+	const placed = slots.map((s) => (s.at ? cueTime(timing, s.at) : Infinity));
+	const unlocked = slots.map((s) => (s.unlockAt ? cueTime(timing, s.unlockAt) : Infinity));
+	const n = slots.filter((s, i) => !s.locked && t >= placed[i]).length + slots.filter((s, i) => s.locked && t >= unlocked[i]).length;
+	const status = n === 0 ? {text: g.emptyText ?? 'EMPTY', c: S2.rust} : {text: `${String(n).padStart(2, '0')} ${n === 1 ? 'FIND' : 'FINDS'}`, c: QUARTZ_C};
+	return (
+		<AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>
+			<div style={{position: 'absolute', left: 96, top: y0 + rise, width: W, height: H, overflow: 'hidden', ...panel({edge: QUARTZ_C})}}>
+				<div style={{position: 'absolute', left: 16, top: 12, fontFamily: F2.pixel, fontSize: 18, color: QUARTZ_C, letterSpacing: '0.08em'}}>{g.kicker ?? 'THE FINDS TRAY'}</div>
+				<div style={{position: 'absolute', right: 16, top: 9, fontFamily: F2.pixel, fontWeight: 700, fontSize: 24, color: status.c, letterSpacing: '0.06em'}}>{status.text}</div>
+				{slots.map((s, i) => {
+					const x = 10 + i * (SW + gap);
+					const open = s.locked ? t >= unlocked[i] : t >= placed[i];
+					const k = open ? ease(t, s.locked ? unlocked[i] : placed[i], 0.3) : 0;
+					const c = s.color ?? QUARTZ_C;
+					const flash = open ? Math.max(0, 1 - (t - (s.locked ? unlocked[i] : placed[i])) / 0.5) : 0;
+					const asks = s.locked || !open ? 0 : [0, 1].filter((q) => t >= askAt + i * 0.28 + q * 0.14).length;
+					return (
+						<div key={i} style={{position: 'absolute', left: x, top: 44, width: SW, height: 160, background: open ? 'rgba(79,214,255,0.07)' : 'rgba(5,9,18,0.55)', boxShadow: `inset 0 0 0 ${PX}px ${open ? c : 'rgba(239,230,210,0.22)'}${flash > 0 ? `, 0 0 ${Math.round(18 * flash)}px ${c}` : ''}`}}>
+							<div style={{position: 'absolute', left: 8, top: 6, fontFamily: F2.pixel, fontSize: 15, color: 'rgba(239,230,210,0.5)'}}>{String(i + 1).padStart(2, '0')}</div>
+							{open ? (
+								<>
+									<div style={{position: 'absolute', left: 0, right: 0, top: 10 - (1 - k) * 30, height: 58, display: 'flex', justifyContent: 'center', alignItems: 'flex-end', opacity: k}}>
+										<PixelSprite name={s.icon} px={5} />
+									</div>
+									<div style={{position: 'absolute', left: 0, right: 0, top: 76, textAlign: 'center', fontFamily: F2.pixel, fontSize: 18, color: c, letterSpacing: '0.06em', opacity: k}}>{s.kind}</div>
+									<div style={{position: 'absolute', left: 6, right: 6, top: 102, textAlign: 'center', fontFamily: F2.pixelSans, fontSize: 20, lineHeight: '23px', color: S2.parchment, opacity: k}}>{s.text}</div>
+									{[0, 1].slice(0, asks).map((q) => (
+										<div key={q} style={{position: 'absolute', right: 8 + q * 22, top: 6, width: 20, height: 24, background: S2.ember, color: '#050912', fontFamily: F2.pixel, fontWeight: 700, fontSize: 18, textAlign: 'center', lineHeight: '24px'}}>?</div>
+									))}
+								</>
+							) : (
+								<div style={{position: 'absolute', left: 0, right: 0, top: 40, textAlign: 'center', fontFamily: F2.pixel, fontWeight: 700, fontSize: s.locked ? 56 : 30, color: s.locked ? 'rgba(244,196,110,0.7)' : 'rgba(239,230,210,0.16)'}}>
+									{s.locked ? '?' : '·'}
+									{s.locked && <div style={{fontFamily: F2.pixel, fontWeight: 400, fontSize: 18, color: 'rgba(239,230,210,0.55)', letterSpacing: '0.08em', marginTop: 8}}>{g.lockedText ?? 'LOCKED'}</div>}
+								</div>
+							)}
+						</div>
+					);
+				})}
+			</div>
+		</AbsoluteFill>
+	);
+};
+
 export const S2_OVERLAYS: Record<string, React.FC<OP>> = {
+	findsTray: FindsTray,
 	skyTags: SkyTags,
 	fearTags: FearTags,
 	strata: StrataLabels,

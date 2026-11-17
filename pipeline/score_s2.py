@@ -191,8 +191,8 @@ def blip(f0, f1, dur, bright=1.0):
 S2_HITS = {"roar", "stompHit", "sting", "runPress", "stamp", "rewind", "ringOn", "snowAir", "sleepZ", "cubPop", "delete", "restore", "cardSlide", "check", "unlock", "worldRipple", "crash", "boomPop",
            "engineWind", "dragonPass", "followPress", "chime", "towerBell", "eyeOn", "morph", "slide", "crownPass",
            "frameDrum", "beamTip", "quill", "pageTear", "dig", "stones", "eclipse", "lampOn", "rift",
-           "tear", "brush", "starfall", "stoneRise"}
-S2_BEDS = {"simTicks", "births", "losses", "stomp", "burn", "lockOn", "clockTicks", "rumble", "creep"}
+           "tear", "brush", "starfall", "stoneRise", "trayDrop", "logOn", "stoneSet"}
+S2_BEDS = {"simTicks", "births", "losses", "stomp", "burn", "lockOn", "clockTicks", "rumble", "creep", "sandPour"}
 
 
 def s2_hit(kind):
@@ -605,6 +605,41 @@ def s2_hit(kind):
         ti = np.maximum(0, t - 0.92)
         knock = (np.sin(2 * np.pi * 95 * ti) * np.exp(-ti * 22) + bp(nz, 700, 3000) * np.exp(-ti * 40) * 0.5) * (t >= 0.92)
         return st(grind * 1.3 + knock * 1.2, 0.4)
+    if kind == "trayDrop":
+        # EP35: a find laid in the finds tray: a short wooden clack (two damped low partials) and a light gritty
+        # settle, as a stone object is set down in a padded compartment. Its own seeded RNG.
+        n = int(0.4 * SR)
+        t = np.arange(n) / SR
+        rng = np.random.default_rng(351)
+        nz = rng.standard_normal(n)
+        clack = (np.sin(2 * np.pi * 410 * t) + 0.6 * np.sin(2 * np.pi * 1130 * t)) * np.exp(-t * 55)
+        tap = bp(nz, 1500, 5200) * np.exp(-t * 120) * 0.6
+        grit = bp(nz, 2400, 8000) * (rng.uniform(0, 1, n) > 0.9) * np.interp(t, [0, 0.03, 0.18, 0.3], [0, 0.4, 0.15, 0])
+        return st(clack * 0.9 + tap + grit, 0.3)
+    if kind == "logOn":
+        # EP35: the repair log lights: a glassy shimmer blooming upward (four sine partials of an open fifth on D,
+        # entering one after another with a soft tremolo) over a breathy swell. Its own seeded RNG.
+        n = int(1.6 * SR)
+        t = np.arange(n) / SR
+        rng = np.random.default_rng(352)
+        nz = rng.standard_normal(n)
+        sig = np.zeros(n)
+        for k, f in enumerate((587.33, 880.0, 1174.66, 1760.0)):
+            tk = np.maximum(0, t - 0.07 * k)
+            sig += np.sin(2 * np.pi * f * tk) * np.interp(tk, [0, 0.05, 0.6, 1.5], [0, 0.32, 0.18, 0]) * (t >= 0.07 * k) * (0.85 + 0.15 * np.sin(2 * np.pi * 6 * t))
+        breath = bp(nz, 1800, 7000) * np.interp(t, [0, 0.3, 0.7, 1.2], [0, 0.18, 0.08, 0])
+        return st(sig + breath, 0.55)
+    if kind == "stoneSet":
+        # EP35: a stone set into the wall: a short gritty slide (band-passed noise) and a deep, clean stone-on-stone
+        # knock. Its own seeded RNG.
+        n = int(0.9 * SR)
+        t = np.arange(n) / SR
+        rng = np.random.default_rng(353)
+        nz = rng.standard_normal(n)
+        slide = bp(nz, 300, 1800) * np.interp(t, [0, 0.05, 0.4, 0.46], [0, 0.8, 0.9, 0]) * (0.75 + 0.25 * np.sin(2 * np.pi * 11 * t))
+        ti = np.maximum(0, t - 0.46)
+        knock = (np.sin(2 * np.pi * 120 * ti) * np.exp(-ti * 18) + 0.5 * np.sin(2 * np.pi * 330 * ti) * np.exp(-ti * 30) + bp(nz, 900, 3500) * np.exp(-ti * 45) * 0.4) * (t >= 0.46)
+        return st(slide + knock * 1.3, 0.35)
     raise KeyError(kind)
 
 
@@ -688,6 +723,19 @@ def s2_bed(kind, dur):
         swell = np.interp(t, [0, min(0.5, dur / 3), max(0.6, dur - 0.4), dur], [0, 1, 0.8, 0])
         nz = rng.standard_normal(n)
         out += bp(nz, 500, 2600) * 0.55 * swell + lp(nz, 160) * 0.9 * swell
+    elif kind == "sandPour":
+        # EP35: sand filling a well: a soft continuous hiss of grains (band-passed noise with a slow flutter) and a few
+        # fine pebble ticks. Its own seeded RNG.
+        rng = np.random.default_rng(354)
+        t = np.arange(n) / SR
+        swell = np.interp(t, [0, min(0.3, dur / 3), max(0.4, dur - 0.3), dur], [0, 1, 0.9, 0])
+        nz = rng.standard_normal(n)
+        out += bp(nz, 2200, 7500) * 0.5 * swell * (0.8 + 0.2 * np.sin(2 * np.pi * 3.1 * t)) + lp(nz, 300) * 0.3 * swell
+        for g in np.sort(rng.uniform(0, max(0.1, dur - 0.05), int(14 * dur))):
+            m = int(0.012 * SR)
+            i = int(g * SR)
+            grain = bp(rng.standard_normal(m), 2500, 7000) * np.exp(-np.arange(m) / SR * 300) * rng.uniform(0.1, 0.3)
+            out[i:i + m] += grain[: max(0, n - i)]
     else:
         raise KeyError(kind)
     return st(out, 0.5)

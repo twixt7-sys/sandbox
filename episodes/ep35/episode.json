@@ -1,0 +1,5632 @@
+{
+ "id": "ep35",
+ "number": 35,
+ "season": 2,
+ "title": "Give Your World a Lost Civilization",
+ "lesson": "A lost civilization that is only ancient and mysterious is just rocks. Let its remains say who they were: a tool nobody can make now (technology), the room they built biggest (values), how it ended (failure) and one small trace of an ordinary day. Then leave one question open and never answer it. Every ruin keeps one secret.",
+ "format": {
+  "version": "s2",
+  "qa": {
+   "min": 55.0,
+   "max": 62.0
+  }
+ },
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 1.0
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.2,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "The same lab host, quieter this time, like someone walking a dig at dusk. The hook is a mystery stated, not asked. 'Ancient, mysterious, gone' is a dry list of clich\u00e9s; 'just rocks' lands flat. The rules are crisp, two beats each, with a little wonder on the kitchen and the handprints. 'Half this wall is newer than us' is the chill; 'Nobody has seen them' is almost a whisper. The comment ask is playful."
+ },
+ "timing": {
+  "leadIn": 0.2,
+  "tail": 0.85,
+  "shotLead": 0.12
+ },
+ "captionY": 1238,
+ "captionsOff": [
+  {
+   "line": "L3",
+   "from": "ancient,"
+  },
+  {
+   "line": "L5",
+   "from": "A"
+  },
+  {
+   "line": "L7",
+   "from": "Good",
+   "to": "Four"
+  },
+  {
+   "line": "L13",
+   "from": "Rule"
+  }
+ ],
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "These ruins are older than humans. Someone keeps repairing them.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "older",
+    "repairing"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "hook",
+   "text": "Meet the Builders. Their wall still stands.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "builders.",
+    "stands."
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "setup",
+   "text": "The lazy version: ancient, mysterious, gone.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "lazy",
+    "gone."
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "setup",
+   "text": "Press run.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "run."
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "run1",
+   "text": "A thousand years of digging. Nothing but stones.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "digging.",
+    "stones."
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "drop",
+   "text": "A ruin that says nothing is just rocks.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "nothing",
+    "rocks."
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "rehook",
+   "text": "Good ruins talk. Four rules. The fifth is the twist.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "talk.",
+    "twist."
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "tools",
+   "text": "One: their tools. A gear that nobody here can make.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "tools.",
+    "gear"
+   ]
+  },
+  {
+   "id": "L9",
+   "shot": "values",
+   "text": "Two: what they valued. Their biggest room was a kitchen.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "valued.",
+    "kitchen."
+   ]
+  },
+  {
+   "id": "L10",
+   "shot": "failure",
+   "text": "Three: how they failed. Every well is full of sand.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "failed.",
+    "sand."
+   ]
+  },
+  {
+   "id": "L11",
+   "shot": "days",
+   "text": "Four: their days. A child's handprints, pressed into the mortar.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "days.",
+    "handprints,"
+   ]
+  },
+  {
+   "id": "L12",
+   "shot": "run2",
+   "text": "Run it again. A thousand years. Every find opens two questions.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "thousand",
+    "questions."
+   ]
+  },
+  {
+   "id": "L13",
+   "shot": "twist",
+   "text": "Rule five? Look closer. Half this wall is newer than us.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "closer.",
+    "newer"
+   ]
+  },
+  {
+   "id": "L14",
+   "shot": "twist",
+   "text": "Someone replaces one stone every night. Nobody has seen them.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "night.",
+    "seen"
+   ]
+  },
+  {
+   "id": "L15",
+   "shot": "role",
+   "text": "So never tell us who.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "never",
+    "who."
+   ]
+  },
+  {
+   "id": "L16",
+   "shot": "lesson",
+   "text": "Show how they lived and fell. Every ruin keeps one secret.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "lived",
+    "secret."
+   ]
+  },
+  {
+   "id": "L17",
+   "shot": "cta",
+   "text": "What should archaeologists never find in your world?",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "never",
+    "world?"
+   ]
+  },
+  {
+   "id": "L18",
+   "shot": "next",
+   "text": "Part 35 of 50. Follow for part 36: two armies are never enough.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "follow",
+    "enough."
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "world",
+   "purpose": "Close EP34's loop (broken pillars rose on 'the ruins are older than us') and stop the scroll on the mystery.",
+   "visual": "Golden hour, looking north at a long broken wall of squared stone south of the lake: EP34's pillars stand for good at its east end, the gear's pit, the kitchen and the sand-filled wells lie dug in front of it, and one stone high in the wall is newer than the rest and glows faintly quartz cyan. OLDER THAN US / WHO REPAIRS IT? from frame 0, each line pulsing on its word; the new stone flares on 'repairing' (NEW STONE \u00b7 LAST NIGHT). Then the field card: THE BUILDERS \u00b7 LOST CIVILIZATION \u00b7 LEFT: one wall, still standing.",
+   "camera": "Frontal (az 0, el 13, fov 20), sliding slowly west along the wall's top.",
+   "layers": {
+    "foreground": "kinetic, sting, tag, field card",
+    "midground": "the wall and its finds",
+    "background": "the lake, the valley, the peak"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "OLDER THAN US / WHO REPAIRS IT? \u00b7 FIELD CARD NO. 010 \u00b7 THE BUILDERS",
+   "transition": "Umber block wipe into the lazy version.",
+   "music": "Hollow: a blown bottle and vibraphone echoes over a contrabass drone; a hit on 'repairing'.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "OLDER THAN US",
+       "color": "#c9c4b4",
+       "size": 64,
+       "pulseAt": {
+        "line": "L1",
+        "word": "older"
+       }
+      },
+      {
+       "text": "WHO REPAIRS IT?",
+       "color": "#4fd6ff",
+       "size": 60,
+       "pulseAt": {
+        "line": "L1",
+        "word": "repairing"
+       }
+      }
+     ],
+     "y": 440,
+     "size": 60,
+     "start": {
+      "shot": "hook"
+     },
+     "end": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.1
+     },
+     "preShow": true
+    },
+    {
+     "type": "sting",
+     "label": "WORLD ENGINE",
+     "run": "RUN 35 \u00b7 RUINS",
+     "dur": 1.4,
+     "start": {
+      "shot": "hook"
+     },
+     "front": true
+    },
+    {
+     "type": "skyTags",
+     "start": {
+      "line": "L1",
+      "word": "repairing",
+      "offset": 0.1
+     },
+     "end": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "kind": "ground",
+       "text": "LAST NIGHT",
+       "head": "NEW STONE",
+       "at": {
+        "line": "L1",
+        "word": "repairing",
+        "offset": 0.1
+       },
+       "end": {
+        "line": "L2",
+        "word": "Meet",
+        "offset": -0.1
+       },
+       "pos": [
+        5.799999999999999,
+        14.799999999999999,
+        3.0700000000000003
+       ],
+       "lift": -150,
+       "dx": 230,
+       "color": "#4fd6ff",
+       "headColor": "#4fd6ff"
+      }
+     ]
+    },
+    {
+     "type": "fieldCard",
+     "mode": "intro",
+     "y": 440,
+     "start": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "dietAt": {
+      "line": "L2",
+      "word": "stands."
+     },
+     "kicker": "FIELD CARD \u00b7 NO. 010",
+     "kind": "LOST CIVILIZATION",
+     "name": "THE BUILDERS",
+     "dietLabel": "LEFT",
+     "diet": "one wall, still standing",
+     "sprite": "ep35/builders_sprite.png",
+     "spriteW": 120,
+     "spriteH": 96
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "chime",
+     "at": {
+      "shot": "hook"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "shot": "hook",
+      "offset": 0.05
+     },
+     "gain": -17
+    },
+    {
+     "sound": "stoneSet",
+     "at": {
+      "line": "L1",
+      "word": "older",
+      "offset": -0.1
+     },
+     "gain": -19
+    },
+    {
+     "sound": "logOn",
+     "at": {
+      "line": "L1",
+      "word": "repairing",
+      "offset": -0.05
+     },
+     "gain": -15
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.05
+     },
+     "gain": -18
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L2",
+      "word": "stands."
+     },
+     "gain": -20
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "setup",
+   "scene": "world",
+   "purpose": "The lazy version: ancient, mysterious, gone.",
+   "visual": "A wipe to the bare wall: nothing dug in front of it, no new stone, nothing to read. ANCIENT / MYSTERIOUS / GONE pop on their words. The finds tray slides in under the world, EMPTY; the sim bar arrives (FINDS 00, QUESTIONS 00) and RUN is pressed.",
+   "camera": "The same frontal pose, sliding east along the bare wall.",
+   "layers": {
+    "foreground": "kinetic, sim bar, finds tray",
+    "midground": "the bare wall",
+    "background": "the Isle"
+   },
+   "lighting": "Day.",
+   "onScreenText": "ANCIENT \u00b7 MYSTERIOUS \u00b7 GONE \u00b7 THE FINDS TRAY: EMPTY",
+   "transition": "A cut to the whole Isle on 'run'.",
+   "music": "Hollow, thinner.",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "dur": 0.34,
+     "color": "#3a3326"
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "ANCIENT",
+       "at": {
+        "line": "L3",
+        "word": "ancient,"
+       },
+       "size": 64,
+       "color": "#c9c4b4"
+      },
+      {
+       "text": "MYSTERIOUS",
+       "at": {
+        "line": "L3",
+        "word": "mysterious,"
+       },
+       "color": "parchment",
+       "size": 64
+      },
+      {
+       "text": "GONE",
+       "at": {
+        "line": "L3",
+        "word": "gone."
+       },
+       "color": "rust",
+       "size": 80
+      }
+     ],
+     "y": 460,
+     "size": 64,
+     "start": {
+      "line": "L3",
+      "word": "ancient,",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L4",
+      "word": "Press",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "simBar",
+     "counters": [
+      {
+       "icon": "gear",
+       "label": "FINDS",
+       "key": "finds",
+       "color": "#4fd6ff",
+       "digits": 2
+      },
+      {
+       "icon": "query",
+       "label": "QUESTIONS",
+       "key": "questions",
+       "color": "ember",
+       "digits": 2
+      }
+     ],
+     "compact": true,
+     "start": {
+      "line": "L4",
+      "word": "Press",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L16",
+      "word": "Show",
+      "offset": -0.3
+     },
+     "runAt": [
+      {
+       "line": "L4",
+       "word": "run."
+      },
+      {
+       "line": "L12",
+       "word": "Run"
+      }
+     ]
+    },
+    {
+     "type": "findsTray",
+     "y": 1352,
+     "slots": [
+      {
+       "icon": "gear",
+       "kind": "TOOLS",
+       "text": "a gear we can't make",
+       "at": {
+        "line": "L8",
+        "word": "gear",
+        "offset": 0.5
+       }
+      },
+      {
+       "icon": "pot",
+       "kind": "VALUES",
+       "text": "one table for all",
+       "at": {
+        "line": "L9",
+        "word": "kitchen.",
+        "offset": 0.1
+       }
+      },
+      {
+       "icon": "well",
+       "kind": "FAILURE",
+       "text": "wells full of sand",
+       "at": {
+        "line": "L10",
+        "word": "sand.",
+        "offset": 0.0
+       }
+      },
+      {
+       "icon": "handprint",
+       "kind": "DAILY LIFE",
+       "text": "a child's hands",
+       "at": {
+        "line": "L11",
+        "word": "handprints,",
+        "offset": 0.2
+       }
+      },
+      {
+       "icon": "stone",
+       "kind": "WHO?",
+       "text": "no answer",
+       "locked": true,
+       "unlockAt": {
+        "line": "L14",
+        "word": "night.",
+        "offset": 0.4
+       }
+      }
+     ],
+     "start": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": 0.15
+     },
+     "end": {
+      "line": "L16",
+      "word": "Show",
+      "offset": -0.3
+     },
+     "askAt": {
+      "line": "L12",
+      "word": "Every"
+     },
+     "lockedText": "THE TWIST"
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "gain": -15
+    },
+    {
+     "sound": "trayDrop",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": 0.2
+     },
+     "gain": -22
+    },
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L4",
+      "word": "run."
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L4",
+      "word": "run."
+     },
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "run1",
+   "scene": "world",
+   "purpose": "Run the lazy version: a thousand years of digging and nothing to find.",
+   "visual": "The whole Isle; YEAR 500\u21921500; the tray stays EMPTY. 1,000 YEARS / OF DIGGING / JUST STONES.",
+   "camera": "Wide (dist 160, fov 22), sliding east across the Isle.",
+   "layers": {
+    "foreground": "sim bar, kinetic, tray",
+    "midground": "the Isle",
+    "background": "the void"
+   },
+   "lighting": "Day.",
+   "onScreenText": "1,000 YEARS / OF DIGGING / JUST STONES",
+   "transition": "Gloom.",
+   "music": "Drive.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "1,000 YEARS",
+       "at": {
+        "line": "L5",
+        "word": "thousand"
+       },
+       "color": "parchment",
+       "size": 56
+      },
+      {
+       "text": "OF DIGGING",
+       "at": {
+        "line": "L5",
+        "word": "digging."
+       },
+       "color": "parchment",
+       "size": 56
+      },
+      {
+       "text": "JUST STONES",
+       "at": {
+        "line": "L5",
+        "word": "Nothing"
+       },
+       "color": "rust",
+       "size": 56
+      }
+     ],
+     "y": 468,
+     "size": 56,
+     "start": {
+      "line": "L5",
+      "word": "A",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L6",
+      "word": "A",
+      "offset": -0.25
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L5",
+      "word": "stones.",
+      "offset": 0.3
+     },
+     "gain": -22
+    },
+    {
+     "sound": "rumble",
+     "from": {
+      "line": "L5",
+      "word": "A"
+     },
+     "to": {
+      "line": "L5",
+      "word": "digging.",
+      "offset": 0.3
+     },
+     "gain": -24
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L5",
+      "word": "Nothing"
+     },
+     "gain": -21
+    }
+   ]
+  },
+  {
+   "id": "drop",
+   "scene": "world",
+   "purpose": "The punchline: a ruin that says nothing is just rocks.",
+   "visual": "Gloom: JUST ROCKS \u00b7 0 FINDS \u00b7 0 QUESTIONS \u00b7 0 PEOPLE, over the empty tray.",
+   "camera": "Wide, the slide easing to a stop.",
+   "layers": {
+    "foreground": "stamp, tray",
+    "midground": "the Isle",
+    "background": "the void"
+   },
+   "lighting": "Gloom.",
+   "onScreenText": "JUST ROCKS \u00b7 0 FINDS \u00b7 0 QUESTIONS \u00b7 0 PEOPLE",
+   "transition": "Rewind + block wipe.",
+   "music": "Drop; a boom on 'rocks'.",
+   "graphics": [
+    {
+     "type": "stamp",
+     "text": "JUST ROCKS",
+     "sub": "0 FINDS \u00b7 0 QUESTIONS \u00b7 0 PEOPLE",
+     "color": "rust",
+     "y": 560,
+     "size": 84,
+     "start": {
+      "line": "L6",
+      "word": "nothing"
+     },
+     "end": {
+      "line": "L6",
+      "word": "rocks.",
+      "offset": 0.55
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L6",
+      "word": "nothing"
+     },
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "rehook",
+   "scene": "world",
+   "purpose": "Re-hook: the thesis, four rules, one locked.",
+   "visual": "REWIND. GOOD RUINS / TALK; then the checklist READ THE RUINS, row 5 locked (the twist); the tray's fifth compartment is locked too.",
+   "camera": "Wide, sliding back west.",
+   "layers": {
+    "foreground": "rewind, kinetic, checklist, tray",
+    "midground": "the Isle",
+    "background": "the void"
+   },
+   "lighting": "Day.",
+   "onScreenText": "GOOD RUINS TALK \u00b7 READ THE RUINS 0/5",
+   "transition": "Cut to the wall's west end.",
+   "music": "Survey, bare (a nylon guitar walking in eighths); a riser into 'the twist'.",
+   "graphics": [
+    {
+     "type": "rewind",
+     "y": 620,
+     "start": {
+      "line": "L6",
+      "word": "rocks.",
+      "offset": 0.6
+     },
+     "end": {
+      "line": "L7",
+      "word": "Good",
+      "offset": 0.3
+     }
+    },
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L6",
+      "word": "rocks.",
+      "offset": 0.58
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "GOOD RUINS",
+       "at": {
+        "line": "L7",
+        "word": "Good"
+       },
+       "size": 78,
+       "color": "#c9c4b4"
+      },
+      {
+       "text": "TALK",
+       "at": {
+        "line": "L7",
+        "word": "talk."
+       },
+       "color": "#4fd6ff",
+       "size": 96
+      }
+     ],
+     "y": 470,
+     "size": 84,
+     "start": {
+      "line": "L7",
+      "word": "Good",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "fieldCard",
+     "mode": "checklist",
+     "y": 448,
+     "rows": [
+      {
+       "n": 1,
+       "label": "TOOLS",
+       "text": "a gear we can't make",
+       "at": {
+        "line": "L8",
+        "word": "tools."
+       }
+      },
+      {
+       "n": 2,
+       "label": "VALUES",
+       "text": "one table for all",
+       "at": {
+        "line": "L9",
+        "word": "valued."
+       }
+      },
+      {
+       "n": 3,
+       "label": "A FAILURE",
+       "text": "wells full of sand",
+       "at": {
+        "line": "L10",
+        "word": "failed."
+       }
+      },
+      {
+       "n": 4,
+       "label": "DAILY LIFE",
+       "text": "a child's hands",
+       "at": {
+        "line": "L11",
+        "word": "days."
+       }
+      },
+      {
+       "n": 5,
+       "label": "A SECRET",
+       "text": "never say who",
+       "at": {
+        "line": "L7",
+        "word": "Four"
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L15",
+        "word": "who.",
+        "offset": -0.1
+       }
+      }
+     ],
+     "start": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L16",
+      "word": "Show",
+      "offset": -0.3
+     },
+     "kicker": "THE BUILDERS \u00b7 WHAT THEY LEFT",
+     "title": "READ THE RUINS",
+     "blinkAt": {
+      "line": "L7",
+      "word": "twist."
+     },
+     "lockedText": "the twist",
+     "sprite": "ep35/builders_sprite.png",
+     "spriteW": 120,
+     "spriteH": 96,
+     "collapse": [
+      [
+       {
+        "line": "L8",
+        "word": "One:",
+        "offset": -0.3
+       },
+       0
+      ],
+      [
+       {
+        "line": "L8",
+        "word": "One:"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "So",
+        "offset": -0.15
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "So",
+        "offset": 0.15
+       },
+       0
+      ]
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L6",
+      "word": "rocks.",
+      "offset": 0.55
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "gain": -17
+    }
+   ]
+  },
+  {
+   "id": "tools",
+   "scene": "world",
+   "purpose": "Rule 1: their tools (technology).",
+   "visual": "The wall's west end: on 'gear' a toothed bronze wheel rises half out of a dug pit (FIND 01 \u00b7 TOOLS \u00b7 NO FORGE HERE) and drops into the tray's first compartment.",
+   "camera": "Cut, then the slide begins: the camera trucks east to the gear.",
+   "layers": {
+    "foreground": "tag, checklist (folded), tray",
+    "midground": "the gear in its pit",
+    "background": "the wall"
+   },
+   "lighting": "Day.",
+   "onScreenText": "1 TOOLS \u00b7 a gear we can't make",
+   "transition": "Slide east.",
+   "music": "Survey 1: a nylon guitar.",
+   "graphics": [
+    {
+     "type": "skyTags",
+     "start": {
+      "line": "L8",
+      "word": "gear",
+      "offset": 0.4
+     },
+     "end": {
+      "line": "L9",
+      "word": "Two:",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "kind": "ground",
+       "text": "NO FORGE HERE",
+       "head": "FIND 01 \u00b7 TOOLS",
+       "at": {
+        "line": "L8",
+        "word": "gear",
+        "offset": 0.4
+       },
+       "end": {
+        "line": "L9",
+        "word": "Two:",
+        "offset": -0.15
+       },
+       "pos": [
+        1.5,
+        16.0,
+        1.9
+       ],
+       "lift": -170,
+       "dx": 200,
+       "color": "#4fd6ff",
+       "headColor": "#4fd6ff"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L8",
+      "word": "tools."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "dig",
+     "at": {
+      "line": "L8",
+      "word": "gear"
+     },
+     "gain": -14
+    },
+    {
+     "sound": "trayDrop",
+     "at": {
+      "line": "L8",
+      "word": "gear",
+      "offset": 0.5
+     },
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "values",
+   "scene": "world",
+   "purpose": "Rule 2: what they valued.",
+   "visual": "Sliding east: on 'biggest' a great room's foundations rise in front of the wall, one long table for everyone, benches, bowls and a hearth with a great pot (FIND 02 \u00b7 VALUES \u00b7 ONE TABLE FOR ALL).",
+   "camera": "A slide east along the wall (no cut).",
+   "layers": {
+    "foreground": "tag, checklist (folded), tray",
+    "midground": "the kitchen",
+    "background": "the wall"
+   },
+   "lighting": "Day.",
+   "onScreenText": "2 VALUES \u00b7 one table for all",
+   "transition": "Slide east.",
+   "music": "Survey 2: a walking acoustic bass.",
+   "graphics": [
+    {
+     "type": "skyTags",
+     "start": {
+      "line": "L9",
+      "word": "kitchen."
+     },
+     "end": {
+      "line": "L10",
+      "word": "Three:",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "kind": "ground",
+       "text": "ONE TABLE FOR ALL",
+       "head": "FIND 02 \u00b7 VALUES",
+       "at": {
+        "line": "L9",
+        "word": "kitchen."
+       },
+       "end": {
+        "line": "L10",
+        "word": "Three:",
+        "offset": -0.15
+       },
+       "pos": [
+        3.9,
+        16.6,
+        0.7
+       ],
+       "lift": -260,
+       "dx": 60,
+       "color": "#4fd6ff",
+       "headColor": "#4fd6ff"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L9",
+      "word": "valued."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "stoneRise",
+     "at": {
+      "line": "L9",
+      "word": "biggest",
+      "offset": -0.1
+     },
+     "gain": -15
+    },
+    {
+     "sound": "trayDrop",
+     "at": {
+      "line": "L9",
+      "word": "kitchen.",
+      "offset": 0.1
+     },
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "failure",
+   "scene": "world",
+   "purpose": "Rule 3: how they failed.",
+   "visual": "Sliding east: on 'well' two stone wells rise, each filled to the brim with sand, sand drifting against the wall (FIND 03 \u00b7 FAILURE \u00b7 THE WATER RAN OUT).",
+   "camera": "A slide east (no cut).",
+   "layers": {
+    "foreground": "tag, checklist (folded), tray",
+    "midground": "the wells",
+    "background": "the wall"
+   },
+   "lighting": "Day.",
+   "onScreenText": "3 A FAILURE \u00b7 wells full of sand",
+   "transition": "Slide east, then in.",
+   "music": "Survey 3: brushes and a ride.",
+   "graphics": [
+    {
+     "type": "skyTags",
+     "start": {
+      "line": "L10",
+      "word": "full"
+     },
+     "end": {
+      "line": "L11",
+      "word": "Four:",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "kind": "ground",
+       "text": "THE WATER RAN OUT",
+       "head": "FIND 03 \u00b7 FAILURE",
+       "at": {
+        "line": "L10",
+        "word": "full"
+       },
+       "end": {
+        "line": "L11",
+        "word": "Four:",
+        "offset": -0.15
+       },
+       "pos": [
+        6.5,
+        15.8,
+        0.6
+       ],
+       "lift": -260,
+       "dx": 80,
+       "color": "#4fd6ff",
+       "headColor": "#4fd6ff"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L10",
+      "word": "failed."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "dig",
+     "at": {
+      "line": "L10",
+      "word": "well"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "sandPour",
+     "from": {
+      "line": "L10",
+      "word": "full"
+     },
+     "to": {
+      "line": "L10",
+      "word": "sand.",
+      "offset": 0.4
+     },
+     "gain": -20
+    },
+    {
+     "sound": "trayDrop",
+     "at": {
+      "line": "L10",
+      "word": "sand."
+     },
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "days",
+   "scene": "world",
+   "purpose": "Rule 4: their days.",
+   "visual": "Sliding east and in to the wall's face: on 'child's' a mortar patch with two small handprints shows on a low block (FIND 04 \u00b7 DAILY LIFE \u00b7 A CHILD WAS HERE).",
+   "camera": "A slide east that eases in to the wall's face (el 8).",
+   "layers": {
+    "foreground": "tag, checklist (folded), tray",
+    "midground": "the handprints",
+    "background": "the wall"
+   },
+   "lighting": "Day.",
+   "onScreenText": "4 DAILY LIFE \u00b7 a child's hands",
+   "transition": "Cut to the whole Isle.",
+   "music": "Survey 4: the theme on vibraphone.",
+   "graphics": [
+    {
+     "type": "skyTags",
+     "start": {
+      "line": "L11",
+      "word": "handprints,",
+      "offset": 0.2
+     },
+     "end": {
+      "line": "L12",
+      "word": "Run",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "kind": "ground",
+       "text": "A CHILD WAS HERE",
+       "head": "FIND 04 \u00b7 DAILY LIFE",
+       "at": {
+        "line": "L11",
+        "word": "handprints,",
+        "offset": 0.2
+       },
+       "end": {
+        "line": "L12",
+        "word": "Run",
+        "offset": -0.15
+       },
+       "pos": [
+        8.899999999999999,
+        15.07,
+        1.05
+       ],
+       "lift": -330,
+       "dx": -60,
+       "color": "#4fd6ff",
+       "headColor": "#4fd6ff"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L11",
+      "word": "days."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L11",
+      "word": "child's"
+     },
+     "gain": -18
+    },
+    {
+     "sound": "trayDrop",
+     "at": {
+      "line": "L11",
+      "word": "handprints,",
+      "offset": 0.2
+     },
+     "gain": -14
+    }
+   ]
+  },
+  {
+   "id": "run2",
+   "scene": "world",
+   "purpose": "Run with the remains talking: a thousand years of digging, and every find opens two questions.",
+   "visual": "The whole Isle; YEAR 500\u21921500; pits open round the site one after another; FINDS 4\u219216 and QUESTIONS 4\u219232; in the tray every find sprouts two question marks. MORE QUESTIONS \u00b7 1,000 YEARS \u00b7 16 FINDS \u00b7 32 QUESTIONS, stamped in quartz.",
+   "camera": "Wide, sliding west.",
+   "layers": {
+    "foreground": "sim bar, tray, stamp",
+    "midground": "the dig spreading",
+    "background": "the Isle"
+   },
+   "lighting": "Day.",
+   "onScreenText": "MORE QUESTIONS \u00b7 1,000 YEARS \u00b7 16 FINDS \u00b7 32 QUESTIONS",
+   "transition": "Cut to dusk.",
+   "music": "Drive with the theme; a stab and a cymbal on 'questions'.",
+   "graphics": [
+    {
+     "type": "stamp",
+     "text": "MORE QUESTIONS",
+     "sub": "1,000 YEARS \u00b7 16 FINDS \u00b7 32 QUESTIONS",
+     "color": "#4fd6ff",
+     "rotate": -4,
+     "y": 880,
+     "size": 84,
+     "start": {
+      "line": "L12",
+      "word": "questions."
+     },
+     "end": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -16
+    },
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L12",
+      "word": "questions."
+     },
+     "gain": -22
+    },
+    {
+     "sound": "dig",
+     "at": {
+      "line": "L12",
+      "word": "A",
+      "offset": 0.1
+     },
+     "gain": -20
+    },
+    {
+     "sound": "dig",
+     "at": {
+      "line": "L12",
+      "word": "years.",
+      "offset": -0.1
+     },
+     "gain": -20
+    },
+    {
+     "sound": "dig",
+     "at": {
+      "line": "L12",
+      "word": "find"
+     },
+     "gain": -20
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L12",
+      "word": "Every",
+      "offset": 0.1
+     },
+     "gain": -19
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L12",
+      "word": "opens"
+     },
+     "gain": -19
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L12",
+      "word": "questions."
+     },
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "twist",
+   "scene": "world",
+   "purpose": "The locked rule: half this wall is newer than us.",
+   "visual": "Dusk, the whole wall: RULE 5? LOOK CLOSER; on 'Half' the repair log lights: every original stone sinks to umber and every repair glows quartz cyan by how recent it is, half the wall (THE REPAIR LOG \u00b7 HALF OF IT IS NEW; NEWER THAN US). Night falls; the camera slides to the gap at the top of the wall, and on 'night' one more stone settles into it, bright (LAST NIGHT \u00b7 ONE MORE STONE); nobody is there (WHO? \u00b7 NOBODY SEEN). The tray's fifth compartment opens: WHO? \u00b7 no answer.",
+   "camera": "Cut, then slides east along the wall to the gap.",
+   "layers": {
+    "foreground": "kinetic, tags, tray",
+    "midground": "the glowing repairs, the new stone",
+    "background": "the dark Isle"
+   },
+   "lighting": "Dusk, then night.",
+   "onScreenText": "RULE 5? LOOK CLOSER \u00b7 NEWER THAN US \u00b7 THE REPAIR LOG \u00b7 LAST NIGHT \u00b7 WHO?",
+   "transition": "Day on 'So'.",
+   "music": "Twist (a held A7\u266d9), then hollow at night with the theme on the blown bottle.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "RULE 5?",
+       "at": {
+        "line": "L13",
+        "word": "Rule"
+       },
+       "color": "ember"
+      },
+      {
+       "text": "LOOK CLOSER",
+       "at": {
+        "line": "L13",
+        "word": "Look"
+       },
+       "color": "parchment",
+       "size": 64
+      }
+     ],
+     "size": 150,
+     "y": 500,
+     "start": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.02
+     },
+     "end": {
+      "line": "L13",
+      "word": "Half",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "NEWER",
+       "at": {
+        "line": "L13",
+        "word": "newer"
+       },
+       "color": "#4fd6ff",
+       "size": 96
+      },
+      {
+       "text": "THAN US",
+       "at": {
+        "line": "L13",
+        "word": "us."
+       },
+       "color": "parchment",
+       "size": 64
+      }
+     ],
+     "size": 96,
+     "y": 540,
+     "start": {
+      "line": "L13",
+      "word": "newer",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L14",
+      "word": "Someone",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "skyTags",
+     "start": {
+      "line": "L13",
+      "word": "Half",
+      "offset": 0.25
+     },
+     "end": {
+      "line": "L15",
+      "word": "So",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "kind": "ground",
+       "text": "HALF OF IT IS NEW",
+       "head": "THE REPAIR LOG",
+       "at": {
+        "line": "L13",
+        "word": "Half",
+        "offset": 0.25
+       },
+       "end": {
+        "line": "L14",
+        "word": "Someone",
+        "offset": -0.1
+       },
+       "pos": [
+        3.4,
+        14.799999999999999,
+        3.6
+       ],
+       "lift": -120,
+       "dx": 120,
+       "color": "#4fd6ff",
+       "headColor": "#4fd6ff"
+      },
+      {
+       "kind": "ground",
+       "text": "ONE MORE STONE",
+       "head": "LAST NIGHT",
+       "at": {
+        "line": "L14",
+        "word": "night.",
+        "offset": 0.3
+       },
+       "end": {
+        "line": "L14",
+        "word": "Nobody",
+        "offset": -0.05
+       },
+       "pos": [
+        6.599999999999999,
+        14.799999999999999,
+        3.52
+       ],
+       "lift": -200,
+       "dx": -120,
+       "color": "#4fd6ff",
+       "headColor": "#4fd6ff"
+      },
+      {
+       "kind": "ground",
+       "text": "NOBODY SEEN",
+       "head": "WHO?",
+       "at": {
+        "line": "L14",
+        "word": "Nobody"
+       },
+       "end": {
+        "line": "L15",
+        "word": "So",
+        "offset": -0.15
+       },
+       "pos": [
+        6.599999999999999,
+        14.799999999999999,
+        3.52
+       ],
+       "lift": -200,
+       "dx": -120,
+       "color": "#4fd6ff",
+       "headColor": "#4fd6ff"
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L13",
+      "word": "Rule"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "logOn",
+     "at": {
+      "line": "L13",
+      "word": "Half",
+      "offset": -0.05
+     },
+     "gain": -10
+    },
+    {
+     "sound": "stoneSet",
+     "at": {
+      "line": "L14",
+      "word": "night.",
+      "offset": -0.1
+     },
+     "gain": -11
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L14",
+      "word": "night.",
+      "offset": 0.4
+     },
+     "gain": -17
+    }
+   ]
+  },
+  {
+   "id": "role",
+   "scene": "world",
+   "purpose": "Unlock rule 5: never say who.",
+   "visual": "Day returns and the log fades; the checklist opens and row 5 unlocks on 'who': A SECRET \u00b7 never say who \u00b7 5/5. The follow chip (+ FOLLOW \u00b7 PART 35/50) after 'who'.",
+   "camera": "A slide east along the wall.",
+   "layers": {
+    "foreground": "open checklist, follow chip, tray",
+    "midground": "the wall",
+    "background": "the Isle"
+   },
+   "lighting": "Day.",
+   "onScreenText": "5 A SECRET \u00b7 never say who \u00b7 5/5",
+   "transition": "The card goes full.",
+   "music": "Anthem from 'So'; a D-major hit on 'who'.",
+   "graphics": [
+    {
+     "type": "followChip",
+     "start": {
+      "line": "L15",
+      "word": "who.",
+      "offset": 0.2
+     },
+     "end": {
+      "line": "L16",
+      "word": "Every",
+      "offset": 0.3
+     },
+     "text": "FOLLOW",
+     "sub": "PART 35/50"
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L15",
+      "word": "So",
+      "offset": -0.15
+     },
+     "gain": -17
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L15",
+      "word": "who.",
+      "offset": -0.1
+     },
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "lesson",
+   "scene": "world",
+   "purpose": "The takeaway.",
+   "visual": "The full card (BEFORE YOU BURY A CIVILIZATION \u00b7 THE BUILDERS, all five rows ticked) over the whole Isle in golden light, with 'Every ruin keeps one secret.' in serif italic from the end of the first sentence.",
+   "camera": "Wide: one slow slide east.",
+   "layers": {
+    "foreground": "full card, follow chip",
+    "midground": "the Isle",
+    "background": "the void"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "BEFORE YOU BURY A CIVILIZATION \u00b7 THE BUILDERS \u00b7 Every ruin keeps one secret.",
+   "transition": "Block wipe to the end card.",
+   "music": "Anthem; the World Engine chime as the card lands.",
+   "graphics": [
+    {
+     "type": "fieldCard",
+     "mode": "full",
+     "y": 452,
+     "rows": [
+      {
+       "n": 1,
+       "label": "TOOLS",
+       "text": "a gear we can't make",
+       "at": {
+        "line": "L16",
+        "word": "Show",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 2,
+       "label": "VALUES",
+       "text": "one table for all",
+       "at": {
+        "line": "L16",
+        "word": "Show",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 3,
+       "label": "A FAILURE",
+       "text": "wells full of sand",
+       "at": {
+        "line": "L16",
+        "word": "Show",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 4,
+       "label": "DAILY LIFE",
+       "text": "a child's hands",
+       "at": {
+        "line": "L16",
+        "word": "Show",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 5,
+       "label": "A SECRET",
+       "text": "never say who",
+       "at": {
+        "line": "L16",
+        "word": "Show",
+        "offset": -0.3
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L16",
+        "word": "Show",
+        "offset": -0.3
+       }
+      }
+     ],
+     "start": {
+      "line": "L16",
+      "word": "Show",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "kicker": "BEFORE YOU BURY A CIVILIZATION",
+     "title": "THE BUILDERS",
+     "sprite": "ep35/builders_sprite.png",
+     "spriteW": 120,
+     "spriteH": 96,
+     "subtitle": "Every ruin keeps one secret.",
+     "subtitleAt": {
+      "line": "L16",
+      "word": "fell."
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L16",
+      "word": "Show",
+      "offset": -0.8
+     },
+     "gain": -15
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L16",
+      "word": "Show",
+      "offset": -0.3
+     },
+     "gain": -10
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L16",
+      "word": "Show",
+      "offset": -0.3
+     },
+     "gain": -18
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "cta",
+   "scene": "world",
+   "purpose": "Comment CTA: what should archaeologists never find in your world?",
+   "visual": "End card: logo, PART 35 / 50, the title, and a COMMENT panel where OUR OWN NAMES and A WARM HEARTH pop as starters, then 'One find. Name it.'",
+   "camera": "Cut (under the block wipe) to the hook pose, sliding back onto it.",
+   "layers": {
+    "foreground": "end card",
+    "midground": "the wall",
+    "background": "the Isle"
+   },
+   "lighting": "Golden hour (the loop frame).",
+   "onScreenText": "COMMENT \u00b7 OUR OWN NAMES / A WARM HEARTH \u00b7 One find. Name it.",
+   "transition": "The card lifts on 'Part'.",
+   "music": "Outro.",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "endCardS2",
+     "start": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.12
+     },
+     "fadeOut": 0.3,
+     "kicker": "PART 35 / 50",
+     "title": "Give Your World a Lost Civilization",
+     "cta": "COMMENT",
+     "icon": "bubble",
+     "with": "One find. Name it.",
+     "withAt": {
+      "line": "L17",
+      "word": "world?",
+      "offset": -0.05
+     },
+     "choiceSize": 30,
+     "choices": [
+      {
+       "text": "OUR OWN NAMES",
+       "color": "#4fd6ff",
+       "at": {
+        "line": "L17",
+        "word": "never"
+       }
+      },
+      {
+       "text": "A WARM HEARTH",
+       "color": "#c9c4b4",
+       "at": {
+        "line": "L17",
+        "word": "find"
+       }
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "gain": -21
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L17",
+      "word": "never"
+     },
+     "gain": -17
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L17",
+      "word": "find"
+     },
+     "gain": -17
+    }
+   ],
+   "captions": false,
+   "hideLogoBug": true,
+   "hideLogoBugUntil": {
+    "line": "L18",
+    "word": "Part"
+   }
+  },
+  {
+   "id": "next",
+   "scene": "world",
+   "purpose": "Say the part number, ask for the follow with a reason (part 36), open the next loop.",
+   "visual": "The hook frame; PART 35/50; FOLLOW FOR PART 36, pressed on 'Follow'; NEXT RUN \u00b7 36 decodes from three locked banners to THE WAR \u00b7 MORE THAN TWO SIDES. In the world, on 'armies', three standards in three colours rise on three meadows behind the wall and the war horn calls; the Queen looks up; they sink back before the hook title returns.",
+   "camera": "The hook frame.",
+   "layers": {
+    "foreground": "progress bar, follow button, next-run card",
+    "midground": "the wall",
+    "background": "three standards rising"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "PART 35/50 \u00b7 FOLLOW FOR PART 36 \u00b7 NEXT RUN: THE WAR \u00b7 MORE THAN TWO SIDES.",
+   "transition": "Loop to frame 0.",
+   "music": "Tease over a held A; a horn call on 'armies'; the engine chime on 'Follow'.",
+   "graphics": [
+    {
+     "type": "seasonBar",
+     "y": 350,
+     "part": 35,
+     "of": 50,
+     "start": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.1
+     },
+     "fillAt": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "fillDur": 0.6,
+     "ofAt": {
+      "line": "L18",
+      "word": "50."
+     },
+     "end": {
+      "line": "L18",
+      "word": "enough.",
+      "offset": 0.6
+     }
+    },
+    {
+     "type": "followButton",
+     "y": 556,
+     "start": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.6
+     },
+     "pressAt": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "end": {
+      "line": "L18",
+      "word": "enough.",
+      "offset": 0.6
+     },
+     "text": "FOLLOW",
+     "doneText": "FOLLOWING",
+     "sub": "FOR PART 36"
+    },
+    {
+     "type": "nextRun",
+     "y": 772,
+     "start": {
+      "line": "L18",
+      "word": "36:",
+      "offset": -0.1
+     },
+     "revealAt": {
+      "line": "L18",
+      "word": "armies"
+     },
+     "end": {
+      "line": "L18",
+      "word": "enough.",
+      "offset": 0.6
+     },
+     "kicker": "NEXT RUN \u00b7 36",
+     "title": "THE WAR",
+     "sub": "MORE THAN TWO SIDES.",
+     "sprite": "banners",
+     "spritePx": 7
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "OLDER THAN US",
+       "color": "#c9c4b4",
+       "size": 64,
+       "pulseAt": {
+        "line": "L1",
+        "word": "older"
+       }
+      },
+      {
+       "text": "WHO REPAIRS IT?",
+       "color": "#4fd6ff",
+       "size": 60,
+       "pulseAt": {
+        "line": "L1",
+        "word": "repairing"
+       }
+      }
+     ],
+     "y": 440,
+     "size": 60,
+     "start": {
+      "line": "L18",
+      "word": "enough.",
+      "offset": 0.92
+     },
+     "fadeIn": 0.35,
+     "preShow": true
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "to": {
+      "line": "L18",
+      "word": "Part",
+      "offset": 0.55
+     },
+     "gain": -22
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.5
+     },
+     "gain": -15
+    },
+    {
+     "sound": "followPress",
+     "at": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": 0.02
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L18",
+      "word": "36:",
+      "offset": -0.1
+     },
+     "gain": -18
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L18",
+      "word": "armies"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "stoneRise",
+     "at": {
+      "line": "L18",
+      "word": "armies",
+      "offset": -0.1
+     },
+     "gain": -17
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "end": true,
+      "offset": -0.54
+     },
+     "gain": -14
+    }
+   ],
+   "captions": false
+  }
+ ],
+ "world": {
+  "clock": {
+   "label": "YEAR",
+   "keys": [
+    [
+     {
+      "shot": "hook"
+     },
+     500
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     500
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "stones.",
+      "offset": 0.3
+     },
+     1500,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "rocks.",
+      "offset": 0.58
+     },
+     1500
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "rocks.",
+      "offset": 0.6
+     },
+     500,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.25
+     },
+     500
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "questions.",
+      "offset": 0.1
+     },
+     1500,
+     "linear"
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.12
+     },
+     1500
+    ],
+    [
+     {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.1
+     },
+     500,
+     "step"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     500
+    ]
+   ]
+  },
+  "speed": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "run."
+    },
+    1
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.3
+    },
+    6
+   ],
+   [
+    {
+     "line": "L5",
+     "word": "stones.",
+     "offset": 0.3
+    },
+    6
+   ],
+   [
+    {
+     "line": "L6",
+     "word": "A"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.25
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.5
+    },
+    6
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "questions.",
+     "offset": 0.1
+    },
+    6
+   ],
+   [
+    {
+     "line": "L13",
+     "word": "Rule"
+    },
+    1
+   ]
+  ],
+  "camera": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "az": 0,
+    "el": 13,
+    "dist": 31.759,
+    "target": [
+     6.4,
+     6.2,
+     15.0
+    ],
+    "fov": 20,
+    "dur": 1.2,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "shot": "hook",
+     "offset": 0.02
+    },
+    "az": 0,
+    "el": 13,
+    "dist": 31.759,
+    "target": [
+     5.5,
+     6.2,
+     15.0
+    ],
+    "fov": 20,
+    "dur": 4.262,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L2",
+     "word": "Meet"
+    },
+    "az": 0,
+    "el": 13,
+    "dist": 31.759,
+    "target": [
+     4.3,
+     6.2,
+     15.0
+    ],
+    "fov": 20,
+    "dur": 2.4,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "az": 0,
+    "el": 13,
+    "dist": 31.759,
+    "target": [
+     3.8,
+     6.2,
+     15.0
+    ],
+    "fov": 20,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.13
+    },
+    "az": 0,
+    "el": 13,
+    "dist": 31.759,
+    "target": [
+     7.0,
+     6.2,
+     15.0
+    ],
+    "fov": 20,
+    "dur": 3.2,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.05
+    },
+    "az": 0,
+    "el": 26,
+    "dist": 159.481,
+    "target": [
+     -7.0,
+     2.0,
+     0.0
+    ],
+    "fov": 22,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.07
+    },
+    "az": 0,
+    "el": 26,
+    "dist": 159.481,
+    "target": [
+     2.0,
+     2.0,
+     0.0
+    ],
+    "fov": 22,
+    "dur": 3.6,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "A",
+     "offset": -0.2
+    },
+    "az": 0,
+    "el": 26,
+    "dist": 159.481,
+    "target": [
+     4.0,
+     2.0,
+     0.0
+    ],
+    "fov": 22,
+    "dur": 2.2,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "rocks.",
+     "offset": 0.6
+    },
+    "az": 0,
+    "el": 26,
+    "dist": 159.481,
+    "target": [
+     6.0,
+     2.0,
+     0.0
+    ],
+    "fov": 22,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "rocks.",
+     "offset": 0.62
+    },
+    "az": 0,
+    "el": 26,
+    "dist": 159.481,
+    "target": [
+     -3.0,
+     2.0,
+     0.0
+    ],
+    "fov": 22,
+    "dur": 3.2,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 22,
+    "dist": 19.282,
+    "target": [
+     0.2,
+     5.8,
+     16.0
+    ],
+    "fov": 20,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.08
+    },
+    "az": 0,
+    "el": 22,
+    "dist": 19.282,
+    "target": [
+     1.8,
+     5.8,
+     16.0
+    ],
+    "fov": 20,
+    "dur": 1.4,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 22,
+    "dist": 19.282,
+    "target": [
+     3.9,
+     4.8,
+     16.6
+    ],
+    "fov": 20,
+    "dur": 1.1,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 22,
+    "dist": 19.282,
+    "target": [
+     7.2,
+     4.8,
+     15.8
+    ],
+    "fov": 20,
+    "dur": 1.1,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 22,
+    "dist": 19.282,
+    "target": [
+     8.4,
+     4.8,
+     15.8
+    ],
+    "fov": 20,
+    "dur": 0.9,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "child's",
+     "offset": -0.25
+    },
+    "az": 0,
+    "el": 6,
+    "dist": 7.373,
+    "target": [
+     9.0,
+     4.9,
+     15.07
+    ],
+    "fov": 20,
+    "dur": 1.0,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L12",
+     "word": "Run",
+     "offset": -0.05
+    },
+    "az": 0,
+    "el": 26,
+    "dist": 159.481,
+    "target": [
+     6.0,
+     2.0,
+     0.0
+    ],
+    "fov": 22,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L12",
+     "word": "Run",
+     "offset": -0.03
+    },
+    "az": 0,
+    "el": 26,
+    "dist": 159.481,
+    "target": [
+     -4.0,
+     2.0,
+     0.0
+    ],
+    "fov": 22,
+    "dur": 4.2,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 12,
+    "dist": 39.699,
+    "target": [
+     3.8,
+     5.6,
+     14.6
+    ],
+    "fov": 20,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.08
+    },
+    "az": 0,
+    "el": 12,
+    "dist": 39.699,
+    "target": [
+     5.4,
+     5.6,
+     14.6
+    ],
+    "fov": 20,
+    "dur": 2.4,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L14",
+     "word": "Someone",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 10,
+    "dist": 13.611,
+    "target": [
+     5.8,
+     6.9,
+     14.6
+    ],
+    "fov": 20,
+    "dur": 1.0,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L14",
+     "word": "stone",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 10,
+    "dist": 13.611,
+    "target": [
+     6.6,
+     6.9,
+     14.6
+    ],
+    "fov": 20,
+    "dur": 1.4,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L14",
+     "word": "Nobody",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 10,
+    "dist": 13.611,
+    "target": [
+     7.3,
+     6.9,
+     14.6
+    ],
+    "fov": 20,
+    "dur": 1.6,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L15",
+     "word": "So",
+     "offset": -0.15
+    },
+    "az": 0,
+    "el": 12,
+    "dist": 39.699,
+    "target": [
+     6.8,
+     5.6,
+     14.6
+    ],
+    "fov": 20,
+    "dur": 1.6,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Show",
+     "offset": -0.25
+    },
+    "az": 0,
+    "el": 26,
+    "dist": 159.481,
+    "target": [
+     -3.0,
+     2.0,
+     0.0
+    ],
+    "fov": 22,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Show",
+     "offset": -0.23
+    },
+    "az": 0,
+    "el": 26,
+    "dist": 159.481,
+    "target": [
+     3.0,
+     2.0,
+     0.0
+    ],
+    "fov": 22,
+    "dur": 4.0,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L17",
+     "word": "What",
+     "offset": -0.3
+    },
+    "az": 0,
+    "el": 13,
+    "dist": 31.759,
+    "target": [
+     7.8,
+     6.2,
+     15.0
+    ],
+    "fov": 20,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L17",
+     "word": "What",
+     "offset": -0.28
+    },
+    "az": 0,
+    "el": 13,
+    "dist": 31.759,
+    "target": [
+     6.4,
+     6.2,
+     15.0
+    ],
+    "fov": 20,
+    "dur": 9.086,
+    "drift": 0.0
+   }
+  ],
+  "light": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "mood": "golden"
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "mood": "day",
+    "dur": 0.4
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "A",
+     "offset": -0.2
+    },
+    "mood": "gloom",
+    "dur": 0.6
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "rocks.",
+     "offset": 0.6
+    },
+    "mood": "day",
+    "dur": 0.3
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "mood": "dusk",
+    "dur": 0.6
+   },
+   {
+    "at": {
+     "line": "L14",
+     "word": "Someone",
+     "offset": -0.1
+    },
+    "mood": "night",
+    "dur": 0.8
+   },
+   {
+    "at": {
+     "line": "L15",
+     "word": "So",
+     "offset": -0.15
+    },
+    "mood": "day",
+    "dur": 0.5
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Show",
+     "offset": -0.3
+    },
+    "mood": "golden",
+    "dur": 1.4
+   }
+  ],
+  "herd": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     24
+    ]
+   ],
+   "max": 30,
+   "base": 24,
+   "centers": [
+    [
+     -9.5,
+     -1.0
+    ],
+    [
+     -8.4,
+     1.2
+    ]
+   ],
+   "skin": "sheep"
+  },
+  "pred": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ]
+  ],
+  "predators": [
+   {
+    "id": "g1",
+    "scale": 1.3,
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 13.0,
+      "z": -10.5,
+      "state": "idle",
+      "face": 160
+     }
+    ],
+    "adorn": true
+   }
+  ],
+  "series": {
+   "finds": [
+    [
+     {
+      "shot": "hook"
+     },
+     4
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     4
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "gear",
+      "offset": -0.02
+     },
+     0
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "gear"
+     },
+     1,
+     "step"
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "biggest",
+      "offset": -0.02
+     },
+     1
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "biggest"
+     },
+     2,
+     "step"
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "well",
+      "offset": -0.02
+     },
+     2
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "well"
+     },
+     3,
+     "step"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "child's",
+      "offset": -0.02
+     },
+     3
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "child's"
+     },
+     4,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "A"
+     },
+     4
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "questions.",
+      "offset": 0.1
+     },
+     16,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     16
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.28
+     },
+     4,
+     "step"
+    ]
+   ],
+   "questions": [
+    [
+     {
+      "shot": "hook"
+     },
+     4
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     4
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "gear",
+      "offset": -0.02
+     },
+     0
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "gear"
+     },
+     1,
+     "step"
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "biggest",
+      "offset": -0.02
+     },
+     1
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "biggest"
+     },
+     2,
+     "step"
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "well",
+      "offset": -0.02
+     },
+     2
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "well"
+     },
+     3,
+     "step"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "child's",
+      "offset": -0.02
+     },
+     3
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "child's"
+     },
+     4,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "A"
+     },
+     4
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "questions.",
+      "offset": 0.1
+     },
+     32,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     32
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.28
+     },
+     4,
+     "step"
+    ]
+   ],
+   "tradeH": [
+    [
+     {
+      "shot": "hook"
+     },
+     4
+    ]
+   ]
+  },
+  "settlement": {
+   "buildings": [
+    {
+     "kind": "hall",
+     "a": [
+      -3.6,
+      -4.6
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -1.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -4.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -1.0,
+      -5.8
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -5.6,
+      -0.9
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -3.4,
+      -0.7
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      0.4,
+      -4.2
+     ],
+     "face": 0
+    }
+   ],
+   "roof": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "pens": [
+    {
+     "a": [
+      -6.4,
+      -1.4
+     ],
+     "r": 1.6
+    }
+   ],
+   "cover": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "roads": {
+    "b": [
+     [
+      -3.4,
+      -1.6
+     ],
+     [
+      -5.6,
+      2.0
+     ],
+     [
+      -8.2,
+      6.0
+     ],
+     [
+      -11.0,
+      10.0
+     ],
+     [
+      -13.0,
+      14.0
+     ],
+     [
+      -14.6,
+      17.0
+     ]
+    ]
+   },
+   "route": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "tradeKey": "tradeH",
+   "lanterns": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ]
+   ],
+   "tower": {
+    "x": -6.4,
+    "z": -5.6,
+    "h": 6.0,
+    "keys": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "rings": [
+     {
+      "line": "L18",
+      "word": "armies"
+     }
+    ]
+   }
+  },
+  "people": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     30
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     30
+    ]
+   ],
+   "centers": [
+    [
+     -2.4,
+     -3.2
+    ],
+    [
+     -0.4,
+     -1.6
+    ],
+    [
+     -4.2,
+     -1.8
+    ]
+   ],
+   "spread": 1.6,
+   "life": 70,
+   "lamps": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "ruler": {
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "idle",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "armies"
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "alert",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "enough.",
+       "offset": 0.7
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "idle",
+      "face": 0
+     }
+    ],
+    "dais": {
+     "x": 9.4,
+     "z": -2.2,
+     "face": 0
+    }
+   }
+  },
+  "fields": {
+   "plots": [
+    {
+     "x": 3.0,
+     "z": -11.0,
+     "w": 4.0,
+     "d": 3.4
+    }
+   ],
+   "ripe": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ]
+  },
+  "props": [
+   {
+    "kind": "cairn",
+    "x": 8.95,
+    "z": -5.38,
+    "stones": [
+     [
+      {
+       "shot": "hook"
+      },
+      3
+     ]
+    ]
+   },
+   {
+    "kind": "offerings",
+    "x": 8.95,
+    "z": -5.38,
+    "r": 1.7,
+    "lights": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "lanterns",
+    "x": 6.5,
+    "z": 4.5,
+    "r": 3.8,
+    "n": 9,
+    "lights": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "sheaves",
+    "x": 3.0,
+    "z": -11.0,
+    "r": 2.7,
+    "n": 8,
+    "sheaves": [
+     [
+      {
+       "shot": "hook"
+      },
+      8
+     ]
+    ]
+   },
+   {
+    "kind": "statue",
+    "x": 18.0,
+    "z": 1.5,
+    "face": -90,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "gild": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "tar": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "grow": [
+     [
+      {
+       "shot": "hook"
+      },
+      1.35
+     ]
+    ],
+    "torch": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "kind": "border",
+    "x": 18.0,
+    "z": -7.0,
+    "to": [
+     18.0,
+     8.3
+    ],
+    "skip": [
+     0.46,
+     0.65
+    ],
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "relic",
+    "x": 20.3,
+    "z": 5.4,
+    "face": -90,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "bones",
+    "x": 6.5,
+    "z": 12.2,
+    "face": 8.2,
+    "r": 1.7,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "ruin",
+    "x": 12.8,
+    "z": 13.4,
+    "face": 20,
+    "r": 2.2,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "wall",
+    "x": 0.6,
+    "z": 14.6,
+    "to": [
+     10.2,
+     14.6
+    ],
+    "profile": [
+     3,
+     5,
+     6,
+     7,
+     6,
+     4,
+     6,
+     7,
+     5,
+     2,
+     4,
+     3
+    ],
+    "fresh": [
+     6,
+     5
+    ],
+    "tonight": [
+     7,
+     6
+    ],
+    "log": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L13",
+       "word": "Half",
+       "offset": -0.05
+      },
+      0
+     ],
+     [
+      {
+       "line": "L13",
+       "word": "Half",
+       "offset": 0.75
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L15",
+       "word": "So",
+       "offset": -0.15
+      },
+      1
+     ],
+     [
+      {
+       "line": "L15",
+       "word": "So",
+       "offset": 0.55
+      },
+      0,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ],
+    "glow": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L1",
+       "word": "repairing",
+       "offset": -0.05
+      },
+      1
+     ],
+     [
+      {
+       "line": "L1",
+       "word": "repairing",
+       "offset": 0.25
+      },
+      1.8
+     ],
+     [
+      {
+       "line": "L1",
+       "word": "them.",
+       "offset": 0.3
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L13",
+       "word": "Rule",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L13",
+       "word": "Half",
+       "offset": -0.05
+      },
+      0
+     ],
+     [
+      {
+       "line": "L13",
+       "word": "Half",
+       "offset": 0.75
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "place": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "night.",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "night.",
+       "offset": 0.45
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.28
+      },
+      0,
+      "step"
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "gear",
+    "x": 1.5,
+    "z": 16.0,
+    "face": 0,
+    "r": 2.2,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "gear"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "gear",
+       "offset": 0.9
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "kitchen",
+    "x": 3.9,
+    "z": 16.6,
+    "face": 0,
+    "r": 2.2,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L9",
+       "word": "biggest"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L9",
+       "word": "biggest",
+       "offset": 1.0
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "wells",
+    "x": 6.5,
+    "z": 15.8,
+    "face": 0,
+    "r": 2.2,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "well"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "well",
+       "offset": 0.9
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "hands",
+    "x": 8.999999999999998,
+    "z": 15.07,
+    "face": 0,
+    "r": 2.2,
+    "y": 0.8,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L11",
+       "word": "child's"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L11",
+       "word": "child's",
+       "offset": 0.5
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "pit",
+    "x": 0.2,
+    "z": 17.2,
+    "r": 1.4,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 0.0
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 0.5
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.28
+      },
+      0,
+      "step"
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "pit",
+    "x": 5.9,
+    "z": 17.6,
+    "r": 1.4,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 0.213
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 0.713
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.28
+      },
+      0,
+      "step"
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "pit",
+    "x": 8.6,
+    "z": 16.4,
+    "r": 1.4,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 0.425
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 0.925
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.28
+      },
+      0,
+      "step"
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "pit",
+    "x": 2.2,
+    "z": 13.4,
+    "r": 1.4,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 0.638
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 1.138
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.28
+      },
+      0,
+      "step"
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "pit",
+    "x": 11.2,
+    "z": 15.1,
+    "r": 1.4,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 0.85
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 1.35
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.28
+      },
+      0,
+      "step"
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "pit",
+    "x": -0.6,
+    "z": 15.4,
+    "r": 1.4,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 1.063
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 1.563
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.28
+      },
+      0,
+      "step"
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "pit",
+    "x": 4.7,
+    "z": 13.6,
+    "r": 1.4,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 1.275
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 1.775
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.28
+      },
+      0,
+      "step"
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "pit",
+    "x": 9.6,
+    "z": 13.4,
+    "r": 1.4,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 1.488
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 1.988
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.28
+      },
+      0,
+      "step"
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "pit",
+    "x": 7.6,
+    "z": 17.0,
+    "r": 1.4,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 1.7
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 2.2
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.28
+      },
+      0,
+      "step"
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "pit",
+    "x": 12.0,
+    "z": 13.9,
+    "r": 1.4,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 1.913
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 2.413
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.28
+      },
+      0,
+      "step"
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "pit",
+    "x": 1.0,
+    "z": 18.2,
+    "r": 1.4,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 2.125
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 2.625
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.28
+      },
+      0,
+      "step"
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "pit",
+    "x": 3.2,
+    "z": 18.6,
+    "r": 1.4,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 2.338
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "A",
+       "offset": 2.838
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.28
+      },
+      0,
+      "step"
+     ]
+    ]
+   },
+   {
+    "kind": "standard",
+    "x": -3.0,
+    "z": -9.0,
+    "face": 0,
+    "color": "#c0573c",
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "armies",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "never",
+       "offset": 0.1
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "enough.",
+       "offset": 0.5
+      },
+      1
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "enough.",
+       "offset": 0.95
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "kind": "standard",
+    "x": 8.0,
+    "z": -11.5,
+    "face": 0,
+    "color": "#4f7fbf",
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "armies",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "never",
+       "offset": 0.1
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "enough.",
+       "offset": 0.5
+      },
+      1
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "enough.",
+       "offset": 0.95
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "kind": "standard",
+    "x": 15.5,
+    "z": -3.5,
+    "face": 0,
+    "color": "#d4b23f",
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "armies",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "never",
+       "offset": 0.1
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "enough.",
+       "offset": 0.5
+      },
+      1
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "enough.",
+       "offset": 0.95
+      },
+      0
+     ]
+    ]
+   }
+  ],
+  "fears": [
+   {
+    "id": "rift",
+    "x": -0.5,
+    "z": 10.6,
+    "r": 0.0,
+    "kind": "rift",
+    "to": [
+     12.0,
+     8.8
+    ],
+    "dark": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   }
+  ],
+  "clearTrees": [
+   [
+    6.5,
+    12.2,
+    2.2
+   ],
+   [
+    2.5,
+    12.2,
+    2.2
+   ],
+   [
+    10.5,
+    11.7,
+    2.2
+   ],
+   [
+    8.95,
+    -5.38,
+    2.2
+   ],
+   [
+    3.0,
+    -11.0,
+    2.2
+   ],
+   [
+    -2.4,
+    -3.2,
+    2.2
+   ],
+   [
+    -0.4,
+    -1.6,
+    2.2
+   ],
+   [
+    -4.2,
+    -1.8,
+    2.2
+   ],
+   [
+    12.8,
+    13.4,
+    2.2
+   ],
+   [
+    1.5,
+    16.0,
+    2.2
+   ],
+   [
+    0.30000000000000004,
+    16.0,
+    2.2
+   ],
+   [
+    3.9,
+    16.6,
+    2.2
+   ],
+   [
+    2.3,
+    16.6,
+    2.2
+   ],
+   [
+    5.5,
+    16.6,
+    2.2
+   ],
+   [
+    3.9,
+    18.200000000000003,
+    2.2
+   ],
+   [
+    6.5,
+    15.8,
+    2.2
+   ],
+   [
+    7.9,
+    15.8,
+    2.2
+   ],
+   [
+    1.0,
+    14.6,
+    2.2
+   ],
+   [
+    1.7999999999999998,
+    14.6,
+    2.2
+   ],
+   [
+    2.5999999999999996,
+    14.6,
+    2.2
+   ],
+   [
+    3.4,
+    14.6,
+    2.2
+   ],
+   [
+    4.199999999999999,
+    14.6,
+    2.2
+   ],
+   [
+    4.999999999999999,
+    14.6,
+    2.2
+   ],
+   [
+    5.799999999999999,
+    14.6,
+    2.2
+   ],
+   [
+    6.599999999999999,
+    14.6,
+    2.2
+   ],
+   [
+    7.3999999999999995,
+    14.6,
+    2.2
+   ],
+   [
+    8.2,
+    14.6,
+    2.2
+   ],
+   [
+    8.999999999999998,
+    14.6,
+    2.2
+   ],
+   [
+    9.799999999999999,
+    14.6,
+    2.2
+   ],
+   [
+    1.0,
+    16.4,
+    2.2
+   ],
+   [
+    2.5999999999999996,
+    16.4,
+    2.2
+   ],
+   [
+    4.199999999999999,
+    16.4,
+    2.2
+   ],
+   [
+    5.799999999999999,
+    16.4,
+    2.2
+   ],
+   [
+    7.3999999999999995,
+    16.4,
+    2.2
+   ],
+   [
+    8.999999999999998,
+    16.4,
+    2.2
+   ],
+   [
+    1.0,
+    13.2,
+    2.2
+   ],
+   [
+    2.5999999999999996,
+    13.2,
+    2.2
+   ],
+   [
+    4.199999999999999,
+    13.2,
+    2.2
+   ],
+   [
+    5.799999999999999,
+    13.2,
+    2.2
+   ],
+   [
+    7.3999999999999995,
+    13.2,
+    2.2
+   ],
+   [
+    8.999999999999998,
+    13.2,
+    2.2
+   ],
+   [
+    0.2,
+    17.2,
+    2.2
+   ],
+   [
+    5.9,
+    17.6,
+    2.2
+   ],
+   [
+    8.6,
+    16.4,
+    2.2
+   ],
+   [
+    2.2,
+    13.4,
+    2.2
+   ],
+   [
+    11.2,
+    15.1,
+    2.2
+   ],
+   [
+    -0.6,
+    15.4,
+    2.2
+   ],
+   [
+    4.7,
+    13.6,
+    2.2
+   ],
+   [
+    9.6,
+    13.4,
+    2.2
+   ],
+   [
+    7.6,
+    17.0,
+    2.2
+   ],
+   [
+    12.0,
+    13.9,
+    2.2
+   ],
+   [
+    1.0,
+    18.2,
+    2.2
+   ],
+   [
+    3.2,
+    18.6,
+    2.2
+   ],
+   [
+    -3.0,
+    -9.0,
+    2.2
+   ],
+   [
+    8.0,
+    -11.5,
+    2.2
+   ],
+   [
+    15.5,
+    -3.5,
+    2.2
+   ],
+   [
+    2.5,
+    19.6,
+    2.2
+   ],
+   [
+    4.0,
+    19.0,
+    2.2
+   ],
+   [
+    0.5,
+    19.0,
+    2.2
+   ],
+   [
+    -0.5,
+    10.6,
+    2.2
+   ],
+   [
+    -0.5,
+    13.2,
+    2.2
+   ],
+   [
+    1.0625,
+    10.375,
+    2.2
+   ],
+   [
+    1.0625,
+    12.975,
+    2.2
+   ],
+   [
+    2.625,
+    10.15,
+    2.2
+   ],
+   [
+    2.625,
+    12.75,
+    2.2
+   ],
+   [
+    4.1875,
+    9.925,
+    2.2
+   ],
+   [
+    4.1875,
+    12.525,
+    2.2
+   ],
+   [
+    5.75,
+    9.7,
+    2.2
+   ],
+   [
+    5.75,
+    12.299999999999999,
+    2.2
+   ],
+   [
+    7.3125,
+    9.475,
+    2.2
+   ],
+   [
+    7.3125,
+    12.075,
+    2.2
+   ],
+   [
+    8.875,
+    9.25,
+    2.2
+   ],
+   [
+    8.875,
+    11.85,
+    2.2
+   ],
+   [
+    10.4375,
+    9.025,
+    2.2
+   ],
+   [
+    10.4375,
+    11.625,
+    2.2
+   ],
+   [
+    12.0,
+    8.8,
+    2.2
+   ],
+   [
+    12.0,
+    11.4,
+    2.2
+   ]
+  ],
+  "layers": {
+   "ripple": [
+    {
+     "shot": "hook",
+     "offset": 0.05
+    },
+    {
+     "line": "L4",
+     "word": "run."
+    },
+    {
+     "line": "L12",
+     "word": "Run"
+    }
+   ],
+   "rings": [],
+   "dust": [
+    {
+     "at": {
+      "line": "L8",
+      "word": "gear",
+      "offset": 0.1
+     },
+     "x": 1.5,
+     "z": 16.0,
+     "r": 1.6
+    },
+    {
+     "at": {
+      "line": "L9",
+      "word": "biggest",
+      "offset": 0.1
+     },
+     "x": 3.9,
+     "z": 16.6,
+     "r": 2.4
+    },
+    {
+     "at": {
+      "line": "L10",
+      "word": "well",
+      "offset": 0.1
+     },
+     "x": 7.1,
+     "z": 15.8,
+     "r": 1.8
+    },
+    {
+     "at": {
+      "line": "L14",
+      "word": "night.",
+      "offset": 0.4
+     },
+     "x": 6.599999999999999,
+     "z": 15.2,
+     "r": 1.0
+    }
+   ]
+  },
+  "ambient": {
+   "birds": 9,
+   "motes": 40,
+   "glints": true
+  },
+  "simLoop": {
+   "line": "L17",
+   "word": "What",
+   "offset": -0.3
+  }
+ },
+ "music": {
+  "engine": "s2-score",
+  "key": "D minor, resolving to D major",
+  "bpm": 92,
+  "sections": [
+   {
+    "from": {
+     "shot": "hook"
+    },
+    "style": "hollow",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "programs": {
+     "lead": 76,
+     "strings": 89,
+     "cello": 43,
+     "celesta": 11
+    }
+   },
+   {
+    "from": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "style": "hollow",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "A"
+    ],
+    "key": "D minor",
+    "bars": [
+     2,
+     4
+    ],
+    "thin": true
+   },
+   {
+    "from": {
+     "line": "L4",
+     "word": "run."
+    },
+    "style": "drive",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "intensity": 0.85,
+    "programs": {
+     "strings": 48,
+     "marimba": 12,
+     "lead": 73,
+     "cello": 42,
+     "celesta": 8
+    }
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "A",
+     "offset": -0.2
+    },
+    "style": "drop",
+    "chords": [
+     "Dm"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 8
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "rocks.",
+     "offset": 0.55
+    },
+    "style": "survey",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "A"
+    ],
+    "key": "D minor",
+    "layer": 1,
+    "programs": {
+     "marimba": 24,
+     "lead": 11,
+     "celesta": 11
+    }
+   },
+   {
+    "from": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.1
+    },
+    "style": "survey",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 1
+   },
+   {
+    "from": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.1
+    },
+    "style": "survey",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 2
+   },
+   {
+    "from": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.1
+    },
+    "style": "survey",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 3
+   },
+   {
+    "from": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.1
+    },
+    "style": "survey",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 4
+   },
+   {
+    "from": {
+     "line": "L12",
+     "word": "Run"
+    },
+    "style": "drive",
+    "chords": [
+     "F",
+     "C",
+     "Bb",
+     "F"
+    ],
+    "key": "F major",
+    "intensity": 1.0,
+    "theme": true,
+    "programs": {
+     "strings": 48,
+     "marimba": 12,
+     "lead": 73,
+     "cello": 42,
+     "celesta": 8
+    }
+   },
+   {
+    "from": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.05
+    },
+    "style": "twist",
+    "chords": [
+     "A7b9"
+    ],
+    "key": "D minor"
+   },
+   {
+    "from": {
+     "line": "L14",
+     "word": "Someone",
+     "offset": -0.1
+    },
+    "style": "hollow",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "programs": {
+     "lead": 76,
+     "strings": 89,
+     "cello": 43,
+     "celesta": 11
+    }
+   },
+   {
+    "from": {
+     "line": "L15",
+     "word": "So",
+     "offset": -0.1
+    },
+    "style": "anthem",
+    "chords": [
+     "D",
+     "G",
+     "Bm",
+     "A"
+    ],
+    "key": "D major",
+    "programs": {
+     "strings": 48,
+     "marimba": 12,
+     "lead": 73,
+     "cello": 42,
+     "celesta": 8
+    }
+   },
+   {
+    "from": {
+     "line": "L17",
+     "word": "What",
+     "offset": -0.2
+    },
+    "style": "outro",
+    "chords": [
+     "G",
+     "D"
+    ],
+    "key": "D major"
+   },
+   {
+    "from": {
+     "line": "L18",
+     "word": "Part",
+     "offset": -0.1
+    },
+    "style": "tease",
+    "chords": [
+     "A5"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 32
+   }
+  ],
+  "accents": [
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L1",
+     "word": "repairing"
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L6",
+     "word": "rocks."
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "riser",
+    "at": {
+     "line": "L7",
+     "word": "twist."
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "stab",
+    "at": {
+     "line": "L12",
+     "word": "questions."
+    },
+    "chord": "F"
+   },
+   {
+    "kind": "cymbal",
+    "at": {
+     "line": "L12",
+     "word": "questions."
+    }
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L13",
+     "word": "Half",
+     "offset": -0.05
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L15",
+     "word": "who."
+    },
+    "chord": "D"
+   },
+   {
+    "kind": "call",
+    "at": {
+     "line": "L18",
+     "word": "armies"
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "roll",
+    "at": {
+     "end": true,
+     "offset": -0.05
+    },
+    "chord": "A"
+   }
+  ],
+  "fadeOut": {
+   "fromEnd": 0.08
+  },
+  "gain": 0.55
+ },
+ "mix": {
+  "musicLufs": -25.0,
+  "duckDb": -8.0,
+  "sfxLufs": -29.0,
+  "voiceFx": true
+ },
+ "metadata": {
+  "youtube": {
+   "title": "Give Your World a Lost Civilization (Worldbuilding)",
+   "titleAlternate": "These ruins are older than humans. Someone keeps repairing them.",
+   "description": "These ruins are older than humans. Someone keeps repairing them.\n\nMeet the Builders: their wall still stands. The lazy version of a lost civilization is ancient, mysterious and gone, and we ran it: a thousand years of digging, nothing but stones. A ruin that says nothing is just rocks.\n\nGood ruins talk. Their tools: a gear that nobody here can make. What they valued: their biggest room was a kitchen. How they failed: every well is full of sand. Their days: a child's handprints, pressed into the mortar. Run it again: a thousand years, and every find opens two questions.\n\nThen the twist: look closer. Half this wall is newer than us. Someone replaces one stone every night, and nobody has seen them. So never tell us who.\n\nShow how they lived and fell. Every ruin keeps one secret.\n\nWhat is the one thing archaeologists should never find in your world?\n\nPart 35 of 50. Follow for part 36: two armies are never enough.\n\nWorldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 7: History and Mythology (the arc's last episode). The Builders, their wall and everything found in it are invented for this video; no real civilization, ruin or script is depicted.\n\n#Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "pinnedComment": "What is the one thing archaeologists should never find in your world? One find, then why. (Part 36: two armies are never enough.)",
+   "uploadSettings": "Altered or synthetic content: Yes (synthetic narration and an AI-generated field-card sprite; the island, the ruins, the finds and the people are drawn in code). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "These ruins are older than humans. Someone keeps repairing them. \ud83e\uddf1 Four rules for a lost civilization that talks, and rule #5 is the twist. What should archaeologists never find in your world? Part 35/50 \u00b7 follow for part 36 \u2694\ufe0f #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "pinnedComment": "What is the one thing archaeologists should never find in your world?",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "These ruins are older than humans. Someone keeps repairing them.\n\nMeet the Builders: their wall still stands. The lazy version of a lost civilization is ancient, mysterious and gone, and we ran it: a thousand years of digging, nothing but stones. A ruin that says nothing is just rocks.\n\nGood ruins talk. Their tools: a gear that nobody here can make. What they valued: their biggest room was a kitchen. How they failed: every well is full of sand. Their days: a child's handprints, pressed into the mortar. Run it again: a thousand years, and every find opens two questions.\n\nThen the twist: look closer. Half this wall is newer than us. Someone replaces one stone every night, and nobody has seen them. So never tell us who.\n\nShow how they lived and fell. Every ruin keeps one secret.\n\nWhat is the one thing archaeologists should never find in your world?\n\nPart 35 of 50. Follow for part 36: two armies are never enough.\n\nWorldcraft Shorts \u00b7 Season 2: The World Engine.\n\n#Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "pinnedComment": "Which question would you never answer about your lost civilization?",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "These ruins are older than humans. Someone keeps repairing them.\n\nMeet the Builders: their wall still stands. The lazy version of a lost civilization is ancient, mysterious and gone, and we ran it: a thousand years of digging, nothing but stones. A ruin that says nothing is just rocks.\n\nGood ruins talk. Their tools: a gear that nobody here can make. What they valued: their biggest room was a kitchen. How they failed: every well is full of sand. Their days: a child's handprints, pressed into the mortar. Run it again: a thousand years, and every find opens two questions.\n\nThen the twist: look closer. Half this wall is newer than us. Someone replaces one stone every night, and nobody has seen them. So never tell us who.\n\nShow how they lived and fell. Every ruin keeps one secret.\n\nWhat is the one thing archaeologists should never find in your world?\n\nPart 35 of 50. Follow for part 36: two armies are never enough.\n\nWorldcraft Shorts \u00b7 Season 2\n\n#Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "hookCheck": "First 64 characters: 'These ruins are older than humans. Someone keeps repairing them.'",
+   "pinnedComment": "Save the READ THE RUINS card, then tell us: what is the one thing archaeologists should never find in your world?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  }
+ }
+}

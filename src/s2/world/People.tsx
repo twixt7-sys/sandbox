@@ -513,13 +513,13 @@ export const Statue: React.FC<{x: number; z: number; face: number; island: Islan
 };
 
 /** A war standard planted in the ground (EP31's tease for EP32): a tall pole and a swallow-tailed cloth in `color`
- * with a pale band, rising with `rise`. Faces +x; the cloth flies toward +z. */
-export const Standard: React.FC<{x: number; z: number; face: number; island: Island; t: number; rise: number; color: string}> = ({x, z, face, island, t, rise, color}) => {
+ * with a pale band, rising with `rise`. Faces +x; the cloth flies toward +z. EP35+: `size` scales it (absent: 1). */
+export const Standard: React.FC<{x: number; z: number; face: number; island: Island; t: number; rise: number; color: string; size?: number}> = ({x, z, face, island, t, rise, color, size = 1}) => {
 	if (rise <= 0.001) return null;
-	const y = island.heightAt(x, z) - (1 - rise) * 5;
+	const y = island.heightAt(x, z) - (1 - rise) * 5 * size;
 	const wv = Math.sin(t * 3.1) * 0.07;
 	return (
-		<group position={[x, y, z]} rotation={[0, (face * Math.PI) / 180, 0]}>
+		<group position={[x, y, z]} rotation={[0, (face * Math.PI) / 180, 0]} scale={size}>
 			<B s={[0.18, 4.4, 0.18]} p={[0, 2.2, 0]} c={'#5a3c28'} />
 			<B s={[0.34, 0.34, 0.34]} p={[0, 4.5, 0]} c={'#c9c2b4'} />
 			<group position={[0, 3.55, 0.1]} rotation={[wv, 0, 0]}>

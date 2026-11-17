@@ -115,6 +115,18 @@ export const SPRITES: Record<string, {rows: string[]; colors: Record<string, str
 	// for EP35 (broken pillars older than anyone, one fallen stone set back in fresh mortar)
 	tear: {rows: ['UUUUUUU', 'UUC.CUU', 'UC...CU', 'U.....U', 'UC...CU', 'UUC.CUU', 'UUUUUUU'], colors: {U: '#4a68ff', C: '#efe3c2'}},
 	brush: {rows: ['....HH', '...HH.', '..HH..', '.FF...', 'BBF...', 'BB....'], colors: {H: '#8a5a36', F: '#c9c2b4', B: '#4a68ff'}},
+	// EP35: the finds tray (a gear, a great pot, a well full of sand, a child's handprint, last night's stone), a
+	// question mark (the run-2 counter) and the next-run card for EP36 (three war banners on poles: more than two sides)
+	gear: {rows: ['...X.X...', '..XXXXX..', '.XXX.XXX.', 'XXO...OXX', '.X..O..X.', 'XXO...OXX', '.XXX.XXX.', '..XXXXX..', '...X.X...'], colors: {X: '#c99a52', O: '#7a5a2c'}},
+	pot: {rows: ['...S..S....', '....S..S...', '...S..S....', 'RRRRRRRRRRR', '.XXXXXXXXX.', 'XXXXXXXXXXX', 'XXXXXXXXXXX', '.XXXXXXXXX.', '..XXXXXXX..', 'FF.F.F.F.FF'], colors: {S: '#e8e0d0', R: '#8a8a94', X: '#55555c', F: '#f4c46e'}},
+	well: {rows: ['...sssss...', '..sssssss..', '.sssssssss.', 'KKKKKKKKKKK', 'KLKKLKKLKKL', 'KKKKKKKKKKK', 'LKKLKKLKKLK', 'KKKKKKKKKKK'], colors: {s: '#e2cf98', K: '#9a9585', L: '#6d695c'}},
+	handprint: {rows: ['..X.X.X..', '..X.X.X..', 'X.X.X.X..', 'X.X.X.X..', 'XXXXXXX..', 'XXXXXXX.X', 'XXXXXXXXX', 'XXXXXXXX.', '.XXXXXX..', '..XXXX...'], colors: {X: '#d08a5c'}},
+	stone: {rows: ['..W....W..', 'W.QQQQQQ.W', '.QWWQQQQQ.', '.QWQQQQQQ.', '.QQQQQQQQ.', '.QQQQQQQQ.', 'W.QQQQQQ.W', '..W....W..'], colors: {Q: '#4fd6ff', W: '#c4f6ff'}},
+	query: {rows: ['.XXX.', 'X...X', '....X', '..XX.', '..X..', '.....', '..X..'], colors: {X: '#f4c46e'}},
+	banners: {
+		rows: ['P......P......P.....', 'PRRRR..PBBBB..PGGGG.', 'PRRRRR.PBBBBB.PGGGGG', 'PRRR...PBBB...PGGG..', 'PRR....PBB....PGG...', 'P......P......P.....', 'P......P......P.....', 'P......P......P.....', 'P......P......P.....', 'GGGGGGGGGGGGGGGGGGGG'],
+		colors: {P: '#6b5a48', R: '#c0573c', B: '#4f7fbf', G: '#d4b23f'},
+	},
 	ruins: {
 		rows: ['SSSS.......SSSS', '.SS.........SS.', '.SS...MM....SS.', '.SS...SS....SS.', '.SS...SS.....S.', '.SS...SS.......', '.SS.F.SS.......', '.SS.FFSS...SS..', 'GGGGGGGGGGGGGGG', 'ddddddddddddddd'],
 		colors: {S: '#9a9b8e', M: '#5f7a4a', F: '#efe3c2', G: '#86bb5c', d: '#7a5a3a'},

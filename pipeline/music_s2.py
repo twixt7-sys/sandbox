@@ -810,7 +810,61 @@ def style_excavate(c: Ctx):
             c.add("glock", b, 1.5, voicing(ch, 74, 86)[0], 60)
 
 
-STYLES = {"lullaby": style_lullaby, "excavate": style_excavate, "vigil": style_vigil, "lantern": style_lantern, "dirge": style_dirge, "earth": style_earth, "chronicle": style_chronicle, "dispute": style_dispute, "hymn": style_hymn, "rite": style_rite, "hook": style_hook, "pulse": style_pulse, "drive": style_drive, "drop": style_drop, "void": style_void,
+# ---- EP35 colours (additive): a lost civilization. `hollow` is wind through an empty ruin (the theme on a blown
+# bottle, vibraphone notes echoing off stone, a warm pad and a contrabass drone); `survey` is the walk along the wall,
+# one family per rule (a nylon guitar walking in eighths; a walking acoustic bass; a ride and side-stick; the theme on
+# vibraphone with harp on the roots). Sections set `programs` (blown bottle / vibraphone on the lead, a warm pad on the
+# strings channel, contrabass on the cello channel, vibraphone on the celesta channel, nylon guitar on the marimba
+# channel) and later sections set them back.
+
+def style_hollow(c: Ctx):
+    """An empty ruin: a warm pad, a contrabass holding the tonic, vibraphone notes that echo twice off the stone (each
+    repeat softer), and the theme on a blown bottle. `thin` (the lazy version) drops to the pad, the drone and the
+    echoes, with the theme's second half only."""
+    thin = c.spec.get("thin", False)
+    c.pad("strings", 50, 67, 34 if thin else 42, max_notes=3)
+    tpc, steps = key_info(c.key)
+    c.add("cello", 0, c.n + 0.2, in_range(tpc, 33, 45)[0], 52)
+    k = 0
+    b = 0.0
+    while b < c.n - 1e-6:
+        notes = voicing(c.chord(b), 64, 84)
+        if notes:
+            p = notes[(k * 2 + 1) % len(notes)]
+            for e, g in ((0.0, 1.0), (0.75, 0.5), (1.5, 0.26)):
+                if b + e < c.n - 1e-6:
+                    c.add("celesta", b + e, 0.7, p, int(70 * g))
+        b += 2.0
+        k += 1
+    c.theme("lead", vel=70 if thin else 84, bars=c.spec.get("bars", (0, 4)), octave=-1)
+
+
+def style_survey(c: Ctx):
+    """Walking the wall: `layer` 1-4 adds one family per rule (a nylon guitar walking in eighths; a walking acoustic
+    bass on the chord tones; a ride and a side-stick on 2 and 4; the theme on vibraphone with harp on the roots).
+    Steady and curious, like footsteps along a trench."""
+    layer = c.spec.get("layer", 4)
+    c.pad("strings", 50, 66, 34 + 3 * min(layer, 4), max_notes=3)
+    c.arp("marimba", 0.5, 52, 74, 92, pattern=(0, 1, 2, 1, 3, 1, 2, 1), accent=1.12)
+    if layer >= 2:
+        for b, d, ch in c.chord_spans():
+            tones = voicing(ch, 33, 50)
+            for q in range(int(d)):
+                c.add("bass", b + q, 0.85, tones[q % len(tones)], 84 if q == 0 else 70)
+    else:
+        c.root("bass", 33, 45, 56)
+    if layer >= 3:
+        for b in range(0, c.n):
+            c.add("drums", b, 0.3, RIDE, 46 if b % 2 == 0 else 38)
+            if b % 2 == 1:
+                c.add("drums", b, 0.2, STICK, 52)
+    if layer >= 4:
+        c.theme("lead", vel=88, bars=(0, 4))
+        for b, d, ch in c.chord_spans():
+            c.add("harp", b, 2.0, voicing(ch, 50, 62)[0], 64)
+
+
+STYLES = {"hollow": style_hollow, "survey": style_survey, "lullaby": style_lullaby, "excavate": style_excavate, "vigil": style_vigil, "lantern": style_lantern, "dirge": style_dirge, "earth": style_earth, "chronicle": style_chronicle, "dispute": style_dispute, "hymn": style_hymn, "rite": style_rite, "hook": style_hook, "pulse": style_pulse, "drive": style_drive, "drop": style_drop, "void": style_void,
           "mystery": style_mystery, "build": style_build, "twist": style_twist, "rest": style_rest, "frenzy": style_frenzy,
           "crash": style_crash, "swell": style_swell, "anthem": style_anthem, "outro": style_outro, "tease": style_tease,
           "soar": style_soar, "raid": style_raid, "stealth": style_stealth,

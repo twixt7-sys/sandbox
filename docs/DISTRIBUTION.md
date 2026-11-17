@@ -2538,3 +2538,96 @@ Source of truth: `episodes/ep34/episode.json` → `metadata` (this section is ge
 - **Hook check:** First 66 characters: 'Every child learns the gods made the world. What if they're lying?'
 - **Pinned comment:** Save the TEAR THE SKY card, then tell us: would you reveal the truth to a civilization built on a lie?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+
+## Episode 35 captions (ready to paste) — Season 2, Arc 7
+
+Source of truth: `episodes/ep35/episode.json` → `metadata` (this section is generated from it). Every description ends with the Season 2 ending formula ("Part 35 of 50. Follow for part 36: …"), matching the video's last line. The AI label goes on for all four platforms. Cover: `episodes/ep35/Worldcraft_Short_E35_cover.jpg`. Subtitles: `episodes/ep35/ep35.srt`.
+
+**Disclosure.** The island, the Builders' wall (every block, its age and the repair log's colours), the finds (the gear, the kitchen, the wells, the handprints), the dig pits, the standards, the people, the HUD, the finds tray and every number are drawn and simulated in code. Two things are AI-made: the narration (Kokoro synthetic voice) and the field card's sprite of old stone blocks (free local SDXL-Lightning with a pixel-art LoRA, re-gridded by `pipeline/pixelate.py`, its top tier recoloured as fresh stone in code; no Figma credits). AI label on everywhere (series policy). **No real-world civilization, ruin, religion or script is depicted, named or imitated:** the Builders are invented, and their wall is plain squared stone with no columns, carvings, glyphs, script or monument shape (no temple, pyramid, ziggurat or henge). No violence on screen: the war tease is three plain standards planted in the ground.
+
+**Closing EP34's loop.** EP34 ended "the ruins are older than us": on "ruins" broken pillars rose beside the giant's bones for a breath, then sank. EP35 opens with them standing for good at the end of a long broken wall, and one stone high in the wall newer than the rest. When EP35 goes up, reply to the top comments on EP34 with its link and pin it where a second pin is allowed.
+
+**The comment ask is an invention prompt** (after EP34's binary vote). The plan's CTA, "What is the one thing archaeologists should never find in your world?" (13 words), is cut to 8 for the scorecard's 10-word cap ("What should archaeologists never find in your world?"); the end card shows two starters (OUR OWN NAMES, A WARM HEARTH). Every description and pinned comment keeps the plan's full wording.
+
+**Posting part 36.** The video promises "two armies are never enough" (three standards in three colours are planted round the ruin on "armies"). EP36 is "Wars Need More Than Two Armies", which opens Arc 8 (Conflict and Warfare). Do the same reply-and-pin on EP35 when EP36 is posted.
+
+### YouTube Shorts
+- **Title** (51/100 chars): `Give Your World a Lost Civilization (Worldbuilding)`
+- **Alternate title** (64 chars): `These ruins are older than humans. Someone keeps repairing them.`
+- **Description:**
+
+> These ruins are older than humans. Someone keeps repairing them.
+>
+> Meet the Builders: their wall still stands. The lazy version of a lost civilization is ancient, mysterious and gone, and we ran it: a thousand years of digging, nothing but stones. A ruin that says nothing is just rocks.
+>
+> Good ruins talk. Their tools: a gear that nobody here can make. What they valued: their biggest room was a kitchen. How they failed: every well is full of sand. Their days: a child's handprints, pressed into the mortar. Run it again: a thousand years, and every find opens two questions.
+>
+> Then the twist: look closer. Half this wall is newer than us. Someone replaces one stone every night, and nobody has seen them. So never tell us who.
+>
+> Show how they lived and fell. Every ruin keeps one secret.
+>
+> What is the one thing archaeologists should never find in your world?
+>
+> Part 35 of 50. Follow for part 36: two armies are never enough.
+>
+> Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 7: History and Mythology (the arc's last episode). The Builders, their wall and everything found in it are invented for this video; no real civilization, ruin or script is depicted.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts
+
+- **Pinned comment:** What is the one thing archaeologists should never find in your world? One find, then why. (Part 36: two armies are never enough.)
+- **Upload settings:** Altered or synthetic content: Yes (synthetic narration and an AI-generated field-card sprite; the island, the ruins, the finds and the people are drawn in code). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (295 chars): `These ruins are older than humans. Someone keeps repairing them. 🧱 Four rules for a lost civilization that talks, and rule #5 is the twist. What should archaeologists never find in your world? Part 35/50 · follow for part 36 ⚔️ #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts`
+- **Pinned comment:** What is the one thing archaeologists should never find in your world?
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> These ruins are older than humans. Someone keeps repairing them.
+>
+> Meet the Builders: their wall still stands. The lazy version of a lost civilization is ancient, mysterious and gone, and we ran it: a thousand years of digging, nothing but stones. A ruin that says nothing is just rocks.
+>
+> Good ruins talk. Their tools: a gear that nobody here can make. What they valued: their biggest room was a kitchen. How they failed: every well is full of sand. Their days: a child's handprints, pressed into the mortar. Run it again: a thousand years, and every find opens two questions.
+>
+> Then the twist: look closer. Half this wall is newer than us. Someone replaces one stone every night, and nobody has seen them. So never tell us who.
+>
+> Show how they lived and fell. Every ruin keeps one secret.
+>
+> What is the one thing archaeologists should never find in your world?
+>
+> Part 35 of 50. Follow for part 36: two armies are never enough.
+>
+> Worldcraft Shorts · Season 2: The World Engine.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts
+
+- **Pinned comment:** Which question would you never answer about your lost civilization?
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> These ruins are older than humans. Someone keeps repairing them.
+>
+> Meet the Builders: their wall still stands. The lazy version of a lost civilization is ancient, mysterious and gone, and we ran it: a thousand years of digging, nothing but stones. A ruin that says nothing is just rocks.
+>
+> Good ruins talk. Their tools: a gear that nobody here can make. What they valued: their biggest room was a kitchen. How they failed: every well is full of sand. Their days: a child's handprints, pressed into the mortar. Run it again: a thousand years, and every find opens two questions.
+>
+> Then the twist: look closer. Half this wall is newer than us. Someone replaces one stone every night, and nobody has seen them. So never tell us who.
+>
+> Show how they lived and fell. Every ruin keeps one secret.
+>
+> What is the one thing archaeologists should never find in your world?
+>
+> Part 35 of 50. Follow for part 36: two armies are never enough.
+>
+> Worldcraft Shorts · Season 2
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts
+
+- **Hook check:** First 64 characters: 'These ruins are older than humans. Someone keeps repairing them.'
+- **Pinned comment:** Save the READ THE RUINS card, then tell us: what is the one thing archaeologists should never find in your world?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

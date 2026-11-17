@@ -76,6 +76,17 @@ The paid primary stack (Runway stills and clips + ElevenLabs) would still cost a
 | Render + QA | Claude cloud container | $0 |
 | **Total** | | **$0 cash (₱0)** plus 5 Figma image generations |
 
+## What Episode 35 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| Field card sprite (a heap of old squared stone blocks, its top tier new) | **Free local SDXL-Lightning with the pixel-art LoRA** (`pipeline/local_stills.py --sprite`, CPU, about 77 s an image): 5 candidates from two prompts (a wall section: two flat brick textures and a beehive; a heap of blocks: seed 7 read as a well), seed 35 of the heap used; checked for real monuments and symbols (none); re-gridded to 72×135 with `pipeline/pixelate.py` (`--colors 24`) and the top tier recoloured as fresh quartz stone in code (`art/fresh_stone.py`). **No Figma credits** | $0 |
+| The Builders' wall and its repair log, the finds (gear, kitchen, wells, handprints), the dig pits, the standards, the finds tray | Remotion + three.js code, software WebGL (`swangle`) | $0 |
+| Narration | Kokoro-82M (`af_heart`, speed 1.0), 160 words, 59.3 s total | $0 |
+| Score + SFX | `music_s2.py` (+ `hollow`, `survey`: blown bottle, vibraphone, warm pad, contrabass and nylon guitar from the same free SoundFont), `score_s2.py` (+ `trayDrop`, `logOn`, `stoneSet`; bed `sandPour`) | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, 0 Figma generations |
+
 ## What Episode 34 actually used
 
 | Item | Used | Cash cost |

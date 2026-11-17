@@ -441,7 +441,7 @@ def overlays():
         {"type": "kinetic", "parts": [{"text": "1,000 YEARS", "at": cue("L12", "thousand"), "color": "parchment", "size": 56},
                                       {"text": "EVERY FIND", "at": cue("L12", "Every"), "color": QUARTZ, "size": 56},
                                       {"text": "+2 QUESTIONS", "at": cue("L12", "two"), "color": "ember", "size": 56}],
-         "y": 468, "size": 56, "start": cue("L12", "A", -0.05), "end": cue("L12", "questions.", -0.05)},
+         "y": 600, "size": 56, "start": cue("L12", "A", -0.05), "end": cue("L12", "questions.", -0.05)},
         {"type": "stamp", "text": "MORE QUESTIONS", "sub": "1,000 YEARS · 16 FINDS · 32 QUESTIONS", "color": QUARTZ, "rotate": -4, "y": 880, "size": 84, "start": cue("L12", "questions."), "end": cue("L13", "Rule", -0.1)},
     ]
     G["twist"] += [
@@ -547,7 +547,7 @@ def build():
         },
         "timing": {"leadIn": 0.2, "tail": 0.85, "shotLead": 0.12},
         "captionY": 1238,
-        "captionsOff": [{"line": "L3", "from": "ancient,"}, {"line": "L5", "from": "A"}, {"line": "L7", "from": "Good", "to": "Four"}, {"line": "L13", "from": "Rule"}],
+        "captionsOff": [{"line": "L3", "from": "ancient,"}, {"line": "L5", "from": "A"}, {"line": "L7", "from": "Good", "to": "Four"}, {"line": "L12", "from": "A"}, {"line": "L13", "from": "Rule"}],
         "lines": [{"id": i, "shot": s, "text": t, "pauseAfter": p, "emphasis": em} for i, s, t, p, em in LINES],
         "shots": [],
         "world": world(),

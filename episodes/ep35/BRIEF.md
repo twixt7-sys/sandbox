@@ -112,7 +112,18 @@ See [`STORYBOARD.md`](STORYBOARD.md).
 
 ## 6. Final video and verification
 
-QA_RESULTS
+- **QA:** `qa.py` **passed** on all four copies, each 59.37 s, 1,781 frames, −14.0 LUFS, TP −1.4 dB:
+  - master: 29.4 MB;
+  - compat: 25.3 MB;
+  - download (two-pass 1,600k): 13.9 MB;
+  - player (two-pass 1,300k): 11.6 MB.
+- **The loop:** the last frame against frame 0 differs by **1.15/255** on the master, about half an ordinary frame step in the hook (2.12); the residue is scattered (walkers in the crowd, the boats' lamp highlights, encoder noise), with no camera, light or overlay jump. EP34's was 1.06, EP33's 1.18. Every new animated element is keyed to land on its frame-0 value (the repair log, last night's glow, tonight's stone, the finds, the pits, the counters), and the standards are fully sunk before the hook title returns.
+- **Renders:** two full renders with `--gl=swangle` (1,781 frames, about 13 and 12 min). The first was set aside after its contact sheet (fix 8).
+- **Preview page:** https://claude.ai/artifact/G29j1HsEM3eNYcvtttgvtb (new; EP26–EP34's pages are untouched).
+  - It declares `downloads` and `assets` and has a Download MP4 button.
+  - The download (`ep35_download.mp4`, a page file) reads back byte-identical (sha256 `443fee32…`) and passes `qa.py`.
+  - The player is an uploaded asset (`/_blob/61ebcb00112d779d862b2883c49f500d`; the upload's sha256 matches `out/ep35_player.mp4`, `4cac1aac…`).
+  - It also steps through the wall's nine states (TODAY to TONIGHT) with the finds tray filling beside it, drawn from the same block ages as `Ruins.tsx`, and shows the scorecard.
 
 - **The scorecard** (`python pipeline/benchmark.py ep35 ep34 ep33`; targets and sources in `docs/SEASON2_RESEARCH.md` §7). **EP35 passes 25 of 25** with no exceptions. The first measured draft failed two rows (hook end, run 1) and the first build one (a 3.42 s static stretch in run 2); see fixes 1 and 2.
 

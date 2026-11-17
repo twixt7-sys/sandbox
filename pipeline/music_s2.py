@@ -845,14 +845,14 @@ def style_survey(c: Ctx):
     Steady and curious, like footsteps along a trench."""
     layer = c.spec.get("layer", 4)
     c.pad("strings", 50, 66, 34 + 3 * min(layer, 4), max_notes=3)
-    c.arp("marimba", 0.5, 52, 74, 92, pattern=(0, 1, 2, 1, 3, 1, 2, 1), accent=1.12)
+    c.arp("marimba", 0.5, 52, 74, 102, pattern=(0, 1, 2, 1, 3, 1, 2, 1), accent=1.12)
     if layer >= 2:
         for b, d, ch in c.chord_spans():
             tones = voicing(ch, 33, 50)
             for q in range(int(d)):
                 c.add("bass", b + q, 0.85, tones[q % len(tones)], 84 if q == 0 else 70)
     else:
-        c.root("bass", 33, 45, 56)
+        c.root("bass", 33, 45, 72, every=2.0)
     if layer >= 3:
         for b in range(0, c.n):
             c.add("drums", b, 0.3, RIDE, 46 if b % 2 == 0 else 38)

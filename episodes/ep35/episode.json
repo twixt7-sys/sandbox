@@ -360,8 +360,8 @@
      "dietLabel": "LEFT",
      "diet": "one wall, still standing",
      "sprite": "ep35/builders_sprite.png",
-     "spriteW": 120,
-     "spriteH": 96
+     "spriteW": 72,
+     "spriteH": 135
     }
    ],
    "sfx": [
@@ -931,8 +931,8 @@
      },
      "lockedText": "the twist",
      "sprite": "ep35/builders_sprite.png",
-     "spriteW": 120,
-     "spriteH": 96,
+     "spriteW": 72,
+     "spriteH": 135,
      "collapse": [
       [
        {
@@ -1350,6 +1350,50 @@
    "transition": "Cut to dusk.",
    "music": "Drive with the theme; a stab and a cymbal on 'questions'.",
    "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "1,000 YEARS",
+       "at": {
+        "line": "L12",
+        "word": "thousand"
+       },
+       "color": "parchment",
+       "size": 56
+      },
+      {
+       "text": "EVERY FIND",
+       "at": {
+        "line": "L12",
+        "word": "Every"
+       },
+       "color": "#4fd6ff",
+       "size": 56
+      },
+      {
+       "text": "+2 QUESTIONS",
+       "at": {
+        "line": "L12",
+        "word": "two"
+       },
+       "color": "ember",
+       "size": 56
+      }
+     ],
+     "y": 468,
+     "size": 56,
+     "start": {
+      "line": "L12",
+      "word": "A",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L12",
+      "word": "questions.",
+      "offset": -0.05
+     }
+    },
     {
      "type": "stamp",
      "text": "MORE QUESTIONS",
@@ -1806,8 +1850,8 @@
      "kicker": "BEFORE YOU BURY A CIVILIZATION",
      "title": "THE BUILDERS",
      "sprite": "ep35/builders_sprite.png",
-     "spriteW": 120,
-     "spriteH": 96,
+     "spriteW": 72,
+     "spriteH": 135,
      "subtitle": "Every ruin keeps one secret.",
      "subtitleAt": {
       "line": "L16",
@@ -2335,7 +2379,7 @@
      15.0
     ],
     "fov": 20,
-    "dur": 4.262,
+    "dur": 4.04,
     "drift": 0.0
    },
    {
@@ -2768,12 +2812,30 @@
     "el": 26,
     "dist": 159.481,
     "target": [
+     0.5,
+     2.0,
+     0.0
+    ],
+    "fov": 22,
+    "dur": 2.0,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "keeps",
+     "offset": -0.1
+    },
+    "az": 0,
+    "el": 26,
+    "dist": 159.481,
+    "target": [
      3.0,
      2.0,
      0.0
     ],
     "fov": 22,
-    "dur": 4.0,
+    "dur": 2.0,
     "drift": 0.0
    },
    {
@@ -2810,7 +2872,7 @@
      15.0
     ],
     "fov": 20,
-    "dur": 9.086,
+    "dur": 9.085,
     "drift": 0.0
    }
   ],
@@ -4629,10 +4691,11 @@
    },
    {
     "kind": "standard",
-    "x": -3.0,
-    "z": -9.0,
-    "face": 0,
+    "x": 3.8,
+    "z": 18.2,
+    "face": 90,
     "color": "#c0573c",
+    "size": 0.42,
     "rise": [
      [
       {
@@ -4677,10 +4740,11 @@
    },
    {
     "kind": "standard",
-    "x": 8.0,
-    "z": -11.5,
-    "face": 0,
+    "x": 6.4,
+    "z": 17.6,
+    "face": 90,
     "color": "#4f7fbf",
+    "size": 0.42,
     "rise": [
      [
       {
@@ -4725,10 +4789,11 @@
    },
    {
     "kind": "standard",
-    "x": 15.5,
-    "z": -3.5,
-    "face": 0,
+    "x": 9.0,
+    "z": 16.4,
+    "face": 90,
     "color": "#d4b23f",
+    "size": 0.42,
     "rise": [
      [
       {
@@ -5060,18 +5125,18 @@
     2.2
    ],
    [
-    -3.0,
-    -9.0,
+    3.8,
+    18.2,
     2.2
    ],
    [
-    8.0,
-    -11.5,
+    6.4,
+    17.6,
     2.2
    ],
    [
-    15.5,
-    -3.5,
+    9.0,
+    16.4,
     2.2
    ],
    [

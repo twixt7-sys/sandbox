@@ -299,7 +299,8 @@ def world():
         k(ROLE, slide(P_WALL, 1.4), dur=1.6),
         # the lesson: the whole Isle in golden light, one slow slide
         k(LESSON_AT, slide(WIDE, -3.0), cut=True),
-        k(shift(LESSON_AT, 0.02), slide(WIDE, 3.0), dur=4.0),
+        k(shift(LESSON_AT, 0.02), slide(WIDE, 0.5), dur=2.0),
+        k(cue("L16", "keeps", -0.1), slide(WIDE, 3.0), dur=2.0),
         # the loop: cut under the wipe, then slide so it lands exactly on frame 0's pose at the end
         k(WIPE, slide(HOOK_POSE, 1.4), cut=True),
         k(shift(WIPE, 0.02), HOOK_POSE, dur=span - 0.02),
@@ -381,7 +382,7 @@ SLOTS = [
     {"icon": "handprint", "kind": "DAILY LIFE", "text": "a child's hands", "at": shift(cue("L11", "handprints,"), 0.2)},
     {"icon": "stone", "kind": "WHO?", "text": "no answer", "locked": True, "unlockAt": shift(NIGHT, 0.5)},
 ]
-SPRITE = {"sprite": "ep35/builders_sprite.png", "spriteW": 120, "spriteH": 96}
+SPRITE = {"sprite": "ep35/builders_sprite.png", "spriteW": 72, "spriteH": 135}
 
 
 def tag(text, head, at, end, pos, lift=90, dx=0, **kw):
@@ -437,6 +438,10 @@ def overlays():
     G["days"] += [{"type": "skyTags", "start": cue("L11", "handprints,", 0.2), "end": cue("L12", "Run", -0.15), "tags": [
         tag("A CHILD WAS HERE", "FIND 04 · DAILY LIFE", cue("L11", "handprints,", 0.2), cue("L12", "Run", -0.15), (HANDS[0] - 0.1, HANDS[1], 1.05), lift=-330, dx=-60)]}]
     G["run2"] += [
+        {"type": "kinetic", "parts": [{"text": "1,000 YEARS", "at": cue("L12", "thousand"), "color": "parchment", "size": 56},
+                                      {"text": "EVERY FIND", "at": cue("L12", "Every"), "color": QUARTZ, "size": 56},
+                                      {"text": "+2 QUESTIONS", "at": cue("L12", "two"), "color": "ember", "size": 56}],
+         "y": 468, "size": 56, "start": cue("L12", "A", -0.05), "end": cue("L12", "questions.", -0.05)},
         {"type": "stamp", "text": "MORE QUESTIONS", "sub": "1,000 YEARS · 16 FINDS · 32 QUESTIONS", "color": QUARTZ, "rotate": -4, "y": 880, "size": 84, "start": cue("L12", "questions."), "end": cue("L13", "Rule", -0.1)},
     ]
     G["twist"] += [

@@ -19,10 +19,10 @@ const h01 = (a: number, b: number, s: number) => {
 };
 
 export const QUARTZ = '#4fd6ff';
-const STONE = ['#8e8a7c', '#9b9686', '#807c70'];
-const REPAIRED = ['#a7a292', '#b0ab9a'];
+const STONE = ['#8b8f92', '#979a9b', '#7d8183'];
+const REPAIRED = ['#a3a6a6', '#abaeae'];
 const UMBER = new THREE.Color('#4b3d33');
-const LOG_C = [new THREE.Color('#2f7486'), new THREE.Color('#35aed2'), new THREE.Color('#4fd6ff'), new THREE.Color('#c4f6ff')];
+const LOG_C = [new THREE.Color('#2f7486'), new THREE.Color('#35aed2'), new THREE.Color('#4fd6ff'), new THREE.Color('#8fe8ff')];
 const LOG_E = [0.12, 0.3, 0.55, 1.0];
 const MOSS_M = lam('#5f7a4a');
 const RUBBLE_M = lam('#857f70');
@@ -92,9 +92,10 @@ export const RuinWall: React.FC<{
 		const bucket = Math.min(3, k); // 0..2 = repairs by recency, 3 = last night and tonight
 		const base = new THREE.Color(REPAIRED[(k + 1) % 2]);
 		m.color.copy(base).lerp(LOG_C[bucket], L);
-		const g = LOG_E[bucket] * L + (k >= 3 ? 0.55 * glow * (1 - L) : 0);
-		m.emissive.copy(LOG_C[bucket]).multiplyScalar(g);
-		if (k >= 3 && L < 1) m.color.lerp(LOG_C[3], 0.6 * glow * (1 - L));
+		// outside the log, last night's and tonight's stones glow quartz with `glow`
+		const g = LOG_E[bucket] * L + (k >= 3 ? 0.45 * glow * (1 - L) : 0);
+		m.emissive.copy(k >= 3 && L < 1 ? LOG_C[2] : LOG_C[bucket]).multiplyScalar(g);
+		if (k >= 3 && L < 1) m.color.lerp(LOG_C[2], 0.75 * Math.min(1, glow) * (1 - L));
 	});
 	return (
 		<group>
@@ -130,8 +131,8 @@ export const RuinWall: React.FC<{
 
 // ---------------------------------------------------------------- the finds
 
-const BRONZE = lam('#b48a45');
-const BRONZE2 = lam('#7a5a2c');
+const BRONZE = lam('#8a6a36');
+const BRONZE2 = lam('#4e3a20');
 const PIT = lam('#3e2c1e');
 const PIT_RIM = lam('#6b4e32');
 const FLAG = lam('#b8ae96');
@@ -148,9 +149,9 @@ type Box = [number, number, number, number, number, number, THREE.Material, numb
 
 const GEAR: Box[] = (() => {
 	const out: Box[] = [];
-	for (let k = 0; k < 12; k++) {
-		const a = (k / 12) * Math.PI * 2;
-		out.push([Math.cos(a) * 0.98, Math.sin(a) * 0.98, 0, 0.3, 0.24, 0.22, BRONZE, a]);
+	for (let k = 0; k < 10; k++) {
+		const a = (k / 10) * Math.PI * 2;
+		out.push([Math.cos(a) * 1.0, Math.sin(a) * 1.0, 0, 0.34, 0.34, 0.3, BRONZE2, a]);
 	}
 	for (let k = 0; k < 16; k++) {
 		const a = (k / 16) * Math.PI * 2;

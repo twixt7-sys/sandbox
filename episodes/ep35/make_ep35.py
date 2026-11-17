@@ -195,16 +195,16 @@ def slide(p, dx, dz=0.0):
 
 
 # Poses (planned with pipeline/camprobe.ts; BRIEF.md §6).
-HOOK_POSE = pose((6.4, 6.2, 15.0), 13, 5.6, 20)          # the wall's middle, last night's stone near the top
+HOOK_POSE = pose((5.8, 5.2, 13.6), 25, 8.6, 20)          # the wall's middle, last night's stone near the top
 HOOK_SLIDE = 0.9                                          # the hook slides this far west while the title holds
 WIDE = pose((0.0, 2.0, 0.0), 26, 31.0, 22)               # the whole Isle (dist 160)
-STATION = dict(el=22, h=3.4, fov=20)                     # the rules: one height and lens, sliding station to station
-P_GEAR = pose((GEAR[0] + 0.3, 5.8, GEAR[1]), STATION["el"], STATION["h"], STATION["fov"])
-P_KITCHEN = pose((KITCHEN[0], 4.8, KITCHEN[1]), STATION["el"], STATION["h"], STATION["fov"])
-P_WELLS = pose((WELLS[0] + 0.7, 4.8, WELLS[1]), STATION["el"], STATION["h"], STATION["fov"])
-P_HANDS = pose((HANDS[0], 4.9, HANDS[1]), 6, 1.3, 20)
-P_WALL = pose((5.4, 5.6, 14.6), 12, 7.0, 20)             # the whole wall for the repair log
-P_NIGHT = pose((COLX(TONIGHT[0]), 6.9, 14.6), 10, 2.4, 20)
+STATION = dict(el=24, h=6.0, fov=20)                     # the rules: one height and lens, sliding station to station
+P_GEAR = pose((GEAR[0] + 1.2, 5.3, GEAR[1] - 0.2), STATION["el"], STATION["h"], STATION["fov"])
+P_KITCHEN = pose((KITCHEN[0] + 0.4, 5.0, KITCHEN[1] - 0.1), STATION["el"], STATION["h"], STATION["fov"])
+P_WELLS = pose((WELLS[0] + 0.9, 5.0, WELLS[1] - 0.1), STATION["el"], STATION["h"], STATION["fov"])
+P_HANDS = pose((HANDS[0], 5.1, HANDS[1]), 9, 2.7, 20)
+P_WALL = pose((5.4, 5.6, 14.0), 16, 8.4, 20)             # the whole wall for the repair log
+P_NIGHT = pose((COLX(TONIGHT[0]), 6.4, 14.4), 14, 6.4, 20)
 
 
 def world():
@@ -352,7 +352,7 @@ def world():
                   {"kind": "ruin", "x": RUIN[0], "z": RUIN[1], "face": 20, "r": 2.2, "rise": [[H, 1]]},
                   {"kind": "wall", "x": WALL_A[0], "z": WALL_A[1], "to": list(WALL_B), "profile": PROFILE, "fresh": FRESH, "tonight": TONIGHT,
                    "log": log, "glow": glow, "place": place},
-                  {"kind": "find", "find": "gear", "x": GEAR[0], "z": GEAR[1], "face": 0, "r": 2.2, "rise": unearth(G_UP)},
+                  {"kind": "find", "find": "gear", "x": GEAR[0], "z": GEAR[1], "face": 0, "r": 2.2, "rise": unearth(shift(G_UP, -0.1), 0.6)},
                   {"kind": "find", "find": "kitchen", "x": KITCHEN[0], "z": KITCHEN[1], "face": 0, "r": 2.2, "rise": unearth(K_UP, 1.0)},
                   {"kind": "find", "find": "wells", "x": WELLS[0], "z": WELLS[1], "face": 0, "r": 2.2, "rise": unearth(W_UP)},
                   {"kind": "find", "find": "hands", "x": HANDS[0], "z": HANDS[1], "face": 0, "r": 2.2, "y": 0.8, "rise": unearth(H_UP, 0.5)},
@@ -430,7 +430,7 @@ def overlays():
          "collapse": [[cue("L8", "One:", -0.3), 0], [cue("L8", "One:", 0.0), 1], [ROLE, 1], [shift(ROLE, 0.3), 0]]},
     ]
     G["tools"] += [{"type": "skyTags", "start": shift(cue("L8", "gear"), 0.4), "end": cue("L9", "Two:", -0.15), "tags": [
-        tag("NO FORGE HERE", "FIND 01 · TOOLS", shift(cue("L8", "gear"), 0.4), cue("L9", "Two:", -0.15), (GEAR[0], GEAR[1], 1.9), lift=-170, dx=200)]}]
+        tag("NO FORGE HERE", "FIND 01 · TOOLS", shift(cue("L8", "gear"), 0.4), cue("L9", "Two:", -0.15), (GEAR[0], GEAR[1], 1.9), lift=230, dx=230)]}]
     G["values"] += [{"type": "skyTags", "start": cue("L9", "kitchen."), "end": cue("L10", "Three:", -0.15), "tags": [
         tag("ONE TABLE FOR ALL", "FIND 02 · VALUES", cue("L9", "kitchen."), cue("L10", "Three:", -0.15), (KITCHEN[0], KITCHEN[1], 0.7), lift=-260, dx=60)]}]
     G["failure"] += [{"type": "skyTags", "start": cue("L10", "full"), "end": cue("L11", "Four:", -0.15), "tags": [

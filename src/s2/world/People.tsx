@@ -178,7 +178,8 @@ export const PeopleLayer: React.FC<{world: World; island: Island; t: number; s: 
 	const ga = pw.gather;
 	const gat = ga ? sample(ga.keys, t, 0) : 0;
 	for (let i = 0; i < N; i++) {
-		const vis = clamp(count - i);
+		// EP36+: a side can be absent or thin out (absent: every side fully present, as before)
+		const vis = clamp(count - i) * (pw.sideShow ? clamp((sample(pw.sideShow[i % pw.centers.length] ?? [], t, 1) - hash2(i, 11, 29) * 0.85) / 0.15) : 1);
 		const {gen, age} = lifeAt(i, year, pw.life);
 		const sc = lifeScale(age) * vis;
 		if (sc < 0.02) continue;
@@ -195,6 +196,13 @@ export const PeopleLayer: React.FC<{world: World; island: Island; t: number; s: 
 			const rr = ga.r * (0.75 + 0.5 * hash2(i, 6, 29));
 			hx += (ga.at[0] + Math.cos(ang) * rr - hx) * gi;
 			hz += (ga.at[1] + Math.sin(ang) * rr - hz) * gi;
+		}
+		// EP36+: the whole army advances part of the way toward a point and stands facing it (absent: no change)
+		const adv = pw.advance ? sample(pw.advance.keys, t, 0) : 0;
+		if (adv > 0) {
+			const e = adv * adv * (3 - 2 * adv);
+			hx += (pw.advance!.at[0] - c[0]) * pw.advance!.f * e;
+			hz += (pw.advance!.at[1] - c[1]) * pw.advance!.f * e;
 		}
 		const sp = 0.25 + hash2(i, 4, 29) * 0.15;
 		// EP31+: `watch` stands the crowd still, facing a point (absent before: they wander as they did); EP32+: only
@@ -514,10 +522,11 @@ export const Statue: React.FC<{x: number; z: number; face: number; island: Islan
 
 /** A war standard planted in the ground (EP31's tease for EP32): a tall pole and a swallow-tailed cloth in `color`
  * with a pale band, rising with `rise`. Faces +x; the cloth flies toward +z. EP35+: `size` scales it (absent: 1). */
-export const Standard: React.FC<{x: number; z: number; face: number; island: Island; t: number; rise: number; color: string; size?: number}> = ({x, z, face, island, t, rise, color, size = 1}) => {
+export const Standard: React.FC<{x: number; z: number; face: number; island: Island; t: number; rise: number; color: string; size?: number; loopT?: number}> = ({x, z, face, island, t, rise, color, size = 1, loopT}) => {
 	if (rise <= 0.001) return null;
 	const y = island.heightAt(x, z) - (1 - rise) * 5 * size;
-	const wv = Math.sin(t * 3.1) * 0.07;
+	// EP36+: given `loopT` (a standard standing in the loop frame), the wave runs whole cycles per episode
+	const wv = Math.sin(t * (loopT ? loopFreq(3.1, loopT) : 3.1)) * 0.07;
 	return (
 		<group position={[x, y, z]} rotation={[0, (face * Math.PI) / 180, 0]} scale={size}>
 			<B s={[0.18, 4.4, 0.18]} p={[0, 2.2, 0]} c={'#5a3c28'} />

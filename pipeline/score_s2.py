@@ -191,7 +191,7 @@ def blip(f0, f1, dur, bright=1.0):
 S2_HITS = {"roar", "stompHit", "sting", "runPress", "stamp", "rewind", "ringOn", "snowAir", "sleepZ", "cubPop", "delete", "restore", "cardSlide", "check", "unlock", "worldRipple", "crash", "boomPop",
            "engineWind", "dragonPass", "followPress", "chime", "towerBell", "eyeOn", "morph", "slide", "crownPass",
            "frameDrum", "beamTip", "quill", "pageTear", "dig", "stones", "eclipse", "lampOn", "rift",
-           "tear", "brush", "starfall", "stoneRise", "trayDrop", "logOn", "stoneSet"}
+           "tear", "brush", "starfall", "stoneRise", "trayDrop", "logOn", "stoneSet", "pinIn", "threadPull", "spark"}
 S2_BEDS = {"simTicks", "births", "losses", "stomp", "burn", "lockOn", "clockTicks", "rumble", "creep", "sandPour"}
 
 
@@ -640,6 +640,43 @@ def s2_hit(kind):
         ti = np.maximum(0, t - 0.46)
         knock = (np.sin(2 * np.pi * 120 * ti) * np.exp(-ti * 18) + 0.5 * np.sin(2 * np.pi * 330 * ti) * np.exp(-ti * 30) + bp(nz, 900, 3500) * np.exp(-ti * 45) * 0.4) * (t >= 0.46)
         return st(slide + knock * 1.3, 0.35)
+    if kind == "pinIn":
+        # EP36: a pin pushed into the war room's map: a soft cork thock (a damped low partial) and a small bright metal
+        # click as it seats. Its own seeded RNG.
+        n = int(0.35 * SR)
+        t = np.arange(n) / SR
+        rng = np.random.default_rng(361)
+        nz = rng.standard_normal(n)
+        thock = np.sin(2 * np.pi * 180 * t) * np.exp(-t * 40) + lp(nz, 900) * np.exp(-t * 60) * 0.8
+        ti = np.maximum(0, t - 0.035)
+        click = (np.sin(2 * np.pi * 3200 * ti) * 0.5 + bp(nz, 4000, 9000) * 0.6) * np.exp(-ti * 160) * (t >= 0.035)
+        return st(thock * 0.9 + click * 0.7, 0.25)
+    if kind == "threadPull":
+        # EP36: a thread drawn taut: a string's pitch rising as it tightens (a plucked partial gliding up a fifth, with
+        # a faint creak of fibre), ending in a short twang. Its own seeded RNG.
+        n = int(0.9 * SR)
+        t = np.arange(n) / SR
+        rng = np.random.default_rng(362)
+        nz = rng.standard_normal(n)
+        f = 196.0 * np.geomspace(1.0, 1.5, n)
+        ph = np.cumsum(f) / SR
+        tone = (np.sin(2 * np.pi * ph) + 0.4 * np.sin(4 * np.pi * ph) + 0.2 * np.sin(6 * np.pi * ph)) * np.interp(t, [0, 0.05, 0.7, 0.9], [0, 0.45, 0.6, 0])
+        creak = bp(nz, 900, 3200) * (rng.uniform(0, 1, n) > 0.97) * np.interp(t, [0, 0.6, 0.75], [0.5, 0.3, 0])
+        ti = np.maximum(0, t - 0.7)
+        twang = np.sin(2 * np.pi * 294 * ti) * np.exp(-ti * 14) * (t >= 0.7) * 0.7
+        return st(tone * 0.6 + creak + twang, 0.4)
+    if kind == "spark":
+        # EP36: the flashpoint catching: a fuse's fizz (crackling band-passed noise with sparse pops) that swells and
+        # bursts into a soft low thump. Not an explosion: a spark. Its own seeded RNG.
+        n = int(1.1 * SR)
+        t = np.arange(n) / SR
+        rng = np.random.default_rng(363)
+        nz = rng.standard_normal(n)
+        fizz = bp(nz, 2500, 9000) * np.interp(t, [0, 0.4, 0.62, 1.0], [0.15, 0.6, 0.4, 0]) * (0.6 + 0.4 * (rng.uniform(0, 1, n) > 0.6))
+        pops = bp(nz, 1200, 6000) * (rng.uniform(0, 1, n) > 0.995) * 2.0 * np.interp(t, [0, 0.6, 0.9], [0.4, 1, 0])
+        ti = np.maximum(0, t - 0.55)
+        thump = (np.sin(2 * np.pi * 70 * ti) * np.exp(-ti * 9) + lp(nz, 300) * np.exp(-ti * 12) * 0.5) * (t >= 0.55)
+        return st(fizz * 0.7 + pops + thump * 0.9, 0.5)
     raise KeyError(kind)
 
 

@@ -1,0 +1,6484 @@
+{
+ "id": "ep36",
+ "number": 36,
+ "season": 2,
+ "title": "Wars Need More Than Two Armies",
+ "lesson": "A war with one reason (an angry king) is a tantrum, not a war: nobody marches for it. Give every side its own reason worth the cost: something to gain, something to fear, a claim, a promise to an ally. Then let it start by mistake, because every side was sure the others would back down. Nobody thinks they're the villain.",
+ "format": {
+  "version": "s2",
+  "qa": {
+   "min": 55.0,
+   "max": 62.0
+  }
+ },
+ "voice": {
+  "provider": "kokoro",
+  "kokoro": {
+   "voice": "af_heart",
+   "lang": "a",
+   "speed": 0.95
+  },
+  "elevenlabs": {
+   "voiceId": "REPLACE_WITH_LIBRARY_VOICE_ID",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.2,
+    "use_speaker_boost": true
+   }
+  },
+  "direction": "The same lab host, like someone walking a general through a war room at night. The hook is flat and certain. 'Two armies, one angry king' is the clich\u00e9; 'a tantrum, not a war' lands dry. The rules are crisp, two beats each, each side's reason said as if it were obviously right. 'Nobody here wants this war' is quiet; 'All three are wrong' drops. The comment ask is playful."
+ },
+ "timing": {
+  "leadIn": 0.2,
+  "tail": 0.85,
+  "shotLead": 0.12
+ },
+ "captionY": 1238,
+ "captionsOff": [
+  {
+   "line": "L3",
+   "from": "two"
+  },
+  {
+   "line": "L5",
+   "from": "Ten"
+  },
+  {
+   "line": "L7",
+   "from": "Real",
+   "to": "Four"
+  },
+  {
+   "line": "L12",
+   "from": "Ten"
+  },
+  {
+   "line": "L13",
+   "from": "Rule"
+  },
+  {
+   "line": "L14",
+   "from": "Each"
+  }
+ ],
+ "lines": [
+  {
+   "id": "L1",
+   "shot": "hook",
+   "text": "Nobody sends a million soldiers to die for an angry king.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "million",
+    "angry"
+   ]
+  },
+  {
+   "id": "L2",
+   "shot": "hook",
+   "text": "Meet the Ruin War. It hasn't started yet.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "ruin",
+    "yet."
+   ]
+  },
+  {
+   "id": "L3",
+   "shot": "setup",
+   "text": "The lazy version: two armies, one angry king.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "lazy",
+    "angry"
+   ]
+  },
+  {
+   "id": "L4",
+   "shot": "setup",
+   "text": "Press run.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "run."
+   ]
+  },
+  {
+   "id": "L5",
+   "shot": "run1",
+   "text": "Ten years of shouting. Nobody marches.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "shouting.",
+    "marches."
+   ]
+  },
+  {
+   "id": "L6",
+   "shot": "drop",
+   "text": "One angry king is a tantrum, not a war.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "tantrum,",
+    "war."
+   ]
+  },
+  {
+   "id": "L7",
+   "shot": "rehook",
+   "text": "Real wars need reasons on every side. Four rules. The fifth is the twist.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "reasons.",
+    "twist."
+   ]
+  },
+  {
+   "id": "L8",
+   "shot": "gain",
+   "text": "One: something to gain. Red needs the ruin's harbour.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "gain.",
+    "harbour."
+   ]
+  },
+  {
+   "id": "L9",
+   "shot": "fear",
+   "text": "Two: fear. Blue can't let Red hold it.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "fear.",
+    "hold"
+   ]
+  },
+  {
+   "id": "L10",
+   "shot": "claim",
+   "text": "Three: a claim. Gold's prince says it's his by birth.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "claim.",
+    "birth."
+   ]
+  },
+  {
+   "id": "L11",
+   "shot": "allies",
+   "text": "Four: allies. Blue swore to stand with Gold.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "allies.",
+    "swore"
+   ]
+  },
+  {
+   "id": "L12",
+   "shot": "run2",
+   "text": "Run it again. Ten years. Three armies, one ruin.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "three",
+    "ruin."
+   ]
+  },
+  {
+   "id": "L13",
+   "shot": "twist",
+   "text": "Rule five? Nobody here wants this war.",
+   "pauseAfter": 0.3,
+   "emphasis": [
+    "nobody",
+    "wants"
+   ]
+  },
+  {
+   "id": "L14",
+   "shot": "twist",
+   "text": "Each side is sure the others will blink. All three are wrong.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "blink.",
+    "wrong."
+   ]
+  },
+  {
+   "id": "L15",
+   "shot": "role",
+   "text": "So give every side a reason worth the cost.",
+   "pauseAfter": 0.4,
+   "emphasis": [
+    "every",
+    "cost."
+   ]
+  },
+  {
+   "id": "L16",
+   "shot": "lesson",
+   "text": "Show what each side wants. Nobody thinks they're the villain.",
+   "pauseAfter": 0.35,
+   "emphasis": [
+    "wants.",
+    "villain."
+   ]
+  },
+  {
+   "id": "L17",
+   "shot": "cta",
+   "text": "What would finally push your kingdom into war?",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "push",
+    "war?"
+   ]
+  },
+  {
+   "id": "L18",
+   "shot": "next",
+   "text": "Part 36 of 50. Follow for part 37: big armies still lose.",
+   "pauseAfter": 0.25,
+   "emphasis": [
+    "follow",
+    "lose."
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "hook",
+   "scene": "world",
+   "purpose": "Close EP35's loop (three standards were planted round the ruin on 'two armies are never enough') and stop the scroll.",
+   "visual": "Golden hour over the Builders' ruin: three camps round it (red tents and standard west, blue north-east, gold south), their armies standing in front of the tents, and four coloured threads strung from the camps' pins to a knot on a tall war pin stuck in the ruin, glowing flashpoint lime, with one thread braided blue and gold between two camps. A MILLION SOLDIERS / FOR ONE ANGRY KING? from frame 0, each line pulsing on its word (NOT ONE KING \u00b7 3 SIDES \u00b7 4 REASONS at the knot). Then the field card: THE RUIN WAR \u00b7 A WAR \u00b7 NOT YET \u00b7 SIDES: three, all sure they're right.",
+   "camera": "From the south-south-west (az 340, el 27, fov 20), pulling slowly back.",
+   "layers": {
+    "foreground": "kinetic, sting, tag, field card",
+    "midground": "the knot, the threads, the camps",
+    "background": "the lake, the Queen's dais"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "A MILLION SOLDIERS / FOR ONE ANGRY KING? \u00b7 FIELD CARD NO. 011 \u00b7 THE RUIN WAR",
+   "transition": "Olive block wipe into the lazy version.",
+   "music": "Council: a ticking clock, plucked fifths, the theme on a muted trumpet; a hit on 'angry'.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "A MILLION SOLDIERS",
+       "color": "parchment",
+       "size": 54,
+       "pulseAt": {
+        "line": "L1",
+        "word": "million"
+       }
+      },
+      {
+       "text": "FOR ONE ANGRY KING?",
+       "color": "#c8f04a",
+       "size": 50,
+       "pulseAt": {
+        "line": "L1",
+        "word": "angry"
+       }
+      }
+     ],
+     "y": 440,
+     "size": 60,
+     "start": {
+      "shot": "hook"
+     },
+     "end": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.1
+     },
+     "preShow": true
+    },
+    {
+     "type": "sting",
+     "label": "WORLD ENGINE",
+     "run": "RUN 36 \u00b7 THE WAR",
+     "dur": 1.4,
+     "start": {
+      "shot": "hook"
+     },
+     "front": true
+    },
+    {
+     "type": "skyTags",
+     "start": {
+      "line": "L1",
+      "word": "angry",
+      "offset": 0.1
+     },
+     "end": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "kind": "ground",
+       "text": "3 SIDES \u00b7 4 REASONS",
+       "head": "NOT ONE KING",
+       "at": {
+        "line": "L1",
+        "word": "angry",
+        "offset": 0.1
+       },
+       "end": {
+        "line": "L2",
+        "word": "Meet",
+        "offset": -0.1
+       },
+       "pos": [
+        5.4,
+        14.6,
+        5.0
+       ],
+       "lift": -150,
+       "dx": 200,
+       "color": "#c8f04a",
+       "headColor": "#c8f04a"
+      }
+     ]
+    },
+    {
+     "type": "fieldCard",
+     "mode": "intro",
+     "y": 440,
+     "start": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "dietAt": {
+      "line": "L2",
+      "word": "yet."
+     },
+     "kicker": "FIELD CARD \u00b7 NO. 011",
+     "kind": "A WAR \u00b7 NOT YET",
+     "name": "THE RUIN WAR",
+     "dietLabel": "SIDES",
+     "diet": "three, all sure they're right",
+     "sprite": "ep36/war_sprite.png",
+     "spriteW": 64,
+     "spriteH": 116
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "chime",
+     "at": {
+      "shot": "hook"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "shot": "hook",
+      "offset": 0.05
+     },
+     "gain": -17
+    },
+    {
+     "sound": "threadPull",
+     "at": {
+      "line": "L1",
+      "word": "million",
+      "offset": -0.3
+     },
+     "gain": -20
+    },
+    {
+     "sound": "spark",
+     "at": {
+      "line": "L1",
+      "word": "angry",
+      "offset": -0.1
+     },
+     "gain": -18
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L2",
+      "word": "Meet",
+      "offset": -0.05
+     },
+     "gain": -18
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L2",
+      "word": "yet."
+     },
+     "gain": -20
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "setup",
+   "scene": "world",
+   "purpose": "The lazy version: two armies, one angry king.",
+   "visual": "A wipe to two camps only (Red and Blue), no knot, one red thread (anger) strung from Red's camp to Blue's. TWO ARMIES / ONE ANGRY KING. The war room strip slides in under the world (RED: the king is angry; BLUE: nothing; GOLD absent; NO WAR); the sim bar arrives (ARMIES 02, REASONS 01) and RUN is pressed.",
+   "camera": "Cut close on Red's camp, pulling back along the anger thread to Blue's.",
+   "layers": {
+    "foreground": "kinetic, sim bar, war room",
+    "midground": "the two camps",
+    "background": "the Isle"
+   },
+   "lighting": "Day.",
+   "onScreenText": "TWO ARMIES \u00b7 ONE ANGRY KING \u00b7 THE WAR ROOM",
+   "transition": "A cut to the whole Isle on 'run'.",
+   "music": "Council, thin.",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "dur": 0.34,
+     "color": "#2b2f1c"
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "TWO ARMIES",
+       "at": {
+        "line": "L3",
+        "word": "two"
+       },
+       "size": 64,
+       "color": "parchment"
+      },
+      {
+       "text": "ONE ANGRY KING",
+       "at": {
+        "line": "L3",
+        "word": "one"
+       },
+       "color": "rust",
+       "size": 64
+      }
+     ],
+     "y": 600,
+     "size": 64,
+     "start": {
+      "line": "L3",
+      "word": "two",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L4",
+      "word": "Press",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "simBar",
+     "counters": [
+      {
+       "icon": "standard",
+       "label": "ARMIES",
+       "key": "armies",
+       "color": "parchment",
+       "digits": 2
+      },
+      {
+       "icon": "pin",
+       "label": "REASONS",
+       "key": "reasons",
+       "color": "#c8f04a",
+       "digits": 2
+      }
+     ],
+     "compact": true,
+     "start": {
+      "line": "L4",
+      "word": "Press",
+      "offset": -0.15
+     },
+     "end": {
+      "line": "L16",
+      "word": "Show",
+      "offset": -0.3
+     },
+     "runAt": [
+      {
+       "line": "L4",
+       "word": "run."
+      },
+      {
+       "line": "L12",
+       "word": "Run"
+      }
+     ]
+    },
+    {
+     "type": "warRoom",
+     "y": 1352,
+     "sides": [
+      {
+       "name": "RED",
+       "color": "#c0573c",
+       "rows": [
+        {
+         "icon": "fume",
+         "text": "the king is angry",
+         "at": {
+          "line": "L3",
+          "word": "angry"
+         },
+         "end": {
+          "line": "L6",
+          "word": "war.",
+          "offset": 0.6
+         },
+         "color": "parchment"
+        },
+        {
+         "icon": "anchor",
+         "text": "a harbour to take",
+         "at": {
+          "line": "L8",
+          "word": "harbour."
+         }
+        },
+        {
+         "icon": "spark",
+         "text": "they'll blink",
+         "at": {
+          "line": "L14",
+          "word": "sure"
+         },
+         "end": {
+          "line": "L15",
+          "word": "So",
+          "offset": -0.15
+         },
+         "strikeAt": {
+          "line": "L14",
+          "word": "wrong."
+         },
+         "color": "#c8f04a"
+        }
+       ],
+       "verdicts": [
+        {
+         "at": {
+          "line": "L3",
+          "word": "lazy",
+          "offset": -0.15
+         },
+         "text": "WORTH IT?",
+         "color": "rgba(239,230,210,0.55)"
+        },
+        {
+         "at": {
+          "line": "L5",
+          "word": "Nobody"
+         },
+         "text": "NOT WORTH IT",
+         "color": "rust"
+        },
+        {
+         "at": {
+          "line": "L6",
+          "word": "war.",
+          "offset": 0.6
+         },
+         "text": "WORTH IT?",
+         "color": "rgba(239,230,210,0.55)"
+        },
+        {
+         "at": {
+          "line": "L8",
+          "word": "harbour."
+         },
+         "text": "WORTH IT",
+         "color": "#c0573c"
+        },
+        {
+         "at": {
+          "line": "L14",
+          "word": "wrong."
+         },
+         "text": "GUESSED WRONG",
+         "color": "rust"
+        },
+        {
+         "at": {
+          "line": "L15",
+          "word": "So",
+          "offset": -0.15
+         },
+         "text": "WORTH IT",
+         "color": "#c0573c"
+        }
+       ]
+      },
+      {
+       "name": "BLUE",
+       "color": "#4f7fbf",
+       "rows": [
+        {
+         "icon": "shield",
+         "text": "can't let Red win",
+         "at": {
+          "line": "L9",
+          "word": "hold"
+         }
+        },
+        {
+         "icon": "clasp",
+         "text": "sworn to Gold",
+         "at": {
+          "line": "L11",
+          "word": "swore"
+         }
+        },
+        {
+         "icon": "spark",
+         "text": "they'll blink",
+         "at": {
+          "line": "L14",
+          "word": "sure"
+         },
+         "end": {
+          "line": "L15",
+          "word": "So",
+          "offset": -0.15
+         },
+         "strikeAt": {
+          "line": "L14",
+          "word": "wrong."
+         },
+         "color": "#c8f04a"
+        }
+       ],
+       "verdicts": [
+        {
+         "at": {
+          "line": "L3",
+          "word": "lazy",
+          "offset": -0.15
+         },
+         "text": "WORTH IT?",
+         "color": "rgba(239,230,210,0.55)"
+        },
+        {
+         "at": {
+          "line": "L5",
+          "word": "Nobody"
+         },
+         "text": "NOT WORTH IT",
+         "color": "rust"
+        },
+        {
+         "at": {
+          "line": "L6",
+          "word": "war.",
+          "offset": 0.6
+         },
+         "text": "WORTH IT?",
+         "color": "rgba(239,230,210,0.55)"
+        },
+        {
+         "at": {
+          "line": "L9",
+          "word": "hold"
+         },
+         "text": "WORTH IT",
+         "color": "#4f7fbf"
+        },
+        {
+         "at": {
+          "line": "L14",
+          "word": "wrong."
+         },
+         "text": "GUESSED WRONG",
+         "color": "rust"
+        },
+        {
+         "at": {
+          "line": "L15",
+          "word": "So",
+          "offset": -0.15
+         },
+         "text": "WORTH IT",
+         "color": "#4f7fbf"
+        }
+       ]
+      },
+      {
+       "name": "GOLD",
+       "color": "#d4b23f",
+       "rows": [
+        {
+         "icon": "crown",
+         "text": "his by birth",
+         "at": {
+          "line": "L10",
+          "word": "birth."
+         }
+        },
+        {
+         "icon": "clasp",
+         "text": "Blue has our back",
+         "at": {
+          "line": "L11",
+          "word": "Gold."
+         }
+        },
+        {
+         "icon": "spark",
+         "text": "they'll blink",
+         "at": {
+          "line": "L14",
+          "word": "sure"
+         },
+         "end": {
+          "line": "L15",
+          "word": "So",
+          "offset": -0.15
+         },
+         "strikeAt": {
+          "line": "L14",
+          "word": "wrong."
+         },
+         "color": "#c8f04a"
+        }
+       ],
+       "verdicts": [
+        {
+         "at": {
+          "line": "L6",
+          "word": "war.",
+          "offset": 0.6
+         },
+         "text": "WORTH IT?",
+         "color": "rgba(239,230,210,0.55)"
+        },
+        {
+         "at": {
+          "line": "L10",
+          "word": "birth."
+         },
+         "text": "WORTH IT",
+         "color": "#d4b23f"
+        },
+        {
+         "at": {
+          "line": "L14",
+          "word": "wrong."
+         },
+         "text": "GUESSED WRONG",
+         "color": "rust"
+        },
+        {
+         "at": {
+          "line": "L15",
+          "word": "So",
+          "offset": -0.15
+         },
+         "text": "WORTH IT",
+         "color": "#d4b23f"
+        }
+       ],
+       "show": [
+        [
+         {
+          "line": "L3",
+          "word": "lazy",
+          "offset": -0.15
+         },
+         0
+        ],
+        [
+         {
+          "line": "L6",
+          "word": "war.",
+          "offset": 0.58
+         },
+         0
+        ],
+        [
+         {
+          "line": "L6",
+          "word": "war.",
+          "offset": 0.6
+         },
+         1
+        ]
+       ]
+      }
+     ],
+     "status": [
+      {
+       "at": {
+        "line": "L3",
+        "word": "lazy",
+        "offset": -0.15
+       },
+       "text": "NO WAR",
+       "color": "rgba(239,230,210,0.55)"
+      },
+      {
+       "at": {
+        "line": "L5",
+        "word": "Nobody"
+       },
+       "text": "NOBODY CAME",
+       "color": "rust"
+      },
+      {
+       "at": {
+        "line": "L6",
+        "word": "war.",
+        "offset": 0.6
+       },
+       "text": "NO REASONS",
+       "color": "rgba(239,230,210,0.55)"
+      },
+      {
+       "at": {
+        "line": "L9",
+        "word": "hold"
+       },
+       "text": "1 FLASHPOINT",
+       "color": "#c8f04a"
+      },
+      {
+       "at": {
+        "line": "L14",
+        "word": "wrong."
+       },
+       "text": "IT CATCHES",
+       "color": "#c8f04a"
+      },
+      {
+       "at": {
+        "line": "L15",
+        "word": "So",
+        "offset": -0.15
+       },
+       "text": "1 FLASHPOINT",
+       "color": "#c8f04a"
+      }
+     ],
+     "start": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": 0.15
+     },
+     "end": {
+      "line": "L16",
+      "word": "Show",
+      "offset": -0.3
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     "gain": -15
+    },
+    {
+     "sound": "pinIn",
+     "at": {
+      "line": "L3",
+      "word": "angry",
+      "offset": -0.1
+     },
+     "gain": -16
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L3",
+      "word": "lazy",
+      "offset": 0.2
+     },
+     "gain": -22
+    },
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L4",
+      "word": "run."
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L4",
+      "word": "run."
+     },
+     "gain": -16
+    }
+   ]
+  },
+  {
+   "id": "run1",
+   "scene": "world",
+   "purpose": "Run the lazy version: ten years of shouting and nobody marches.",
+   "visual": "The whole Isle; YEAR 0\u219210; on 'Nobody' both camps strike their tents, the standards sink, the armies go home and the anger thread goes slack and reels back. 10 YEARS / OF SHOUTING / NOBODY MARCHES. ARMIES 2\u21920, REASONS 1\u21920; both verdicts read NOT WORTH IT.",
+   "camera": "Wide (dist 160, fov 22), backing away.",
+   "layers": {
+    "foreground": "sim bar, kinetic, war room",
+    "midground": "the Isle",
+    "background": "the void"
+   },
+   "lighting": "Day.",
+   "onScreenText": "10 YEARS / OF SHOUTING / NOBODY MARCHES",
+   "transition": "Gloom.",
+   "music": "Drive.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "10 YEARS",
+       "at": {
+        "line": "L5",
+        "word": "Ten"
+       },
+       "color": "parchment",
+       "size": 56
+      },
+      {
+       "text": "OF SHOUTING",
+       "at": {
+        "line": "L5",
+        "word": "shouting."
+       },
+       "color": "parchment",
+       "size": 56
+      },
+      {
+       "text": "NOBODY MARCHES",
+       "at": {
+        "line": "L5",
+        "word": "Nobody"
+       },
+       "color": "rust",
+       "size": 56
+      }
+     ],
+     "y": 600,
+     "size": 56,
+     "start": {
+      "line": "L5",
+      "word": "Ten",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L6",
+      "word": "One",
+      "offset": -0.25
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L5",
+      "word": "marches.",
+      "offset": 0.2
+     },
+     "gain": -22
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L5",
+      "word": "Nobody"
+     },
+     "gain": -21
+    },
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L5",
+      "word": "Nobody",
+      "offset": -0.1
+     },
+     "gain": -21
+    }
+   ]
+  },
+  {
+   "id": "drop",
+   "scene": "world",
+   "purpose": "The punchline: one angry king is a tantrum, not a war.",
+   "visual": "Gloom: JUST A TANTRUM \u00b7 1 REASON \u00b7 0 ARMIES \u00b7 NO WAR, over the empty camps.",
+   "camera": "Wide, the pull-back easing to a stop.",
+   "layers": {
+    "foreground": "stamp, war room",
+    "midground": "the Isle",
+    "background": "the void"
+   },
+   "lighting": "Gloom.",
+   "onScreenText": "JUST A TANTRUM \u00b7 1 REASON \u00b7 0 ARMIES \u00b7 NO WAR",
+   "transition": "Rewind + block wipe.",
+   "music": "Drop; a boom on 'war'.",
+   "graphics": [
+    {
+     "type": "stamp",
+     "text": "JUST A TANTRUM",
+     "sub": "1 REASON \u00b7 0 ARMIES \u00b7 NO WAR",
+     "color": "rust",
+     "y": 640,
+     "size": 80,
+     "start": {
+      "line": "L6",
+      "word": "tantrum,"
+     },
+     "end": {
+      "line": "L6",
+      "word": "war.",
+      "offset": 0.55
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L6",
+      "word": "tantrum,"
+     },
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "rehook",
+   "scene": "world",
+   "purpose": "Re-hook: the thesis, four rules, one locked.",
+   "visual": "REWIND to three camps with their armies and no threads (NO REASONS). REAL WARS / NEED REASONS; then the checklist PULL THE THREADS, row 5 locked (the twist).",
+   "camera": "Wide, backing away.",
+   "layers": {
+    "foreground": "rewind, kinetic, checklist, war room",
+    "midground": "the Isle",
+    "background": "the void"
+   },
+   "lighting": "Day.",
+   "onScreenText": "REAL WARS NEED REASONS \u00b7 PULL THE THREADS 0/5",
+   "transition": "Cut close on Red's camp.",
+   "music": "Muster, bare (a field snare); a riser into 'the twist'.",
+   "graphics": [
+    {
+     "type": "rewind",
+     "y": 620,
+     "start": {
+      "line": "L6",
+      "word": "war.",
+      "offset": 0.6
+     },
+     "end": {
+      "line": "L7",
+      "word": "Real",
+      "offset": 0.3
+     }
+    },
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L6",
+      "word": "war.",
+      "offset": 0.58
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "REAL WARS",
+       "at": {
+        "line": "L7",
+        "word": "Real"
+       },
+       "size": 78,
+       "color": "parchment"
+      },
+      {
+       "text": "NEED REASONS",
+       "at": {
+        "line": "L7",
+        "word": "reasons"
+       },
+       "color": "#c8f04a",
+       "size": 78
+      }
+     ],
+     "y": 600,
+     "size": 78,
+     "start": {
+      "line": "L7",
+      "word": "Real",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "fieldCard",
+     "mode": "checklist",
+     "y": 448,
+     "rows": [
+      {
+       "n": 1,
+       "label": "GAIN",
+       "text": "a harbour to take",
+       "at": {
+        "line": "L8",
+        "word": "gain."
+       }
+      },
+      {
+       "n": 2,
+       "label": "FEAR",
+       "text": "can't let them win",
+       "at": {
+        "line": "L9",
+        "word": "fear."
+       }
+      },
+      {
+       "n": 3,
+       "label": "A CLAIM",
+       "text": "his by birth",
+       "at": {
+        "line": "L10",
+        "word": "claim."
+       }
+      },
+      {
+       "n": 4,
+       "label": "ALLIES",
+       "text": "a promise to keep",
+       "at": {
+        "line": "L11",
+        "word": "allies."
+       }
+      },
+      {
+       "n": 5,
+       "label": "A GUESS",
+       "text": "they'll back down",
+       "at": {
+        "line": "L7",
+        "word": "Four"
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L15",
+        "word": "cost.",
+        "offset": -0.1
+       }
+      }
+     ],
+     "start": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "end": {
+      "line": "L16",
+      "word": "Show",
+      "offset": -0.3
+     },
+     "kicker": "THE RUIN WAR \u00b7 WHY THEY MARCH",
+     "title": "PULL THE THREADS",
+     "blinkAt": {
+      "line": "L7",
+      "word": "twist."
+     },
+     "lockedText": "the twist",
+     "sprite": "ep36/war_sprite.png",
+     "spriteW": 64,
+     "spriteH": 116,
+     "collapse": [
+      [
+       {
+        "line": "L8",
+        "word": "One:",
+        "offset": -0.3
+       },
+       0
+      ],
+      [
+       {
+        "line": "L8",
+        "word": "One:"
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "So",
+        "offset": -0.15
+       },
+       1
+      ],
+      [
+       {
+        "line": "L15",
+        "word": "So",
+        "offset": 0.15
+       },
+       0
+      ]
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "rewind",
+     "at": {
+      "line": "L6",
+      "word": "war.",
+      "offset": 0.55
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L7",
+      "word": "Four",
+      "offset": -0.1
+     },
+     "gain": -17
+    }
+   ]
+  },
+  {
+   "id": "gain",
+   "scene": "world",
+   "purpose": "Rule 1: something to gain (interests and resources).",
+   "visual": "Close on Red's camp; on 'harbour' a war pin is pushed into the ruin and Red's thread runs from its camp to the knot (RED \u00b7 GAIN \u00b7 A HARBOUR TO TAKE).",
+   "camera": "Cut close behind Red's tents, pulling back along the thread to the knot.",
+   "layers": {
+    "foreground": "tag, checklist (folded), war room",
+    "midground": "Red's camp and its thread",
+    "background": "the ruin"
+   },
+   "lighting": "Day.",
+   "onScreenText": "1 GAIN \u00b7 a harbour to take",
+   "transition": "Cut.",
+   "music": "Muster 1: a field snare.",
+   "graphics": [
+    {
+     "type": "skyTags",
+     "start": {
+      "line": "L8",
+      "word": "harbour."
+     },
+     "end": {
+      "line": "L9",
+      "word": "Two:",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "kind": "ground",
+       "text": "A HARBOUR TO TAKE",
+       "head": "RED \u00b7 GAIN",
+       "at": {
+        "line": "L8",
+        "word": "harbour."
+       },
+       "end": {
+        "line": "L9",
+        "word": "Two:",
+        "offset": -0.15
+       },
+       "pos": [
+        -0.2513167019494862,
+        12.716227766016837,
+        2.6
+       ],
+       "lift": 170,
+       "dx": 0,
+       "color": "#c0573c",
+       "headColor": "#c0573c",
+       "band": [
+        600,
+        1080
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L8",
+      "word": "gain."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "pinIn",
+     "at": {
+      "line": "L8",
+      "word": "harbour.",
+      "offset": -0.5
+     },
+     "gain": -13
+    },
+    {
+     "sound": "threadPull",
+     "at": {
+      "line": "L8",
+      "word": "harbour.",
+      "offset": -0.25
+     },
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "fear",
+   "scene": "world",
+   "purpose": "Rule 2: fear (security).",
+   "visual": "Close on Blue's camp; on 'Red' Blue's thread runs to the same knot: the first flashpoint (BLUE \u00b7 FEAR \u00b7 CAN'T LET RED WIN).",
+   "camera": "Cut close behind Blue's tents, pulling back.",
+   "layers": {
+    "foreground": "tag, checklist (folded), war room",
+    "midground": "Blue's camp and its thread",
+    "background": "the knot"
+   },
+   "lighting": "Day.",
+   "onScreenText": "2 FEAR \u00b7 can't let them win",
+   "transition": "Cut.",
+   "music": "Muster 2: a tuba.",
+   "graphics": [
+    {
+     "type": "skyTags",
+     "start": {
+      "line": "L9",
+      "word": "hold"
+     },
+     "end": {
+      "line": "L10",
+      "word": "Three:",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "kind": "ground",
+       "text": "CAN'T LET RED WIN",
+       "head": "BLUE \u00b7 FEAR",
+       "at": {
+        "line": "L9",
+        "word": "hold"
+       },
+       "end": {
+        "line": "L10",
+        "word": "Three:",
+        "offset": -0.15
+       },
+       "pos": [
+        11.327056517862735,
+        11.287821357664942,
+        2.6
+       ],
+       "lift": 170,
+       "dx": 0,
+       "color": "#4f7fbf",
+       "headColor": "#4f7fbf",
+       "band": [
+        600,
+        1080
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L9",
+      "word": "fear."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "pinIn",
+     "at": {
+      "line": "L9",
+      "word": "Red",
+      "offset": -0.15
+     },
+     "gain": -14
+    },
+    {
+     "sound": "threadPull",
+     "at": {
+      "line": "L9",
+      "word": "Red",
+      "offset": -0.15
+     },
+     "gain": -15
+    },
+    {
+     "sound": "spark",
+     "at": {
+      "line": "L9",
+      "word": "hold"
+     },
+     "gain": -19
+    }
+   ]
+  },
+  {
+   "id": "claim",
+   "scene": "world",
+   "purpose": "Rule 3: a claim (succession).",
+   "visual": "Close on Gold's camp; on 'prince' Gold's thread runs to the knot (GOLD \u00b7 A CLAIM \u00b7 HIS BY BIRTH).",
+   "camera": "Cut close behind Gold's tents, pulling back.",
+   "layers": {
+    "foreground": "tag, checklist (folded), war room",
+    "midground": "Gold's camp and its thread",
+    "background": "the knot"
+   },
+   "lighting": "Day.",
+   "onScreenText": "3 A CLAIM \u00b7 his by birth",
+   "transition": "Cut.",
+   "music": "Muster 3: timpani and cymbal.",
+   "graphics": [
+    {
+     "type": "skyTags",
+     "start": {
+      "line": "L10",
+      "word": "birth."
+     },
+     "end": {
+      "line": "L11",
+      "word": "Four:",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "kind": "ground",
+       "text": "HIS BY BIRTH",
+       "head": "GOLD \u00b7 A CLAIM",
+       "at": {
+        "line": "L10",
+        "word": "birth."
+       },
+       "end": {
+        "line": "L11",
+        "word": "Four:",
+        "offset": -0.15
+       },
+       "pos": [
+        4.955962573473011,
+        17.41223703467093,
+        2.6
+       ],
+       "lift": 170,
+       "dx": 0,
+       "color": "#d4b23f",
+       "headColor": "#d4b23f",
+       "band": [
+        600,
+        1080
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L10",
+      "word": "claim."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "pinIn",
+     "at": {
+      "line": "L10",
+      "word": "prince",
+      "offset": -0.15
+     },
+     "gain": -14
+    },
+    {
+     "sound": "threadPull",
+     "at": {
+      "line": "L10",
+      "word": "prince",
+      "offset": -0.15
+     },
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "allies",
+   "scene": "world",
+   "purpose": "Rule 4: allies.",
+   "visual": "On 'swore' a thread braided blue and gold runs between Blue's camp and Gold's (BLUE + GOLD \u00b7 ALLIES \u00b7 A PROMISE TO KEEP): now any move pulls all three.",
+   "camera": "Cut to the web from the south, pulling back.",
+   "layers": {
+    "foreground": "tag, checklist (folded), war room",
+    "midground": "the braided thread",
+    "background": "the camps"
+   },
+   "lighting": "Day.",
+   "onScreenText": "4 ALLIES \u00b7 a promise to keep",
+   "transition": "Cut to the whole Isle.",
+   "music": "Muster 4: the theme on a fife, horns.",
+   "graphics": [
+    {
+     "type": "skyTags",
+     "start": {
+      "line": "L11",
+      "word": "Gold."
+     },
+     "end": {
+      "line": "L12",
+      "word": "Run",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "kind": "ground",
+       "text": "A PROMISE TO KEEP",
+       "head": "BLUE + GOLD \u00b7 ALLIES",
+       "at": {
+        "line": "L11",
+        "word": "Gold."
+       },
+       "end": {
+        "line": "L12",
+        "word": "Run",
+        "offset": -0.15
+       },
+       "pos": [
+        8.141509545667873,
+        14.350029196167936,
+        1.2
+       ],
+       "lift": 170,
+       "dx": 0,
+       "color": "#d4b23f",
+       "headColor": "#d4b23f",
+       "band": [
+        600,
+        1080
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "check",
+     "at": {
+      "line": "L11",
+      "word": "allies."
+     },
+     "gain": -13
+    },
+    {
+     "sound": "pinIn",
+     "at": {
+      "line": "L11",
+      "word": "swore",
+      "offset": -0.15
+     },
+     "gain": -14
+    },
+    {
+     "sound": "threadPull",
+     "at": {
+      "line": "L11",
+      "word": "swore",
+      "offset": -0.15
+     },
+     "gain": -15
+    }
+   ]
+  },
+  {
+   "id": "run2",
+   "scene": "world",
+   "purpose": "Run with every side's reasons: ten years, and three armies march up to one ruin.",
+   "visual": "The whole Isle; YEAR 0\u219210; the three armies advance from their camps and stand facing the ruin; 10 YEARS / THREE ARMIES / ONE RUIN. EVERYONE'S RIGHT \u00b7 3 SIDES \u00b7 4 REASONS \u00b7 1 RUIN, stamped in lime.",
+   "camera": "Wide, backing away.",
+   "layers": {
+    "foreground": "sim bar, war room, stamp",
+    "midground": "the armies standing",
+    "background": "the Isle"
+   },
+   "lighting": "Day.",
+   "onScreenText": "EVERYONE'S RIGHT \u00b7 3 SIDES \u00b7 4 REASONS \u00b7 1 RUIN",
+   "transition": "Cut to dusk.",
+   "music": "Drive with the theme; a stab and a cymbal on 'ruin'.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "10 YEARS",
+       "at": {
+        "line": "L12",
+        "word": "Ten"
+       },
+       "color": "parchment",
+       "size": 56
+      },
+      {
+       "text": "THREE ARMIES",
+       "at": {
+        "line": "L12",
+        "word": "Three"
+       },
+       "color": "parchment",
+       "size": 56
+      },
+      {
+       "text": "ONE RUIN",
+       "at": {
+        "line": "L12",
+        "word": "one"
+       },
+       "color": "#c8f04a",
+       "size": 56
+      }
+     ],
+     "y": 600,
+     "size": 56,
+     "start": {
+      "line": "L12",
+      "word": "Ten",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L12",
+      "word": "ruin.",
+      "offset": 0.1
+     }
+    },
+    {
+     "type": "stamp",
+     "text": "EVERYONE'S RIGHT",
+     "sub": "3 SIDES \u00b7 4 REASONS \u00b7 1 RUIN",
+     "color": "#c8f04a",
+     "rotate": -4,
+     "y": 880,
+     "size": 76,
+     "start": {
+      "line": "L12",
+      "word": "ruin.",
+      "offset": 0.15
+     },
+     "end": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.1
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "runPress",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "worldRipple",
+     "at": {
+      "line": "L12",
+      "word": "Run"
+     },
+     "gain": -16
+    },
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.3
+     },
+     "to": {
+      "line": "L12",
+      "word": "ruin."
+     },
+     "gain": -22
+    },
+    {
+     "sound": "frameDrum",
+     "at": {
+      "line": "L12",
+      "word": "Three"
+     },
+     "gain": -18
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L12",
+      "word": "one"
+     },
+     "gain": -19
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L12",
+      "word": "ruin.",
+      "offset": 0.15
+     },
+     "gain": -13
+    }
+   ]
+  },
+  {
+   "id": "twist",
+   "scene": "world",
+   "purpose": "The locked rule: nobody wants it, and it starts by mistake.",
+   "visual": "Dusk, close on the knot: RULE 5? NOBODY WANTS IT. On 'sure' every thread pulls taut and hums, and each side's column in the war room adds 'they'll blink' (THEY'LL BLINK); on 'wrong' the knot catches, blazing lime with a ring of light on the ground (ALL WRONG; THE FLASHPOINT \u00b7 ONE WRONG GUESS), every 'they'll blink' is struck through and each verdict reads GUESSED WRONG. Nobody moves; nothing is shown fighting.",
+   "camera": "Cut close on the knot, then pulling back further and further as it catches.",
+   "layers": {
+    "foreground": "kinetic, tag, war room",
+    "midground": "the knot, the taut threads",
+    "background": "the armies, the camps"
+   },
+   "lighting": "Dusk.",
+   "onScreenText": "RULE 5? NOBODY WANTS IT \u00b7 THEY'LL BLINK \u00b7 ALL WRONG \u00b7 THE FLASHPOINT",
+   "transition": "Day on 'So'.",
+   "music": "Twist (a held A7\u266d9), then council with the clock louder.",
+   "graphics": [
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "RULE 5?",
+       "at": {
+        "line": "L13",
+        "word": "Rule"
+       },
+       "color": "ember"
+      },
+      {
+       "text": "NOBODY WANTS IT",
+       "at": {
+        "line": "L13",
+        "word": "Nobody"
+       },
+       "color": "parchment",
+       "size": 60
+      }
+     ],
+     "size": 150,
+     "y": 560,
+     "start": {
+      "line": "L13",
+      "word": "Rule",
+      "offset": -0.02
+     },
+     "end": {
+      "line": "L14",
+      "word": "Each",
+      "offset": -0.1
+     }
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "THEY'LL BLINK",
+       "at": {
+        "line": "L14",
+        "word": "blink."
+       },
+       "color": "parchment",
+       "size": 72
+      },
+      {
+       "text": "ALL WRONG",
+       "at": {
+        "line": "L14",
+        "word": "wrong."
+       },
+       "color": "#c8f04a",
+       "size": 96
+      }
+     ],
+     "size": 80,
+     "y": 600,
+     "start": {
+      "line": "L14",
+      "word": "sure",
+      "offset": -0.05
+     },
+     "end": {
+      "line": "L15",
+      "word": "So",
+      "offset": -0.15
+     }
+    },
+    {
+     "type": "skyTags",
+     "start": {
+      "line": "L14",
+      "word": "wrong.",
+      "offset": 0.25
+     },
+     "end": {
+      "line": "L15",
+      "word": "So",
+      "offset": -0.15
+     },
+     "tags": [
+      {
+       "kind": "ground",
+       "text": "ONE WRONG GUESS",
+       "head": "THE FLASHPOINT",
+       "at": {
+        "line": "L14",
+        "word": "wrong.",
+        "offset": 0.25
+       },
+       "end": {
+        "line": "L15",
+        "word": "So",
+        "offset": -0.15
+       },
+       "pos": [
+        5.4,
+        14.6,
+        5.1
+       ],
+       "lift": -200,
+       "dx": 0,
+       "color": "#c8f04a",
+       "headColor": "#c8f04a",
+       "band": [
+        760,
+        1120
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L13",
+      "word": "Rule"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "threadPull",
+     "at": {
+      "line": "L14",
+      "word": "sure",
+      "offset": -0.05
+     },
+     "gain": -11
+    },
+    {
+     "sound": "spark",
+     "at": {
+      "line": "L14",
+      "word": "wrong.",
+      "offset": -0.05
+     },
+     "gain": -9
+    },
+    {
+     "sound": "stamp",
+     "at": {
+      "line": "L14",
+      "word": "wrong.",
+      "offset": 0.1
+     },
+     "gain": -20
+    }
+   ]
+  },
+  {
+   "id": "role",
+   "scene": "world",
+   "purpose": "Unlock rule 5: a wrong guess.",
+   "visual": "Day returns, the threads slacken and the knot settles; the checklist opens and row 5 unlocks on 'cost': A GUESS \u00b7 they'll back down \u00b7 5/5. The follow chip (+ FOLLOW \u00b7 PART 36/50) after 'cost'.",
+   "camera": "The web from the south, pulling back.",
+   "layers": {
+    "foreground": "open checklist, follow chip, war room",
+    "midground": "the web",
+    "background": "the Isle"
+   },
+   "lighting": "Day.",
+   "onScreenText": "5 A GUESS \u00b7 they'll back down \u00b7 5/5",
+   "transition": "The card goes full.",
+   "music": "Anthem from 'So'; a D-major hit on 'cost'.",
+   "graphics": [
+    {
+     "type": "followChip",
+     "start": {
+      "line": "L15",
+      "word": "cost.",
+      "offset": 0.2
+     },
+     "end": {
+      "line": "L16",
+      "word": "villain.",
+      "offset": 0.3
+     },
+     "text": "FOLLOW",
+     "sub": "PART 36/50"
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L15",
+      "word": "So",
+      "offset": -0.15
+     },
+     "gain": -17
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L15",
+      "word": "cost.",
+      "offset": -0.1
+     },
+     "gain": -10
+    }
+   ]
+  },
+  {
+   "id": "lesson",
+   "scene": "world",
+   "purpose": "The takeaway.",
+   "visual": "The full card (BEFORE YOU START A WAR \u00b7 RUIN WAR, all five rows ticked) over the whole Isle in golden light, with 'Nobody thinks they're the villain.' in serif italic from the end of the first sentence.",
+   "camera": "Wide: one slow pull-back.",
+   "layers": {
+    "foreground": "full card, follow chip",
+    "midground": "the Isle",
+    "background": "the void"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "BEFORE YOU START A WAR \u00b7 RUIN WAR \u00b7 Nobody thinks they're the villain.",
+   "transition": "Block wipe to the end card.",
+   "music": "Anthem; the World Engine chime as the card lands.",
+   "graphics": [
+    {
+     "type": "fieldCard",
+     "mode": "full",
+     "y": 452,
+     "rows": [
+      {
+       "n": 1,
+       "label": "GAIN",
+       "text": "a harbour to take",
+       "at": {
+        "line": "L16",
+        "word": "Show",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 2,
+       "label": "FEAR",
+       "text": "can't let them win",
+       "at": {
+        "line": "L16",
+        "word": "Show",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 3,
+       "label": "A CLAIM",
+       "text": "his by birth",
+       "at": {
+        "line": "L16",
+        "word": "Show",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 4,
+       "label": "ALLIES",
+       "text": "a promise to keep",
+       "at": {
+        "line": "L16",
+        "word": "Show",
+        "offset": -0.3
+       }
+      },
+      {
+       "n": 5,
+       "label": "A GUESS",
+       "text": "they'll back down",
+       "at": {
+        "line": "L16",
+        "word": "Show",
+        "offset": -0.3
+       },
+       "locked": true,
+       "unlockAt": {
+        "line": "L16",
+        "word": "Show",
+        "offset": -0.3
+       }
+      }
+     ],
+     "start": {
+      "line": "L16",
+      "word": "Show",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "kicker": "BEFORE YOU START A WAR",
+     "title": "RUIN WAR",
+     "sprite": "ep36/war_sprite.png",
+     "spriteW": 64,
+     "spriteH": 116,
+     "subtitle": "Nobody thinks they're the villain.",
+     "subtitleAt": {
+      "line": "L16",
+      "word": "wants."
+     }
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L16",
+      "word": "Show",
+      "offset": -0.8
+     },
+     "gain": -15
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L16",
+      "word": "Show",
+      "offset": -0.3
+     },
+     "gain": -10
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L16",
+      "word": "Show",
+      "offset": -0.3
+     },
+     "gain": -18
+    }
+   ],
+   "captions": false
+  },
+  {
+   "id": "cta",
+   "scene": "world",
+   "purpose": "Comment CTA: what would finally push your kingdom into war?",
+   "visual": "End card: logo, PART 36 / 50, the title, and a COMMENT panel where A STOLEN HEIR and THE LAST WELL pop as starters, then 'One reason. Name it.'",
+   "camera": "Cut (under the block wipe) close on the knot, pulling back onto the hook pose.",
+   "layers": {
+    "foreground": "end card",
+    "midground": "the web",
+    "background": "the Isle"
+   },
+   "lighting": "Golden hour (the loop frame).",
+   "onScreenText": "COMMENT \u00b7 A STOLEN HEIR / THE LAST WELL \u00b7 One reason. Name it.",
+   "transition": "The card lifts on 'Part'.",
+   "music": "Outro.",
+   "graphics": [
+    {
+     "type": "blockWipe",
+     "at": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "dur": 0.34
+    },
+    {
+     "type": "endCardS2",
+     "start": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "end": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.12
+     },
+     "fadeOut": 0.3,
+     "kicker": "PART 36 / 50",
+     "title": "Wars Need More Than Two Armies",
+     "cta": "COMMENT",
+     "icon": "bubble",
+     "with": "One reason. Name it.",
+     "withAt": {
+      "line": "L17",
+      "word": "war?",
+      "offset": -0.05
+     },
+     "choiceSize": 30,
+     "choices": [
+      {
+       "text": "A STOLEN HEIR",
+       "color": "#d4b23f",
+       "at": {
+        "line": "L17",
+        "word": "push"
+       }
+      },
+      {
+       "text": "THE LAST WELL",
+       "color": "#4f7fbf",
+       "at": {
+        "line": "L17",
+        "word": "kingdom"
+       }
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "restore",
+     "at": {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     "gain": -21
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L17",
+      "word": "push"
+     },
+     "gain": -17
+    },
+    {
+     "sound": "check",
+     "at": {
+      "line": "L17",
+      "word": "kingdom"
+     },
+     "gain": -17
+    }
+   ],
+   "captions": false,
+   "hideLogoBug": true,
+   "hideLogoBugUntil": {
+    "line": "L18",
+    "word": "Part"
+   }
+  },
+  {
+   "id": "next",
+   "scene": "world",
+   "purpose": "Say the part number, ask for the follow with a reason (part 37), open the next loop.",
+   "visual": "The hook frame; PART 36/50; FOLLOW FOR PART 37, pressed on 'Follow'; NEXT RUN \u00b7 37 decodes from a locked host of banners to THE BIG ARMY \u00b7 TEN TIMES BIGGER. LOSING. In the world, on 'army', one grey standard far bigger than the three rises at the Isle's south-east tip and the horn calls; the Queen looks up; it sinks before the hook title returns.",
+   "camera": "The hook frame.",
+   "layers": {
+    "foreground": "progress bar, follow button, next-run card",
+    "midground": "the web",
+    "background": "one giant standard rising"
+   },
+   "lighting": "Golden hour.",
+   "onScreenText": "PART 36/50 \u00b7 FOLLOW FOR PART 37 \u00b7 NEXT RUN: THE BIG ARMY \u00b7 TEN TIMES BIGGER. LOSING.",
+   "transition": "Loop to frame 0.",
+   "music": "Tease over a held A; a horn call on 'army'; the engine chime on 'Follow'.",
+   "graphics": [
+    {
+     "type": "seasonBar",
+     "y": 350,
+     "part": 36,
+     "of": 50,
+     "start": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.1
+     },
+     "fillAt": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "fillDur": 0.6,
+     "ofAt": {
+      "line": "L18",
+      "word": "50."
+     },
+     "end": {
+      "line": "L18",
+      "word": "lose.",
+      "offset": 0.6
+     }
+    },
+    {
+     "type": "followButton",
+     "y": 556,
+     "start": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.6
+     },
+     "pressAt": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "end": {
+      "line": "L18",
+      "word": "lose.",
+      "offset": 0.6
+     },
+     "text": "FOLLOW",
+     "doneText": "FOLLOWING",
+     "sub": "FOR PART 37"
+    },
+    {
+     "type": "nextRun",
+     "y": 772,
+     "start": {
+      "line": "L18",
+      "word": "37:",
+      "offset": -0.1
+     },
+     "revealAt": {
+      "line": "L18",
+      "word": "armies"
+     },
+     "end": {
+      "line": "L18",
+      "word": "lose.",
+      "offset": 0.6
+     },
+     "kicker": "NEXT RUN \u00b7 37",
+     "title": "BIG ARMY",
+     "sub": "TEN TIMES BIGGER. LOSING.",
+     "sprite": "host",
+     "spritePx": 6
+    },
+    {
+     "type": "kinetic",
+     "parts": [
+      {
+       "text": "A MILLION SOLDIERS",
+       "color": "parchment",
+       "size": 54,
+       "pulseAt": {
+        "line": "L1",
+        "word": "million"
+       }
+      },
+      {
+       "text": "FOR ONE ANGRY KING?",
+       "color": "#c8f04a",
+       "size": 50,
+       "pulseAt": {
+        "line": "L1",
+        "word": "angry"
+       }
+      }
+     ],
+     "y": 440,
+     "size": 60,
+     "start": {
+      "line": "L18",
+      "word": "lose.",
+      "offset": 0.92
+     },
+     "fadeIn": 0.35,
+     "preShow": true
+    }
+   ],
+   "sfx": [
+    {
+     "sound": "simTicks",
+     "from": {
+      "line": "L18",
+      "word": "Part",
+      "offset": -0.05
+     },
+     "to": {
+      "line": "L18",
+      "word": "Part",
+      "offset": 0.55
+     },
+     "gain": -22
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": -0.5
+     },
+     "gain": -15
+    },
+    {
+     "sound": "followPress",
+     "at": {
+      "line": "L18",
+      "word": "Follow"
+     },
+     "gain": -11
+    },
+    {
+     "sound": "chime",
+     "at": {
+      "line": "L18",
+      "word": "Follow",
+      "offset": 0.02
+     },
+     "gain": -11
+    },
+    {
+     "sound": "cardSlide",
+     "at": {
+      "line": "L18",
+      "word": "37:",
+      "offset": -0.1
+     },
+     "gain": -18
+    },
+    {
+     "sound": "unlock",
+     "at": {
+      "line": "L18",
+      "word": "armies"
+     },
+     "gain": -15
+    },
+    {
+     "sound": "stoneRise",
+     "at": {
+      "line": "L18",
+      "word": "armies",
+      "offset": -0.1
+     },
+     "gain": -17
+    },
+    {
+     "sound": "engineWind",
+     "at": {
+      "end": true,
+      "offset": -0.54
+     },
+     "gain": -14
+    }
+   ],
+   "captions": false
+  }
+ ],
+ "world": {
+  "clock": {
+   "label": "YEAR",
+   "keys": [
+    [
+     {
+      "shot": "hook"
+     },
+     10
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     10
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L4",
+      "word": "run.",
+      "offset": 0.3
+     },
+     0
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "marches.",
+      "offset": 0.2
+     },
+     10,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "war.",
+      "offset": 0.58
+     },
+     10
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "war.",
+      "offset": 0.6
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Run",
+      "offset": 0.25
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "ruin.",
+      "offset": 0.1
+     },
+     10,
+     "linear"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     10
+    ]
+   ]
+  },
+  "speed": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "run."
+    },
+    1
+   ],
+   [
+    {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.3
+    },
+    5
+   ],
+   [
+    {
+     "line": "L5",
+     "word": "marches.",
+     "offset": 0.2
+    },
+    5
+   ],
+   [
+    {
+     "line": "L6",
+     "word": "One"
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.25
+    },
+    1
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "Run",
+     "offset": 0.5
+    },
+    5
+   ],
+   [
+    {
+     "line": "L12",
+     "word": "ruin.",
+     "offset": 0.1
+    },
+    5
+   ],
+   [
+    {
+     "line": "L13",
+     "word": "Rule"
+    },
+    1
+   ]
+  ],
+  "camera": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "az": 170,
+    "el": 34,
+    "dist": 53.877,
+    "target": [
+     5.2,
+     7.2,
+     15.0
+    ],
+    "fov": 20,
+    "dur": 1.2,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "shot": "hook",
+     "offset": 0.02
+    },
+    "az": 170,
+    "el": 34,
+    "dist": 58.187,
+    "target": [
+     5.2,
+     7.2,
+     15.0
+    ],
+    "fov": 20,
+    "dur": 3.791,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L2",
+     "word": "Meet"
+    },
+    "az": 170,
+    "el": 34,
+    "dist": 65.17,
+    "target": [
+     5.2,
+     7.2,
+     15.0
+    ],
+    "fov": 20,
+    "dur": 2.4,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "az": -68.19,
+    "el": 30,
+    "dist": 36.863,
+    "target": [
+     3.222,
+     6.0,
+     12.288
+    ],
+    "fov": 20,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.13
+    },
+    "az": -68.19,
+    "el": 30,
+    "dist": 81.099,
+    "target": [
+     3.222,
+     6.0,
+     12.288
+    ],
+    "fov": 20,
+    "dur": 3.0,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.05
+    },
+    "az": 170,
+    "el": 32,
+    "dist": 137.154,
+    "target": [
+     4.0,
+     2.0,
+     6.0
+    ],
+    "fov": 22,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L4",
+     "word": "run.",
+     "offset": 0.07
+    },
+    "az": 170,
+    "el": 32,
+    "dist": 159.481,
+    "target": [
+     4.0,
+     2.0,
+     6.0
+    ],
+    "fov": 22,
+    "dur": 3.4,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "One",
+     "offset": -0.2
+    },
+    "az": 170,
+    "el": 32,
+    "dist": 169.05,
+    "target": [
+     4.0,
+     2.0,
+     6.0
+    ],
+    "fov": 22,
+    "dur": 2.2,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "war.",
+     "offset": 0.6
+    },
+    "az": 170,
+    "el": 32,
+    "dist": 133.964,
+    "target": [
+     4.0,
+     2.0,
+     6.0
+    ],
+    "fov": 22,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "war.",
+     "offset": 0.62
+    },
+    "az": 170,
+    "el": 32,
+    "dist": 153.102,
+    "target": [
+     4.0,
+     2.0,
+     6.0
+    ],
+    "fov": 22,
+    "dur": 3.0,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.1
+    },
+    "az": -48.43,
+    "el": 34,
+    "dist": 34.028,
+    "target": [
+     1.444,
+     6.0,
+     13.281
+    ],
+    "fov": 20,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.08
+    },
+    "az": -48.43,
+    "el": 34,
+    "dist": 78.264,
+    "target": [
+     1.444,
+     6.0,
+     13.281
+    ],
+    "fov": 20,
+    "dur": 2.8,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.1
+    },
+    "az": 74.2,
+    "el": 34,
+    "dist": 34.028,
+    "target": [
+     9.549,
+     6.0,
+     12.281
+    ],
+    "fov": 20,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.08
+    },
+    "az": 74.2,
+    "el": 34,
+    "dist": 78.264,
+    "target": [
+     9.549,
+     6.0,
+     12.281
+    ],
+    "fov": 20,
+    "dur": 2.4,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.1
+    },
+    "az": 51.03,
+    "el": 34,
+    "dist": 34.028,
+    "target": [
+     5.089,
+     6.0,
+     16.569
+    ],
+    "fov": 20,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.08
+    },
+    "az": 51.03,
+    "el": 34,
+    "dist": 78.264,
+    "target": [
+     5.089,
+     6.0,
+     16.569
+    ],
+    "fov": 20,
+    "dur": 2.8,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.1
+    },
+    "az": 350,
+    "el": 32,
+    "dist": 34.028,
+    "target": [
+     8.142,
+     6.0,
+     14.35
+    ],
+    "fov": 20,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.08
+    },
+    "az": 350,
+    "el": 32,
+    "dist": 74.861,
+    "target": [
+     8.142,
+     6.0,
+     14.35
+    ],
+    "fov": 20,
+    "dur": 2.6,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L12",
+     "word": "Run",
+     "offset": -0.05
+    },
+    "az": 170,
+    "el": 32,
+    "dist": 133.964,
+    "target": [
+     4.0,
+     2.0,
+     6.0
+    ],
+    "fov": 22,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L12",
+     "word": "Run",
+     "offset": -0.03
+    },
+    "az": 170,
+    "el": 32,
+    "dist": 159.481,
+    "target": [
+     4.0,
+     2.0,
+     6.0
+    ],
+    "fov": 22,
+    "dur": 3.6,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "az": 170,
+    "el": 22,
+    "dist": 28.356,
+    "target": [
+     5.4,
+     8.0,
+     14.6
+    ],
+    "fov": 20,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.08
+    },
+    "az": 170,
+    "el": 22,
+    "dist": 42.535,
+    "target": [
+     5.4,
+     8.0,
+     14.6
+    ],
+    "fov": 20,
+    "dur": 2.4,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L14",
+     "word": "sure",
+     "offset": -0.05
+    },
+    "az": 170,
+    "el": 22,
+    "dist": 53.877,
+    "target": [
+     5.4,
+     8.0,
+     14.6
+    ],
+    "fov": 20,
+    "dur": 1.6,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L14",
+     "word": "wrong.",
+     "offset": -0.05
+    },
+    "az": 170,
+    "el": 22,
+    "dist": 85.069,
+    "target": [
+     5.4,
+     8.0,
+     14.6
+    ],
+    "fov": 20,
+    "dur": 1.8,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L15",
+     "word": "So",
+     "offset": -0.15
+    },
+    "az": 170,
+    "el": 34,
+    "dist": 48.489,
+    "target": [
+     5.2,
+     7.2,
+     15.0
+    ],
+    "fov": 20,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L15",
+     "word": "So",
+     "offset": -0.13
+    },
+    "az": 170,
+    "el": 34,
+    "dist": 59.265,
+    "target": [
+     5.2,
+     7.2,
+     15.0
+    ],
+    "fov": 20,
+    "dur": 2.0,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Show",
+     "offset": -0.25
+    },
+    "az": 170,
+    "el": 32,
+    "dist": 137.154,
+    "target": [
+     4.0,
+     2.0,
+     6.0
+    ],
+    "fov": 22,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Show",
+     "offset": -0.23
+    },
+    "az": 170,
+    "el": 32,
+    "dist": 159.481,
+    "target": [
+     4.0,
+     2.0,
+     6.0
+    ],
+    "fov": 22,
+    "dur": 3.2,
+    "drift": 0.0
+   },
+   {
+    "at": {
+     "line": "L17",
+     "word": "What",
+     "offset": -0.3
+    },
+    "az": 170,
+    "el": 34,
+    "dist": 47.412,
+    "target": [
+     5.2,
+     7.2,
+     15.0
+    ],
+    "fov": 20,
+    "dur": 1.2,
+    "drift": 0.0,
+    "cut": true
+   },
+   {
+    "at": {
+     "line": "L17",
+     "word": "What",
+     "offset": -0.28
+    },
+    "az": 170,
+    "el": 34,
+    "dist": 53.877,
+    "target": [
+     5.2,
+     7.2,
+     15.0
+    ],
+    "fov": 20,
+    "dur": 8.695,
+    "drift": 0.0
+   }
+  ],
+  "light": [
+   {
+    "at": {
+     "shot": "hook"
+    },
+    "mood": "golden"
+   },
+   {
+    "at": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "mood": "day",
+    "dur": 0.4
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "One",
+     "offset": -0.2
+    },
+    "mood": "gloom",
+    "dur": 0.6
+   },
+   {
+    "at": {
+     "line": "L6",
+     "word": "war.",
+     "offset": 0.6
+    },
+    "mood": "day",
+    "dur": 0.3
+   },
+   {
+    "at": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.1
+    },
+    "mood": "dusk",
+    "dur": 0.6
+   },
+   {
+    "at": {
+     "line": "L15",
+     "word": "So",
+     "offset": -0.15
+    },
+    "mood": "day",
+    "dur": 0.5
+   },
+   {
+    "at": {
+     "line": "L16",
+     "word": "Show",
+     "offset": -0.3
+    },
+    "mood": "golden",
+    "dur": 1.4
+   }
+  ],
+  "herd": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     24
+    ]
+   ],
+   "max": 30,
+   "base": 24,
+   "centers": [
+    [
+     -9.5,
+     -1.0
+    ],
+    [
+     -8.4,
+     1.2
+    ]
+   ],
+   "skin": "sheep"
+  },
+  "pred": [
+   [
+    {
+     "shot": "hook"
+    },
+    1
+   ]
+  ],
+  "predators": [
+   {
+    "id": "g1",
+    "scale": 1.3,
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 13.0,
+      "z": -10.5,
+      "state": "idle",
+      "face": 160
+     }
+    ],
+    "adorn": true
+   }
+  ],
+  "series": {
+   "armies": [
+    [
+     {
+      "shot": "hook"
+     },
+     3
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     3
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     2,
+     "step"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Nobody",
+      "offset": -0.1
+     },
+     2
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Nobody",
+      "offset": 0.4
+     },
+     1,
+     "linear"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Nobody",
+      "offset": 0.9
+     },
+     0,
+     "linear"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "war.",
+      "offset": 0.58
+     },
+     0
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "war.",
+      "offset": 0.6
+     },
+     3,
+     "step"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     3
+    ]
+   ],
+   "reasons": [
+    [
+     {
+      "shot": "hook"
+     },
+     4
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     4
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "angry",
+      "offset": -0.12
+     },
+     0
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "angry",
+      "offset": -0.1
+     },
+     1,
+     "step"
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Nobody",
+      "offset": 0.68
+     },
+     1
+    ],
+    [
+     {
+      "line": "L5",
+      "word": "Nobody",
+      "offset": 0.7
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L6",
+      "word": "war.",
+      "offset": 0.6
+     },
+     0
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "harbour.",
+      "offset": -0.22
+     },
+     0
+    ],
+    [
+     {
+      "line": "L8",
+      "word": "harbour.",
+      "offset": -0.2
+     },
+     1,
+     "step"
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "Red",
+      "offset": -0.12
+     },
+     1
+    ],
+    [
+     {
+      "line": "L9",
+      "word": "Red",
+      "offset": -0.1
+     },
+     2,
+     "step"
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "prince",
+      "offset": -0.12
+     },
+     2
+    ],
+    [
+     {
+      "line": "L10",
+      "word": "prince",
+      "offset": -0.1
+     },
+     3,
+     "step"
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "swore",
+      "offset": -0.12
+     },
+     3
+    ],
+    [
+     {
+      "line": "L11",
+      "word": "swore",
+      "offset": -0.1
+     },
+     4,
+     "step"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     4
+    ]
+   ],
+   "tradeH": [
+    [
+     {
+      "shot": "hook"
+     },
+     4
+    ]
+   ]
+  },
+  "settlement": {
+   "buildings": [
+    {
+     "kind": "hall",
+     "a": [
+      -3.6,
+      -4.6
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -1.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -4.8,
+      -2.4
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -1.0,
+      -5.8
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -5.6,
+      -0.9
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      -3.4,
+      -0.7
+     ],
+     "face": 0
+    },
+    {
+     "kind": "house",
+     "a": [
+      0.4,
+      -4.2
+     ],
+     "face": 0
+    }
+   ],
+   "roof": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "pens": [
+    {
+     "a": [
+      -6.4,
+      -1.4
+     ],
+     "r": 1.6
+    }
+   ],
+   "cover": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "roads": {
+    "b": [
+     [
+      -3.4,
+      -1.6
+     ],
+     [
+      -5.6,
+      2.0
+     ],
+     [
+      -8.2,
+      6.0
+     ],
+     [
+      -11.0,
+      10.0
+     ],
+     [
+      -13.0,
+      14.0
+     ],
+     [
+      -14.6,
+      17.0
+     ]
+    ]
+   },
+   "route": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ],
+   "tradeKey": "tradeH",
+   "lanterns": [
+    [
+     {
+      "shot": "hook"
+     },
+     0
+    ]
+   ],
+   "tower": {
+    "x": -6.4,
+    "z": -5.6,
+    "h": 6.0,
+    "keys": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "rings": [
+     {
+      "line": "L18",
+      "word": "armies"
+     }
+    ]
+   }
+  },
+  "people": {
+   "count": [
+    [
+     {
+      "shot": "hook"
+     },
+     36
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     36
+    ]
+   ],
+   "centers": [
+    [
+     1.2665765749313362,
+     13.222192191643778
+    ],
+    [
+     9.930346946443112,
+     12.06833552992885
+    ],
+    [
+     5.174310176335227,
+     16.029368883210232
+    ]
+   ],
+   "spread": 1.3,
+   "life": 70,
+   "tints": [
+    "#c0573c",
+    "#4f7fbf",
+    "#d4b23f"
+   ],
+   "sideShow": [
+    [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Nobody",
+       "offset": -0.1
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Nobody",
+       "offset": 0.7
+      },
+      0,
+      "linear"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "war.",
+       "offset": 0.58
+      },
+      0
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "war.",
+       "offset": 0.6
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Nobody",
+       "offset": 0.25
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Nobody",
+       "offset": 1.05
+      },
+      0,
+      "linear"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "war.",
+       "offset": 0.58
+      },
+      0
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "war.",
+       "offset": 0.6
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "war.",
+       "offset": 0.58
+      },
+      0
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "war.",
+       "offset": 0.6
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   ],
+   "advance": {
+    "at": [
+     5.4,
+     14.6
+    ],
+    "f": 0.3,
+    "keys": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "Three",
+       "offset": -0.3
+      },
+      0
+     ],
+     [
+      {
+       "line": "L12",
+       "word": "ruin.",
+       "offset": 0.2
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   },
+   "watch": [
+    5.4,
+    14.6
+   ],
+   "watchOn": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.17
+     },
+     1
+    ],
+    [
+     {
+      "line": "L3",
+      "word": "lazy",
+      "offset": -0.15
+     },
+     0,
+     "step"
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Three",
+      "offset": -0.3
+     },
+     0
+    ],
+    [
+     {
+      "line": "L12",
+      "word": "Three",
+      "offset": -0.28
+     },
+     1,
+     "step"
+    ],
+    [
+     {
+      "line": "L17",
+      "word": "What",
+      "offset": -0.3
+     },
+     1
+    ]
+   ],
+   "ruler": {
+    "keys": [
+     {
+      "at": {
+       "shot": "hook"
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "idle",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "armies"
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "alert",
+      "face": 0
+     },
+     {
+      "at": {
+       "line": "L18",
+       "word": "lose.",
+       "offset": 0.6
+      },
+      "x": 9.1,
+      "z": -2.2,
+      "state": "idle",
+      "face": 0
+     }
+    ],
+    "dais": {
+     "x": 9.4,
+     "z": -2.2,
+     "face": 0
+    }
+   }
+  },
+  "fields": {
+   "plots": [
+    {
+     "x": 3.0,
+     "z": -11.0,
+     "w": 4.0,
+     "d": 3.4
+    }
+   ],
+   "ripe": [
+    [
+     {
+      "shot": "hook"
+     },
+     1
+    ]
+   ]
+  },
+  "props": [
+   {
+    "kind": "cairn",
+    "x": 8.95,
+    "z": -5.38,
+    "stones": [
+     [
+      {
+       "shot": "hook"
+      },
+      3
+     ]
+    ]
+   },
+   {
+    "kind": "offerings",
+    "x": 8.95,
+    "z": -5.38,
+    "r": 1.7,
+    "lights": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "lanterns",
+    "x": 6.5,
+    "z": 4.5,
+    "r": 3.8,
+    "n": 9,
+    "lights": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "sheaves",
+    "x": 3.0,
+    "z": -11.0,
+    "r": 2.7,
+    "n": 8,
+    "sheaves": [
+     [
+      {
+       "shot": "hook"
+      },
+      8
+     ]
+    ]
+   },
+   {
+    "kind": "statue",
+    "x": 18.0,
+    "z": 1.5,
+    "face": -90,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "gild": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "tar": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ],
+    "grow": [
+     [
+      {
+       "shot": "hook"
+      },
+      1.35
+     ]
+    ],
+    "torch": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "kind": "border",
+    "x": 18.0,
+    "z": -7.0,
+    "to": [
+     18.0,
+     8.3
+    ],
+    "skip": [
+     0.46,
+     0.65
+    ],
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "relic",
+    "x": 20.3,
+    "z": 5.4,
+    "face": -90,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "bones",
+    "x": 6.5,
+    "z": 12.2,
+    "face": 8.2,
+    "r": 1.7,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "ruin",
+    "x": 12.8,
+    "z": 13.4,
+    "face": 20,
+    "r": 2.2,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "wall",
+    "x": 0.6,
+    "z": 14.6,
+    "to": [
+     10.2,
+     14.6
+    ],
+    "profile": [
+     3,
+     5,
+     6,
+     7,
+     6,
+     4,
+     6,
+     7,
+     5,
+     2,
+     4,
+     3
+    ],
+    "fresh": [
+     6,
+     5
+    ],
+    "tonight": [
+     7,
+     6
+    ],
+    "log": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ]
+    ],
+    "glow": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ]
+    ],
+    "place": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "gear",
+    "x": 1.5,
+    "z": 16.0,
+    "face": 0,
+    "r": 2.2,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "kitchen",
+    "x": 3.9,
+    "z": 16.6,
+    "face": 0,
+    "r": 2.2,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "wells",
+    "x": 6.5,
+    "z": 15.8,
+    "face": 0,
+    "r": 2.2,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "find",
+    "find": "hands",
+    "x": 8.999999999999998,
+    "z": 15.07,
+    "face": 0,
+    "r": 2.2,
+    "y": 0.8,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "camp",
+    "x": -1.2,
+    "z": 12.4,
+    "face": 0,
+    "color": "#c0573c",
+    "n": 3,
+    "r": 2.2,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Nobody",
+       "offset": -0.1
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Nobody",
+       "offset": 0.5
+      },
+      0,
+      "linear"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "war.",
+       "offset": 0.58
+      },
+      0
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "war.",
+       "offset": 0.6
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "camp",
+    "x": 12.2,
+    "z": 10.8,
+    "face": 40,
+    "color": "#4f7fbf",
+    "n": 3,
+    "r": 2.2,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Nobody",
+       "offset": 0.25
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Nobody",
+       "offset": 0.85
+      },
+      0,
+      "linear"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "war.",
+       "offset": 0.58
+      },
+      0
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "war.",
+       "offset": 0.6
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "camp",
+    "x": 4.8,
+    "z": 18.4,
+    "face": 200,
+    "color": "#d4b23f",
+    "n": 3,
+    "r": 2.2,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "war.",
+       "offset": 0.58
+      },
+      0
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "war.",
+       "offset": 0.6
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "standard",
+    "x": -1.5794733192202055,
+    "z": 12.273508893593265,
+    "face": 90,
+    "color": "#c0573c",
+    "size": 0.62,
+    "loop": true,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Nobody",
+       "offset": -0.1
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Nobody",
+       "offset": 0.5
+      },
+      0,
+      "linear"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "war.",
+       "offset": 0.58
+      },
+      0
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "war.",
+       "offset": 0.6
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "standard",
+    "x": 12.549177392854904,
+    "z": 10.604871456934024,
+    "face": 90,
+    "color": "#4f7fbf",
+    "size": 0.62,
+    "loop": true,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Nobody",
+       "offset": 0.25
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Nobody",
+       "offset": 0.85
+      },
+      0,
+      "linear"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "war.",
+       "offset": 0.58
+      },
+      0
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "war.",
+       "offset": 0.6
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "standard",
+    "x": 4.737614970610795,
+    "z": 18.795105186131625,
+    "face": 90,
+    "color": "#d4b23f",
+    "size": 0.62,
+    "loop": true,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "war.",
+       "offset": 0.58
+      },
+      0
+     ],
+     [
+      {
+       "line": "L6",
+       "word": "war.",
+       "offset": 0.6
+      },
+      1,
+      "step"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ]
+   },
+   {
+    "kind": "knot",
+    "x": 5.4,
+    "z": 14.6,
+    "y": 4.6,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "harbour.",
+       "offset": -0.5
+      },
+      0
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "harbour.",
+       "offset": 0.0
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "flare": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L13",
+       "word": "Rule",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L13",
+       "word": "Rule",
+       "offset": 0.5
+      },
+      0.25,
+      "linear"
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "wrong.",
+       "offset": -0.05
+      },
+      0.25
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "wrong.",
+       "offset": 0.25
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L15",
+       "word": "So",
+       "offset": -0.15
+      },
+      1
+     ],
+     [
+      {
+       "line": "L15",
+       "word": "So",
+       "offset": 0.45
+      },
+      0.0,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ]
+   },
+   {
+    "kind": "thread",
+    "x": -0.2513167019494862,
+    "z": 12.716227766016837,
+    "to": [
+     5.4,
+     14.6
+    ],
+    "y0": 2.2,
+    "y1": 4.6,
+    "color": "#c0573c",
+    "draw": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "harbour.",
+       "offset": -0.2
+      },
+      0
+     ],
+     [
+      {
+       "line": "L8",
+       "word": "harbour.",
+       "offset": 0.5
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "taut": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "sure",
+       "offset": -0.05
+      },
+      0
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "sure",
+       "offset": 0.85
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L15",
+       "word": "So",
+       "offset": -0.15
+      },
+      1
+     ],
+     [
+      {
+       "line": "L15",
+       "word": "So",
+       "offset": 0.65
+      },
+      0,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ],
+    "sag": 1.3
+   },
+   {
+    "kind": "thread",
+    "x": 11.327056517862735,
+    "z": 11.287821357664942,
+    "to": [
+     5.4,
+     14.6
+    ],
+    "y0": 2.2,
+    "y1": 4.6,
+    "color": "#4f7fbf",
+    "draw": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L9",
+       "word": "Red",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L9",
+       "word": "Red",
+       "offset": 0.6
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "taut": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "sure",
+       "offset": -0.05
+      },
+      0
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "sure",
+       "offset": 0.85
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L15",
+       "word": "So",
+       "offset": -0.15
+      },
+      1
+     ],
+     [
+      {
+       "line": "L15",
+       "word": "So",
+       "offset": 0.65
+      },
+      0,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ],
+    "sag": 1.3
+   },
+   {
+    "kind": "thread",
+    "x": 4.955962573473011,
+    "z": 17.41223703467093,
+    "to": [
+     5.4,
+     14.6
+    ],
+    "y0": 2.2,
+    "y1": 4.6,
+    "color": "#d4b23f",
+    "draw": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "prince",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L10",
+       "word": "prince",
+       "offset": 0.6
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "taut": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "sure",
+       "offset": -0.05
+      },
+      0
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "sure",
+       "offset": 0.85
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L15",
+       "word": "So",
+       "offset": -0.15
+      },
+      1
+     ],
+     [
+      {
+       "line": "L15",
+       "word": "So",
+       "offset": 0.65
+      },
+      0,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ],
+    "sag": 1.3
+   },
+   {
+    "kind": "thread",
+    "x": 11.327056517862735,
+    "z": 11.287821357664942,
+    "to": [
+     4.955962573473011,
+     17.41223703467093
+    ],
+    "y0": 2.2,
+    "y1": 2.2,
+    "color": "#4f7fbf",
+    "draw": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.17
+      },
+      1
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "lazy",
+       "offset": -0.15
+      },
+      0,
+      "step"
+     ],
+     [
+      {
+       "line": "L11",
+       "word": "swore",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L11",
+       "word": "swore",
+       "offset": 0.8
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      1
+     ]
+    ],
+    "taut": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "sure",
+       "offset": -0.05
+      },
+      0
+     ],
+     [
+      {
+       "line": "L14",
+       "word": "sure",
+       "offset": 0.85
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L15",
+       "word": "So",
+       "offset": -0.15
+      },
+      1
+     ],
+     [
+      {
+       "line": "L15",
+       "word": "So",
+       "offset": 0.65
+      },
+      0,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ],
+    "sag": 1.6,
+    "color2": "#d4b23f"
+   },
+   {
+    "kind": "thread",
+    "x": -0.2513167019494862,
+    "z": 12.716227766016837,
+    "to": [
+     11.327056517862735,
+     11.287821357664942
+    ],
+    "y0": 2.2,
+    "y1": 2.2,
+    "color": "#c0573c",
+    "draw": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "angry",
+       "offset": -0.1
+      },
+      0
+     ],
+     [
+      {
+       "line": "L3",
+       "word": "angry",
+       "offset": 0.6
+      },
+      1,
+      "linear"
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Nobody",
+       "offset": -0.1
+      },
+      1
+     ],
+     [
+      {
+       "line": "L5",
+       "word": "Nobody",
+       "offset": 0.8
+      },
+      0,
+      "linear"
+     ],
+     [
+      {
+       "line": "L17",
+       "word": "What",
+       "offset": -0.3
+      },
+      0
+     ]
+    ],
+    "taut": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ]
+    ],
+    "sag": 2.2
+   },
+   {
+    "kind": "standard",
+    "x": 9.4,
+    "z": 9.8,
+    "face": -90,
+    "color": "#8f98a6",
+    "size": 1.25,
+    "rise": [
+     [
+      {
+       "shot": "hook"
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "armies",
+       "offset": -0.15
+      },
+      0
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "still"
+      },
+      1,
+      "out"
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "lose.",
+       "offset": 0.4
+      },
+      1
+     ],
+     [
+      {
+       "line": "L18",
+       "word": "lose.",
+       "offset": 0.85
+      },
+      0
+     ]
+    ]
+   }
+  ],
+  "fears": [
+   {
+    "id": "rift",
+    "x": -0.5,
+    "z": 10.6,
+    "r": 0.0,
+    "kind": "rift",
+    "to": [
+     12.0,
+     8.8
+    ],
+    "dark": [
+     [
+      {
+       "shot": "hook"
+      },
+      1
+     ]
+    ]
+   }
+  ],
+  "clearTrees": [
+   [
+    6.5,
+    12.2,
+    2.2
+   ],
+   [
+    2.5,
+    12.2,
+    2.2
+   ],
+   [
+    10.5,
+    11.7,
+    2.2
+   ],
+   [
+    8.95,
+    -5.38,
+    2.2
+   ],
+   [
+    3.0,
+    -11.0,
+    2.2
+   ],
+   [
+    12.8,
+    13.4,
+    2.2
+   ],
+   [
+    5.4,
+    14.6,
+    2.2
+   ],
+   [
+    1.5,
+    16.0,
+    2.2
+   ],
+   [
+    3.9,
+    16.6,
+    2.2
+   ],
+   [
+    6.5,
+    15.8,
+    2.2
+   ],
+   [
+    1.0,
+    14.6,
+    2.2
+   ],
+   [
+    1.7999999999999998,
+    14.6,
+    2.2
+   ],
+   [
+    2.5999999999999996,
+    14.6,
+    2.2
+   ],
+   [
+    3.4,
+    14.6,
+    2.2
+   ],
+   [
+    4.199999999999999,
+    14.6,
+    2.2
+   ],
+   [
+    4.999999999999999,
+    14.6,
+    2.2
+   ],
+   [
+    5.799999999999999,
+    14.6,
+    2.2
+   ],
+   [
+    6.599999999999999,
+    14.6,
+    2.2
+   ],
+   [
+    7.3999999999999995,
+    14.6,
+    2.2
+   ],
+   [
+    8.2,
+    14.6,
+    2.2
+   ],
+   [
+    8.999999999999998,
+    14.6,
+    2.2
+   ],
+   [
+    9.799999999999999,
+    14.6,
+    2.2
+   ],
+   [
+    -2.8,
+    10.8,
+    2.2
+   ],
+   [
+    -2.8,
+    12.4,
+    2.2
+   ],
+   [
+    -2.8,
+    14.0,
+    2.2
+   ],
+   [
+    -1.2,
+    10.8,
+    2.2
+   ],
+   [
+    -1.2,
+    12.4,
+    2.2
+   ],
+   [
+    -1.2,
+    14.0,
+    2.2
+   ],
+   [
+    0.40000000000000013,
+    10.8,
+    2.2
+   ],
+   [
+    0.40000000000000013,
+    12.4,
+    2.2
+   ],
+   [
+    0.40000000000000013,
+    14.0,
+    2.2
+   ],
+   [
+    10.6,
+    9.200000000000001,
+    2.2
+   ],
+   [
+    10.6,
+    10.8,
+    2.2
+   ],
+   [
+    10.6,
+    12.4,
+    2.2
+   ],
+   [
+    12.2,
+    9.200000000000001,
+    2.2
+   ],
+   [
+    12.2,
+    10.8,
+    2.2
+   ],
+   [
+    12.2,
+    12.4,
+    2.2
+   ],
+   [
+    13.799999999999999,
+    9.200000000000001,
+    2.2
+   ],
+   [
+    13.799999999999999,
+    10.8,
+    2.2
+   ],
+   [
+    13.799999999999999,
+    12.4,
+    2.2
+   ],
+   [
+    3.1999999999999997,
+    16.799999999999997,
+    2.2
+   ],
+   [
+    3.1999999999999997,
+    18.4,
+    2.2
+   ],
+   [
+    3.1999999999999997,
+    20.0,
+    2.2
+   ],
+   [
+    4.8,
+    16.799999999999997,
+    2.2
+   ],
+   [
+    4.8,
+    18.4,
+    2.2
+   ],
+   [
+    4.8,
+    20.0,
+    2.2
+   ],
+   [
+    6.4,
+    16.799999999999997,
+    2.2
+   ],
+   [
+    6.4,
+    18.4,
+    2.2
+   ],
+   [
+    6.4,
+    20.0,
+    2.2
+   ],
+   [
+    -0.2513167019494862,
+    12.716227766016837,
+    2.2
+   ],
+   [
+    11.327056517862735,
+    11.287821357664942,
+    2.2
+   ],
+   [
+    4.955962573473011,
+    17.41223703467093,
+    2.2
+   ],
+   [
+    -1.5794733192202055,
+    12.273508893593265,
+    2.2
+   ],
+   [
+    12.549177392854904,
+    10.604871456934024,
+    2.2
+   ],
+   [
+    4.737614970610795,
+    18.795105186131625,
+    2.2
+   ],
+   [
+    1.2665765749313362,
+    13.222192191643778,
+    2.2
+   ],
+   [
+    9.930346946443112,
+    12.06833552992885,
+    2.2
+   ],
+   [
+    5.174310176335227,
+    16.029368883210232,
+    2.2
+   ],
+   [
+    9.4,
+    9.8,
+    2.2
+   ],
+   [
+    -0.5,
+    10.6,
+    2.2
+   ],
+   [
+    -0.5,
+    13.2,
+    2.2
+   ],
+   [
+    1.0625,
+    10.375,
+    2.2
+   ],
+   [
+    1.0625,
+    12.975,
+    2.2
+   ],
+   [
+    2.625,
+    10.15,
+    2.2
+   ],
+   [
+    2.625,
+    12.75,
+    2.2
+   ],
+   [
+    4.1875,
+    9.925,
+    2.2
+   ],
+   [
+    4.1875,
+    12.525,
+    2.2
+   ],
+   [
+    5.75,
+    9.7,
+    2.2
+   ],
+   [
+    5.75,
+    12.299999999999999,
+    2.2
+   ],
+   [
+    7.3125,
+    9.475,
+    2.2
+   ],
+   [
+    7.3125,
+    12.075,
+    2.2
+   ],
+   [
+    8.875,
+    9.25,
+    2.2
+   ],
+   [
+    8.875,
+    11.85,
+    2.2
+   ],
+   [
+    10.4375,
+    9.025,
+    2.2
+   ],
+   [
+    10.4375,
+    11.625,
+    2.2
+   ],
+   [
+    12.0,
+    8.8,
+    2.2
+   ],
+   [
+    12.0,
+    11.4,
+    2.2
+   ],
+   [
+    -0.2513167019494862,
+    12.716227766016837,
+    1.6
+   ],
+   [
+    0.45509788579419963,
+    12.951699295264733,
+    1.6
+   ],
+   [
+    1.1615124735378854,
+    13.187170824512627,
+    1.6
+   ],
+   [
+    1.8679270612815713,
+    13.422642353760523,
+    1.6
+   ],
+   [
+    2.574341649025257,
+    13.658113883008419,
+    1.6
+   ],
+   [
+    3.280756236768943,
+    13.893585412256314,
+    1.6
+   ],
+   [
+    3.9871708245126287,
+    14.12905694150421,
+    1.6
+   ],
+   [
+    4.693585412256315,
+    14.364528470752104,
+    1.6
+   ],
+   [
+    5.4,
+    14.6,
+    1.6
+   ],
+   [
+    11.327056517862735,
+    11.287821357664942,
+    1.6
+   ],
+   [
+    10.586174453129892,
+    11.701843687956824,
+    1.6
+   ],
+   [
+    9.845292388397052,
+    12.115866018248706,
+    1.6
+   ],
+   [
+    9.10441032366421,
+    12.529888348540588,
+    1.6
+   ],
+   [
+    8.363528258931368,
+    12.94391067883247,
+    1.6
+   ],
+   [
+    7.622646194198525,
+    13.357933009124352,
+    1.6
+   ],
+   [
+    6.881764129465684,
+    13.771955339416236,
+    1.6
+   ],
+   [
+    6.140882064732843,
+    14.185977669708118,
+    1.6
+   ],
+   [
+    5.4,
+    14.6,
+    1.6
+   ],
+   [
+    4.955962573473011,
+    17.41223703467093,
+    1.6
+   ],
+   [
+    5.0114672517888845,
+    17.060707405337062,
+    1.6
+   ],
+   [
+    5.066971930104758,
+    16.709177776003198,
+    1.6
+   ],
+   [
+    5.122476608420632,
+    16.35764814666933,
+    1.6
+   ],
+   [
+    5.177981286736506,
+    16.006118517335466,
+    1.6
+   ],
+   [
+    5.233485965052379,
+    15.654588888001598,
+    1.6
+   ],
+   [
+    5.288990643368253,
+    15.303059258667732,
+    1.6
+   ],
+   [
+    5.344495321684127,
+    14.951529629333866,
+    1.6
+   ],
+   [
+    5.4,
+    14.6,
+    1.6
+   ],
+   [
+    11.327056517862735,
+    11.287821357664942,
+    1.6
+   ],
+   [
+    10.530669774814019,
+    12.05337331729069,
+    1.6
+   ],
+   [
+    9.734283031765305,
+    12.818925276916438,
+    1.6
+   ],
+   [
+    8.937896288716589,
+    13.584477236542188,
+    1.6
+   ],
+   [
+    8.141509545667873,
+    14.350029196167936,
+    1.6
+   ],
+   [
+    7.345122802619157,
+    15.115581155793684,
+    1.6
+   ],
+   [
+    6.548736059570442,
+    15.881133115419434,
+    1.6
+   ],
+   [
+    5.752349316521727,
+    16.646685075045184,
+    1.6
+   ],
+   [
+    4.955962573473011,
+    17.41223703467093,
+    1.6
+   ],
+   [
+    -0.2513167019494862,
+    12.716227766016837,
+    1.6
+   ],
+   [
+    1.1959799505270414,
+    12.537676964972851,
+    1.6
+   ],
+   [
+    2.643276603003569,
+    12.359126163928863,
+    1.6
+   ],
+   [
+    4.090573255480097,
+    12.180575362884877,
+    1.6
+   ],
+   [
+    5.537869907956624,
+    12.00202456184089,
+    1.6
+   ],
+   [
+    6.985166560433152,
+    11.823473760796903,
+    1.6
+   ],
+   [
+    8.43246321290968,
+    11.644922959752916,
+    1.6
+   ],
+   [
+    9.879759865386207,
+    11.466372158708928,
+    1.6
+   ],
+   [
+    11.327056517862735,
+    11.287821357664942,
+    1.6
+   ]
+  ],
+  "layers": {
+   "ripple": [
+    {
+     "shot": "hook",
+     "offset": 0.05
+    },
+    {
+     "line": "L4",
+     "word": "run."
+    },
+    {
+     "line": "L12",
+     "word": "Run"
+    }
+   ],
+   "rings": [
+    {
+     "x": 5.4,
+     "z": 14.6,
+     "r": 3.2,
+     "on": {
+      "line": "L14",
+      "word": "wrong.",
+      "offset": -0.05
+     },
+     "off": {
+      "line": "L15",
+      "word": "So",
+      "offset": -0.15
+     },
+     "color": "#c8f04a"
+    }
+   ],
+   "dust": [
+    {
+     "at": {
+      "line": "L8",
+      "word": "harbour.",
+      "offset": -0.1
+     },
+     "x": -0.2513167019494862,
+     "z": 12.716227766016837,
+     "r": 0.9
+    },
+    {
+     "at": {
+      "line": "L9",
+      "word": "Red",
+      "offset": 0.0
+     },
+     "x": 11.327056517862735,
+     "z": 11.287821357664942,
+     "r": 0.9
+    },
+    {
+     "at": {
+      "line": "L10",
+      "word": "prince",
+      "offset": 0.0
+     },
+     "x": 4.955962573473011,
+     "z": 17.41223703467093,
+     "r": 0.9
+    },
+    {
+     "at": {
+      "line": "L8",
+      "word": "harbour.",
+      "offset": 0.0
+     },
+     "x": 5.4,
+     "z": 15.4,
+     "r": 1.4
+    }
+   ]
+  },
+  "ambient": {
+   "birds": 9,
+   "motes": 40,
+   "glints": true
+  },
+  "simLoop": {
+   "line": "L17",
+   "word": "What",
+   "offset": -0.3
+  }
+ },
+ "music": {
+  "engine": "s2-score",
+  "key": "D minor, resolving to D major",
+  "bpm": 96,
+  "sections": [
+   {
+    "from": {
+     "shot": "hook"
+    },
+    "style": "council",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "programs": {
+     "lead": 59,
+     "celesta": 6,
+     "cello": 42
+    }
+   },
+   {
+    "from": {
+     "line": "L3",
+     "word": "lazy",
+     "offset": -0.15
+    },
+    "style": "council",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "A"
+    ],
+    "key": "D minor",
+    "thin": true
+   },
+   {
+    "from": {
+     "line": "L4",
+     "word": "run."
+    },
+    "style": "drive",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "intensity": 0.85,
+    "programs": {
+     "lead": 73,
+     "bass": 32,
+     "celesta": 8,
+     "cello": 42
+    }
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "One",
+     "offset": -0.2
+    },
+    "style": "drop",
+    "chords": [
+     "Dm"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 8
+   },
+   {
+    "from": {
+     "line": "L6",
+     "word": "war.",
+     "offset": 0.55
+    },
+    "style": "muster",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "A"
+    ],
+    "key": "D minor",
+    "layer": 1,
+    "programs": {
+     "lead": 72,
+     "bass": 58,
+     "celesta": 8
+    }
+   },
+   {
+    "from": {
+     "line": "L8",
+     "word": "One:",
+     "offset": -0.1
+    },
+    "style": "muster",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 1
+   },
+   {
+    "from": {
+     "line": "L9",
+     "word": "Two:",
+     "offset": -0.1
+    },
+    "style": "muster",
+    "chords": [
+     "Dm",
+     "C",
+     "Bb",
+     "C"
+    ],
+    "key": "D minor",
+    "layer": 2
+   },
+   {
+    "from": {
+     "line": "L10",
+     "word": "Three:",
+     "offset": -0.1
+    },
+    "style": "muster",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 3
+   },
+   {
+    "from": {
+     "line": "L11",
+     "word": "Four:",
+     "offset": -0.1
+    },
+    "style": "muster",
+    "chords": [
+     "F",
+     "C",
+     "Dm",
+     "Bb"
+    ],
+    "key": "F major",
+    "layer": 4
+   },
+   {
+    "from": {
+     "line": "L12",
+     "word": "Run"
+    },
+    "style": "drive",
+    "chords": [
+     "F",
+     "C",
+     "Bb",
+     "F"
+    ],
+    "key": "F major",
+    "intensity": 1.0,
+    "theme": true,
+    "programs": {
+     "lead": 73,
+     "bass": 32,
+     "celesta": 8,
+     "cello": 42
+    }
+   },
+   {
+    "from": {
+     "line": "L13",
+     "word": "Rule",
+     "offset": -0.05
+    },
+    "style": "twist",
+    "chords": [
+     "A7b9"
+    ],
+    "key": "D minor"
+   },
+   {
+    "from": {
+     "line": "L14",
+     "word": "sure",
+     "offset": -0.05
+    },
+    "style": "council",
+    "chords": [
+     "Dm",
+     "Bb",
+     "Gm",
+     "A"
+    ],
+    "key": "D minor",
+    "programs": {
+     "lead": 59,
+     "celesta": 6,
+     "cello": 42
+    }
+   },
+   {
+    "from": {
+     "line": "L15",
+     "word": "So",
+     "offset": -0.1
+    },
+    "style": "anthem",
+    "chords": [
+     "D",
+     "G",
+     "Bm",
+     "A"
+    ],
+    "key": "D major",
+    "programs": {
+     "lead": 73,
+     "bass": 32,
+     "celesta": 8,
+     "cello": 42
+    }
+   },
+   {
+    "from": {
+     "line": "L17",
+     "word": "What",
+     "offset": -0.2
+    },
+    "style": "outro",
+    "chords": [
+     "G",
+     "D"
+    ],
+    "key": "D major"
+   },
+   {
+    "from": {
+     "line": "L18",
+     "word": "Part",
+     "offset": -0.1
+    },
+    "style": "tease",
+    "chords": [
+     "A5"
+    ],
+    "key": "D minor",
+    "beatsPerChord": 32
+   }
+  ],
+  "accents": [
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L1",
+     "word": "angry"
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L6",
+     "word": "war."
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "riser",
+    "at": {
+     "line": "L7",
+     "word": "twist."
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "stab",
+    "at": {
+     "line": "L12",
+     "word": "ruin."
+    },
+    "chord": "F"
+   },
+   {
+    "kind": "cymbal",
+    "at": {
+     "line": "L12",
+     "word": "ruin."
+    }
+   },
+   {
+    "kind": "boom",
+    "at": {
+     "line": "L14",
+     "word": "wrong.",
+     "offset": -0.05
+    },
+    "chord": "Dm"
+   },
+   {
+    "kind": "hit",
+    "at": {
+     "line": "L15",
+     "word": "cost."
+    },
+    "chord": "D"
+   },
+   {
+    "kind": "call",
+    "at": {
+     "line": "L18",
+     "word": "armies"
+    },
+    "chord": "A"
+   },
+   {
+    "kind": "roll",
+    "at": {
+     "end": true,
+     "offset": -0.05
+    },
+    "chord": "A"
+   }
+  ],
+  "fadeOut": {
+   "fromEnd": 0.08
+  },
+  "gain": 0.55
+ },
+ "mix": {
+  "musicLufs": -25.0,
+  "duckDb": -8.0,
+  "sfxLufs": -29.0,
+  "voiceFx": true
+ },
+ "metadata": {
+  "youtube": {
+   "title": "Wars Need More Than Two Armies (Worldbuilding)",
+   "titleAlternate": "Nobody sends a million soldiers to die for an angry king.",
+   "description": "Nobody sends a million soldiers to die for an angry king.\n\nMeet the Ruin War: it hasn't started yet. The lazy version of a war is two armies and one angry king, and we ran it: ten years of shouting, and nobody marches. One angry king is a tantrum, not a war.\n\nReal wars need reasons. Something to gain: Red needs the ruin's harbour. Fear: Blue can't let Red hold it. A claim: Gold's prince says it's his by birth. Allies: Blue swore to stand with Gold. Run it again: ten years, three armies, one ruin.\n\nThen the twist: nobody here wants this war. Each side is sure the others will blink. All three are wrong. So give every side a reason worth the cost.\n\nShow what each side wants. Nobody thinks they're the villain.\n\nWhat would finally push your kingdom into war?\n\nPart 36 of 50. Follow for part 37: big armies still lose.\n\nWorldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 8: Conflict and Warfare (the arc's first episode). The Ruin War, its three sides and their plain coloured standards are invented for this video; no real war, army, flag or nation is depicted, and nobody fights on screen.\n\n#Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "pinnedComment": "What would finally push your kingdom into war? One reason, then which side holds it. (Part 37: big armies still lose.)",
+   "uploadSettings": "Altered or synthetic content: Yes (synthetic narration and an AI-generated field-card sprite; the island, the camps, the threads and the people are drawn in code). Not made for kids. Category: Education."
+  },
+  "tiktok": {
+   "caption": "Nobody sends a million soldiers to die for an angry king. \ud83e\uddf5 Four reasons a war feels real, and rule #5 is the twist. What would finally push your kingdom into war? Part 36/50 \u00b7 follow for part 37 \u2694\ufe0f #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "pinnedComment": "What would finally push your kingdom into war?",
+   "uploadSettings": "Turn on 'AI-generated content' under More options before posting."
+  },
+  "facebook": {
+   "caption": "Nobody sends a million soldiers to die for an angry king.\n\nMeet the Ruin War: it hasn't started yet. The lazy version of a war is two armies and one angry king, and we ran it: ten years of shouting, and nobody marches. One angry king is a tantrum, not a war.\n\nReal wars need reasons. Something to gain: Red needs the ruin's harbour. Fear: Blue can't let Red hold it. A claim: Gold's prince says it's his by birth. Allies: Blue swore to stand with Gold. Run it again: ten years, three armies, one ruin.\n\nThen the twist: nobody here wants this war. Each side is sure the others will blink. All three are wrong. So give every side a reason worth the cost.\n\nShow what each side wants. Nobody thinks they're the villain.\n\nWhat would finally push your kingdom into war?\n\nPart 36 of 50. Follow for part 37: big armies still lose.\n\nWorldcraft Shorts \u00b7 Season 2: The World Engine.\n\n#Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "pinnedComment": "Which side of your war thinks it's the hero? (All of them should.)",
+   "uploadSettings": "Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md)."
+  },
+  "instagram": {
+   "caption": "Nobody sends a million soldiers to die for an angry king.\n\nMeet the Ruin War: it hasn't started yet. The lazy version of a war is two armies and one angry king, and we ran it: ten years of shouting, and nobody marches. One angry king is a tantrum, not a war.\n\nReal wars need reasons. Something to gain: Red needs the ruin's harbour. Fear: Blue can't let Red hold it. A claim: Gold's prince says it's his by birth. Allies: Blue swore to stand with Gold. Run it again: ten years, three armies, one ruin.\n\nThen the twist: nobody here wants this war. Each side is sure the others will blink. All three are wrong. So give every side a reason worth the cost.\n\nShow what each side wants. Nobody thinks they're the villain.\n\nWhat would finally push your kingdom into war?\n\nPart 36 of 50. Follow for part 37: big armies still lose.\n\nWorldcraft Shorts \u00b7 Season 2\n\n#Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts",
+   "hookCheck": "First 57 characters: 'Nobody sends a million soldiers to die for an angry king.'",
+   "pinnedComment": "Save the PULL THE THREADS card, then tell us: what would finally push your kingdom into war?",
+   "uploadSettings": "Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit)."
+  }
+ }
+}

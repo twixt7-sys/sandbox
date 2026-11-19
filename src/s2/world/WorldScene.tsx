@@ -10,6 +10,7 @@ import {Cam, camPose, Lights, Stage, sunDir} from './Stage';
 import {cameraAt, dragonAt, fearLight, fearsAt, herdCount, moodAt, predatorAt, simTime, skyAt, strataAt, World} from './timeline';
 import {Bones, FallingStar, PaintedSky, Ruin} from './Sky';
 import {Find, RuinWall} from './Ruins';
+import {Camp, Knot, Thread} from './WarRoom';
 import {Dragon} from './Dragon';
 import {Cairn, roadAt, SettlementLayer} from './Settlement';
 import {FolkLayer} from './Folk';
@@ -562,7 +563,7 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 				) : p.kind === 'statue' ? (
 					<Statue key={`st${i}`} x={p.x} z={p.z} face={p.face ?? 0} island={island} t={t} loopT={world.loopT} rise={sample(p.rise ?? [], t, 0)} gild={sample(p.gild ?? [], t, 0)} tar={sample(p.tar ?? [], t, 0)} grow={sample(p.grow ?? [], t, 1)} {...(p.torch ? {torch: sample(p.torch, t, 1)} : {})} />
 				) : p.kind === 'standard' ? (
-					<Standard key={`sd${i}`} x={p.x} z={p.z} face={p.face ?? 0} island={island} t={t} rise={sample(p.rise ?? [], t, 0)} color={p.color ?? '#a8452f'} {...(p.size ? {size: p.size} : {})} />
+					<Standard key={`sd${i}`} x={p.x} z={p.z} face={p.face ?? 0} island={island} t={t} rise={sample(p.rise ?? [], t, 0)} color={p.color ?? '#a8452f'} {...(p.size ? {size: p.size} : {})} {...(p.loop ? {loopT: world.loopT} : {})} />
 				) : p.kind === 'border' ? (
 					<Border key={`bd${i}`} x={p.x} z={p.z} to={p.to ?? [p.x, p.z]} island={island} rise={sample(p.rise ?? [], t, 0)} skip={p.skip} />
 				) : p.kind === 'relic' ? (
@@ -577,6 +578,12 @@ export const WorldScene: React.FC<{state: S2State}> = ({state}) => {
 					<Ruin key={`ru${i}`} x={p.x} z={p.z} face={p.face ?? 0} scale={p.r / 2.2} island={island} rise={sample(p.rise ?? [], t, 0)} />
 				) : p.kind === 'wall' ? (
 					<RuinWall key={`wl${i}`} x={p.x} z={p.z} to={p.to ?? [p.x, p.z]} profile={p.profile ?? []} fresh={p.fresh ?? [-1, -1]} tonight={p.tonight ?? [-1, -1]} island={island} log={sample(p.log ?? [], t, 0)} glow={sample(p.glow ?? [], t, 0)} place={sample(p.place ?? [], t, 0)} />
+				) : p.kind === 'thread' ? (
+					<Thread key={`th${i}`} x={p.x} z={p.z} to={p.to ?? [p.x, p.z]} y0={p.y0 ?? 2} y1={p.y1 ?? 2} color={p.color ?? '#c0573c'} {...(p.color2 ? {color2: p.color2} : {})} island={island} t={t} loopT={world.loopT} draw={sample(p.draw ?? [], t, 0)} taut={sample(p.taut ?? [], t, 0)} sag={p.sag ?? 1.4} />
+				) : p.kind === 'knot' ? (
+					<Knot key={`kn${i}`} x={p.x} z={p.z} y={p.y ?? 6} island={island} t={t} loopT={world.loopT} rise={sample(p.rise ?? [], t, 0)} flare={sample(p.flare ?? [], t, 0)} {...(p.color ? {color: p.color} : {})} />
+				) : p.kind === 'camp' ? (
+					<Camp key={`cp${i}`} x={p.x} z={p.z} face={p.face ?? 0} color={p.color ?? '#c0573c'} n={p.n ?? 3} r={p.r / 1.375} island={island} rise={sample(p.rise ?? [], t, 0)} />
 				) : p.kind === 'find' ? (
 					<Find key={`fd${i}`} kind={p.find ?? 'gear'} x={p.x} z={p.z} face={p.face ?? 0} scale={p.r / 2.2} y={p.y ?? 0} island={island} rise={sample(p.rise ?? [], t, 0)} />
 				) : null,

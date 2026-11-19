@@ -123,6 +123,17 @@ export const SPRITES: Record<string, {rows: string[]; colors: Record<string, str
 	handprint: {rows: ['..X.X.X..', '..X.X.X..', 'X.X.X.X..', 'X.X.X.X..', 'XXXXXXX..', 'XXXXXXX.X', 'XXXXXXXXX', 'XXXXXXXX.', '.XXXXXX..', '..XXXX...'], colors: {X: '#d08a5c'}},
 	stone: {rows: ['..W....W..', 'W.QQQQQQ.W', '.QWWQQQQQ.', '.QWQQQQQQ.', '.QQQQQQQQ.', '.QQQQQQQQ.', 'W.QQQQQQ.W', '..W....W..'], colors: {Q: '#4fd6ff', W: '#c4f6ff'}},
 	query: {rows: ['.XXX.', 'X...X', '....X', '..XX.', '..X..', '.....', '..X..'], colors: {X: '#f4c46e'}},
+	// EP36: the war room (reasons pinned per side) and EP37's tease
+	pin: {rows: ['.XXX.', 'XXWXX', 'XXXXX', '.XXX.', '..P..', '..P..', '..P..', '..P..'], colors: {X: 'currentColor', W: '#ffffff', P: '#8a8076'}},
+	anchor: {rows: ['...X...', '..X.X..', '...X...', 'XXXXXXX', '...X...', '...X...', 'X..X..X', '.X.X.X.', '..XXX..'], colors: {X: 'currentColor'}},
+	shield: {rows: ['XXXXXXX', 'X.....X', 'X..X..X', 'X.XXX.X', 'X..X..X', '.X...X.', '..X.X..', '...X...'], colors: {X: 'currentColor'}},
+	clasp: {rows: ['XX....YY', 'XXX..YYY', '.XXXYYY.', '..XYXY..', '.XXXYYY.', 'XXX..YYY', 'XX....YY'], colors: {X: '#4f7fbf', Y: '#d4b23f'}},
+	spark: {rows: ['...X...', 'X..X..X', '.X.X.X.', '..XXX..', 'XXXWXXX', '..XXX..', '.X.X.X.', 'X..X..X', '...X...'], colors: {X: 'currentColor', W: '#ffffff'}},
+	fume: {rows: ['.X..X..X', 'X..X..X.', '.X..X..X', '........', '.XXXXXX.', 'XX.XX.XX', 'XXXXXXXX', 'X.XXXX.X', '.X....X.'], colors: {X: 'currentColor'}},
+	host: {
+		rows: ['FFF..FFF..FFF..FFF..', 'PFF..PFF..PFF..PFF..', 'P....P....P....P....', 'P.H.HP.H.HP.H.HP.H.H', 'PHHHHPHHHHPHHHHPHHHH', 'BBBBBBBBBBBBBBBBBBBB', 'BBBBBBBBBBBBBBBBBBBB', 'B.B.B.B.B.B.B.B.B.B.'],
+		colors: {P: '#6b5a48', F: '#8f98a6', H: '#e0c8a8', B: '#5d6673'},
+	},
 	banners: {
 		rows: ['P......P......P.....', 'PRRRR..PBBBB..PGGGG.', 'PRRRRR.PBBBBB.PGGGGG', 'PRRR...PBBB...PGGG..', 'PRR....PBB....PGG...', 'P......P......P.....', 'P......P......P.....', 'P......P......P.....', 'P......P......P.....', 'GGGGGGGGGGGGGGGGGGGG'],
 		colors: {P: '#6b5a48', R: '#c0573c', B: '#4f7fbf', G: '#d4b23f'},

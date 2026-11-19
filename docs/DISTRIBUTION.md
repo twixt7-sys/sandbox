@@ -2631,3 +2631,96 @@ Source of truth: `episodes/ep35/episode.json` → `metadata` (this section is ge
 - **Hook check:** First 64 characters: 'These ruins are older than humans. Someone keeps repairing them.'
 - **Pinned comment:** Save the READ THE RUINS card, then tell us: what is the one thing archaeologists should never find in your world?
 - **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).
+
+
+## Episode 36 captions (ready to paste) — Season 2, Arc 8
+
+Source of truth: `episodes/ep36/episode.json` → `metadata` (this section is generated from it). Every description ends with the Season 2 ending formula ("Part 36 of 50. Follow for part 37: …"), matching the video's last line. The AI label goes on for all four platforms. Cover: `episodes/ep36/Worldcraft_Short_E36_cover.jpg`. Subtitles: `episodes/ep36/ep36.srt`.
+
+**Disclosure.** The island, the three camps (plain canvas tents), the standards, the war room's threads and the knot, the armies, the HUD, the war room strip and every number are drawn and simulated in code. Two things are AI-made: the narration (Kokoro synthetic voice) and the field card's sprite of a canvas tent (free local SDXL-Lightning with a pixel-art LoRA, re-gridded by `pipeline/pixelate.py`, the knot and three threads drawn on in code; no Figma credits). AI label on everywhere (series policy). **No real-world war, army, flag, uniform, emblem, religion or nation is depicted, named or imitated:** the three sides are told apart only by plain single colours (red, blue, gold) with no device on any standard. **No violence on screen:** the armies gather, march up and stand; the war never starts on camera.
+
+**Closing EP35's loop.** EP35 ended "two armies are never enough": on "armies" three small standards in three colours were planted round the Builders' ruin for a breath, then sank. EP36 opens with three sides camped round that ruin for good, their threads meeting in a knot over it. When EP36 goes up, reply to the top comments on EP35 with its link and pin it where a second pin is allowed.
+
+**The comment ask is an invention prompt** (as EP35): the plan's CTA, "What would finally push your kingdom into war?" (8 words), is spoken as written; the end card shows two starters (A STOLEN HEIR, THE LAST WELL) and "One reason. Name it."
+
+**Posting part 37.** The video promises "big armies still lose" (one grey standard far bigger than the three rises over the Isle on "armies"). EP37 is "The Strongest Army Can Still Lose". Do the same reply-and-pin on EP36 when EP37 is posted.
+
+### YouTube Shorts
+- **Title** (46/100 chars): `Wars Need More Than Two Armies (Worldbuilding)`
+- **Alternate title** (57 chars): `Nobody sends a million soldiers to die for an angry king.`
+- **Description:**
+
+> Nobody sends a million soldiers to die for an angry king.
+>
+> Meet the Ruin War: it hasn't started yet. The lazy version of a war is two armies and one angry king, and we ran it: ten years of shouting, and nobody marches. One angry king is a tantrum, not a war.
+>
+> Real wars need reasons. Something to gain: Red needs the ruin's harbour. Fear: Blue can't let Red hold it. A claim: Gold's prince says it's his by birth. Allies: Blue swore to stand with Gold. Run it again: ten years, three armies, one ruin.
+>
+> Then the twist: nobody here wants this war. Each side is sure the others will blink. All three are wrong. So give every side a reason worth the cost.
+>
+> Show what each side wants. Nobody thinks they're the villain.
+>
+> What would finally push your kingdom into war?
+>
+> Part 36 of 50. Follow for part 37: big armies still lose.
+>
+> Worldcraft Shorts: Worldbuilding, from the ground up. Season 2, The World Engine: every idea gets tested on one living island. Arc 8: Conflict and Warfare (the arc's first episode). The Ruin War, its three sides and their plain coloured standards are invented for this video; no real war, army, flag or nation is depicted, and nobody fights on screen.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts
+
+- **Pinned comment:** What would finally push your kingdom into war? One reason, then which side holds it. (Part 37: big armies still lose.)
+- **Upload settings:** Altered or synthetic content: Yes (synthetic narration and an AI-generated field-card sprite; the island, the camps, the threads and the people are drawn in code). Not made for kids. Category: Education.
+
+### TikTok
+- **Caption** (266 chars): `Nobody sends a million soldiers to die for an angry king. 🧵 Four reasons a war feels real, and rule #5 is the twist. What would finally push your kingdom into war? Part 36/50 · follow for part 37 ⚔️ #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts`
+- **Pinned comment:** What would finally push your kingdom into war?
+- **Upload settings:** Turn on 'AI-generated content' under More options before posting.
+
+### Facebook Reels
+- **Caption:**
+
+> Nobody sends a million soldiers to die for an angry king.
+>
+> Meet the Ruin War: it hasn't started yet. The lazy version of a war is two armies and one angry king, and we ran it: ten years of shouting, and nobody marches. One angry king is a tantrum, not a war.
+>
+> Real wars need reasons. Something to gain: Red needs the ruin's harbour. Fear: Blue can't let Red hold it. A claim: Gold's prince says it's his by birth. Allies: Blue swore to stand with Gold. Run it again: ten years, three armies, one ruin.
+>
+> Then the twist: nobody here wants this war. Each side is sure the others will blink. All three are wrong. So give every side a reason worth the cost.
+>
+> Show what each side wants. Nobody thinks they're the villain.
+>
+> What would finally push your kingdom into war?
+>
+> Part 36 of 50. Follow for part 37: big armies still lose.
+>
+> Worldcraft Shorts · Season 2: The World Engine.
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts
+
+- **Pinned comment:** Which side of your war thinks it's the hero? (All of them should.)
+- **Upload settings:** Turn on the AI label ('AI info') when posting (see docs/DISTRIBUTION.md).
+
+### Instagram Reels
+- **Caption:**
+
+> Nobody sends a million soldiers to die for an angry king.
+>
+> Meet the Ruin War: it hasn't started yet. The lazy version of a war is two armies and one angry king, and we ran it: ten years of shouting, and nobody marches. One angry king is a tantrum, not a war.
+>
+> Real wars need reasons. Something to gain: Red needs the ruin's harbour. Fear: Blue can't let Red hold it. A claim: Gold's prince says it's his by birth. Allies: Blue swore to stand with Gold. Run it again: ten years, three armies, one ruin.
+>
+> Then the twist: nobody here wants this war. Each side is sure the others will blink. All three are wrong. So give every side a reason worth the cost.
+>
+> Show what each side wants. Nobody thinks they're the villain.
+>
+> What would finally push your kingdom into war?
+>
+> Part 36 of 50. Follow for part 37: big armies still lose.
+>
+> Worldcraft Shorts · Season 2
+>
+> #Worldbuilding #FantasyWriting #WritingTips #Lore #WorldcraftShorts
+
+- **Hook check:** First 57 characters: 'Nobody sends a million soldiers to die for an angry king.'
+- **Pinned comment:** Save the PULL THE THREADS card, then tell us: what would finally push your kingdom into war?
+- **Upload settings:** Turn on 'AI label' under Advanced settings before sharing. 5 hashtags (Instagram's limit).

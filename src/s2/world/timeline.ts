@@ -89,6 +89,10 @@ export type WorldRaw = {
 		look?: RawKey[];
 		/** EP33+: 0..1 the share of the crowd holding a lit lamp */
 		lamps?: RawKey[];
+		/** EP36+: 0..1 per crowd centre: how much of that side is present (an army gathering or going home) */
+		sideShow?: RawKey[][];
+		/** EP36+: 0..1 every side advances `f` of the way from its centre toward `at` (an army marching up to stand) */
+		advance?: {at: [number, number]; f: number; keys: RawKey[]};
 	};
 	/** EP32+: the strata. The island's cut sides carry the war as a layer (`war`: its bottom and top, in world y, keyed
 	 * so it can sink as centuries pile on), `centuries` thin bands laid on top of it (0..`max` shown), `fade` (0 vivid ..
@@ -166,7 +170,21 @@ export type Strata = {y0: number; y1: number; surface: number; max: number; n: n
  * `rise`; `lights` its candles, `tithe` sheep, `sheaves` and shed `plates` laid before it, `paint` 0..2 the figures
  * painted on its stones). */
 export type PropRaw = {
-	kind: 'cairn' | 'offerings' | 'shrine' | 'statue' | 'standard' | 'border' | 'relic' | 'lanterns' | 'sheaves' | 'bones' | 'ruin' | 'wall' | 'find';
+	kind: 'cairn' | 'offerings' | 'shrine' | 'statue' | 'standard' | 'border' | 'relic' | 'lanterns' | 'sheaves' | 'bones' | 'ruin' | 'wall' | 'find' | 'thread' | 'knot' | 'camp';
+	/** EP36 `thread`: a war room thread from (x, z) to `to`, its ends `y0` / `y1` above the ground, in `color` (with
+	 * `color2`, braided in two colours: an alliance); `draw` 0..1 runs it out from its source pin, `taut` 0..1 pulls its
+	 * `sag` out and makes it hum. `knot`: the flashpoint, a war pin `y` tall stuck in the ground at (x, z), pushed in by
+	 * `rise`, its knot blazing with `flare`. `camp`: `n` plain canvas tents of radius `r` round (x, z), door flaps in
+	 * `color`, pitched by `rise`. `standard` + `loop`: the cloth's wave runs whole cycles per episode (it stands in the
+	 * loop frame). */
+	y0?: number;
+	y1?: number;
+	color2?: string;
+	draw?: RawKey[];
+	taut?: RawKey[];
+	sag?: number;
+	flare?: RawKey[];
+	loop?: boolean;
 	/** EP35 `wall`: a lost civilization's wall from (x, z) to `to`, `profile` blocks tall per column; `log` 0..1 is the
 	 * repair log (original stone umber, repairs glowing quartz cyan by recency), `glow` lights last night's stone
 	 * (`fresh` [column, row]) and `place` sets tonight's stone (`tonight` [column, row]) into its gap. `find`: one find
@@ -318,7 +336,7 @@ export type World = {
 	/** every settlement, the first one included (EP28+: more than one) */
 	settlements: Settlement[];
 	folk: {count: Key[]; centers: [number, number][]; centersB: [number, number][] | null; site: Key[]; eyes: Key[]; wet: Key[]; glow: Key[]; hero: PredKey[]; spread: number} | null;
-	props: {kind: PropRaw['kind']; x: number; z: number; stones: Key[]; lights: Key[]; r: number; face?: number; profile?: number[]; fresh?: [number, number]; tonight?: [number, number]; log?: Key[]; glow?: Key[]; place?: Key[]; find?: string; y?: number; size?: number; tithe?: Key[]; sheaves?: Key[]; plates?: Key[]; rise?: Key[]; paint?: Key[]; gild?: Key[]; tar?: Key[]; grow?: Key[]; color?: string; torch?: Key[]; to?: [number, number]; skip?: [number, number]; n?: number}[];
+	props: {kind: PropRaw['kind']; x: number; z: number; stones: Key[]; lights: Key[]; r: number; face?: number; profile?: number[]; fresh?: [number, number]; tonight?: [number, number]; log?: Key[]; glow?: Key[]; place?: Key[]; find?: string; y?: number; size?: number; tithe?: Key[]; sheaves?: Key[]; plates?: Key[]; rise?: Key[]; paint?: Key[]; gild?: Key[]; tar?: Key[]; grow?: Key[]; color?: string; torch?: Key[]; to?: [number, number]; skip?: [number, number]; n?: number; y0?: number; y1?: number; color2?: string; draw?: Key[]; taut?: Key[]; sag?: number; flare?: Key[]; loop?: boolean}[];
 	/** EP30+ (null before) */
 	fields: {plots: {x: number; z: number; w: number; d: number}[]; ripe: Key[]; burn?: Key[]} | null;
 	/** EP29+ (null before) */
@@ -339,6 +357,8 @@ export type World = {
 		watchOn?: Key[];
 		look?: Key[];
 		lamps?: Key[];
+		sideShow?: Key[][];
+		advance?: {at: [number, number]; f: number; keys: Key[]};
 	} | null;
 	/** EP32+ (absent before) */
 	strata?: {war: {y0: Key[]; y1: Key[]}; surface: number; max: number; centuries: Key[]; fade: Key[]; flood: Key[]; veins: {box: [number, number, number, number]; color: string; on: Key[]; label?: string}[]};
@@ -411,7 +431,7 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 			? {face: p.face ?? 0, tithe: resolveKeys(timing, p.tithe), sheaves: resolveKeys(timing, p.sheaves), plates: resolveKeys(timing, p.plates), rise: resolveKeys(timing, p.rise), paint: resolveKeys(timing, p.paint)}
 			: {}),
 		...(p.kind === 'statue' || p.kind === 'standard'
-			? {face: p.face ?? 0, rise: resolveKeys(timing, p.rise), gild: resolveKeys(timing, p.gild), tar: resolveKeys(timing, p.tar), grow: resolveKeys(timing, p.grow), ...(p.color ? {color: p.color} : {}), ...(p.torch ? {torch: resolveKeys(timing, p.torch)} : {}), ...(p.size ? {size: p.size} : {})}
+			? {face: p.face ?? 0, rise: resolveKeys(timing, p.rise), gild: resolveKeys(timing, p.gild), tar: resolveKeys(timing, p.tar), grow: resolveKeys(timing, p.grow), ...(p.color ? {color: p.color} : {}), ...(p.torch ? {torch: resolveKeys(timing, p.torch)} : {}), ...(p.size ? {size: p.size} : {}), ...(p.loop ? {loop: true} : {})}
 			: {}),
 		// EP32+
 		...(p.kind === 'border' ? {rise: resolveKeys(timing, p.rise), to: p.to ?? [p.x, p.z], ...(p.skip ? {skip: p.skip} : {})} : {}),
@@ -426,6 +446,12 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 			? {to: p.to ?? [p.x, p.z], profile: p.profile ?? [], fresh: p.fresh ?? [-1, -1], tonight: p.tonight ?? [-1, -1], log: resolveKeys(timing, p.log), glow: resolveKeys(timing, p.glow), place: resolveKeys(timing, p.place)}
 			: {}),
 		...(p.kind === 'find' ? {face: p.face ?? 0, rise: resolveKeys(timing, p.rise), find: p.find ?? 'gear', y: p.y ?? 0} : {}),
+		// EP36+
+		...(p.kind === 'thread'
+			? {to: p.to ?? [p.x, p.z], y0: p.y0 ?? 2, y1: p.y1 ?? 2, color: p.color ?? '#c0573c', ...(p.color2 ? {color2: p.color2} : {}), draw: resolveKeys(timing, p.draw), taut: resolveKeys(timing, p.taut), sag: p.sag ?? 1.4}
+			: {}),
+		...(p.kind === 'knot' ? {y: p.y ?? 6, rise: resolveKeys(timing, p.rise), flare: resolveKeys(timing, p.flare), ...(p.color ? {color: p.color} : {})} : {}),
+		...(p.kind === 'camp' ? {face: p.face ?? 0, color: p.color ?? '#c0573c', n: p.n ?? 3, rise: resolveKeys(timing, p.rise)} : {}),
 	})),
 	fields: raw.fields ? {plots: raw.fields.plots, ripe: resolveKeys(timing, raw.fields.ripe), ...(raw.fields.burn ? {burn: resolveKeys(timing, raw.fields.burn)} : {})} : null,
 	people: raw.people
@@ -446,6 +472,8 @@ export const resolveWorld = (raw: WorldRaw, timing: Timing): World => ({
 				...(raw.people.robe ? {robe: raw.people.robe} : {}),
 				...(raw.people.tints ? {tints: raw.people.tints} : {}),
 				...(raw.people.watch ? {watch: raw.people.watch} : {}),
+				...(raw.people.sideShow ? {sideShow: raw.people.sideShow.map((k) => resolveKeys(timing, k))} : {}),
+				...(raw.people.advance ? {advance: {...raw.people.advance, keys: resolveKeys(timing, raw.people.advance.keys)}} : {}),
 				...(raw.people.watchOn ? {watchOn: resolveKeys(timing, raw.people.watchOn)} : {}),
 				...(raw.people.look ? {look: resolveKeys(timing, raw.people.look)} : {}),
 				...(raw.people.lamps ? {lamps: resolveKeys(timing, raw.people.lamps)} : {}),

@@ -864,7 +864,79 @@ def style_survey(c: Ctx):
             c.add("harp", b, 2.0, voicing(ch, 50, 62)[0], 64)
 
 
-STYLES = {"hollow": style_hollow, "survey": style_survey, "lullaby": style_lullaby, "excavate": style_excavate, "vigil": style_vigil, "lantern": style_lantern, "dirge": style_dirge, "earth": style_earth, "chronicle": style_chronicle, "dispute": style_dispute, "hymn": style_hymn, "rite": style_rite, "hook": style_hook, "pulse": style_pulse, "drive": style_drive, "drop": style_drop, "void": style_void,
+# ---- EP36 colours (additive): the causes of war. `council` is the war room at night (a clock ticking on a side-stick,
+# taut threads plucked as pizzicato fifths, a low string pad, the theme on a muted trumpet over harpsichord chords);
+# `muster` is the armies gathering, one family per rule (a field snare in rudiments; a tuba marching on the roots; a
+# timpani and cymbal on the downbeats; the theme on a fife with horns on the chords). Sections set `programs`
+# (muted trumpet / piccolo on the lead, harpsichord on the celesta channel, tuba on the bass channel) and later
+# sections set them back.
+
+def style_council(c: Ctx):
+    """The war room: a clock ticking in eighths on the side-stick, pizzicato fifths plucked like taut threads (root and
+    fifth, every half bar), a low string pad, harpsichord chords on the beat and the theme on a muted trumpet.
+    `thin` (the lazy version) keeps the clock, the pad and one pluck per bar, with the theme's second half only."""
+    thin = c.spec.get("thin", False)
+    c.pad("strings", 45, 62, 32 if thin else 40, max_notes=3)
+    b = 0.0
+    while b < c.n - 1e-6:
+        c.add("drums", b, 0.15, STICK, 40 if (b % 1) < 1e-6 else 28)
+        b += 0.5
+    step = 4.0 if thin else 2.0
+    b = 0.0
+    while b < c.n - 1e-6:
+        r, _, _ = chord_tones(c.chord(b))
+        lo = in_range(r, 38, 50)[0]
+        c.add("pizz", b, 0.5, lo, 84)
+        c.add("pizz", b + 0.5, 0.5, lo + 7, 70)
+        b += step
+    if not thin:
+        for bb, d, ch in c.chord_spans():
+            for q in range(int(d)):
+                for p in voicing(ch, 55, 72)[:3]:
+                    c.add("celesta", bb + q, 0.3, p, 52 if q == 0 else 40)
+    c.theme("lead", vel=72 if thin else 84, bars=c.spec.get("bars", (2, 4) if thin else (0, 4)), octave=-1)
+
+
+def style_muster(c: Ctx):
+    """The armies gather: `layer` 1-4 adds one family per rule (a field snare playing rudiments, accent on the beat,
+    a roll into each bar; a tuba marching on root and fifth; timpani and a soft cymbal on the downbeats; the theme on
+    a fife with horns on the chords). Steady, proud, never a battle."""
+    layer = c.spec.get("layer", 4)
+    c.pad("strings", 50, 66, 34 + 3 * min(layer, 4), max_notes=3)
+    b = 0.0
+    while b < c.n - 1e-6:
+        pos = b % 4
+        if pos in (0.0, 2.0):
+            c.add("drums", b, 0.2, SNARE, 92)
+        elif pos == 3.0:
+            for k in range(4):
+                c.add("drums", b + k * 0.25, 0.1, SNARE, 50 + 10 * k)
+        elif (b % 1) < 1e-6:
+            c.add("drums", b, 0.2, SNARE, 66)
+        if (b % 1) > 1e-6:
+            c.add("drums", b, 0.1, SNARE, 40)
+        b += 0.5
+    if layer >= 2:
+        for bb, d, ch in c.chord_spans():
+            r, _, _ = chord_tones(ch)
+            lo = in_range(r, 33, 45)[0]
+            for q in range(int(d)):
+                c.add("bass", bb + q, 0.7, lo if q % 2 == 0 else lo + 7, 88 if q == 0 else 74)
+    else:
+        c.root("bass", 33, 45, 70, every=2.0)
+    if layer >= 3:
+        for bb, d, ch in c.chord_spans():
+            r, _, _ = chord_tones(ch)
+            c.add("timp", bb, 0.8, in_range(r, 40, 52)[0], 84)
+            c.add("drums", bb, 0.8, CRASH, 34)
+    if layer >= 4:
+        c.theme("lead", vel=90, bars=(0, 4))
+        for bb, d, ch in c.chord_spans():
+            for p in voicing(ch, 53, 67)[:3]:
+                c.add("horns", bb, d * 0.9, p, 58)
+
+
+STYLES = {"council": style_council, "muster": style_muster, "hollow": style_hollow, "survey": style_survey, "lullaby": style_lullaby, "excavate": style_excavate, "vigil": style_vigil, "lantern": style_lantern, "dirge": style_dirge, "earth": style_earth, "chronicle": style_chronicle, "dispute": style_dispute, "hymn": style_hymn, "rite": style_rite, "hook": style_hook, "pulse": style_pulse, "drive": style_drive, "drop": style_drop, "void": style_void,
           "mystery": style_mystery, "build": style_build, "twist": style_twist, "rest": style_rest, "frenzy": style_frenzy,
           "crash": style_crash, "swell": style_swell, "anthem": style_anthem, "outro": style_outro, "tease": style_tease,
           "soar": style_soar, "raid": style_raid, "stealth": style_stealth,

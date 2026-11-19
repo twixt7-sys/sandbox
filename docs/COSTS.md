@@ -76,6 +76,17 @@ The paid primary stack (Runway stills and clips + ElevenLabs) would still cost a
 | Render + QA | Claude cloud container | $0 |
 | **Total** | | **$0 cash (₱0)** plus 5 Figma image generations |
 
+## What Episode 36 actually used
+
+| Item | Used | Cash cost |
+|---|---|---|
+| Field card sprite (a plain canvas tent, the war room's knot and three threads on its pole) | **Free local SDXL-Lightning with the pixel-art LoRA** (`pipeline/local_stills.py --sprite`, CPU, about 75 s an image): 3 candidates from two prompts (seed 36 of a plain tent came out pale and flat on grey; seed 12 of a tent with a pole was a broken lean-to), seed 7 used; checked for flags, emblems and symbols (none); re-gridded to 64×116 with `pipeline/pixelate.py` (`--colors 24`) and the knot and three coloured threads drawn on in code (`art/war_threads.py`). **No Figma credits** | $0 |
+| The camps, the standards, the war room's threads and knot, the armies, the war room strip | Remotion + three.js code, software WebGL (`swangle`) | $0 |
+| Narration | Kokoro-82M (`af_heart`, speed 0.95), 160 words, 58.5 s total | $0 |
+| Score + SFX | `music_s2.py` (+ `council`, `muster`: muted trumpet, harpsichord, piccolo, tuba from the same free SoundFont), `score_s2.py` (+ `pinIn`, `threadPull`, `spark`) | $0 |
+| Render, QA, encodes | Claude cloud container | $0 |
+| **Total** | | **$0 cash (₱0)**, 0 Figma generations |
+
 ## What Episode 35 actually used
 
 | Item | Used | Cash cost |

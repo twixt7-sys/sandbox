@@ -1584,7 +1584,92 @@ export const FindsTray: React.FC<OP> = ({g, t}) => {
 	);
 };
 
+// ---- EP36: the war room. A strip under the world with one column per side (its colour, its name), every reason it
+// has for war pinned in as the thread goes down in the world (icon + a few words), a verdict at the foot of each column
+// (WORTH IT? / NOT WORTH IT / WORTH IT ...) and a status at the top right (NO WAR, 1 FLASHPOINT ...). A side's column
+// can be absent (`show` keys); a reason can be struck through in rust (`strikeAt`: the side's guess was wrong).
+const FLASH_C = '#c8f04a';
+type WarReason = {icon: string; text: string; at: Cue; end?: Cue; strikeAt?: Cue; color?: string};
+type WarSide = {name: string; color: string; show?: [Cue, number][]; rows: WarReason[]; verdicts?: {at: Cue; text: string; color?: string}[]};
+export const WarRoom: React.FC<OP> = ({g, t}) => {
+	const {o, a, timing} = useWin(g, t, 0.3, 0.3);
+	if (o <= 0) return null;
+	const sides: WarSide[] = g.sides ?? [];
+	const y0: number = g.y ?? 1352;
+	const rise = (1 - ease(t, a, 0.35)) * 40;
+	const W = 804;
+	const H = 216;
+	const CW = (W - 20 - 2 * 12) / Math.max(1, sides.length);
+	const pick = <T extends {at: Cue}>(list: T[] | undefined) => {
+		let cur: T | null = null;
+		let since = -Infinity;
+		for (const v of list ?? []) {
+			const at = cueTime(timing, v.at, 0);
+			if (t >= at && at >= since) {
+				cur = v;
+				since = at;
+			}
+		}
+		return {cur, since};
+	};
+	const st = pick((g.status ?? []) as {at: Cue; text: string; color?: string}[]);
+	const stFlash = Math.max(0, 1 - (t - st.since) / 0.5);
+	return (
+		<AbsoluteFill style={{pointerEvents: 'none', opacity: o}}>
+			<div style={{position: 'absolute', left: 96, top: y0 + rise, width: W, height: H, overflow: 'hidden', ...panel({edge: FLASH_C})}}>
+				<div style={{position: 'absolute', left: 16, top: 12, fontFamily: F2.pixel, fontSize: 18, color: FLASH_C, letterSpacing: '0.08em'}}>{g.kicker ?? 'THE WAR ROOM'}</div>
+				{st.cur && (
+					<div style={{position: 'absolute', right: 16, top: 9, fontFamily: F2.pixel, fontWeight: 700, fontSize: 24, color: col(st.cur.color ?? FLASH_C), letterSpacing: '0.06em', transform: `scale(${1 + 0.12 * stFlash})`, transformOrigin: 'right center'}}>
+						{st.cur.text}
+					</div>
+				)}
+				{sides.map((sd, i) => {
+					const x = 10 + i * (CW + 12);
+					const shown = sd.show ? sample(sd.show.map(([c, v]) => ({t: cueTime(timing, c, 0), v, e: 'linear'})), t, 1) : 1;
+					const vd = pick(sd.verdicts);
+					const vFlash = Math.max(0, 1 - (t - vd.since) / 0.5);
+					let row = 0;
+					return (
+						<div key={i} style={{position: 'absolute', left: x, top: 44, width: CW, height: 162, opacity: 0.25 + 0.75 * shown, background: 'rgba(5,9,18,0.45)', boxShadow: `inset 0 0 0 ${PX}px ${shown > 0.5 ? sd.color : 'rgba(239,230,210,0.18)'}`}}>
+							<div style={{position: 'absolute', left: 10, top: 8, display: 'flex', alignItems: 'center', gap: 8}}>
+								<div style={{width: 18, height: 18, background: sd.color, boxShadow: `0 0 0 ${PX}px #12151c`}} />
+								<div style={{fontFamily: F2.pixel, fontWeight: 700, fontSize: 22, color: sd.color, letterSpacing: '0.06em'}}>{sd.name}</div>
+							</div>
+							{shown > 0.5 &&
+								sd.rows.map((r, k) => {
+									const at = cueTime(timing, r.at, 0);
+									const end = r.end ? cueTime(timing, r.end) : Infinity;
+									if (t < at || t >= end) return null;
+									const e = at <= 0.001 ? 1 : ease(t, at, 0.25);
+									const strike = r.strikeAt ? clamp((t - cueTime(timing, r.strikeAt)) / 0.25) : 0;
+									const top = 38 + row * 28;
+									row++;
+									return (
+										<div key={k} style={{position: 'absolute', left: 10 - (1 - e) * 24, top, right: 6, height: 28, display: 'flex', alignItems: 'center', gap: 8, opacity: e}}>
+											<PixelSprite name={r.icon} px={3} color={col(r.color ?? sd.color)} />
+											<div style={{position: 'relative', fontFamily: F2.pixelSans, fontSize: 20, lineHeight: '24px', color: strike > 0.5 ? 'rgba(239,230,210,0.55)' : col(r.color ?? 'parchment'), whiteSpace: 'nowrap'}}>
+												{r.text}
+												{strike > 0 && <div style={{position: 'absolute', left: 0, top: 11, height: PX, width: `${strike * 100}%`, background: S2.rust}} />}
+											</div>
+										</div>
+									);
+								})}
+							{shown > 0.5 && vd.cur && (
+								<div style={{position: 'absolute', left: 10, right: 6, top: 133, fontFamily: F2.pixel, fontWeight: 700, fontSize: 20, color: col(vd.cur.color ?? sd.color), letterSpacing: '0.06em', whiteSpace: 'nowrap', transform: `scale(${1 + 0.1 * vFlash})`, transformOrigin: 'left center'}}>
+									{vd.cur.text}
+								</div>
+							)}
+							{shown <= 0.5 && <div style={{position: 'absolute', left: 0, right: 0, top: 60, textAlign: 'center', fontFamily: F2.pixel, fontSize: 30, color: 'rgba(239,230,210,0.2)'}}>·</div>}
+						</div>
+					);
+				})}
+			</div>
+		</AbsoluteFill>
+	);
+};
+
 export const S2_OVERLAYS: Record<string, React.FC<OP>> = {
+	warRoom: WarRoom,
 	findsTray: FindsTray,
 	skyTags: SkyTags,
 	fearTags: FearTags,
